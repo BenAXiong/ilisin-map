@@ -25,13 +25,41 @@ const SOURCES = {
     url: 'https://www.facebook.com/changbinchengtownship/photos/%E5%85%AC%E5%91%8A%E8%87%BA%E6%9D%B1%E7%B8%A3%E9%95%B7%E6%BF%B1%E9%84%89115%E5%B9%B4%E5%BA%A6%E5%8E%9F%E4%BD%8F%E6%B0%91%E6%97%8F%E9%83%A8%E8%90%BD%E6%AD%B2%E6%99%82%E7%A5%A3%E5%84%80%E6%9C%9F%E7%A8%8B%E8%A1%A8-%E9%95%B7%E6%BF%B1%E9%84%89115%E5%B9%B4%E5%BA%A6%E5%90%84%E9%83%A8%E8%90%BD%E8%B1%90%E5%B9%B4%E7%A5%AD-%E6%AD%B2%E6%99%82%E7%A5%A3%E5%84%80-%E6%99%82%E7%A8%8B%E8%A1%A81150601-%E6%9B%B4%E6%96%B0%E5%8D%97%E7%AB%B9%E6%B9%96%E9%83%A8%E8%90%BD-%E7%A5%A3%E5%84%80%E6%9C%9F%E9%96%93%E8%AA%BF%E6%95%B4%E7%82%BA716-719/1416900903798785/'
   },
   tt_chenggong: {
-    label: '成功鎮 Instagram',
+    label: '成功鎮豐年節 Instagram',
     url: 'https://www.instagram.com/p/DZRiIJsB3AT/'
+  },
+  tt_chenggong_fb: {
+    label: '成功鎮豐年節 Facebook',
+    url: 'https://www.facebook.com/a833633/photos/2026%E5%B9%B4%E4%B8%83%E6%9C%88%E6%88%90%E5%8A%9F%E9%8E%AE%E8%B1%90%E5%B9%B4%E7%AF%80%E6%B4%BB%E5%8B%95%E6%97%A5%E7%A8%8B%E8%A1%A8%E4%B8%80%E5%B9%B4%E4%B8%80%E5%BA%A6%E7%9A%84%E9%98%BF%E7%BE%8E%E6%97%8F%E8%B1%90%E5%B9%B4%E7%AF%80%E5%8F%88%E8%A6%81%E7%86%B1%E9%AC%A7%E7%99%BB%E5%A0%B4%E4%BA%86%E9%82%84%E8%A8%98%E5%BE%97%E5%8E%BB%E5%B9%B4%E4%B8%83%E6%9C%88%E5%85%A8%E6%9D%91%E4%BA%BA%E9%BD%8A%E8%81%9A%E6%9C%83%E5%A0%B4%E8%B7%B3%E8%88%9E%E5%94%B1%E6%AD%8C%E7%9A%84%E7%86%B1%E9%AC%A7%E5%A0%B4%E6%99%AF%E5%97%8E%E9%82%84%E8%A8%98%E5%BE%97%E9%81%B2%E5%88%B0%E8%A2%AB%E5%B9%B9%E9%83%A8%E6%8B%BF%E8%97%A4%E6%A2%9D%E6%8F%90%E9%86%92%E7%9A%84%E8%B6%A3%E4%BA%8B%E5%97%8E%E9%82%A3%E4%BA%9B%E4%B8%80/1661610605971735/'
+  },
+  tt_malan_fb: {
+    label: '馬蘭文化健康站 Facebook',
+    url: 'https://www.facebook.com/p/%E9%A6%AC%E8%98%AD%E6%96%87%E5%8C%96%E5%81%A5%E5%BA%B7%E7%AB%99-100067760864506/'
+  },
+  tt_xinmalan_ig: {
+    label: '新馬蘭部落 Instagram',
+    url: 'https://www.instagram.com/reel/DZSS_SLvgBD/'
+  },
+  tt_kalaruran_ig: {
+    label: '卡拉魯然部落 Instagram',
+    url: 'https://www.instagram.com/reel/DLrLZsVSUzy/'
+  },
+  tt_changbin_zhengbing: {
+    label: '真柄部落 Instagram',
+    url: 'https://www.instagram.com/p/DYTVnmTzSiG/'
+  },
+  tt_donghe_fb: {
+    label: '東河鄉公所 Facebook',
+    url: 'https://www.facebook.com/DongheTownshipOffice/posts/-2026-%E8%87%BA%E6%9D%B1%E7%B8%A3%E6%9D%B1%E6%B2%B3%E9%84%89-%E5%90%84%E9%83%A8%E8%90%BD%E6%AD%B2%E6%99%82%E7%A5%AD%E5%84%80%E6%97%A5%E7%A8%8B%E8%A1%A8-ngaay-ho%E5%A4%8F%E5%A4%A9%E5%88%B0%E4%BA%86%E4%B8%80%E5%B9%B4%E4%B8%80%E5%BA%A6%E6%9C%80%E8%AE%93%E4%BA%BA%E7%86%B1%E8%A1%80%E6%B2%B8%E9%A8%B0%E7%9A%84%E8%B1%90%E5%B9%B4%E7%A5%AD%E5%AD%A3%E7%AF%80%E6%AD%A3%E5%BC%8F%E5%88%B0%E4%BE%86%E8%B1%90%E5%B9%B4%E7%A5%AD%E6%98%AF%E9%98%BF%E7%BE%8E%E6%97%8F%E4%BA%BA%E6%84%9F%E8%AC%9D%E7%A5%96%E9%9D%88%E5%BA%87%E4%BD%91%E6%85%B6%E7%A5%9D%E8%B1%90%E6%94%B6%E4%B8%A6%E4%B8%94%E5%82%B3%E6%89%BF%E9%83%A8/1408402144658270/'
+  },
+  tt_summary: {
+    label: '2026 臺東豐年祭整理頁',
+    url: 'https://eatmary.net/5316'
   }
 };
 
 // ── Data note (shown in UI) ───────────────────────────────────────
-const DATA_NOTE = '花蓮縣資料來自縣政府原民處官方 PDF（115 年全縣表）。臺東縣官方查詢頁本次無法完整擷取，僅收錄已能核驗的鄉鎮公所公告。實際日期以各部落最新公告為準。';
+const DATA_NOTE = '花蓮縣資料來自縣政府原民處官方 PDF（115 年全縣表，完整）。臺東縣：池上鄉來自鄉公所 PDF；成功鎮、長濱鄉、東河鄉來自鄉公所公告；臺東市部分來自社群貼文／IG OCR，可信度低於縣府 PDF——正式出行前務必透過部落或公所管道再確認。整理截至 2026-06-22。';
 
 // ── Village data ──────────────────────────────────────────────────
 // status: 'confirmed' | 'tbd' | 'cancelled'
@@ -225,7 +253,33 @@ const VILLAGES = [
   { id:'tt-dh-01', chinese:'瑪洛阿瀧聯合豐年祭', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'8/15（暫訂）', venue:'東河國小', status:'confirmed', src:'tt_donghe' },
 
   // ══ 臺東縣 成功鎮 ════════════════════════════════════════════════
-  { id:'tt-cg-01', chinese:'民豐部落', amis:'Karahay', county:'臺東縣', township:'成功鎮', lat:23.097, lng:121.373, date:'7/9–7/10；迎賓日 7/10', venue:'忠智里活動中心', status:'confirmed', src:'tt_chenggong' }
+  { id:'tt-cg-01', chinese:'民豐部落', amis:'Karahay', county:'臺東縣', township:'成功鎮', lat:23.097, lng:121.373, date:'7/9–7/10；迎賓日 7/10', venue:'忠智里活動中心', status:'confirmed', src:'tt_chenggong' },
+  { id:'tt-cg-02', chinese:'麒麟部落', amis:'', county:'臺東縣', township:'成功鎮', lat:23.097, lng:121.373, date:'7/9–7/11', venue:'麒麟活動中心', status:'confirmed', src:'tt_chenggong_fb' },
+  { id:'tt-cg-03', chinese:'美山部落', amis:'', county:'臺東縣', township:'成功鎮', lat:23.097, lng:121.373, date:'7/17–7/20', venue:'美山活動中心露天場地', status:'confirmed', src:'tt_chenggong_fb' },
+
+  // ══ 臺東縣 長濱鄉 (補充) ══════════════════════════════════════════
+  { id:'tt-cb-02', chinese:'真柄部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/19', venue:'（詳見來源）', status:'confirmed', src:'tt_changbin_zhengbing' },
+
+  // ══ 臺東縣 東河鄉 (補充) ══════════════════════════════════════════
+  // 以下部落源自東河鄉公所 FB 2026 歲時祭儀日程表；各部落具體日期集中 7/4–7/20，詳見來源
+  { id:'tt-dh-02', chinese:'阿奚露艾部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-03', chinese:'巴阿尼豐部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-04', chinese:'佳尼發納部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-05', chinese:'發富谷部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-06', chinese:'乎哇固部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-07', chinese:'阿度蘭部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-08', chinese:'阿拉巴灣部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-09', chinese:'順那部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+  { id:'tt-dh-10', chinese:'基拉菲婻部落', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'7月（詳見鄉公所）', venue:'（詳見東河鄉公所 FB）', status:'tbd', src:'tt_donghe_fb' },
+
+  // ══ 臺東縣 臺東市 ════════════════════════════════════════════════
+  // 來源可信度混合：社群貼文可信度低於縣府 PDF，正式出行前應再確認
+  { id:'tt-tt-01', chinese:'馬蘭部落', amis:"Kiluma'an", county:'臺東縣', township:'臺東市', lat:22.754, lng:121.152, date:'7/3 五–7/11 六', venue:'馬蘭部落文化廣場及傳統領域', status:'confirmed', src:'tt_malan_fb' },
+  { id:'tt-tt-02', chinese:'新馬蘭部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.758, lng:121.145, date:'7/5 日–7/10 五', venue:'新馬蘭聚會所', status:'confirmed', src:'tt_xinmalan_ig' },
+  { id:'tt-tt-03', chinese:'卡拉魯然部落', amis:'Kalarutran', county:'臺東縣', township:'臺東市', lat:22.744, lng:121.165, date:'7/18 六–7/19 日', venue:'新園社區青年活動中心（新園路 434 巷 6 號）', status:'confirmed', src:'tt_kalaruran_ig' },
+  { id:'tt-tt-04', chinese:'建農部落／阿福隆愛', amis:'Afolong', county:'臺東縣', township:'臺東市', lat:22.756, lng:121.148, date:'未定', venue:'建農里社區活動中心', status:'tbd', src:'tt_abm' },
+  { id:'tt-tt-05', chinese:'阿西路愛部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.752, lng:121.150, date:'未定', venue:'阿西路愛聚會所', status:'tbd', src:'tt_abm' },
+  { id:'tt-tt-06', chinese:'巴布麓部落', amis:'Papulu', county:'臺東縣', township:'臺東市', lat:22.760, lng:121.142, date:'未定', venue:'四維寶桑活動中心', status:'tbd', src:'tt_abm' }
 
 ];
 
