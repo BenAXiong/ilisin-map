@@ -1,0 +1,230 @@
+const VILLAGES = [
+  {
+    id: 'tafalong',
+    chinese: '太巴塱',
+    romanization: 'Tafalong',
+    amis: 'Tafalong',
+    county: '花蓮縣',
+    township: '光復鄉',
+    lat: 23.7067,
+    lng: 121.4467,
+    timing: '7月下旬',
+    timing_en: 'Late July',
+    size: 'major',
+    desc: '阿美族最大且最具代表性的部落之一。階級制度（pakelang）完整保存，豐年祭規模宏大，歷史悠久。',
+    desc_en: 'One of the largest and most representative Amis communities. The Ilisin is particularly elaborate with a fully preserved age-grade (pakelang) system.'
+  },
+  {
+    id: 'mataean',
+    chinese: '馬太鞍',
+    romanization: 'Mataean',
+    amis: "Ma'ta'an",
+    county: '花蓮縣',
+    township: '光復鄉',
+    lat: 23.6833,
+    lng: 121.4333,
+    timing: '7月底至8月初',
+    timing_en: 'Late July – Early Aug',
+    size: 'major',
+    desc: '以巴拉告（palakaw）濕地生態漁獵著稱。豐年祭深融傳統漁獵文化，食物準備儀式尤為特殊。',
+    desc_en: 'Famous for its palakaw wetland fish-trap system. The Ilisin blends deeply with fishing heritage; food preparation ceremonies are especially rich here.'
+  },
+  {
+    id: 'qimei',
+    chinese: '奇美',
+    romanization: 'Qimei (Raranges)',
+    amis: 'Raranges',
+    county: '花蓮縣',
+    township: '瑞穗鄉',
+    lat: 23.5100,
+    lng: 121.3333,
+    timing: '7月',
+    timing_en: 'July',
+    size: 'notable',
+    desc: '秀姑巒溪上游的深山聚落，以高度完整的傳統文化聞名。前往需乘船或步行，交通不便反而保護了傳統。',
+    desc_en: 'A remote mountain village upriver on the Xiuguluan. Accessible by boat or foot — the isolation has helped preserve an exceptionally intact traditional culture.'
+  },
+  {
+    id: 'ruisui',
+    chinese: '瑞穗',
+    romanization: 'Ruisui',
+    amis: 'Ciwkangan',
+    county: '花蓮縣',
+    township: '瑞穗鄉',
+    lat: 23.4933,
+    lng: 121.4267,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '秀姑巒溪沿岸多個阿美族部落，各有獨立的豐年祭日程。溫泉鄉氛圍，觀光與傳統並存。',
+    desc_en: 'Multiple Amis communities along the Xiuguluan River, each with independent festival dates. Hot-spring town; tourism and tradition coexist.'
+  },
+  {
+    id: 'hualien',
+    chinese: '花蓮市',
+    romanization: 'Hualien City',
+    amis: "Cepo'",
+    county: '花蓮縣',
+    township: '花蓮市',
+    lat: 23.9769,
+    lng: 121.6044,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '市區內分布多個阿美族部落，並有撒奇萊雅族聚落。城市化背景下，各部落仍維持獨立的傳統祭儀。',
+    desc_en: 'Multiple Amis communities in the city, plus Sakizaya neighborhoods. Despite urbanization, each village maintains its own traditional ceremonies.'
+  },
+  {
+    id: 'shoufeng',
+    chinese: '壽豐',
+    romanization: 'Shoufeng',
+    amis: 'Sufong',
+    county: '花蓮縣',
+    township: '壽豐鄉',
+    lat: 23.8567,
+    lng: 121.5567,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '鄰近東華大學與鯉魚潭，多個阿美族部落錯落其間，祭期各異。',
+    desc_en: 'Near Donghua University and Liyu Lake; several Amis villages scattered through the area with staggered festival dates.'
+  },
+  {
+    id: 'fenglin',
+    chinese: '鳳林',
+    romanization: 'Fenglin',
+    amis: 'Fanaw',
+    county: '花蓮縣',
+    township: '鳳林鎮',
+    lat: 23.7333,
+    lng: 121.4667,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '花蓮中部縱谷，阿美族與客家聚落比鄰而居，呈現多元族群的東台灣面貌。',
+    desc_en: "Central Hualien Rift Valley; Amis communities alongside Hakka settlements, reflecting East Taiwan's multicultural character."
+  },
+  {
+    id: 'fuli',
+    chinese: '富里',
+    romanization: 'Fuli',
+    amis: 'Pokpok',
+    county: '花蓮縣',
+    township: '富里鄉',
+    lat: 23.2733,
+    lng: 121.2933,
+    timing: '8月',
+    timing_en: 'August',
+    size: 'regular',
+    desc: '花蓮縣最南端，以有機稻米聞名。豐年祭與稻作豐收意義高度交融，體現「豐年」本義。',
+    desc_en: 'Southern tip of Hualien County, renowned for organic rice. The Ilisin blends with the rice harvest — the most literal expression of "豐年" (abundant year).'
+  },
+  {
+    id: 'changbin',
+    chinese: '長濱（加走灣）',
+    romanization: 'Changbin / Karangasan',
+    amis: 'Karangasan',
+    county: '台東縣',
+    township: '長濱鄉',
+    lat: 23.3267,
+    lng: 121.4433,
+    timing: '8月',
+    timing_en: 'August',
+    size: 'notable',
+    desc: '台東北部最傳統的海岸阿美族聚落之一，臨太平洋而建。典禮儀式保存高度完整。',
+    desc_en: 'One of the most traditional coastal Amis sites in northern Taitung; perched above the Pacific. Festival rituals are exceptionally well-preserved.'
+  },
+  {
+    id: 'donghe',
+    chinese: '東河',
+    romanization: 'Donghe',
+    amis: 'Tongho',
+    county: '台東縣',
+    township: '東河鄉',
+    lat: 23.2133,
+    lng: 121.3733,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '東海岸中段，多個阿美族部落各自舉辦豐年祭，時間略有差異。',
+    desc_en: 'Mid-coast Taitung; multiple Amis villages hold independent ceremonies with slightly different dates. Good base for the area.'
+  },
+  {
+    id: 'chenggong',
+    chinese: '成功（麻荖漏）',
+    romanization: 'Chenggong / Makapahay',
+    amis: 'Makapahay',
+    county: '台東縣',
+    township: '成功鎮',
+    lat: 23.0967,
+    lng: 121.3733,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'major',
+    desc: '台東東海岸最重要的阿美族聚落之一，漁業傳統深厚。豐年祭規模較大，保有完整的男子晉階儀式。',
+    desc_en: 'One of the major Amis centers on the Taitung coast with deep fishing traditions. The Ilisin is large-scale with full male age-grade initiation rites preserved.'
+  },
+  {
+    id: 'taitung',
+    chinese: '台東市',
+    romanization: 'Taitung City',
+    amis: 'Puyuma / Pangcah',
+    county: '台東縣',
+    township: '台東市',
+    lat: 22.7567,
+    lng: 121.1467,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '鄰近國立台灣史前文化博物館。市區阿美族部落獨立舉辦典禮，與博物館觀光活動有所區別。',
+    desc_en: 'Near the National Museum of Prehistory. Urban Amis communities hold independent ceremonies — distinct from any museum tourism events.'
+  },
+  {
+    id: 'beinan',
+    chinese: '卑南（南王）',
+    romanization: 'Beinan / Nanwang',
+    amis: 'Puyuma / Amis mixed',
+    county: '台東縣',
+    township: '卑南鄉',
+    lat: 22.7800,
+    lng: 121.1200,
+    timing: '7–8月',
+    timing_en: 'July – August',
+    size: 'regular',
+    desc: '此區主要為卑南族（Pinuyumayan）領域，周邊有阿美族聚落。注意：兩族文化與祭典完全不同，勿混淆。',
+    desc_en: 'Primarily Puyuma (Pinuyumayan) territory; adjacent Amis communities hold their own ceremonies. Note: the two peoples have entirely distinct cultures and festivals.'
+  }
+];
+
+const GENERAL_NOTES = [
+  {
+    icon: '◎',
+    label: '別名 · Names',
+    text: '豐年祭又稱 Ilisin（北部阿美語）或 Malikoda（南部），是阿美族（Pangcah）最重要的年度祭典。'
+  },
+  {
+    icon: '◷',
+    label: '日期 · Dates',
+    text: '各部落日期每年微調。出發前請向各鄉公所（District Office）或部落官方管道確認最新日程。'
+  },
+  {
+    icon: '▣',
+    label: '階級 · Age-grade',
+    text: '年齡階級（pakelang）是典禮核心。不同階層各司其職，禮儀角色世代傳承，是阿美族社會結構的體現。'
+  },
+  {
+    icon: '⊗',
+    label: '限制 · Restricted',
+    text: '男子儀式期間有嚴格限制區域，嚴禁非阿美族人擅入。請尊重所有指示與圍繩。'
+  },
+  {
+    icon: '○',
+    label: '牽手舞 · Dancing',
+    text: '圓圈舞（牽手舞）開放外來訪客參與，著裝端莊（不露肩、不穿短褲）即可加入歡慶。'
+  },
+  {
+    icon: '◻',
+    label: '攝影 · Photography',
+    text: '拍照前請先徵得同意。部分儀式嚴禁錄影拍照，請以部落現場指示為最高準則。'
+  }
+];
