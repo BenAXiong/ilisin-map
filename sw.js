@@ -1,4 +1,4 @@
-const CACHE = 'ilisin-v5';
+const CACHE = 'ilisin-v10';
 const SHELL = [
   '/',
   '/index.html',
@@ -10,25 +10,25 @@ const SHELL = [
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
 
-self.addEventListener('install', e => {
+globalThis.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE)
       .then(c => c.addAll(SHELL))
-      .then(() => self.skipWaiting())
+      .then(() => globalThis.skipWaiting())
   );
 });
 
-self.addEventListener('activate', e => {
+globalThis.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
         keys.filter(k => k !== CACHE).map(k => caches.delete(k))
       ))
-      .then(() => self.clients.claim())
+      .then(() => globalThis.clients.claim())
   );
 });
 
-self.addEventListener('fetch', e => {
+globalThis.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   // Pass through map tiles and font requests — don't cache them
   if (

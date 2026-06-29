@@ -274,12 +274,12 @@ const VILLAGES = [
 
   // ══ 臺東縣 臺東市 ════════════════════════════════════════════════
   // 來源可信度混合：社群貼文可信度低於縣府 PDF，正式出行前應再確認
-  { id:'tt-tt-01', chinese:'馬蘭部落', amis:"Kiluma'an", county:'臺東縣', township:'臺東市', lat:22.754, lng:121.152, date:'7/3 五–7/11 六', venue:'馬蘭部落文化廣場及傳統領域', status:'confirmed', src:'tt_malan_fb' },
-  { id:'tt-tt-02', chinese:'新馬蘭部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.758, lng:121.145, date:'7/5 日–7/10 五', venue:'新馬蘭聚會所', status:'confirmed', src:'tt_xinmalan_ig' },
-  { id:'tt-tt-03', chinese:'卡拉魯然部落', amis:'Kalarutran', county:'臺東縣', township:'臺東市', lat:22.744, lng:121.165, date:'7/18 六–7/19 日', venue:'新園社區青年活動中心（新園路 434 巷 6 號）', status:'confirmed', src:'tt_kalaruran_ig' },
-  { id:'tt-tt-04', chinese:'建農部落／阿福隆愛', amis:'Afolong', county:'臺東縣', township:'臺東市', lat:22.756, lng:121.148, date:'未定', venue:'建農里社區活動中心', status:'tbd', src:'tt_abm' },
-  { id:'tt-tt-05', chinese:'阿西路愛部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.752, lng:121.150, date:'未定', venue:'阿西路愛聚會所', status:'tbd', src:'tt_abm' },
-  { id:'tt-tt-06', chinese:'巴布麓部落', amis:'Papulu', county:'臺東縣', township:'臺東市', lat:22.760, lng:121.142, date:'未定', venue:'四維寶桑活動中心', status:'tbd', src:'tt_abm' }
+  { id:'tt-tt-01', chinese:'馬蘭部落', amis:"Kiluma'an", county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/3 五–7/11 六', venue:'馬蘭部落文化廣場及傳統領域', status:'confirmed', src:'tt_malan_fb' },
+  { id:'tt-tt-02', chinese:'新馬蘭部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/5 日–7/10 五', venue:'新馬蘭聚會所', status:'confirmed', src:'tt_xinmalan_ig' },
+  { id:'tt-tt-03', chinese:'卡拉魯然部落', amis:'Kalarutran', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/18 六–7/19 日', venue:'新園社區青年活動中心（新園路 434 巷 6 號）', status:'confirmed', src:'tt_kalaruran_ig' },
+  { id:'tt-tt-04', chinese:'建農部落／阿福隆愛', amis:'Afolong', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'建農里社區活動中心', status:'tbd', src:'tt_abm' },
+  { id:'tt-tt-05', chinese:'阿西路愛部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'阿西路愛聚會所', status:'tbd', src:'tt_abm' },
+  { id:'tt-tt-06', chinese:'巴布麓部落', amis:'Papulu', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'四維寶桑活動中心', status:'tbd', src:'tt_abm' }
 
 ];
 

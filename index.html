@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>豐年祭地圖 · Ilisin 2026</title>
-  <meta name="description" content="2026 花東阿美族（Pangcah）豐年祭歲時祭儀部落地圖 · 147 部落 · 花蓮縣完整版" />
+  <meta name="description" content="2026 花東阿美族（Pangcah）豐年祭歲時祭儀部落地圖 · 花蓮縣完整版" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#bf7e1a" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,233 +20,1211 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..400&family=Noto+Serif+TC:wght@300;400;600;700&family=Courier+Prime&display=swap" rel="stylesheet" />
 
   <style>
+    /* ── Theme tokens ───────────────────────────── */
     :root {
-      --bg:         #f0ead8;
-      --bg-alt:     #e8e0c8;
-      --surface:    #faf6ee;
-      --amber:      #bf7e1a;
-      --amber-pale: #f2d48c;
-      --amber-dark: #7a4e0a;
-      --terra:      #9c3e18;
-      --terra-pale: #e8b898;
-      --green:      #3a7a3a;
-      --text-1:     #1c1508;
-      --text-2:     #5a4325;
-      --text-3:     #9c845a;
-      --border:     #ddd0b0;
-      --border-2:   #c4ac80;
-      --header-h:   54px;
-      --r:          4px;
+      --bg:     oklch(92% 0.025 75);
+      --accent: oklch(52% 0.16  55);
+      --ink:    oklch(10% 0.035 55);
+
+      --bg-alt:     oklch(from var(--bg)     calc(l - 0.04)       c              h);
+      --surface:    oklch(from var(--bg)     calc(l + 0.04)       c              h);
+      --border:     oklch(from var(--bg)     calc(l - 0.09)       c              h);
+      --border-2:   oklch(from var(--bg)     calc(l - 0.15)       c              h);
+      --amber:      var(--accent);
+      --amber-pale: oklch(from var(--accent) calc(l + 0.28)       calc(c * 0.5)  h);
+      --amber-dark: oklch(from var(--accent) calc(l - 0.14)       c              h);
+      --text-1:     var(--ink);
+      --text-2:     oklch(from var(--ink)    calc(l + 0.25)       c              h);
+      --text-3:     oklch(from var(--ink)    calc(l + 0.44)       calc(c * 0.7)  h);
+      --terra:      oklch(from var(--accent) calc(l - 0.08)       calc(c * 1.1)  calc(h + 12));
+      --terra-pale: oklch(from var(--accent) calc(l + 0.22)       calc(c * 0.6)  calc(h + 12));
+      --green:      oklch(46% 0.14 145);
+
+      --header-h: 54px;
+      --tab-h:    84px;
+      --r:   4px;
       --mono: 'Courier Prime', 'Courier New', monospace;
       --cn:   'Noto Serif TC', serif;
       --disp: 'Fraunces', Georgia, serif;
     }
+    [data-theme="night"] {
+      --bg:     oklch(14% 0.02 50);
+      --accent: oklch(65% 0.14 58);
+      --ink:    oklch(91% 0.02 80);
+    }
+    [data-theme="coast"] {
+      --bg:     oklch(93% 0.018 210);
+      --accent: oklch(46% 0.15  210);
+      --ink:    oklch(12% 0.025 220);
+    }
+
+    /* ── Reset ──────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; -webkit-text-size-adjust: 100%; }
-    body { font-family: var(--cn); background: var(--bg); color: var(--text-1); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-    /* ── Header ── */
-    .site-header {
-      position: fixed; inset: 0 0 auto 0;
-      height: var(--header-h);
-      background: var(--bg); border-bottom: 1px solid var(--border);
-      z-index: 1000; display: flex; align-items: center;
-      justify-content: space-between; padding: 0 1rem; gap: .75rem;
+    body {
+      font-family: var(--cn);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      height: 100dvh;
+      overflow: hidden;
     }
-    .header-left { display: flex; align-items: baseline; gap: .5rem; }
-    .logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-    .header-title { font-family: var(--disp); font-size: 1.2rem; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
-    .header-sub { font-family: var(--mono); font-size: .58rem; color: var(--text-3); letter-spacing: .09em; text-transform: uppercase; display: none; }
-    @media (min-width: 420px) { .header-sub { display: block; } }
-    .header-count { font-family: var(--mono); font-size: .6rem; color: var(--text-3); }
-    .install-btn { font-family: var(--mono); font-size: .62rem; letter-spacing: .07em; text-transform: uppercase; color: var(--amber); border: 1px solid var(--amber); background: transparent; padding: 3px 8px; border-radius: var(--r); cursor: pointer; white-space: nowrap; transition: background .15s, color .15s; }
-    .install-btn:hover { background: var(--amber); color: #fff; }
 
-    /* ── Layout ── */
-    .app-body { padding-top: var(--header-h); }
-    .app-layout { display: flex; flex-direction: column; }
+    /* ── Shared header ──────────────────────────── */
+    .app-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--header-h);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      gap: .75rem;
+    }
+    .header-left  { display: flex; align-items: center; gap: .5rem; }
+    .logo-img     { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .header-title { font-family: var(--disp); font-size: 1.15rem; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+    .header-right { display: flex; align-items: center; gap: .5rem; }
 
-    /* ── Map ── */
-    .map-panel { position: sticky; top: var(--header-h); height: 42vh; min-height: 180px; max-height: 320px; z-index: 100; border-bottom: 2px solid var(--border-2); flex-shrink: 0; }
-    #map { height: 100%; width: 100%; }
+    .theme-btn {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .05em;
+      color: var(--text-3);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 3px 9px;
+      border-radius: var(--r);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .theme-btn:hover { border-color: var(--amber); color: var(--amber-dark); background: var(--bg); }
 
-    /* ── Info panel ── */
-    .info-panel { padding: 1.25rem .9rem 5rem; }
+    .install-btn {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid var(--amber);
+      background: transparent;
+      padding: 3px 8px;
+      border-radius: var(--r);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s, color .15s;
+    }
+    .install-btn:hover { background: var(--amber); color: var(--bg); }
+    body.tab-info .app-header { display: none; }
 
-    /* ── Section label ── */
-    .section-label { font-family: var(--mono); font-size: .58rem; text-transform: uppercase; letter-spacing: .14em; color: var(--text-3); margin-bottom: .65rem; padding-bottom: .35rem; border-bottom: 1px solid var(--border); }
+    /* ── Tab bar ────────────────────────────────── */
+    .tab-bar {
+      position: fixed;
+      inset: auto 0 0 0;
+      height: var(--tab-h);
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: stretch;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-3);
+      padding: 0;
+      transition: color .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tab-btn:hover  { color: var(--text-2); }
+    .tab-btn.active { color: var(--accent); }
+    .tab-icon  { font-size: 1.3rem; line-height: 1; }
+    .tab-label {
+      font-family: var(--mono);
+      font-size: .52rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color .15s;
+    }
+    .tab-btn.active .tab-label { border-color: var(--accent); }
 
-    /* ── Notes ── */
-    .notes-section { margin-bottom: 1.75rem; }
-    .notes-grid { display: grid; grid-template-columns: 1fr; gap: .5rem; }
-    @media (min-width: 400px) { .notes-grid { grid-template-columns: 1fr 1fr; } }
-    .note-item { display: flex; gap: .5rem; align-items: flex-start; padding: .55rem .7rem; background: var(--surface); border-radius: var(--r); border: 1px solid var(--border); }
-    .note-icon { font-family: var(--mono); font-size: .82rem; color: var(--amber); flex-shrink: 0; line-height: 1.4; }
-    .note-label { font-family: var(--mono); font-size: .58rem; text-transform: uppercase; letter-spacing: .07em; color: var(--amber-dark); margin-bottom: .1rem; }
-    .note-text { font-size: .74rem; color: var(--text-2); line-height: 1.5; }
+    /* ── Panels base ────────────────────────────── */
+    .panel {
+      display: none;
+      position: fixed;
+      inset: var(--header-h) 0 var(--tab-h) 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg);
+    }
+    .panel.active { display: block; }
 
-    /* ── Data note ── */
-    .data-note { font-family: var(--mono); font-size: .62rem; color: var(--text-3); line-height: 1.55; padding: .6rem .75rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 1.25rem; }
+    #panel-info { inset: 0 0 var(--tab-h) 0; }
 
-    /* ── Filters ── */
-    .filters { display: flex; gap: .4rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .filter-btn { font-family: var(--mono); font-size: .6rem; letter-spacing: .07em; text-transform: uppercase; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--border); background: var(--surface); color: var(--text-3); cursor: pointer; transition: background .12s, color .12s, border-color .12s; }
-    .filter-btn:hover { border-color: var(--amber); color: var(--amber-dark); }
-    .filter-btn.active { background: var(--amber); border-color: var(--amber); color: #fff; }
-    .filter-btn[data-f="tbd"].active { background: var(--text-3); border-color: var(--text-3); }
-    .filter-btn[data-f="cancelled"].active { background: #aaa; border-color: #aaa; }
+    /* ── Timeline panel ─────────────────────────── */
+    #panel-timeline          { display: none; flex-direction: column; overflow: hidden; }
+    #panel-timeline.active   { display: flex; }
 
-    /* ── Township groups ── */
-    .township-group { margin-bottom: .5rem; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-    .township-summary { display: flex; align-items: center; justify-content: space-between; padding: .5rem .8rem; background: var(--bg-alt); cursor: pointer; list-style: none; user-select: none; gap: .5rem; }
-    .township-summary::-webkit-details-marker { display: none; }
-    .township-summary:hover { background: #ddd5b8; }
-    .ts-name { font-family: var(--cn); font-size: .88rem; font-weight: 600; }
-    .ts-meta { display: flex; align-items: center; gap: .5rem; }
-    .ts-count { font-family: var(--mono); font-size: .58rem; color: var(--text-3); }
-    .ts-dates { font-family: var(--mono); font-size: .58rem; color: var(--amber-dark); }
-    .ts-chevron { font-size: .7rem; color: var(--text-3); transition: transform .15s; }
-    details[open] .ts-chevron { transform: rotate(90deg); }
+    .tl-month-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      flex-shrink: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tl-month-tabs::-webkit-scrollbar { display: none; }
+    .tl-month-tab {
+      flex: 0 0 auto;
+      padding: .55rem 1.25rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: var(--text-3);
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+      -webkit-tap-highlight-color: transparent;
+      white-space: nowrap;
+    }
+    .tl-month-tab.active { color: var(--accent); border-color: var(--accent); }
 
-    .cards-in-group { display: flex; flex-direction: column; }
+    .tl-week-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .3rem .5rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      background: var(--bg);
+    }
+    .tl-nav-btn {
+      font-size: 1.2rem;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 2px .75rem;
+      line-height: 1;
+      border-radius: var(--r);
+      transition: background .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tl-nav-btn:hover { background: var(--bg-alt); }
+    .tl-nav-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--text-2);
+      letter-spacing: .04em;
+    }
 
-    /* ── Village card ── */
+    /* Date strip */
+    .tl-strip-scroll {
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      border-bottom: 2px solid var(--border-2);
+      user-select: none;
+      -webkit-user-select: none;
+      flex-shrink: 0;
+      background: var(--bg);
+    }
+    .tl-strip-scroll::-webkit-scrollbar { display: none; }
+
+    .tl-strip-inner { position: relative; display: inline-block; }
+
+    /* Multi-day bands */
+    .tl-bands-layer { position: relative; width: 100%; }
+    .tl-band {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 2px;
+      background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.55) h);
+      padding: 0 5px;
+    }
+    .tl-band-label {
+      font-family: var(--mono);
+      font-size: .65rem;
+      letter-spacing: .03em;
+      color: oklch(from var(--accent) calc(l - 0.18) calc(c * 0.9) h);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Date cells */
+    .tl-cells-layer { display: flex; border-bottom: 2px solid var(--border-2); }
+    .tl-cell {
+      flex-shrink: 0;
+      width: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: .35rem .2rem .4rem;
+      cursor: pointer;
+      border-right: 1px solid var(--border);
+      transition: background .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tl-cell:last-child  { border-right: none; }
+    .tl-cell:hover       { background: var(--bg-alt); }
+    .tl-cell.active      { background: var(--accent); }
+    .tl-cell.today:not(.active) .tl-daynum { color: var(--accent); }
+
+    .tl-weekday {
+      font-family: var(--mono);
+      font-size: .48rem;
+      letter-spacing: .06em;
+      color: var(--text-3);
+      margin-bottom: .1rem;
+    }
+    .tl-cell.active .tl-weekday { color: oklch(from var(--bg) calc(l - 0.06) c h); }
+
+    .tl-daynum {
+      font-family: var(--disp);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-1);
+      line-height: 1;
+    }
+    .tl-cell.active .tl-daynum { color: var(--bg); }
+
+    .tl-count {
+      font-family: var(--mono);
+      font-size: .46rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 99px;
+      padding: 1px 4px;
+      margin-top: .18rem;
+      min-width: 14px;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .tl-cell.active .tl-count { background: var(--bg); color: var(--accent); }
+    .tl-count-empty { height: 13px; margin-top: .18rem; }
+
+    /* County chips */
+    .tl-county {
+      display: flex;
+      gap: .4rem;
+      padding: .45rem .85rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      background: var(--bg);
+    }
+    .tl-chip {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .07em;
+      padding: 3px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: background .12s, color .12s, border-color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tl-chip.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .tl-chip:hover:not(.active) { border-color: var(--amber); color: var(--amber-dark); }
+
+    /* Day card list */
+    .tl-day-list {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+    .tl-day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .45rem .85rem .3rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 5;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--text-2);
+      letter-spacing: .05em;
+    }
+    .tl-day-count { color: var(--text-3); font-size: .58rem; }
+    .tl-empty {
+      padding: 2rem .85rem;
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--text-3);
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    /* ── Map panel ──────────────────────────────── */
+    #panel-map          { display: none; overflow: hidden; }
+    #panel-map.active   { display: block; }
+    #map                { position: absolute; inset: 0; }
+
+    .map-chips {
+      position: absolute;
+      top: 12px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 500;
+      display: flex;
+      gap: 3px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 4px 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.15);
+      white-space: nowrap;
+    }
+    .map-chip {
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .06em;
+      padding: 3px 11px;
+      border-radius: 99px;
+      border: none;
+      background: transparent;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: background .12s, color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .map-chip.active             { background: var(--accent); color: var(--bg); }
+    .map-chip:hover:not(.active) { background: var(--bg-alt); }
+
+    /* ── Bottom sheet ───────────────────────────── */
+    .bs {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 92%;
+      background: var(--surface);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 -4px 24px oklch(from var(--ink) l c h / 0.12);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 400;
+      transform: translateY(calc(100% - 28px));
+      transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+      will-change: transform;
+    }
+    .bs[data-state="full"]      { transform: translateY(0); }
+    .bs[data-state="half"]      { transform: translateY(50%); }
+    .bs[data-state="collapsed"] { transform: translateY(calc(100% - 28px)); }
+
+    .bs-handle-bar {
+      flex-shrink: 0;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bs-handle-bar:active { cursor: grabbing; }
+    .bs-handle-pill {
+      width: 36px; height: 4px;
+      border-radius: 2px;
+      background: var(--border-2);
+    }
+
+    .bs-pills-row {
+      flex-shrink: 0;
+      display: flex;
+      gap: .4rem;
+      padding: .4rem .75rem .5rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .bs-pills-row::-webkit-scrollbar { display: none; }
+
+    .bs-pill {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .06em;
+      padding: 3px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .12s, color .12s, border-color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bs-pill.active              { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .bs-pill:hover:not(.active)  { border-color: var(--amber); color: var(--amber-dark); }
+
+    .bs-content {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-2) transparent;
+    }
+    .bs-content::-webkit-scrollbar       { width: 3px; }
+    .bs-content::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
+    .bs-cluster-label {
+      position: sticky;
+      top: 0; z-index: 10;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem .85rem .3rem;
+      border-top: 1px solid var(--border);
+    }
+    .bs-cluster-label > .cl-text {
+      font-family: var(--mono);
+      font-size: .58rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--text-3);
+    }
+    .bs-cluster-count {
+      font-family: var(--mono);
+      font-size: .52rem;
+      letter-spacing: .04em;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 1px 7px;
+      color: var(--text-3);
+    }
+    .bs-empty {
+      padding: .75rem .85rem 1rem;
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--text-3);
+      letter-spacing: .06em;
+      font-style: italic;
+    }
+
+    /* ── Shared village cards ───────────────────── */
     .village-card {
       padding: .6rem .85rem;
       border-left: 3px solid transparent;
       border-bottom: 1px solid var(--border);
       cursor: pointer;
       transition: border-left-color .15s, background .15s;
-      scroll-margin-top: calc(var(--header-h) + 44vh + 8px);
-      display: flex; gap: .6rem; align-items: flex-start;
+      -webkit-tap-highlight-color: transparent;
     }
     .village-card:last-child { border-bottom: none; }
-    .village-card:hover { border-left-color: var(--amber-pale); background: #fdf9ef; }
-    .village-card.active { border-left-color: var(--amber); background: #fffbf0; }
-    .village-card.hidden { display: none; }
+    .village-card:hover  { border-left-color: var(--amber-pale); background: var(--bg); }
+    .village-card.active { border-left-color: var(--amber);      background: var(--bg); }
 
-    .card-status-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; }
-    .card-status-dot.confirmed { background: var(--green); }
-    .card-status-dot.tbd { background: var(--text-3); }
-    .card-status-dot.cancelled { background: #bbb; }
-
-    .card-body { flex: 1; min-width: 0; }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+    .card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
     .card-names { flex: 1; min-width: 0; }
-    .card-chinese { font-family: var(--cn); font-size: .95rem; font-weight: 600; line-height: 1.25; }
-    .card-amis { font-family: var(--mono); font-size: .6rem; color: var(--terra); letter-spacing: .03em; display: block; margin-top: 1px; }
-    .card-date { font-family: var(--mono); font-size: .68rem; color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
-    .card-cancelled .card-date { color: #aaa; text-decoration: line-through; }
-    .card-tbd .card-date { color: var(--text-3); }
-    .card-venue { font-size: .72rem; color: var(--text-2); margin-top: .15rem; }
-    .card-footer { margin-top: .3rem; }
-    .card-source { font-family: var(--mono); font-size: .58rem; color: var(--text-3); text-decoration: none; }
+    .card-chinese { font-family: var(--cn);   font-size: .95rem; font-weight: 600; line-height: 1.25; }
+    .card-amis    { font-family: var(--mono); font-size: .6rem;  color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
+    .card-date    { font-family: var(--mono); font-size: .68rem; color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
+    .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
+    .card-tbd .card-date       { color: var(--text-3); }
+    .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
+    .card-venue  { font-size: .72rem; color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .card-maps   { font-family: var(--mono); font-size: .52rem; color: var(--text-3); text-decoration: none; margin-left: .3rem; }
+    .card-maps:hover { color: var(--amber); }
+    .card-source { font-family: var(--mono); font-size: .58rem; color: var(--text-3); text-decoration: none; flex-shrink: 0; }
     .card-source:hover { color: var(--amber); text-decoration: underline; }
 
-    /* ── Leaflet overrides ── */
+    /* ── Placeholder panels ─────────────────────── */
+    .panel-placeholder {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      color: var(--text-3);
+      font-family: var(--mono);
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .panel-placeholder .ph-icon { font-size: 1.75rem; }
+
+    /* ── Leaflet overrides ──────────────────────── */
     .leaflet-container { background: var(--bg-alt); }
-    .leaflet-popup-content-wrapper { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); box-shadow: 0 2px 10px rgba(0,0,0,.14); color: var(--text-1); }
+    .leaflet-popup-content-wrapper {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r); box-shadow: 0 2px 10px rgba(0,0,0,.14); color: var(--text-1);
+    }
     .leaflet-popup-tip { background: var(--surface); }
     .leaflet-popup-content { margin: .55rem .8rem !important; line-height: 1.4; }
-    .popup-cn { font-family: var(--cn); font-size: .88rem; font-weight: 600; display: block; }
-    .popup-sub { font-family: var(--mono); font-size: .6rem; color: var(--text-2); display: block; }
+    .popup-cn   { font-family: var(--cn);   font-size: .88rem; font-weight: 600; display: block; }
+    .popup-sub  { font-family: var(--mono); font-size: .6rem;  color: var(--text-2); display: block; }
     .popup-date { font-family: var(--mono); font-size: .62rem; color: var(--amber-dark); font-weight: 700; margin-top: .15rem; display: block; }
     .leaflet-control-zoom a { color: var(--text-2) !important; background: var(--surface) !important; border-color: var(--border) !important; }
-    /* Cluster styles */
-    .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large { background-color: rgba(191,126,26,.25) !important; }
-    .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div { background-color: rgba(191,126,26,.7) !important; color: #fff !important; font-family: var(--mono) !important; font-size: .65rem !important; }
-
-    /* ── Desktop ── */
-    @media (min-width: 768px) {
-      body { overflow: hidden; }
-      .app-layout { flex-direction: row; height: calc(100vh - var(--header-h)); }
-      .map-panel { position: static; flex: 0 0 44%; height: 100%; max-height: none; min-height: 0; border-bottom: none; border-right: 2px solid var(--border-2); }
-      .info-panel-wrapper { flex: 1; overflow-y: auto; height: 100%; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--border-2) var(--bg); }
-      .info-panel-wrapper::-webkit-scrollbar { width: 4px; }
-      .info-panel-wrapper::-webkit-scrollbar-track { background: var(--bg); }
-      .info-panel-wrapper::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
-      .info-panel { padding: 1.5rem 1.25rem 5rem; }
-      .village-card { scroll-margin-top: 1rem; }
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large  { background-color: oklch(from var(--accent) l c h / 0.22) !important; }
+    .marker-cluster-small  div,
+    .marker-cluster-medium div,
+    .marker-cluster-large  div {
+      background-color: oklch(from var(--accent) l c h / 0.72) !important;
+      color: var(--bg) !important; font-family: var(--mono) !important; font-size: .65rem !important;
     }
   </style>
 </head>
-<body>
+<body class="tab-timeline">
 
-<header class="site-header">
+<header class="app-header">
   <div class="header-left">
     <img src="logo.png" alt="Ilisin" class="logo-img" />
     <span class="header-title">豐年祭地圖</span>
-    <span class="header-sub">Ilisin 2026 · Pangcah</span>
   </div>
-  <div style="display:flex;align-items:center;gap:.6rem">
-    <span class="header-count" id="headerCount"></span>
+  <div class="header-right">
+    <button class="theme-btn" id="themeBtn" aria-label="切換主題"></button>
     <button class="install-btn" id="installBtn" hidden>安裝</button>
   </div>
 </header>
 
-<div class="app-body">
-  <div class="app-layout" id="appLayout">
+<!-- ── Timeline panel ── -->
+<div class="panel active" id="panel-timeline">
+  <div class="tl-month-tabs" id="tlMonthTabs"></div>
+  <div class="tl-week-nav">
+    <button class="tl-nav-btn" id="tlNavPrev">‹</button>
+    <span class="tl-nav-label" id="tlNavLabel"></span>
+    <button class="tl-nav-btn" id="tlNavNext">›</button>
+  </div>
+  <div class="tl-strip-scroll" id="tlStripScroll"></div>
+  <div class="tl-county" id="tlCounty">
+    <button class="tl-chip active" data-county="all">全部</button>
+    <button class="tl-chip" data-county="花蓮縣">花蓮</button>
+    <button class="tl-chip" data-county="臺東縣">臺東</button>
+  </div>
+  <div class="tl-day-list" id="tlDayList"></div>
+</div>
 
-    <div class="map-panel">
-      <div id="map"></div>
+<!-- ── Map panel ── -->
+<div class="panel" id="panel-map">
+  <div id="map"></div>
+  <div class="map-chips" id="mapCountyChips">
+    <button class="map-chip active" data-county="all">全部</button>
+    <button class="map-chip" data-county="花蓮縣">花蓮</button>
+    <button class="map-chip" data-county="臺東縣">臺東</button>
+  </div>
+  <div class="bs" id="bottomSheet" data-state="collapsed">
+    <div class="bs-handle-bar" id="bsHandle">
+      <div class="bs-handle-pill"></div>
     </div>
-
-    <div class="info-panel-wrapper" id="infoPanelWrapper">
-      <div class="info-panel">
-
-        <section class="notes-section">
-          <h2 class="section-label">重要資訊 · Key Notes</h2>
-          <div class="notes-grid" id="notesGrid"></div>
-        </section>
-
-        <div class="data-note" id="dataNoteEl"></div>
-
-        <section>
-          <h2 class="section-label">部落 · Villages</h2>
-          <div class="filters" id="filters">
-            <button class="filter-btn active" data-f="all">全部</button>
-            <button class="filter-btn" data-f="confirmed">● 已公告</button>
-            <button class="filter-btn" data-f="tbd">○ 未定</button>
-            <button class="filter-btn" data-f="cancelled">✕ 停辦</button>
-          </div>
-          <div id="groupsList"></div>
-        </section>
-
-      </div>
+    <div class="bs-pills-row" id="bsPills"></div>
+    <div class="bs-content" id="bsContent">
+      <div id="bsList"></div>
     </div>
-
   </div>
 </div>
+
+<!-- ── Search panel ── -->
+<div class="panel" id="panel-search">
+  <div class="panel-placeholder">
+    <span class="ph-icon">○</span>
+    搜尋 · Phase 4
+  </div>
+</div>
+
+<!-- ── Info panel ── -->
+<div class="panel" id="panel-info">
+  <div class="panel-placeholder">
+    <span class="ph-icon">◇</span>
+    關於 · Phase 5
+  </div>
+</div>
+
+<!-- ── Tab bar ── -->
+<nav class="tab-bar">
+  <button class="tab-btn active" data-tab="timeline">
+    <span class="tab-icon">◈</span>
+    <span class="tab-label">行事曆</span>
+  </button>
+  <button class="tab-btn" data-tab="map">
+    <span class="tab-icon">◎</span>
+    <span class="tab-label">地圖</span>
+  </button>
+  <button class="tab-btn" data-tab="search">
+    <span class="tab-icon">○</span>
+    <span class="tab-label">搜尋</span>
+  </button>
+  <button class="tab-btn" data-tab="info">
+    <span class="tab-icon">◇</span>
+    <span class="tab-label">關於</span>
+  </button>
+</nav>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="data.js"></script>
 <script>
-/* ── Layout ─────────────────────────────────────── */
-function applyLayout() {
-  document.body.style.overflow = window.innerWidth >= 768 ? 'hidden' : '';
-}
-applyLayout();
-window.addEventListener('resize', applyLayout);
 
-/* ── Map ─────────────────────────────────────────── */
+/* ── Theme ───────────────────────────────────────── */
+const THEMES  = ['', 'night', 'coast', null];
+const T_LABEL = ['☀ 日', '◑ 夜', '◐ 海', '— —'];
+let themeIdx  = 0;
+
+function applyTheme(idx) {
+  themeIdx = idx % THEMES.length;
+  document.documentElement.dataset.theme = THEMES[themeIdx] ?? '';
+  document.getElementById('themeBtn').textContent = T_LABEL[themeIdx];
+  localStorage.setItem('ilisin-theme', String(themeIdx));
+}
+(function initTheme() {
+  const saved = Number.parseInt(localStorage.getItem('ilisin-theme') ?? '0', 10);
+  applyTheme(Number.isNaN(saved) ? 0 : saved);
+})();
+document.getElementById('themeBtn').addEventListener('click', () => applyTheme(themeIdx + 1));
+
+/* ── Tab switching ───────────────────────────────── */
+let currentTab = 'timeline';
+
+function switchTab(name) {
+  if (name === currentTab) return;
+  document.getElementById('panel-' + currentTab).classList.remove('active');
+  document.getElementById('panel-' + name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.tab === name)
+  );
+  document.body.className = 'tab-' + name;
+  currentTab = name;
+  if (name === 'map') {
+    if (mapInitialized) {
+      leafletMap.invalidateSize();
+    } else {
+      initMap();
+      mapInitialized = true;
+    }
+  }
+}
+document.querySelector('.tab-bar').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (btn) switchTab(btn.dataset.tab);
+});
+
+/* ── Shared date utilities ───────────────────────── */
+const DECADE_DAY = { '上': 5, '中': 15, '下': 25 };
+const WEEKDAYS   = '日一二三四五六';
+
+function parseStartDate(str) {
+  const slash = str.match(/(\d{1,2})\/(\d{1,2})/);
+  if (slash) return new Date(2026, Number(slash[1]) - 1, Number(slash[2]));
+  const decade = str.match(/(\d{1,2})月([上中下])旬/);
+  if (decade) return new Date(2026, Number(decade[1]) - 1, DECADE_DAY[decade[2]]);
+  return null;
+}
+
+function parseEndDate(str) {
+  const m = str.match(/\d{1,2}\/\d{1,2}[^–—]*[–—](\d{1,2})\/(\d{1,2})/);
+  if (m) return new Date(2026, Number(m[1]) - 1, Number(m[2]));
+  return null;
+}
+
+function dayDecade(d) {
+  if (d <= 10) return '上旬';
+  if (d <= 20) return '中旬';
+  return '下旬';
+}
+function clusterKey(date) {
+  return `${date.getMonth() + 1}月${dayDecade(date.getDate())}`;
+}
+
+/* ── Shared card HTML ────────────────────────────── */
+function cardHtml(v, onclickAttr) {
+  const amisHtml   = v.amis ? `<span class="card-amis">${v.amis}</span>` : '';
+  const sourceHtml = `<a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ ${SOURCES[v.src].label}</a>`;
+  const hasVenue   = v.venue && v.venue !== '—';
+  const mapsUrl    = hasVenue
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
+    : `https://www.google.com/maps/search/?api=1&query=${v.lat},${v.lng}`;
+  const venueHtml  = hasVenue
+    ? `<span class="card-venue">${v.venue}<a class="card-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗地圖</a></span>`
+    : '';
+  return `<div class="village-card card-${v.status}" id="card-${v.id}" ${onclickAttr}>
+    <div class="card-top">
+      <div class="card-names"><span class="card-chinese">${v.chinese}</span>${amisHtml}</div>
+      <span class="card-date">${v.date}</span>
+    </div>
+    <div class="card-meta">${venueHtml}${sourceHtml}</div>
+  </div>`;
+}
+
+/* ── Drag-to-scroll utility ──────────────────────── */
+function addDragScroll(el) {
+  let down = false, startX, startLeft, didDrag = false;
+  el.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    down = true; didDrag = false;
+    startX = e.clientX; startLeft = el.scrollLeft;
+  });
+  document.addEventListener('mousemove', e => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) { didDrag = true; el.scrollLeft = startLeft - dx; }
+  });
+  document.addEventListener('mouseup', () => { down = false; });
+  // Block child clicks that follow a drag (capture phase so it fires before child handlers)
+  el.addEventListener('click', e => {
+    if (didDrag) { didDrag = false; e.stopImmediatePropagation(); }
+  }, true);
+}
+
+/* ═══════════════════════════════════════════════════
+   TIMELINE
+   ═══════════════════════════════════════════════════ */
+const CELL_W   = 48;
+const BAND_H   = 18;
+const BAND_GAP = 3;
+
+let tlMonths       = [];
+let tlActiveMonth  = null;
+let tlSelectedDay  = null;
+let tlAnchorDate   = null;
+let tlCountyFilter = 'all';
+
+function villagesOnDay(date) {
+  return VILLAGES.filter(v => {
+    if (v.status === 'tbd' || v.status === 'cancelled') return false;
+    if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
+    const start = parseStartDate(v.date);
+    if (!start) return false;
+    const end = parseEndDate(v.date) || start;
+    return date >= start && date <= end;
+  });
+}
+
+function initTimeline() {
+  const starts = VILLAGES
+    .filter(v => v.status !== 'tbd')
+    .map(v => parseStartDate(v.date))
+    .filter(Boolean)
+    .sort((a, b) => a - b);
+
+  if (!starts.length) return;
+
+  const minDate = starts[0];
+  const maxDate = starts[starts.length - 1];
+
+  // Build month list
+  const cursor   = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+  const endMonth = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
+  tlMonths = [];
+  while (cursor <= endMonth) {
+    tlMonths.push(new Date(cursor));
+    cursor.setMonth(cursor.getMonth() + 1);
+  }
+
+  // Default day: today if it has events, else next upcoming event day, else first in dataset
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  let defaultDay = null;
+  if (today >= minDate) {
+    if (villagesOnDay(today).length > 0) {
+      defaultDay = today;
+    } else {
+      // Walk forward from tomorrow to find the next day with events
+      const look = new Date(today);
+      look.setDate(look.getDate() + 1);
+      while (look <= maxDate) {
+        if (villagesOnDay(look).length > 0) { defaultDay = new Date(look); break; }
+        look.setDate(look.getDate() + 1);
+      }
+    }
+  }
+  if (!defaultDay) {
+    for (const m of tlMonths) {
+      defaultDay = firstEventDayInMonth(m);
+      if (defaultDay) break;
+    }
+  }
+  defaultDay = defaultDay || new Date(tlMonths[0].getFullYear(), tlMonths[0].getMonth(), 1);
+
+  tlActiveMonth = new Date(defaultDay.getFullYear(), defaultDay.getMonth(), 1);
+  tlSelectedDay = defaultDay;
+  tlAnchorDate  = new Date(defaultDay);
+
+  renderMonthTabs();
+  renderStrip();
+  renderDayCards();
+  updateNavLabel();
+  requestAnimationFrame(() => scrollStripToDay(tlSelectedDay));
+
+  addDragScroll(document.getElementById('tlStripScroll'));
+  addDragScroll(document.getElementById('tlMonthTabs'));
+}
+
+function firstEventDayInMonth(monthDate) {
+  const y = monthDate.getFullYear();
+  const m = monthDate.getMonth();
+  const days = new Date(y, m + 1, 0).getDate();
+  for (let d = 1; d <= days; d++) {
+    const date = new Date(y, m, d);
+    if (villagesOnDay(date).length > 0) return date;
+  }
+  return null;
+}
+
+function renderMonthTabs() {
+  document.getElementById('tlMonthTabs').innerHTML = tlMonths.map(m => {
+    const active = tlActiveMonth &&
+      m.getFullYear() === tlActiveMonth.getFullYear() &&
+      m.getMonth() === tlActiveMonth.getMonth();
+    return `<button class="tl-month-tab${active ? ' active' : ''}" data-ts="${m.getTime()}">${m.getMonth() + 1}月</button>`;
+  }).join('');
+}
+
+function renderStrip() {
+  const y     = tlActiveMonth.getFullYear();
+  const mo    = tlActiveMonth.getMonth();
+  const days  = new Date(y, mo + 1, 0).getDate();
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  // Multi-day villages overlapping this month
+  const multiDay = VILLAGES
+    .filter(v => {
+      if (v.status === 'tbd' || v.status === 'cancelled') return false;
+      if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
+      return parseEndDate(v.date) !== null;
+    })
+    .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) }))
+    .filter(v => v._s && v._e &&
+      v._s <= new Date(y, mo + 1, 0) &&
+      v._e >= new Date(y, mo, 1)
+    );
+
+  // Render bands
+  let bandsHtml = '';
+  const bandsHeight = multiDay.length * (BAND_H + BAND_GAP);
+  multiDay.forEach((v, i) => {
+    const sd  = v._s.getMonth() === mo ? v._s.getDate() : 1;
+    const ed  = v._e.getMonth() === mo ? v._e.getDate() : days;
+    const left = (sd - 1) * CELL_W;
+    const w    = (ed - sd + 1) * CELL_W;
+    const top  = i * (BAND_H + BAND_GAP);
+    bandsHtml += `<div class="tl-band" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px">
+      <span class="tl-band-label">${v.chinese}</span>
+    </div>`;
+  });
+
+  // Render cells
+  let cellsHtml = '';
+  for (let d = 1; d <= days; d++) {
+    const date     = new Date(y, mo, d);
+    const count    = villagesOnDay(date).length;
+    const isActive = tlSelectedDay && date.toDateString() === tlSelectedDay.toDateString();
+    const isToday  = date.toDateString() === today.toDateString();
+    const cls      = ['tl-cell', isActive ? 'active' : '', isToday ? 'today' : ''].filter(Boolean).join(' ');
+    const badge    = count > 0 ? `<span class="tl-count">${count}</span>` : '<span class="tl-count-empty"></span>';
+    cellsHtml += `<div class="${cls}" data-date="${date.toDateString()}" onclick="selectDay(new Date(${date.getTime()}))">
+      <span class="tl-weekday">${WEEKDAYS[date.getDay()]}</span>
+      <span class="tl-daynum">${d}</span>
+      ${badge}
+    </div>`;
+  }
+
+  const totalW = days * CELL_W;
+  document.getElementById('tlStripScroll').innerHTML =
+    `<div class="tl-strip-inner" style="width:${totalW}px">
+      <div class="tl-cells-layer">${cellsHtml}</div>
+      <div class="tl-bands-layer" style="height:${bandsHeight}px;position:relative">${bandsHtml}</div>
+    </div>`;
+}
+
+function selectDay(date) {
+  tlSelectedDay = date;
+  document.querySelectorAll('.tl-cell').forEach(c =>
+    c.classList.toggle('active', c.dataset.date === date.toDateString())
+  );
+  renderDayCards();
+}
+
+function scrollStripToDay(date) {
+  const scroll = document.getElementById('tlStripScroll');
+  const d = date.getDate();
+  const target = Math.max(0, (d - 1) * CELL_W - scroll.clientWidth / 2 + CELL_W / 2);
+  scroll.scrollTo({ left: target, behavior: 'smooth' });
+}
+
+function updateNavLabel() {
+  const end = new Date(tlAnchorDate);
+  end.setDate(end.getDate() + 6);
+  const fmt = d => `${d.getMonth() + 1}/${d.getDate()}`;
+  document.getElementById('tlNavLabel').textContent = `${fmt(tlAnchorDate)} – ${fmt(end)}`;
+}
+
+function renderDayCards() {
+  const list     = document.getElementById('tlDayList');
+  const d        = tlSelectedDay;
+  const label    = `${d.getMonth() + 1}月${d.getDate()}日 ${WEEKDAYS[d.getDay()]}`;
+  const villages = villagesOnDay(d);
+
+  if (villages.length === 0) {
+    list.innerHTML = `<div class="tl-day-header"><span>${label}</span></div>
+      <div class="tl-empty">本日暫無祭儀</div>`;
+    return;
+  }
+  list.innerHTML = `<div class="tl-day-header">
+      <span>${label}</span>
+      <span class="tl-day-count">${villages.length} 部落</span>
+    </div>
+    ${villages.map(v => cardHtml(v, `onclick="goToMapVillage('${v.id}')"`)).join('')}`;
+}
+
+// Month tab clicks
+document.getElementById('tlMonthTabs').addEventListener('click', e => {
+  const tab = e.target.closest('.tl-month-tab');
+  if (!tab) return;
+  tlActiveMonth = new Date(Number(tab.dataset.ts));
+  renderMonthTabs();
+  const target = firstEventDayInMonth(tlActiveMonth) ||
+                 new Date(tlActiveMonth.getFullYear(), tlActiveMonth.getMonth(), 1);
+  tlSelectedDay = target;
+  tlAnchorDate  = new Date(target);
+  renderStrip();
+  renderDayCards();
+  updateNavLabel();
+  requestAnimationFrame(() => scrollStripToDay(target));
+});
+
+// Week nav
+document.getElementById('tlNavPrev').addEventListener('click', () => {
+  tlAnchorDate.setDate(tlAnchorDate.getDate() - 7);
+  updateNavLabel();
+  scrollStripToDay(tlAnchorDate);
+});
+document.getElementById('tlNavNext').addEventListener('click', () => {
+  tlAnchorDate.setDate(tlAnchorDate.getDate() + 7);
+  updateNavLabel();
+  scrollStripToDay(tlAnchorDate);
+});
+
+// County filter
+document.getElementById('tlCounty').addEventListener('click', e => {
+  const chip = e.target.closest('.tl-chip');
+  if (!chip) return;
+  tlCountyFilter = chip.dataset.county;
+  document.querySelectorAll('.tl-chip').forEach(c => c.classList.toggle('active', c === chip));
+  renderStrip();
+  renderDayCards();
+});
+
+/* ═══════════════════════════════════════════════════
+   MAP
+   ═══════════════════════════════════════════════════ */
 let leafletMap, clusterGroup;
+let mapInitialized = false;
 const markers = {};
-let activeId = null;
+let activeId  = null;
 
 function makeIcon(v, active) {
-  const col = active ? '#9c3e18'
-    : v.status === 'cancelled' ? '#bbb'
-    : v.status === 'tbd' ? '#9c845a'
-    : '#bf7e1a';
-  const sz = active ? 14 : 10;
+  let col;
+  if      (active)                   col = 'var(--terra)';
+  else if (v.status === 'cancelled') col = 'oklch(68% 0 0)';
+  else if (v.status === 'tbd')       col = 'var(--text-3)';
+  else                               col = 'var(--accent)';
+  const sz    = active ? 14 : 10;
   const outer = sz + 8;
   return L.divIcon({
     className: '',
-    html: `<div style="display:flex;align-items:center;justify-content:center;width:${outer}px;height:${outer}px"><div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${col};border:2px solid rgba(255,251,240,.9);box-shadow:0 1px 5px rgba(0,0,0,.28);${active ? 'transform:scale(1.3);' : ''}"></div></div>`,
-    iconSize: [outer, outer],
-    iconAnchor: [outer / 2, outer / 2],
-    popupAnchor: [0, -(sz / 2 + 4)]
+    html: `<div style="display:flex;align-items:center;justify-content:center;width:${outer}px;height:${outer}px">` +
+          `<div style="width:${sz}px;height:${sz}px;border-radius:50%;background:${col};` +
+          `border:2px solid var(--surface);box-shadow:0 1px 5px rgba(0,0,0,.28);` +
+          `${active ? 'transform:scale(1.3);' : ''}"></div></div>`,
+    iconSize: [outer, outer], iconAnchor: [outer/2, outer/2], popupAnchor: [0, -(sz/2+4)]
+  });
+}
+
+let bsState    = 'collapsed';
+const TAP_NEXT = { collapsed: 'half', half: 'full', full: 'half' };
+
+function setSheetState(state) {
+  const prev = bsState;
+  bsState    = state;
+  document.getElementById('bottomSheet').dataset.state = state;
+  if (state === 'collapsed' && prev !== 'collapsed') deselect();
+}
+
+function deselect() {
+  if (!activeId) return;
+  const v = VILLAGES.find(v => v.id === activeId);
+  if (v) markers[activeId]?.setIcon(makeIcon(v, false));
+  document.getElementById('card-' + activeId)?.classList.remove('active');
+  markers[activeId]?.closePopup();
+  activeId = null;
+}
+
+let countyFilter = 'all';
+let activePill   = '本週';
+
+function renderSheet() {
+  const now     = new Date(); now.setHours(0, 0, 0, 0);
+  const weekEnd = new Date(now); weekEnd.setDate(now.getDate() + 7);
+
+  const base = VILLAGES
+    .filter(v => countyFilter === 'all' || v.county === countyFilter)
+    .map(v => ({ ...v, _date: parseStartDate(v.date) }));
+
+  const thisWeek = base.filter(v => v._date && v._date >= now && v._date < weekEnd);
+  const rest = base
+    .filter(v => !(v._date && v._date >= now && v._date < weekEnd))
+    .sort((a, b) => {
+      if (a.status === 'cancelled' && b.status !== 'cancelled') return 1;
+      if (b.status === 'cancelled' && a.status !== 'cancelled') return -1;
+      if (!a._date &&  b._date) return 1;
+      if ( a._date && !b._date) return -1;
+      if (!a._date && !b._date) return 0;
+      return a._date - b._date;
+    });
+  thisWeek.sort((a, b) => (!a._date || !b._date ? 0 : a._date - b._date));
+
+  const clusterMap = new Map();
+  rest.forEach(v => {
+    const key = v._date ? clusterKey(v._date) : '未定';
+    if (!clusterMap.has(key)) clusterMap.set(key, []);
+    clusterMap.get(key).push(v);
+  });
+
+  const pillKeys = ['本週', ...clusterMap.keys()];
+  document.getElementById('bsPills').innerHTML = pillKeys.map(k =>
+    `<button class="bs-pill${activePill === k ? ' active' : ''}" data-cluster="${k}">${k}</button>`
+  ).join('');
+
+  const emptyWeek = '<div class="bs-empty">本週暫無祭儀 · No events this week</div>';
+  let html = makeSectionHtml('本週', thisWeek.length,
+    thisWeek.length === 0 ? emptyWeek : thisWeek.map(v => cardHtml(v, `onclick="activateVillage('${v.id}')"`)).join('')
+  );
+  for (const [key, vs] of clusterMap) {
+    html += makeSectionHtml(key, vs.length, vs.map(v => cardHtml(v, `onclick="activateVillage('${v.id}')"`)).join(''));
+  }
+  document.getElementById('bsList').innerHTML = html;
+}
+
+function makeSectionHtml(label, count, inner) {
+  return `<div class="bs-cluster" data-cluster="${label}">
+    <div class="bs-cluster-label">
+      <span class="cl-text">${label}</span>
+      <span class="bs-cluster-count">${count}</span>
+    </div>${inner}</div>`;
+}
+
+function activateVillage(id) {
+  if (activeId) {
+    const prev = VILLAGES.find(v => v.id === activeId);
+    if (prev) markers[activeId]?.setIcon(makeIcon(prev, false));
+    document.getElementById('card-' + activeId)?.classList.remove('active');
+    markers[activeId]?.closePopup();
+  }
+  activeId = id;
+  const v = VILLAGES.find(v => v.id === id);
+  if (!v) return;
+  markers[id]?.setIcon(makeIcon(v, true));
+  leafletMap.panTo([v.lat, v.lng], { animate: true, duration: 0.4 });
+  markers[id]?.openPopup();
+  if (bsState === 'collapsed') setSheetState('half');
+  const card = document.getElementById('card-' + id);
+  if (card) {
+    card.classList.add('active');
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+  }
+}
+
+function goToMapVillage(id) {
+  switchTab('map');
+  setTimeout(() => activateVillage(id), mapInitialized ? 50 : 350);
+}
+
+document.getElementById('mapCountyChips').addEventListener('click', e => {
+  const chip = e.target.closest('.map-chip');
+  if (!chip) return;
+  countyFilter = chip.dataset.county;
+  document.querySelectorAll('.map-chip').forEach(c => c.classList.toggle('active', c === chip));
+  renderSheet();
+  updateMarkers();
+});
+
+function updateMarkers() {
+  if (!mapInitialized) return;
+  clusterGroup.clearLayers();
+  VILLAGES.forEach(v => {
+    if ((countyFilter === 'all' || v.county === countyFilter) && markers[v.id]) {
+      clusterGroup.addLayer(markers[v.id]);
+    }
+  });
+}
+
+document.getElementById('bsPills').addEventListener('click', e => {
+  const pill = e.target.closest('.bs-pill');
+  if (!pill) return;
+  activePill = pill.dataset.cluster;
+  document.querySelectorAll('.bs-pill').forEach(p => p.classList.toggle('active', p === pill));
+  const target = document.querySelector(`.bs-cluster[data-cluster="${activePill}"]`);
+  if (target) document.getElementById('bsContent').scrollTop = target.offsetTop;
+  if (bsState === 'collapsed') setSheetState('half');
+});
+
+function initSheetDrag() {
+  const sheet  = document.getElementById('bottomSheet');
+  const handle = document.getElementById('bsHandle');
+  let startY = 0, startTY = 0, dragging = false;
+
+  function tyForState(s) {
+    const h = sheet.offsetHeight;
+    if (s === 'full') return 0;
+    if (s === 'half') return h * 0.5;
+    return h - 28;
+  }
+
+  handle.addEventListener('pointerdown', e => {
+    dragging = true; startY = e.clientY; startTY = tyForState(bsState);
+    sheet.style.transition = 'none';
+    handle.setPointerCapture(e.pointerId);
+  });
+  handle.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const clamped = Math.max(0, Math.min(sheet.offsetHeight - 28, startTY + (e.clientY - startY)));
+    sheet.style.transform = `translateY(${clamped}px)`;
+  });
+  handle.addEventListener('pointerup', e => {
+    if (!dragging) return;
+    dragging = false;
+    sheet.style.transition = '';
+    sheet.style.transform  = '';
+    const delta = e.clientY - startY;
+    if (Math.abs(delta) < 8) {
+      setSheetState(TAP_NEXT[bsState]);
+    } else if (delta > 60) {
+      setSheetState(bsState === 'full' ? 'half' : 'collapsed');
+    } else if (delta < -60) {
+      setSheetState(bsState === 'collapsed' ? 'half' : 'full');
+    } else {
+      setSheetState(bsState);
+    }
   });
 }
 
@@ -258,9 +1236,8 @@ function initMap() {
   }).addTo(leafletMap);
 
   clusterGroup = L.markerClusterGroup({
-    maxClusterRadius: 40,
-    spiderfyOnMaxZoom: true,
-    showCoverageOnHover: false
+    maxClusterRadius: 40, spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false, circleSpiralSwitchover: Infinity
   });
 
   VILLAGES.forEach(v => {
@@ -277,124 +1254,17 @@ function initMap() {
   });
 
   leafletMap.addLayer(clusterGroup);
+  leafletMap.on('click', () => deselect());
+  renderSheet();
+  initSheetDrag();
 }
-
-/* ── Activate ────────────────────────────────────── */
-function activateVillage(id) {
-  if (activeId) {
-    const prev = VILLAGES.find(v => v.id === activeId);
-    if (prev) markers[activeId]?.setIcon(makeIcon(prev, false));
-    document.getElementById('card-' + activeId)?.classList.remove('active');
-    markers[activeId]?.closePopup();
-  }
-  activeId = id;
-  const v = VILLAGES.find(v => v.id === id);
-  if (!v) return;
-
-  markers[id]?.setIcon(makeIcon(v, true));
-  leafletMap.panTo([v.lat, v.lng], { animate: true, duration: 0.4 });
-  markers[id]?.openPopup();
-
-  const card = document.getElementById('card-' + id);
-  if (card) {
-    // Open parent details if closed
-    const det = card.closest('details');
-    if (det && !det.open) det.open = true;
-    card.classList.add('active');
-    setTimeout(() => {
-      const isDesktop = window.innerWidth >= 768;
-      if (isDesktop) {
-        const wrapper = document.getElementById('infoPanelWrapper');
-        const off = card.getBoundingClientRect().top - wrapper.getBoundingClientRect().top - 12;
-        wrapper.scrollBy({ top: off, behavior: 'smooth' });
-      } else {
-        const hh = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'));
-        const mh = document.querySelector('.map-panel').offsetHeight;
-        window.scrollTo({ top: card.getBoundingClientRect().top + window.scrollY - hh - mh - 8, behavior: 'smooth' });
-      }
-    }, 80);
-  }
-}
-
-/* ── Render notes ────────────────────────────────── */
-function renderNotes() {
-  document.getElementById('notesGrid').innerHTML = GENERAL_NOTES.map(n =>
-    `<div class="note-item"><span class="note-icon">${n.icon}</span><div><div class="note-label">${n.label}</div><div class="note-text">${n.text}</div></div></div>`
-  ).join('');
-  document.getElementById('dataNoteEl').textContent = DATA_NOTE;
-}
-
-/* ── Render villages ─────────────────────────────── */
-function renderVillages() {
-  // Group by county → township (preserve order from VILLAGES array)
-  const groups = [];
-  const seen = {};
-  VILLAGES.forEach(v => {
-    const key = v.county + '|' + v.township;
-    if (!seen[key]) { seen[key] = groups.length; groups.push({ county: v.county, township: v.township, villages: [] }); }
-    groups[seen[key]].villages.push(v);
-  });
-
-  const total = VILLAGES.length;
-  document.getElementById('headerCount').textContent = total + ' 部落';
-
-  document.getElementById('groupsList').innerHTML = groups.map(g => {
-    const dates = [...new Set(g.villages.filter(v => v.status === 'confirmed').map(v => v.date.split('–')[0].split('（')[0].trim()))].slice(0, 3).join('、');
-    const confirmed = g.villages.filter(v => v.status === 'confirmed').length;
-    const cards = g.villages.map(v => `
-      <div class="village-card card-${v.status}" id="card-${v.id}" onclick="activateVillage('${v.id}')">
-        <div class="card-status-dot ${v.status}"></div>
-        <div class="card-body">
-          <div class="card-top">
-            <div class="card-names">
-              <span class="card-chinese">${v.chinese}</span>
-              ${v.amis ? `<span class="card-amis">${v.amis}</span>` : ''}
-            </div>
-            <span class="card-date">${v.date}</span>
-          </div>
-          ${v.venue && v.venue !== '—' ? `<div class="card-venue">${v.venue}</div>` : ''}
-          <div class="card-footer">
-            <a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ ${SOURCES[v.src].label}</a>
-          </div>
-        </div>
-      </div>`).join('');
-
-    return `
-      <details class="township-group" open>
-        <summary class="township-summary">
-          <span class="ts-name">${g.county === '臺東縣' ? '臺東 · ' : '花蓮 · '}${g.township}</span>
-          <span class="ts-meta">
-            ${dates ? `<span class="ts-dates">${dates}${dates && confirmed < g.villages.length ? '…' : ''}</span>` : ''}
-            <span class="ts-count">${g.villages.length} 部落</span>
-            <span class="ts-chevron">›</span>
-          </span>
-        </summary>
-        <div class="cards-in-group">${cards}</div>
-      </details>`;
-  }).join('');
-}
-
-/* ── Filter ──────────────────────────────────────── */
-let currentFilter = 'all';
-document.getElementById('filters').addEventListener('click', e => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  currentFilter = btn.dataset.f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
-  document.querySelectorAll('.village-card').forEach(card => {
-    const show = currentFilter === 'all' || card.classList.contains('card-' + currentFilter);
-    card.classList.toggle('hidden', !show);
-  });
-  // Hide empty groups
-  document.querySelectorAll('.township-group').forEach(g => {
-    const visible = [...g.querySelectorAll('.village-card')].some(c => !c.classList.contains('hidden'));
-    g.style.display = visible ? '' : 'none';
-  });
-});
 
 /* ── PWA ─────────────────────────────────────────── */
 let deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; document.getElementById('installBtn').hidden = false; });
+globalThis.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  document.getElementById('installBtn').hidden = false;
+});
 document.getElementById('installBtn').addEventListener('click', async () => {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
@@ -403,14 +1273,13 @@ document.getElementById('installBtn').addEventListener('click', async () => {
   document.getElementById('installBtn').hidden = true;
 });
 
-/* ── Init ────────────────────────────────────────── */
-renderNotes();
-renderVillages();
-initMap();
-
+/* ── SW ──────────────────────────────────────────── */
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+  globalThis.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 }
+
+/* ── Boot ────────────────────────────────────────── */
+initTimeline();
 </script>
 </body>
 </html>
