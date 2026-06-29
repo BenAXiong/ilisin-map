@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Ilisin" />
-  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="apple-touch-icon" href="logo.jpeg" />
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
@@ -54,6 +54,7 @@
       justify-content: space-between; padding: 0 1rem; gap: .75rem;
     }
     .header-left { display: flex; align-items: baseline; gap: .5rem; }
+    .logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
     .header-title { font-family: var(--disp); font-size: 1.2rem; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
     .header-sub { font-family: var(--mono); font-size: .58rem; color: var(--text-3); letter-spacing: .09em; text-transform: uppercase; display: none; }
     @media (min-width: 420px) { .header-sub { display: block; } }
@@ -173,6 +174,7 @@
 
 <header class="site-header">
   <div class="header-left">
+    <img src="logo.jpeg" alt="Ilisin" class="logo-img" />
     <span class="header-title">豐年祭地圖</span>
     <span class="header-sub">Ilisin 2026 · Pangcah</span>
   </div>
