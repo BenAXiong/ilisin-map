@@ -1,11 +1,11 @@
-const CACHE = 'ilisin-v4';
+const CACHE = 'ilisin-v5';
 const SHELL = [
   '/',
   '/index.html',
   '/data.js',
   '/manifest.json',
   '/icon.svg',
-  '/logo.jpeg',
+  '/logo.png',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
