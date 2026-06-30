@@ -562,7 +562,7 @@
     .card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
     .card-names { flex: 1; min-width: 0; }
     .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
-    .card-amis    { font-family: var(--mono); font-size: var(--fs-2xs);  color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
+    .card-amis    { font-family: var(--mono); font-size: var(--fs-base); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
     .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
     .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
     .card-tbd .card-date       { color: var(--text-3); }
@@ -2406,7 +2406,26 @@ document.getElementById('installBtn').addEventListener('click', async () => {
 
 /* ── SW ──────────────────────────────────────────── */
 if ('serviceWorker' in navigator) {
-  globalThis.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+  // sw.js skips waiting + claims clients on its own; once it takes over,
+  // reload so this tab actually picks up the new shell instead of running
+  // stale JS against a freshly-swapped cache.
+  let swRefreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (swRefreshing) return;
+    swRefreshing = true;
+    location.reload();
+  });
+
+  globalThis.addEventListener('load', async () => {
+    const reg = await navigator.serviceWorker.register('/sw.js').catch(() => {});
+    if (!reg) return;
+    // Browsers only re-check sw.js for changes on navigation/registration;
+    // force a check now and again whenever the (installed) app regains focus.
+    reg.update();
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') reg.update();
+    });
+  });
 }
 
 /* ── Boot ────────────────────────────────────────── */
