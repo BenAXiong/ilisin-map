@@ -562,14 +562,35 @@
     .card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
     .card-names { flex: 1; min-width: 0; }
     .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
-    .card-amis    { font-family: var(--mono); font-size: var(--fs-base); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
+    /* Courier Prime cap-height (~0.56em) sits well below CJK glyph height (~0.88em),
+       so the amis label needs a larger font-size to read as visually equal-height. */
+    .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
     .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
     .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
     .card-tbd .card-date       { color: var(--text-3); }
     .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
-    .card-venue  { font-size: var(--fs-sm); color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .card-maps   { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; margin-left: .3rem; }
-    .card-maps:hover { color: var(--amber); }
+    .card-venue  {
+      font-size: var(--fs-sm);
+      color: var(--text-2);
+      flex: 1;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      text-decoration: none;
+    }
+    .card-pin    { flex-shrink: 0; color: var(--terra); }
+    .card-venue:hover .card-pin { color: var(--amber); }
+    .card-venue-text {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-decoration: underline;
+      text-decoration-color: var(--border-2);
+      text-underline-offset: 2px;
+    }
+    .card-venue:hover .card-venue-text { color: var(--text-1); text-decoration-color: var(--amber); }
     .card-source { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; flex-shrink: 0; }
     .card-source:hover { color: var(--amber); text-decoration: underline; }
 
@@ -1504,7 +1525,7 @@ function cardHtml(v, onclickAttr) {
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
     : `https://www.google.com/maps/search/?api=1&query=${v.lat},${v.lng}`;
   const venueHtml  = hasVenue
-    ? `<span class="card-venue">${v.venue}<a class="card-maps" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗地圖</a></span>`
+    ? `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span class="card-venue-text">${v.venue}</span></a>`
     : '';
   return `<div class="village-card card-${v.status}" id="card-${v.id}" ${onclickAttr}>
     <div class="card-top">
