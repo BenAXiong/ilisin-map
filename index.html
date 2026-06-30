@@ -48,6 +48,16 @@
       --mono: 'Courier Prime', 'Courier New', monospace;
       --cn:   'Noto Serif TC', serif;
       --disp: 'Fraunces', Georgia, serif;
+
+      /* Type scale (px @ 16px root): 12 / 13 / 14 / 16 / 18 / 22 / 28.
+         --fs-2xs is the readability floor — never go smaller than this. */
+      --fs-2xs:  0.75rem;
+      --fs-xs:   0.8125rem;
+      --fs-sm:   0.875rem;
+      --fs-base: 1rem;
+      --fs-md:   1.125rem;
+      --fs-lg:   1.375rem;
+      --fs-xl:   1.75rem;
     }
     [data-theme="night"] {
       --bg:     oklch(14% 0.02 50);
@@ -89,12 +99,12 @@
     }
     .header-left  { display: flex; align-items: center; gap: .5rem; }
     .logo-img     { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-    .header-title { font-family: var(--disp); font-size: 1.15rem; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+    .header-title { font-family: var(--disp); font-size: var(--fs-md); font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
     .header-right { display: flex; align-items: center; gap: .5rem; }
 
     .theme-btn {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .05em;
       color: var(--text-3);
       border: 1px solid var(--border);
@@ -109,7 +119,7 @@
 
     .install-btn {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .07em;
       text-transform: uppercase;
       color: var(--amber);
@@ -157,7 +167,7 @@
     .tab-icon svg { display: block; }
     .tab-label {
       font-family: var(--mono);
-      font-size: .52rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .1em;
       text-transform: uppercase;
       padding-bottom: 2px;
@@ -199,7 +209,7 @@
       padding: .55rem 1.25rem;
       text-align: center;
       font-family: var(--mono);
-      font-size: .72rem;
+      font-size: var(--fs-sm);
       letter-spacing: .06em;
       color: var(--text-3);
       border: none;
@@ -223,7 +233,7 @@
       background: var(--bg);
     }
     .tl-nav-btn {
-      font-size: 1.2rem;
+      font-size: var(--fs-md);
       color: var(--text-2);
       background: none;
       border: none;
@@ -237,7 +247,7 @@
     .tl-nav-btn:hover { background: var(--bg-alt); }
     .tl-nav-label {
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       color: var(--text-2);
       letter-spacing: .04em;
     }
@@ -270,7 +280,7 @@
     }
     .tl-band-label {
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       letter-spacing: .03em;
       color: oklch(from var(--accent) calc(l - 0.18) calc(c * 0.9) h);
       white-space: nowrap;
@@ -299,7 +309,7 @@
 
     .tl-weekday {
       font-family: var(--mono);
-      font-size: .48rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .06em;
       color: var(--text-3);
       margin-bottom: .1rem;
@@ -308,7 +318,7 @@
 
     .tl-daynum {
       font-family: var(--disp);
-      font-size: 1.05rem;
+      font-size: var(--fs-md);
       font-weight: 600;
       color: var(--text-1);
       line-height: 1;
@@ -317,18 +327,18 @@
 
     .tl-count {
       font-family: var(--mono);
-      font-size: .46rem;
+      font-size: var(--fs-2xs);
       background: var(--accent);
       color: var(--bg);
       border-radius: 99px;
-      padding: 1px 4px;
+      padding: 1px 5px;
       margin-top: .18rem;
-      min-width: 14px;
+      min-width: 20px;
       text-align: center;
       line-height: 1.4;
     }
     .tl-cell.active .tl-count { background: var(--bg); color: var(--accent); }
-    .tl-count-empty { height: 13px; margin-top: .18rem; }
+    .tl-count-empty { height: 19px; margin-top: .18rem; }
 
     /* County chips */
     .tl-county {
@@ -341,7 +351,7 @@
     }
     .tl-chip {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .07em;
       padding: 3px 10px;
       border-radius: 99px;
@@ -373,15 +383,15 @@
       z-index: 5;
       border-bottom: 1px solid var(--border);
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       color: var(--text-2);
       letter-spacing: .05em;
     }
-    .tl-day-count { color: var(--text-3); font-size: .58rem; }
+    .tl-day-count { color: var(--text-3); font-size: var(--fs-2xs); }
     .tl-empty {
       padding: 2rem .85rem;
       font-family: var(--mono);
-      font-size: .68rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       letter-spacing: .08em;
       text-align: center;
@@ -408,7 +418,7 @@
     }
     .map-chip {
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .06em;
       padding: 3px 11px;
       border-radius: 99px;
@@ -473,7 +483,7 @@
 
     .bs-pill {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .06em;
       padding: 3px 10px;
       border-radius: 99px;
@@ -512,14 +522,14 @@
     }
     .bs-cluster-label > .cl-text {
       font-family: var(--mono);
-      font-size: .58rem;
+      font-size: var(--fs-2xs);
       text-transform: uppercase;
       letter-spacing: .12em;
       color: var(--text-3);
     }
     .bs-cluster-count {
       font-family: var(--mono);
-      font-size: .52rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .04em;
       background: var(--bg-alt);
       border: 1px solid var(--border);
@@ -530,7 +540,7 @@
     .bs-empty {
       padding: .75rem .85rem 1rem;
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       letter-spacing: .06em;
       font-style: italic;
@@ -551,16 +561,16 @@
 
     .card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
     .card-names { flex: 1; min-width: 0; }
-    .card-chinese { font-family: var(--cn);   font-size: .95rem; font-weight: 600; line-height: 1.25; }
-    .card-amis    { font-family: var(--mono); font-size: .6rem;  color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
-    .card-date    { font-family: var(--mono); font-size: .68rem; color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
+    .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
+    .card-amis    { font-family: var(--mono); font-size: var(--fs-2xs);  color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
+    .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
     .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
     .card-tbd .card-date       { color: var(--text-3); }
     .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
-    .card-venue  { font-size: .72rem; color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .card-maps   { font-family: var(--mono); font-size: .52rem; color: var(--text-3); text-decoration: none; margin-left: .3rem; }
+    .card-venue  { font-size: var(--fs-sm); color: var(--text-2); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .card-maps   { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; margin-left: .3rem; }
     .card-maps:hover { color: var(--amber); }
-    .card-source { font-family: var(--mono); font-size: .58rem; color: var(--text-3); text-decoration: none; flex-shrink: 0; }
+    .card-source { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; flex-shrink: 0; }
     .card-source:hover { color: var(--amber); text-decoration: underline; }
 
     /* ── Search panel ──────────────────────────── */
@@ -576,25 +586,25 @@
       border-bottom: 1px solid var(--border);
       background: var(--bg);
     }
-    .sr-icon { font-size: .9rem; color: var(--text-3); flex-shrink: 0; line-height: 1; }
+    .sr-icon { font-size: var(--fs-base); color: var(--text-3); flex-shrink: 0; line-height: 1; }
     .sr-input {
       flex: 1;
       background: none;
       border: none;
       outline: none;
       font-family: var(--cn);
-      font-size: .9rem;
+      font-size: var(--fs-base);
       color: var(--text-1);
       caret-color: var(--accent);
       min-width: 0;
     }
-    .sr-input::placeholder { color: var(--text-3); font-size: .8rem; }
+    .sr-input::placeholder { color: var(--text-3); font-size: var(--fs-sm); }
     .sr-clear {
       background: none;
       border: none;
       color: var(--text-3);
       cursor: pointer;
-      font-size: .7rem;
+      font-size: var(--fs-xs);
       padding: 3px 5px;
       border-radius: var(--r);
       line-height: 1;
@@ -616,7 +626,7 @@
     .sr-chips::-webkit-scrollbar { display: none; }
     .sr-chip {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       letter-spacing: .07em;
       padding: 3px 10px;
       border-radius: 99px;
@@ -641,7 +651,7 @@
     .sr-hint {
       padding: 2.5rem .85rem;
       font-family: var(--mono);
-      font-size: .68rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       letter-spacing: .08em;
       text-align: center;
@@ -649,7 +659,7 @@
     .sr-count {
       padding: .4rem .85rem .3rem;
       font-family: var(--mono);
-      font-size: .58rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       letter-spacing: .07em;
       border-bottom: 1px solid var(--border);
@@ -669,13 +679,13 @@
     }
     .sr-recent-title {
       font-family: var(--mono);
-      font-size: .58rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       letter-spacing: .07em;
     }
     .sr-clear-all {
       font-family: var(--mono);
-      font-size: .58rem;
+      font-size: var(--fs-2xs);
       color: var(--accent);
       background: none;
       border: none;
@@ -692,14 +702,14 @@
     }
     .sr-recent-row:hover { background: var(--bg-alt); }
     .sr-recent-icon {
-      font-size: .75rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       flex-shrink: 0;
     }
     .sr-recent-text {
       flex: 1;
       font-family: var(--cn);
-      font-size: .82rem;
+      font-size: var(--fs-sm);
       color: var(--text-1);
       min-width: 0;
       overflow: hidden;
@@ -707,7 +717,7 @@
       white-space: nowrap;
     }
     .sr-recent-del {
-      font-size: .72rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       background: none;
       border: none;
@@ -721,7 +731,7 @@
       width: 100%;
       padding: .65rem .85rem;
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       color: var(--accent);
       background: none;
       border: none;
@@ -754,14 +764,14 @@
     }
     .info-appname {
       font-family: var(--disp);
-      font-size: 1.35rem;
+      font-size: var(--fs-lg);
       color: var(--text-1);
       letter-spacing: .02em;
       text-align: center;
     }
     .info-appsub {
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       letter-spacing: .1em;
       text-align: center;
@@ -781,20 +791,20 @@
     }
     .info-tile-value {
       font-family: var(--mono);
-      font-size: 1.15rem;
+      font-size: var(--fs-md);
       color: var(--accent);
       letter-spacing: .02em;
     }
     .info-tile-label {
       font-family: var(--mono);
-      font-size: .55rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       letter-spacing: .08em;
       margin-top: .2rem;
     }
     .info-section-title {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -809,14 +819,14 @@
     }
     .info-warn-title {
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       color: var(--amber-dark);
       letter-spacing: .06em;
       margin-bottom: .3rem;
     }
     .info-warn-body {
       font-family: var(--cn);
-      font-size: .75rem;
+      font-size: var(--fs-sm);
       color: var(--text-2);
       line-height: 1.6;
     }
@@ -839,16 +849,16 @@
     .info-source-label {
       flex: 1;
       font-family: var(--cn);
-      font-size: .78rem;
+      font-size: var(--fs-sm);
     }
     .info-source-arrow {
       font-family: var(--mono);
-      font-size: .55rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
     }
     .info-about-body {
       font-family: var(--cn);
-      font-size: .78rem;
+      font-size: var(--fs-sm);
       color: var(--text-2);
       line-height: 1.75;
     }
@@ -858,7 +868,7 @@
     .contrib-cta {
       flex: 1;
       font-family: var(--mono);
-      font-size: .72rem;
+      font-size: var(--fs-sm);
       font-weight: 600;
       letter-spacing: .04em;
       padding: .7rem .5rem;
@@ -885,7 +895,7 @@
     .contrib-summary .info-section-title { margin-bottom: 0; }
     .contrib-chevron {
       font-family: var(--mono);
-      font-size: .6rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       transition: transform .2s;
     }
@@ -899,7 +909,7 @@
     }
     .contrib-tab {
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       letter-spacing: .07em;
       padding: .42rem 1rem;
       background: none;
@@ -916,7 +926,7 @@
     .form-field { display: flex; flex-direction: column; gap: .28rem; }
     .form-label {
       font-family: var(--mono);
-      font-size: .58rem;
+      font-size: var(--fs-2xs);
       color: var(--text-3);
       letter-spacing: .07em;
     }
@@ -929,7 +939,7 @@
       border-radius: var(--r);
       padding: .4rem .6rem;
       font-family: var(--cn);
-      font-size: .8rem;
+      font-size: var(--fs-base);
       color: var(--text-1);
       outline: none;
       width: 100%;
@@ -939,7 +949,7 @@
     .form-select:focus,
     .form-textarea:focus { border-color: var(--accent); }
     .form-input::placeholder,
-    .form-textarea::placeholder { color: var(--text-3); font-size: .72rem; }
+    .form-textarea::placeholder { color: var(--text-3); font-size: var(--fs-sm); }
     .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .6rem center; padding-right: 1.8rem; }
     .form-textarea { resize: vertical; min-height: 72px; }
     .form-radio-group { display: flex; flex-wrap: wrap; gap: .4rem; }
@@ -948,7 +958,7 @@
       align-items: center;
       gap: .3rem;
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       color: var(--text-2);
       cursor: pointer;
       padding: 3px 8px;
@@ -963,7 +973,7 @@
     .form-submit {
       align-self: flex-start;
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       letter-spacing: .08em;
       padding: .45rem 1.2rem;
       background: var(--accent);
@@ -977,7 +987,7 @@
     .form-submit:disabled { opacity: .45; cursor: not-allowed; }
     .form-status {
       font-family: var(--mono);
-      font-size: .62rem;
+      font-size: var(--fs-xs);
       letter-spacing: .05em;
       padding: .4rem .7rem;
       border-radius: var(--r);
@@ -996,11 +1006,11 @@
       gap: .6rem;
       color: var(--text-3);
       font-family: var(--mono);
-      font-size: .65rem;
+      font-size: var(--fs-xs);
       letter-spacing: .12em;
       text-transform: uppercase;
     }
-    .panel-placeholder .ph-icon { font-size: 1.75rem; }
+    .panel-placeholder .ph-icon { font-size: var(--fs-xl); }
 
     /* ── Leaflet overrides ──────────────────────── */
     .leaflet-container { background: var(--bg-alt); }
@@ -1010,9 +1020,9 @@
     }
     .leaflet-popup-tip { background: var(--surface); }
     .leaflet-popup-content { margin: .55rem .8rem !important; line-height: 1.4; }
-    .popup-cn   { font-family: var(--cn);   font-size: .88rem; font-weight: 600; display: block; }
-    .popup-sub  { font-family: var(--mono); font-size: .6rem;  color: var(--text-2); display: block; }
-    .popup-date { font-family: var(--mono); font-size: .62rem; color: var(--amber-dark); font-weight: 700; margin-top: .15rem; display: block; }
+    .popup-cn   { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; display: block; }
+    .popup-sub  { font-family: var(--mono); font-size: var(--fs-2xs);  color: var(--text-2); display: block; }
+    .popup-date { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; margin-top: .15rem; display: block; }
     .leaflet-bottom { z-index: 390 !important; }
     .leaflet-control-zoom a { color: var(--text-2) !important; background: var(--surface) !important; border-color: var(--border) !important; }
     .marker-cluster-small,
@@ -1022,7 +1032,7 @@
     .marker-cluster-medium div,
     .marker-cluster-large  div {
       background-color: oklch(from var(--accent) l c h / 0.72) !important;
-      color: var(--bg) !important; font-family: var(--mono) !important; font-size: .65rem !important;
+      color: var(--bg) !important; font-family: var(--mono) !important; font-size: var(--fs-xs) !important;
     }
 
     /* ── Sidebar (desktop only) ──────────────────── */
@@ -1045,7 +1055,7 @@
       flex-shrink: 0;
     }
     .sb-logo   { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
-    .sb-appname { font-family: var(--disp); font-size: 1rem; color: var(--text-1); letter-spacing: -.01em; }
+    .sb-appname { font-family: var(--disp); font-size: var(--fs-md); color: var(--text-1); letter-spacing: -.01em; }
     .sb-nav {
       flex: 1;
       display: flex;
@@ -1058,7 +1068,7 @@
       align-items: center;
       padding: .7rem 1.2rem;
       font-family: var(--mono);
-      font-size: .7rem;
+      font-size: var(--fs-sm);
       letter-spacing: .07em;
       color: var(--text-2);
       background: none;
@@ -1090,7 +1100,7 @@
       border: none;
       cursor: pointer;
       font-family: var(--mono);
-      font-size: .75rem;
+      font-size: var(--fs-xs);
       color: var(--text-3);
       padding: .2rem .4rem;
     }
