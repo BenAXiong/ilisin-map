@@ -1,4 +1,4 @@
-const CACHE = 'ilisin-v10';
+const CACHE = 'ilisin-v19';
 const SHELL = [
   '/',
   '/index.html',

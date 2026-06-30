@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>資料管理 · 豐年祭地圖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Noto+Serif+TC:wght@300;400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="data.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: oklch(92% 0.025 75); --accent: oklch(52% 0.16 55); --ink: oklch(10% 0.035 55);
+      --bg-alt:    oklch(from var(--bg)     calc(l - 0.04)  c h);
+      --surface:   oklch(from var(--bg)     calc(l + 0.04)  c h);
+      --border:    oklch(from var(--bg)     calc(l - 0.09)  c h);
+      --border-2:  oklch(from var(--bg)     calc(l - 0.15)  c h);
+      --amber:     var(--accent);
+      --amber-pale: oklch(from var(--accent) calc(l + 0.28) calc(c * 0.5) h);
+      --amber-dark: oklch(from var(--accent) calc(l - 0.14) c h);
+      --text-1:    var(--ink);
+      --text-2:    oklch(from var(--ink)    calc(l + 0.25)  c h);
+      --text-3:    oklch(from var(--ink)    calc(l + 0.44) calc(c * 0.7) h);
+      --terra:     oklch(from var(--accent) calc(l - 0.08) calc(c * 1.1) calc(h + 12));
+      --green:     oklch(46% 0.14 145);
+      --r: 4px;
+      --mono: 'Courier Prime', monospace;
+      --cn:   'Noto Serif TC', serif;
+      --disp: 'Fraunces', Georgia, serif;
+    }
+    [data-theme="night"] { --bg: oklch(14% 0.02 50); --accent: oklch(65% 0.14 58); --ink: oklch(91% 0.02 80); }
+    [data-theme="coast"] { --bg: oklch(93% 0.018 210); --accent: oklch(46% 0.15 210); --ink: oklch(12% 0.025 220); }
+
+    html, body { height: 100%; }
+    body {
+      font-family: var(--cn);
+      background: var(--bg);
+      color: var(--text-1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    .vz-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .55rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      background: var(--bg);
+    }
+    .vz-title {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--text-2);
+      flex: 1;
+    }
+    .vz-back {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--text-3);
+      text-decoration: none;
+    }
+    .vz-back:hover { color: var(--accent); }
+    .vz-theme {
+      font-family: var(--mono);
+      font-size: .7rem;
+      background: none;
+      border: none;
+      color: var(--text-3);
+      cursor: pointer;
+      padding: .1rem .3rem;
+    }
+    .vz-theme:hover { color: var(--text-1); }
+
+    /* ── Tab bar ── */
+    .vz-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .vz-tab {
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .08em;
+      padding: .52rem 1.25rem;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: color .12s, border-color .12s;
+    }
+    .vz-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .vz-tab:hover:not(.active) { color: var(--text-1); }
+
+    /* ── Panels ── */
+    .vz-panel { display: none; flex: 1; overflow: auto; }
+    .vz-panel.active { display: block; }
+
+    /* ── Table panel ── */
+    .tbl-toolbar {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .5rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .tbl-filter {
+      flex: 1;
+      max-width: 320px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: .32rem .65rem;
+      font-family: var(--cn);
+      font-size: .82rem;
+      color: var(--text-1);
+      outline: none;
+    }
+    .tbl-filter:focus { border-color: var(--accent); }
+    .tbl-filter::placeholder { color: var(--text-3); font-size: .75rem; }
+    .tbl-count {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+    .tbl-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+    thead th {
+      font-family: var(--mono);
+      font-size: .57rem;
+      letter-spacing: .08em;
+      color: var(--text-3);
+      text-align: left;
+      padding: .42rem .75rem;
+      border-bottom: 2px solid var(--border-2);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      background: var(--bg);
+      transition: color .12s;
+    }
+    thead th:hover { color: var(--text-1); }
+    thead th.sort-asc::after  { content: ' ↑'; color: var(--accent); }
+    thead th.sort-desc::after { content: ' ↓'; color: var(--accent); }
+
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:hover { background: var(--bg-alt); }
+    tbody td { padding: .42rem .75rem; vertical-align: middle; }
+
+    .td-id {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .td-id:hover { color: var(--accent); }
+    .td-cn       { font-weight: 500; white-space: nowrap; }
+    .td-amis     { font-family: var(--mono); font-size: .65rem; color: var(--text-2); }
+    .td-loc      { font-size: .75rem; white-space: nowrap; }
+    .td-date     { font-family: var(--mono); font-size: .65rem; white-space: nowrap; }
+    .td-src      { font-family: var(--mono); font-size: .56rem; color: var(--text-3); max-width: 160px; }
+    .td-src a    { color: var(--text-3); text-decoration: none; }
+    .td-src a:hover { color: var(--accent); }
+
+    .badge {
+      font-family: var(--mono);
+      font-size: .52rem;
+      letter-spacing: .06em;
+      padding: 2px 7px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .badge-confirmed { background: oklch(from var(--green) l c h / 0.15); color: var(--green); border: 1px solid oklch(from var(--green) l c h / 0.3); }
+    .badge-tbd       { background: var(--amber-pale); color: var(--amber-dark); border: 1px solid oklch(from var(--accent) l c h / 0.3); }
+    .badge-cancelled { background: oklch(from var(--terra) l c h / 0.12); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.25); }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      background: var(--ink);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: .65rem;
+      padding: .38rem .9rem;
+      border-radius: 99px;
+      opacity: 0;
+      transition: opacity .18s, transform .18s;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── Stats panel ── */
+    .stats-wrap {
+      padding: 1.5rem 1.5rem 3rem;
+      max-width: 800px;
+    }
+    .stat-section { margin-bottom: 2.5rem; }
+    .stat-title {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .1em;
+      color: var(--text-3);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Month bar chart */
+    .chart-svg { width: 100%; overflow: visible; display: block; }
+
+    /* Status donut */
+    .donut-wrap { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .donut-svg  { width: 160px; height: 160px; flex-shrink: 0; }
+    .donut-legend { display: flex; flex-direction: column; gap: .6rem; }
+    .legend-row { display: flex; align-items: center; gap: .5rem; min-width: 160px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-label { font-family: var(--mono); font-size: .62rem; color: var(--text-2); flex: 1; }
+    .legend-val   { font-family: var(--mono); font-size: .72rem; color: var(--text-1); font-weight: 700; }
+
+    /* Township horizontal bars */
+    .hbar-row {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      margin-bottom: .3rem;
+    }
+    .hbar-label {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-2);
+      width: 150px;
+      flex-shrink: 0;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .hbar-track {
+      flex: 1;
+      height: 10px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .hbar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .hbar-count {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      width: 24px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+<header class="vz-header">
+  <span class="vz-title">資料管理 · 豐年祭地圖 2026</span>
+  <a class="vz-back" href="index.html">← 地圖</a>
+  <button class="vz-theme" id="vzTheme" aria-label="切換主題"></button>
+</header>
+
+<div class="vz-tabs">
+  <button class="vz-tab active" data-panel="table">資料表</button>
+  <button class="vz-tab" data-panel="stats">統計</button>
+</div>
+
+<div class="vz-panel active" id="vz-table">
+  <div class="tbl-toolbar">
+    <input class="tbl-filter" id="tblFilter" type="text" placeholder="篩選部落、鄉鎮、ID…" autocomplete="off">
+    <span class="tbl-count" id="tblCount"></span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-col="id">ID</th>
+          <th data-col="chinese">中文名</th>
+          <th data-col="amis">Amis</th>
+          <th data-col="county">縣市</th>
+          <th data-col="township">鄉鎮</th>
+          <th data-col="date">日期</th>
+          <th data-col="status">狀態</th>
+          <th data-col="src">來源</th>
+        </tr>
+      </thead>
+      <tbody id="tblBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="vz-panel" id="vz-stats">
+  <div class="stats-wrap">
+    <div class="stat-section">
+      <div class="stat-title">祭典分布 — 按月份</div>
+      <svg class="chart-svg" id="monthChart" viewBox="0 0 560 180"></svg>
+    </div>
+    <div class="stat-section">
+      <div class="stat-title">狀態分布</div>
+      <div class="donut-wrap">
+        <svg class="donut-svg" id="statusDonut" viewBox="0 0 200 200"></svg>
+        <div class="donut-legend" id="statusLegend"></div>
+      </div>
+    </div>
+    <div class="stat-section">
+      <div class="stat-title">日曆熱力圖 — 每日活躍祭典數</div>
+      <div id="heatmapChart" style="overflow-x:auto;"></div>
+    </div>
+    <div class="stat-section">
+      <div class="stat-title">部落數 — 按鄉鎮</div>
+      <div id="townshipBars"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── Theme (synced with main app via localStorage) ── */
+const THEMES  = ['', 'night', 'coast', null];
+const T_LABEL = ['☀ 日', '◑ 夜', '◐ 海', '— —'];
+let themeIdx  = 0;
+
+function applyTheme(idx) {
+  themeIdx = idx % THEMES.length;
+  document.documentElement.dataset.theme = THEMES[themeIdx] ?? '';
+  document.getElementById('vzTheme').textContent = T_LABEL[themeIdx];
+  localStorage.setItem('ilisin-theme', String(themeIdx));
+}
+(function() {
+  const saved = parseInt(localStorage.getItem('ilisin-theme') ?? '0', 10);
+  applyTheme(Number.isNaN(saved) ? 0 : saved);
+})();
+document.getElementById('vzTheme').addEventListener('click', () => applyTheme(themeIdx + 1));
+
+/* ── Tab switching ── */
+let statsBuilt = false;
+document.querySelector('.vz-tabs').addEventListener('click', e => {
+  const tab = e.target.closest('.vz-tab');
+  if (!tab) return;
+  document.querySelectorAll('.vz-tab').forEach(t => t.classList.toggle('active', t === tab));
+  document.querySelectorAll('.vz-panel').forEach(p => p.classList.toggle('active', p.id === 'vz-' + tab.dataset.panel));
+  if (tab.dataset.panel === 'stats' && !statsBuilt) { buildStats(); statsBuilt = true; }
+});
+
+/* ── Shared utilities ── */
+const DECADE_DAY = { '上': 5, '中': 15, '下': 25 };
+function parseStartDate(str) {
+  const slash = (str || '').match(/(\d{1,2})\/(\d{1,2})/);
+  if (slash) return new Date(2026, Number(slash[1]) - 1, Number(slash[2]));
+  const decade = (str || '').match(/(\d{1,2})月([上中下])旬/);
+  if (decade) return new Date(2026, Number(decade[1]) - 1, DECADE_DAY[decade[2]]);
+  return null;
+}
+function parseEndDate(str) {
+  const m = (str || '').match(/\d{1,2}\/\d{1,2}[^–—]*[–—](\d{1,2})\/(\d{1,2})/);
+  if (m) return new Date(2026, Number(m[1]) - 1, Number(m[2]));
+  return null;
+}
+function srNorm(str) {
+  return (str || '').normalize('NFC').toLowerCase().replace(/[''ʼ`]/g, "'");
+}
+
+/* ── Table ── */
+let sortCol = 'date';
+let sortAsc = true;
+let filterQ = '';
+
+function getRows() {
+  const q = srNorm(filterQ.trim());
+  let rows = VILLAGES.filter(v => {
+    if (!q) return true;
+    const hay = [v.id, v.chinese, v.amis, v.county, v.township, v.date, v.status, SOURCES[v.src]?.label]
+      .map(x => srNorm(x || '')).join(' ');
+    return hay.includes(q);
+  });
+  rows.sort((a, b) => {
+    let va, vb;
+    if (sortCol === 'date') {
+      va = parseStartDate(a.date)?.getTime() ?? Infinity;
+      vb = parseStartDate(b.date)?.getTime() ?? Infinity;
+    } else if (sortCol === 'src') {
+      va = SOURCES[a.src]?.label ?? '';
+      vb = SOURCES[b.src]?.label ?? '';
+    } else {
+      va = a[sortCol] ?? '';
+      vb = b[sortCol] ?? '';
+    }
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+  return rows;
+}
+
+const STATUS_LABEL = { confirmed: '已公告', tbd: '待定', cancelled: '取消' };
+
+function renderTable() {
+  const rows = getRows();
+  document.getElementById('tblCount').textContent = `${rows.length} / ${VILLAGES.length} 筆`;
+  document.getElementById('tblBody').innerHTML = rows.map(v => {
+    const src = SOURCES[v.src];
+    return `<tr>
+      <td class="td-id" onclick="copyId('${v.id}')" title="點擊複製">${v.id}</td>
+      <td class="td-cn">${v.chinese}</td>
+      <td class="td-amis">${v.amis || '—'}</td>
+      <td class="td-loc">${v.county}</td>
+      <td class="td-loc">${v.township}</td>
+      <td class="td-date">${v.date}</td>
+      <td><span class="badge badge-${v.status}">${STATUS_LABEL[v.status] ?? v.status}</span></td>
+      <td class="td-src"><a href="${src?.url ?? '#'}" target="_blank" rel="noopener">${src?.label ?? v.src}</a></td>
+    </tr>`;
+  }).join('');
+
+  document.querySelectorAll('thead th').forEach(th => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (th.dataset.col === sortCol) th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+  });
+}
+
+document.querySelector('thead').addEventListener('click', e => {
+  const th = e.target.closest('th[data-col]');
+  if (!th) return;
+  sortCol === th.dataset.col ? (sortAsc = !sortAsc) : (sortCol = th.dataset.col, sortAsc = true);
+  renderTable();
+});
+
+document.getElementById('tblFilter').addEventListener('input', e => {
+  filterQ = e.target.value;
+  renderTable();
+});
+
+/* ── Toast / copy ── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyId(id) {
+  navigator.clipboard.writeText(id).then(() => showToast('複製: ' + id));
+}
+
+renderTable();
+
+/* ── Stats ── */
+function buildStats() {
+  buildMonthChart();
+  buildStatusDonut();
+  buildHeatmap();
+  buildTownshipBars();
+}
+
+function buildHeatmap() {
+  // Count active festivals per calendar day (multi-day ranges expand across all days)
+  const dayCount = {};
+  VILLAGES.forEach(v => {
+    if (v.status === 'cancelled') return;
+    const start = parseStartDate(v.date);
+    if (!start) return;
+    const end = parseEndDate(v.date) ?? start;
+    const cur = new Date(start);
+    while (cur <= end) {
+      const key = cur.toISOString().slice(0, 10);
+      dayCount[key] = (dayCount[key] || 0) + 1;
+      cur.setDate(cur.getDate() + 1);
+    }
+  });
+  const maxCount = Math.max(...Object.values(dayCount), 1);
+
+  // Grid: Sun–Sat rows, weeks as columns
+  // Range: May–September 2026
+  const RANGE_START = new Date(2026, 4, 1);   // May 1
+  const RANGE_END   = new Date(2026, 8, 30);  // Sep 30
+
+  // Snap to week boundaries
+  const gridStart = new Date(RANGE_START);
+  gridStart.setDate(gridStart.getDate() - gridStart.getDay());       // prev Sunday
+  const gridEnd = new Date(RANGE_END);
+  gridEnd.setDate(gridEnd.getDate() + (6 - gridEnd.getDay()));       // next Saturday
+
+  const CELL = 13, GAP = 2, STEP = CELL + GAP;
+  const PAD_L = 22, PAD_T = 22;
+  const numWeeks = Math.round((gridEnd - gridStart) / (7 * 864e5)) + 1;
+  const W = PAD_L + numWeeks * STEP;
+  const H = PAD_T + 7 * STEP;
+
+  const DAY_LABELS   = ['日','一','二','三','四','五','六'];
+  const MONTH_NAMES  = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" style="display:block;min-width:${W}px;overflow:visible">`;
+
+  // Day-of-week labels (Mon / Wed / Fri)
+  [1, 3, 5].forEach(d => {
+    svg += `<text x="${PAD_L - 4}" y="${(PAD_T + d * STEP + CELL * 0.78).toFixed(1)}" text-anchor="end" font-family="var(--mono)" font-size="8" fill="var(--text-3)">${DAY_LABELS[d]}</text>`;
+  });
+
+  // Month labels — show on the first week that starts in a new month
+  let lastMonth = -1;
+  for (let w = 0; w < numWeeks; w++) {
+    const ws = new Date(gridStart);
+    ws.setDate(ws.getDate() + w * 7);
+    const m = ws.getMonth();
+    if (m !== lastMonth) {
+      svg += `<text x="${PAD_L + w * STEP}" y="${PAD_T - 7}" font-family="var(--mono)" font-size="9" fill="var(--text-2)">${MONTH_NAMES[m]}</text>`;
+      lastMonth = m;
+    }
+  }
+
+  // Cells
+  function heatFill(count) {
+    if (count === 0) return ['var(--border)', 1];
+    const frac = count / maxCount;
+    if (frac <= 0.25) return ['var(--accent)', 0.28];
+    if (frac <= 0.5)  return ['var(--accent)', 0.52];
+    if (frac <= 0.75) return ['var(--accent)', 0.76];
+    return ['var(--accent)', 1];
+  }
+
+  const cur = new Date(gridStart);
+  while (cur <= gridEnd) {
+    const inRange = cur >= RANGE_START && cur <= RANGE_END;
+    if (inRange) {
+      const key   = cur.toISOString().slice(0, 10);
+      const count = dayCount[key] || 0;
+      const week  = Math.floor((cur - gridStart) / (7 * 864e5));
+      const dow   = cur.getDay();
+      const x     = PAD_L + week * STEP;
+      const y     = PAD_T + dow * STEP;
+      const [fill, opacity] = heatFill(count);
+      const tip   = count > 0 ? `${key}：${count} 個祭典` : key;
+      svg += `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2" fill="${fill}" fill-opacity="${opacity}"><title>${tip}</title></rect>`;
+    }
+    cur.setDate(cur.getDate() + 1);
+  }
+
+  // Legend
+  const legendX = PAD_L;
+  const legendY = H + 16;
+  svg += `<text x="${legendX}" y="${legendY}" font-family="var(--mono)" font-size="8" fill="var(--text-3)">少</text>`;
+  [0, 0.25, 0.5, 0.75, 1].forEach((frac, i) => {
+    const [fill, opacity] = frac === 0 ? ['var(--border)', 1] : ['var(--accent)', 0.28 + frac * 0.72];
+    svg += `<rect x="${legendX + 16 + i * (CELL + 2)}" y="${legendY - 9}" width="${CELL}" height="${CELL}" rx="2" fill="${fill}" fill-opacity="${opacity}"/>`;
+  });
+  svg += `<text x="${legendX + 16 + 5 * (CELL + 2) + 3}" y="${legendY}" font-family="var(--mono)" font-size="8" fill="var(--text-3)">多</text>`;
+
+  svg += `</svg>`;
+  document.getElementById('heatmapChart').innerHTML = svg;
+}
+
+function buildMonthChart() {
+  const months = [5, 6, 7, 8, 9];
+  const MONTH_LABEL = { 5: '5月', 6: '6月', 7: '7月', 8: '8月', 9: '9月' };
+  const counts = {};
+  months.forEach(m => counts[m] = 0);
+  VILLAGES.forEach(v => {
+    const d = parseStartDate(v.date);
+    if (d) {
+      const m = d.getMonth() + 1;
+      if (m in counts) counts[m]++;
+    }
+  });
+  const max = Math.max(...Object.values(counts), 1);
+
+  const W = 560, H = 180;
+  const padL = 32, padR = 12, padT = 14, padB = 36;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+  const barW   = chartW / months.length;
+  const gap    = barW * 0.28;
+  const bw     = barW - gap;
+
+  let svg = '';
+  // Y gridlines + labels
+  [0, 0.25, 0.5, 0.75, 1].forEach(frac => {
+    const y   = padT + chartH * (1 - frac);
+    const val = Math.round(max * frac);
+    svg += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--border)" stroke-width="1"/>`;
+    if (frac > 0) svg += `<text x="${padL - 5}" y="${(y + 3.5).toFixed(1)}" text-anchor="end" font-family="var(--mono)" font-size="9" fill="var(--text-3)">${val}</text>`;
+  });
+
+  months.forEach((m, i) => {
+    const x    = padL + i * barW + gap / 2;
+    const cx   = (x + bw / 2).toFixed(1);
+    const barH = counts[m] === 0 ? 0 : Math.max(2, chartH * counts[m] / max);
+    const y    = padT + chartH - barH;
+    svg += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${barH.toFixed(1)}" fill="var(--accent)" rx="2" opacity=".85"/>`;
+    svg += `<text x="${cx}" y="${(H - padB + 16).toFixed(1)}" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="var(--text-2)">${MONTH_LABEL[m]}</text>`;
+    if (counts[m] > 0) svg += `<text x="${cx}" y="${(y - 5).toFixed(1)}" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="var(--accent)">${counts[m]}</text>`;
+  });
+
+  document.getElementById('monthChart').innerHTML = svg;
+}
+
+function buildStatusDonut() {
+  const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
+  const tbd       = VILLAGES.filter(v => v.status === 'tbd').length;
+  const cancelled = VILLAGES.filter(v => v.status === 'cancelled').length;
+  const total     = confirmed + tbd + cancelled;
+
+  const R = 62, cx = 100, cy = 100, sw = 26;
+  const circ = 2 * Math.PI * R;
+
+  function arc(count, offset, color) {
+    if (count === 0) return '';
+    const len = circ * count / total;
+    return `<circle r="${R}" cx="${cx}" cy="${cy}" fill="none" stroke="${color}" stroke-width="${sw}"
+      stroke-dasharray="${len.toFixed(2)} ${(circ - len).toFixed(2)}"
+      stroke-dashoffset="${(-offset).toFixed(2)}"
+      transform="rotate(-90 ${cx} ${cy})"/>`;
+  }
+
+  let svg = arc(confirmed, 0,                             'var(--green)');
+  svg    += arc(tbd,       circ * confirmed / total,      'var(--accent)');
+  svg    += arc(cancelled, circ * (confirmed + tbd) / total, 'var(--terra)');
+  svg    += `<text x="${cx}" y="${cy - 3}" text-anchor="middle" font-family="var(--mono)" font-size="22" fill="var(--text-1)">${total}</text>`;
+  svg    += `<text x="${cx}" y="${cy + 13}" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="var(--text-3)" letter-spacing="1">部落</text>`;
+
+  document.getElementById('statusDonut').innerHTML = svg;
+  document.getElementById('statusLegend').innerHTML = [
+    { label: '已公告', count: confirmed, color: 'var(--green)'  },
+    { label: '待定',   count: tbd,       color: 'var(--accent)' },
+    { label: '取消',   count: cancelled, color: 'var(--terra)'  },
+  ].map(l => `<div class="legend-row">
+    <div class="legend-dot" style="background:${l.color}"></div>
+    <span class="legend-label">${l.label}</span>
+    <span class="legend-val">${l.count}</span>
+  </div>`).join('');
+}
+
+function buildTownshipBars() {
+  const counts = {};
+  VILLAGES.forEach(v => {
+    const key = `${v.county.replace('縣','').replace('市','')} · ${v.township}`;
+    counts[key] = (counts[key] || 0) + 1;
+  });
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  const max    = sorted[0]?.[1] ?? 1;
+
+  document.getElementById('townshipBars').innerHTML = sorted.map(([label, count]) =>
+    `<div class="hbar-row">
+      <span class="hbar-label" title="${label}">${label}</span>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${(count / max * 100).toFixed(1)}%"></div></div>
+      <span class="hbar-count">${count}</span>
+    </div>`
+  ).join('');
+}
+</script>
+</body>
+</html>

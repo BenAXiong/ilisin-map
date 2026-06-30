@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    @keyframes _{}
+    body { background:#e2ded6; }
+    .ph  { border-radius:22px; box-shadow:0 8px 32px rgba(0,0,0,.18); border:2.5px solid #1a1a1a; overflow:hidden; height:812px; display:flex; flex-direction:column; background:#fff; }
+    .sb  { height:44px; background:#f0ead8; display:flex; align-items:center; justify-content:space-between; padding:0 20px; font:500 12px system-ui; color:#3a3020; flex-shrink:0; }
+    .tb  { height:84px; background:#f0ead8; border-top:1.5px solid #ddd0b0; display:flex; align-items:flex-start; padding-top:10px; flex-shrink:0; }
+    .ti  { flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; }
+    .til { font:400 10px system-ui; color:#9c845a; }
+    .ton { font:700 10px system-ui; color:#bf7e1a; }
+    .mapbg { background-image:linear-gradient(rgba(148,140,118,.17) 1px,transparent 1px),linear-gradient(90deg,rgba(148,140,118,.17) 1px,transparent 1px); background-size:22px 22px; background-color:#d8d2ba; }
+    .pb  { height:8px;  border-radius:99px; background:#d0c8b0; margin:3px 0; }
+    .pbs { height:6px;  border-radius:99px; background:#dcd4b8; margin:2px 0; }
+    .pbm { height:11px; border-radius:99px; background:#c8c0a0; margin:3px 0; }
+    .vc  { border:1px solid #ddd0b0; border-radius:6px; background:#faf6ee; padding:12px 14px; }
+    .bs  { position:absolute; left:0; right:0; bottom:0; background:#faf6ee; border-radius:18px 18px 0 0; border-top:2px solid #c4ac80; box-shadow:0 -6px 28px rgba(0,0,0,.14); }
+    .cl  { position:absolute; border-radius:50%; background:rgba(191,126,26,.16); border:1.5px solid rgba(191,126,26,.3); display:flex; align-items:center; justify-content:center; }
+    .cli { border-radius:50%; background:rgba(191,126,26,.82); display:flex; align-items:center; justify-content:center; font:700 10px system-ui; color:#fff; }
+    .mk  { position:absolute; border-radius:50%; border:2px solid rgba(255,251,240,.92); box-shadow:0 1px 6px rgba(0,0,0,.24); }
+    .chip-on  { display:inline-flex; align-items:center; font:600 10px system-ui; padding:4px 11px; border-radius:99px; border:1.5px solid #bf7e1a; background:#bf7e1a; color:#fff; white-space:nowrap; }
+    .chip-off { display:inline-flex; align-items:center; font:500 10px system-ui; padding:4px 11px; border-radius:99px; border:1.5px solid #c4b080; background:rgba(250,246,238,.92); color:#7a5820; white-space:nowrap; }
+    .badge  { font:600 9px 'Courier Prime',monospace; padding:2px 7px; border-radius:3px; letter-spacing:.04em; white-space:nowrap; }
+    .b-ok  { background:rgba(58,122,58,.14); color:#2a6a2a; }
+    .b-tbd { background:rgba(156,132,90,.18); color:#6a5218; }
+    .b-no  { background:rgba(175,175,175,.22); color:#888; }
+    .sn  { position:absolute; background:#fef4a8; padding:12px 14px; font:400 13px/1.45 'Caveat',cursive; color:#1e1600; box-shadow:0 2px 12px rgba(0,0,0,.1); max-width:220px; }
+    .sh  { position:absolute; font:700 11px/1 system-ui; color:rgba(46,34,10,.36); letter-spacing:.18em; text-transform:uppercase; }
+    .fl  { position:absolute; top:-26px; font:600 12px/1 system-ui; color:rgba(46,34,10,.62); white-space:nowrap; }
+    .sep { height:1px; background:#e8e0c8; margin:8px 0; }
+    .rec { display:inline-flex; align-items:center; gap:4px; background:#bf7e1a; color:#fff; font:700 10px system-ui; padding:3px 9px; border-radius:99px; }
+    .dayc { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:4px 0; border-right:1px solid #e8e0c8; gap:1px; }
+    .dayc-on { background:rgba(191,126,26,.12); border-bottom:2.5px solid #bf7e1a !important; }
+    .sb-bat { width:22px; height:11px; border:1.5px solid #555; border-radius:2.5px; position:relative; display:inline-block; }
+    .sb-bat::after { content:''; position:absolute; left:1px; top:1px; width:65%; height:calc(100% - 2px); background:#555; border-radius:1px; }
+    .sb-bat::before { content:''; position:absolute; right:-3.5px; top:3px; width:2.5px; height:5px; background:#555; border-radius:1px; }
+  </style>
+</helmet>
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION A · MOBILE
+══════════════════════════════════════════════════════════════ -->
+<div class="sh" style="left:80px;top:46px">A · MOBILE — 390 × 812</div>
+
+<!-- ─── 01 Map View ────────────────────────────────────────── -->
+<div style="position:absolute;left:80px;top:80px;width:390px">
+  <div class="fl">01 · Map View — marker tapped, sheet half-open</div>
+  <div class="ph">
+    <div class="sb">
+      <span>9:41</span>
+      <div style="display:flex;gap:6px;align-items:center">
+        <span style="font-size:9px;color:#888">▲▲▲</span>
+        <div class="sb-bat"></div>
+      </div>
+    </div>
+
+    <!-- Full-screen map -->
+    <div class="mapbg" style="flex:1;position:relative;overflow:hidden">
+      <!-- Roads -->
+      <div style="position:absolute;top:0;bottom:0;left:28%;width:2px;background:rgba(255,252,242,.6)"></div>
+      <div style="position:absolute;left:0;right:0;top:46%;height:2px;background:rgba(255,252,242,.55)"></div>
+      <div style="position:absolute;left:28%;right:0;top:68%;height:1.5px;background:rgba(255,252,242,.4)"></div>
+      <!-- River -->
+      <div style="position:absolute;top:0;bottom:0;left:11%;width:1.5px;background:rgba(120,158,188,.42)"></div>
+      <!-- County filter chips – float on map -->
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;background:rgba(250,246,238,.9);backdrop-filter:blur(4px);padding:5px 8px;border-radius:99px;box-shadow:0 2px 12px rgba(0,0,0,.13)">
+        <span class="chip-on">全部</span>
+        <span class="chip-off">花蓮</span>
+        <span class="chip-off">臺東</span>
+      </div>
+      <!-- Clusters -->
+      <div class="cl" style="width:52px;height:52px;left:22%;top:8%"><div class="cli" style="width:38px;height:38px">23</div></div>
+      <div class="cl" style="width:46px;height:46px;left:30%;top:26%"><div class="cli" style="width:34px;height:34px">16</div></div>
+      <div class="cl" style="width:40px;height:40px;left:54%;top:58%"><div class="cli" style="width:28px;height:28px">11</div></div>
+      <!-- Single markers -->
+      <div class="mk" style="width:12px;height:12px;background:#bf7e1a;left:44%;top:43%"></div>
+      <div class="mk" style="width:11px;height:11px;background:#9c845a;left:66%;top:33%"></div>
+      <div class="mk" style="width:10px;height:10px;background:#bbb;left:72%;top:54%"></div>
+      <!-- Active marker (selected, enlarged terra) -->
+      <div class="mk" style="width:17px;height:17px;background:#9c3e18;left:48%;top:38%;box-shadow:0 2px 14px rgba(156,62,24,.45);transform:translate(-50%,-50%);z-index:5"></div>
+      <!-- Map popup above active marker -->
+      <div style="position:absolute;left:48%;top:22%;transform:translateX(-50%);background:#faf6ee;border:1px solid #c4ac80;border-radius:5px;padding:6px 10px;box-shadow:0 3px 12px rgba(0,0,0,.14);z-index:6;min-width:128px">
+        <span style="display:block;font:700 12px/1.3 'Noto Serif TC',serif;color:#1c1508">里漏部落</span>
+        <span style="display:block;font:400 10px 'Courier Prime',monospace;color:#5a4325">Lidaw · 吉安鄉</span>
+        <span style="display:block;font:700 10px 'Courier Prime',monospace;color:#bf7e1a;margin-top:2px">8/22 六</span>
+        <div style="position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #c4ac80"></div>
+        <div style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #faf6ee"></div>
+      </div>
+      <!-- Zoom controls -->
+      <div style="position:absolute;right:12px;top:58px;background:#faf6ee;border:1px solid #c4ac80;border-radius:5px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.1)">
+        <div style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:300 20px system-ui;color:#5a4325;border-bottom:1px solid #ddd0b0">+</div>
+        <div style="width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:300 20px system-ui;color:#5a4325">−</div>
+      </div>
+      <!-- Bottom sheet (half-open) -->
+      <div class="bs">
+        <div style="display:flex;justify-content:center;padding:10px 0 6px">
+          <div style="width:42px;height:4px;border-radius:99px;background:#c4b080"></div>
+        </div>
+        <div style="padding:0 16px 14px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:10px;height:10px;border-radius:50%;background:#3a7a3a;margin-top:7px;flex-shrink:0"></div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+                <div>
+                  <div style="font:700 21px/1.25 'Noto Serif TC',serif;color:#1c1508">里漏部落</div>
+                  <div style="font:400 11px 'Courier Prime',monospace;color:#9c3e18;margin-top:3px">Lidaw</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <div style="font:700 15px 'Courier Prime',monospace;color:#7a4e0a">8/22 六</div>
+                  <span class="badge b-ok" style="margin-top:4px;display:inline-block">已公告</span>
+                </div>
+              </div>
+              <div style="font:400 13px/1.4 'Noto Serif TC',serif;color:#5a4325;margin-top:5px">化仁國小</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid #e8e0c8">
+                <span style="font:400 11px 'Courier Prime',monospace;color:#9c845a">↗ 花蓮縣原民處 PDF</span>
+                <span style="font:600 11px 'Courier Prime',monospace;color:#bf7e1a">祭儀日程 ▾</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:10px">
+            <span style="font:400 10.5px 'Courier Prime',monospace;color:#b8a880;letter-spacing:.04em">↑ 向上滑動 · 附近 4 個部落</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti">
+        <div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#fff" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#fff"/><path d="M7 9v4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="ton">地圖</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#9c845a" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#9c845a" stroke-width="1.5"/><line x1="8" y1="2" x2="8" y2="6" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="2" x2="16" y2="6" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">行事曆</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">搜尋</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg>
+        <span class="til">資訊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 02 Calendar View ───────────────────────────────────── -->
+<div style="position:absolute;left:570px;top:80px;width:390px">
+  <div class="fl">02 · Calendar View — day selected, multi-day span shown</div>
+  <div class="ph">
+    <div class="sb">
+      <span>9:41</span>
+      <div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div>
+    </div>
+
+    <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;background:#f8f4ec">
+      <!-- Month tabs -->
+      <div style="display:flex;background:#f0ead8;border-bottom:1.5px solid #ddd0b0;flex-shrink:0">
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">6月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:700 13px 'Noto Serif TC',serif;color:#bf7e1a;border-bottom:2.5px solid #bf7e1a">7月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">8月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">9月</div>
+      </div>
+
+      <!-- Week navigation -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 14px;height:42px;background:#f0ead8;border-bottom:1px solid #ddd0b0;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#faf6ee;border:1px solid #ddd0b0;display:flex;align-items:center;justify-content:center;font:400 15px system-ui;color:#7a5820">‹</div>
+        <span style="font:500 13px 'Noto Serif TC',serif;color:#3a2a0a">7月14日 — 7月20日</span>
+        <div style="width:32px;height:32px;border-radius:50%;background:#faf6ee;border:1px solid #ddd0b0;display:flex;align-items:center;justify-content:center;font:400 15px system-ui;color:#7a5820">›</div>
+      </div>
+
+      <!-- Date strip -->
+      <div style="height:78px;display:flex;flex-direction:column;border-bottom:1.5px solid #ddd0b0;flex-shrink:0;position:relative;background:#f0ead8">
+        <!-- Multi-day festival band (spans Fri 18 – Sun 20, cells 4-6) -->
+        <div style="height:22px;position:relative;flex-shrink:0;border-bottom:1px solid #e8e0c8">
+          <div style="position:absolute;left:176px;top:3px;width:133px;height:16px;background:rgba(191,126,26,.14);border:1px solid rgba(191,126,26,.28);border-radius:8px;display:flex;align-items:center;padding:0 8px">
+            <span style="font:600 8.5px 'Courier Prime',monospace;color:#bf7e1a;white-space:nowrap">成功鎮豐年節 ↦ 3 天</span>
+          </div>
+        </div>
+        <!-- Day cells row -->
+        <div style="flex:1;display:flex">
+          <!-- Mon 14 -->
+          <div class="dayc">
+            <span style="font:400 9px system-ui;color:#9c845a">一</span>
+            <span style="font:700 16px/1 system-ui;color:#1c1508">14</span>
+            <span style="font:700 9px system-ui;color:#bf7e1a">2</span>
+          </div>
+          <!-- Tue 15 -->
+          <div class="dayc">
+            <span style="font:400 9px system-ui;color:#c0b090">二</span>
+            <span style="font:700 16px/1 system-ui;color:#bbb">15</span>
+            <span style="font:400 9px system-ui;color:#ccc">—</span>
+          </div>
+          <!-- Wed 16 -->
+          <div class="dayc">
+            <span style="font:400 9px system-ui;color:#9c845a">三</span>
+            <span style="font:700 16px/1 system-ui;color:#1c1508">16</span>
+            <span style="font:700 9px system-ui;color:#bf7e1a">1</span>
+          </div>
+          <!-- Thu 17 SELECTED -->
+          <div class="dayc dayc-on">
+            <span style="font:400 9px system-ui;color:#bf7e1a">四</span>
+            <span style="font:800 17px/1 system-ui;color:#bf7e1a">17</span>
+            <span style="font:800 9px system-ui;color:#bf7e1a">4</span>
+          </div>
+          <!-- Fri 18 (multi-day start) -->
+          <div class="dayc" style="background:rgba(191,126,26,.06)">
+            <span style="font:400 9px system-ui;color:#9c845a">五</span>
+            <span style="font:700 16px/1 system-ui;color:#1c1508">18</span>
+            <span style="font:700 9px system-ui;color:#bf7e1a">6</span>
+          </div>
+          <!-- Sat 19 (multi-day) -->
+          <div class="dayc" style="background:rgba(191,126,26,.06)">
+            <span style="font:400 9px system-ui;color:#9c845a">六</span>
+            <span style="font:700 16px/1 system-ui;color:#1c1508">19</span>
+            <span style="font:700 9px system-ui;color:#bf7e1a">9</span>
+          </div>
+          <!-- Sun 20 (multi-day) -->
+          <div class="dayc" style="background:rgba(191,126,26,.06)">
+            <span style="font:400 9px system-ui;color:#9c845a">日</span>
+            <span style="font:700 16px/1 system-ui;color:#1c1508">20</span>
+            <span style="font:700 9px system-ui;color:#bf7e1a">7</span>
+          </div>
+          <!-- Scroll indicator -->
+          <div style="width:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to right,rgba(240,234,216,0),rgba(240,234,216,.95));font:400 14px system-ui;color:#9c845a">›</div>
+        </div>
+      </div>
+
+      <!-- Selected day header -->
+      <div style="padding:10px 16px 6px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
+        <span style="font:700 14px 'Noto Serif TC',serif;color:#1c1508">7月17日 四</span>
+        <span style="font:400 11px 'Courier Prime',monospace;color:#9c845a">4 部落</span>
+      </div>
+
+      <!-- County filter chips -->
+      <div style="display:flex;gap:5px;padding:0 16px 10px;flex-shrink:0">
+        <span class="chip-on" style="font-size:9.5px;padding:3px 10px">全部</span>
+        <span class="chip-off" style="font-size:9.5px;padding:3px 10px">花蓮縣</span>
+        <span class="chip-off" style="font-size:9.5px;padding:3px 10px">臺東縣</span>
+      </div>
+
+      <!-- Village cards for selected day -->
+      <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:8px">
+        <!-- Card 1 -->
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;margin-top:7px;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div style="font:700 19px/1.25 'Noto Serif TC',serif;color:#1c1508">豐裡部落</div>
+                  <div style="font:400 10.5px 'Courier Prime',monospace;color:#9c3e18;margin-top:2px">Mulimutu a Telu'</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">7/17 四</div>
+                  <span class="badge b-ok" style="margin-top:3px;display:inline-block">已公告</span>
+                </div>
+              </div>
+              <div style="font:400 12.5px 'Noto Serif TC',serif;color:#5a4325;margin-top:4px">豐裡聚會所</div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font:700 19px/1.25 'Noto Serif TC',serif;color:#1c1508">光榮部落</div>
+                  <div style="font:400 10.5px 'Courier Prime',monospace;color:#9c3e18;margin-top:1px">Rinahem</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">7/17 四</div>
+                  <span class="badge b-ok" style="margin-top:3px;display:inline-block">已公告</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- More indicator -->
+        <div style="text-align:center;padding:4px 0">
+          <span style="font:400 11px 'Courier Prime',monospace;color:#b0a080">↓ 還有 2 個部落</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#9c845a" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#9c845a"/><path d="M7 9v4" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">地圖</span>
+      </div>
+      <div class="ti">
+        <div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#fff" stroke-width="1.8"/><line x1="3" y1="9" x2="21" y2="9" stroke="#fff" stroke-width="1.8"/></svg>
+        </div>
+        <span class="ton">行事曆</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">搜尋</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg>
+        <span class="til">資訊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 03 Search View ─────────────────────────────────────── -->
+<div style="position:absolute;left:1060px;top:80px;width:390px">
+  <div class="fl">03 · Search View — live results, one card expanded</div>
+  <div class="ph">
+    <div class="sb">
+      <span>9:41</span>
+      <div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div>
+    </div>
+
+    <div style="flex:1;display:flex;flex-direction:column;background:#f8f4ec;overflow:hidden">
+      <!-- Search bar (fixed) -->
+      <div style="padding:12px 14px 8px;background:#f0ead8;border-bottom:1.5px solid #ddd0b0;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:2px solid #bf7e1a;border-radius:10px;padding:0 12px;height:48px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#bf7e1a" stroke-width="2"/><path d="M16 16L21 21" stroke="#bf7e1a" stroke-width="2" stroke-linecap="round"/></svg>
+          <span style="font:400 16px 'Noto Serif TC',serif;color:#1c1508;flex:1">吉安</span>
+          <span style="font:400 13px system-ui;color:#bbb">✕</span>
+        </div>
+        <!-- Quick chips -->
+        <div style="display:flex;gap:5px;margin-top:8px;overflow:hidden">
+          <span class="chip-off" style="font-size:9.5px;padding:3px 10px">本週末</span>
+          <span class="chip-off" style="font-size:9.5px;padding:3px 10px">花蓮縣</span>
+          <span class="chip-off" style="font-size:9.5px;padding:3px 10px">臺東縣</span>
+          <span class="chip-off" style="font-size:9.5px;padding:3px 10px">已公告</span>
+        </div>
+      </div>
+
+      <!-- Results header -->
+      <div style="padding:10px 14px 6px;flex-shrink:0">
+        <span style="font:500 12px 'Courier Prime',monospace;color:#9c845a;letter-spacing:.04em">吉安鄉 · 20 部落</span>
+      </div>
+
+      <!-- Result cards -->
+      <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:8px">
+
+        <!-- Card 1: collapsed -->
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font:700 18px/1.25 'Noto Serif TC',serif;color:#1c1508">慶豐部落</div>
+                  <div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Ciripunan</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">8/1 六</div>
+                  <span class="badge b-ok" style="display:block;margin-top:3px">已公告</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: EXPANDED with ceremony schedule -->
+        <div class="vc" style="border-left:4px solid #bf7e1a;background:#fffbf0;">
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;margin-top:7px;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div style="font:700 18px/1.25 'Noto Serif TC',serif;color:#1c1508">仁和部落</div>
+                  <div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18;margin-top:2px">Isaetipan Pahikukian</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">8/1 六</div>
+                  <span class="badge b-ok" style="display:block;margin-top:3px">已公告</span>
+                </div>
+              </div>
+              <div style="font:400 12.5px 'Noto Serif TC',serif;color:#5a4325;margin-top:4px">南埔公園停車場</div>
+              <!-- Ceremony schedule (expanded) -->
+              <div style="margin-top:10px;padding:10px 12px;background:#f5f0e4;border-radius:5px;border:1px solid #e8e0c8">
+                <div style="font:600 10px 'Courier Prime',monospace;color:#bf7e1a;letter-spacing:.06em;margin-bottom:7px;text-transform:uppercase">祭儀日程 · Schedule</div>
+                <div style="display:flex;flex-direction:column;gap:5px">
+                  <div style="display:flex;gap:10px;align-items:baseline">
+                    <span style="font:500 11px 'Courier Prime',monospace;color:#7a4e0a;width:35px;flex-shrink:0">08:00</span>
+                    <span style="font:400 12px 'Noto Serif TC',serif;color:#3a2a0a">報到・集合</span>
+                  </div>
+                  <div style="display:flex;gap:10px;align-items:baseline">
+                    <span style="font:500 11px 'Courier Prime',monospace;color:#7a4e0a;width:35px;flex-shrink:0">09:00</span>
+                    <span style="font:400 12px 'Noto Serif TC',serif;color:#3a2a0a">主祭儀式・男子舞蹈</span>
+                  </div>
+                  <div style="display:flex;gap:10px;align-items:baseline">
+                    <span style="font:500 11px 'Courier Prime',monospace;color:#7a4e0a;width:35px;flex-shrink:0">12:00</span>
+                    <span style="font:400 12px 'Noto Serif TC',serif;color:#3a2a0a">共食・感恩</span>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top:8px">
+                <span style="font:400 11px 'Courier Prime',monospace;color:#9c845a">↗ 花蓮縣原民處 PDF 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: collapsed, TBD -->
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#9c845a;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div style="font:700 18px/1.25 'Noto Serif TC',serif;color:#1c1508">大鼓部落</div>
+                  <div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Kungkung</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font:700 13px 'Courier Prime',monospace;color:#9c845a">未定</div>
+                  <span class="badge b-tbd" style="display:block;margin-top:3px">未定</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding:2px 0">
+          <span style="font:400 11px 'Courier Prime',monospace;color:#b0a080">↓ 還有 17 個部落</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#9c845a" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#9c845a"/><path d="M7 9v4" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">地圖</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#9c845a" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#9c845a" stroke-width="1.5"/></svg>
+        <span class="til">行事曆</span>
+      </div>
+      <div class="ti">
+        <div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#fff" stroke-width="2"/><path d="M16 16L21 21" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="ton">搜尋</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg>
+        <span class="til">資訊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 04 Info View ───────────────────────────────────────── -->
+<div style="position:absolute;left:1550px;top:80px;width:390px">
+  <div class="fl">04 · Info / About View</div>
+  <div class="ph">
+    <div class="sb">
+      <span>9:41</span>
+      <div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div>
+    </div>
+
+    <div style="flex:1;background:#f8f4ec;overflow:hidden;display:flex;flex-direction:column">
+      <!-- Logo + title -->
+      <div style="display:flex;flex-direction:column;align-items:center;padding:28px 24px 20px;background:#f0ead8;border-bottom:1.5px solid #ddd0b0;flex-shrink:0">
+        <img src="logo.png" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-bottom:12px" alt="Ilisin logo">
+        <div style="font:700 22px/1.2 'Noto Serif TC',serif;color:#1c1508;text-align:center">豐年祭地圖</div>
+        <div style="font:400 11px 'Courier Prime',monospace;color:#bf7e1a;margin-top:4px;letter-spacing:.06em">ILISIN 2026 · PANGCAH</div>
+        <div style="font:400 12px 'Noto Serif TC',serif;color:#7a5820;margin-top:4px;text-align:center">花東阿美族歲時祭儀 · 200+ 部落</div>
+      </div>
+
+      <!-- Info tiles 2×2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px;flex-shrink:0">
+        <div style="background:#faf6ee;border:1px solid #ddd0b0;border-radius:6px;padding:12px;text-align:center">
+          <div style="font:400 20px system-ui;margin-bottom:4px">📅</div>
+          <div style="font:600 10px 'Courier Prime',monospace;color:#bf7e1a;text-transform:uppercase;letter-spacing:.06em">祭儀期間</div>
+          <div style="font:600 13px 'Noto Serif TC',serif;color:#1c1508;margin-top:3px">6月 — 9月</div>
+        </div>
+        <div style="background:#faf6ee;border:1px solid #ddd0b0;border-radius:6px;padding:12px;text-align:center">
+          <div style="font:400 20px system-ui;margin-bottom:4px">🗺</div>
+          <div style="font:600 10px 'Courier Prime',monospace;color:#bf7e1a;text-transform:uppercase;letter-spacing:.06em">覆蓋範圍</div>
+          <div style="font:600 13px 'Noto Serif TC',serif;color:#1c1508;margin-top:3px">花蓮縣 · 臺東縣</div>
+        </div>
+        <div style="background:#faf6ee;border:1px solid #ddd0b0;border-radius:6px;padding:12px;text-align:center">
+          <div style="font:700 20px system-ui;margin-bottom:4px;color:#3a7a3a">✓</div>
+          <div style="font:600 10px 'Courier Prime',monospace;color:#bf7e1a;text-transform:uppercase;letter-spacing:.06em">已公告部落</div>
+          <div style="font:700 18px/1 'Courier Prime',monospace;color:#1c1508;margin-top:3px">147</div>
+        </div>
+        <div style="background:#faf6ee;border:1px solid #ddd0b0;border-radius:6px;padding:12px;text-align:center">
+          <div style="font:400 20px system-ui;margin-bottom:4px">⟳</div>
+          <div style="font:600 10px 'Courier Prime',monospace;color:#bf7e1a;text-transform:uppercase;letter-spacing:.06em">資料更新</div>
+          <div style="font:600 12px 'Courier Prime',monospace;color:#1c1508;margin-top:3px">2026-06-22</div>
+        </div>
+      </div>
+
+      <!-- Warning box -->
+      <div style="margin:0 14px;padding:12px;background:#fff8ec;border:1.5px solid #e8c870;border-radius:6px;flex-shrink:0">
+        <div style="font:600 10px 'Courier Prime',monospace;color:#7a5010;letter-spacing:.06em;margin-bottom:5px">⚠ 資料說明</div>
+        <div style="font:400 12px/1.6 'Noto Serif TC',serif;color:#5a3a08">臺東部分資料來自社群貼文，正式出行前請向部落或公所再確認。</div>
+      </div>
+
+      <!-- Sources -->
+      <div style="padding:12px 14px;flex-shrink:0">
+        <div style="font:600 10px 'Courier Prime',monospace;color:#9c845a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">資料來源</div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">→ 花蓮縣原民處官方 PDF 2026</div>
+          <div style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">→ 臺東縣原住民歲時祭儀查詢頁</div>
+          <div style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">→ 各鄉鎮公所公告 · 社群媒體</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#9c845a" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#9c845a"/><path d="M7 9v4" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">地圖</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#9c845a" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#9c845a" stroke-width="1.5"/></svg>
+        <span class="til">行事曆</span>
+      </div>
+      <div class="ti">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="til">搜尋</span>
+      </div>
+      <div class="ti">
+        <div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/><path d="M12 11v7" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.5" fill="#fff"/></svg>
+        </div>
+        <span class="ton">資訊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Interaction annotation stickies (mobile row) ─────────── -->
+<div class="sn" style="left:490px;top:140px;transform:rotate(-1.5deg)">
+  <b>Map · Bottom Sheet</b><br>
+  3 states:<br>
+  ① collapsed (handle only)<br>
+  ② half-open → 1–2 cards<br>
+  ③ full-open → all nearby<br><br>
+  Swipe up to expand,<br>
+  swipe down to dismiss.<br>
+  Dismissing also deselects map marker.
+</div>
+
+<div class="sn" style="left:490px;top:410px;transform:rotate(1deg)">
+  <b>Cluster tap →</b> zoom in + spiderfy (Leaflet default). Tap individual spiderfied pin → half-open sheet.
+</div>
+
+<div class="sn" style="left:978px;top:140px;transform:rotate(-1deg)">
+  <b>Calendar date strip</b><br>
+  Amber band = multi-day festival spanning 3 days.<br>
+  Tapping the band shows ALL days in the span.<br><br>
+  Week arrows jump 7 days. Swipe strip to pan by day.
+</div>
+
+<div class="sn" style="left:978px;top:400px;transform:rotate(1.5deg)">
+  <b>Search is text-first.</b><br>
+  Live results as you type.<br>
+  Results sorted: soonest first.<br>
+  ▾ expands per-day ceremony schedule inline — no separate page.
+</div>
+
+<div class="sn" style="left:1468px;top:600px;transform:rotate(-1deg)">
+  <b>4th tab options:</b><br>
+  ✓ 資訊 — context + sources (recommended)<br>
+  ✗ 附近 — location permission friction<br>
+  ✗ 本週 — redundant, achievable via Calendar chip
+</div>
+
+<!-- Legend sticky -->
+<div class="sn" style="left:80px;top:940px;transform:rotate(.5deg);max-width:280px">
+  <b>Marker legend</b><br>
+  🟡 Amber cluster = confirmed villages<br>
+  🟡 Amber dot = single confirmed village<br>
+  🟤 Terra/orange = active selected marker<br>
+  ⚫ Gray dot = 未定 (TBD)<br>
+  ⚪ Light gray = 停辦 (cancelled)<br><br>
+  Card status dot matches marker color.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION B · DESKTOP
+══════════════════════════════════════════════════════════════ -->
+<div class="sh" style="left:80px;top:1052px">B · DESKTOP — 1280 × 700 · Map mode shown</div>
+
+<div style="position:absolute;left:80px;top:1090px;width:1280px">
+  <div class="fl">05 · Desktop Layout — sidebar nav + map + slide-in detail panel</div>
+  <div style="display:flex;height:700px;border-radius:10px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.18);border:2px solid #1a1a1a">
+
+    <!-- Sidebar (240px) -->
+    <div style="width:240px;flex-shrink:0;background:#f0ead8;border-right:1.5px solid #ddd0b0;display:flex;flex-direction:column;overflow:hidden">
+      <!-- Logo + title -->
+      <div style="padding:20px 18px 16px;border-bottom:1px solid #ddd0b0">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <img src="logo.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;" alt="">
+          <div>
+            <div style="font:700 15px/1.2 'Noto Serif TC',serif;color:#1c1508">豐年祭地圖</div>
+            <div style="font:400 10px 'Courier Prime',monospace;color:#bf7e1a;letter-spacing:.05em">ILISIN 2026</div>
+          </div>
+        </div>
+      </div>
+      <!-- Nav links -->
+      <div style="padding:10px 0;border-bottom:1px solid #ddd0b0">
+        <!-- Active -->
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(191,126,26,.1);border-left:3px solid #bf7e1a">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="5" stroke="#bf7e1a" stroke-width="1.8"/><circle cx="12" cy="10" r="2" fill="#bf7e1a"/><path d="M12 15v6" stroke="#bf7e1a" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span style="font:700 15px 'Noto Serif TC',serif;color:#bf7e1a">地圖</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 18px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#7a5820" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#7a5820" stroke-width="1.5"/></svg>
+          <span style="font:400 15px 'Noto Serif TC',serif;color:#7a5820">行事曆</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 18px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#7a5820" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#7a5820" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span style="font:400 15px 'Noto Serif TC',serif;color:#7a5820">搜尋</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:12px 18px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#7a5820" stroke-width="1.5"/><path d="M12 11v7" stroke="#7a5820" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#7a5820"/></svg>
+          <span style="font:400 15px 'Noto Serif TC',serif;color:#7a5820">資訊</span>
+        </div>
+      </div>
+      <!-- Filters -->
+      <div style="padding:14px 16px;border-bottom:1px solid #ddd0b0">
+        <div style="font:600 10px 'Courier Prime',monospace;color:#9c845a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">縣市</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px">
+          <span class="chip-on" style="font-size:10px;padding:3px 10px">全部</span>
+          <span class="chip-off" style="font-size:10px;padding:3px 10px">花蓮縣</span>
+          <span class="chip-off" style="font-size:10px;padding:3px 10px">臺東縣</span>
+        </div>
+        <div style="font:600 10px 'Courier Prime',monospace;color:#9c845a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">狀態</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap">
+          <span class="chip-on" style="font-size:10px;padding:3px 10px">全部</span>
+          <span class="chip-off" style="font-size:10px;padding:3px 10px">已公告</span>
+          <span class="chip-off" style="font-size:10px;padding:3px 10px">未定</span>
+        </div>
+      </div>
+      <!-- Count -->
+      <div style="padding:14px 16px;display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">已公告</span>
+          <span style="font:700 13px 'Courier Prime',monospace;color:#3a7a3a">147</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">未定</span>
+          <span style="font:700 13px 'Courier Prime',monospace;color:#9c845a">58</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font:400 12px 'Noto Serif TC',serif;color:#5a4325">停辦</span>
+          <span style="font:700 13px 'Courier Prime',monospace;color:#bbb">12</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map area (600px) -->
+    <div class="mapbg" style="flex:1;position:relative;overflow:hidden">
+      <!-- Roads -->
+      <div style="position:absolute;top:0;bottom:0;left:30%;width:2px;background:rgba(255,252,242,.6)"></div>
+      <div style="position:absolute;left:0;right:0;top:48%;height:2.5px;background:rgba(255,252,242,.55)"></div>
+      <div style="position:absolute;left:30%;right:0;top:70%;height:1.5px;background:rgba(255,252,242,.4)"></div>
+      <div style="position:absolute;top:0;bottom:0;left:10%;width:1.5px;background:rgba(120,158,188,.4)"></div>
+      <!-- Clusters -->
+      <div class="cl" style="width:58px;height:58px;left:21%;top:7%"><div class="cli" style="width:42px;height:42px">23</div></div>
+      <div class="cl" style="width:50px;height:50px;left:28%;top:24%"><div class="cli" style="width:36px;height:36px">16</div></div>
+      <div class="cl" style="width:44px;height:44px;left:52%;top:58%"><div class="cli" style="width:32px;height:32px">11</div></div>
+      <!-- Single markers -->
+      <div class="mk" style="width:13px;height:13px;background:#bf7e1a;left:43%;top:43%"></div>
+      <div class="mk" style="width:12px;height:12px;background:#9c845a;left:64%;top:32%"></div>
+      <div class="mk" style="width:11px;height:11px;background:#bbb;left:70%;top:54%"></div>
+      <!-- Active marker -->
+      <div class="mk" style="width:18px;height:18px;background:#9c3e18;left:47%;top:37%;box-shadow:0 2px 14px rgba(156,62,24,.45);transform:translate(-50%,-50%);z-index:5"></div>
+      <!-- Popup -->
+      <div style="position:absolute;left:47%;top:23%;transform:translateX(-50%);background:#faf6ee;border:1px solid #c4ac80;border-radius:5px;padding:7px 11px;box-shadow:0 3px 12px rgba(0,0,0,.14);z-index:6;min-width:136px">
+        <span style="display:block;font:700 13px/1.3 'Noto Serif TC',serif;color:#1c1508">里漏部落</span>
+        <span style="display:block;font:400 11px 'Courier Prime',monospace;color:#5a4325">Lidaw · 吉安鄉</span>
+        <span style="display:block;font:700 11px 'Courier Prime',monospace;color:#bf7e1a;margin-top:2px">8/22 六</span>
+      </div>
+      <!-- Zoom controls -->
+      <div style="position:absolute;right:14px;top:14px;background:#faf6ee;border:1px solid #c4ac80;border-radius:5px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.1)">
+        <div style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;font:300 20px system-ui;color:#5a4325;border-bottom:1px solid #ddd0b0">+</div>
+        <div style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;font:300 20px system-ui;color:#5a4325">−</div>
+      </div>
+    </div>
+
+    <!-- Detail panel (440px, slides in from right) -->
+    <div style="width:440px;flex-shrink:0;background:#f8f4ec;border-left:1.5px solid #ddd0b0;display:flex;flex-direction:column;overflow:hidden">
+      <!-- Township header -->
+      <div style="padding:16px 18px 12px;background:#f0ead8;border-bottom:1px solid #ddd0b0;display:flex;justify-content:space-between;align-items:center;flex-shrink:0">
+        <div>
+          <div style="font:700 17px 'Noto Serif TC',serif;color:#1c1508">吉安鄉</div>
+          <div style="font:400 11px 'Courier Prime',monospace;color:#9c845a;margin-top:2px">花蓮縣 · 20 部落</div>
+        </div>
+        <div style="font:400 20px system-ui;color:#9c845a;cursor:pointer">✕</div>
+      </div>
+      <!-- Scrollable cards -->
+      <div style="flex:1;overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:8px">
+        <!-- Active card -->
+        <div class="vc" style="border-left:4px solid #bf7e1a;background:#fffbf0;">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;margin-top:7px;flex-shrink:0"></div>
+            <div style="flex:1">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <div>
+                  <div style="font:700 18px/1.25 'Noto Serif TC',serif;color:#1c1508">里漏部落</div>
+                  <div style="font:400 11px 'Courier Prime',monospace;color:#9c3e18;margin-top:2px">Lidaw</div>
+                </div>
+                <span class="badge b-ok">已公告</span>
+              </div>
+              <div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a;margin-top:4px">8/22 六</div>
+              <div style="font:400 13px 'Noto Serif TC',serif;color:#5a4325;margin-top:3px">化仁國小</div>
+              <div style="margin-top:8px;padding:8px 10px;background:#f0ead8;border-radius:4px;border:1px solid #e0d5b8">
+                <div style="font:600 9.5px 'Courier Prime',monospace;color:#bf7e1a;letter-spacing:.06em;margin-bottom:5px">祭儀日程</div>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <div style="display:flex;gap:8px"><span style="font:500 11px 'Courier Prime',monospace;color:#7a4e0a;width:35px">08:00</span><span style="font:400 12px 'Noto Serif TC',serif;color:#3a2a0a">報到・集合</span></div>
+                  <div style="display:flex;gap:8px"><span style="font:500 11px 'Courier Prime',monospace;color:#7a4e0a;width:35px">09:00</span><span style="font:400 12px 'Noto Serif TC',serif;color:#3a2a0a">主祭儀式</span></div>
+                </div>
+              </div>
+              <div style="margin-top:8px"><span style="font:400 11px 'Courier Prime',monospace;color:#9c845a">↗ 花蓮縣原民處 PDF 2026</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- Collapsed cards -->
+        <div class="vc">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1;display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 17px/1.2 'Noto Serif TC',serif;color:#1c1508">干城部落</div><div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Hacining</div></div>
+              <div style="text-align:right"><div style="font:700 12px 'Courier Prime',monospace;color:#7a4e0a">8/22 六</div><span class="badge b-ok" style="display:block;margin-top:2px">已公告</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="vc">
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1;display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 17px/1.2 'Noto Serif TC',serif;color:#1c1508">那荳蘭部落</div><div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Natawran</div></div>
+              <div style="text-align:right"><div style="font:700 12px 'Courier Prime',monospace;color:#7a4e0a">8/23 日</div><span class="badge b-ok" style="display:block;margin-top:2px">已公告</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;padding:6px 0"><span style="font:400 11px 'Courier Prime',monospace;color:#b0a080">↓ 還有 17 個部落</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop annotation stickies -->
+<div class="sn" style="left:340px;top:1830px;transform:rotate(-1deg)">
+  <b>Sidebar always visible</b> on desktop. No header bar — logo lives in sidebar. Filter section replaces floating chips.
+</div>
+<div class="sn" style="left:740px;top:1830px;transform:rotate(1deg)">
+  <b>Detail panel</b> slides in from right on marker tap / list click. Clicking the map pans to marker and auto-scrolls list. Closes with ✕ or clicking away.
+</div>
+<div class="sn" style="left:1140px;top:1830px;transform:rotate(-.5deg)">
+  <b>Calendar/Search on desktop</b> replace the map with a full-width view in the center area. Sidebar nav stays persistent across all views.
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SECTION C · LANDING — 3 options
+══════════════════════════════════════════════════════════════ -->
+<div class="sh" style="left:80px;top:1990px">C · LANDING — 3 OPENING STATE OPTIONS</div>
+
+<!-- ─── Option A: Map-first ───────────────────────────────── -->
+<div style="position:absolute;left:80px;top:2030px;width:390px">
+  <div class="fl">Option A · Map-first — opens straight to map, no context</div>
+  <div class="ph">
+    <div class="sb"><span>9:41</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div></div>
+    <div class="mapbg" style="flex:1;position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;bottom:0;left:28%;width:2px;background:rgba(255,252,242,.6)"></div>
+      <div style="position:absolute;left:0;right:0;top:46%;height:2px;background:rgba(255,252,242,.55)"></div>
+      <div style="position:absolute;top:0;bottom:0;left:11%;width:1.5px;background:rgba(120,158,188,.42)"></div>
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;background:rgba(250,246,238,.9);padding:5px 8px;border-radius:99px;box-shadow:0 2px 12px rgba(0,0,0,.13)">
+        <span class="chip-on">全部</span>
+        <span class="chip-off">花蓮</span>
+        <span class="chip-off">臺東</span>
+      </div>
+      <div class="cl" style="width:52px;height:52px;left:22%;top:9%"><div class="cli" style="width:38px;height:38px">23</div></div>
+      <div class="cl" style="width:44px;height:44px;left:30%;top:27%"><div class="cli" style="width:32px;height:32px">16</div></div>
+      <div class="cl" style="width:38px;height:38px;left:54%;top:58%"><div class="cli" style="width:28px;height:28px">11</div></div>
+      <div class="mk" style="width:12px;height:12px;background:#bf7e1a;left:44%;top:43%"></div>
+      <div class="mk" style="width:11px;height:11px;background:#9c845a;left:66%;top:33%"></div>
+      <div class="mk" style="width:10px;height:10px;background:#bbb;left:72%;top:54%"></div>
+      <!-- Collapsed bottom sheet (just handle + label) -->
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#faf6ee;border-radius:18px 18px 0 0;border-top:2px solid #c4ac80;box-shadow:0 -4px 16px rgba(0,0,0,.1);padding:10px 20px 14px;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div style="width:42px;height:4px;border-radius:99px;background:#c4b080"></div>
+        <span style="font:500 12px 'Noto Serif TC',serif;color:#9c845a">本週 · 18 場已確認 · 拉起查看</span>
+      </div>
+    </div>
+    <div class="tb">
+      <div class="ti"><div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="10" r="2" fill="#fff"/></svg></div><span class="ton">地圖</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#9c845a" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="#9c845a" stroke-width="1.5"/></svg><span class="til">行事曆</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg><span class="til">搜尋</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg><span class="til">資訊</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Option B: Calendar-first (RECOMMENDED) ─────────────── -->
+<div style="position:absolute;left:570px;top:2030px;width:390px">
+  <div class="fl">Option B · Calendar-first — today pre-selected  ★ RECOMMENDED</div>
+  <div style="margin-bottom:6px"><span class="rec">★ RECOMMENDED</span></div>
+  <div class="ph">
+    <div class="sb"><span>9:41</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div></div>
+
+    <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;background:#f8f4ec">
+      <!-- Month tabs — 7月 active -->
+      <div style="display:flex;background:#f0ead8;border-bottom:1.5px solid #ddd0b0;flex-shrink:0">
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">6月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:700 13px 'Noto Serif TC',serif;color:#bf7e1a;border-bottom:2.5px solid #bf7e1a">7月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">8月</div>
+        <div style="flex:1;height:44px;display:flex;align-items:center;justify-content:center;font:400 13px 'Noto Serif TC',serif;color:#9c845a">9月</div>
+      </div>
+      <!-- Week nav -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 14px;height:42px;background:#f0ead8;border-bottom:1px solid #ddd0b0;flex-shrink:0">
+        <div style="width:32px;height:32px;border-radius:50%;background:#faf6ee;border:1px solid #ddd0b0;display:flex;align-items:center;justify-content:center;font:400 15px system-ui;color:#7a5820">‹</div>
+        <span style="font:500 13px 'Noto Serif TC',serif;color:#3a2a0a">本週 · 7月14日 — 20日</span>
+        <div style="width:32px;height:32px;border-radius:50%;background:#faf6ee;border:1px solid #ddd0b0;display:flex;align-items:center;justify-content:center;font:400 15px system-ui;color:#7a5820">›</div>
+      </div>
+      <!-- Date strip - TODAY = Thu 17 (same as calendar view but note says TODAY) -->
+      <div style="height:78px;display:flex;flex-direction:column;border-bottom:1.5px solid #ddd0b0;flex-shrink:0;position:relative;background:#f0ead8">
+        <div style="height:22px;position:relative;flex-shrink:0;border-bottom:1px solid #e8e0c8">
+          <div style="position:absolute;left:176px;top:3px;width:133px;height:16px;background:rgba(191,126,26,.14);border:1px solid rgba(191,126,26,.28);border-radius:8px;display:flex;align-items:center;padding:0 8px">
+            <span style="font:600 8.5px 'Courier Prime',monospace;color:#bf7e1a;white-space:nowrap">成功鎮豐年節 ↦ 3 天</span>
+          </div>
+        </div>
+        <div style="flex:1;display:flex">
+          <div class="dayc"><span style="font:400 9px system-ui;color:#9c845a">一</span><span style="font:700 16px/1 system-ui;color:#1c1508">14</span><span style="font:700 9px system-ui;color:#bf7e1a">2</span></div>
+          <div class="dayc"><span style="font:400 9px system-ui;color:#c0b090">二</span><span style="font:700 16px/1 system-ui;color:#bbb">15</span><span style="font:400 9px system-ui;color:#ccc">—</span></div>
+          <div class="dayc"><span style="font:400 9px system-ui;color:#9c845a">三</span><span style="font:700 16px/1 system-ui;color:#1c1508">16</span><span style="font:700 9px system-ui;color:#bf7e1a">1</span></div>
+          <!-- TODAY -->
+          <div class="dayc dayc-on" style="position:relative">
+            <span style="font:400 9px system-ui;color:#bf7e1a">今天</span>
+            <span style="font:800 17px/1 system-ui;color:#bf7e1a">17</span>
+            <span style="font:800 9px system-ui;color:#bf7e1a">4</span>
+          </div>
+          <div class="dayc" style="background:rgba(191,126,26,.06)"><span style="font:400 9px system-ui;color:#9c845a">五</span><span style="font:700 16px/1 system-ui;color:#1c1508">18</span><span style="font:700 9px system-ui;color:#bf7e1a">6</span></div>
+          <div class="dayc" style="background:rgba(191,126,26,.06)"><span style="font:400 9px system-ui;color:#9c845a">六</span><span style="font:700 16px/1 system-ui;color:#1c1508">19</span><span style="font:700 9px system-ui;color:#bf7e1a">9</span></div>
+          <div class="dayc" style="background:rgba(191,126,26,.06)"><span style="font:400 9px system-ui;color:#9c845a">日</span><span style="font:700 16px/1 system-ui;color:#1c1508">20</span><span style="font:700 9px system-ui;color:#bf7e1a">7</span></div>
+          <div style="width:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to right,rgba(240,234,216,0),rgba(240,234,216,.95));font:400 14px system-ui;color:#9c845a">›</div>
+        </div>
+      </div>
+      <!-- Today's content -->
+      <div style="padding:10px 16px 6px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
+        <span style="font:700 14px 'Noto Serif TC',serif;color:#1c1508">今天的豐年祭</span>
+        <span style="font:400 11px 'Courier Prime',monospace;color:#9c845a">4 部落</span>
+      </div>
+      <div style="flex:1;overflow:hidden;padding:0 14px;display:flex;flex-direction:column;gap:8px">
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1;display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 19px/1.25 'Noto Serif TC',serif;color:#1c1508">豐裡部落</div><div style="font:400 10.5px 'Courier Prime',monospace;color:#9c3e18;margin-top:1px">Mulimutu</div></div>
+              <div style="text-align:right"><div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">今日</div><span class="badge b-ok" style="display:block;margin-top:3px">已公告</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="vc">
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="width:9px;height:9px;border-radius:50%;background:#3a7a3a;flex-shrink:0"></div>
+            <div style="flex:1;display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 19px/1.25 'Noto Serif TC',serif;color:#1c1508">光榮部落</div><div style="font:400 10.5px 'Courier Prime',monospace;color:#9c3e18;margin-top:1px">Rinahem</div></div>
+              <div style="text-align:right"><div style="font:700 13px 'Courier Prime',monospace;color:#7a4e0a">今日</div><span class="badge b-ok" style="display:block;margin-top:3px">已公告</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;padding:2px 0"><span style="font:400 11px 'Courier Prime',monospace;color:#b0a080">↓ 還有 2 個部落</span></div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#9c845a" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#9c845a"/><path d="M7 9v4" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg><span class="til">地圖</span></div>
+      <div class="ti"><div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#fff" stroke-width="1.8"/><line x1="3" y1="9" x2="21" y2="9" stroke="#fff" stroke-width="1.8"/></svg></div><span class="ton">行事曆</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg><span class="til">搜尋</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg><span class="til">資訊</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Option C: Chronological list / program view ─────────── -->
+<div style="position:absolute;left:1060px;top:2030px;width:390px">
+  <div class="fl">Option C · Program list — date-grouped, no map on open</div>
+  <div class="ph">
+    <div class="sb"><span>9:41</span><div style="display:flex;gap:6px;align-items:center"><span style="font-size:9px;color:#888">▲▲▲</span><div class="sb-bat"></div></div></div>
+
+    <div style="flex:1;display:flex;flex-direction:column;background:#f8f4ec;overflow:hidden">
+      <!-- Header with search input always accessible -->
+      <div style="padding:12px 14px 10px;background:#f0ead8;border-bottom:1.5px solid #ddd0b0;flex-shrink:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="logo.png" style="width:28px;height:28px;border-radius:50%;object-fit:cover" alt="">
+            <div>
+              <div style="font:700 14px 'Noto Serif TC',serif;color:#1c1508">豐年祭程序 2026</div>
+              <div style="font:400 9px 'Courier Prime',monospace;color:#bf7e1a">ILISIN · 200+ 部落</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:5px">
+            <span class="chip-off" style="font-size:9.5px;padding:3px 9px">花蓮</span>
+            <span class="chip-off" style="font-size:9.5px;padding:3px 9px">臺東</span>
+          </div>
+        </div>
+        <!-- Inline search -->
+        <div style="display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #ddd0b0;border-radius:8px;padding:0 10px;height:38px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="2"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="2" stroke-linecap="round"/></svg>
+          <span style="font:400 13px 'Noto Serif TC',serif;color:#bbb">搜尋部落名稱…</span>
+        </div>
+      </div>
+
+      <!-- Chronological list -->
+      <div style="flex:1;overflow:hidden;padding:0">
+        <!-- Date group: today -->
+        <div style="padding:8px 14px 4px;background:#fff8ec;border-bottom:1px solid #e8e0c8;display:flex;align-items:center;justify-content:space-between">
+          <span style="font:700 13px 'Noto Serif TC',serif;color:#bf7e1a">7月17日 四 · 今天</span>
+          <span style="font:400 10px 'Courier Prime',monospace;color:#9c845a">4 部落</span>
+        </div>
+        <div style="padding:8px 14px;display:flex;flex-direction:column;gap:6px;border-bottom:1.5px solid #ddd0b0">
+          <div class="vc" style="padding:10px 12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 17px/1.2 'Noto Serif TC',serif;color:#1c1508">豐裡部落</div><div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Mulimutu · 壽豐鄉</div></div>
+              <span class="badge b-ok">已公告</span>
+            </div>
+          </div>
+          <div class="vc" style="padding:10px 12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 17px/1.2 'Noto Serif TC',serif;color:#1c1508">光榮部落</div><div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Rinahem · 壽豐鄉</div></div>
+              <span class="badge b-ok">已公告</span>
+            </div>
+          </div>
+        </div>
+        <!-- Date group: tomorrow -->
+        <div style="padding:8px 14px 4px;background:#f5f2ea;border-bottom:1px solid #e8e0c8;display:flex;align-items:center;justify-content:space-between">
+          <span style="font:700 13px 'Noto Serif TC',serif;color:#5a4325">7月18日 五</span>
+          <span style="font:400 10px 'Courier Prime',monospace;color:#9c845a">6 部落</span>
+        </div>
+        <div style="padding:8px 14px;display:flex;flex-direction:column;gap:6px;border-bottom:1.5px solid #ddd0b0">
+          <div class="vc" style="padding:10px 12px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font:700 17px/1.2 'Noto Serif TC',serif;color:#1c1508">港口部落</div><div style="font:400 10px 'Courier Prime',monospace;color:#9c3e18">Makota'ay · 豐濱鄉</div></div>
+              <span class="badge b-ok">已公告</span>
+            </div>
+          </div>
+          <div style="font:400 11px 'Courier Prime',monospace;color:#9c845a;padding:0 2px">+ 5 更多…</div>
+        </div>
+        <!-- Date group: weekend -->
+        <div style="padding:8px 14px 4px;background:#f5f2ea;border-bottom:1px solid #e8e0c8;display:flex;align-items:center;justify-content:space-between">
+          <span style="font:700 13px 'Noto Serif TC',serif;color:#5a4325">7月19日 六</span>
+          <span style="font:400 10px 'Courier Prime',monospace;color:#9c845a">9 部落</span>
+        </div>
+        <div style="padding:8px 14px;display:flex;align-items:center;justify-content:center;color:#b0a080">
+          <span style="font:400 11px 'Courier Prime',monospace">↓ 繼續滾動</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tb">
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="#9c845a" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="#9c845a"/><path d="M7 9v4" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg><span class="til">地圖</span></div>
+      <div class="ti"><div style="width:26px;height:26px;border-radius:50%;background:#bf7e1a;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="#fff" stroke-width="1.8"/><line x1="3" y1="9" x2="21" y2="9" stroke="#fff" stroke-width="1.8"/></svg></div><span class="ton">行事曆</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#9c845a" stroke-width="1.5"/><path d="M16 16L21 21" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/></svg><span class="til">搜尋</span></div>
+      <div class="ti"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9c845a" stroke-width="1.5"/><path d="M12 11v7" stroke="#9c845a" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="#9c845a"/></svg><span class="til">資訊</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Landing option comparison stickies -->
+<div class="sn" style="left:80px;top:2880px;transform:rotate(-.5deg);max-width:350px">
+  <b>Option A trade-offs:</b><br>
+  ✓ Immediate geographic context. Familiar, shows the scale of festivals across the region.<br>
+  ✗ No temporal context — you land in a map with no obvious "where to start."<br>
+  Best for: tourists, first-time users exploring geography.
+</div>
+
+<div class="sn" style="left:510px;top:2880px;transform:rotate(.8deg);max-width:350px;background:#fef0a0">
+  <b>★ Option B trade-offs:</b><br>
+  ✓ Opens to today's events — immediately useful during festival season.<br>
+  ✓ Date strip shows the whole week at a glance, multi-day spans visible.<br>
+  ✓ Users always know what's happening right now.<br>
+  ✗ Less geographic context on first open.<br>
+  Best for: returning users, villagers, family planning visits.
+</div>
+
+<div class="sn" style="left:940px;top:2880px;transform:rotate(-1deg);max-width:350px">
+  <b>Option C trade-offs:</b><br>
+  ✓ Chronological list is the most accessible for elderly users — no map interaction needed.<br>
+  ✓ Search is always visible.<br>
+  ✗ No geographic context. Harder to discover nearby festivals.<br>
+  Best for: elderly users, comprehensive trip planning.
+</div>
+</x-dc>
+</body>
+</html>

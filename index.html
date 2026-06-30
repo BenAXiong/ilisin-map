@@ -557,6 +557,429 @@
     .card-source { font-family: var(--mono); font-size: .58rem; color: var(--text-3); text-decoration: none; flex-shrink: 0; }
     .card-source:hover { color: var(--amber); text-decoration: underline; }
 
+    /* ── Search panel ──────────────────────────── */
+    #panel-search          { display: none; flex-direction: column; overflow: hidden; }
+    #panel-search.active   { display: flex; }
+
+    .sr-input-row {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem .85rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .sr-icon { font-size: .9rem; color: var(--text-3); flex-shrink: 0; line-height: 1; }
+    .sr-input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      font-family: var(--cn);
+      font-size: .9rem;
+      color: var(--text-1);
+      caret-color: var(--accent);
+      min-width: 0;
+    }
+    .sr-input::placeholder { color: var(--text-3); font-size: .8rem; }
+    .sr-clear {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      cursor: pointer;
+      font-size: .7rem;
+      padding: 3px 5px;
+      border-radius: var(--r);
+      line-height: 1;
+      transition: color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sr-clear:hover { color: var(--text-1); }
+
+    .sr-chips {
+      flex-shrink: 0;
+      display: flex;
+      gap: .4rem;
+      padding: .45rem .85rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .sr-chips::-webkit-scrollbar { display: none; }
+    .sr-chip {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .07em;
+      padding: 3px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .12s, color .12s, border-color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sr-chip.active              { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .sr-chip:hover:not(.active)  { border-color: var(--amber); color: var(--amber-dark); }
+
+    .sr-results {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    }
+    .sr-hint {
+      padding: 2.5rem .85rem;
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: var(--text-3);
+      letter-spacing: .08em;
+      text-align: center;
+    }
+    .sr-count {
+      padding: .4rem .85rem .3rem;
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      letter-spacing: .07em;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 5;
+    }
+
+    /* ── Recent searches ───────────────────────── */
+    .sr-recent-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .55rem .85rem .3rem;
+      flex-shrink: 0;
+    }
+    .sr-recent-title {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      letter-spacing: .07em;
+    }
+    .sr-clear-all {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--accent);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .sr-recent-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .55rem .85rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+    }
+    .sr-recent-row:hover { background: var(--bg-alt); }
+    .sr-recent-icon {
+      font-size: .75rem;
+      color: var(--text-3);
+      flex-shrink: 0;
+    }
+    .sr-recent-text {
+      flex: 1;
+      font-family: var(--cn);
+      font-size: .82rem;
+      color: var(--text-1);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .sr-recent-del {
+      font-size: .72rem;
+      color: var(--text-3);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 .1rem;
+      flex-shrink: 0;
+    }
+    .sr-recent-del:hover { color: var(--text-1); }
+    .sr-show-more {
+      display: block;
+      width: 100%;
+      padding: .65rem .85rem;
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--accent);
+      background: none;
+      border: none;
+      border-top: 1px solid var(--border);
+      cursor: pointer;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    .sr-show-more:hover { background: var(--bg-alt); }
+
+    /* ── Info panel ─────────────────────────────── */
+    #panel-info { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+    .info-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 2rem .85rem 3rem;
+    }
+    .info-logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .55rem;
+      margin-bottom: 2rem;
+    }
+    .info-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .info-appname {
+      font-family: var(--disp);
+      font-size: 1.35rem;
+      color: var(--text-1);
+      letter-spacing: .02em;
+      text-align: center;
+    }
+    .info-appsub {
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--text-3);
+      letter-spacing: .1em;
+      text-align: center;
+      margin-top: -.2rem;
+    }
+    .info-tiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .55rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--r) * 2);
+      padding: .75rem .85rem;
+    }
+    .info-tile-value {
+      font-family: var(--mono);
+      font-size: 1.15rem;
+      color: var(--accent);
+      letter-spacing: .02em;
+    }
+    .info-tile-label {
+      font-family: var(--mono);
+      font-size: .55rem;
+      color: var(--text-3);
+      letter-spacing: .08em;
+      margin-top: .2rem;
+    }
+    .info-section-title {
+      font-family: var(--mono);
+      font-size: .6rem;
+      color: var(--text-3);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    .info-warn {
+      border: 1px solid var(--amber);
+      border-left: 3px solid var(--amber);
+      border-radius: var(--r);
+      padding: .7rem .85rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-warn-title {
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--amber-dark);
+      letter-spacing: .06em;
+      margin-bottom: .3rem;
+    }
+    .info-warn-body {
+      font-family: var(--cn);
+      font-size: .75rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .info-sources {
+      display: flex;
+      flex-direction: column;
+      gap: .1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-source-link {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-2);
+    }
+    .info-source-link:last-child { border-bottom: none; }
+    .info-source-label {
+      flex: 1;
+      font-family: var(--cn);
+      font-size: .78rem;
+    }
+    .info-source-arrow {
+      font-family: var(--mono);
+      font-size: .55rem;
+      color: var(--text-3);
+    }
+    .info-about-body {
+      font-family: var(--cn);
+      font-size: .78rem;
+      color: var(--text-2);
+      line-height: 1.75;
+    }
+
+    /* ── Contribution form ──────────────────────── */
+    .contrib-cta-row { display: flex; gap: .6rem; margin-bottom: 1.5rem; }
+    .contrib-cta {
+      flex: 1;
+      font-family: var(--mono);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      padding: .7rem .5rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: var(--r);
+      cursor: pointer;
+      text-align: center;
+      transition: opacity .12s;
+    }
+    .contrib-cta:active { opacity: .8; }
+    .contrib-details { margin-top: 1.75rem; }
+    .contrib-summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .contrib-summary::-webkit-details-marker { display: none; }
+    .contrib-summary .info-section-title { margin-bottom: 0; }
+    .contrib-chevron {
+      font-family: var(--mono);
+      font-size: .6rem;
+      color: var(--text-3);
+      transition: transform .2s;
+    }
+    .contrib-details[open] .contrib-chevron { transform: rotate(90deg); }
+    .contrib-body { padding-top: .85rem; }
+    .contrib-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .contrib-tab {
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .07em;
+      padding: .42rem 1rem;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-3);
+      cursor: pointer;
+      transition: color .12s, border-color .12s;
+      margin-bottom: -1px;
+    }
+    .contrib-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .contrib-form { display: none; flex-direction: column; gap: .75rem; }
+    .contrib-form.active { display: flex; }
+    .form-field { display: flex; flex-direction: column; gap: .28rem; }
+    .form-label {
+      font-family: var(--mono);
+      font-size: .58rem;
+      color: var(--text-3);
+      letter-spacing: .07em;
+    }
+    .form-label .req { color: var(--accent); margin-left: 2px; }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: .4rem .6rem;
+      font-family: var(--cn);
+      font-size: .8rem;
+      color: var(--text-1);
+      outline: none;
+      width: 100%;
+      transition: border-color .15s;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus { border-color: var(--accent); }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color: var(--text-3); font-size: .72rem; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .6rem center; padding-right: 1.8rem; }
+    .form-textarea { resize: vertical; min-height: 72px; }
+    .form-radio-group { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .form-radio-label {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      font-family: var(--mono);
+      font-size: .62rem;
+      color: var(--text-2);
+      cursor: pointer;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      transition: border-color .12s, color .12s, background .12s;
+    }
+    .form-radio-label input { display: none; }
+    .form-radio-label:has(input:checked) { border-color: var(--accent); color: var(--accent); background: var(--amber-pale); }
+    .form-conditional { display: none; }
+    .form-conditional.visible { display: flex; flex-direction: column; gap: .28rem; }
+    .form-submit {
+      align-self: flex-start;
+      font-family: var(--mono);
+      font-size: .65rem;
+      letter-spacing: .08em;
+      padding: .45rem 1.2rem;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: opacity .15s;
+      margin-top: .25rem;
+    }
+    .form-submit:disabled { opacity: .45; cursor: not-allowed; }
+    .form-status {
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .05em;
+      padding: .4rem .7rem;
+      border-radius: var(--r);
+      display: none;
+    }
+    .form-status.ok  { display: block; background: oklch(from var(--green) l c h / 0.12); color: var(--green); border: 1px solid oklch(from var(--green) l c h / 0.3); }
+    .form-status.err { display: block; background: oklch(from var(--terra) l c h / 0.1); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.25); }
+
     /* ── Placeholder panels ─────────────────────── */
     .panel-placeholder {
       height: 100%;
@@ -584,6 +1007,7 @@
     .popup-cn   { font-family: var(--cn);   font-size: .88rem; font-weight: 600; display: block; }
     .popup-sub  { font-family: var(--mono); font-size: .6rem;  color: var(--text-2); display: block; }
     .popup-date { font-family: var(--mono); font-size: .62rem; color: var(--amber-dark); font-weight: 700; margin-top: .15rem; display: block; }
+    .leaflet-bottom { z-index: 390 !important; }
     .leaflet-control-zoom a { color: var(--text-2) !important; background: var(--surface) !important; border-color: var(--border) !important; }
     .marker-cluster-small,
     .marker-cluster-medium,
@@ -593,6 +1017,124 @@
     .marker-cluster-large  div {
       background-color: oklch(from var(--accent) l c h / 0.72) !important;
       color: var(--bg) !important; font-family: var(--mono) !important; font-size: .65rem !important;
+    }
+
+    /* ── Sidebar (desktop only) ──────────────────── */
+    .sidebar {
+      display: none;
+      position: fixed;
+      left: 0; top: 0; bottom: 0;
+      width: 240px;
+      flex-direction: column;
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      z-index: 600;
+    }
+    .sb-logo-block {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 1.4rem 1.2rem 1rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .sb-logo   { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
+    .sb-appname { font-family: var(--disp); font-size: 1rem; color: var(--text-1); letter-spacing: -.01em; }
+    .sb-nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: .6rem 0;
+      overflow-y: auto;
+    }
+    .sb-link {
+      display: flex;
+      align-items: center;
+      padding: .7rem 1.2rem;
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .07em;
+      color: var(--text-2);
+      background: none;
+      border: none;
+      border-left: 2px solid transparent;
+      cursor: pointer;
+      text-align: left;
+      transition: color .12s, background .12s, border-color .12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sb-link:hover { color: var(--text-1); background: var(--bg-alt); }
+    .sb-link.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg-alt); }
+    .sb-footer {
+      flex-shrink: 0;
+      padding: .9rem 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    /* Close button (desktop detail panel) */
+    .bs-close-btn {
+      display: none;
+      margin-left: auto;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: .75rem;
+      color: var(--text-3);
+      padding: .2rem .4rem;
+    }
+    .bs-close-btn:hover { color: var(--text-1); }
+
+    /* ── Desktop breakpoint ≥768px ───────────────── */
+    @media (min-width: 768px) {
+      /* Show sidebar, hide mobile chrome */
+      .sidebar { display: flex; }
+      .app-header { display: none; }
+      .tab-bar { display: none; }
+      .bs-handle-pill { display: none; }
+      .bs-close-btn { display: block; }
+
+      /* Reposition all panels to right of sidebar */
+      .panel { inset: 0 0 0 240px; }
+      #panel-info { inset: 0 0 0 240px; }
+
+      /* Bottom sheet → fixed right detail panel */
+      .bs {
+        position: fixed;
+        top: 0; bottom: 0;
+        left: auto; right: 0;
+        width: 440px;
+        height: 100%;
+        border-radius: 0;
+        border-top: none;
+        border-left: 1px solid var(--border);
+        box-shadow: -4px 0 24px oklch(from var(--ink) l c h / 0.08);
+        transform: translateX(100%);
+      }
+      .bs[data-state="half"],
+      .bs[data-state="full"] { transform: translateX(0); }
+      .bs[data-state="collapsed"] { transform: translateX(100%); }
+
+      /* Shrink map panel when detail open */
+      #panel-map:has(.bs[data-state="half"]),
+      #panel-map:has(.bs[data-state="full"]) { right: 440px; }
+
+      /* Handle bar becomes a desktop header row */
+      .bs-handle-bar {
+        height: 48px;
+        justify-content: flex-start;
+        padding: 0 .85rem;
+        border-bottom: 1px solid var(--border);
+        cursor: default;
+      }
+      .bs-handle-bar:active { cursor: default; }
+
+      /* Timeline flex layout fills full height */
+      #panel-timeline { display: none; }
+      #panel-timeline.active { display: flex; }
     }
   </style>
 </head>
@@ -604,10 +1146,26 @@
     <span class="header-title">豐年祭地圖</span>
   </div>
   <div class="header-right">
-    <button class="theme-btn" id="themeBtn" aria-label="切換主題"></button>
+    <button class="theme-btn" id="themeBtn" data-theme-btn aria-label="切換主題"></button>
     <button class="install-btn" id="installBtn" hidden>安裝</button>
   </div>
 </header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sb-logo-block">
+    <img src="logo.png" alt="Ilisin" class="sb-logo" />
+    <span class="sb-appname">豐年祭地圖</span>
+  </div>
+  <div class="sb-nav">
+    <button class="sb-link active" data-tab="timeline">時間軸</button>
+    <button class="sb-link" data-tab="map">地圖</button>
+    <button class="sb-link" data-tab="search">搜尋</button>
+    <button class="sb-link" data-tab="info">關於</button>
+  </div>
+  <div class="sb-footer">
+    <button class="theme-btn" data-theme-btn aria-label="切換主題"></button>
+  </div>
+</nav>
 
 <!-- ── Timeline panel ── -->
 <div class="panel active" id="panel-timeline">
@@ -637,6 +1195,7 @@
   <div class="bs" id="bottomSheet" data-state="collapsed">
     <div class="bs-handle-bar" id="bsHandle">
       <div class="bs-handle-pill"></div>
+      <button class="bs-close-btn" onclick="setSheetState('collapsed')" aria-label="關閉">✕</button>
     </div>
     <div class="bs-pills-row" id="bsPills"></div>
     <div class="bs-content" id="bsContent">
@@ -647,17 +1206,148 @@
 
 <!-- ── Search panel ── -->
 <div class="panel" id="panel-search">
-  <div class="panel-placeholder">
-    <span class="ph-icon">○</span>
-    搜尋 · Phase 4
+  <div class="sr-input-row">
+    <span class="sr-icon">○</span>
+    <input type="text" class="sr-input" id="srInput" placeholder="搜尋部落、鄉鎮、場地…" autocomplete="off" />
+    <button class="sr-clear" id="srClear" hidden aria-label="清除">✕</button>
+  </div>
+  <div class="sr-chips" id="srChips">
+    <button class="sr-chip" data-filter="week">本週</button>
+    <button class="sr-chip" data-filter="hualien">花蓮</button>
+    <button class="sr-chip" data-filter="taitung">臺東</button>
+    <button class="sr-chip" data-filter="taitung-city">臺東市</button>
+    <button class="sr-chip" data-filter="confirmed">已公告</button>
+  </div>
+  <div class="sr-results" id="srResults">
+    <div class="sr-hint">輸入部落名稱或選擇篩選條件</div>
   </div>
 </div>
 
 <!-- ── Info panel ── -->
 <div class="panel" id="panel-info">
-  <div class="panel-placeholder">
-    <span class="ph-icon">◇</span>
-    關於 · Phase 5
+  <div class="info-wrap">
+
+    <div class="info-logo-block">
+      <img src="logo.png" alt="Ilisin" class="info-logo" />
+      <div class="info-appname">豐年祭地圖</div>
+      <div class="info-appsub">ILISIN MAP 2026</div>
+    </div>
+
+    <div class="info-tiles" id="infoTiles"></div>
+
+    <div class="info-section-title" style="margin-top:.25rem">臺東資料說明</div>
+    <div class="info-warn">
+      <div class="info-warn-title">⚠ 注意</div>
+      <div class="info-warn-body">臺東縣部分部落以社群媒體公告為主，日期可能異動，請以各部落公告為準。正式出行前務必透過部落或公所管道再確認。</div>
+    </div>
+
+    <div class="contrib-cta-row">
+      <button class="contrib-cta" onclick="openContrib('report')">回報錯誤</button>
+      <button class="contrib-cta" onclick="openContrib('new')">新增部落</button>
+    </div>
+
+    <div class="info-section-title">資料來源</div>
+    <div class="info-sources" id="infoSources"></div>
+
+    <div class="info-section-title">關於本站</div>
+    <div class="info-about-body">豐年祭地圖整合花蓮、臺東兩縣 2026 年度阿美族豐年祭（Ilisin）資訊，以地圖與時間軸呈現各部落祭典日期與地點。資料來自縣府公告及部落自主發布，由志願者整理維護，持續更新中。</div>
+
+    <details class="contrib-details" id="contribDetails">
+      <summary class="contrib-summary">
+        <span class="info-section-title" style="margin-bottom:0">回報 · 貢獻</span>
+        <span class="contrib-chevron">▶</span>
+      </summary>
+      <div class="contrib-body">
+
+        <div class="contrib-tabs">
+          <button class="contrib-tab active" data-ctab="report">回報錯誤</button>
+          <button class="contrib-tab" data-ctab="new">新增部落</button>
+        </div>
+
+        <!-- Report error -->
+        <form class="contrib-form active" id="formReport" novalidate>
+          <div class="form-field">
+            <label class="form-label">部落<span class="req">*</span></label>
+            <select class="form-select" id="rVillage" required>
+              <option value="">— 選擇部落 —</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">問題類型<span class="req">*</span></label>
+            <div class="form-radio-group" id="rIssueGroup">
+              <label class="form-radio-label"><input type="radio" name="rIssue" value="日期有誤" required>日期有誤</label>
+              <label class="form-radio-label"><input type="radio" name="rIssue" value="已取消">已取消</label>
+              <label class="form-radio-label"><input type="radio" name="rIssue" value="場地更新">場地更新</label>
+              <label class="form-radio-label"><input type="radio" name="rIssue" value="其他">其他</label>
+            </div>
+          </div>
+          <div class="form-field form-conditional" id="rUpdateWrap">
+            <label class="form-label" id="rUpdateLabel">更新後資訊</label>
+            <input class="form-input" id="rUpdate" type="text" placeholder="例：8/15 六 或 文化活動中心">
+          </div>
+          <div class="form-field">
+            <label class="form-label">來源網址</label>
+            <input class="form-input" id="rSource" type="url" placeholder="https://…">
+          </div>
+          <div class="form-field">
+            <label class="form-label">備註</label>
+            <textarea class="form-textarea" id="rNote" placeholder="其他補充說明…"></textarea>
+          </div>
+          <div class="form-status" id="rStatus"></div>
+          <button class="form-submit" id="rSubmit" type="button" onclick="submitReport()">送出回報</button>
+        </form>
+
+        <!-- New village -->
+        <form class="contrib-form" id="formNew" novalidate>
+          <div class="form-field">
+            <label class="form-label">中文名稱<span class="req">*</span></label>
+            <input class="form-input" id="nChinese" type="text" placeholder="例：康樂部落" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Amis 名稱</label>
+            <input class="form-input" id="nAmis" type="text" placeholder="例：Palamitan">
+          </div>
+          <div style="display:flex;gap:.6rem">
+            <div class="form-field" style="flex:1">
+              <label class="form-label">縣市<span class="req">*</span></label>
+              <select class="form-select" id="nCounty" required onchange="cascadeTownship()">
+                <option value="">— 選擇 —</option>
+                <option value="花蓮縣">花蓮縣</option>
+                <option value="臺東縣">臺東縣</option>
+              </select>
+            </div>
+            <div class="form-field" style="flex:1">
+              <label class="form-label">鄉鎮<span class="req">*</span></label>
+              <select class="form-select" id="nTownship" required>
+                <option value="">— 先選縣市 —</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label">日期<span class="req">*</span></label>
+            <input class="form-input" id="nDate" type="text" placeholder="例：8/15 六 或 7/3 五–7/11 六" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">場地</label>
+            <input class="form-input" id="nVenue" type="text" placeholder="例：部落聚會所">
+          </div>
+          <div class="form-field">
+            <label class="form-label">來源網址</label>
+            <input class="form-input" id="nSource" type="url" placeholder="https://…">
+          </div>
+          <div class="form-field">
+            <label class="form-label">備註</label>
+            <textarea class="form-textarea" id="nNote" placeholder="其他補充說明…"></textarea>
+          </div>
+          <div class="form-status" id="nStatus"></div>
+          <button class="form-submit" id="nSubmit" type="button" onclick="submitNew()">送出新增</button>
+        </form>
+
+      </div>
+    </details>
+
+    <a href="viz.html" style="color:var(--bg);font-size:.5rem;text-decoration:none;display:block;margin-top:2rem;user-select:none;" tabindex="-1" aria-hidden="true">·</a>
+
   </div>
 </div>
 
@@ -694,14 +1384,16 @@ let themeIdx  = 0;
 function applyTheme(idx) {
   themeIdx = idx % THEMES.length;
   document.documentElement.dataset.theme = THEMES[themeIdx] ?? '';
-  document.getElementById('themeBtn').textContent = T_LABEL[themeIdx];
+  document.querySelectorAll('[data-theme-btn]').forEach(b => b.textContent = T_LABEL[themeIdx]);
   localStorage.setItem('ilisin-theme', String(themeIdx));
 }
 (function initTheme() {
   const saved = Number.parseInt(localStorage.getItem('ilisin-theme') ?? '0', 10);
   applyTheme(Number.isNaN(saved) ? 0 : saved);
 })();
-document.getElementById('themeBtn').addEventListener('click', () => applyTheme(themeIdx + 1));
+document.querySelectorAll('[data-theme-btn]').forEach(b =>
+  b.addEventListener('click', () => applyTheme(themeIdx + 1))
+);
 
 /* ── Tab switching ───────────────────────────────── */
 let currentTab = 'timeline';
@@ -710,11 +1402,14 @@ function switchTab(name) {
   if (name === currentTab) return;
   document.getElementById('panel-' + currentTab).classList.remove('active');
   document.getElementById('panel-' + name).classList.add('active');
-  document.querySelectorAll('.tab-btn').forEach(b =>
+  document.querySelectorAll('.tab-btn, .sb-link').forEach(b =>
     b.classList.toggle('active', b.dataset.tab === name)
   );
   document.body.className = 'tab-' + name;
   currentTab = name;
+  if (name !== 'map' && window.innerWidth >= 768 && bsState !== 'collapsed') {
+    setSheetState('collapsed');
+  }
   if (name === 'map') {
     if (mapInitialized) {
       leafletMap.invalidateSize();
@@ -723,9 +1418,18 @@ function switchTab(name) {
       mapInitialized = true;
     }
   }
+  if (name === 'info' && !infoInitialized) {
+    initInfo();
+    infoInitialized = true;
+  }
 }
+let infoInitialized = false;
 document.querySelector('.tab-bar').addEventListener('click', e => {
   const btn = e.target.closest('.tab-btn');
+  if (btn) switchTab(btn.dataset.tab);
+});
+document.getElementById('sidebar').addEventListener('click', e => {
+  const btn = e.target.closest('.sb-link');
   if (btn) switchTab(btn.dataset.tab);
 });
 
@@ -1068,6 +1772,9 @@ function setSheetState(state) {
   bsState    = state;
   document.getElementById('bottomSheet').dataset.state = state;
   if (state === 'collapsed' && prev !== 'collapsed') deselect();
+  if (window.innerWidth >= 768 && mapInitialized) {
+    setTimeout(() => leafletMap.invalidateSize(), 360);
+  }
 }
 
 function deselect() {
@@ -1133,7 +1840,7 @@ function makeSectionHtml(label, count, inner) {
     </div>${inner}</div>`;
 }
 
-function activateVillage(id) {
+function activateVillage(id, fromCard = false) {
   if (activeId) {
     const prev = VILLAGES.find(v => v.id === activeId);
     if (prev) markers[activeId]?.setIcon(makeIcon(prev, false));
@@ -1144,9 +1851,13 @@ function activateVillage(id) {
   const v = VILLAGES.find(v => v.id === id);
   if (!v) return;
   markers[id]?.setIcon(makeIcon(v, true));
-  leafletMap.panTo([v.lat, v.lng], { animate: true, duration: 0.4 });
+  if (fromCard) {
+    leafletMap.setView([v.lat, v.lng], Math.max(leafletMap.getZoom(), 13), { animate: true });
+  } else {
+    leafletMap.panTo([v.lat, v.lng], { animate: true, duration: 0.4 });
+  }
   markers[id]?.openPopup();
-  if (bsState === 'collapsed') setSheetState('half');
+  if (fromCard || bsState === 'collapsed') setSheetState('half');
   const card = document.getElementById('card-' + id);
   if (card) {
     card.classList.add('active');
@@ -1156,7 +1867,7 @@ function activateVillage(id) {
 
 function goToMapVillage(id) {
   switchTab('map');
-  setTimeout(() => activateVillage(id), mapInitialized ? 50 : 350);
+  setTimeout(() => activateVillage(id, true), mapInitialized ? 50 : 350);
 }
 
 document.getElementById('mapCountyChips').addEventListener('click', e => {
@@ -1258,6 +1969,384 @@ function initMap() {
   renderSheet();
   initSheetDrag();
 }
+
+/* ═══════════════════════════════════════════════════
+   SEARCH
+   ═══════════════════════════════════════════════════ */
+const COUNTY_FILTERS = new Set(['hualien', 'taitung', 'taitung-city']);
+let srFilters = new Set();
+
+// Normalize smart quotes and curly apostrophes → straight apostrophe before matching
+function srNorm(str) {
+  return (str || '').normalize('NFC').toLowerCase().replace(/[''ʼ`]/g, "'");
+}
+
+function getSearchResults(query, filters) {
+  const q = srNorm(query.trim());
+  const now = new Date(); now.setHours(0, 0, 0, 0);
+  const weekEnd = new Date(now); weekEnd.setDate(now.getDate() + 7);
+
+  return VILLAGES
+    .filter(v => {
+      if (q) {
+        const hay = [v.chinese, v.amis, v.township, v.venue].map(srNorm).join(' ');
+        if (!hay.includes(q)) return false;
+      }
+      if (filters.has('week')) {
+        const d = parseStartDate(v.date);
+        if (!d || d < now || d >= weekEnd) return false;
+      }
+      if (filters.has('hualien')      && v.county    !== '花蓮縣') return false;
+      if (filters.has('taitung')      && v.county    !== '臺東縣') return false;
+      if (filters.has('taitung-city') && v.township  !== '臺東市') return false;
+      if (filters.has('confirmed')    && v.status    !== 'confirmed') return false;
+      return true;
+    })
+    .sort((a, b) => {
+      if (a.status === 'cancelled' && b.status !== 'cancelled') return  1;
+      if (b.status === 'cancelled' && a.status !== 'cancelled') return -1;
+      const ad = parseStartDate(a.date), bd = parseStartDate(b.date);
+      if (ad && !bd) return -1;
+      if (!ad && bd) return  1;
+      if (!ad && !bd) return 0;
+      return ad - bd;
+    });
+}
+
+/* ── Recent searches ─────────────────────────────── */
+const RECENT_KEY  = 'ilisin-searches';
+const RECENT_MAX  = 50;
+const RECENT_PAGE = 10;
+let recentShown   = RECENT_PAGE;
+
+function getRecents() {
+  try { return JSON.parse(localStorage.getItem(RECENT_KEY) || '[]'); }
+  catch { return []; }
+}
+
+function saveRecentSearch(q) {
+  const t = q.trim();
+  if (t.length < 2) return;
+  const list = getRecents().filter(x => x !== t);
+  list.unshift(t);
+  localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, RECENT_MAX)));
+}
+
+function removeRecentSearch(q) {
+  const list = getRecents().filter(x => x !== q);
+  localStorage.setItem(RECENT_KEY, JSON.stringify(list));
+  recentShown = RECENT_PAGE;
+  renderSearchResults();
+}
+
+function clearRecentSearches() {
+  localStorage.removeItem(RECENT_KEY);
+  recentShown = RECENT_PAGE;
+  renderSearchResults();
+}
+
+function renderRecents(div) {
+  const all = getRecents();
+  if (all.length === 0) {
+    div.innerHTML = '<div class="sr-hint">輸入部落名稱或選擇篩選條件</div>';
+    return;
+  }
+  const page    = all.slice(0, recentShown);
+  const hasMore = all.length > recentShown;
+  const rows    = page.map(q =>
+    `<div class="sr-recent-row" data-action="apply" data-q="${encodeURIComponent(q)}">
+      <span class="sr-recent-icon">↺</span>
+      <span class="sr-recent-text">${q}</span>
+      <button class="sr-recent-del" data-action="del" data-q="${encodeURIComponent(q)}" aria-label="刪除">✕</button>
+    </div>`
+  ).join('');
+  const moreBtn = hasMore
+    ? `<button class="sr-show-more" data-action="more">顯示更多 ${all.length - recentShown} 筆</button>`
+    : '';
+  div.innerHTML = `
+    <div class="sr-recent-header">
+      <span class="sr-recent-title">最近搜尋</span>
+      <button class="sr-clear-all" data-action="clear">清除</button>
+    </div>
+    ${rows}${moreBtn}`;
+}
+
+function renderSearchResults() {
+  const q      = document.getElementById('srInput').value;
+  const div    = document.getElementById('srResults');
+  const hasAny = q.trim().length > 0 || srFilters.size > 0;
+
+  if (!hasAny) {
+    recentShown = RECENT_PAGE;
+    renderRecents(div);
+    return;
+  }
+
+  const list = getSearchResults(q, srFilters);
+
+  if (list.length === 0) {
+    div.innerHTML = '<div class="sr-hint">找不到符合條件的部落</div>';
+    return;
+  }
+
+  div.innerHTML = `<div class="sr-count">${list.length} 筆結果</div>
+    ${list.map(v => cardHtml(v, `data-vid="${v.id}" onclick="srCardTap('${v.id}')"`)).join('')}`;
+}
+
+function srCardTap(id) {
+  const q = document.getElementById('srInput').value.trim();
+  if (q.length >= 2) saveRecentSearch(q);
+  goToMapVillage(id);
+}
+
+function srOnInput() {
+  document.getElementById('srClear').hidden = document.getElementById('srInput').value.length === 0;
+  renderSearchResults();
+}
+// 'input' fires on every keystroke; 'compositionend' fires when IME commits Chinese chars
+document.getElementById('srInput').addEventListener('input', srOnInput);
+document.getElementById('srInput').addEventListener('compositionend', srOnInput);
+document.getElementById('srInput').addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+  const q = document.getElementById('srInput').value.trim();
+  if (q.length >= 2) saveRecentSearch(q);
+  e.target.blur();
+});
+
+document.getElementById('srClear').addEventListener('click', () => {
+  document.getElementById('srInput').value = '';
+  document.getElementById('srClear').hidden = true;
+  renderSearchResults();
+  document.getElementById('srInput').focus();
+});
+
+// Event delegation for recent-search actions
+document.getElementById('srResults').addEventListener('click', e => {
+  const del   = e.target.closest('[data-action="del"]');
+  const clear = e.target.closest('[data-action="clear"]');
+  const more  = e.target.closest('[data-action="more"]');
+  const apply = !del && !clear && !more && e.target.closest('[data-action="apply"]');
+
+  if (del)   { e.stopPropagation(); removeRecentSearch(decodeURIComponent(del.dataset.q)); return; }
+  if (clear) { clearRecentSearches(); return; }
+  if (more)  { recentShown += RECENT_PAGE; renderSearchResults(); return; }
+  if (apply) {
+    const q = decodeURIComponent(apply.dataset.q);
+    document.getElementById('srInput').value = q;
+    document.getElementById('srClear').hidden = false;
+    renderSearchResults();
+    return;
+  }
+});
+
+document.getElementById('srChips').addEventListener('click', e => {
+  const chip = e.target.closest('.sr-chip');
+  if (!chip) return;
+  const key = chip.dataset.filter;
+
+  if (srFilters.has(key)) {
+    srFilters.delete(key);
+    chip.classList.remove('active');
+  } else {
+    // County chips are mutually exclusive
+    if (COUNTY_FILTERS.has(key)) {
+      COUNTY_FILTERS.forEach(k => {
+        srFilters.delete(k);
+        document.querySelector(`.sr-chip[data-filter="${k}"]`)?.classList.remove('active');
+      });
+    }
+    srFilters.add(key);
+    chip.classList.add('active');
+  }
+  renderSearchResults();
+});
+
+/* ── Info tab ───────────────────────────────────── */
+function initInfo() {
+  const total     = VILLAGES.length;
+  const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
+  const dateMatch = DATA_NOTE.match(/(\d{4}-\d{2}-\d{2})/);
+  const updated   = dateMatch ? dateMatch[1].slice(0, 7).replace('-', '/') : '—';
+
+  document.getElementById('infoTiles').innerHTML = [
+    { value: '5月–9月', label: '祭儀期間' },
+    { value: total,     label: '部落總數' },
+    { value: confirmed, label: '已公告' },
+    { value: updated,   label: '最後更新' },
+  ].map(t => `
+    <div class="info-tile">
+      <div class="info-tile-value">${t.value}</div>
+      <div class="info-tile-label">${t.label}</div>
+    </div>`).join('');
+
+  document.getElementById('infoSources').innerHTML = Object.values(SOURCES)
+    .map(s => `<a class="info-source-link" href="${s.url}" target="_blank" rel="noopener">
+      <span class="info-source-label">${s.label}</span>
+      <span class="info-source-arrow">↗</span>
+    </a>`).join('');
+
+  initContribForm();
+}
+
+/* ── Contribution form ──────────────────────────── */
+// Airtable config — fill these in before using the form
+// PAT needs scope: data:records:write on this base only (safe to expose)
+const AT_TOKEN       = 'YOUR_AIRTABLE_PAT_HERE';
+const AT_BASE        = 'YOUR_BASE_ID_HERE';   // starts with "app..."
+const AT_TBL_REPORTS = 'Reports';             // table for error reports
+const AT_TBL_NEW     = 'Submissions';         // table for new villages
+
+// Derive township lists from data
+const TOWNSHIP_MAP = {};
+VILLAGES.forEach(v => {
+  (TOWNSHIP_MAP[v.county] ??= new Set()).add(v.township);
+});
+Object.keys(TOWNSHIP_MAP).forEach(c => {
+  TOWNSHIP_MAP[c] = [...TOWNSHIP_MAP[c]].sort();
+});
+
+function openContrib(which) {
+  const details = document.getElementById('contribDetails');
+  details.open = true;
+  document.querySelector(`.contrib-tab[data-ctab="${which}"]`)?.click();
+  setTimeout(() => details.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+}
+
+function initContribForm() {
+  // Populate village select grouped by county › township
+  const sel = document.getElementById('rVillage');
+  const grouped = {};
+  VILLAGES.forEach(v => {
+    const gk = `${v.county} · ${v.township}`;
+    (grouped[gk] ??= []).push(v);
+  });
+  Object.entries(grouped).sort(([a],[b]) => a.localeCompare(b)).forEach(([group, vs]) => {
+    const og = document.createElement('optgroup');
+    og.label = group;
+    vs.forEach(v => {
+      const o = document.createElement('option');
+      o.value   = v.id;
+      o.textContent = v.chinese + (v.amis ? ` · ${v.amis}` : '');
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  });
+
+  // Show/hide conditional field based on issue type
+  document.getElementById('rIssueGroup').addEventListener('change', e => {
+    const val  = e.target.value;
+    const wrap = document.getElementById('rUpdateWrap');
+    const lbl  = document.getElementById('rUpdateLabel');
+    if (val === '日期有誤') {
+      wrap.classList.add('visible');
+      lbl.textContent = '更新後日期';
+      document.getElementById('rUpdate').placeholder = '例：8/15 六';
+    } else if (val === '場地更新') {
+      wrap.classList.add('visible');
+      lbl.textContent = '更新後場地';
+      document.getElementById('rUpdate').placeholder = '例：文化活動中心廣場';
+    } else {
+      wrap.classList.remove('visible');
+    }
+  });
+
+  // Contrib sub-tab switching
+  document.querySelector('.contrib-tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.contrib-tab');
+    if (!btn) return;
+    document.querySelectorAll('.contrib-tab').forEach(b => b.classList.toggle('active', b === btn));
+    document.getElementById('formReport').classList.toggle('active', btn.dataset.ctab === 'report');
+    document.getElementById('formNew').classList.toggle('active', btn.dataset.ctab === 'new');
+  });
+}
+
+function cascadeTownship() {
+  const county = document.getElementById('nCounty').value;
+  const sel    = document.getElementById('nTownship');
+  sel.innerHTML = county
+    ? (TOWNSHIP_MAP[county] ?? []).map(t => `<option value="${t}">${t}</option>`).join('')
+    : '<option value="">— 先選縣市 —</option>';
+}
+
+async function atPost(table, fields) {
+  const r = await fetch(`https://api.airtable.com/v0/${AT_BASE}/${encodeURIComponent(table)}`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${AT_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ fields })
+  });
+  if (!r.ok) throw new Error(`${r.status}`);
+}
+
+function setFormState(statusEl, submitEl, state, msg) {
+  statusEl.className = 'form-status ' + (state === 'ok' ? 'ok' : state === 'err' ? 'err' : '');
+  statusEl.textContent = msg;
+  submitEl.disabled = state === 'loading';
+}
+
+async function submitReport() {
+  const village = document.getElementById('rVillage').value;
+  const issue   = document.querySelector('input[name="rIssue"]:checked')?.value;
+  const status  = document.getElementById('rStatus');
+  const submit  = document.getElementById('rSubmit');
+
+  if (!village || !issue) {
+    setFormState(status, submit, 'err', '請選擇部落和問題類型');
+    return;
+  }
+  setFormState(status, submit, 'loading', '');
+
+  const v = VILLAGES.find(v => v.id === village);
+  try {
+    await atPost(AT_TBL_REPORTS, {
+      '部落ID':   village,
+      '部落名稱': v?.chinese ?? '',
+      '問題類型': issue,
+      '更新資訊': document.getElementById('rUpdate').value.trim(),
+      '來源網址': document.getElementById('rSource').value.trim(),
+      '備註':     document.getElementById('rNote').value.trim(),
+    });
+    setFormState(status, submit, 'ok', '已送出，謝謝你的回報！');
+    document.getElementById('formReport').reset();
+    document.getElementById('rUpdateWrap').classList.remove('visible');
+  } catch (e) {
+    setFormState(status, submit, 'err', `送出失敗 (${e.message})，請稍後再試`);
+  }
+}
+
+async function submitNew() {
+  const chinese  = document.getElementById('nChinese').value.trim();
+  const county   = document.getElementById('nCounty').value;
+  const township = document.getElementById('nTownship').value;
+  const date     = document.getElementById('nDate').value.trim();
+  const status   = document.getElementById('nStatus');
+  const submit   = document.getElementById('nSubmit');
+
+  if (!chinese || !county || !township || !date) {
+    setFormState(status, submit, 'err', '請填寫必填欄位（中文名稱、縣市、鄉鎮、日期）');
+    return;
+  }
+  setFormState(status, submit, 'loading', '');
+
+  try {
+    await atPost(AT_TBL_NEW, {
+      '中文名稱': chinese,
+      'Amis名稱': document.getElementById('nAmis').value.trim(),
+      '縣市':     county,
+      '鄉鎮':     township,
+      '日期':     date,
+      '場地':     document.getElementById('nVenue').value.trim(),
+      '來源網址': document.getElementById('nSource').value.trim(),
+      '備註':     document.getElementById('nNote').value.trim(),
+    });
+    setFormState(status, submit, 'ok', '已送出，謝謝你的貢獻！');
+    document.getElementById('formNew').reset();
+    document.getElementById('nTownship').innerHTML = '<option value="">— 先選縣市 —</option>';
+  } catch (e) {
+    setFormState(status, submit, 'err', `送出失敗 (${e.message})，請稍後再試`);
+  }
+}
+
+// initContribForm() is called from initInfo() below — see the Info tab section above
 
 /* ── PWA ─────────────────────────────────────────── */
 let deferredPrompt = null;
