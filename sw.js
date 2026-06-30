@@ -1,4 +1,4 @@
-const CACHE = 'ilisin-v22';
+const CACHE = 'ilisin-v23';
 const SHELL = [
   '/',
   '/index.html',
@@ -8,6 +8,10 @@ const SHELL = [
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
+// App-shell files that change on every deploy — always go to the network
+// first so updates show up immediately, instead of waiting on the SW
+// install/activate lifecycle. Cache is only the offline fallback for these.
+const NETWORK_FIRST = new Set(['/', '/index.html', '/data.js', '/manifest.json']);
 
 globalThis.addEventListener('install', e => {
   e.waitUntil(
@@ -38,6 +42,19 @@ globalThis.addEventListener('fetch', e => {
   ) {
     return;
   }
+  if (url.origin === self.location.origin && NETWORK_FIRST.has(url.pathname)) {
+    e.respondWith(
+      fetch(e.request)
+        .then(res => {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copy));
+          return res;
+        })
+        .catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
   );
