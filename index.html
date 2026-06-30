@@ -2198,10 +2198,8 @@ function initInfo() {
 }
 
 /* ── Contribution form ──────────────────────────── */
-// Airtable config — fill these in before using the form
-// PAT needs scope: data:records:write on this base only (safe to expose)
-const AT_TOKEN       = 'YOUR_AIRTABLE_PAT_HERE';
-const AT_BASE        = 'YOUR_BASE_ID_HERE';   // starts with "app..."
+// Submissions go through /api/contribute, which holds the Airtable
+// token server-side — see api/contribute.js
 const AT_TBL_REPORTS = 'Reports';             // table for error reports
 const AT_TBL_NEW     = 'Submissions';         // table for new villages
 
@@ -2278,10 +2276,10 @@ function cascadeTownship() {
 }
 
 async function atPost(table, fields) {
-  const r = await fetch(`https://api.airtable.com/v0/${AT_BASE}/${encodeURIComponent(table)}`, {
+  const r = await fetch('/api/contribute', {
     method: 'POST',
-    headers: { 'Authorization': `Bearer ${AT_TOKEN}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ fields })
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ table, fields })
   });
   if (!r.ok) throw new Error(`${r.status}`);
 }
