@@ -11,6 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Ilisin" />
   <link rel="apple-touch-icon" href="logo.png" />
+  <script defer src="https://umami-ten-mocha.vercel.app/script.js" data-website-id="b5edce61-5f7b-48f8-b077-53eeed267361"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
@@ -1398,8 +1399,13 @@ document.querySelectorAll('[data-theme-btn]').forEach(b =>
 /* ── Tab switching ───────────────────────────────── */
 let currentTab = 'timeline';
 
+function trackEvent(name, data) {
+  window.umami?.track(name, data);
+}
+
 function switchTab(name) {
   if (name === currentTab) return;
+  trackEvent('tab_switch', { tab: name });
   document.getElementById('panel-' + currentTab).classList.remove('active');
   document.getElementById('panel-' + name).classList.add('active');
   document.querySelectorAll('.tab-btn, .sb-link').forEach(b =>
@@ -1850,6 +1856,7 @@ function activateVillage(id, fromCard = false) {
   activeId = id;
   const v = VILLAGES.find(v => v.id === id);
   if (!v) return;
+  trackEvent('village_tap', { id: v.id, name: v.chinese, source: fromCard ? 'card' : 'marker' });
   markers[id]?.setIcon(makeIcon(v, true));
   if (fromCard) {
     leafletMap.setView([v.lat, v.lng], Math.max(leafletMap.getZoom(), 13), { animate: true });
@@ -1874,6 +1881,7 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   countyFilter = chip.dataset.county;
+  trackEvent('map_filter', { county: countyFilter });
   document.querySelectorAll('.map-chip').forEach(c => c.classList.toggle('active', c === chip));
   renderSheet();
   updateMarkers();
@@ -2095,7 +2103,7 @@ function renderSearchResults() {
 
 function srCardTap(id) {
   const q = document.getElementById('srInput').value.trim();
-  if (q.length >= 2) saveRecentSearch(q);
+  if (q.length >= 2) { saveRecentSearch(q); trackEvent('search', { query: q }); }
   goToMapVillage(id);
 }
 
@@ -2109,7 +2117,7 @@ document.getElementById('srInput').addEventListener('compositionend', srOnInput)
 document.getElementById('srInput').addEventListener('keydown', e => {
   if (e.key !== 'Enter') return;
   const q = document.getElementById('srInput').value.trim();
-  if (q.length >= 2) saveRecentSearch(q);
+  if (q.length >= 2) { saveRecentSearch(q); trackEvent('search', { query: q }); }
   e.target.blur();
 });
 
@@ -2157,6 +2165,7 @@ document.getElementById('srChips').addEventListener('click', e => {
     }
     srFilters.add(key);
     chip.classList.add('active');
+    trackEvent('search_filter', { filter: key });
   }
   renderSearchResults();
 });
@@ -2306,10 +2315,12 @@ async function submitReport() {
       '備註':     document.getElementById('rNote').value.trim(),
     });
     setFormState(status, submit, 'ok', '已送出，謝謝你的回報！');
+    trackEvent('report_submit', { result: 'ok', village, issue });
     document.getElementById('formReport').reset();
     document.getElementById('rUpdateWrap').classList.remove('visible');
   } catch (e) {
     setFormState(status, submit, 'err', `送出失敗 (${e.message})，請稍後再試`);
+    trackEvent('report_submit', { result: 'error' });
   }
 }
 
@@ -2339,10 +2350,12 @@ async function submitNew() {
       '備註':     document.getElementById('nNote').value.trim(),
     });
     setFormState(status, submit, 'ok', '已送出，謝謝你的貢獻！');
+    trackEvent('new_submit', { result: 'ok', county, township });
     document.getElementById('formNew').reset();
     document.getElementById('nTownship').innerHTML = '<option value="">— 先選縣市 —</option>';
   } catch (e) {
     setFormState(status, submit, 'err', `送出失敗 (${e.message})，請稍後再試`);
+    trackEvent('new_submit', { result: 'error' });
   }
 }
 
@@ -2357,7 +2370,8 @@ globalThis.addEventListener('beforeinstallprompt', e => {
 document.getElementById('installBtn').addEventListener('click', async () => {
   if (!deferredPrompt) return;
   deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
+  const { outcome } = await deferredPrompt.userChoice;
+  trackEvent('pwa_install', { outcome });
   deferredPrompt = null;
   document.getElementById('installBtn').hidden = true;
 });
