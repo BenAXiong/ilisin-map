@@ -2095,7 +2095,12 @@ const BULUO_REF = {
       "都蘭部落"
     ],
     "indigenous_name": "'Etolan",
-    "indigenous_name_alt": [],
+    "indigenous_name_alt": [
+      "Dulan",
+      "Etolan",
+      "A'tolan",
+      "Atolan"
+    ],
     "dialect": [
       "海岸阿美語"
     ],
@@ -2140,6 +2145,21 @@ const BULUO_REF = {
     "chinese_name": "基拉菲婻部落",
     "chinese_name_alt": [],
     "indigenous_name": "Cilafinan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "verified",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "Sashawaves/Amis-Dialect (GitHub)"
+    ],
+    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+  },
+  "ami-maolaway": {
+    "chinese_name": "瑪屋撈外部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Ma'olaway",
     "indigenous_name_alt": [],
     "dialect": [
       "海岸阿美語"
@@ -2778,28 +2798,6 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
-    ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
-  },
-  {
-    "id": "ami-maolaway",
-    "chinese_name": "瑪屋撈外部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Ma'olaway",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "東河鄉",
-    "village": "尚德村",
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
     "status": "verified",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",

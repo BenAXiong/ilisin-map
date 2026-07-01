@@ -263,7 +263,14 @@ body.tab-info .app-header { display: none; }
 .tl-strip-inner { position: relative; display: inline-block; }
 
 /* Multi-day bands */
-.tl-bands-layer { position: relative; width: 100%; }
+.tl-bands-layer {
+  position: relative;
+  width: 100%;
+  max-height: 30vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
 .tl-band {
   position: absolute;
   display: flex;
@@ -525,10 +532,8 @@ body.tab-info .app-header { display: none; }
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: var(--border-2) transparent;
+  scrollbar-color: var(--accent) transparent;
 }
-.bs-content::-webkit-scrollbar       { width: 3px; }
-.bs-content::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
 
 .bs-cluster-label {
   position: sticky;
@@ -582,6 +587,7 @@ body.tab-info .app-header { display: none; }
 .card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
 .card-names { flex: 1; min-width: 0; }
 .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
+.card-chinese-alt { font-family: var(--cn); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); margin-left: .2rem; }
 /* Courier Prime cap-height (~0.56em) sits well below CJK glyph height (~0.88em),
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }

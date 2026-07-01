@@ -152,14 +152,25 @@ function renderStrip() {
     );
 
   hideBandTip();
+
+  // Sort by start date then assign greedy lanes so non-overlapping events share a row
+  multiDay.sort((a, b) => a._s - b._s);
+  const laneEnds = []; // laneEnds[i] = last occupied day-of-month in lane i
+  multiDay.forEach(v => {
+    const sd = v._s.getMonth() === mo ? v._s.getDate() : 1;
+    const ed = v._e.getMonth() === mo ? v._e.getDate() : days;
+    let lane = laneEnds.findIndex(end => end < sd);
+    if (lane === -1) lane = laneEnds.length;
+    laneEnds[lane] = ed;
+    v._lane = lane; v._sd = sd; v._ed = ed;
+  });
+
   let bandsHtml = '';
-  const bandsHeight = multiDay.length * (BAND_H + BAND_GAP);
-  multiDay.forEach((v, i) => {
-    const sd  = v._s.getMonth() === mo ? v._s.getDate() : 1;
-    const ed  = v._e.getMonth() === mo ? v._e.getDate() : days;
-    const left = (sd - 1) * CELL_W;
-    const w    = (ed - sd + 1) * CELL_W;
-    const top  = i * (BAND_H + BAND_GAP);
+  const bandsHeight = laneEnds.length * (BAND_H + BAND_GAP);
+  multiDay.forEach(v => {
+    const left = (v._sd - 1) * CELL_W;
+    const w    = (v._ed - v._sd + 1) * CELL_W;
+    const top  = v._lane * (BAND_H + BAND_GAP);
     const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}`;
     bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="toggleBandTip(this)">
       <span class="tl-band-label">${v.chinese}</span>

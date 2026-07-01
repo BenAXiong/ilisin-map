@@ -36,7 +36,17 @@ function clusterKey(v) {
 }
 
 function cardHtml(v, extraAttrs) {
-  const amisHtml   = v.amis ? `<span class="card-amis">${v.amis}</span>` : '';
+  const ref        = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
+  const altChinese = ref?.chinese_name_alt?.[0] || null;
+  const latinName  = v.amis || ref?.indigenous_name || '';
+  const tooltipParts = [
+    ...(ref?.chinese_name_alt || []),
+    ...(ref ? [ref.indigenous_name, ...ref.indigenous_name_alt] : (v.amis ? [v.amis] : []))
+  ].filter(Boolean);
+  const namesTitle = tooltipParts.length
+    ? ` title="${tooltipParts.join(' / ').replace(/"/g, '&quot;')}"` : '';
+  const altHtml    = altChinese ? ` <span class="card-chinese-alt">(${altChinese})</span>` : '';
+  const amisHtml   = latinName  ? `<span class="card-amis">${latinName}</span>` : '';
   const sourceHtml = `<a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ ${SOURCES[v.src].label}</a>`;
   const hasVenue   = v.venue && v.venue !== '—';
   const mapsUrl    = hasVenue
@@ -47,7 +57,7 @@ function cardHtml(v, extraAttrs) {
     : '';
   return `<div class="village-card card-${v.status}" id="card-${v.id}" ${extraAttrs}>
     <div class="card-top">
-      <div class="card-names"><span class="card-chinese">${v.chinese}</span>${amisHtml}</div>
+      <div class="card-names"${namesTitle}><span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>
       <span class="card-date">${v.date}</span>
     </div>
     <div class="card-meta">${venueHtml}${sourceHtml}</div>

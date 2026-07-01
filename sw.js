@@ -1,4 +1,4 @@
-const CACHE = 'ilisin-v23';
+const CACHE = 'ilisin-v24';
 const SHELL = [
   '/',
   '/index.html',
@@ -11,7 +11,7 @@ const SHELL = [
 // App-shell files that change on every deploy — always go to the network
 // first so updates show up immediately, instead of waiting on the SW
 // install/activate lifecycle. Cache is only the offline fallback for these.
-const NETWORK_FIRST = new Set(['/', '/index.html', '/data.js', '/manifest.json']);
+const NETWORK_FIRST = new Set(['/', '/index.html', '/app.css', '/app.js', '/data.js', '/buluo-ref.js', '/manifest.json', '/js/timeline.js', '/js/map.js', '/js/search.js', '/js/info.js']);
 
 globalThis.addEventListener('install', e => {
   e.waitUntil(

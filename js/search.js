@@ -18,7 +18,10 @@ function getSearchResults(query, filters) {
   return VILLAGES
     .filter(v => {
       if (q) {
-        const hay = [v.chinese, v.amis, v.township, v.venue].map(srNorm).join(' ');
+        const ref = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
+        const hay = [v.chinese, v.amis, v.township, v.venue,
+          ...(ref ? [...ref.chinese_name_alt, ref.indigenous_name, ...ref.indigenous_name_alt] : [])
+        ].map(srNorm).join(' ');
         if (!hay.includes(q)) return false;
       }
       if (filters.has('week')) {
