@@ -70,7 +70,7 @@ const VILLAGES = [
   { id:'hl-xl-01', group:'ami', chinese:'全鄉阿美族群', amis:'', county:'花蓮縣', township:'秀林鄉', lat:24.035, lng:121.564, date:'8/29 六', venue:'秀林鄉佳民村多功能聚會所', status:'confirmed', src:'hl_pdf' },
 
   // ══ 花蓮縣 新城鄉 ════════════════════════════════════════════════
-  { id:'hl-xc-01', group:'bunun', chinese:'布農族群', amis:'Bunun', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'5/30 六', venue:'復興部落聚會所', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-xc-01', group:'bnn', chinese:'布農族群', amis:'Bunun', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'5/30 六', venue:'復興部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-02', group:'ami', buluo_id:'ami-palamitan', chinese:'康樂部落', amis:'Palamitan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'7/25 六', venue:'巴拉米旦聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-03', group:'ami', buluo_id:'ami-katanka', chinese:'佳林部落', amis:'Katangka', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/1 六', venue:'佳林部落社區廣場', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-04', group:'ami', buluo_id:'ami-palinkaan', chinese:'復興部落', amis:'Palinkaan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/1 六', venue:'復興部落聚會所', status:'confirmed', src:'hl_pdf' },
@@ -80,7 +80,7 @@ const VILLAGES = [
   { id:'hl-xc-08', group:'ami', buluo_id:'ami-kaliyawan', chinese:'嘉里部落', amis:'Kaliyawan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/22 六', venue:'嘉里部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-09', group:'ami', buluo_id:'ami-paudadan', chinese:'大德部落', amis:'Pauradan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/22 六', venue:'大德部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-10', group:'ami', buluo_id:'ami-cilapuk', chinese:'嘉新部落', amis:'Cilapuk', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/22 六', venue:'嘉新部落聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-xc-11', group:'truku', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/29 六', venue:'新城鄉原住民多功能活動中心', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-xc-11', group:'trv', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'8/29 六', venue:'新城鄉原住民多功能活動中心', status:'confirmed', src:'hl_pdf' },
   { id:'hl-xc-12', group:'ami', buluo_id:'ami-pabuisan', chinese:'北星部落', amis:'Pavuisan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },
   { id:'hl-xc-13', group:'ami', buluo_id:'ami-pibutingan', chinese:'順安部落', amis:'Pivutingan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },
   { id:'hl-xc-14', group:'ami', buluo_id:'ami-patirengan', chinese:'立業部落', amis:'Patirengan', county:'花蓮縣', township:'新城鄉', lat:24.124, lng:121.657, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },
@@ -99,7 +99,7 @@ const VILLAGES = [
   { id:'hl-hl-10', group:'ami', chinese:'撒固兒部落', amis:'Sakur', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/15 六', venue:'撒固兒部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-11', group:'ami', buluo_id:'ami-cibarbaran', chinese:'幾巴爾巴爾蘭部落', amis:'Cibarbaran', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/16 日', venue:'巴爾巴爾蘭祭祀廣場', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-12', group:'ami', buluo_id:'ami-tuwapun', chinese:'大本部落／華東', amis:'Tuwapun', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/22 六', venue:'大本部落聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-hl-13', group:'truku', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/22 六', venue:'花蓮市原住民文化歷史館旁扶輪公園', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-hl-13', group:'trv', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/22 六', venue:'花蓮市原住民文化歷史館旁扶輪公園', status:'confirmed', src:'hl_pdf' },
 
   // ══ 花蓮縣 吉安鄉 ════════════════════════════════════════════════
   { id:'hl-ja-01', group:'ami', buluo_id:'ami-ciripunan', chinese:'慶豐部落', amis:'Ciripunan', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'8/1 六', venue:'慶豐部落聚會所', status:'confirmed', src:'hl_pdf' },
@@ -121,7 +121,7 @@ const VILLAGES = [
   { id:'hl-ja-17', group:'ami', buluo_id:'ami-buner', chinese:'宜昌部落', amis:'Buner', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'8/23 日', venue:'娜荳蘭部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-ja-18', group:'ami', buluo_id:'ami-isawalian-pahikukian', chinese:'仁安部落', amis:'Isawalian Pahikukian', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'8/29 六（暫定）', venue:'仁安部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-ja-19', group:'ami', buluo_id:'ami-fulufuluan', chinese:'勝安部落', amis:'Fulufuluan', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'8/29 六', venue:'娜荳蘭部落聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-ja-20', group:'truku', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'9/12 六', venue:'鬱金香花園', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-ja-20', group:'trv', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'9/12 六', venue:'鬱金香花園', status:'confirmed', src:'hl_pdf' },
 
   // ══ 花蓮縣 壽豐鄉 ════════════════════════════════════════════════
   { id:'hl-sf-01', group:'ami', buluo_id:'ami-tdlu', chinese:'豐裡部落', amis:"Mulimutu a Telu'", county:'花蓮縣', township:'壽豐鄉', lat:23.857, lng:121.557, date:'7/18 六', venue:'豐裡聚會所', status:'confirmed', src:'hl_pdf' },
@@ -149,13 +149,13 @@ const VILLAGES = [
   { id:'hl-fl-06', group:'ami', buluo_id:'ami-cihafayan', chinese:'中興部落', amis:'Cihafayan', county:'花蓮縣', township:'鳳林鎮', lat:23.733, lng:121.467, date:'8/22 六', venue:'中興活動中心', status:'confirmed', src:'hl_pdf' },
 
   // ══ 花蓮縣 萬榮鄉 ════════════════════════════════════════════════
-  { id:'hl-wr-01', group:'truku', chinese:'固努安部落', amis:'Qunuan', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'6/27 六', venue:'馬遠部落多功能聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-wr-02', group:'truku', chinese:'支亞干部落', amis:'Ciyakang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'西林運動廣場', status:'tbd', src:'hl_pdf' },
-  { id:'hl-wr-03', group:'truku', chinese:'馬里巴西／大加汗部落', amis:'Maribas / Thgahan', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'尚未決定', status:'tbd', src:'hl_pdf' },
-  { id:'hl-wr-04', group:'truku', chinese:'東光／大馬遠部落', amis:'Tamaian / Tungkang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'東光多功能聚會所', status:'tbd', src:'hl_pdf' },
-  { id:'hl-wr-05', group:'truku', chinese:'新白楊部落', amis:'Miharasi', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'見晴社區多功能活動中心', status:'tbd', src:'hl_pdf' },
-  { id:'hl-wr-06', group:'truku', chinese:'摩里莎卡／魯巴斯部落', amis:'Murisaka / Rubas', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'萬榮村活動中心，萬榮天主堂', status:'tbd', src:'hl_pdf' },
-  { id:'hl-wr-07', group:'truku', chinese:'紅葉部落', amis:'Y-Hunang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'尚未決定', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-01', group:'trv', chinese:'固努安部落', amis:'Qunuan', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'6/27 六', venue:'馬遠部落多功能聚會所', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-wr-02', group:'trv', chinese:'支亞干部落', amis:'Ciyakang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'西林運動廣場', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-03', group:'trv', chinese:'馬里巴西／大加汗部落', amis:'Maribas / Thgahan', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'尚未決定', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-04', group:'trv', chinese:'東光／大馬遠部落', amis:'Tamaian / Tungkang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'東光多功能聚會所', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-05', group:'trv', chinese:'新白楊部落', amis:'Miharasi', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'見晴社區多功能活動中心', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-06', group:'trv', chinese:'摩里莎卡／魯巴斯部落', amis:'Murisaka / Rubas', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'萬榮村活動中心，萬榮天主堂', status:'tbd', src:'hl_pdf' },
+  { id:'hl-wr-07', group:'trv', chinese:'紅葉部落', amis:'Y-Hunang', county:'花蓮縣', township:'萬榮鄉', lat:23.718, lng:121.398, date:'未定', venue:'尚未決定', status:'tbd', src:'hl_pdf' },
 
   // ══ 花蓮縣 光復鄉 ════════════════════════════════════════════════
   { id:'hl-gf-01', group:'ami', buluo_id:'ami-atomo', chinese:'阿多莫部落', amis:'Atomo', county:'花蓮縣', township:'光復鄉', lat:23.670, lng:121.444, date:'8/1 六', venue:'阿多莫活動中心', status:'confirmed', src:'hl_pdf' },
@@ -200,13 +200,13 @@ const VILLAGES = [
   { id:'hl-rs-14', group:'ami', buluo_id:'ami-cirocan', chinese:'鶺魯棧部落', amis:'Cirocan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'鶺魯棧聚會所預定地', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-15', group:'ami', buluo_id:'ami-kalala', chinese:'迦納納部落', amis:'Kalala', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/16 日', venue:'迦納納部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-16', group:'ami', buluo_id:'ami-kiwit', chinese:'奇美部落', amis:'Kiwit / Raranges', county:'花蓮縣', township:'瑞穗鄉', lat:23.510, lng:121.333, date:'8/17 一', venue:'奇美部落聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-rs-17', group:'bunun', chinese:'奇美布農部落', amis:'Kiwit (Bunun)', county:'花蓮縣', township:'瑞穗鄉', lat:23.510, lng:121.333, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },
+  { id:'hl-rs-17', group:'bnn', chinese:'奇美布農部落', amis:'Kiwit (Bunun)', county:'花蓮縣', township:'瑞穗鄉', lat:23.510, lng:121.333, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },
 
   // ══ 花蓮縣 玉里鎮 ════════════════════════════════════════════════
   { id:'hl-yl-01', group:'ami', buluo_id:'ami-patawlinan', chinese:'巴島力安部落／達谷寮', amis:'Patawrian / Takoliyaw', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'7/25 六', venue:'高寮聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-yl-02', group:'ami', buluo_id:'ami-posko', chinese:'璞石閣部落', amis:'Posko', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/1 六', venue:'自強三街旁廣場', status:'confirmed', src:'hl_pdf' },
   { id:'hl-yl-03', group:'ami', buluo_id:'ami-cilakesay', chinese:'吉拉格賽部落', amis:'Cilakesay', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/8 六', venue:'北平街旁廣場', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-yl-04', group:'bunun', chinese:'布農族群', amis:'Bunun', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/8 六', venue:'中城里 11 鄰 6 號', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-yl-04', group:'bnn', chinese:'布農族群', amis:'Bunun', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/8 六', venue:'中城里 11 鄰 6 號', status:'confirmed', src:'hl_pdf' },
   { id:'hl-yl-05', group:'ami', buluo_id:'ami-namisan', chinese:'拿彌散部落', amis:'Namisan', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/14 五', venue:'樂合里 20 鄰 98 號前廣場', status:'confirmed', src:'hl_pdf' },
   { id:'hl-yl-06', group:'ami', buluo_id:'ami-satefo', chinese:'下德武部落', amis:'Satefu', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/15 六', venue:'下德武部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-yl-07', group:'ami', buluo_id:'ami-matadim', chinese:'馬太林部落', amis:'Matadim', county:'花蓮縣', township:'玉里鎮', lat:23.333, lng:121.310, date:'8/15 六', venue:'春日里部落跳舞廣場', status:'confirmed', src:'hl_pdf' },
