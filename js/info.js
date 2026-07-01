@@ -18,14 +18,17 @@ Object.keys(TOWNSHIP_MAP).forEach(c => {
 function initInfo() {
   const total     = VILLAGES.length;
   const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
-  const dateMatch = DATA_NOTE.match(/(\d{4}-\d{2}-\d{2})/);
-  const updated   = dateMatch ? dateMatch[1].slice(0, 7).replace('-', '/') : '—';
+
+  const uniqueDays = new Set(
+    VILLAGES
+      .filter(v => v.status !== 'cancelled' && v.date && v.date !== '—')
+      .map(v => v.date.split(' ')[0])
+  );
 
   document.getElementById('infoTiles').innerHTML = [
-    { value: '5月–9月', label: '祭儀期間' },
-    { value: total,     label: '部落總數' },
-    { value: confirmed, label: '已公告' },
-    { value: updated,   label: '最後更新' },
+    { value: '7/3–8/29',              label: '祭儀期間' },
+    { value: `${confirmed}/${total}`, label: '已公告' },
+    { value: uniqueDays.size,          label: '祭典日數' },
   ].map(t => `<div class="info-tile">
       <div class="info-tile-value">${t.value}</div>
       <div class="info-tile-label">${t.label}</div>
@@ -45,20 +48,16 @@ function initCoverageBox() {
   const list = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
   if (!list.length) return;
 
-  document.getElementById('coverageBox').style.display = '';
-  document.getElementById('coverageBoxBody').textContent =
-    `部落資料庫另收錄 ${list.length} 個已知的阿美族部落，但目前還沒有 2026 年豐年祭資訊。點選下方「新增部落」協助回報——輸入中文名稱時會看到建議清單。`;
-
   document.getElementById('nChineseSuggest').innerHTML = list
     .map(r => `<option value="${r.chinese_name}">${r.county}${r.township}${r.indigenous_name ? ' · ' + r.indigenous_name : ''}</option>`)
     .join('');
 }
 
 function openContrib(which) {
-  const details = document.getElementById('contribDetails');
-  details.open = true;
-  document.querySelector(`.contrib-tab[data-ctab="${which}"]`)?.click();
-  setTimeout(() => details.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  document.getElementById('formReport').classList.toggle('active', which === 'report');
+  document.getElementById('formNew').classList.toggle('active', which === 'new');
+  const formEl = document.getElementById(which === 'report' ? 'formReport' : 'formNew');
+  setTimeout(() => formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
 }
 
 function initContribForm() {
@@ -112,14 +111,6 @@ function initContribForm() {
     }
   });
 
-  /* Contrib sub-tab switching */
-  document.querySelector('.contrib-tabs').addEventListener('click', e => {
-    const btn = e.target.closest('.contrib-tab');
-    if (!btn) return;
-    document.querySelectorAll('.contrib-tab').forEach(b => b.classList.toggle('active', b === btn));
-    document.getElementById('formReport').classList.toggle('active', btn.dataset.ctab === 'report');
-    document.getElementById('formNew').classList.toggle('active',    btn.dataset.ctab === 'new');
-  });
 }
 
 function cascadeTownship() {

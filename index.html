@@ -5295,48 +5295,33 @@
 
     <div class="info-logo-block">
       <img src="logo.png" alt="Ilisin" class="info-logo" />
-      <div class="info-appname">豐年祭地圖</div>
-      <div class="info-appsub">ILISIN MAP 2026</div>
+      <div class="info-appname">豐年祭 2026</div>
+      <div class="info-appsub">ILISIN</div>
     </div>
 
     <div class="info-tiles" id="infoTiles"></div>
 
-    <div class="info-section-title" style="margin-top:.25rem">臺東資料說明</div>
-    <div class="info-warn">
-      <div class="info-warn-title">⚠ 注意</div>
-      <div class="info-warn-body">臺東縣部分部落以社群媒體公告為主，日期可能異動，請以各部落公告為準。正式出行前務必透過部落或公所管道再確認。</div>
-    </div>
+    <p class="info-about-body" style="margin-bottom:1.5rem">Ilisin 是阿美族 Amis/Pangcah 每年重要的歲時祭儀，常被稱為「豐年祭」或 Harvest Festival。各部落使用的名稱可能不同，如 Malalikit/Malalikid 或 Kilumaan/Kiloma'an。</p>
 
-    <div class="info-warn" id="coverageBox" style="display:none">
-      <div class="info-warn-title">📋 協助回報</div>
-      <div class="info-warn-body" id="coverageBoxBody"></div>
-    </div>
+    <div class="info-section-title">關於本站</div>
+    <p class="info-about-body" style="margin-bottom:1.5rem">Ilisin webapp 提供花東 2026 年阿美族豐年祭日期與地點查詢，資料來自官方公告與社群發布，由志願者持續更新。出行前請以部落或公所最新公告為準；若發現錯誤，歡迎回報。</p>
 
+    <details class="info-sources-details">
+      <summary class="info-sources-summary"><span class="info-section-title" style="margin-bottom:0">資料來源</span><span class="info-chevron">▾</span></summary>
+      <div class="info-sources" id="infoSources"></div>
+    </details>
+
+    <div class="info-section-title" style="margin-top:1.5rem">聯絡、回報</div>
+    <p class="info-about-body" style="margin-bottom:1rem">問題或建議歡迎來信：<a href="mailto:bmav.martinez@gmail.com" style="color:var(--accent)">bmav.martinez@gmail.com</a></p>
     <div class="contrib-cta-row">
       <button class="contrib-cta" onclick="openContrib('report')">回報錯誤</button>
       <button class="contrib-cta" onclick="openContrib('new')">新增部落</button>
     </div>
 
-    <div class="info-section-title">資料來源</div>
-    <div class="info-sources" id="infoSources"></div>
-
-    <div class="info-section-title">關於本站</div>
-    <div class="info-about-body">豐年祭地圖整合花蓮、臺東兩縣 2026 年度阿美族豐年祭（Ilisin）資訊，以地圖與時間軸呈現各部落祭典日期與地點。資料來自縣府公告及部落自主發布，由志願者整理維護，持續更新中。</div>
-
-    <details class="contrib-details" id="contribDetails">
-      <summary class="contrib-summary">
-        <span class="info-section-title" style="margin-bottom:0">回報 · 貢獻</span>
-        <span class="contrib-chevron">▶</span>
-      </summary>
-      <div class="contrib-body">
-
-        <div class="contrib-tabs">
-          <button class="contrib-tab active" data-ctab="report">回報錯誤</button>
-          <button class="contrib-tab" data-ctab="new">新增部落</button>
-        </div>
+    <div id="contribForms">
 
         <!-- Report error -->
-        <form class="contrib-form active" id="formReport" novalidate>
+        <form class="contrib-form" id="formReport" novalidate>
           <div class="form-field">
             <label class="form-label">部落<span class="req">*</span></label>
             <select class="form-select" id="rVillage" required>
@@ -5413,8 +5398,7 @@
           <button class="form-submit" id="nSubmit" type="button" onclick="submitNew()">送出新增</button>
         </form>
 
-      </div>
-    </details>
+    </div>
 
     <a href="viz.html" style="color:var(--bg);font-size:.5rem;text-decoration:none;display:block;margin-top:2rem;user-select:none;" tabindex="-1" aria-hidden="true">·</a>
 

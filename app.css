@@ -784,7 +784,7 @@ body.tab-info .app-header { display: none; }
 }
 .info-tiles {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: .55rem;
   margin-bottom: 1.5rem;
 }
@@ -853,6 +853,25 @@ body.tab-info .app-header { display: none; }
 .info-source-link:last-child { border-bottom: none; }
 .info-source-label { flex: 1; font-family: var(--cn); font-size: var(--fs-sm); }
 .info-source-arrow { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); }
+.info-sources-details { margin-bottom: 0; }
+.info-sources-details .info-sources { margin-bottom: 0; padding-top: .5rem; }
+.info-sources-summary {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  cursor: pointer;
+  list-style: none;
+  padding: .4rem 0;
+  margin-bottom: .25rem;
+}
+.info-sources-summary::-webkit-details-marker { display: none; }
+.info-chevron {
+  font-family: var(--mono);
+  font-size: var(--fs-2xs);
+  color: var(--text-3);
+  transition: transform .2s;
+}
+.info-sources-details[open] .info-chevron { transform: rotate(180deg); }
 .info-about-body {
   font-family: var(--cn);
   font-size: var(--fs-sm);
