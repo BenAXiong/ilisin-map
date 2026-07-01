@@ -288,8 +288,8 @@ body.tab-info .app-header { display: none; }
 /* Band tooltip */
 #tl-tip {
   position: fixed;
-  transform: translateX(-50%);
-  background: oklch(from var(--text) l c h / 0.9);
+  transform: translate(-50%, calc(-100% - 8px));
+  background: var(--ink);
   color: var(--bg);
   font-size: var(--fs-xs);
   font-family: var(--mono);
@@ -300,6 +300,15 @@ body.tab-info .app-header { display: none; }
   opacity: 0;
   transition: opacity .12s;
   z-index: 200;
+}
+#tl-tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--ink);
 }
 #tl-tip.visible { opacity: 1; }
 

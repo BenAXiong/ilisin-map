@@ -24,7 +24,7 @@ function showBandTip(el) {
   const rect = el.getBoundingClientRect();
   tip.textContent = el.dataset.tip;
   tip.style.left  = (rect.left + rect.width / 2) + 'px';
-  tip.style.top   = (rect.bottom + 6) + 'px';
+  tip.style.top   = rect.top + 'px';
   tip.classList.add('visible');
 }
 function hideBandTip() {
@@ -160,7 +160,7 @@ function renderStrip() {
     const left = (sd - 1) * CELL_W;
     const w    = (ed - sd + 1) * CELL_W;
     const top  = i * (BAND_H + BAND_GAP);
-    const tip  = `${v.chinese} . ${shortName(v.township)} . ${shortName(v.county)}`;
+    const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}`;
     bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="toggleBandTip(this)">
       <span class="tl-band-label">${v.chinese}</span>
     </div>`;
