@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Allow major AI crawlers explicitly (some check for opt-in)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+Sitemap: https://ilisin.tw/sitemap.xml

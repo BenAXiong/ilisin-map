@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Noto+Serif+TC:wght@300;400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script src="data.js"></script>
+  <script src="buluo-ref.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -186,6 +187,15 @@
     .badge-tbd       { background: var(--amber-pale); color: var(--amber-dark); border: 1px solid oklch(from var(--accent) l c h / 0.3); }
     .badge-cancelled { background: oklch(from var(--terra) l c h / 0.12); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.25); }
 
+    /* verification badges — per Datasets/buluo/DISPLAY.md: needs-review should
+       stand out, verified should be quiet, single-source/unlisted in between */
+    .badge-verified      { background: oklch(from var(--green) l c h / 0.08); color: var(--text-2); border: 1px solid oklch(from var(--green) l c h / 0.2); }
+    .badge-single-source { background: transparent; color: var(--text-3); border: 1px dashed oklch(from var(--text-3) l c h / 0.4); }
+    .badge-needs-review  { background: oklch(from var(--terra) l c h / 0.15); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.35); cursor: help; }
+    .badge-unlisted      { background: transparent; color: var(--text-3); border: 1px dotted oklch(from var(--text-3) l c h / 0.3); }
+    .cn-official { font-size: .65rem; font-weight: 400; color: var(--text-3); margin-left: .3em; }
+    .amis-alt-marker { cursor: help; color: var(--text-3); font-size: .6rem; }
+
     /* ── Toast ── */
     .toast {
       position: fixed;
@@ -220,6 +230,14 @@
       margin-bottom: 1rem;
       padding-bottom: .4rem;
       border-bottom: 1px solid var(--border);
+    }
+
+    .stat-sub-title {
+      font-family: var(--mono);
+      font-size: .6rem;
+      letter-spacing: .08em;
+      color: var(--text-3);
+      margin-bottom: .7rem;
     }
 
     /* Month bar chart */
@@ -264,6 +282,22 @@
       background: var(--accent);
       border-radius: 2px;
     }
+    /* Uncovered buluo chips (known to db, no event data yet) */
+    .uncovered-summary { font-size: .8rem; color: var(--text-2); margin-bottom: 1rem; }
+    .uncovered-summary strong { color: var(--terra); font-family: var(--mono); }
+    .uncovered-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
+    .uncovered-chip {
+      font-family: var(--mono);
+      font-size: .6rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: oklch(from var(--terra) l c h / 0.08);
+      border: 1px solid oklch(from var(--terra) l c h / 0.2);
+      color: var(--text-2);
+      white-space: nowrap;
+      cursor: help;
+    }
+
     .hbar-count {
       font-family: var(--mono);
       font-size: .58rem;
@@ -290,6 +324,13 @@
 <div class="vz-panel active" id="vz-table">
   <div class="tbl-toolbar">
     <input class="tbl-filter" id="tblFilter" type="text" placeholder="篩選部落、鄉鎮、ID…" autocomplete="off">
+    <select class="tbl-filter" id="verifFilter">
+      <option value="">全部驗證狀態</option>
+      <option value="verified">已查核</option>
+      <option value="single-source">單一來源</option>
+      <option value="needs-review">待覆核</option>
+      <option value="unlisted">尚未建檔</option>
+    </select>
     <span class="tbl-count" id="tblCount"></span>
   </div>
   <div class="tbl-wrap">
@@ -297,8 +338,9 @@
       <thead>
         <tr>
           <th data-col="id">ID</th>
-          <th data-col="chinese">中文名</th>
+          <th data-col="chinese">中文名（官方）</th>
           <th data-col="amis">Amis</th>
+          <th data-col="verif">驗證</th>
           <th data-col="county">縣市</th>
           <th data-col="township">鄉鎮</th>
           <th data-col="date">日期</th>
@@ -319,9 +361,21 @@
     </div>
     <div class="stat-section">
       <div class="stat-title">狀態分布</div>
-      <div class="donut-wrap">
-        <svg class="donut-svg" id="statusDonut" viewBox="0 0 200 200"></svg>
-        <div class="donut-legend" id="statusLegend"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:2.5rem;align-items:flex-start;">
+        <div>
+          <div class="stat-sub-title">事件狀態</div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" id="statusDonut" viewBox="0 0 200 200"></svg>
+            <div class="donut-legend" id="statusLegend"></div>
+          </div>
+        </div>
+        <div>
+          <div class="stat-sub-title">部落查核</div>
+          <div class="donut-wrap">
+            <svg class="donut-svg" id="verifDonut" viewBox="0 0 200 200"></svg>
+            <div class="donut-legend" id="verifLegend"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="stat-section">
@@ -331,6 +385,12 @@
     <div class="stat-section">
       <div class="stat-title">部落數 — 按鄉鎮</div>
       <div id="townshipBars"></div>
+    </div>
+    <div class="stat-section">
+      <div class="stat-title">資料庫涵蓋率 — 已知但尚無 2026 資訊的部落</div>
+      <div class="uncovered-summary" id="uncoveredSummary"></div>
+      <div id="uncoveredBars"></div>
+      <div class="uncovered-chips" id="uncoveredChips"></div>
     </div>
   </div>
 </div>
@@ -382,17 +442,45 @@ function parseEndDate(str) {
 function srNorm(str) {
   return (str || '').normalize('NFC').toLowerCase().replace(/[''ʼ`]/g, "'");
 }
+function escapeAttr(str) {
+  return (str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+// strip parenthetical content for "is this the same base name" comparisons —
+// mirrors Datasets/buluo/scripts/build_buluo_ref.js's stripBrackets()
+function stripParens(str) {
+  return (str || '').replace(/[（(].*?[）)]/g, '').trim();
+}
+// data.js sometimes joins an alt name with full-width slash, e.g. '建農部落／阿福隆愛'
+// — mirrors build_buluo_ref.js's nameVariants()
+function nameVariants(str) {
+  return (str || '').split('／').map(stripParens).filter(Boolean);
+}
+
+/* ── Buluo identity/verification join (see Datasets/buluo/DISPLAY.md) ── */
+function buluoRef(v) {
+  if (!v.buluo_id || typeof BULUO_REF === 'undefined') return undefined;
+  return BULUO_REF[v.buluo_id];
+}
+function verifStatus(v) {
+  return buluoRef(v)?.status ?? 'unlisted';
+}
+const VERIF_LABEL = { verified: '已查核', 'single-source': '單一來源', 'needs-review': '待覆核', unlisted: '尚未建檔' };
+const VERIF_RANK  = { 'needs-review': 0, unlisted: 1, 'single-source': 2, verified: 3 };
 
 /* ── Table ── */
 let sortCol = 'date';
 let sortAsc = true;
 let filterQ = '';
+let verifQ = '';
 
 function getRows() {
   const q = srNorm(filterQ.trim());
   let rows = VILLAGES.filter(v => {
+    if (verifQ && verifStatus(v) !== verifQ) return false;
     if (!q) return true;
-    const hay = [v.id, v.chinese, v.amis, v.county, v.township, v.date, v.status, SOURCES[v.src]?.label]
+    const ref = buluoRef(v);
+    const hay = [v.id, v.chinese, v.amis, v.county, v.township, v.date, v.status, SOURCES[v.src]?.label,
+        ref?.chinese_name, ...(ref?.chinese_name_alt ?? []), ref?.indigenous_name, ...(ref?.indigenous_name_alt ?? [])]
       .map(x => srNorm(x || '')).join(' ');
     return hay.includes(q);
   });
@@ -404,6 +492,9 @@ function getRows() {
     } else if (sortCol === 'src') {
       va = SOURCES[a.src]?.label ?? '';
       vb = SOURCES[b.src]?.label ?? '';
+    } else if (sortCol === 'verif') {
+      va = VERIF_RANK[verifStatus(a)];
+      vb = VERIF_RANK[verifStatus(b)];
     } else {
       va = a[sortCol] ?? '';
       vb = b[sortCol] ?? '';
@@ -422,10 +513,44 @@ function renderTable() {
   document.getElementById('tblCount').textContent = `${rows.length} / ${VILLAGES.length} 筆`;
   document.getElementById('tblBody').innerHTML = rows.map(v => {
     const src = SOURCES[v.src];
+    const ref = buluoRef(v);
+
+    // Chinese name: commonly-used name (data.js's own v.chinese) primary,
+    // gazetted official name in brackets only if it's a genuinely different
+    // base name — not a bracket-formatting variant, and not already one of
+    // v.chinese's own ／-joined alt names. The "official" framing lives in
+    // the column header (中文名（官方）), not repeated inline per row.
+    let cnHtml = v.chinese;
+    if (ref?.chinese_name && !nameVariants(v.chinese).includes(stripParens(ref.chinese_name))) {
+      cnHtml += `<span class="cn-official">（${ref.chinese_name}）</span>`;
+    }
+
+    // Indigenous name: verified form primary; attested variant spellings
+    // (o/u, l/r, b/v-type cross-source noise) go in a tooltip, not inline.
+    const amisName = ref?.indigenous_name || v.amis;
+    let amisHtml = amisName || '—';
+    if (ref?.indigenous_name_alt?.length) {
+      const tip = `亦見拼法：${ref.indigenous_name_alt.join('、')}` + (ref.notes ? `\n${ref.notes}` : '');
+      amisHtml += ` <span class="amis-alt-marker" title="${escapeAttr(tip)}">ⓘ</span>`;
+    }
+
+    // Verification badge: quiet for verified, flagged for needs-review per
+    // Datasets/buluo/DISPLAY.md's status table.
+    let verifHtml;
+    if (ref) {
+      const tip = ref.status === 'needs-review'
+        ? ref.notes
+        : `來源：${ref.sources.join('、')}`;
+      verifHtml = `<span class="badge badge-${ref.status}" title="${escapeAttr(tip)}">${VERIF_LABEL[ref.status]}</span>`;
+    } else {
+      verifHtml = `<span class="badge badge-unlisted" title="尚未收錄於部落資料庫（Datasets/buluo）">${VERIF_LABEL.unlisted}</span>`;
+    }
+
     return `<tr>
       <td class="td-id" onclick="copyId('${v.id}')" title="點擊複製">${v.id}</td>
-      <td class="td-cn">${v.chinese}</td>
-      <td class="td-amis">${v.amis || '—'}</td>
+      <td class="td-cn">${cnHtml}</td>
+      <td class="td-amis">${amisHtml}</td>
+      <td>${verifHtml}</td>
       <td class="td-loc">${v.county}</td>
       <td class="td-loc">${v.township}</td>
       <td class="td-date">${v.date}</td>
@@ -452,6 +577,11 @@ document.getElementById('tblFilter').addEventListener('input', e => {
   renderTable();
 });
 
+document.getElementById('verifFilter').addEventListener('change', e => {
+  verifQ = e.target.value;
+  renderTable();
+});
+
 /* ── Toast / copy ── */
 let toastTimer;
 function showToast(msg) {
@@ -471,8 +601,98 @@ renderTable();
 function buildStats() {
   buildMonthChart();
   buildStatusDonut();
+  buildVerifDonut();
   buildHeatmap();
   buildTownshipBars();
+  buildUncoveredStats();
+}
+
+function buildVerifDonut() {
+  // Shows 211 total Amis buluo from the db, segmented by 2026 event coverage:
+  // how many have confirmed/tbd/cancelled events, and how many have no info yet.
+  const uncovered = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
+
+  // For each buluo_id in VILLAGES, keep only the best event status
+  // (confirmed > tbd > cancelled) so one buluo = one slice.
+  const STATUS_PRIORITY = { confirmed: 2, tbd: 1, cancelled: 0 };
+  const buluoEventStatus = {};
+  VILLAGES.forEach(v => {
+    if (!v.buluo_id) return;
+    const prev = buluoEventStatus[v.buluo_id];
+    if (prev === undefined || STATUS_PRIORITY[v.status] > STATUS_PRIORITY[prev]) {
+      buluoEventStatus[v.buluo_id] = v.status;
+    }
+  });
+
+  const counts = { confirmed: 0, tbd: 0, cancelled: 0, none: uncovered.length };
+  Object.values(buluoEventStatus).forEach(s => { counts[s] = (counts[s] || 0) + 1; });
+  const total = counts.confirmed + counts.tbd + counts.cancelled + counts.none;
+
+  const R = 62, cx = 100, cy = 100, sw = 26;
+  const circ = 2 * Math.PI * R;
+
+  const entries = [
+    { key: 'confirmed', color: 'var(--green)',  label: '已公告' },
+    { key: 'tbd',       color: 'var(--accent)', label: '待定' },
+    { key: 'cancelled', color: 'var(--terra)',  label: '取消' },
+    { key: 'none',      color: 'var(--text-3)', label: '尚無資訊' },
+  ];
+
+  let offset = 0, svg = '';
+  entries.forEach(e => {
+    const count = counts[e.key];
+    if (!count) return;
+    const len = circ * count / total;
+    svg += `<circle r="${R}" cx="${cx}" cy="${cy}" fill="none" stroke="${e.color}" stroke-width="${sw}"
+      stroke-dasharray="${len.toFixed(2)} ${(circ - len).toFixed(2)}"
+      stroke-dashoffset="${(-offset).toFixed(2)}"
+      transform="rotate(-90 ${cx} ${cy})"/>`;
+    offset += len;
+  });
+  svg += `<text x="${cx}" y="${cy - 3}" text-anchor="middle" font-family="var(--mono)" font-size="22" fill="var(--text-1)">${total}</text>`;
+  svg += `<text x="${cx}" y="${cy + 13}" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="var(--text-3)" letter-spacing="1">部落</text>`;
+
+  document.getElementById('verifDonut').innerHTML = svg;
+  document.getElementById('verifLegend').innerHTML = entries
+    .filter(e => counts[e.key] > 0)
+    .map(e => `<div class="legend-row">
+      <div class="legend-dot" style="background:${e.color}"></div>
+      <span class="legend-label">${e.label}</span>
+      <span class="legend-val">${counts[e.key]}</span>
+    </div>`).join('');
+}
+
+// Buluo known to Datasets/buluo (source of truth) with no data.js event entry
+// yet — see BULUO_UNCOVERED in buluo-ref.js. Surfacing this is what tells us
+// where to point the 新增部落 contribution flow next, not just what we
+// already have dates for.
+function buildUncoveredStats() {
+  const list = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
+  const refIds = typeof BULUO_REF === 'undefined' ? {} : BULUO_REF;
+  const totalKnown = list.length + new Set(Object.keys(refIds)).size;
+
+  document.getElementById('uncoveredSummary').innerHTML =
+    `資料庫（Datasets/buluo）目前收錄 <strong>${totalKnown}</strong> 個阿美族部落，其中 <strong>${list.length}</strong> 個尚未找到 2026 年豐年祭資訊。`;
+
+  const counts = {};
+  list.forEach(r => {
+    const key = `${r.county.replace('縣', '').replace('市', '')} · ${r.township}`;
+    counts[key] = (counts[key] || 0) + 1;
+  });
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  const max = sorted[0]?.[1] ?? 1;
+  document.getElementById('uncoveredBars').innerHTML = sorted.map(([label, count]) =>
+    `<div class="hbar-row">
+      <span class="hbar-label" title="${label}">${label}</span>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${(count / max * 100).toFixed(1)}%;background:var(--terra)"></div></div>
+      <span class="hbar-count">${count}</span>
+    </div>`
+  ).join('');
+
+  document.getElementById('uncoveredChips').innerHTML = list
+    .sort((a, b) => (a.county + a.township).localeCompare(b.county + b.township, 'zh-Hant'))
+    .map(r => `<span class="uncovered-chip" title="${r.county}${r.township} · ${r.indigenous_name || '（族語名稱待查）'} · 資料庫狀態：${VERIF_LABEL[r.status] ?? r.status}">${r.chinese_name}</span>`)
+    .join('');
 }
 
 function buildHeatmap() {

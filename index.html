@@ -3,15 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Ilisin</title>
-  <meta name="description" content="2026 花東阿美族（Pangcah）豐年祭歲時祭儀部落地圖 · 花蓮縣完整版" />
+  <!-- A1: title + description ─────────────────────────────────────────────
+       Lead with Chinese (primary audience), trail with English (AI crawlers).
+       Tribe names are listed explicitly so LLMs index them as named entities. -->
+  <title>豐年祭地圖 · 全臺原住民族祭儀曆 2026</title>
+  <meta name="description" content="全臺唯一原住民族歲時祭儀彙整地圖。涵蓋阿美族（Pangcah）Ilisin、布農族射耳祭、太魯閣族、卑南族、排灣族等 16 族祭典，花蓮、臺東、屏東等各縣市部落。Taiwan indigenous festival calendar — Amis Ilisin, Bunun Malahtangia, and more." />
+
+  <!-- PWA manifest + icons -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#bf7e1a" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Ilisin" />
+  <meta name="apple-mobile-web-app-title" content="豐年祭地圖" />
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- A3: canonical + hreflang ─────────────────────────────────────────────
+       Canonical prevents duplicate-content penalties if the URL appears with
+       query strings. hreflang tells search engines zh-TW is the primary locale. -->
+  <link rel="canonical" href="https://ilisin.tw/" />
+  <link rel="alternate" hreflang="zh-TW"    href="https://ilisin.tw/" />
+  <link rel="alternate" hreflang="x-default" href="https://ilisin.tw/" />
+
+  <!-- A2: Open Graph + Twitter Card ───────────────────────────────────────
+       These tags control the preview card shown when this URL is shared on
+       LINE, Facebook, Discord, iMessage, etc. Without them the platform
+       generates a generic (often broken) preview from the page body.
+       twitter:card=summary_large_image also applies to many non-Twitter
+       platforms that adopted the same spec (Slack, Telegram, etc.). -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://ilisin.tw/" />
+  <meta property="og:title"       content="豐年祭地圖 · 全臺原住民族祭儀曆 2026" />
+  <meta property="og:description" content="全臺第一個原住民族祭儀彙整地圖，涵蓋 16 族、各縣市部落。" />
+  <meta property="og:locale"      content="zh_TW" />
+  <!-- TODO og-image.png MISSING ── og:image is the thumbnail image shown in
+       the share preview card (ideal size: 1200×630 px). Create og-image.png:
+       the millet logo centred on an amber (#bf7e1a) background with the text
+       "豐年祭地圖 2026". Drop the file at the repo root and this tag activates. -->
+  <meta property="og:image"       content="https://ilisin.tw/og-image.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- Analytics -->
   <script defer src="https://umami-ten-mocha.vercel.app/script.js" data-website-id="b5edce61-5f7b-48f8-b077-53eeed267361"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -274,11 +306,12 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-      border-radius: 2px;
+      border-radius: 6px;
       background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.55) h);
       padding: 0 5px;
     }
     .tl-band-label {
+      width: 100%;
       font-family: var(--mono);
       font-size: var(--fs-xs);
       letter-spacing: .03em;
@@ -286,23 +319,24 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-align: center;
     }
 
     /* Date cells */
     .tl-cells-layer { display: flex; border-bottom: 2px solid var(--border-2); }
     .tl-cell {
       flex-shrink: 0;
-      width: 48px;
+      width: 44px;
+      margin: 0 2px;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: .35rem .2rem .4rem;
       cursor: pointer;
-      border-right: 1px solid var(--border);
       transition: background .12s;
       -webkit-tap-highlight-color: transparent;
     }
-    .tl-cell:last-child  { border-right: none; }
     .tl-cell:hover       { background: var(--bg-alt); }
     .tl-cell.active      { background: var(--accent); }
     .tl-cell.today:not(.active) .tl-daynum { color: var(--accent); }
@@ -1292,6 +1326,11 @@
       <div class="info-warn-body">臺東縣部分部落以社群媒體公告為主，日期可能異動，請以各部落公告為準。正式出行前務必透過部落或公所管道再確認。</div>
     </div>
 
+    <div class="info-warn" id="coverageBox" style="display:none">
+      <div class="info-warn-title">📋 協助回報</div>
+      <div class="info-warn-body" id="coverageBoxBody"></div>
+    </div>
+
     <div class="contrib-cta-row">
       <button class="contrib-cta" onclick="openContrib('report')">回報錯誤</button>
       <button class="contrib-cta" onclick="openContrib('new')">新增部落</button>
@@ -1352,7 +1391,8 @@
         <form class="contrib-form" id="formNew" novalidate>
           <div class="form-field">
             <label class="form-label">中文名稱<span class="req">*</span></label>
-            <input class="form-input" id="nChinese" type="text" placeholder="例：康樂部落" required>
+            <input class="form-input" id="nChinese" type="text" placeholder="例：康樂部落" required list="nChineseSuggest">
+            <datalist id="nChineseSuggest"></datalist>
           </div>
           <div class="form-field">
             <label class="form-label">Amis 名稱</label>
@@ -1425,6 +1465,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="data.js"></script>
+<script src="buluo-ref.js"></script>
 <script>
 
 /* ── Theme ───────────────────────────────────────── */
@@ -2245,7 +2286,25 @@ function initInfo() {
       <span class="info-source-arrow">↗</span>
     </a>`).join('');
 
+  initCoverageBox();
   initContribForm();
+}
+
+// Buluo known to Datasets/buluo (source of truth) with no 2026 event entry
+// in data.js yet — points people at the 新增部落 flow for what's actually
+// still missing, instead of leaving them guessing. See buluo-ref.js
+// (BULUO_UNCOVERED) and Datasets/buluo/DISPLAY.md.
+function initCoverageBox() {
+  const list = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
+  if (!list.length) return;
+
+  document.getElementById('coverageBox').style.display = '';
+  document.getElementById('coverageBoxBody').textContent =
+    `部落資料庫另收錄 ${list.length} 個已知的阿美族部落，但目前還沒有 2026 年豐年祭資訊。點選下方「新增部落」協助回報——輸入中文名稱時會看到建議清單。`;
+
+  document.getElementById('nChineseSuggest').innerHTML = list
+    .map(r => `<option value="${r.chinese_name}">${r.county}${r.township}${r.indigenous_name ? ' · ' + r.indigenous_name : ''}</option>`)
+    .join('');
 }
 
 /* ── Contribution form ──────────────────────────── */

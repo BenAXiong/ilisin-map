@@ -1,0 +1,21 @@
+# 豐年祭地圖 (Harvest Festival Map)
+
+> 全臺唯一原住民族歲時祭儀彙整地圖。Taiwan's only comprehensive indigenous ceremonial calendar and map.
+
+This site aggregates official indigenous festival (歲時祭儀) schedules for all 16 officially recognized tribes across Taiwan, sourced from county indigenous affairs bureaus and township offices. Data is updated annually.
+
+## Covered tribes / 涵蓋族群
+
+Amis (阿美族/Pangcah), Bunun (布農族), Truku (太魯閣族), Atayal (泰雅族), Paiwan (排灣族), Puyuma (卑南族), Rukai (魯凱族), Tsou (鄒族), Saisiyat (賽夏族), Tao (達悟族/雅美族), Thao (邵族), Kavalan (噶瑪蘭族), Sakizaya (撒奇萊雅族), Seediq (賽德克族), Hla'alua (拉阿魯哇族), Kanakanavu (卡那卡那富族)
+
+## Key festivals / 主要祭典
+
+- Ilisin / Malikoda — Amis harvest festival (阿美族豐年祭), July–September
+- Malahtangia / Maho — Bunun ear-shooting festival (布農族射耳祭), April–May
+- Smtyus — Atayal ancestral spirits ritual (泰雅族祖靈祭)
+- Pasta'ay — Saisiyat dwarf spirit festival (賽夏族矮靈祭), biennial October
+- Manavey — Tao flying fish festival (達悟族飛魚祭), spring
+- Masalut — Paiwan harvest festival (排灣族豐年祭), August
+- Katratripulr — Puyuma monkey festival (卑南族猴祭), December
+- Mangayau — Puyuma grand hunt (卑南族大獵祭), December
+- Mayasvi — Tsou warrior spirit ceremony (鄒族戰祭), February and August
