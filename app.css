@@ -810,7 +810,7 @@ body.tab-info .app-header { display: none; }
 .info-section-title {
   font-family: var(--mono);
   font-size: var(--fs-2xs);
-  color: var(--text-3);
+  color: var(--text-1);
   letter-spacing: .1em;
   text-transform: uppercase;
   margin-bottom: .6rem;
