@@ -349,7 +349,11 @@ body.tab-info .app-header { display: none; }
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
   background: var(--bg);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.tl-county::-webkit-scrollbar { display: none; }
 .tl-chip {
   font-family: var(--mono);
   font-size: var(--fs-2xs);
@@ -360,11 +364,36 @@ body.tab-info .app-header { display: none; }
   background: transparent;
   color: var(--text-3);
   cursor: pointer;
+  flex-shrink: 0;
   transition: background .12s, color .12s, border-color .12s;
   -webkit-tap-highlight-color: transparent;
 }
 .tl-chip.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .tl-chip:hover:not(.active) { border-color: var(--amber); color: var(--amber-dark); }
+.tl-county-sep {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 2px .25rem;
+}
+.tl-chip-twp {
+  font-family: var(--mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: .07em;
+  padding: 3px 8px;
+  border-radius: 99px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background .12s, color .12s, border-color .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.tl-chip-twp:hover:not(.active) { border-color: var(--border); color: var(--text-2); }
+.tl-chip-twp.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 
 /* Day card list */
 .tl-day-list {

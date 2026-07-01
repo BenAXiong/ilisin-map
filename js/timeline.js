@@ -39,10 +39,11 @@ function toggleBandTip(el) {
   }
 }
 
-let tlMonths       = [];
-let tlActiveMonth  = null;
-let tlSelectedDay  = null;
-let tlCountyFilter = 'all';
+let tlMonths          = [];
+let tlActiveMonth     = null;
+let tlSelectedDay     = null;
+let tlCountyFilter    = 'all';
+let tlTownshipFilter  = null;
 
 // Days from first day of first month to given date
 function tlDayOffset(date) {
@@ -54,6 +55,7 @@ function villagesOnDay(date) {
   return VILLAGES.filter(v => {
     if (v.status === 'tbd' || v.status === 'cancelled') return false;
     if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
+    if (tlTownshipFilter && v.township !== tlTownshipFilter) return false;
     const start = parseStartDate(v.date);
     if (!start) return false;
     const end = parseEndDate(v.date) || start;
@@ -146,6 +148,7 @@ function renderStrip() {
     .filter(v => {
       if (v.status === 'tbd' || v.status === 'cancelled') return false;
       if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
+      if (tlTownshipFilter && v.township !== tlTownshipFilter) return false;
       return parseStartDate(v.date) !== null;
     })
     .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
@@ -264,11 +267,49 @@ document.getElementById('tlStripScroll').addEventListener('scroll', () => {
 }, { passive: true });
 
 
+function renderTownshipChips() {
+  const bar = document.getElementById('tlCounty');
+  bar.querySelectorAll('.tl-county-sep, .tl-chip-twp').forEach(el => el.remove());
+  if (tlCountyFilter === 'all') return;
+
+  const twps = [...new Set(
+    VILLAGES
+      .filter(v => v.county === tlCountyFilter && v.status !== 'cancelled')
+      .map(v => v.township)
+      .filter(Boolean)
+  )];
+  if (!twps.length) return;
+
+  const sep = document.createElement('span');
+  sep.className = 'tl-county-sep';
+  bar.appendChild(sep);
+
+  twps.forEach(twp => {
+    const el = document.createElement('button');
+    el.className = 'tl-chip-twp' + (tlTownshipFilter === twp ? ' active' : '');
+    el.dataset.township = twp;
+    el.textContent = shortName(twp);
+    bar.appendChild(el);
+  });
+}
+
 document.getElementById('tlCounty').addEventListener('click', e => {
+  const twpChip = e.target.closest('.tl-chip-twp');
+  if (twpChip) {
+    const twp = twpChip.dataset.township;
+    tlTownshipFilter = tlTownshipFilter === twp ? null : twp;
+    document.querySelectorAll('.tl-chip-twp').forEach(c => c.classList.toggle('active', c.dataset.township === tlTownshipFilter));
+    renderStrip();
+    renderDayCards();
+    return;
+  }
+
   const chip = e.target.closest('.tl-chip');
   if (!chip) return;
   tlCountyFilter = chip.dataset.county;
+  tlTownshipFilter = null;
   document.querySelectorAll('.tl-chip').forEach(c => c.classList.toggle('active', c === chip));
+  renderTownshipChips();
   renderStrip();
   renderDayCards();
 });
