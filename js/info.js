@@ -56,8 +56,9 @@ function initInfo() {
     if (sv < firstVal) { firstVal = sv; firstM = r.startM; firstD = r.startD; }
     if (ev > lastVal)  { lastVal  = ev; lastM  = r.endM;   lastD  = r.endD;  }
   });
+  const u = s => `<span class="tile-unit">${s}</span>`;
   const dateRange = firstVal < Infinity
-    ? `${firstM}月${firstD}號 ~ ${lastM}月${lastD}號`
+    ? `${firstM}${u('月')}${firstD}${u('號')}~${lastM}${u('月')}${lastD}${u('號')}`
     : '—';
 
   document.getElementById('infoTiles').innerHTML = [
