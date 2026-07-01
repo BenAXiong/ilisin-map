@@ -110,9 +110,9 @@ function renderStrip() {
     .filter(v => {
       if (v.status === 'tbd' || v.status === 'cancelled') return false;
       if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
-      return parseEndDate(v.date) !== null;
+      return parseStartDate(v.date) !== null;
     })
-    .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) }))
+    .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
     .filter(v => v._s && v._e &&
       v._s <= new Date(y, mo + 1, 0) &&
       v._e >= new Date(y, mo, 1)
