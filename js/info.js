@@ -15,16 +15,25 @@ Object.keys(TOWNSHIP_MAP).forEach(c => {
   TOWNSHIP_MAP[c] = [...TOWNSHIP_MAP[c]].sort();
 });
 
+function parseDateRange(dateStr) {
+  if (!dateStr || dateStr === '—' || dateStr === '停辦') return null;
+  if (dateStr.includes('–')) {
+    const [startPart, endRaw] = dateStr.split('–');
+    const s = startPart.match(/(\d+)\/(\d+)/);
+    const e = endRaw.split('；')[0].match(/(\d+)\/(\d+)/);
+    if (!s || !e) return null;
+    return { startM: +s[1], startD: +s[2], endM: +e[1], endD: +e[2] };
+  }
+  const m = dateStr.match(/(\d+)\/(\d+)/);
+  if (!m) return null;
+  return { startM: +m[1], startD: +m[2], endM: +m[1], endD: +m[2] };
+}
+
 function festivalDayCount(dateStr) {
-  if (!dateStr || dateStr === '—' || dateStr === '停辦') return 0;
-  if (!dateStr.includes('–')) return 1;
-  const [startPart, endRaw] = dateStr.split('–');
-  const endPart = endRaw.split('；')[0];
-  const s = startPart.match(/(\d+)\/(\d+)/);
-  const e = endPart.match(/(\d+)\/(\d+)/);
-  if (!s || !e) return 1;
-  const start = new Date(2026, +s[1] - 1, +s[2]);
-  const end   = new Date(2026, +e[1] - 1, +e[2]);
+  const r = parseDateRange(dateStr);
+  if (!r) return 0;
+  const start = new Date(2026, r.startM - 1, r.startD);
+  const end   = new Date(2026, r.endM   - 1, r.endD);
   return Math.round((end - start) / 86400000) + 1;
 }
 
@@ -36,8 +45,23 @@ function initInfo() {
     .filter(v => v.status !== 'cancelled' && v.date && v.date !== '—')
     .reduce((sum, v) => sum + festivalDayCount(v.date), 0);
 
+  let firstVal = Infinity, lastVal = -Infinity;
+  let firstM, firstD, lastM, lastD;
+  VILLAGES.forEach(v => {
+    if (v.group !== 'ami' || v.status === 'cancelled') return;
+    const r = parseDateRange(v.date);
+    if (!r) return;
+    const sv = r.startM * 100 + r.startD;
+    const ev = r.endM   * 100 + r.endD;
+    if (sv < firstVal) { firstVal = sv; firstM = r.startM; firstD = r.startD; }
+    if (ev > lastVal)  { lastVal  = ev; lastM  = r.endM;   lastD  = r.endD;  }
+  });
+  const dateRange = firstVal < Infinity
+    ? `${firstM}月${firstD}號 ~ ${lastM}月${lastD}號`
+    : '—';
+
   document.getElementById('infoTiles').innerHTML = [
-    { value: '7/3–8/29',              label: '祭儀期間' },
+    { value: dateRange,                label: '祭儀期間' },
     { value: `${confirmed}/${total}`, label: '已公告' },
     { value: festivalDays,             label: '祭典日數' },
   ].map(t => `<div class="info-tile">
