@@ -219,34 +219,6 @@ body.tab-info .app-header { display: none; }
 .tl-month-tab.active { color: var(--accent); border-color: var(--accent); }
 .tl-month-tab:disabled { opacity: .35; cursor: default; }
 
-.tl-week-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .3rem .5rem;
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-  background: var(--bg);
-}
-.tl-nav-btn {
-  font-size: var(--fs-md);
-  color: var(--text-2);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 2px .75rem;
-  line-height: 1;
-  border-radius: var(--r);
-  transition: background .12s;
-  -webkit-tap-highlight-color: transparent;
-}
-.tl-nav-btn:hover { background: var(--bg-alt); }
-.tl-nav-label {
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  color: var(--text-2);
-  letter-spacing: .04em;
-}
 
 /* Date strip */
 .tl-strip-scroll {

@@ -42,8 +42,13 @@ function toggleBandTip(el) {
 let tlMonths       = [];
 let tlActiveMonth  = null;
 let tlSelectedDay  = null;
-let tlAnchorDate   = null;
 let tlCountyFilter = 'all';
+
+// Days from first day of first month to given date
+function tlDayOffset(date) {
+  const origin = new Date(tlMonths[0].getFullYear(), tlMonths[0].getMonth(), 1);
+  return Math.round((date - origin) / 86400000);
+}
 
 function villagesOnDay(date) {
   return VILLAGES.filter(v => {
@@ -100,12 +105,10 @@ function initTimeline() {
 
   tlActiveMonth = new Date(defaultDay.getFullYear(), defaultDay.getMonth(), 1);
   tlSelectedDay = defaultDay;
-  tlAnchorDate  = new Date(defaultDay);
 
   renderMonthTabs();
   renderStrip();
   renderDayCards();
-  updateNavLabel();
   requestAnimationFrame(() => scrollStripToDay(tlSelectedDay));
 
   addDragScroll(document.getElementById('tlStripScroll'));
@@ -134,31 +137,27 @@ function renderMonthTabs() {
 }
 
 function renderStrip() {
-  const y     = tlActiveMonth.getFullYear();
-  const mo    = tlActiveMonth.getMonth();
-  const days  = new Date(y, mo + 1, 0).getDate();
-  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const scroll = document.getElementById('tlStripScroll');
+  const savedX = scroll.scrollLeft;
+  const today  = new Date(); today.setHours(0, 0, 0, 0);
 
-  const multiDay = VILLAGES
+  // All events across every month, greedy lane packing on absolute offsets
+  const events = VILLAGES
     .filter(v => {
       if (v.status === 'tbd' || v.status === 'cancelled') return false;
       if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
       return parseStartDate(v.date) !== null;
     })
     .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
-    .filter(v => v._s && v._e &&
-      v._s <= new Date(y, mo + 1, 0) &&
-      v._e >= new Date(y, mo, 1)
-    );
+    .filter(v => v._s && v._e)
+    .sort((a, b) => a._s - b._s);
 
   hideBandTip();
 
-  // Sort by start date then assign greedy lanes so non-overlapping events share a row
-  multiDay.sort((a, b) => a._s - b._s);
-  const laneEnds = []; // laneEnds[i] = last occupied day-of-month in lane i
-  multiDay.forEach(v => {
-    const sd = v._s.getMonth() === mo ? v._s.getDate() : 1;
-    const ed = v._e.getMonth() === mo ? v._e.getDate() : days;
+  const laneEnds = [];
+  events.forEach(v => {
+    const sd = tlDayOffset(v._s);
+    const ed = tlDayOffset(v._e);
     let lane = laneEnds.findIndex(end => end < sd);
     if (lane === -1) lane = laneEnds.length;
     laneEnds[lane] = ed;
@@ -167,8 +166,8 @@ function renderStrip() {
 
   let bandsHtml = '';
   const bandsHeight = laneEnds.length * (BAND_H + BAND_GAP);
-  multiDay.forEach(v => {
-    const left = (v._sd - 1) * CELL_W;
+  events.forEach(v => {
+    const left = v._sd * CELL_W;
     const w    = (v._ed - v._sd + 1) * CELL_W;
     const top  = v._lane * (BAND_H + BAND_GAP);
     const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}`;
@@ -178,26 +177,33 @@ function renderStrip() {
   });
 
   let cellsHtml = '';
-  for (let d = 1; d <= days; d++) {
-    const date     = new Date(y, mo, d);
-    const count    = villagesOnDay(date).length;
-    const isActive = tlSelectedDay && date.toDateString() === tlSelectedDay.toDateString();
-    const isToday  = date.toDateString() === today.toDateString();
-    const cls      = ['tl-cell', isActive ? 'active' : '', isToday ? 'today' : ''].filter(Boolean).join(' ');
-    const badge    = count > 0 ? `<span class="tl-count">${count}</span>` : '<span class="tl-count-empty"></span>';
-    cellsHtml += `<div class="${cls}" data-date="${date.toDateString()}" onclick="selectDay(new Date(${date.getTime()}))">
-      <span class="tl-weekday">${WEEKDAYS[date.getDay()]}</span>
-      <span class="tl-daynum">${d}</span>
-      ${badge}
-    </div>`;
+  let totalDays = 0;
+  for (const month of tlMonths) {
+    const y  = month.getFullYear();
+    const mo = month.getMonth();
+    const daysInMonth = new Date(y, mo + 1, 0).getDate();
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date     = new Date(y, mo, d);
+      const count    = villagesOnDay(date).length;
+      const isActive = tlSelectedDay && date.toDateString() === tlSelectedDay.toDateString();
+      const isToday  = date.toDateString() === today.toDateString();
+      const cls      = ['tl-cell', isActive ? 'active' : '', isToday ? 'today' : ''].filter(Boolean).join(' ');
+      const badge    = count > 0 ? `<span class="tl-count">${count}</span>` : '<span class="tl-count-empty"></span>';
+      cellsHtml += `<div class="${cls}" data-date="${date.toDateString()}" onclick="selectDay(new Date(${date.getTime()}))">
+        <span class="tl-weekday">${WEEKDAYS[date.getDay()]}</span>
+        <span class="tl-daynum">${d}</span>
+        ${badge}
+      </div>`;
+      totalDays++;
+    }
   }
 
-  const totalW = days * CELL_W;
-  document.getElementById('tlStripScroll').innerHTML =
-    `<div class="tl-strip-inner" style="width:${totalW}px">
+  scroll.innerHTML =
+    `<div class="tl-strip-inner" style="width:${totalDays * CELL_W}px">
       <div class="tl-cells-layer">${cellsHtml}</div>
       <div class="tl-bands-layer" style="height:${bandsHeight}px;position:relative">${bandsHtml}</div>
     </div>`;
+  scroll.scrollLeft = savedX;
 }
 
 function selectDay(date) {
@@ -209,18 +215,12 @@ function selectDay(date) {
 }
 
 function scrollStripToDay(date) {
-  const scroll = document.getElementById('tlStripScroll');
-  const d = date.getDate();
-  const target = Math.max(0, (d - 1) * CELL_W - scroll.clientWidth / 2 + CELL_W / 2);
+  const scroll  = document.getElementById('tlStripScroll');
+  const offset  = tlDayOffset(date);
+  const target  = Math.max(0, offset * CELL_W - scroll.clientWidth / 2 + CELL_W / 2);
   scroll.scrollTo({ left: target, behavior: 'smooth' });
 }
 
-function updateNavLabel() {
-  const end = new Date(tlAnchorDate);
-  end.setDate(end.getDate() + 6);
-  const fmt = d => `${d.getMonth() + 1}/${d.getDate()}`;
-  document.getElementById('tlNavLabel').textContent = `${fmt(tlAnchorDate)} – ${fmt(end)}`;
-}
 
 function renderDayCards() {
   const list     = document.getElementById('tlDayList');
@@ -245,28 +245,24 @@ function renderDayCards() {
 document.getElementById('tlMonthTabs').addEventListener('click', e => {
   const tab = e.target.closest('.tl-month-tab');
   if (!tab) return;
-  tlActiveMonth = new Date(Number(tab.dataset.ts));
-  renderMonthTabs();
-  const target = firstEventDayInMonth(tlActiveMonth) ||
-                 new Date(tlActiveMonth.getFullYear(), tlActiveMonth.getMonth(), 1);
-  tlSelectedDay = target;
-  tlAnchorDate  = new Date(target);
-  renderStrip();
-  renderDayCards();
-  updateNavLabel();
-  requestAnimationFrame(() => scrollStripToDay(target));
+  const month  = new Date(Number(tab.dataset.ts));
+  const offset = tlDayOffset(new Date(month.getFullYear(), month.getMonth(), 1));
+  document.getElementById('tlStripScroll').scrollTo({ left: offset * CELL_W, behavior: 'smooth' });
 });
 
-document.getElementById('tlNavPrev').addEventListener('click', () => {
-  tlAnchorDate.setDate(tlAnchorDate.getDate() - 7);
-  updateNavLabel();
-  scrollStripToDay(tlAnchorDate);
-});
-document.getElementById('tlNavNext').addEventListener('click', () => {
-  tlAnchorDate.setDate(tlAnchorDate.getDate() + 7);
-  updateNavLabel();
-  scrollStripToDay(tlAnchorDate);
-});
+document.getElementById('tlStripScroll').addEventListener('scroll', () => {
+  if (!tlMonths.length) return;
+  const scrollLeft = document.getElementById('tlStripScroll').scrollLeft;
+  const origin     = new Date(tlMonths[0].getFullYear(), tlMonths[0].getMonth(), 1);
+  const current    = new Date(origin);
+  current.setDate(current.getDate() + Math.floor(scrollLeft / CELL_W));
+  const newActive  = new Date(current.getFullYear(), current.getMonth(), 1);
+  if (tlActiveMonth.getTime() !== newActive.getTime()) {
+    tlActiveMonth = newActive;
+    renderMonthTabs();
+  }
+}, { passive: true });
+
 
 document.getElementById('tlCounty').addEventListener('click', e => {
   const chip = e.target.closest('.tl-chip');
