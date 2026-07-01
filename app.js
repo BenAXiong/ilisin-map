@@ -81,14 +81,18 @@ function trackEvent(name, data) {
    THEME
    ═══════════════════════════════════════════════════ */
 
-const THEMES  = ['', 'night', 'coast', null];
-const T_LABEL = ['☀ 日', '◑ 夜', '◐ 海', '— —'];
+const THEMES  = ['', 'folad', 'riyar', 'fois'];
+const T_LABEL = ['☀', '◑', '〰', '✦'];
+const T_TITLE = ['Cidal', 'Folad', 'Riyar', "Fo'is"];
 let themeIdx  = 0;
 
 function applyTheme(idx) {
   themeIdx = idx % THEMES.length;
-  document.documentElement.dataset.theme = THEMES[themeIdx] ?? '';
-  document.querySelectorAll('[data-theme-btn]').forEach(b => b.textContent = T_LABEL[themeIdx]);
+  document.documentElement.dataset.theme = THEMES[themeIdx];
+  document.querySelectorAll('[data-theme-btn]').forEach(b => {
+    b.textContent = T_LABEL[themeIdx];
+    b.title = T_TITLE[themeIdx];
+  });
   localStorage.setItem('ilisin-theme', String(themeIdx));
 }
 (function initTheme() {
