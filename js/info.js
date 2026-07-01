@@ -15,20 +15,31 @@ Object.keys(TOWNSHIP_MAP).forEach(c => {
   TOWNSHIP_MAP[c] = [...TOWNSHIP_MAP[c]].sort();
 });
 
+function festivalDayCount(dateStr) {
+  if (!dateStr || dateStr === '—' || dateStr === '停辦') return 0;
+  if (!dateStr.includes('–')) return 1;
+  const [startPart, endRaw] = dateStr.split('–');
+  const endPart = endRaw.split('；')[0];
+  const s = startPart.match(/(\d+)\/(\d+)/);
+  const e = endPart.match(/(\d+)\/(\d+)/);
+  if (!s || !e) return 1;
+  const start = new Date(2026, +s[1] - 1, +s[2]);
+  const end   = new Date(2026, +e[1] - 1, +e[2]);
+  return Math.round((end - start) / 86400000) + 1;
+}
+
 function initInfo() {
   const total     = VILLAGES.length;
   const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
 
-  const uniqueDays = new Set(
-    VILLAGES
-      .filter(v => v.status !== 'cancelled' && v.date && v.date !== '—')
-      .map(v => v.date.split(' ')[0])
-  );
+  const festivalDays = VILLAGES
+    .filter(v => v.status !== 'cancelled' && v.date && v.date !== '—')
+    .reduce((sum, v) => sum + festivalDayCount(v.date), 0);
 
   document.getElementById('infoTiles').innerHTML = [
     { value: '7/3–8/29',              label: '祭儀期間' },
     { value: `${confirmed}/${total}`, label: '已公告' },
-    { value: uniqueDays.size,          label: '祭典日數' },
+    { value: festivalDays,             label: '祭典日數' },
   ].map(t => `<div class="info-tile">
       <div class="info-tile-value">${t.value}</div>
       <div class="info-tile-label">${t.label}</div>
