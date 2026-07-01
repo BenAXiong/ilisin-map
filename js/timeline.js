@@ -6,6 +6,39 @@ const CELL_W   = 48;
 const BAND_H   = 18;
 const BAND_GAP = 3;
 
+function shortName(s) { return s ? s.replace(/[縣市鄉鎮區]$/, '') : ''; }
+
+let _bandTip = null;
+function _initBandTip() {
+  if (_bandTip) return _bandTip;
+  _bandTip = document.createElement('div');
+  _bandTip.id = 'tl-tip';
+  document.body.appendChild(_bandTip);
+  document.addEventListener('pointerdown', e => {
+    if (!e.target.closest('.tl-band')) hideBandTip();
+  });
+  return _bandTip;
+}
+function showBandTip(el) {
+  const tip  = _initBandTip();
+  const rect = el.getBoundingClientRect();
+  tip.textContent = el.dataset.tip;
+  tip.style.left  = (rect.left + rect.width / 2) + 'px';
+  tip.style.top   = (rect.bottom + 6) + 'px';
+  tip.classList.add('visible');
+}
+function hideBandTip() {
+  if (_bandTip) _bandTip.classList.remove('visible');
+}
+function toggleBandTip(el) {
+  const tip = _initBandTip();
+  if (tip.classList.contains('visible') && tip.textContent === el.dataset.tip) {
+    hideBandTip();
+  } else {
+    showBandTip(el);
+  }
+}
+
 let tlMonths       = [];
 let tlActiveMonth  = null;
 let tlSelectedDay  = null;
@@ -118,6 +151,7 @@ function renderStrip() {
       v._e >= new Date(y, mo, 1)
     );
 
+  hideBandTip();
   let bandsHtml = '';
   const bandsHeight = multiDay.length * (BAND_H + BAND_GAP);
   multiDay.forEach((v, i) => {
@@ -126,7 +160,8 @@ function renderStrip() {
     const left = (sd - 1) * CELL_W;
     const w    = (ed - sd + 1) * CELL_W;
     const top  = i * (BAND_H + BAND_GAP);
-    bandsHtml += `<div class="tl-band" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px">
+    const tip  = `${v.chinese} . ${shortName(v.township)} . ${shortName(v.county)}`;
+    bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="toggleBandTip(this)">
       <span class="tl-band-label">${v.chinese}</span>
     </div>`;
   });

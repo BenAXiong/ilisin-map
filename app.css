@@ -285,6 +285,24 @@ body.tab-info .app-header { display: none; }
   text-align: center;
 }
 
+/* Band tooltip */
+#tl-tip {
+  position: fixed;
+  transform: translateX(-50%);
+  background: oklch(from var(--text) l c h / 0.9);
+  color: var(--bg);
+  font-size: var(--fs-xs);
+  font-family: var(--mono);
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .12s;
+  z-index: 200;
+}
+#tl-tip.visible { opacity: 1; }
+
 /* Date cells */
 .tl-cells-layer { display: flex; border-bottom: 2px solid var(--border-2); }
 .tl-cell {
