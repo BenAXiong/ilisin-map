@@ -800,7 +800,6 @@ body.tab-info .app-header { display: none; }
   color: var(--accent);
   letter-spacing: .02em;
 }
-.tile-unit { font-size: .7em; opacity: .75; }
 .info-tile-label {
   font-family: var(--mono);
   font-size: var(--fs-2xs);
