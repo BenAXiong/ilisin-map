@@ -2186,21 +2186,6 @@ const BULUO_REF = {
     ],
     "notes": "CIP gazette and Sashawaves/Amis-Dialect both confirm 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30."
   },
-  "ami-fukid": {
-    "chinese_name": "新馬蘭部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Fukid",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "status": "verified",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
-    ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect both confirm 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, now independently confirmed by the CIP gazette — closed."
-  },
   "ami-siafulungay": {
     "chinese_name": "建農部落",
     "chinese_name_alt": [],
@@ -3488,6 +3473,28 @@ const BULUO_UNCOVERED = [
       "Sashawaves/Amis-Dialect (GitHub)"
     ],
     "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+  },
+  {
+    "id": "ami-fukid",
+    "chinese_name": "新馬蘭部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Fukid",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "county": "臺東縣",
+    "township": "臺東市",
+    "village": "南榮里",
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
+    "status": "verified",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "Sashawaves/Amis-Dialect (GitHub)"
+    ],
+    "notes": "CIP gazette and Sashawaves/Amis-Dialect both confirm 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, now independently confirmed by the CIP gazette — closed."
   },
   {
     "id": "ami-cu-ki-ngo",

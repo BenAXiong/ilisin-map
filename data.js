@@ -37,12 +37,8 @@ const SOURCES = {
     url: 'https://www.facebook.com/a833633/photos/2026%E5%B9%B4%E4%B8%83%E6%9C%88%E6%88%90%E5%8A%9F%E9%8E%AE%E8%B1%90%E5%B9%B4%E7%AF%80%E6%B4%BB%E5%8B%95%E6%97%A5%E7%A8%8B%E8%A1%A8%E4%B8%80%E5%B9%B4%E4%B8%80%E5%BA%A6%E7%9A%84%E9%98%BF%E7%BE%8E%E6%97%8F%E8%B1%90%E5%B9%B4%E7%AF%80%E5%8F%88%E8%A6%81%E7%86%B1%E9%AC%A7%E7%99%BB%E5%A0%B4%E4%BA%86%E9%82%84%E8%A8%98%E5%BE%97%E5%8E%BB%E5%B9%B4%E4%B8%83%E6%9C%88%E5%85%A8%E6%9D%91%E4%BA%BA%E9%BD%8A%E8%81%9A%E6%9C%83%E5%A0%B4%E8%B7%B3%E8%88%9E%E5%94%B1%E6%AD%8C%E7%9A%84%E7%86%B1%E9%AC%A7%E5%A0%B4%E6%99%AF%E5%97%8E%E9%82%84%E8%A8%98%E5%BE%97%E9%81%B2%E5%88%B0%E8%A2%AB%E5%B9%B9%E9%83%A8%E6%8B%BF%E8%97%A4%E6%A2%9D%E6%8F%90%E9%86%92%E7%9A%84%E8%B6%A3%E4%BA%8B%E5%97%8E%E9%82%A3%E4%BA%9B%E4%B8%80/1661610605971735/'
   },
   tt_malan_fb: {
-    label: '馬蘭文化健康站 Facebook',
-    url: 'https://www.facebook.com/p/%E9%A6%AC%E8%98%AD%E6%96%87%E5%8C%96%E5%81%A5%E5%BA%B7%E7%AB%99-100067760864506/'
-  },
-  tt_xinmalan_ig: {
-    label: '新馬蘭部落 Instagram',
-    url: 'https://www.instagram.com/reel/DZSS_SLvgBD/'
+    label: '馬蘭部落 Facebook',
+    url: 'https://www.facebook.com/photo/?fbid=846632771854962&set=a.108499335668313'
   },
   tt_kalaruran_ig: {
     label: '卡拉魯然部落 Instagram',
@@ -279,9 +275,7 @@ const VILLAGES = [
 
   // ══ 臺東縣 臺東市 ════════════════════════════════════════════════
   // 來源可信度混合：社群貼文可信度低於縣府 PDF，正式出行前應再確認
-  { id:'tt-tt-01', buluo_id:'ami-falangaw', group:'ami', chinese:'馬蘭部落', amis:'Falangaw', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/3 五–7/11 六', venue:'馬蘭部落文化廣場及傳統領域', status:'confirmed', src:'tt_malan_fb' },
-  { id:'tt-tt-02', buluo_id:'ami-fukid', group:'ami', chinese:'新馬蘭部落', amis:'Fukid', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/5 日–7/10 五', venue:'新馬蘭聚會所', status:'confirmed', src:'tt_xinmalan_ig' },
-  { id:'tt-tt-03', group:'ami', chinese:'卡拉魯然部落', amis:'Kalarutran', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/18 六–7/19 日', venue:'新園社區青年活動中心（新園路 434 巷 6 號）', status:'confirmed', src:'tt_kalaruran_ig' },
+  { id:'tt-tt-01', buluo_id:'ami-falangaw', group:'ami', chinese:'馬蘭部落', amis:'Falangaw', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/3 五–7/11 六', venue:'馬蘭部落文化廣場及傳統領域', status:'confirmed', src:'tt_malan_fb' },  { id:'tt-tt-03', group:'ami', chinese:'卡拉魯然部落', amis:'Kalarutran', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/18 六–7/19 日', venue:'新園社區青年活動中心（新園路 434 巷 6 號）', status:'confirmed', src:'tt_kalaruran_ig' },
   { id:'tt-tt-04', buluo_id:'ami-siafulungay', group:'ami', chinese:'建農部落／阿福隆愛', amis:'Afolong', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'6/28 日', venue:'建農里社區活動中心', status:'confirmed', src:'tt_summary' },
   { id:'tt-tt-05', buluo_id:'ami-asiroay', group:'ami', chinese:'阿西路愛部落', amis:'', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'7/10 五', venue:'阿西路愛聚會所', status:'confirmed', src:'tt_summary' },
   { id:'tt-tt-06', group:'ami', chinese:'巴布麓部落', amis:'Papulu', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'四維寶桑活動中心', status:'tbd', src:'tt_abm' }
