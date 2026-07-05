@@ -19,8 +19,12 @@ const GROUP_META = {
   ami: { heading: '阿美族 Amis (Pangcah) · Ilisin 豐年祭', festival: 'Ilisin 豐年祭', org: '阿美族（Pangcah）' },
   bnn: { heading: '布農族 Bunun · 射耳祭 Malahtangia',     festival: '射耳祭 Malahtangia', org: '布農族（Bunun）' },
   trv: { heading: '太魯閣族 Truku · 感恩祭 Smyus',         festival: '感恩祭 Smyus',        org: '太魯閣族（Truku）' },
+  pwn: { heading: '排灣族 Paiwan · 豐年祭 Masalut',        festival: '豐年祭 Masalut',      org: '排灣族（Paiwan）' },
+  pyu: { heading: '卑南族 Puyuma · 年祭 Mangayaw',         festival: '年祭 Mangayaw',       org: '卑南族（Puyuma）' },
+  szy: { heading: '撒奇萊雅族 Sakizaya · 豐年祭 Malaliki\'', festival: '豐年祭 Malaliki\'',   org: '撒奇萊雅族（Sakizaya）' },
+  ckv: { heading: '噶瑪蘭族 Kavalan · 豐年祭 Gataban',      festival: '豐年祭 Gataban',      org: '噶瑪蘭族（Kavalan）' },
 };
-const GROUP_ORDER = ['ami', 'bnn', 'trv'];
+const GROUP_ORDER = ['ami', 'bnn', 'trv', 'pwn', 'pyu', 'szy', 'ckv'];
 
 // ── Date helpers (mirrors app.js) ────────────────────────────────────
 const DECADE_MID = { '上': 5, '中': 15, '下': 25 };
