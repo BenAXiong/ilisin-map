@@ -11,12 +11,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-katanka": {
     "chinese_name": "佳林部落",
@@ -26,12 +26,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-palinkaan": {
     "chinese_name": "復興部落",
@@ -41,12 +41,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lalumaang": {
     "chinese_name": "東方羅馬部落",
@@ -56,12 +56,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pacidal": {
     "chinese_name": "華陽部落",
@@ -71,12 +71,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-hupu": {
     "chinese_name": "北埔部落",
@@ -86,12 +86,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kaliyawan": {
     "chinese_name": "嘉里部落",
@@ -101,12 +101,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-paudadan": {
     "chinese_name": "大德（巴烏拉藍）部落",
@@ -116,12 +116,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cilapuk": {
     "chinese_name": "嘉新部落",
@@ -131,12 +131,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pabuisan": {
     "chinese_name": "北星部落",
@@ -146,12 +146,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pibutingan": {
     "chinese_name": "順安部落",
@@ -161,12 +161,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-patirengan": {
     "chinese_name": "立業部落",
@@ -178,9 +178,9 @@ const BULUO_REF = {
     ],
     "status": "single-source",
     "sources": [
-      "豐年祭 地圖/data.js"
+      "豐年祭 地圖/data.js (Pokoh)"
     ],
-    "notes": "Only attested in data.js (官方 PDF). Absent entirely from both the CIP gazette and Sashawaves/Amis-Dialect's 新城鄉 list — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs a second independent source if it's ever revived."
+    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived."
   },
   "ami-sudadatan": {
     "chinese_name": "新城部落",
@@ -190,12 +190,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kanian": {
     "chinese_name": "嘎尼按部落",
@@ -205,12 +205,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-singsiya": {
     "chinese_name": "新夏部落",
@@ -220,12 +220,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciku": {
     "chinese_name": "磯固部落",
@@ -235,12 +235,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cipawkan": {
     "chinese_name": "德安部落",
@@ -250,12 +250,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cikep": {
     "chinese_name": "幾可普部落",
@@ -265,12 +265,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kenuy": {
     "chinese_name": "根努夷部落",
@@ -280,12 +280,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lasutan": {
     "chinese_name": "拉署旦部落",
@@ -295,12 +295,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tasutasunan": {
     "chinese_name": "達蘇達蘇湳部落",
@@ -310,12 +310,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "sakizaya-sakur": {
     "chinese_name": "撒固兒部落",
@@ -337,12 +337,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tuwapun": {
     "chinese_name": "華東部落",
@@ -352,12 +352,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciripunan": {
     "chinese_name": "慶豐部落",
@@ -367,12 +367,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-isaetipan-pahikukian": {
     "chinese_name": "仁和部落",
@@ -382,12 +382,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cikeliwan": {
     "chinese_name": "歌柳灣部落",
@@ -397,12 +397,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-taracan": {
     "chinese_name": "達拉贊部落",
@@ -412,12 +412,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kungkung": {
     "chinese_name": "大鼓部落",
@@ -427,12 +427,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-citekudan": {
     "chinese_name": "小台東部落",
@@ -442,12 +442,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pukpuk": {
     "chinese_name": "簿簿部落",
@@ -457,12 +457,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-atonan": {
     "chinese_name": "阿都南部落",
@@ -472,12 +472,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sarad": {
     "chinese_name": "撒樂部落",
@@ -487,12 +487,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciyibangcalay": {
     "chinese_name": "吉野汎扎萊部落",
@@ -502,12 +502,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-mabuwakay": {
     "chinese_name": "南華部落",
@@ -517,12 +517,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sirakesay": {
     "chinese_name": "永安部落",
@@ -532,12 +532,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cikasuwan": {
     "chinese_name": "七腳川部落",
@@ -547,12 +547,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lidaw": {
     "chinese_name": "里漏部落",
@@ -562,12 +562,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-hacining": {
     "chinese_name": "干城部落",
@@ -577,12 +577,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-natawran": {
     "chinese_name": "那荳蘭部落",
@@ -592,12 +592,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-buner": {
     "chinese_name": "宜昌部落",
@@ -607,12 +607,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-isawalian-pahikukian": {
     "chinese_name": "仁安部落",
@@ -622,12 +622,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fulufuluan": {
     "chinese_name": "勝安部落",
@@ -637,12 +637,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tdlu": {
     "chinese_name": "豐裡部落",
@@ -652,12 +652,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cealalupalantdlu": {
     "chinese_name": "豐山部落",
@@ -667,12 +667,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cihak": {
     "chinese_name": "志學部落",
@@ -682,12 +682,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cipuypuyan": {
     "chinese_name": "米棧部落",
@@ -697,12 +697,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-adetuman": {
     "chinese_name": "平和部落",
@@ -712,12 +712,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-banaw": {
     "chinese_name": "池南部落",
@@ -727,12 +727,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-telu": {
     "chinese_name": "豐坪部落",
@@ -742,12 +742,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tumay": {
     "chinese_name": "鹽寮部落",
@@ -757,12 +757,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciwidiyan": {
     "chinese_name": "水璉部落",
@@ -772,12 +772,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-rinahem": {
     "chinese_name": "光榮部落",
@@ -787,12 +787,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kiku": {
     "chinese_name": "溪口部落",
@@ -802,12 +802,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciamengan": {
     "chinese_name": "壽豐部落",
@@ -817,12 +817,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sawanengan": {
     "chinese_name": "共和部落",
@@ -832,12 +832,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-taukak": {
     "chinese_name": "樹湖部落",
@@ -847,12 +847,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sariwsiw": {
     "chinese_name": "大榮部落",
@@ -862,12 +862,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cirakayan": {
     "chinese_name": "山興部落",
@@ -877,12 +877,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cingaroan": {
     "chinese_name": "鳳信部落",
@@ -892,12 +892,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciloohay": {
     "chinese_name": "森榮部落",
@@ -907,12 +907,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tangahang": {
     "chinese_name": "長橋部落",
@@ -922,12 +922,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cihafayan": {
     "chinese_name": "中興部落",
@@ -937,12 +937,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-atomo": {
     "chinese_name": "阿陶模部落",
@@ -952,12 +952,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-alolong": {
     "chinese_name": "阿囉隆部落",
@@ -967,12 +967,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sado": {
     "chinese_name": "砂荖部落",
@@ -982,12 +982,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lasoay": {
     "chinese_name": "拉索艾部落",
@@ -997,12 +997,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kalotong": {
     "chinese_name": "加里洞部落",
@@ -1012,12 +1012,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fata-an": {
     "chinese_name": "馬太鞍部落",
@@ -1027,12 +1027,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tafalong": {
     "chinese_name": "太巴塱部落",
@@ -1042,12 +1042,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fahol": {
     "chinese_name": "馬佛部落",
@@ -1057,12 +1057,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-o-kakay": {
     "chinese_name": "烏卡蓋部落",
@@ -1072,12 +1072,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tafugan": {
     "chinese_name": "三富橋部落",
@@ -1089,12 +1089,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "needs-review",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette has 'Tafugan', Sashawaves/Amis-Dialect has 'Tafogan' for the same buluo (matched by Chinese name + township, not by indigenous name) — needs a closer look."
+    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tafugan'. temp_dialects separately recorded 'Tafogan' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
   },
   "ami-tisilan": {
     "chinese_name": "靜安部落",
@@ -1104,12 +1104,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cawi": {
     "chinese_name": "靜浦部落",
@@ -1119,12 +1119,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-laeno": {
     "chinese_name": "大港口部落",
@@ -1134,12 +1134,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-makotaay-fengbin": {
     "chinese_name": "港口部落",
@@ -1149,12 +1149,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette independently confirms 'Makotaay' for this buluo too — the earlier suspicion that this was a copy-paste duplicate of ami-makotaay-yuli (瑪谷達璦部落, 玉里鎮) is resolved: both genuinely share the name. Settled."
+    "notes": "CIP gazette lists 'Makotaay' for this buluo too — the earlier suspicion that this was a copy-paste duplicate of ami-makotaay-yuli (瑪谷達璦部落, 玉里鎮) is resolved: both genuinely share the name within the same single source. Settled."
   },
   "kavalan-kodic": {
     "chinese_name": "立德部落",
@@ -1176,12 +1176,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-haciliwan": {
     "chinese_name": "八里灣部落",
@@ -1191,12 +1191,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "kavalan-paterungan": {
     "chinese_name": "新社部落",
@@ -1218,12 +1218,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tingalaw": {
     "chinese_name": "豐富部落",
@@ -1233,12 +1233,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fanaw": {
     "chinese_name": "法淖部落",
@@ -1248,12 +1248,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-olalip": {
     "chinese_name": "屋拉力部落",
@@ -1263,12 +1263,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ukang": {
     "chinese_name": "烏槓部落",
@@ -1278,12 +1278,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-narowan": {
     "chinese_name": "娜魯灣部落",
@@ -1293,12 +1293,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sapat": {
     "chinese_name": "掃叭頂部落",
@@ -1308,12 +1308,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-olaw": {
     "chinese_name": "梧繞部落",
@@ -1323,12 +1323,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lacihakan": {
     "chinese_name": "拉基禾幹部落",
@@ -1338,12 +1338,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-koyo": {
     "chinese_name": "溫泉部落",
@@ -1353,12 +1353,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "sakizaya-maifor": {
     "chinese_name": "馬立雲部落",
@@ -1380,12 +1380,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-morocan": {
     "chinese_name": "牧魯棧部落",
@@ -1395,12 +1395,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-atolan": {
     "chinese_name": "阿多瀾部落",
@@ -1410,12 +1410,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-langas": {
     "chinese_name": "拉加善部落",
@@ -1425,12 +1425,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cirocan": {
     "chinese_name": "鶺櫓棧部落",
@@ -1440,12 +1440,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kalala": {
     "chinese_name": "迦納納部落",
@@ -1455,12 +1455,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kiwit": {
     "chinese_name": "奇美部落",
@@ -1470,12 +1470,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-patawlinan": {
     "chinese_name": "巴島力安部落",
@@ -1485,12 +1485,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-posko": {
     "chinese_name": "璞石閣部落",
@@ -1500,12 +1500,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cilakesay": {
     "chinese_name": "吉拉格賽部落",
@@ -1515,12 +1515,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-namisan": {
     "chinese_name": "拿彌散部落",
@@ -1530,12 +1530,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-satefo": {
     "chinese_name": "下德武部落",
@@ -1545,12 +1545,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-matadim": {
     "chinese_name": "馬太林部落",
@@ -1560,12 +1560,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cinemnemay": {
     "chinese_name": "吉能能麥部落",
@@ -1575,12 +1575,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lingacay": {
     "chinese_name": "苓雅仔部落",
@@ -1590,12 +1590,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-harawan": {
     "chinese_name": "哈拉灣部落",
@@ -1605,12 +1605,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ceroh": {
     "chinese_name": "春日部落",
@@ -1620,12 +1620,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-afih": {
     "chinese_name": "阿飛赫部落",
@@ -1635,12 +1635,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tokar": {
     "chinese_name": "都旮薾部落",
@@ -1650,12 +1650,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-angcoh": {
     "chinese_name": "安通部落",
@@ -1665,12 +1665,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-makotaay-yuli": {
     "chinese_name": "瑪谷達璦部落",
@@ -1680,12 +1680,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette independently confirms 'Makotaay' for this buluo too — see ami-makotaay-fengbin (港口部落, 豐濱鄉), which shares the same indigenous name. Confirmed as a real coincidence, not a source error."
+    "notes": "CIP gazette lists 'Makotaay' for this buluo too — see ami-makotaay-fengbin (港口部落, 豐濱鄉), which shares the same indigenous name. Confirmed as a real coincidence within the same single source, not a transcription error."
   },
   "ami-lohok": {
     "chinese_name": "洛合谷部落",
@@ -1695,12 +1695,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-mangcelan": {
     "chinese_name": "滿自然部落",
@@ -1710,12 +1710,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-takay": {
     "chinese_name": "達蓋部落",
@@ -1725,12 +1725,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-silangkong": {
     "chinese_name": "喜瑯宮部落",
@@ -1740,12 +1740,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cihakay": {
     "chinese_name": "吉哈蓋部落",
@@ -1755,12 +1755,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sedeng": {
     "chinese_name": "瑟冷部落",
@@ -1770,12 +1770,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-monating": {
     "chinese_name": "姆拉丁部落",
@@ -1785,12 +1785,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cirakesay": {
     "chinese_name": "基拉歌賽",
@@ -1800,12 +1800,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cihalaay": {
     "chinese_name": "黑暗部落",
@@ -1815,12 +1815,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-maliwang": {
     "chinese_name": "馬里旺部落",
@@ -1830,12 +1830,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-lupo": {
     "chinese_name": "露埔部落",
@@ -1845,12 +1845,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cilamitay": {
     "chinese_name": "吉拉米代部落",
@@ -1860,12 +1860,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pacuya": {
     "chinese_name": "巴族耶部落",
@@ -1875,12 +1875,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kalokapuk": {
     "chinese_name": "大埔部落",
@@ -1890,12 +1890,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cipuwa": {
     "chinese_name": "慶豐部落",
@@ -1905,12 +1905,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-dihekoay": {
     "chinese_name": "陸安部落",
@@ -1920,12 +1920,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciataw": {
     "chinese_name": "福原部落",
@@ -1935,12 +1935,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kawaliwali": {
     "chinese_name": "大坡部落",
@@ -1950,12 +1950,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cicalaay": {
     "chinese_name": "福文部落",
@@ -1965,12 +1965,12 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fangafangasan": {
     "chinese_name": "新興部落",
@@ -1980,12 +1980,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-muliyaw": {
     "chinese_name": "白毛寮部落",
@@ -2002,10 +2002,10 @@ const BULUO_REF = {
     "status": "verified",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)",
+      "暫定族語別分類來源（待補充正式引註）",
       "臺灣原住民族事典 (aborgpedia.alcd.center)"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name. 2024年（113年）由「振興部落 Muliyaw」更名為「白毛寮部落 Moliyaw」（原民會公告）；前名稱保留為 chinese_name_alt／indigenous_name_alt。"
+    "notes": "CIP gazette confirms the current name. 2024年（113年）由「振興部落 Muliyaw」更名為「白毛寮部落 Moliyaw」（原民會公告，aborgpedia 交叉確認）；前名稱保留為 chinese_name_alt／indigenous_name_alt。"
   },
   "ami-cikowaay": {
     "chinese_name": "富興部落",
@@ -2015,12 +2015,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kalahaay": {
     "chinese_name": "民豐部落",
@@ -2030,12 +2030,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciliksay": {
     "chinese_name": "麒麟部落",
@@ -2045,12 +2045,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-mararoong": {
     "chinese_name": "美山部落",
@@ -2060,12 +2060,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-madawdaw": {
     "chinese_name": "麻荖漏部落",
@@ -2075,12 +2075,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-piyoxo": {
     "chinese_name": "小馬部落",
@@ -2090,12 +2090,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-torik": {
     "chinese_name": "都歷部落",
@@ -2105,12 +2105,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-dadowacen": {
     "chinese_name": "玉水橋部落",
@@ -2120,12 +2120,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-tomiyac": {
     "chinese_name": "重安部落",
@@ -2135,12 +2135,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cirarokohay": {
     "chinese_name": "芝田部落",
@@ -2150,12 +2150,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-pisirian": {
     "chinese_name": "比西里岸部落",
@@ -2165,12 +2165,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-folalacay": {
     "chinese_name": "小港部落",
@@ -2180,12 +2180,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-saaniwan": {
     "chinese_name": "宜灣部落",
@@ -2195,12 +2195,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-paongaongan": {
     "chinese_name": "八嗡嗡部落",
@@ -2210,12 +2210,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kahciday": {
     "chinese_name": "和平部落",
@@ -2225,12 +2225,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-makrahay": {
     "chinese_name": "真柄部落",
@@ -2240,12 +2240,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-ciwkangan": {
     "chinese_name": "長光(石坑)部落",
@@ -2255,12 +2255,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-asiroay-2": {
     "chinese_name": "阿奚露艾部落",
@@ -2270,12 +2270,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-paanifong": {
     "chinese_name": "巴阿尼豐部落",
@@ -2285,12 +2285,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-kalifangar": {
     "chinese_name": "佳尼發納部落",
@@ -2300,12 +2300,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-fafokod": {
     "chinese_name": "發富谷部落",
@@ -2315,12 +2315,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-howak": {
     "chinese_name": "乎哇固部落",
@@ -2330,12 +2330,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-etolan": {
     "chinese_name": "阿度蘭部落",
@@ -2352,12 +2352,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-alapawan": {
     "chinese_name": "阿拉巴灣部落",
@@ -2367,12 +2367,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-sena": {
     "chinese_name": "順那部落",
@@ -2382,12 +2382,12 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-cilafinan": {
     "chinese_name": "基拉菲婻部落",
@@ -2397,12 +2397,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-maolaway": {
     "chinese_name": "瑪屋撈外部落",
@@ -2412,12 +2412,12 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-dikidiki": {
     "chinese_name": "利吉部落",
@@ -2427,12 +2427,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-falangaw": {
     "chinese_name": "馬蘭部落",
@@ -2442,12 +2442,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect both confirm 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30."
+    "notes": "CIP gazette confirms 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30."
   },
   "pwn-kalaluran": {
     "chinese_name": "卡拉魯然部落",
@@ -2469,12 +2469,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-asiroay": {
     "chinese_name": "阿西路愛部落",
@@ -2484,12 +2484,12 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "pyu-papulu": {
     "chinese_name": "巴布麓部落",
@@ -2511,12 +2511,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   "ami-siapaluway": {
     "chinese_name": "月眉（中部落）",
@@ -2526,12 +2526,12 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   }
 };
 const BULUO_UNCOVERED = [
@@ -2550,12 +2550,12 @@ const BULUO_UNCOVERED = [
     "lat": 23.273,
     "lng": 121.293,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-talampo",
@@ -2572,12 +2572,12 @@ const BULUO_UNCOVERED = [
     "lat": 23.273,
     "lng": 121.293,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-tidaan",
@@ -2594,12 +2594,12 @@ const BULUO_UNCOVERED = [
     "lat": 23.634,
     "lng": 121.49,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-dipit",
@@ -2616,12 +2616,12 @@ const BULUO_UNCOVERED = [
     "lat": 23.634,
     "lng": 121.49,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-macaran",
@@ -2638,12 +2638,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-cilalongay",
@@ -2660,12 +2660,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-sasaljak",
@@ -2682,12 +2682,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-anasolay",
@@ -2704,12 +2704,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-takidis",
@@ -2726,12 +2726,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-kalitood",
@@ -2748,12 +2748,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-fudafudak",
@@ -2770,12 +2770,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-carapongay",
@@ -2792,12 +2792,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pasongan",
@@ -2814,12 +2814,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-sadipongan",
@@ -2836,12 +2836,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-tapowaray-saranawan",
@@ -2860,12 +2860,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "needs-review",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette has 'Tapowaray或Saranawan', Sashawaves/Amis-Dialect has 'Tapowaray' for the same buluo (matched by Chinese name + township, not by indigenous name) — needs a closer look."
+    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
   },
   {
     "id": "ami-polot",
@@ -2882,12 +2882,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pakaraac",
@@ -2904,12 +2904,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-mornos",
@@ -2926,12 +2926,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-cikadaan",
@@ -2948,12 +2948,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-cidatayay",
@@ -2970,12 +2970,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-kinanoka",
@@ -2992,12 +2992,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-koladot",
@@ -3014,12 +3014,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-ta-man",
@@ -3036,12 +3036,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pailasan",
@@ -3058,12 +3058,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-salinliw",
@@ -3080,12 +3080,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-kanaopu",
@@ -3102,12 +3102,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-rekat",
@@ -3124,12 +3124,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-parayapay",
@@ -3146,12 +3146,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-efong",
@@ -3168,12 +3168,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pakalaac",
@@ -3190,12 +3190,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pongodan",
@@ -3212,12 +3212,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pakurung",
@@ -3234,12 +3234,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pasawali",
@@ -3256,12 +3256,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-karoroan",
@@ -3278,12 +3278,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-pusong",
@@ -3300,12 +3300,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-kakawasan",
@@ -3322,12 +3322,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-ining",
@@ -3344,12 +3344,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-alapanay",
@@ -3366,12 +3366,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-matang",
@@ -3388,12 +3388,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-apapuro",
@@ -3410,12 +3410,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-sihodingan",
@@ -3432,12 +3432,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-fukid",
@@ -3454,12 +3454,12 @@ const BULUO_UNCOVERED = [
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect both confirm 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, now independently confirmed by the CIP gazette — closed."
+    "notes": "CIP gazette confirms 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, matching the CIP gazette value — closed."
   },
   {
     "id": "ami-cu-ki-ngo",
@@ -3476,12 +3476,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-cipurungan",
@@ -3498,12 +3498,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-parupu",
@@ -3520,12 +3520,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-himoti",
@@ -3542,12 +3542,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-takofan",
@@ -3564,12 +3564,12 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   },
   {
     "id": "ami-ciwcia",
@@ -3586,11 +3586,11 @@ const BULUO_UNCOVERED = [
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
-    "status": "verified",
+    "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "Sashawaves/Amis-Dialect (GitHub)"
+      "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette and Sashawaves/Amis-Dialect agree on the indigenous name."
+    "notes": ""
   }
 ];
