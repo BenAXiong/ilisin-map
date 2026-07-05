@@ -94,7 +94,7 @@ const events = confirmed
       organizer: { '@type': 'Organization', name: `${v.chinese} ${meta.org}` },
       inLanguage: 'zh-TW',
       isAccessibleForFree: true,
-      url: 'https://ilisin.tw/',
+      url: 'https://pokoh.vercel.app/',
     };
     if (v.lat && v.lng) {
       ev.location.geo = { '@type': 'GeoCoordinates', latitude: v.lat, longitude: v.lng };
@@ -111,12 +111,12 @@ const ldData = {
       '@type': 'WebSite',
       name: '豐年祭指南',
       alternateName: 'Taiwan Indigenous Festival Map',
-      url: 'https://ilisin.tw/',
+      url: 'https://pokoh.vercel.app/',
       description: '全臺唯一原住民族歲時祭儀彙整地圖',
       inLanguage: ['zh-TW', 'en'],
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://ilisin.tw/?q={search_term_string}',
+        target: 'https://pokoh.vercel.app/?q={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     },

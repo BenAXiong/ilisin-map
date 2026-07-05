@@ -407,10 +407,10 @@ function applyTheme(idx) {
   themeIdx = idx % THEMES.length;
   document.documentElement.dataset.theme = THEMES[themeIdx] ?? '';
   document.getElementById('vzTheme').textContent = T_LABEL[themeIdx];
-  localStorage.setItem('ilisin-theme', String(themeIdx));
+  localStorage.setItem('pokoh-theme', String(themeIdx));
 }
 (function() {
-  const saved = parseInt(localStorage.getItem('ilisin-theme') ?? '0', 10);
+  const saved = parseInt(localStorage.getItem('pokoh-theme') ?? '0', 10);
   applyTheme(Number.isNaN(saved) ? 0 : saved);
 })();
 document.getElementById('vzTheme').addEventListener('click', () => applyTheme(themeIdx + 1));

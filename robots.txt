@@ -14,4 +14,4 @@ Allow: /
 User-agent: GoogleOther
 Allow: /
 
-Sitemap: https://ilisin.tw/sitemap.xml
+Sitemap: https://pokoh.vercel.app/sitemap.xml

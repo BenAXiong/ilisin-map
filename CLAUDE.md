@@ -1,6 +1,6 @@
-# Ilisin Map — CLAUDE.md
+# Pokoh — CLAUDE.md
 
-Live site: **https://ilisin.tw/**  
+Live site: **https://pokoh.vercel.app/** (no custom domain yet — this is Vercel's auto-assigned URL for the `pokoh` project)  
 Repo: `C:\Users\Ben\Documents\LL\6_ycm\豐年祭 地圖`  
 Deeper docs (gitignored, local only): `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`
 
@@ -96,7 +96,7 @@ scripts/build_buluo_ref.js   →  data.js (adds buluo_id fields)
 scripts/prerender.js         →  index.html (static HTML + JSON-LD injected)
         │
         ▼ (run by Vercel on deploy)
-        ilisin.tw
+        pokoh.vercel.app
 ```
 
 **When to re-run `build_buluo_ref.js`:** after `Datasets/buluo/ami.json` changes,
@@ -112,7 +112,7 @@ locally before committing if you want the prerendered HTML in the commit.
 
 ## Current status (2026-07-05)
 
-Phases A–D complete. Phase E (rename to "Pokoh") is next; v2 expansion tracked separately.
+Phases A–E complete. v2 expansion tracked separately.
 
 | Phase | What | Status |
 |---|---|---|
@@ -122,7 +122,7 @@ Phases A–D complete. Phase E (rename to "Pokoh") is next; v2 expansion tracked
 | C | `scripts/prerender.js` — static HTML + JSON-LD at build time | ✅ |
 | D1 | Themes rework | ✅ |
 | D2 | Info tab rework (per-tribe prose, source: `docs/` CIP PDF) | ✅ |
-| **E** | **Rename site to "Pokoh"** | ☐ |
+| E | Rename site to "Pokoh" | ✅ |
 
 v2 expansion (tribe data, all-year timeline, donations, village detail overlay,
 map behavior, share, Chill'ey integration, contribution form polish — moved

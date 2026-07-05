@@ -103,10 +103,10 @@ function applyTheme(idx) {
     b.textContent = T_LABEL[themeIdx];
     b.title = T_TITLE[themeIdx];
   });
-  localStorage.setItem('ilisin-theme', String(themeIdx));
+  localStorage.setItem('pokoh-theme', String(themeIdx));
 }
 (function initTheme() {
-  const saved = Number.parseInt(localStorage.getItem('ilisin-theme') ?? '0', 10);
+  const saved = Number.parseInt(localStorage.getItem('pokoh-theme') ?? '0', 10);
   applyTheme(Number.isNaN(saved) ? 0 : saved);
 })();
 document.querySelectorAll('[data-theme-btn]').forEach(b =>

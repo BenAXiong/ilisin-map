@@ -46,7 +46,7 @@ function getSearchResults(query, filters) {
 }
 
 /* ── Recent searches ─────────────────────────────── */
-const RECENT_KEY  = 'ilisin-searches';
+const RECENT_KEY  = 'pokoh-searches';
 const RECENT_MAX  = 50;
 const RECENT_PAGE = 10;
 let recentShown   = RECENT_PAGE;
