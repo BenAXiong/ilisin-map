@@ -38,11 +38,23 @@ function festivalDayCount(dateStr) {
 }
 
 function initInfo() {
-  const total     = VILLAGES.length;
-  const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
+  // Cards are Amis-only for now — buluo_id coverage for other groups (pwn/pyu/
+  // szy/ckv) is too partial to build a meaningful denominator yet.
+  const confirmed = VILLAGES.reduce((sum, v) => {
+    if (v.group !== 'ami' || v.status !== 'confirmed') return sum;
+    return sum + (v.buluo_ids ? v.buluo_ids.length : 1);
+  }, 0);
+  // Denominator is the known Amis buluo population (BULUO_REF ami- entries +
+  // BULUO_UNCOVERED), not VILLAGES.length — so it reads as "of all known Amis
+  // buluo, how many already have an announced date," not "of festivals we
+  // happen to be tracking." Derived, not hardcoded, so it can't go stale.
+  const amisRefCount = typeof BULUO_REF === 'undefined' ? 0
+    : Object.keys(BULUO_REF).filter(id => id.startsWith('ami-')).length;
+  const amisUncoveredCount = typeof BULUO_UNCOVERED === 'undefined' ? 0 : BULUO_UNCOVERED.length;
+  const total = amisRefCount + amisUncoveredCount;
 
   const festivalDays = VILLAGES
-    .filter(v => v.status !== 'cancelled' && v.date && v.date !== '—')
+    .filter(v => v.group === 'ami' && v.status !== 'cancelled' && v.date && v.date !== '—')
     .reduce((sum, v) => sum + festivalDayCount(v.date), 0);
 
   let firstVal = Infinity, lastVal = -Infinity;
