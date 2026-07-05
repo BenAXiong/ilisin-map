@@ -116,7 +116,7 @@
     }
     .tbl-filter {
       flex: 1;
-      max-width: 320px;
+      max-width: 160px;
       background: var(--bg-alt);
       border: 1px solid var(--border);
       border-radius: var(--r);
@@ -158,6 +158,8 @@
     tbody tr { border-bottom: 1px solid var(--border); }
     tbody tr:hover { background: var(--bg-alt); }
     tbody td { padding: .42rem .75rem; vertical-align: middle; }
+    tbody tr.row-uncovered { font-style: italic; opacity: .72; }
+    tbody tr.row-uncovered:hover { opacity: 1; }
 
     .td-id {
       font-family: var(--mono);
@@ -186,6 +188,7 @@
     .badge-confirmed { background: oklch(from var(--green) l c h / 0.15); color: var(--green); border: 1px solid oklch(from var(--green) l c h / 0.3); }
     .badge-tbd       { background: var(--amber-pale); color: var(--amber-dark); border: 1px solid oklch(from var(--accent) l c h / 0.3); }
     .badge-cancelled { background: oklch(from var(--terra) l c h / 0.12); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.25); }
+    .badge-uncovered { background: transparent; color: var(--text-3); border: 1px dashed oklch(from var(--text-3) l c h / 0.4); }
 
     /* verification badges — per Datasets/buluo/DISPLAY.md: needs-review should
        stand out, verified should be quiet, single-source/unlisted in between */
@@ -193,6 +196,7 @@
     .badge-single-source { background: transparent; color: var(--text-3); border: 1px dashed oklch(from var(--text-3) l c h / 0.4); }
     .badge-needs-review  { background: oklch(from var(--terra) l c h / 0.15); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.35); cursor: help; }
     .badge-unlisted      { background: transparent; color: var(--text-3); border: 1px dotted oklch(from var(--text-3) l c h / 0.3); }
+    .badge-group         { background: var(--bg-alt); color: var(--text-2); border: 1px solid var(--border-2); }
     .cn-official { font-size: .65rem; font-weight: 400; color: var(--text-3); margin-left: .3em; }
     .amis-alt-marker { cursor: help; color: var(--text-3); font-size: .6rem; }
 
@@ -324,12 +328,27 @@
 <div class="vz-panel active" id="vz-table">
   <div class="tbl-toolbar">
     <input class="tbl-filter" id="tblFilter" type="text" placeholder="篩選部落、鄉鎮、ID…" autocomplete="off">
+    <select class="tbl-filter" id="groupFilter">
+      <option value="">全部族群</option>
+    </select>
     <select class="tbl-filter" id="verifFilter">
       <option value="">全部驗證狀態</option>
       <option value="verified">已查核</option>
       <option value="single-source">單一來源</option>
       <option value="needs-review">待覆核</option>
       <option value="unlisted">尚未建檔</option>
+    </select>
+    <select class="tbl-filter" id="statusFilter">
+      <option value="">全部狀態</option>
+      <option value="confirmed">已公告</option>
+      <option value="tbd">待定</option>
+      <option value="cancelled">取消</option>
+      <option value="uncovered">尚無資訊</option>
+    </select>
+    <select class="tbl-filter" id="kindFilter">
+      <option value="">部落／活動：全部</option>
+      <option value="buluo">僅部落（含尚無活動者）</option>
+      <option value="event">僅活動（不論是否已對應部落）</option>
     </select>
     <span class="tbl-count" id="tblCount"></span>
   </div>
@@ -338,8 +357,9 @@
       <thead>
         <tr>
           <th data-col="id">ID</th>
+          <th data-col="group">族群</th>
           <th data-col="chinese">中文名（官方）</th>
-          <th data-col="amis">Amis</th>
+          <th data-col="amis">族語名稱</th>
           <th data-col="verif">驗證</th>
           <th data-col="county">縣市</th>
           <th data-col="township">鄉鎮</th>
@@ -456,8 +476,20 @@ function nameVariants(str) {
   return (str || '').split('／').map(stripParens).filter(Boolean);
 }
 
-/* ── Buluo identity/verification join (see Datasets/buluo/DISPLAY.md) ── */
+/* ── Group/ethnicity labels — mirrors scripts/prerender.js's GROUP_META.org ── */
+const GROUP_LABEL = {
+  ami: '阿美族', bnn: '布農族', trv: '太魯閣族',
+  pwn: '排灣族', pyu: '卑南族', szy: '撒奇萊雅族', ckv: '噶瑪蘭族',
+};
+
+/* ── Buluo identity/verification join (see Datasets/buluo/DISPLAY.md) ──
+   A synthetic "uncovered" row (see rowsFromUncovered below) carries its own
+   buluo record on ._uncovered — same shape as a BULUO_REF value plus
+   county/township/etc — so it can flow through the exact same rendering
+   path as a matched row instead of needing parallel cnHtml/amisHtml/verifHtml
+   logic. */
 function buluoRef(v) {
+  if (v._uncovered) return v._uncovered;
   if (!v.buluo_id || typeof BULUO_REF === 'undefined') return undefined;
   return BULUO_REF[v.buluo_id];
 }
@@ -467,16 +499,81 @@ function verifStatus(v) {
 const VERIF_LABEL = { verified: '已查核', 'single-source': '單一來源', 'needs-review': '待覆核', unlisted: '尚未建檔' };
 const VERIF_RANK  = { 'needs-review': 0, unlisted: 1, 'single-source': 2, verified: 3 };
 
+// "部落／活動" filter — existing fields only, nothing new needed in data.js:
+// isBuluo:  tied to a specific registered buluo identity — a matched buluo_id/
+//           buluo_ids, or an uncovered row (which *is* a buluo record, just
+//           with no event yet).
+// isEvent:  a real 2026 festival occurrence — any actual VILLAGES row,
+//           whether or not it's linked to a specific buluo (umbrella "族群"
+//           entries, joint:true entries, and still-unmatched entries all
+//           count as an event with no buluo link).
+// The two sets overlap heavily (most VILLAGES rows are both). Combining this
+// with the 族群 filter (isBuluo + 阿美族) gets you *close* to the "211" total
+// (162 matched-ami rows + 48 uncovered = 210 rows) but is one row short of
+// the true 211 distinct-buluo count: hl-sf-12 (月眉部落) is a single row
+// whose buluo_ids covers 2 separate buluo, so row-counting undercounts by
+// exactly 1 wherever a multi-buluo row exists. This filter counts rows, not
+// distinct buluo — worth knowing before trusting the displayed count as a
+// buluo tally.
+function isBuluoRow(v) {
+  return !!(v.buluo_id || v.buluo_ids || v._uncovered);
+}
+function isEventRow(v) {
+  return !v._uncovered;
+}
+
+// BULUO_UNCOVERED entries (known buluo, no 2026 festival entry yet) reshaped
+// to flow through the same table as VILLAGES rows — status:'uncovered' is a
+// distinct pseudo-value from the real event statuses (confirmed/tbd/
+// cancelled), never written back to data.js.
+function rowsFromUncovered() {
+  const list = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
+  return list.map(r => ({
+    id: r.id,
+    group: 'ami', // BULUO_UNCOVERED is Amis-only by design — see docs/DATA-SOURCES.md §8
+    chinese: r.chinese_name,
+    amis: r.indigenous_name,
+    county: r.county,
+    township: r.township,
+    date: '—',
+    status: 'uncovered',
+    src: null,
+    _uncovered: r,
+  }));
+}
+
 /* ── Table ── */
 let sortCol = 'date';
 let sortAsc = true;
 let filterQ = '';
 let verifQ = '';
+let groupQ = '';
+let statusQ = '';
+let kindQ = '';
+
+// Options derived from whatever `group` values are actually present in
+// VILLAGES, not a hand-maintained list — so a future new group (like this
+// session's pwn/pyu/szy/ckv additions) shows up here without editing this file.
+(function populateGroupFilter() {
+  const groups = [...new Set(VILLAGES.map(v => v.group))].sort();
+  const sel = document.getElementById('groupFilter');
+  groups.forEach(g => {
+    const opt = document.createElement('option');
+    opt.value = g;
+    opt.textContent = GROUP_LABEL[g] || g;
+    sel.appendChild(opt);
+  });
+})();
 
 function getRows() {
   const q = srNorm(filterQ.trim());
-  let rows = VILLAGES.filter(v => {
+  const allRows = [...VILLAGES, ...rowsFromUncovered()];
+  let rows = allRows.filter(v => {
+    if (groupQ && v.group !== groupQ) return false;
     if (verifQ && verifStatus(v) !== verifQ) return false;
+    if (statusQ && v.status !== statusQ) return false;
+    if (kindQ === 'buluo' && !isBuluoRow(v)) return false;
+    if (kindQ === 'event' && !isEventRow(v)) return false;
     if (!q) return true;
     const ref = buluoRef(v);
     const hay = [v.id, v.chinese, v.amis, v.county, v.township, v.date, v.status, SOURCES[v.src]?.label,
@@ -490,11 +587,14 @@ function getRows() {
       va = parseStartDate(a.date)?.getTime() ?? Infinity;
       vb = parseStartDate(b.date)?.getTime() ?? Infinity;
     } else if (sortCol === 'src') {
-      va = SOURCES[a.src]?.label ?? '';
-      vb = SOURCES[b.src]?.label ?? '';
+      va = a._uncovered ? (a._uncovered.sources || []).join('、') : (SOURCES[a.src]?.label ?? '');
+      vb = b._uncovered ? (b._uncovered.sources || []).join('、') : (SOURCES[b.src]?.label ?? '');
     } else if (sortCol === 'verif') {
       va = VERIF_RANK[verifStatus(a)];
       vb = VERIF_RANK[verifStatus(b)];
+    } else if (sortCol === 'group') {
+      va = GROUP_LABEL[a.group] || a.group;
+      vb = GROUP_LABEL[b.group] || b.group;
     } else {
       va = a[sortCol] ?? '';
       vb = b[sortCol] ?? '';
@@ -506,11 +606,12 @@ function getRows() {
   return rows;
 }
 
-const STATUS_LABEL = { confirmed: '已公告', tbd: '待定', cancelled: '取消' };
+const STATUS_LABEL = { confirmed: '已公告', tbd: '待定', cancelled: '取消', uncovered: '尚無資訊' };
 
 function renderTable() {
   const rows = getRows();
-  document.getElementById('tblCount').textContent = `${rows.length} / ${VILLAGES.length} 筆`;
+  const totalRows = VILLAGES.length + (typeof BULUO_UNCOVERED === 'undefined' ? 0 : BULUO_UNCOVERED.length);
+  document.getElementById('tblCount').textContent = `${rows.length} / ${totalRows} 筆`;
   document.getElementById('tblBody').innerHTML = rows.map(v => {
     const src = SOURCES[v.src];
     const ref = buluoRef(v);
@@ -546,8 +647,13 @@ function renderTable() {
       verifHtml = `<span class="badge badge-unlisted" title="尚未收錄於部落資料庫（Datasets/buluo）">${VERIF_LABEL.unlisted}</span>`;
     }
 
-    return `<tr>
+    const srcHtml = v._uncovered
+      ? (v._uncovered.sources || []).join('、')
+      : `<a href="${src?.url ?? '#'}" target="_blank" rel="noopener">${src?.label ?? v.src}</a>`;
+
+    return `<tr${v._uncovered ? ' class="row-uncovered" title="已知部落，尚無 2026 豐年祭資訊 — 可作為新增資料時的參考"' : ''}>
       <td class="td-id" onclick="copyId('${v.id}')" title="點擊複製">${v.id}</td>
+      <td><span class="badge badge-group" title="group:'${v.group}'">${GROUP_LABEL[v.group] || v.group}</span></td>
       <td class="td-cn">${cnHtml}</td>
       <td class="td-amis">${amisHtml}</td>
       <td>${verifHtml}</td>
@@ -555,7 +661,7 @@ function renderTable() {
       <td class="td-loc">${v.township}</td>
       <td class="td-date">${v.date}</td>
       <td><span class="badge badge-${v.status}">${STATUS_LABEL[v.status] ?? v.status}</span></td>
-      <td class="td-src"><a href="${src?.url ?? '#'}" target="_blank" rel="noopener">${src?.label ?? v.src}</a></td>
+      <td class="td-src">${srcHtml}</td>
     </tr>`;
   }).join('');
 
@@ -579,6 +685,21 @@ document.getElementById('tblFilter').addEventListener('input', e => {
 
 document.getElementById('verifFilter').addEventListener('change', e => {
   verifQ = e.target.value;
+  renderTable();
+});
+
+document.getElementById('groupFilter').addEventListener('change', e => {
+  groupQ = e.target.value;
+  renderTable();
+});
+
+document.getElementById('statusFilter').addEventListener('change', e => {
+  statusQ = e.target.value;
+  renderTable();
+});
+
+document.getElementById('kindFilter').addEventListener('change', e => {
+  kindQ = e.target.value;
   renderTable();
 });
 
