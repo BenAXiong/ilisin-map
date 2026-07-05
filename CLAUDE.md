@@ -2,7 +2,7 @@
 
 Live site: **https://ilisin.tw/**  
 Repo: `C:\Users\Ben\Documents\LL\6_ycm\豐年祭 地圖`  
-Deeper docs (gitignored, local only): `docs/ROADMAP-v1.md`, `docs/DATA-SOURCES.md`
+Deeper docs (gitignored, local only): `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`
 
 ---
 
@@ -42,8 +42,8 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
 | `index.html` | App shell + prerendered static content (injected by `scripts/prerender.js`) |
 | `app.css` | All styles. CSS custom property theme system (`--fs-*`, `--c-*`, `data-theme` attr) |
 | `app.js` | Shared utilities, theme, tab switching, PWA, SW registration, boot |
-| `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `VILLAGES` (175 entries) |
-| `buluo-ref.js` | Generated. `BULUO_REF` (147 matched buluo identity facts) + `BULUO_UNCOVERED` (64 unmatched) |
+| `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `VILLAGES` |
+| `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts) + `BULUO_UNCOVERED` (unmatched) |
 | `js/timeline.js` | Timeline tab — month strip, day cards, county filter |
 | `js/map.js` | Map tab — Leaflet init, markers, bottom sheet, drag |
 | `js/search.js` | Search tab — filter, recents, IME support |
@@ -110,22 +110,22 @@ locally before committing if you want the prerendered HTML in the commit.
 
 ---
 
-## Current status (2026-07-01)
+## Current status (2026-07-05)
 
-Phases A–C complete. Phase D (product polish) is next.
+Phases A–D complete. Phase E (rename to "Pokoh") is next; v2 expansion tracked separately.
 
 | Phase | What | Status |
 |---|---|---|
 | A | `<head>` SEO (title, OG, canonical, robots, sitemap, llms.txt) | ✅ |
 | B | HTML refactor — modular files, semantic landmarks, prerender hooks | ✅ |
-| B+ | `group` field on all 175 VILLAGES entries (ISO 639-3 codes) | ✅ |
+| B+ | `group` field on all VILLAGES entries (ISO 639-3 codes) | ✅ |
 | C | `scripts/prerender.js` — static HTML + JSON-LD at build time | ✅ |
-| **D1** | **Themes rework** | ☐ |
-| **D2** | **Info tab rework** (per-tribe prose, source: `docs/` CIP PDF) | ☐ |
-| **D3** | **Contribution form polish** | ☐ |
-| v2-A | Tribe expansion (Puyuma → Paiwan/Rukai → Bunun) | ☐ |
-| v2-B | All-year timeline | ☐ |
-| v2-C | Donations | ☐ |
-| v2-D | Rich buluo details (minimap, photos, history) | ☐ |
+| D1 | Themes rework | ✅ |
+| D2 | Info tab rework (per-tribe prose, source: `docs/` CIP PDF) | ✅ |
+| **E** | **Rename site to "Pokoh"** | ☐ |
 
-Full roadmap and data source inventory: `docs/ROADMAP-v1.md`, `docs/DATA-SOURCES.md`
+v2 expansion (tribe data, all-year timeline, donations, village detail overlay,
+map behavior, share, Chill'ey integration, contribution form polish — moved
+from D3) is tracked in `docs/ROADMAP-v2.md`, not here.
+
+Full roadmap and data source inventory: `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`

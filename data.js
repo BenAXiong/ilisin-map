@@ -284,7 +284,7 @@ const VILLAGES = [
 
 // ── General notes (festival background) ──────────────────────────
 const GENERAL_NOTES = [
-  { icon:'◎', label:'別名 · Names', text:'豐年祭又稱 Ilisin（北部阿美語）或 Malikoda（南部），是阿美族（Pangcah）最重要的年度祭典。' },
+  { icon:'◎', label:'別名 · Names', text:'豐年祭又稱 Ilisin, Malalikit/Malalikid, Kilumaan/Kiloma\'an 或 Malikoda（依部落而異），是阿美族（Amis/Pangcah）最重要的年度祭典。' },
   { icon:'◷', label:'日期 · Dates', text:'各部落日期每年微調，以部落或各鄉鎮市公所最新公告為準。本表資料截至 2026-06-21。' },
   { icon:'▣', label:'階級 · Age-grade', text:'年齡階級（pakelang）是典禮核心。不同階層各司其職，禮儀角色世代傳承。' },
   { icon:'⊗', label:'限制 · Restricted', text:'男子儀式期間有嚴格限制區域，嚴禁非阿美族人擅入。請尊重所有指示與圍繩。' },

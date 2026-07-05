@@ -109,7 +109,7 @@ const ldData = {
   '@graph': [
     {
       '@type': 'WebSite',
-      name: '豐年祭地圖',
+      name: '豐年祭指南',
       alternateName: 'Taiwan Indigenous Festival Map',
       url: 'https://ilisin.tw/',
       description: '全臺唯一原住民族歲時祭儀彙整地圖',
