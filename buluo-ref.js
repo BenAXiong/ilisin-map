@@ -2262,6 +2262,18 @@ const BULUO_REF = {
     ],
     "notes": ""
   },
+  "bnn-nadan": {
+    "chinese_name": "南溪布農部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Nadan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
   "ami-asiroay-2": {
     "chinese_name": "阿奚露艾部落",
     "chinese_name_alt": [],
@@ -2434,6 +2446,93 @@ const BULUO_REF = {
     ],
     "notes": ""
   },
+  "ami-fudafudak": {
+    "chinese_name": "莿桐部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Fudafudak",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "pyu-tamalakaw": {
+    "chinese_name": "大巴六九部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tamalakaw",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-likavung": {
+    "chinese_name": "利嘉部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Likavung",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-pinaski": {
+    "chinese_name": "下賓朗部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pinaski",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-ulivelivek": {
+    "chinese_name": "初鹿部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Ulivelivek",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-alripay": {
+    "chinese_name": "阿里擺部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "A'lripay",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-danadanaw": {
+    "chinese_name": "龍過脈部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Danadanaw",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
   "ami-falangaw": {
     "chinese_name": "馬蘭部落",
     "chinese_name_alt": [],
@@ -2495,6 +2594,615 @@ const BULUO_REF = {
     "chinese_name": "巴布麓部落",
     "chinese_name_alt": [],
     "indigenous_name": "Papulu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "ami-ining": {
+    "chinese_name": "伊濘部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Ining",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-matang": {
+    "chinese_name": "馬當部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Matang",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-pusong": {
+    "chinese_name": "布頌部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pusong",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "pyu-kasavakan": {
+    "chinese_name": "射馬干部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kasavakan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pyu-puyuma": {
+    "chinese_name": "普悠瑪部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Puyuma",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kainisungan": {
+    "chinese_name": "卡努舒岸部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kainisungan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kamisatu": {
+    "chinese_name": "卡米莎度部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kamisatu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-talunas": {
+    "chinese_name": "達魯那斯部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Talunas",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-pasikau": {
+    "chinese_name": "巴喜告部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pasikau",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-vakangan": {
+    "chinese_name": "瓦岡岸部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Vakangan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-minami": {
+    "chinese_name": "米娜咪部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Minami",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kaminu": {
+    "chinese_name": "卡米努部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kaminu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-su-nun-sung": {
+    "chinese_name": "蘇儂頌部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Su nun sung",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-nakanu": {
+    "chinese_name": "拿卡努部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Nakanu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kalisahan": {
+    "chinese_name": "卡里沙汗部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kalisahan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-buklavu": {
+    "chinese_name": "布谷拉夫部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Buklavu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-litu": {
+    "chinese_name": "利稻部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Litu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-tuapuu": {
+    "chinese_name": "大埔部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tuapuu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-takimi": {
+    "chinese_name": "龍泉部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Takimi",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-likau-uan": {
+    "chinese_name": "錦屏部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Likau-uan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-vahu": {
+    "chinese_name": "下馬部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Vahu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-bulbul": {
+    "chinese_name": "霧鹿部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Bulbul",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kamcing": {
+    "chinese_name": "崁頂部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kamcing",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kusunuki": {
+    "chinese_name": "紅石部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kusunuki",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-haitutuan": {
+    "chinese_name": "山平部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Haitutuan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kanahcian": {
+    "chinese_name": "加和部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanahcian",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-kanaluk": {
+    "chinese_name": "加樂部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanaluk",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-bacingul": {
+    "chinese_name": "加平部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Bacingul",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-samuluh": {
+    "chinese_name": "新武部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Samuluh",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "bnn-sulai-iaz": {
+    "chinese_name": "初來部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Sulai-iaz",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "ami-cilalongay": {
+    "chinese_name": "吉拉龍噯部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cilalongay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "恆春阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-sasaljak": {
+    "chinese_name": "沙薩拉克部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Sasaljak",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "恆春阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-takidis": {
+    "chinese_name": "德其里部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Takidis",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-anasolay": {
+    "chinese_name": "荒野部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Anasolay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "pwn-padrangigrang": {
+    "chinese_name": "溫泉部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Padrangigrang",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-lupakatj": {
+    "chinese_name": "魯巴卡茲部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Lupakatj",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-davugele": {
+    "chinese_name": "大武窟部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Davugele",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-kanadun": {
+    "chinese_name": "金崙部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanadun",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-lalauran": {
+    "chinese_name": "拉勞蘭部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Lalauran",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-kiring": {
+    "chinese_name": "給陵部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kiring",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-tjatjigel": {
+    "chinese_name": "喳其格勒部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tjatjigel",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-tjavualji": {
+    "chinese_name": "大麻里部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tjavualji",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-calavi": {
+    "chinese_name": "查拉密部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Calavi",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-pangwi": {
+    "chinese_name": "大武部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pangwi",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-qaljapang": {
+    "chinese_name": "加羅板部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Qaljapang",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-seqeciin": {
+    "chinese_name": "加津林部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Seqeciin",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-tjukuvulj": {
+    "chinese_name": "愛國蒲部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tjukuvulj",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-seqalapit": {
+    "chinese_name": "斯卡拉比部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Seqalapit",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+  },
+  "pwn-ru-ja-qas": {
+    "chinese_name": "魯加卡斯部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Ru ja qas",
     "indigenous_name_alt": [],
     "dialect": [],
     "status": "single-source",
@@ -2646,94 +3354,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-cilalongay",
-    "chinese_name": "吉拉龍噯部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cilalongay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "恆春阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "太麻里鄉",
-    "village": "金崙村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-sasaljak",
-    "chinese_name": "沙薩拉克部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Sasaljak",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "恆春阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "太麻里鄉",
-    "village": "香蘭村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-anasolay",
-    "chinese_name": "荒野部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Anasolay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "太麻里鄉",
-    "village": "美和村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-takidis",
-    "chinese_name": "德其里部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Takidis",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "太麻里鄉",
-    "village": "泰和村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
     "id": "ami-kalitood",
     "chinese_name": "山里部落",
     "chinese_name_alt": [],
@@ -2745,28 +3365,6 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "卑南鄉",
     "village": "嘉豐村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-fudafudak",
-    "chinese_name": "莿桐部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Fudafudak",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "卑南鄉",
-    "village": "富山村",
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
@@ -3286,28 +3884,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-pusong",
-    "chinese_name": "布頌部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pusong",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "四維里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
     "id": "ami-kakawasan",
     "chinese_name": "石山部落",
     "chinese_name_alt": [],
@@ -3330,28 +3906,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-ining",
-    "chinese_name": "伊濘部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Ining",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "永樂里、豐樂里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
     "id": "ami-alapanay",
     "chinese_name": "阿拉巴奈部落",
     "chinese_name_alt": [],
@@ -3363,28 +3917,6 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "臺東市",
     "village": "豐里里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-matang",
-    "chinese_name": "馬當部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Matang",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "豐谷里",
     "lat": 22.754,
     "lng": 121.149,
     "coord_precision": "township",

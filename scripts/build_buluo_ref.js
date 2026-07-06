@@ -29,12 +29,13 @@ const dataJsSrc = fs.readFileSync(dataJsPath, 'utf8');
 const sourcesReg = JSON.parse(fs.readFileSync(path.join(BULUO_ROOT, 'sources.json'), 'utf8')).sources;
 
 // Only groups this project currently has festival-event coverage for get a
-// reference db loaded. Other groups' VILLAGES entries (bnn, trv) simply stay
+// reference db loaded. Other groups' VILLAGES entries (trv) simply stay
 // unmatched, same as before — they have no buluo-identity project yet.
 // szy/ckv (Sakizaya/Kavalan) map to the sibling db's own file-naming
 // convention (sakizaya.json/kavalan.json), which predates this project's
 // preference for real ISO 639-3 codes in `group` — see groups.json's _note.
-const GROUP_FILES = { ami: 'ami.json', pwn: 'pwn.json', pyu: 'pyu.json', szy: 'sakizaya.json', ckv: 'kavalan.json' };
+// bnn (Bunun) added once Datasets/buluo/bnn.json existed (2026-06-30).
+const GROUP_FILES = { ami: 'ami.json', pwn: 'pwn.json', pyu: 'pyu.json', bnn: 'bnn.json', szy: 'sakizaya.json', ckv: 'kavalan.json' };
 
 function stripBrackets(s) {
   return (s || '').replace(/[（(].*?[）)]/g, '').trim();

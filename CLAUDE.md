@@ -50,7 +50,7 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
 | `js/info.js` | Info tab — stat tiles, sources, coverage box, contribution form |
 | `api/contribute.js` | Vercel serverless — proxies contribution form POSTs to Airtable |
 | `scripts/prerender.js` | Build: injects static HTML + JSON-LD into `index.html` |
-| `scripts/build_buluo_ref.js` | Dev-only: joins `data.js` against `Datasets/buluo/{ami,pwn,pyu}.json`, writes `buluo-ref.js` |
+| `scripts/build_buluo_ref.js` | Dev-only: joins `data.js` against `Datasets/buluo/{ami,pwn,pyu,bnn,sakizaya,kavalan}.json`, writes `buluo-ref.js` |
 | `viz.html` | Internal data viz / QA tool, not linked from the main app |
 | `sw.js` | Service worker — caches app shell for offline/PWA |
 | `docs/` | Gitignored local docs: `ROADMAP-v1.md`, `DATA-SOURCES.md`, CIP PDF, archive/ |
@@ -73,8 +73,8 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
   full names. Must reflect actual ethnicity, never a source document's own
   administrative filing — e.g. `hl_pdf` (a Amis-focused county PDF) lists a few
   Sakizaya/Kavalan buluo under its Amis schedule, but their `group` here is still
-  `szy`/`ckv`. Only `ami`/`pwn`/`pyu`/`szy`/`ckv` currently have a buluo reference
-  db wired up (see below); `bnn`/`trv` entries are never auto-matched to a `buluo_id`.
+  `szy`/`ckv`. `ami`/`pwn`/`pyu`/`bnn`/`szy`/`ckv` all have a buluo reference db
+  wired up (see below); only `trv` entries are never auto-matched to a `buluo_id`.
 - `status` — `'confirmed'` | `'tbd'` | `'cancelled'`
 - `buluo_id` — optional, added by `scripts/build_buluo_ref.js`. Single FK into `BULUO_REF`.
 - `buluo_ids` — optional array, **hand-curated** (never auto-written). Use when one
@@ -114,7 +114,7 @@ Contribution sub-tabs (`.contrib-tab`) use `data-ctab` to avoid collision.
 ## Data pipeline
 
 ```
-Datasets/buluo/{ami,pwn,pyu,sakizaya,kavalan}.json  (sibling repo, not deployed)
+Datasets/buluo/{ami,pwn,pyu,bnn,sakizaya,kavalan}.json  (sibling repo, not deployed)
         │
         ▼
 scripts/build_buluo_ref.js   →  data.js (adds buluo_id fields)
@@ -127,10 +127,10 @@ scripts/prerender.js         →  index.html (static HTML + JSON-LD injected)
         pokoh.vercel.app
 ```
 
-`ami`/`pwn`/`pyu`/`szy`/`ckv` all have a loaded reference db (`GROUP_FILES` in
-`build_buluo_ref.js`) — matching and `BULUO_REF` cover all five, but
+`ami`/`pwn`/`pyu`/`bnn`/`szy`/`ckv` all have a loaded reference db (`GROUP_FILES`
+in `build_buluo_ref.js`) — matching and `BULUO_REF` cover all six, but
 `BULUO_UNCOVERED` stays Amis-only (it feeds the `ami`-focused 新增部落
-contribution flow). `bnn`/`trv` VILLAGES entries are never auto-matched.
+contribution flow). `trv` VILLAGES entries are never auto-matched.
 
 **When to re-run `build_buluo_ref.js`:** after any `Datasets/buluo/*.json` in
 `GROUP_FILES` changes, or after adding new VILLAGES entries that might now match
@@ -144,7 +144,7 @@ locally before committing if you want the prerendered HTML in the commit.
 
 ---
 
-## Current status (2026-07-05)
+## Current status (2026-07-06)
 
 Phases A–E complete. v2 expansion tracked separately.
 
