@@ -240,7 +240,7 @@ function renderDayCards() {
       <span>${label}</span>
       <span class="tl-day-count">${villages.length} 部落</span>
     </div>
-    ${villages.map(v => cardHtml(v, `onclick="goToMapVillage('${v.id}')"`)).join('')}`;
+    ${villages.map(v => cardHtml(v, `onclick="openDetail('${v.id}')"`)).join('')}`;
 }
 
 /* ── Event listeners ── */

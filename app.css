@@ -621,6 +621,132 @@ body.tab-info .app-header { display: none; }
 .card-venue:hover .card-venue-text { color: var(--text-1); text-decoration-color: var(--amber); }
 .card-source { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; flex-shrink: 0; }
 .card-source:hover { color: var(--amber); text-decoration: underline; }
+.card-meta-more { margin-top: .15rem; justify-content: flex-end; }
+.card-more { font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; }
+.card-more:hover { color: var(--amber); text-decoration: underline; }
+
+/* ── Village detail overlay ─────────────────── */
+/* A backdrop (.detail-overlay) behind a near-fullscreen sheet (.detail-panel)
+   — deliberately not edge-to-edge, so it reads as a window popped up over the
+   dimmed app, not a full new page. Backdrop click and the close button both
+   dismiss it (wired in js/detail.js). */
+.detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: oklch(from black l c h / 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.detail-overlay[hidden] { display: none; }
+.detail-overlay.open { opacity: 1; pointer-events: auto; }
+
+.detail-panel {
+  /* Guarantees a real side gap on every viewport width — not just once the
+     viewport grows past max-width. `100% - 2rem` reserves 1rem on each side
+     (the flex container centers it), `min()` still caps it at 560px on
+     larger screens. */
+  width: min(100% - 2rem, 560px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -8px 32px oklch(from black l c h / 0.3);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateY(16px);
+  transition: transform .2s ease;
+}
+.detail-overlay.open .detail-panel { transform: translateY(0); }
+
+@media (min-width: 768px) {
+  .detail-overlay  { align-items: center; }
+  .detail-panel    { border-radius: 16px; max-height: 85vh; }
+}
+
+.detail-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: .6rem .85rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.detail-close {
+  font-size: var(--fs-md);
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: .3rem .5rem;
+}
+.detail-close:hover { color: var(--amber); }
+.detail-body { padding: 0 1rem 2rem; }
+
+/* Reuses .village-card so the header reads as the same card, expanded in
+   place — but it isn't itself tappable, so the hover/active affordances and
+   left accent border are switched off. Bled out to the panel's edge via
+   negative margin to match how cards sit edge-to-edge in the list views. */
+.detail-header-card {
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: default;
+}
+.detail-header-card:hover { border-left-color: transparent; background: none; }
+.detail-welcome {
+  display: inline-block;
+  margin-top: .5rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--terra);
+  border: 1px solid var(--terra-pale);
+  border-radius: 99px;
+  padding: 2px 10px;
+}
+.detail-map-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: .85rem 0;
+  padding: .6rem .75rem;
+  font-size: var(--fs-sm);
+  color: var(--text-1);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.detail-map-link:hover { border-color: var(--amber-pale); color: var(--amber-dark); }
+.detail-poster { margin: .85rem 0; }
+.detail-poster img { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--border); }
+.detail-poster-credit { margin-top: .3rem; font-size: var(--fs-2xs); color: var(--text-3); }
+.detail-section-title { font-size: var(--fs-xs); font-weight: 700; color: var(--text-2); letter-spacing: .04em; margin: 1.1rem 0 .5rem; }
+.detail-days { display: flex; flex-direction: column; gap: .5rem; }
+.detail-day-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  column-gap: .6rem;
+  row-gap: .1rem;
+  padding: .45rem .6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+}
+.detail-day-date { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); white-space: nowrap; }
+.detail-day-name { font-family: var(--mono); font-weight: 700; color: var(--terra); white-space: nowrap; }
+.detail-day-zh   { font-family: var(--cn); color: var(--text-1); }
+.detail-day-desc { grid-column: 1 / -1; font-size: var(--fs-xs); color: var(--text-3); }
+.detail-history  { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.6; }
 
 /* ── Search panel ──────────────────────────── */
 #panel-search          { display: none; flex-direction: column; overflow: hidden; }

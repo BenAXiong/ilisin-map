@@ -14,7 +14,7 @@ no ES modules. Files are served as-is by Vercel. The one build step is
 
 **Script load order in index.html:**
 ```
-data.js → buluo-ref.js → js/timeline.js → js/map.js → js/search.js → js/info.js → app.js
+data.js → buluo-ref.js → schedule.js → js/timeline.js → js/map.js → js/search.js → js/info.js → js/detail.js → app.js
 ```
 Tab files parse before `app.js` but only *call* shared utilities (`cardHtml`,
 `parseStartDate`, `trackEvent`, etc.) at runtime — never at parse time — so
@@ -44,16 +44,19 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
 | `app.js` | Shared utilities, theme, tab switching, PWA, SW registration, boot |
 | `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `VILLAGES` |
 | `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts) + `BULUO_UNCOVERED` (unmatched) |
+| `schedule.js` | Hand-curated. `SCHEDULE_DETAILS` (per-village sub-events/迎賓日/poster/history) + `SCHEDULE_POSTERS` (poster images shared by `src`) |
 | `js/timeline.js` | Timeline tab — month strip, day cards, county filter |
 | `js/map.js` | Map tab — Leaflet init, markers, bottom sheet, drag |
 | `js/search.js` | Search tab — filter, recents, IME support |
 | `js/info.js` | Info tab — stat tiles, sources, coverage box, contribution form |
+| `js/detail.js` | Village detail overlay — near-fullscreen "更多資訊" view, reads `schedule.js` |
 | `api/contribute.js` | Vercel serverless — proxies contribution form POSTs to Airtable |
 | `scripts/prerender.js` | Build: injects static HTML + JSON-LD into `index.html` |
 | `scripts/build_buluo_ref.js` | Dev-only: joins `data.js` against `Datasets/buluo/{ami,pwn,pyu,bnn,sakizaya,kavalan}.json`, writes `buluo-ref.js` |
 | `viz.html` | Internal data viz / QA tool, not linked from the main app |
 | `sw.js` | Service worker — caches app shell for offline/PWA |
-| `docs/` | Gitignored local docs: `ROADMAP-v1.md`, `DATA-SOURCES.md`, CIP PDF, archive/ |
+| `images/schedule/` | Poster image assets referenced by `schedule.js` |
+| `docs/` | Gitignored local docs: `ROADMAP-v1.md`, `DATA-SOURCES.md`, CIP PDF, archive/, `sources/` (raw source docs/images, not deployed) |
 
 ---
 
@@ -99,6 +102,21 @@ silently vanishes from prerendered output: (1) `GROUP_FILES` in
 `scripts/build_buluo_ref.js` (which `Datasets/buluo/*.json` to load), (2)
 `GROUP_META` + `GROUP_ORDER` in `scripts/prerender.js` (heading/festival-name/org
 strings + render order), (3) re-run both build scripts.
+
+**`SCHEDULE_DETAILS` / `SCHEDULE_POSTERS` (`schedule.js`):**  
+Keyed by `VILLAGES.id` (not `buluo_id`) — this data is festival-instance/
+year-specific, unlike the enduring identity facts in `BULUO_REF`. Per entry,
+all keys optional: `poster` (`{src,credit,kind}`), `days` (day-by-day
+sub-event breakdown, only when a source gives one — `[{date,zh,name,
+desc_zh?,desc_en?}]`), `welcome` (`{date,time}` — 迎賓日, **separate info
+from `days`**, rendered in the overlay header, not the schedule list),
+`history` (hand-authored prose — deliberately *not* sourced from
+`BULUO_REF.notes`, which is internal provenance text, not visitor-facing
+copy). `SCHEDULE_POSTERS` is a fallback keyed by `src` (the `SOURCES` key),
+so one poster image can cover every `VILLAGES` entry sharing that source
+(e.g. a single township-wide board covering 14 buluo) without duplicating
+the file path per entry — resolved together via `getScheduleDetail(v)` in
+`app.js`.
 
 **`data-tab` vs `data-ctab`:**  
 Global tab buttons (`.tab-btn`, `.sb-link`) use `data-tab`.  

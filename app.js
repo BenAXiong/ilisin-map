@@ -35,7 +35,7 @@ function clusterKey(v) {
   return `${d.getMonth() + 1}月${dayDecade(d.getDate())}`;
 }
 
-function cardHtml(v, extraAttrs) {
+function namesHtml(v) {
   const ref        = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
   const altChinese = ref?.chinese_name_alt?.[0] || null;
   const latinName  = v.amis || ref?.indigenous_name || '';
@@ -47,6 +47,22 @@ function cardHtml(v, extraAttrs) {
     ? ` title="${tooltipParts.join(' / ').replace(/"/g, '&quot;')}"` : '';
   const altHtml    = altChinese ? ` <span class="card-chinese-alt">(${altChinese})</span>` : '';
   const amisHtml   = latinName  ? `<span class="card-amis">${latinName}</span>` : '';
+  return `<div class="card-names"${namesTitle}><span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>`;
+}
+
+// Resolves per-village schedule/poster detail (schedule.js), merging a
+// village-specific poster with the shared-by-`src` fallback so a single
+// poster asset can cover many VILLAGES entries without duplication.
+function getScheduleDetail(v) {
+  const d = (typeof SCHEDULE_DETAILS !== 'undefined' && SCHEDULE_DETAILS[v.id]) || null;
+  const poster = d?.poster || (typeof SCHEDULE_POSTERS !== 'undefined' && SCHEDULE_POSTERS[v.src]) || null;
+  return { poster, welcome: d?.welcome || null, days: d?.days || null, history: d?.history || null };
+}
+
+// The name/date/venue/source block shared by the card list view and the
+// detail overlay's header — so the overlay reads as the same card, just
+// expanded in place, not a differently-laid-out summary.
+function cardBodyHtml(v) {
   const sourceHtml = `<a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ ${SOURCES[v.src].label}</a>`;
   const hasVenue   = v.venue && v.venue !== '—';
   const mapsUrl    = hasVenue
@@ -55,12 +71,18 @@ function cardHtml(v, extraAttrs) {
   const venueHtml  = hasVenue
     ? `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span class="card-venue-text">${v.venue}</span></a>`
     : '';
-  return `<div class="village-card card-${v.status}" id="card-${v.id}" ${extraAttrs}>
-    <div class="card-top">
-      <div class="card-names"${namesTitle}><span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>
+  return `<div class="card-top">
+      ${namesHtml(v)}
       <span class="card-date">${v.date}</span>
     </div>
-    <div class="card-meta">${venueHtml}${sourceHtml}</div>
+    <div class="card-meta">${venueHtml}${sourceHtml}</div>`;
+}
+
+function cardHtml(v, extraAttrs) {
+  const moreHtml = `<a class="card-more" href="#" onclick="event.stopPropagation();event.preventDefault();openDetail('${v.id}')">更多資訊 ›</a>`;
+  return `<div class="village-card card-${v.status}" id="card-${v.id}" ${extraAttrs}>
+    ${cardBodyHtml(v)}
+    <div class="card-meta card-meta-more">${moreHtml}</div>
   </div>`;
 }
 
