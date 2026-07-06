@@ -90,7 +90,7 @@ function renderSheet() {
 }
 
 function makeSectionHtml(v) {
-  return cardHtml(v, `data-vid="${v.id}" onclick="activateVillage('${v.id}')"`);
+  return cardHtml(v, `data-vid="${v.id}" onclick="openDetail('${v.id}')"`);
 }
 
 function activateVillage(id) {

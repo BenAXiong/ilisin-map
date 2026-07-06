@@ -106,15 +106,21 @@ strings + render order), (3) re-run both build scripts.
 **`SCHEDULE_DETAILS` / `SCHEDULE_POSTERS` (`schedule.js`):**  
 Keyed by `VILLAGES.id` (not `buluo_id`) — this data is festival-instance/
 year-specific, unlike the enduring identity facts in `BULUO_REF`. Per entry,
-all keys optional: `poster` (`{src,credit,kind}`), `days` (day-by-day
-sub-event breakdown, only when a source gives one — `[{date,zh,name,
-desc_zh?,desc_en?}]`), `welcome` (`{date,time}` — 迎賓日, **separate info
-from `days`**, rendered in the overlay header, not the schedule list),
-`history` (hand-authored prose — deliberately *not* sourced from
-`BULUO_REF.notes`, which is internal provenance text, not visitor-facing
-copy). `SCHEDULE_POSTERS` is a fallback keyed by `src` (the `SOURCES` key),
-so one poster image can cover every `VILLAGES` entry sharing that source
-(e.g. a single township-wide board covering 14 buluo) without duplicating
+all keys optional: `poster` (`{url,credit,creditUrl?,kind}` — `url` is a
+root-relative path into `images/schedule/`; `credit` is link text, never a
+raw URL — only becomes clickable when `creditUrl` is set, typically reusing
+the entry's own `SOURCES[v.src].url` since the poster and the schedule data
+usually share a source), `days` (day-by-day sub-event breakdown, only
+when a source gives one — `[{date,zh,name,desc_zh?,desc_en?}]`; **one event
+per row** — if a single day has multiple named sub-events, give each its own
+`days` entry rather than combining names into one row), `welcome`
+(`{date,time}` — 迎賓日, **separate info from `days`**, rendered in the
+overlay header, not the schedule list), `history` (hand-authored prose —
+deliberately *not* sourced from `BULUO_REF.notes`, which is internal
+provenance text, not visitor-facing copy). `SCHEDULE_POSTERS` is a fallback
+keyed by `src` (the `SOURCES` key), so one poster image can cover every
+`VILLAGES` entry sharing that source (e.g. a single township-wide board
+covering 14 buluo) without duplicating
 the file path per entry — resolved together via `getScheduleDetail(v)` in
 `app.js`.
 

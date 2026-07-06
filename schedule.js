@@ -5,9 +5,15 @@
 // enduring identity facts in BULUO_REF (buluo-ref.js).
 //
 // Shape per entry (all keys optional):
-//   poster:  { src, credit, kind }         — kind: 'lineup' | 'summary'
+//   poster:  { url, credit, creditUrl?, kind } — kind: 'lineup' | 'summary'.
+//            `credit` is the link text shown ("圖片來源：{credit}"); when
+//            `creditUrl` is set it becomes a link to where the poster was
+//            published, never displaying the raw URL text itself.
 //   days:    [{ date, zh, name, desc_zh?, desc_en? }, ...]  — day-by-day
-//            sub-event breakdown, only when a source actually gives one
+//            sub-event breakdown, only when a source actually gives one.
+//            One event per row — if a single day has multiple named
+//            sub-events, give each its own `days` entry (same `date` is
+//            fine) rather than combining names/zh into one row.
 //   welcome: { date, time }                — 迎賓日, separate info from
 //            `days`, not a row inside it and not merged into any schedule
 //            text. Rendered in the overlay's header, not the schedule list.
@@ -16,14 +22,19 @@
 //            internal data-provenance text, not visitor-facing copy.
 const SCHEDULE_DETAILS = {
   'tt-tt-01': { // 馬蘭部落 Farangaw — 2026 Kiluma'an 豐年祭海報
-    poster: { src: 'images/schedule/tt-tt-01-kilumaan.jpg', credit: "FARANGAW La fayfay", kind: 'lineup' },
+    // ASSUMPTION (unconfirmed): creditUrl reuses this entry's own data
+    // source (SOURCES.tt_malan_fb, the 馬蘭部落 Facebook page already cited
+    // as where the 7/3–7/11 dates came from) as a guess at where the poster
+    // image itself was posted. Flag/replace if that's a different post.
+    poster: { url: '/images/schedule/tt-tt-01-kilumaan.jpg', credit: "FARANGAW La fayfay", creditUrl: SOURCES.tt_malan_fb.url, kind: 'lineup' },
     days: [
       { date: "7/3 五–7/5 日", zh: '文化成長營',         name: "Pakalongay" },
       { date: "7/5 日",        zh: '報訊',               name: "Misahafay" },
       { date: "7/6 一",        zh: '階級晉升酒祭',       name: "Panenmem" },
       { date: "7/7 二",        zh: '清點人數‧行前告祭', name: "Pafata'an" },
       { date: "7/7 二–7/9 四", zh: '海祭',               name: "Mikesi" },
-      { date: "7/9 四",        zh: '豐收凱旋‧年祭團舞', name: "Palaylay / Malikoda" },
+      { date: "7/9 四",        zh: '豐收凱旋',           name: "Palaylay" },
+      { date: "7/9 四",        zh: '年祭團舞',           name: "Malikoda" },
       { date: "7/10 五",       zh: '分食共享',           name: "Misahemay" },
       { date: "7/11 六",       zh: '歌舞競賽歡慶',       name: "Pipipay" },
     ],
@@ -38,5 +49,5 @@ const SCHEDULE_DETAILS = {
 // poster of its own in SCHEDULE_DETAILS. Avoids duplicating the same file
 // path across every buluo on a shared township-wide board.
 const SCHEDULE_POSTERS = {
-  tt_chenggong_poster: { src: 'images/schedule/tt-chenggong-poster.png', credit: '成功鎮公所 115年度期程表', kind: 'summary' },
+  tt_chenggong_poster: { url: '/images/schedule/tt-chenggong-poster.png', credit: '成功鎮公所 115年度期程表', creditUrl: SOURCES.tt_chenggong_poster.url, kind: 'summary' },
 };

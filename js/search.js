@@ -128,7 +128,7 @@ function renderSearchResults() {
 function srCardTap(id) {
   const q = document.getElementById('srInput').value.trim();
   if (q.length >= 2) { saveRecentSearch(q); trackEvent('search', { query: q }); }
-  goToMapVillage(id);
+  openDetail(id);
 }
 
 function srOnInput() {

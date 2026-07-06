@@ -586,7 +586,11 @@ body.tab-info .app-header { display: none; }
 .village-card:hover  { border-left-color: var(--amber-pale); background: var(--bg); }
 .village-card.active { border-left-color: var(--amber);      background: var(--bg); }
 
-.card-top   { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+/* align-items: center (not flex-start) — .card-names and .card-date sit at
+   different font-sizes/line-heights, so their box tops don't put the glyphs
+   at the same visual height; centering the row is what actually lines them
+   up, not padding/font-size math (see also .card-chinese vs .card-amis below). */
+.card-top   { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
 .card-names { flex: 1; min-width: 0; }
 .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
 .card-chinese-alt { font-family: var(--cn); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); margin-left: .2rem; }
@@ -594,6 +598,11 @@ body.tab-info .app-header { display: none; }
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
 .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
+/* Inverse of the .card-amis fix above: the weekday character (五/六/日…) is
+   CJK inside an otherwise-Latin/numeral mono string, so at the same
+   font-size it reads larger than the digits. Shrink by the same ratio
+   (1/1.16) instead of touching the digits, which must stay put. */
+.card-date-weekday { font-size: 0.86em; }
 .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
 .card-tbd .card-date       { color: var(--text-3); }
 .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
@@ -621,9 +630,6 @@ body.tab-info .app-header { display: none; }
 .card-venue:hover .card-venue-text { color: var(--text-1); text-decoration-color: var(--amber); }
 .card-source { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; flex-shrink: 0; }
 .card-source:hover { color: var(--amber); text-decoration: underline; }
-.card-meta-more { margin-top: .15rem; justify-content: flex-end; }
-.card-more { font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; }
-.card-more:hover { color: var(--amber); text-decoration: underline; }
 
 /* ── Village detail overlay ─────────────────── */
 /* A backdrop (.detail-overlay) behind a near-fullscreen sheet (.detail-panel)
@@ -674,10 +680,29 @@ body.tab-info .app-header { display: none; }
   top: 0;
   z-index: 1;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   padding: .6rem .85rem;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+}
+/* Absolutely positioned so it centers on the header's full width regardless
+   of the close button's width, rather than being centered in the leftover
+   flex space next to it. */
+.detail-header-title {
+  position: absolute;
+  left: .85rem;
+  right: .85rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: calc(var(--fs-base) * 1.16);
+  font-weight: 700;
+  color: var(--terra);
+  letter-spacing: .03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
 }
 .detail-close {
   font-size: var(--fs-md);
@@ -728,24 +753,29 @@ body.tab-info .app-header { display: none; }
 .detail-map-link:hover { border-color: var(--amber-pale); color: var(--amber-dark); }
 .detail-poster { margin: .85rem 0; }
 .detail-poster img { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--border); }
-.detail-poster-credit { margin-top: .3rem; font-size: var(--fs-2xs); color: var(--text-3); }
+.detail-poster-credit { display: inline-block; margin-top: .3rem; font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; }
+a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; }
 .detail-section-title { font-size: var(--fs-xs); font-weight: 700; color: var(--text-2); letter-spacing: .04em; margin: 1.1rem 0 .5rem; }
 .detail-days { display: flex; flex-direction: column; gap: .5rem; }
+/* One container per date, not per sub-event — a day with several named
+   sub-events (e.g. Palaylay + Malikoda, both 7/9) shows the date once on
+   the left and stacks the events as rows on the right, instead of each
+   event getting its own separate boxed row. */
 .detail-day-row {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  column-gap: .6rem;
-  row-gap: .1rem;
+  display: flex;
+  gap: .6rem;
   padding: .45rem .6rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 6px;
   font-size: var(--fs-sm);
 }
-.detail-day-date { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); white-space: nowrap; }
+.detail-day-date { flex-shrink: 0; padding-top: .15rem; font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); white-space: nowrap; }
+.detail-day-events { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .3rem; }
+.detail-day-event { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .6rem; row-gap: .1rem; }
 .detail-day-name { font-family: var(--mono); font-weight: 700; color: var(--terra); white-space: nowrap; }
 .detail-day-zh   { font-family: var(--cn); color: var(--text-1); }
-.detail-day-desc { grid-column: 1 / -1; font-size: var(--fs-xs); color: var(--text-3); }
+.detail-day-desc { flex-basis: 100%; font-size: var(--fs-xs); color: var(--text-3); }
 .detail-history  { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.6; }
 
 /* ── Search panel ──────────────────────────── */
