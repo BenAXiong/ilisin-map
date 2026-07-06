@@ -2274,6 +2274,143 @@ const BULUO_REF = {
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
   },
+  "ami-cikadaan": {
+    "chinese_name": "南溪阿美部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cikadaan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-mornos": {
+    "chinese_name": "永福部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Mornos",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-sadipongan": {
+    "chinese_name": "三間屋部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Sadipongan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-koladot": {
+    "chinese_name": "樟原部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kolado't",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-cidatayay": {
+    "chinese_name": "烏石鼻部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cidatayay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-ta-man": {
+    "chinese_name": "膽曼部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Ta?man",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-tapowaray-saranawan": {
+    "chinese_name": "大俱來部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tapowaray或Saranawan",
+    "indigenous_name_alt": [
+      "Tapowaray"
+    ],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
+  },
+  "ami-pasongan": {
+    "chinese_name": "八桑安部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pasongan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
+  "ami-kinanoka": {
+    "chinese_name": "僅那鹿角部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kinanoka",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": ""
+  },
   "ami-asiroay-2": {
     "chinese_name": "阿奚露艾部落",
     "chinese_name_alt": [],
@@ -3398,74 +3535,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-pasongan",
-    "chinese_name": "八桑安部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pasongan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "寧埔村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-sadipongan",
-    "chinese_name": "三間屋部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Sadipongan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "三間村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-tapowaray-saranawan",
-    "chinese_name": "大俱來部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Tapowaray或Saranawan",
-    "indigenous_name_alt": [
-      "Tapowaray"
-    ],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "三間村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
-  },
-  {
     "id": "ami-polot",
     "chinese_name": "大峰峰部落",
     "chinese_name_alt": [],
@@ -3499,138 +3568,6 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "長濱鄉",
     "village": "竹湖村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-mornos",
-    "chinese_name": "永福部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Mornos",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "竹湖村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-cikadaan",
-    "chinese_name": "南溪阿美部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cikadaan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "三間村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-cidatayay",
-    "chinese_name": "烏石鼻部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cidatayay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "寧埔村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-kinanoka",
-    "chinese_name": "僅那鹿角部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kinanoka",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "寧埔村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-koladot",
-    "chinese_name": "樟原部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kolado't",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "樟原村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-ta-man",
-    "chinese_name": "膽曼部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Ta?man",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "寧埔村",
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",

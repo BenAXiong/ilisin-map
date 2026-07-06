@@ -67,6 +67,10 @@ const SOURCES = {
   tt_chenggong_poster: {
     label: '成功鎮 115年度各部落歲時祭儀期程表 Instagram',
     url: 'https://www.instagram.com/p/DZKbSxWOsUu/'
+  },
+  tt_changbin_poster: {
+    label: '115年長濱鄉的Ilisin 豐年祭時間',
+    url: 'https://www.instagram.com/p/DaNBAVuTyrK/'
   }
 };
 
@@ -259,7 +263,7 @@ const VILLAGES = [
   { id:'tt-cs-09', buluo_id:'ami-cikowaay', group:'ami', chinese:'吉瓜愛部落', amis:"Cikowa'ay", county:'臺東縣', township:'池上鄉', lat:23.113, lng:121.213, date:'8/21 五–8/23 日', venue:'富興聚會所，富興村水墜 62-5 號', status:'confirmed', src:'tt_chiShang' },
 
   // ══ 臺東縣 長濱鄉 ════════════════════════════════════════════════
-  { id:'tt-cb-01', group:'ami', chinese:'南竹湖部落', amis:'Karangasan area', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/19', venue:'（地點未完整擷取）', status:'confirmed', src:'tt_changbin' },
+  { id:'tt-cb-01', group:'ami', chinese:'南竹湖部落', amis:'Karangasan area', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/20', venue:'南竹湖活動中心', status:'confirmed', src:'tt_changbin_poster' },
 
   // ══ 臺東縣 東河鄉 ════════════════════════════════════════════════
   { id:'tt-dh-01', joint:true, group:'ami', chinese:'瑪洛阿瀧聯合豐年祭', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'8/22 六', venue:'東河國小', status:'confirmed', src:'tt_donghe_fb' },
@@ -283,9 +287,19 @@ const VILLAGES = [
   { id:'tt-cg-14', buluo_id:'ami-kahciday', group:'ami', chinese:'和平部落', amis:'Kahciday', county:'臺東縣', township:'成功鎮', lat:23.097, lng:121.373, date:'7/31；迎賓日 7/31', venue:'和平活動中心', status:'confirmed', src:'tt_chenggong_poster' },
 
   // ══ 臺東縣 長濱鄉 (補充) ══════════════════════════════════════════
-  { id:'tt-cb-02', buluo_id:'ami-makrahay', group:'ami', chinese:'真柄部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/19', venue:'（詳見來源）', status:'confirmed', src:'tt_changbin_zhengbing' },
-  { id:'tt-cb-03', buluo_id:'ami-ciwkangan', group:'ami', chinese:'長光部落', amis:'Ciwkangan', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/17 五–7/19 日', venue:'（詳見來源，可信度低）', status:'confirmed', src:'tt_changguang_threads' },
+  { id:'tt-cb-02', buluo_id:'ami-makrahay', group:'ami', chinese:'真柄部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/19', venue:'真柄活動中心', status:'confirmed', src:'tt_changbin_zhengbing', note:'期程表 tt_changbin_poster 對真柄僅標 7/16 單日，與部落自己 IG 公告的 7/16–7/19 不同，此處採部落自己公告的日期範圍，地點採期程表資訊。' },
+  { id:'tt-cb-03', buluo_id:'ami-ciwkangan', group:'ami', chinese:'長光部落', amis:'Ciwkangan', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/17–7/19', venue:'長光社區部落聚會所', status:'confirmed', src:'tt_changbin_poster', note:'日期與先前 tt_changguang_threads（可信度較低）一致，改採鄉公所期程表為主要來源並補上地點。' },
   { id:'tt-cb-04', buluo_id:'bnn-nadan', group:'bnn', chinese:'南溪布農部落', amis:'Nadan', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'4/4 六', venue:'南山基督長老教會前廣場', status:'confirmed', src:'tt_abm' },
+  { id:'tt-cb-05', buluo_id:'ami-cikadaan', group:'ami', chinese:'南溪阿美部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/9–7/11', venue:'南溪國小', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-06', buluo_id:'ami-mornos', group:'ami', chinese:'永福部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/9–7/12', venue:'永福活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-07', buluo_id:'ami-sadipongan', group:'ami', chinese:'三間屋部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/10–7/12', venue:'三間屋活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-08', group:'ami', chinese:'埠橋部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/10–7/12', venue:'埠橋聚會所', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-09', buluo_id:'ami-koladot', group:'ami', chinese:'樟原部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/11–7/13', venue:'樟原活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-10', buluo_id:'ami-cidatayay', group:'ami', chinese:'烏石鼻部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/18', venue:'烏石鼻活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-11', buluo_id:'ami-ta-man', group:'ami', chinese:'膽曼部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/19', venue:'膽曼活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-12', buluo_id:'ami-tapowaray-saranawan', group:'ami', chinese:'大俱來部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/19', venue:'大俱來聚會所/活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-13', buluo_id:'ami-pasongan', group:'ami', chinese:'八桑安部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/19', venue:'八桑安活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-14', buluo_id:'ami-kinanoka', group:'ami', chinese:'僅那鹿角部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/17–7/20', venue:'光榮活動中心', status:'confirmed', src:'tt_changbin_poster' },
 
   // ══ 臺東縣 東河鄉 (補充) ══════════════════════════════════════════
   // 源自東河鄉公所 FB 2026 歲時祭儀日程表
