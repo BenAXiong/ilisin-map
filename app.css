@@ -589,6 +589,7 @@ body.tab-info .app-header { display: none; }
 /* Courier Prime cap-height (~0.56em) sits well below CJK glyph height (~0.88em),
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
+.card-amis-alt { font-family: var(--mono); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); letter-spacing: .03em; margin-left: .25rem; }
 .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
 /* Inverse of the .card-amis fix above: the weekday character (五/六/日…) is
    CJK inside an otherwise-Latin/numeral mono string, so at the same

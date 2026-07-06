@@ -65,11 +65,17 @@ function indigenousNameInfo(v) {
 // detail overlay, which shows it in its own sticky header instead.
 function namesHtml(v, { showAmis = true } = {}) {
   const { ref, latinName, tooltipParts } = indigenousNameInfo(v);
-  const altChinese = ref?.chinese_name_alt?.[0] || null;
+  // Alt names are shown as "primary (alt)" — parenthesized alt already reads
+  // as "this village" from context, so a trailing 部落 on the alt (e.g.
+  // 都蘭部落) is redundant with the primary's own 部落 suffix; strip it for
+  // display only (BULUO_REF keeps the full name).
+  const altChinese = ref?.chinese_name_alt?.[0]?.replace(/部落$/, '') || null;
+  const altLatin   = ref?.indigenous_name_alt?.[0] || null;
   const namesTitle = tooltipParts.length
     ? ` title="${tooltipParts.join(' / ').replace(/"/g, '&quot;')}"` : '';
   const altHtml    = altChinese ? ` <span class="card-chinese-alt">(${altChinese})</span>` : '';
-  const amisHtml   = (showAmis && latinName) ? `<span class="card-amis">${latinName}</span>` : '';
+  const amisAltHtml = (showAmis && altLatin) ? ` <span class="card-amis-alt">(${altLatin})</span>` : '';
+  const amisHtml   = (showAmis && latinName) ? `<span class="card-amis">${latinName}</span>${amisAltHtml}` : '';
   return `<div class="card-names"${namesTitle}><span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>`;
 }
 
