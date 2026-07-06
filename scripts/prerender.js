@@ -52,7 +52,7 @@ const confirmed = VILLAGES.filter(v => v.status === 'confirmed');
 const total     = VILLAGES.length;
 
 let staticHtml =
-  `<h1>2026 全臺原住民族歲時祭儀 · Taiwan Indigenous Festival Calendar 2026</h1>\n` +
+  `<h1>Pokoh · 2026 全臺原住民族歲時祭儀 · Taiwan Indigenous Festival Calendar 2026</h1>\n` +
   `<p>涵蓋花蓮縣、臺東縣共 ${total}+ 部落，資料來源：各縣市原民處官方公告。</p>`;
 
 for (const grp of GROUP_ORDER) {
@@ -113,8 +113,8 @@ const ldData = {
   '@graph': [
     {
       '@type': 'WebSite',
-      name: '豐年祭指南',
-      alternateName: 'Taiwan Indigenous Festival Map',
+      name: 'Pokoh',
+      alternateName: ['豐年祭指南', 'Taiwan Indigenous Festival Map'],
       url: 'https://pokoh.vercel.app/',
       description: '全臺唯一原住民族歲時祭儀彙整地圖',
       inLanguage: ['zh-TW', 'en'],
