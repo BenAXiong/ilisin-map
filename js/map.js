@@ -113,8 +113,18 @@ function activateVillage(id) {
   const pill = document.querySelector(`.bs-pill[data-key="${CSS.escape(activePill)}"]`);
   if (pill) pill.scrollIntoView({ inline: 'center', block: 'nearest' });
 
-  const card = document.querySelector(`.village-card[data-vid="${id}"]`);
-  if (card) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  // 'start' (not 'nearest') so the activated card lands at the top of the
+  // sheet's visible area — the closest we get to "show just this entry"
+  // without changing the sheet from a browsable list to a filtered one.
+  // Deferred past the sheet's own open/expand transition (.bs { transition:
+  // transform .35s }) — scrolling immediately races that animation, since
+  // the scrollable area's own height is still changing frame-to-frame, and
+  // can leave the card landed slightly below where it should be once the
+  // sheet finishes settling into its final height.
+  setTimeout(() => {
+    const card = document.querySelector(`.village-card[data-vid="${id}"]`);
+    if (card) card.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, 360);
 
   trackEvent('village_tap', { id, name: VILLAGES.find(v => v.id === id)?.chinese });
 }
@@ -125,8 +135,21 @@ function goToMapVillage(id) {
   switchTab('map');
   setTimeout(() => {
     if (!leafletMap) return;
-    leafletMap.setView([v.lat, v.lng], 14, { animate: true });
+    // activateVillage runs first and unconditionally, so the sheet reaches
+    // 'half' immediately rather than depending on zoomToShowLayer's async
+    // callback — that callback can be delayed by a cluster spiderfy, and on
+    // mobile that gap was enough for the sheet to end up looking fully open
+    // instead of half by the time everything settled.
     activateVillage(id);
+    const marker = markers[id];
+    // zoomToShowLayer (leaflet.markercluster) zooms/pans to whatever level
+    // actually reveals this marker on its own — a fixed zoom level can't
+    // guarantee that in denser areas, it might still be inside a cluster blob.
+    if (marker && clusterGroup.hasLayer(marker)) {
+      clusterGroup.zoomToShowLayer(marker, () => {});
+    } else {
+      leafletMap.setView([v.lat, v.lng], 16, { animate: true });
+    }
   }, leafletMap ? 0 : 400);
 }
 
@@ -214,7 +237,15 @@ function initMap() {
     .filter(v => v.lat && v.lng)
     .map(v => [v.lat, v.lng]);
 
-  leafletMap = L.map('map', { zoomControl: true });
+  // tap:false disables Leaflet's own touch-tap emulation shim (L.Map.Tap),
+  // which exists only to work around old Android browsers' ~300ms ghost-click
+  // delay. It listens at the document level and, after any map interaction,
+  // can swallow/misattribute the very next touch to the map — modern
+  // browsers (incl. current Android Chrome) don't need the shim at all, and
+  // leaving it on is the documented cause of taps on sibling UI (like the
+  // sheet's grab bar) landing on the map instead, right after a programmatic
+  // zoom/pan like zoomToShowLayer.
+  leafletMap = L.map('map', { zoomControl: true, tap: false });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 18,

@@ -228,19 +228,13 @@ function scrollStripToDay(date) {
 function renderDayCards() {
   const list     = document.getElementById('tlDayList');
   const d        = tlSelectedDay;
-  const label    = `${d.getMonth() + 1}月${d.getDate()}日 ${WEEKDAYS[d.getDay()]}`;
   const villages = villagesOnDay(d);
 
   if (villages.length === 0) {
-    list.innerHTML = `<div class="tl-day-header"><span>${label}</span></div>
-      <div class="tl-empty">本日暫無祭儀</div>`;
+    list.innerHTML = `<div class="tl-empty">本日暫無祭儀</div>`;
     return;
   }
-  list.innerHTML = `<div class="tl-day-header">
-      <span>${label}</span>
-      <span class="tl-day-count">${villages.length} 部落</span>
-    </div>
-    ${villages.map(v => cardHtml(v, `onclick="openDetail('${v.id}')"`)).join('')}`;
+  list.innerHTML = villages.map(v => cardHtml(v, `onclick="openDetail('${v.id}')"`)).join('');
 }
 
 /* ── Event listeners ── */

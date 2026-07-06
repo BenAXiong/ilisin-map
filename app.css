@@ -403,22 +403,6 @@ body.tab-info .app-header { display: none; }
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
-.tl-day-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: .45rem .85rem .3rem;
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 5;
-  border-bottom: 1px solid var(--border);
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  color: var(--text-2);
-  letter-spacing: .05em;
-}
-.tl-day-count { color: var(--text-3); font-size: var(--fs-2xs); }
 .tl-empty {
   padding: 2rem .85rem;
   font-family: var(--mono);
@@ -581,6 +565,14 @@ body.tab-info .app-header { display: none; }
   cursor: pointer;
   transition: border-left-color .15s, background .15s;
   -webkit-tap-highlight-color: transparent;
+  /* The map bottom sheet's .bs-cluster-label is position:sticky at top:0,
+     so scrollIntoView({block:'start'}) landing a card flush with the
+     scrollport's top puts the sticky label right over its name/date row.
+     scroll-margin-top is read natively by scrollIntoView — offsetting by
+     the label's rough height (~36px + a little breathing room) keeps the
+     card's own top row clear of it. Harmless elsewhere (timeline/search
+     never call scrollIntoView on a card). */
+  scroll-margin-top: 2.75rem;
 }
 .village-card:last-child { border-bottom: none; }
 .village-card:hover  { border-left-color: var(--amber-pale); background: var(--bg); }
@@ -681,18 +673,18 @@ body.tab-info .app-header { display: none; }
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: .6rem .85rem;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 /* Absolutely positioned so it centers on the header's full width regardless
-   of the close button's width, rather than being centered in the leftover
-   flex space next to it. */
+   of the side buttons' widths, rather than being centered in the leftover
+   flex space between them. Inset wide enough to clear both side buttons. */
 .detail-header-title {
   position: absolute;
-  left: .85rem;
-  right: .85rem;
+  left: 2.6rem;
+  right: 2.6rem;
   text-align: center;
   font-family: var(--mono);
   font-size: calc(var(--fs-base) * 1.16);
@@ -704,7 +696,12 @@ body.tab-info .app-header { display: none; }
   white-space: nowrap;
   pointer-events: none;
 }
-.detail-close {
+/* Shared by the close button (right) and the map-link icon button (left) —
+   icon-only, no text, same visual weight as the tab bar's own map icon. */
+.detail-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: var(--fs-md);
   color: var(--text-2);
   background: none;
@@ -712,8 +709,9 @@ body.tab-info .app-header { display: none; }
   cursor: pointer;
   line-height: 1;
   padding: .3rem .5rem;
+  z-index: 1;
 }
-.detail-close:hover { color: var(--amber); }
+.detail-header-btn:hover { color: var(--amber); }
 .detail-body { padding: 0 1rem 2rem; }
 
 /* Reuses .village-card so the header reads as the same card, expanded in
@@ -737,20 +735,6 @@ body.tab-info .app-header { display: none; }
   border-radius: 99px;
   padding: 2px 10px;
 }
-.detail-map-link {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin: .85rem 0;
-  padding: .6rem .75rem;
-  font-size: var(--fs-sm);
-  color: var(--text-1);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-}
-.detail-map-link:hover { border-color: var(--amber-pale); color: var(--amber-dark); }
 .detail-poster { margin: .85rem 0; }
 .detail-poster img { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--border); }
 .detail-poster-credit { display: inline-block; margin-top: .3rem; font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; }

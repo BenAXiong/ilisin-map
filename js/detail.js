@@ -64,7 +64,6 @@ function renderDetailBody(v) {
       ${cardBodyHtml(v, { showAmis: false })}
       ${welcomeHtml}
     </div>
-    <button class="detail-map-link" onclick="closeDetail();goToMapVillage('${v.id}')">在地圖上查看 ›</button>
     ${posterHtml}
     ${daysHtml}
     ${historyHtml}
@@ -76,6 +75,7 @@ function openDetail(id) {
   if (!v) return;
   document.getElementById('detailBody').innerHTML = renderDetailBody(v);
   document.getElementById('detailHeaderTitle').textContent = indigenousNameInfo(v).latinName;
+  document.getElementById('detailMapLink').onclick = () => { closeDetail(); goToMapVillage(id); };
   const overlay = document.getElementById('detailOverlay');
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add('open'));
