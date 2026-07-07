@@ -402,7 +402,14 @@ body.tab-info .app-header { display: none; }
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  /* ::-webkit-scrollbar only (no scrollbar-width/-color) — declaring both
+     together is inconsistent across Chrome builds, sometimes falling back to
+     the full native scrollbar (buttons, default width) and ignoring the
+     custom thumb entirely. Same reasoning as .detail-scroll. */
 }
+.tl-day-list::-webkit-scrollbar       { width: 6px; }
+.tl-day-list::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+.tl-day-list::-webkit-scrollbar-track { background: transparent; }
 .tl-empty {
   padding: 2rem .85rem;
   font-family: var(--mono);
@@ -656,8 +663,11 @@ body.tab-info .app-header { display: none; }
   background: var(--bg);
   border-radius: 16px 16px 0 0;
   box-shadow: 0 -8px 32px oklch(from black l c h / 0.3);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  /* Scrolling lives on .detail-scroll below, not here — a native scrollbar
+     on the same element as border-radius isn't clipped to the curve (square
+     corner even with overflow:hidden's own clip-mask; verified in Chrome).
+     Splitting the scroll from the rounded shell fixes it. */
+  overflow: hidden;
   transform: translateY(16px);
   transition: transform .2s ease;
 }
@@ -667,6 +677,21 @@ body.tab-info .app-header { display: none; }
   .detail-overlay  { align-items: center; }
   .detail-panel    { border-radius: 16px; max-height: 85vh; }
 }
+
+.detail-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* ::-webkit-scrollbar only (no scrollbar-width/-color) — verified in Chrome
+     that declaring both on the same element reverts to the unclipped native
+     scrollbar, squaring off .detail-panel's corner again. Firefox falls back
+     to its default scrollbar here since it doesn't support ::-webkit-scrollbar,
+     but it also doesn't have the corner-clipping bug this works around. */
+}
+.detail-scroll::-webkit-scrollbar       { width: 6px; }
+.detail-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+.detail-scroll::-webkit-scrollbar-track { background: transparent; }
 
 .detail-header {
   position: sticky;
