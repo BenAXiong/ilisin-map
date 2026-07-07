@@ -30,14 +30,6 @@ function showBandTip(el) {
 function hideBandTip() {
   if (_bandTip) _bandTip.classList.remove('visible');
 }
-function toggleBandTip(el) {
-  const tip = _initBandTip();
-  if (tip.classList.contains('visible') && tip.textContent === el.dataset.tip) {
-    hideBandTip();
-  } else {
-    showBandTip(el);
-  }
-}
 
 let tlMonths          = [];
 let tlActiveMonth     = null;
@@ -174,7 +166,7 @@ function renderStrip() {
     const w    = (v._ed - v._sd + 1) * CELL_W;
     const top  = v._lane * (BAND_H + BAND_GAP);
     const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}`;
-    bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="toggleBandTip(this)">
+    bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="selectBandVillage('${v.id}', ${v._s.getTime()})">
       <span class="tl-band-label">${v.chinese}</span>
     </div>`;
   });
@@ -215,6 +207,20 @@ function selectDay(date) {
     c.classList.toggle('active', c.dataset.date === date.toDateString())
   );
   renderDayCards();
+}
+
+// Tapping a band navigates to its date (like tapping a day cell) and its
+// detail overlay, but also highlights+scrolls its card in the day list —
+// same active/scrollIntoView convention as activateVillage() in js/map.js —
+// so the tapped buluo is easy to find again once the overlay is closed.
+function selectBandVillage(id, startTs) {
+  hideBandTip();
+  selectDay(new Date(startTs));
+  document.querySelectorAll('#tlDayList .village-card').forEach(c =>
+    c.classList.toggle('active', c.id === `card-${id}`)
+  );
+  document.getElementById(`card-${id}`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  openDetail(id);
 }
 
 function scrollStripToDay(date) {
