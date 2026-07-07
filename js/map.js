@@ -56,7 +56,7 @@ function renderSheet() {
   const pillsRow = document.getElementById('bsPills');
   if (!content) return;
 
-  const displayed = VILLAGES.filter(v =>
+  const displayed = visibleVillages().filter(v =>
     countyFilter === 'all' || v.county === countyFilter
   );
 
@@ -158,7 +158,7 @@ function updateMarkers() {
   clusterGroup.clearLayers();
   markers = {};
 
-  const displayed = VILLAGES.filter(v =>
+  const displayed = visibleVillages().filter(v =>
     v.lat && v.lng && (countyFilter === 'all' || v.county === countyFilter)
   );
   displayed.forEach(v => {
@@ -233,7 +233,7 @@ function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
 
-  const bounds = VILLAGES
+  const bounds = visibleVillages()
     .filter(v => v.lat && v.lng)
     .map(v => [v.lat, v.lng]);
 

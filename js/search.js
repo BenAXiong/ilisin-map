@@ -15,7 +15,7 @@ function getSearchResults(query, filters) {
   const now = new Date(); now.setHours(0, 0, 0, 0);
   const weekEnd = new Date(now); weekEnd.setDate(now.getDate() + 7);
 
-  return VILLAGES
+  return visibleVillages()
     .filter(v => {
       if (q) {
         const ref = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;

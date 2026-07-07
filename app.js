@@ -9,6 +9,15 @@
 const DECADE_DAY = { '上': 5, '中': 15, '下': 25 };
 const WEEKDAYS   = '日一二三四五六';
 
+// Group filter shared by every browsing tab (timeline/map/search). No UI to
+// change this yet — hardcoded to 'ami' until a group selector lands. Only
+// gates what's *displayed*; lookups by known id (VILLAGES.find) and the
+// info-tab contribution form intentionally see the full dataset.
+let activeGroupFilter = 'ami';
+function visibleVillages() {
+  return VILLAGES.filter(v => v.group === activeGroupFilter);
+}
+
 // Date strings mix Latin digits/punctuation with a trailing CJK weekday
 // character (e.g. "7/3 五–7/11 六"). At equal font-size the CJK glyph reads
 // larger than the digits — same mismatch as .card-chinese vs .card-amis,
