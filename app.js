@@ -45,17 +45,6 @@ function parseEndDate(str) {
   return null;
 }
 
-function dayDecade(d) {
-  if (d <= 10) return '上旬';
-  if (d <= 20) return '中旬';
-  return '下旬';
-}
-
-function clusterKey(v) {
-  const d = parseStartDate(v.date);
-  if (!d) return v.chinese;
-  return `${d.getMonth() + 1}月${dayDecade(d.getDate())}`;
-}
 
 // Indigenous/romanized name resolution shared by namesHtml() and the detail
 // overlay header (js/detail.js puts this name in the sticky header bar

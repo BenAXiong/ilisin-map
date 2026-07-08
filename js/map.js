@@ -10,7 +10,6 @@ let activeId      = null;
 let bsState       = 'collapsed';
 let TAP_NEXT      = null;
 let countyFilter  = 'all';
-let activePill    = null;
 
 function makeIcon(status, isActive) {
   const colors = {
@@ -60,40 +59,23 @@ function deselect() {
 
 function renderSheet() {
   const content = document.getElementById('bsContent');
-  const pillsRow = document.getElementById('bsPills');
   if (!content) return;
 
-  const displayed = visibleVillages().filter(v =>
-    countyFilter === 'all' || v.county === countyFilter
-  );
+  const statusOrder = { confirmed: 0, tbd: 1, cancelled: 2 };
+  const displayed = visibleVillages()
+    .filter(v => countyFilter === 'all' || v.county === countyFilter)
+    .slice()
+    .sort((a, b) => {
+      const sd = (statusOrder[a.status] ?? 2) - (statusOrder[b.status] ?? 2);
+      if (sd !== 0) return sd;
+      const da = parseStartDate(a.date), db = parseStartDate(b.date);
+      if (da && db) return da - db;
+      return 0;
+    });
 
-  const grouped = {};
-  displayed.forEach(v => {
-    const key = clusterKey(v);
-    (grouped[key] ??= []).push(v);
-  });
-
-  const order = ['confirmed', 'tbd', 'cancelled'];
-  const keys  = Object.keys(grouped).sort((a, b) => {
-    const topStatus = arr => order.indexOf(arr.find(x => x)?.status ?? 'cancelled');
-    return topStatus(grouped[a]) - topStatus(grouped[b]);
-  });
-
-  pillsRow.innerHTML = keys.map(k => {
-    const v = grouped[k][0];
-    const isActive = k === activePill;
-    return `<button class="bs-pill${isActive ? ' active' : ''}" data-key="${k}">${v.chinese}${grouped[k].length > 1 ? ` (${grouped[k].length})` : ''}</button>`;
-  }).join('');
-
-  content.innerHTML = keys.map(key => {
-    const list = grouped[key];
-    const label = list[0].chinese;
-    return `<div class="bs-cluster-label" id="cl-${CSS.escape(key)}">
-        <span class="cl-text">${label}</span>
-        ${list.length > 1 ? `<span class="bs-cluster-count">${list.length}</span>` : ''}
-      </div>
-      ${list.map(v => makeSectionHtml(v)).join('')}`;
-  }).join('');
+  content.innerHTML = displayed.length
+    ? displayed.map(v => makeSectionHtml(v)).join('')
+    : '<p class="bs-empty">無符合的部落</p>';
 }
 
 function makeSectionHtml(v) {
@@ -106,7 +88,6 @@ function activateVillage(id) {
     if (prev) markers[activeId].setIcon(makeIcon(prev.status, false));
   }
   activeId = id;
-  activePill = clusterKey(VILLAGES.find(v => v.id === id));
 
   if (markers[id]) markers[id].setIcon(makeIcon(VILLAGES.find(v => v.id === id)?.status, true));
 
@@ -116,14 +97,6 @@ function activateVillage(id) {
   document.querySelectorAll('.village-card').forEach(c =>
     c.classList.toggle('active', c.dataset.vid === id)
   );
-
-  // Scroll the pills row horizontally — avoid scrollIntoView because it
-  // propagates vertically up to #panel-map and cancels the sheet's translateY.
-  const pillsEl = document.getElementById('bsPills');
-  const pill = pillsEl?.querySelector(`.bs-pill[data-key="${CSS.escape(activePill)}"]`);
-  if (pill && pillsEl) {
-    pillsEl.scrollLeft = Math.max(0, pill.offsetLeft - (pillsEl.clientWidth - pill.offsetWidth) / 2);
-  }
 
   // Scroll only #bsContent to land the activated card at the top of the
   // visible area. Same reason: avoid scrollIntoView propagating to #panel-map.
@@ -285,7 +258,6 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   countyFilter = chip.dataset.county;
-  activePill = null;
   document.querySelectorAll('.map-chip').forEach(c => c.classList.toggle('active', c === chip));
   if (mapInitialized) {
     updateMarkers();
@@ -294,11 +266,3 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   }
 });
 
-document.getElementById('bsPills').addEventListener('click', e => {
-  const pill = e.target.closest('.bs-pill');
-  if (!pill) return;
-  activePill = pill.dataset.key;
-  renderSheet();
-  const el = document.getElementById(`cl-${CSS.escape(activePill)}`);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
