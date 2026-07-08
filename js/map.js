@@ -255,7 +255,8 @@ function initMap() {
   // leaving it on is the documented cause of taps on sibling UI (like the
   // sheet's grab bar) landing on the map instead, right after a programmatic
   // zoom/pan like zoomToShowLayer.
-  leafletMap = L.map('map', { zoomControl: true, tap: false });
+  leafletMap = L.map('map', { zoomControl: false, tap: false });
+  L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
     maxZoom: 18,

@@ -1233,8 +1233,8 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
 
 /* ── Leaflet overrides ──────────────────────── */
 .leaflet-container { background: var(--bg-alt); }
-.leaflet-bottom { z-index: 390 !important; }
 .leaflet-control-zoom a { color: var(--text-2) !important; background: var(--surface) !important; border-color: var(--border) !important; }
+@media (max-width: 767px) { .leaflet-control-zoom { display: none; } }
 .marker-cluster-small,
 .marker-cluster-medium,
 .marker-cluster-large  { background-color: oklch(from var(--accent) l c h / 0.22) !important; }
