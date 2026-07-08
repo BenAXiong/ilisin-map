@@ -6,9 +6,9 @@ const AT_TBL_REPORTS = 'Reports';
 const AT_TBL_NEW     = 'Submissions';
 
 /* Build a county → sorted township array map from event data.
-   Runs at parse time — VILLAGES comes from data.js (loaded first). */
+   Runs at parse time — EVENTS comes from data.js (loaded first). */
 const TOWNSHIP_MAP = {};
-VILLAGES.forEach(v => {
+EVENTS.forEach(v => {
   (TOWNSHIP_MAP[v.county] ??= new Set()).add(v.township);
 });
 Object.keys(TOWNSHIP_MAP).forEach(c => {
@@ -40,12 +40,12 @@ function festivalDayCount(dateStr) {
 function initInfo() {
   // Cards are Amis-only for now — buluo_id coverage for other groups (pwn/pyu/
   // szy/ckv) is too partial to build a meaningful denominator yet.
-  const confirmed = VILLAGES.reduce((sum, v) => {
+  const confirmed = EVENTS.reduce((sum, v) => {
     if (v.group !== 'ami' || v.status !== 'confirmed') return sum;
     return sum + (v.buluo_ids ? v.buluo_ids.length : 1);
   }, 0);
   // Denominator is the known Amis buluo population (BULUO_REF ami- entries +
-  // BULUO_UNCOVERED), not VILLAGES.length — so it reads as "of all known Amis
+  // BULUO_UNCOVERED), not EVENTS.length — so it reads as "of all known Amis
   // buluo, how many already have an announced date," not "of festivals we
   // happen to be tracking." Derived, not hardcoded, so it can't go stale.
   const amisRefCount = typeof BULUO_REF === 'undefined' ? 0
@@ -53,13 +53,13 @@ function initInfo() {
   const amisUncoveredCount = typeof BULUO_UNCOVERED === 'undefined' ? 0 : BULUO_UNCOVERED.length;
   const total = amisRefCount + amisUncoveredCount;
 
-  const festivalDays = VILLAGES
+  const festivalDays = EVENTS
     .filter(v => v.group === 'ami' && v.status !== 'cancelled' && v.date && v.date !== '—')
     .reduce((sum, v) => sum + festivalDayCount(v.date), 0);
 
   let firstVal = Infinity, lastVal = -Infinity;
   let firstM, firstD, lastM, lastD;
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     if (v.group !== 'ami' || v.status === 'cancelled') return;
     const r = parseDateRange(v.date);
     if (!r) return;
@@ -111,7 +111,7 @@ function initContribForm() {
   /* Populate the village dropdown in the error-report form */
   const sel     = document.getElementById('rVillage');
   const grouped = {};
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     const gk = `${v.county} · ${v.township}`;
     (grouped[gk] ??= []).push(v);
   });
@@ -197,7 +197,7 @@ async function submitReport() {
   if (!village || !issue) { setFormState(statusEl, submitEl, 'err', '請選擇部落和問題類型'); return; }
   setFormState(statusEl, submitEl, 'loading', '');
 
-  const v = VILLAGES.find(x => x.id === village);
+  const v = EVENTS.find(x => x.id === village);
   try {
     await atPost(AT_TBL_REPORTS, {
       '部落ID':   village,

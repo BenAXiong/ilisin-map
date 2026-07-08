@@ -11,11 +11,11 @@ const WEEKDAYS   = '日一二三四五六';
 
 // Group filter shared by every browsing tab (timeline/map/search). No UI to
 // change this yet — hardcoded to 'ami' until a group selector lands. Only
-// gates what's *displayed*; lookups by known id (VILLAGES.find) and the
+// gates what's *displayed*; lookups by known id (EVENTS.find) and the
 // info-tab contribution form intentionally see the full dataset.
 let activeGroupFilter = 'ami';
-function visibleVillages() {
-  return VILLAGES.filter(v => v.group === activeGroupFilter);
+function visibleEvents() {
+  return EVENTS.filter(v => v.group === activeGroupFilter);
 }
 
 // Date strings mix Latin digits/punctuation with a trailing CJK weekday
@@ -79,7 +79,7 @@ function namesHtml(v, { showAmis = true } = {}) {
 
 // Resolves per-village schedule/poster detail (schedule.js), merging a
 // village-specific poster with the shared-by-`src` fallback so a single
-// poster asset can cover many VILLAGES entries without duplication.
+// poster asset can cover many EVENTS entries without duplication.
 function getScheduleDetail(v) {
   const d = (typeof SCHEDULE_DETAILS !== 'undefined' && SCHEDULE_DETAILS[v.id]) || null;
   const poster = d?.poster || (typeof SCHEDULE_POSTERS !== 'undefined' && SCHEDULE_POSTERS[v.src]) || null;

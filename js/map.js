@@ -51,7 +51,7 @@ function setSheetState(state, from) {
 
 function deselect() {
   if (activeId && markers[activeId]) {
-    const v = VILLAGES.find(x => x.id === activeId);
+    const v = EVENTS.find(x => x.id === activeId);
     if (v) markers[activeId].setIcon(makeIcon(v.status, false));
   }
   activeId = null;
@@ -70,8 +70,8 @@ function matchesTime(v) {
   return start <= weekEnd && end >= today;
 }
 
-function filteredVillages() {
-  return visibleVillages().filter(v => {
+function filteredEvents() {
+  return visibleEvents().filter(v => {
     if (countyFilter !== 'all' && v.county !== countyFilter) return false;
     if (townshipFilter && v.township !== townshipFilter) return false;
     return matchesTime(v);
@@ -83,7 +83,7 @@ function renderTownshipChips() {
   if (!el) return;
   if (countyFilter === 'all') { el.hidden = true; return; }
   const townships = [...new Set(
-    visibleVillages().filter(v => v.county === countyFilter && v.township).map(v => v.township)
+    visibleEvents().filter(v => v.county === countyFilter && v.township).map(v => v.township)
   )].sort();
   el.innerHTML = townships.map(t =>
     `<button class="map-chip${townshipFilter === t ? ' active' : ''}" data-township="${t}">${t}</button>`
@@ -93,7 +93,7 @@ function renderTownshipChips() {
 
 function fitToFilter() {
   if (!leafletMap) return;
-  const vs = filteredVillages().filter(v => v.lat && v.lng);
+  const vs = filteredEvents().filter(v => v.lat && v.lng);
   if (!vs.length) return;
   if (vs.length === 1) {
     leafletMap.setView([vs[0].lat, vs[0].lng], 13, { animate: true });
@@ -107,7 +107,7 @@ function renderSheet() {
   if (!content) return;
 
   const statusOrder = { confirmed: 0, tbd: 1, cancelled: 2 };
-  const displayed = filteredVillages()
+  const displayed = filteredEvents()
     .slice()
     .sort((a, b) => {
       const sd = (statusOrder[a.status] ?? 2) - (statusOrder[b.status] ?? 2);
@@ -128,12 +128,12 @@ function makeSectionHtml(v) {
 
 function activateVillage(id) {
   if (activeId && markers[activeId]) {
-    const prev = VILLAGES.find(x => x.id === activeId);
+    const prev = EVENTS.find(x => x.id === activeId);
     if (prev) markers[activeId].setIcon(makeIcon(prev.status, false));
   }
   activeId = id;
 
-  if (markers[id]) markers[id].setIcon(makeIcon(VILLAGES.find(v => v.id === id)?.status, true));
+  if (markers[id]) markers[id].setIcon(makeIcon(EVENTS.find(v => v.id === id)?.status, true));
 
   renderSheet();
   setSheetState('half');
@@ -155,11 +155,11 @@ function activateVillage(id) {
     }
   }, 360);
 
-  trackEvent('village_tap', { id, name: VILLAGES.find(v => v.id === id)?.chinese });
+  trackEvent('village_tap', { id, name: EVENTS.find(v => v.id === id)?.chinese });
 }
 
 function goToMapVillage(id) {
-  const v = VILLAGES.find(x => x.id === id);
+  const v = EVENTS.find(x => x.id === id);
   if (!v || !v.lat || !v.lng) return;
   switchTab('map');
   setTimeout(() => {
@@ -187,7 +187,7 @@ function updateMarkers() {
   clusterGroup.clearLayers();
   markers = {};
 
-  filteredVillages().filter(v => v.lat && v.lng).forEach(v => {
+  filteredEvents().filter(v => v.lat && v.lng).forEach(v => {
     const m = L.marker([v.lat, v.lng], { icon: makeIcon(v.status, false) });
     m.on('click', () => {
       if (TAP_NEXT === v.id) {
@@ -257,7 +257,7 @@ function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
 
-  const bounds = visibleVillages()
+  const bounds = visibleEvents()
     .filter(v => v.lat && v.lng)
     .map(v => [v.lat, v.lng]);
 

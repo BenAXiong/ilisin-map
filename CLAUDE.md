@@ -25,7 +25,7 @@ it runs at parse time, which is safe because `data.js` loads first.
 both `scripts/build_buluo_ref.js` and `scripts/prerender.js`):
 ```js
 const src = fs.readFileSync('data.js', 'utf8');
-const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES, DATA_NOTE, VILLAGES };')();
+const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, DATA_NOTE, EVENTS };')();
 ```
 
 **Prerender / crawler mechanism:**
@@ -42,7 +42,7 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
 | `index.html` | App shell + prerendered static content (injected by `scripts/prerender.js`) |
 | `app.css` | All styles. CSS custom property theme system (`--fs-*`, `--c-*`, `data-theme` attr) |
 | `app.js` | Shared utilities, theme, tab switching, PWA, SW registration, boot |
-| `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `VILLAGES` |
+| `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `EVENTS` |
 | `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts) + `BULUO_UNCOVERED` (unmatched) |
 | `schedule.js` | Hand-curated. `SCHEDULE_DETAILS` (per-village sub-events/迎賓日/poster/history) + `SCHEDULE_POSTERS` (poster images shared by `src`) |
 | `js/timeline.js` | Timeline tab — month strip, day cards, county filter |
@@ -62,7 +62,7 @@ const { SOURCES, DATA_NOTE, VILLAGES } = new Function(src + '\nreturn { SOURCES,
 
 ## Key data conventions
 
-**`VILLAGES` entry shape:**
+**`EVENTS` entry shape:**
 ```js
 { id:'hl-xc-02', group:'ami', buluo_id:'ami-palamitan',
   chinese:'康樂部落', amis:'Palamitan',
@@ -104,7 +104,7 @@ silently vanishes from prerendered output: (1) `GROUP_FILES` in
 strings + render order), (3) re-run both build scripts.
 
 **`SCHEDULE_DETAILS` / `SCHEDULE_POSTERS` (`schedule.js`):**  
-Keyed by `VILLAGES.id` (not `buluo_id`) — this data is festival-instance/
+Keyed by `EVENTS.id` (not `buluo_id`) — this data is festival-instance/
 year-specific, unlike the enduring identity facts in `BULUO_REF`. Per entry,
 all keys optional: `poster` (`{url,credit,creditUrl?,kind}` — `url` is a
 root-relative path into `images/schedule/`; `credit` is link text, never a
@@ -119,7 +119,7 @@ overlay header, not the schedule list), `history` (hand-authored prose —
 deliberately *not* sourced from `BULUO_REF.notes`, which is internal
 provenance text, not visitor-facing copy). `SCHEDULE_POSTERS` is a fallback
 keyed by `src` (the `SOURCES` key), so one poster image can cover every
-`VILLAGES` entry sharing that source (e.g. a single township-wide board
+`EVENTS` entry sharing that source (e.g. a single township-wide board
 covering 14 buluo) without duplicating
 the file path per entry — resolved together via `getScheduleDetail(v)` in
 `app.js`.
@@ -154,14 +154,14 @@ scripts/prerender.js         →  index.html (static HTML + JSON-LD injected)
 `ami`/`pwn`/`pyu`/`bnn`/`szy`/`ckv` all have a loaded reference db (`GROUP_FILES`
 in `build_buluo_ref.js`) — matching and `BULUO_REF` cover all six, but
 `BULUO_UNCOVERED` stays Amis-only (it feeds the `ami`-focused 新增部落
-contribution flow). `trv` VILLAGES entries are never auto-matched.
+contribution flow). `trv` EVENTS entries are never auto-matched.
 
 **When to re-run `build_buluo_ref.js`:** after any `Datasets/buluo/*.json` in
-`GROUP_FILES` changes, or after adding new VILLAGES entries that might now match
+`GROUP_FILES` changes, or after adding new EVENTS entries that might now match
 buluo records.  
 `node scripts/build_buluo_ref.js`
 
-**When to re-run `prerender.js`:** after any change to VILLAGES data (new entries,
+**When to re-run `prerender.js`:** after any change to EVENTS data (new entries,
 date corrections, cancellations). Vercel runs it automatically on deploy; run
 locally before committing if you want the prerendered HTML in the commit.  
 `node scripts/prerender.js`
@@ -176,7 +176,7 @@ Phases A–E complete. v2 expansion tracked separately.
 |---|---|---|
 | A | `<head>` SEO (title, OG, canonical, robots, sitemap, llms.txt) | ✅ |
 | B | HTML refactor — modular files, semantic landmarks, prerender hooks | ✅ |
-| B+ | `group` field on all VILLAGES entries (ISO 639-3 codes) | ✅ |
+| B+ | `group` field on all EVENTS entries (ISO 639-3 codes) | ✅ |
 | C | `scripts/prerender.js` — static HTML + JSON-LD at build time | ✅ |
 | D1 | Themes rework | ✅ |
 | D2 | Info tab rework (per-tribe prose, source: `docs/` CIP PDF) | ✅ |

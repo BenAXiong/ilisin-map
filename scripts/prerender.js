@@ -10,8 +10,8 @@ const DATA  = path.join(ROOT, 'data.js');
 
 // Load data.js — same new Function() pattern as build_buluo_ref.js
 const src = fs.readFileSync(DATA, 'utf8');
-const { SOURCES, DATA_NOTE, VILLAGES } = new Function(
-  src + '\nreturn { SOURCES, DATA_NOTE, VILLAGES };'
+const { SOURCES, DATA_NOTE, EVENTS } = new Function(
+  src + '\nreturn { SOURCES, DATA_NOTE, EVENTS };'
 )();
 
 // ── Group config ──────────────────────────────────────────────────────
@@ -48,8 +48,8 @@ function iso(d) {
 }
 
 // ── Build static HTML ─────────────────────────────────────────────────
-const confirmed = VILLAGES.filter(v => v.status === 'confirmed');
-const total     = VILLAGES.length;
+const confirmed = EVENTS.filter(v => v.status === 'confirmed');
+const total     = EVENTS.length;
 
 let staticHtml =
   `<h1>Pokoh · 2026 全臺原住民族歲時祭儀 · Taiwan Indigenous Festival Calendar 2026</h1>\n` +

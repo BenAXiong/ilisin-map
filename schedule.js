@@ -1,6 +1,6 @@
 // ── Schedule detail ─────────────────────────────────────────────
-// Hand-curated per-VILLAGES-entry schedule detail: sub-events, welcome-day
-// (迎賓日) info, poster image, optional history prose. Keyed by VILLAGES.id,
+// Hand-curated per-EVENTS-entry schedule detail: sub-events, welcome-day
+// (迎賓日) info, poster image, optional history prose. Keyed by EVENTS.id,
 // not buluo_id — this data is festival-instance/year-specific, unlike the
 // enduring identity facts in BULUO_REF (buluo-ref.js).
 //
@@ -67,8 +67,8 @@ const SCHEDULE_DETAILS = {
   'tt-gs-05': { welcome: { date: '8/22', time: '17:30' } },
 };
 
-// Poster images shared by many VILLAGES entries via the same data-source
-// `src` (data.js SOURCES key) — used as a fallback when a VILLAGES id has no
+// Poster images shared by many EVENTS entries via the same data-source
+// `src` (data.js SOURCES key) — used as a fallback when a EVENTS id has no
 // poster of its own in SCHEDULE_DETAILS. Avoids duplicating the same file
 // path across every buluo on a shared township-wide board.
 const SCHEDULE_POSTERS = {

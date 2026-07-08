@@ -503,11 +503,11 @@ const VERIF_RANK  = { 'needs-review': 0, unlisted: 1, 'single-source': 2, verifi
 // isBuluo:  tied to a specific registered buluo identity — a matched buluo_id/
 //           buluo_ids, or an uncovered row (which *is* a buluo record, just
 //           with no event yet).
-// isEvent:  a real 2026 festival occurrence — any actual VILLAGES row,
+// isEvent:  a real 2026 festival occurrence — any actual EVENTS row,
 //           whether or not it's linked to a specific buluo (umbrella "族群"
 //           entries, joint:true entries, and still-unmatched entries all
 //           count as an event with no buluo link).
-// The two sets overlap heavily (most VILLAGES rows are both). Combining this
+// The two sets overlap heavily (most EVENTS rows are both). Combining this
 // with the 族群 filter (isBuluo + 阿美族) gets you *close* to the "211" total
 // (162 matched-ami rows + 48 uncovered = 210 rows) but is one row short of
 // the true 211 distinct-buluo count: hl-sf-12 (月眉部落) is a single row
@@ -523,7 +523,7 @@ function isEventRow(v) {
 }
 
 // BULUO_UNCOVERED entries (known buluo, no 2026 festival entry yet) reshaped
-// to flow through the same table as VILLAGES rows — status:'uncovered' is a
+// to flow through the same table as EVENTS rows — status:'uncovered' is a
 // distinct pseudo-value from the real event statuses (confirmed/tbd/
 // cancelled), never written back to data.js.
 function rowsFromUncovered() {
@@ -552,10 +552,10 @@ let statusQ = '';
 let kindQ = '';
 
 // Options derived from whatever `group` values are actually present in
-// VILLAGES, not a hand-maintained list — so a future new group (like this
+// EVENTS, not a hand-maintained list — so a future new group (like this
 // session's pwn/pyu/szy/ckv additions) shows up here without editing this file.
 (function populateGroupFilter() {
-  const groups = [...new Set(VILLAGES.map(v => v.group))].sort();
+  const groups = [...new Set(EVENTS.map(v => v.group))].sort();
   const sel = document.getElementById('groupFilter');
   groups.forEach(g => {
     const opt = document.createElement('option');
@@ -567,7 +567,7 @@ let kindQ = '';
 
 function getRows() {
   const q = srNorm(filterQ.trim());
-  const allRows = [...VILLAGES, ...rowsFromUncovered()];
+  const allRows = [...EVENTS, ...rowsFromUncovered()];
   let rows = allRows.filter(v => {
     if (groupQ && v.group !== groupQ) return false;
     if (verifQ && verifStatus(v) !== verifQ) return false;
@@ -610,7 +610,7 @@ const STATUS_LABEL = { confirmed: '已公告', tbd: '待定', cancelled: '取消
 
 function renderTable() {
   const rows = getRows();
-  const totalRows = VILLAGES.length + (typeof BULUO_UNCOVERED === 'undefined' ? 0 : BULUO_UNCOVERED.length);
+  const totalRows = EVENTS.length + (typeof BULUO_UNCOVERED === 'undefined' ? 0 : BULUO_UNCOVERED.length);
   document.getElementById('tblCount').textContent = `${rows.length} / ${totalRows} 筆`;
   document.getElementById('tblBody').innerHTML = rows.map(v => {
     const src = SOURCES[v.src];
@@ -733,11 +733,11 @@ function buildVerifDonut() {
   // how many have confirmed/tbd/cancelled events, and how many have no info yet.
   const uncovered = typeof BULUO_UNCOVERED === 'undefined' ? [] : BULUO_UNCOVERED;
 
-  // For each buluo_id in VILLAGES, keep only the best event status
+  // For each buluo_id in EVENTS, keep only the best event status
   // (confirmed > tbd > cancelled) so one buluo = one slice.
   const STATUS_PRIORITY = { confirmed: 2, tbd: 1, cancelled: 0 };
   const buluoEventStatus = {};
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     if (!v.buluo_id) return;
     const prev = buluoEventStatus[v.buluo_id];
     if (prev === undefined || STATUS_PRIORITY[v.status] > STATUS_PRIORITY[prev]) {
@@ -819,7 +819,7 @@ function buildUncoveredStats() {
 function buildHeatmap() {
   // Count active festivals per calendar day (multi-day ranges expand across all days)
   const dayCount = {};
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     if (v.status === 'cancelled') return;
     const start = parseStartDate(v.date);
     if (!start) return;
@@ -918,7 +918,7 @@ function buildMonthChart() {
   const MONTH_LABEL = { 5: '5月', 6: '6月', 7: '7月', 8: '8月', 9: '9月' };
   const counts = {};
   months.forEach(m => counts[m] = 0);
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     const d = parseStartDate(v.date);
     if (d) {
       const m = d.getMonth() + 1;
@@ -958,9 +958,9 @@ function buildMonthChart() {
 }
 
 function buildStatusDonut() {
-  const confirmed = VILLAGES.filter(v => v.status === 'confirmed').length;
-  const tbd       = VILLAGES.filter(v => v.status === 'tbd').length;
-  const cancelled = VILLAGES.filter(v => v.status === 'cancelled').length;
+  const confirmed = EVENTS.filter(v => v.status === 'confirmed').length;
+  const tbd       = EVENTS.filter(v => v.status === 'tbd').length;
+  const cancelled = EVENTS.filter(v => v.status === 'cancelled').length;
   const total     = confirmed + tbd + cancelled;
 
   const R = 62, cx = 100, cy = 100, sw = 26;
@@ -995,7 +995,7 @@ function buildStatusDonut() {
 
 function buildTownshipBars() {
   const counts = {};
-  VILLAGES.forEach(v => {
+  EVENTS.forEach(v => {
     const key = `${v.county.replace('縣','').replace('市','')} · ${v.township}`;
     counts[key] = (counts[key] || 0) + 1;
   });

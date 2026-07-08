@@ -44,7 +44,7 @@ function tlDayOffset(date) {
 }
 
 function villagesOnDay(date) {
-  return visibleVillages().filter(v => {
+  return visibleEvents().filter(v => {
     if (v.status === 'tbd' || v.status === 'cancelled') return false;
     if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
     if (tlTownshipFilter && v.township !== tlTownshipFilter) return false;
@@ -56,7 +56,7 @@ function villagesOnDay(date) {
 }
 
 function initTimeline() {
-  const starts = visibleVillages()
+  const starts = visibleEvents()
     .filter(v => v.status !== 'tbd')
     .map(v => parseStartDate(v.date))
     .filter(Boolean)
@@ -136,7 +136,7 @@ function renderStrip() {
   const today  = new Date(); today.setHours(0, 0, 0, 0);
 
   // All events across every month, greedy lane packing on absolute offsets
-  const events = visibleVillages()
+  const events = visibleEvents()
     .filter(v => {
       if (v.status === 'tbd' || v.status === 'cancelled') return false;
       if (tlCountyFilter !== 'all' && v.county !== tlCountyFilter) return false;
@@ -273,7 +273,7 @@ function renderTownshipChips() {
   if (tlCountyFilter === 'all') return;
 
   const twps = [...new Set(
-    visibleVillages()
+    visibleEvents()
       .filter(v => v.county === tlCountyFilter && v.status !== 'cancelled')
       .map(v => v.township)
       .filter(Boolean)

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Joins this project's data.js VILLAGES against Datasets/buluo/{ami,pwn,pyu}.json
+// Joins this project's data.js EVENTS against Datasets/buluo/{ami,pwn,pyu}.json
 // by (county, township, normalized Chinese name), and:
-//   1. adds a `buluo_id` foreign key to each matched VILLAGES entry in data.js
+//   1. adds a `buluo_id` foreign key to each matched EVENTS entry in data.js
 //   2. writes buluo-ref.js — a small, self-contained lookup table (id -> identity
 //      facts) for the matched buluo only, for viz.html to join against at render time.
 // Re-run whenever Datasets/buluo/*.json or this project's data.js changes.
@@ -9,7 +9,7 @@
 // Vercel deploys), so this script's OUTPUT (buluo-ref.js) is what actually
 // ships — not a live fetch of the buluo db at runtime.
 //
-// A VILLAGES entry can opt out of / extend the default single-match behavior:
+// A EVENTS entry can opt out of / extend the default single-match behavior:
 //   - `joint:true`    — a multi-buluo umbrella/tourism event, not one buluo
 //                       (e.g. 瑪洛阿瀧聯合豐年祭). Skipped entirely: no buluo_id,
 //                       not counted as unmatched. See docs/DATA-SOURCES.md §9.
@@ -29,7 +29,7 @@ const dataJsSrc = fs.readFileSync(dataJsPath, 'utf8');
 const sourcesReg = JSON.parse(fs.readFileSync(path.join(BULUO_ROOT, 'sources.json'), 'utf8')).sources;
 
 // Only groups this project currently has festival-event coverage for get a
-// reference db loaded. Other groups' VILLAGES entries (trv) simply stay
+// reference db loaded. Other groups' EVENTS entries (trv) simply stay
 // unmatched, same as before — they have no buluo-identity project yet.
 // szy/ckv (Sakizaya/Kavalan) map to the sibling db's own file-naming
 // convention (sakizaya.json/kavalan.json), which predates this project's
@@ -86,18 +86,18 @@ for (const [grp, file] of Object.entries(GROUP_FILES)) {
 // untouched by this regex.
 const cleanedSrc = dataJsSrc.replace(/ buluo_id:'[^']*',/g, '');
 
-// Extract the VILLAGES array literal and re-serialize it with buluo_id added,
+// Extract the EVENTS array literal and re-serialize it with buluo_id added,
 // rather than eval+regenerate the whole file (preserves comments/formatting).
-const vStart = cleanedSrc.indexOf('const VILLAGES = [');
+const vStart = cleanedSrc.indexOf('const EVENTS = [');
 const arrEnd = cleanedSrc.indexOf('\n];', vStart) + 1; // position of ']'
-const VILLAGES = new Function(cleanedSrc.slice(vStart, arrEnd + 2) + '\nreturn VILLAGES;')();
+const EVENTS = new Function(cleanedSrc.slice(vStart, arrEnd + 2) + '\nreturn EVENTS;')();
 
 const matched = [];      // { villageId, buluoId } — single auto-match; buluo_id gets written to data.js
 const multiMatched = []; // { villageId, buluoIds } — hand-curated in data.js already, just validated + counted
 const unmatched = [];
 let jointSkipped = 0;
 
-for (const v of VILLAGES) {
+for (const v of EVENTS) {
   if (!v.chinese || v.chinese.includes('族群')) continue; // ethnic-group umbrella entries, not individual buluo
   if (v.joint) { jointSkipped++; continue; } // multi-buluo joint/tourism event — see docs/DATA-SOURCES.md §9
   if (v.buluo_ids) {
@@ -186,7 +186,7 @@ fs.writeFileSync(path.join(PROJECT_ROOT, 'buluo-ref.js'), header +
   `const BULUO_REF = ${JSON.stringify(ref, null, 2)};\n` +
   `const BULUO_UNCOVERED = ${JSON.stringify(uncovered, null, 2)};\n`, 'utf8');
 
-console.log(`Matched: ${matched.length} single-buluo + ${multiMatched.length} multi-buluo VILLAGES entries / ${VILLAGES.length} total (${matchedIds.length} unique buluo covered)`);
+console.log(`Matched: ${matched.length} single-buluo + ${multiMatched.length} multi-buluo EVENTS entries / ${EVENTS.length} total (${matchedIds.length} unique buluo covered)`);
 console.log(`Joint/umbrella events skipped from matching: ${jointSkipped}`);
 console.log(`Unmatched (excluding 族群 umbrella + joint entries): ${unmatched.length}`);
 for (const u of unmatched) console.log('  -', u);

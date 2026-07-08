@@ -71,7 +71,7 @@ function renderDetailBody(v) {
 }
 
 function openDetail(id) {
-  const v = VILLAGES.find(x => x.id === id);
+  const v = EVENTS.find(x => x.id === id);
   if (!v) return;
   document.getElementById('detailBody').innerHTML = renderDetailBody(v);
   document.getElementById('detailHeaderTitle').textContent = indigenousNameInfo(v).latinName;
