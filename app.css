@@ -422,7 +422,7 @@ body.tab-info .app-header { display: none; }
 /* ── Map panel ──────────────────────────────── */
 #panel-map          { display: none; overflow: hidden; }
 #panel-map.active   { display: block; }
-#map                { position: absolute; inset: 0; }
+#map                { position: absolute; inset: 0; isolation: isolate; }
 
 .map-chips {
   position: absolute;
