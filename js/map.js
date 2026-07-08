@@ -9,7 +9,9 @@ let markers       = {};
 let activeId      = null;
 let bsState       = 'collapsed';
 let TAP_NEXT      = null;
-let countyFilter  = 'all';
+let countyFilter   = 'all';
+let timeFilter     = 'all';
+let townshipFilter = null;
 
 function makeIcon(status, isActive) {
   const colors = {
@@ -57,13 +59,55 @@ function deselect() {
   setSheetState('collapsed');
 }
 
+function matchesTime(v) {
+  if (timeFilter === 'all') return true;
+  const start = parseStartDate(v.date);
+  if (!start) return false;
+  const end = parseEndDate(v.date) ?? start;
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  if (timeFilter === 'today') return start <= today && end >= today;
+  const weekEnd = new Date(today); weekEnd.setDate(today.getDate() + 6);
+  return start <= weekEnd && end >= today;
+}
+
+function filteredVillages() {
+  return visibleVillages().filter(v => {
+    if (countyFilter !== 'all' && v.county !== countyFilter) return false;
+    if (townshipFilter && v.township !== townshipFilter) return false;
+    return matchesTime(v);
+  });
+}
+
+function renderTownshipChips() {
+  const el = document.getElementById('mapTownshipChips');
+  if (!el) return;
+  if (countyFilter === 'all' || townshipFilter !== null) { el.hidden = true; return; }
+  const townships = [...new Set(
+    visibleVillages().filter(v => v.county === countyFilter && v.township).map(v => v.township)
+  )].sort();
+  el.innerHTML = townships.map(t =>
+    `<button class="map-chip" data-township="${t}">${t}</button>`
+  ).join('');
+  el.hidden = townships.length === 0;
+}
+
+function fitToFilter() {
+  if (!leafletMap) return;
+  const vs = filteredVillages().filter(v => v.lat && v.lng);
+  if (!vs.length) return;
+  if (vs.length === 1) {
+    leafletMap.setView([vs[0].lat, vs[0].lng], 13, { animate: true });
+  } else {
+    leafletMap.fitBounds(vs.map(v => [v.lat, v.lng]), { padding: [40, 40], maxZoom: 14, animate: true });
+  }
+}
+
 function renderSheet() {
   const content = document.getElementById('bsContent');
   if (!content) return;
 
   const statusOrder = { confirmed: 0, tbd: 1, cancelled: 2 };
-  const displayed = visibleVillages()
-    .filter(v => countyFilter === 'all' || v.county === countyFilter)
+  const displayed = filteredVillages()
     .slice()
     .sort((a, b) => {
       const sd = (statusOrder[a.status] ?? 2) - (statusOrder[b.status] ?? 2);
@@ -143,10 +187,7 @@ function updateMarkers() {
   clusterGroup.clearLayers();
   markers = {};
 
-  const displayed = visibleVillages().filter(v =>
-    v.lat && v.lng && (countyFilter === 'all' || v.county === countyFilter)
-  );
-  displayed.forEach(v => {
+  filteredVillages().filter(v => v.lat && v.lng).forEach(v => {
     const m = L.marker([v.lat, v.lng], { icon: makeIcon(v.status, false) });
     m.on('click', () => {
       if (TAP_NEXT === v.id) {
@@ -258,11 +299,45 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   countyFilter = chip.dataset.county;
-  document.querySelectorAll('.map-chip').forEach(c => c.classList.toggle('active', c === chip));
+  townshipFilter = null;
+  document.querySelectorAll('#mapCountyChips .map-chip').forEach(c => {
+    c.classList.toggle('active', c === chip);
+    c.classList.remove('sub-active');
+  });
+  renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();
     renderSheet();
+    fitToFilter();
     trackEvent('map_filter', { county: countyFilter });
+  }
+});
+
+document.getElementById('mapTimeChips').addEventListener('click', e => {
+  const chip = e.target.closest('.map-chip');
+  if (!chip) return;
+  timeFilter = chip.dataset.time;
+  document.querySelectorAll('#mapTimeChips .map-chip').forEach(c =>
+    c.classList.toggle('active', c === chip)
+  );
+  if (mapInitialized) {
+    updateMarkers();
+    renderSheet();
+    trackEvent('map_filter', { time: timeFilter });
+  }
+});
+
+document.getElementById('mapTownshipChips').addEventListener('click', e => {
+  const chip = e.target.closest('.map-chip');
+  if (!chip) return;
+  townshipFilter = chip.dataset.township;
+  document.getElementById('mapTownshipChips').hidden = true;
+  document.querySelector('#mapCountyChips .map-chip.active')?.classList.add('sub-active');
+  if (mapInitialized) {
+    updateMarkers();
+    renderSheet();
+    fitToFilter();
+    trackEvent('map_filter', { county: countyFilter, township: townshipFilter });
   }
 });
 
