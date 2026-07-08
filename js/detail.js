@@ -19,9 +19,9 @@ function renderDetailBody(v) {
   const detail  = getScheduleDetail(v);
 
   let welcomeHtml = '';
-  if (detail.welcome) {
-    const timeText = detail.welcome.time ? ` ${detail.welcome.time}` : '';
-    welcomeHtml = `<div class="detail-welcome">迎賓日 ${dateHtml(detail.welcome.date)}${timeText}</div>`;
+  if (v.welcome_date) {
+    const timeText = v.welcome_time ? ` ${v.welcome_time}` : '';
+    welcomeHtml = `<div class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${timeText}</div>`;
   }
 
   let creditHtml = '';
@@ -61,7 +61,7 @@ function renderDetailBody(v) {
 
   return `
     <div class="village-card detail-header-card card-${v.status}">
-      ${cardBodyHtml(v, { showAmis: false })}
+      ${cardBodyHtml(v, { showAmis: false, showWelcome: false })}
       ${welcomeHtml}
     </div>
     ${posterHtml}

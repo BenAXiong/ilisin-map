@@ -14,6 +14,22 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(
   src + '\nreturn { SOURCES, DATA_NOTE, EVENTS };'
 )();
 
+// buluo-ref.js is a plain global-scope script (BULUO_REF/BULUO_UNCOVERED),
+// same loading trick as data.js above.
+const refSrc = fs.readFileSync(path.join(ROOT, 'buluo-ref.js'), 'utf8');
+const { BULUO_REF } = new Function(refSrc + '\nreturn { BULUO_REF };')();
+
+// Mirrors app.js's eventCoord() — see that file for the priority rationale
+// (venueOverride > BULUO_REF exact > EVENTS' own fallback > BULUO_REF any).
+function eventCoord(v) {
+  if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
+  const ref = v.buluo_id ? BULUO_REF[v.buluo_id] : null;
+  if (ref?.coord_precision === 'exact' && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  if (v.lat != null && v.lng != null) return [v.lat, v.lng];
+  if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  return null;
+}
+
 // ── Group config ──────────────────────────────────────────────────────
 const GROUP_META = {
   ami: { heading: '阿美族 Amis (Pangcah) · Ilisin 豐年祭', festival: 'Ilisin 豐年祭', org: '阿美族（Pangcah）' },
@@ -62,10 +78,14 @@ for (const grp of GROUP_ORDER) {
 
   staticHtml += `\n<section data-group="${grp}">\n  <h2>${meta.heading}</h2>`;
   for (const v of entries) {
-    const name  = v.amis ? `${v.chinese} ${v.amis}` : v.chinese;
-    const venue = v.venue && v.venue !== '—' ? ` · ${v.venue}` : '';
+    const name    = v.amis ? `${v.chinese} ${v.amis}` : v.chinese;
+    const venue   = v.venue && v.venue !== '—' ? ` · ${v.venue}` : '';
+    const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
+    const welcome = v.welcome_date
+      ? `\n    <p>迎賓日：${v.welcome_date}${welcomeTimeText}</p>`
+      : '';
     staticHtml +=
-      `\n  <article>\n    <h3>${name}</h3>\n    <p>${v.county}${v.township} · ${v.date}${venue}</p>\n  </article>`;
+      `\n  <article>\n    <h3>${name}</h3>\n    <p>${v.county}${v.township} · ${v.date}${venue}</p>${welcome}\n  </article>`;
   }
   staticHtml += `\n</section>`;
 }
@@ -100,10 +120,22 @@ const events = confirmed
       isAccessibleForFree: true,
       url: 'https://pokoh.vercel.app/',
     };
-    if (v.lat && v.lng) {
-      ev.location.geo = { '@type': 'GeoCoordinates', latitude: v.lat, longitude: v.lng };
+    const coord = eventCoord(v);
+    if (coord) {
+      ev.location.geo = { '@type': 'GeoCoordinates', latitude: coord[0], longitude: coord[1] };
     }
     if (v.amis) ev.alternateName = [v.amis];
+    if (v.welcome_date) {
+      const wStart = parseStart(v.welcome_date);
+      if (wStart) {
+        ev.subEvent = {
+          '@type': 'Event',
+          name: `${v.chinese} 迎賓日 Welcome Day`,
+          startDate: v.welcome_time ? `${iso(wStart)}T${v.welcome_time}` : iso(wStart),
+          eventStatus: 'https://schema.org/EventScheduled',
+        };
+      }
+    }
     return ev;
   })
   .filter(Boolean);

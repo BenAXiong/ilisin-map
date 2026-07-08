@@ -165,8 +165,10 @@ function renderStrip() {
     const left = v._sd * CELL_W;
     const w    = (v._ed - v._sd + 1) * CELL_W;
     const top  = v._lane * (BAND_H + BAND_GAP);
-    const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}`;
-    bandsHtml += `<div class="tl-band" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="selectBandVillage('${v.id}', ${v._s.getTime()})">
+    const welcomeCls = v.welcome_date ? ' tl-band-welcome' : '';
+    const welcomeTip = v.welcome_date ? ` · 迎賓 ${v.welcome_date}` : '';
+    const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}${welcomeTip}`;
+    bandsHtml += `<div class="tl-band${welcomeCls}" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="selectBandVillage('${v.id}', ${v._s.getTime()})">
       <span class="tl-band-label">${v.chinese}</span>
     </div>`;
   });

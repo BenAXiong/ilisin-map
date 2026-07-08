@@ -43,8 +43,8 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 | `app.css` | All styles. CSS custom property theme system (`--fs-*`, `--c-*`, `data-theme` attr) |
 | `app.js` | Shared utilities, theme, tab switching, PWA, SW registration, boot |
 | `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `EVENTS` |
-| `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts) + `BULUO_UNCOVERED` (unmatched) |
-| `schedule.js` | Hand-curated. `SCHEDULE_DETAILS` (per-village sub-events/迎賓日/poster/history) + `SCHEDULE_POSTERS` (poster images shared by `src`) |
+| `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts, incl. `lat`/`lng`/`coord_precision`) + `BULUO_UNCOVERED` (unmatched) |
+| `schedule.js` | Hand-curated. `SCHEDULE_DETAILS` (per-village sub-events/poster/history) + `SCHEDULE_POSTERS` (poster images shared by `src`) |
 | `js/timeline.js` | Timeline tab — month strip, day cards, county filter |
 | `js/map.js` | Map tab — Leaflet init, markers, bottom sheet, drag |
 | `js/search.js` | Search tab — filter, recents, IME support |
@@ -96,6 +96,40 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   `group` itself is always the corrected, actual ethnicity). See
   `docs/DATA-SOURCES.md` §9.
 - `date` formats: `'7/25 六'`, `'7/3 五–7/11 六'`, `'8月下旬'`, `'停辦'`
+- `welcome_date`/`welcome_time` — optional scalars, 迎賓日 (welcome day).
+  `welcome_date` is a bare `'M/D'` (no weekday suffix, unlike `date`);
+  `welcome_time` is `'HH:MM'`. Read by `cardBodyHtml()`/timeline band
+  rendering (`app.js`/`js/timeline.js`) and emitted into prerendered static
+  HTML + JSON-LD `subEvent` (`scripts/prerender.js`) — promoted here from
+  `schedule.js` specifically so those consumers don't need a second lookup.
+- `venueOverride` — optional `true`, hand-set. Marks an entry whose own
+  `lat`/`lng` is authoritative even though it has a `buluo_id` — used for the
+  rare case where a festival is genuinely held somewhere other than the
+  buluo's own community (not yet used by any entry as of 2026-07-09; flag it
+  when you identify one, along with a `note` explaining the divergence).
+  Without this flag, a matched entry's *effective* coordinate is resolved by
+  `eventCoord()`, not read directly from `v.lat`/`v.lng` — see below.
+
+**Coordinate resolution (`eventCoord(v)` in `app.js`, mirrored in
+`scripts/prerender.js`):** buluo identity/location now lives in the shared
+`Datasets/buluo/*.json` db (`lat`/`lng`/`coord_precision`, threaded into
+`BULUO_REF` by `build_buluo_ref.js` — see below), not duplicated per-project.
+Every place that plots a pin or emits geo data calls `eventCoord(v)` instead
+of reading `v.lat`/`v.lng` directly (`js/map.js`'s marker/bounds/fit-to-filter
+code, `app.js`'s maps-link fallback, `scripts/prerender.js`'s JSON-LD `geo`).
+Priority: (1) `venueOverride:true` → the entry's own `lat`/`lng`; (2)
+`BULUO_REF[buluo_id].coord_precision === 'exact'` → inherit that; (3) the
+entry's own `lat`/`lng` (usually still a township-level approximation,
+shared across every buluo in the same township — kept as a fallback so nothing
+regresses while `BULUO_REF` coverage is incomplete); (4) `BULUO_REF`'s
+coordinate at any precision; (5) `null` (no pin). **Never trust a
+same-looking coordinate across 2+ distinct buluo as real precision** — if a
+new source claims per-venue coordinates, check whether it secretly reuses one
+value across multiple buluo (a township-centroid artifact baked into *that*
+source) before adopting it as `'exact'`. Also check any existing `note` on
+the entry before overwriting its coordinate — a prior manual correction (e.g.
+`tt-ly-03`, which reverted an implausible scraped coordinate) can look like a
+stale/upgradeable value to a heuristic that doesn't read prose.
 
 Adding a new non-`ami` `group` value requires wiring it in 3 places, or the entry
 silently vanishes from prerendered output: (1) `GROUP_FILES` in
@@ -113,9 +147,7 @@ the entry's own `SOURCES[v.src].url` since the poster and the schedule data
 usually share a source), `days` (day-by-day sub-event breakdown, only
 when a source gives one — `[{date,zh,name,desc_zh?,desc_en?}]`; **one event
 per row** — if a single day has multiple named sub-events, give each its own
-`days` entry rather than combining names into one row), `welcome`
-(`{date,time}` — 迎賓日, **separate info from `days`**, rendered in the
-overlay header, not the schedule list), `history` (hand-authored prose —
+`days` entry rather than combining names into one row), `history` (hand-authored prose —
 deliberately *not* sourced from `BULUO_REF.notes`, which is internal
 provenance text, not visitor-facing copy). `SCHEDULE_POSTERS` is a fallback
 keyed by `src` (the `SOURCES` key), so one poster image can cover every

@@ -1,8 +1,11 @@
 // ── Schedule detail ─────────────────────────────────────────────
-// Hand-curated per-EVENTS-entry schedule detail: sub-events, welcome-day
-// (迎賓日) info, poster image, optional history prose. Keyed by EVENTS.id,
-// not buluo_id — this data is festival-instance/year-specific, unlike the
-// enduring identity facts in BULUO_REF (buluo-ref.js).
+// Hand-curated per-EVENTS-entry schedule detail: sub-events, poster image,
+// optional history prose. Keyed by EVENTS.id, not buluo_id — this data is
+// festival-instance/year-specific, unlike the enduring identity facts in
+// BULUO_REF (buluo-ref.js). (迎賓日/welcome-day info lives directly on
+// EVENTS as `welcome_date`/`welcome_time` — see data.js — since it's a
+// simple scalar fact needed by card/badge/prerender rendering, not
+// overlay-only content like the fields below.)
 //
 // Shape per entry (all keys optional):
 //   poster:  { url, credit, creditUrl?, kind } — kind: 'lineup' | 'summary'.
@@ -14,9 +17,6 @@
 //            One event per row — if a single day has multiple named
 //            sub-events, give each its own `days` entry (same `date` is
 //            fine) rather than combining names/zh into one row.
-//   welcome: { date, time }                — 迎賓日, separate info from
-//            `days`, not a row inside it and not merged into any schedule
-//            text. Rendered in the overlay's header, not the schedule list.
 //   history: string                        — hand-authored cultural/history
 //            prose. Deliberately NOT sourced from BULUO_REF.notes, which is
 //            internal data-provenance text, not visitor-facing copy.
@@ -39,32 +39,6 @@ const SCHEDULE_DETAILS = {
       { date: "7/11 六",       zh: '歌舞競賽歡慶',       name: "Pipipay" },
     ],
   },
-  'tt-cg-05': { // 小馬部落 Piyoxo — 成功鎮 115年度各部落歲時祭儀期程表
-    welcome: { date: '7/11', time: '08:00' },
-  },
-  // 2026-07 taitung-festival.vercel.app scrape (src: tt_zhishi) — welcome-day
-  // info for the batch of newly-added 臺東縣 buluo (see docs/DATA-SOURCES.md).
-  'tt-tt-13': { welcome: { date: '7/10', time: '10:00' } },
-  'tt-tt-14': { welcome: { date: '7/11', time: '11:00' } },
-  'tt-tt-15': { welcome: { date: '7/11', time: '10:00' } },
-  'tt-tt-16': { welcome: { date: '7/9', time: '10:00' } },
-  'tt-tt-17': { welcome: { date: '7/11', time: '19:30' } },
-  'tt-tt-18': { welcome: { date: '7/12', time: '19:00' } },
-  'tt-tt-19': { welcome: { date: '7/12', time: '13:30' } },
-  'tt-tt-20': { welcome: { date: '7/11', time: '10:00' } },
-  'tt-tt-21': { welcome: { date: '7/18', time: '09:30' } },
-  'tt-bn-09': { welcome: { date: '7/11', time: '15:00' } },
-  'tt-cb-15': { welcome: { date: '7/12', time: '18:00' } },
-  'tt-ly-01': { welcome: { date: '7/11', time: '20:00' } },
-  'tt-ly-02': { welcome: { date: '7/11', time: '00:00' } },
-  'tt-ly-03': { welcome: { date: '7/18', time: '10:00' } },
-  'tt-ly-04': { welcome: { date: '7/18', time: '15:00' } },
-  'tt-ly-05': { welcome: { date: '8/1', time: '19:30' } },
-  'tt-gs-01': { welcome: { date: '8/8', time: '11:00' } },
-  'tt-gs-02': { welcome: { date: '8/9', time: '11:00' } },
-  'tt-gs-03': { welcome: { date: '8/16', time: '11:00' } },
-  'tt-gs-04': { welcome: { date: '8/16', time: '11:00' } },
-  'tt-gs-05': { welcome: { date: '8/22', time: '17:30' } },
 };
 
 // Poster images shared by many EVENTS entries via the same data-source

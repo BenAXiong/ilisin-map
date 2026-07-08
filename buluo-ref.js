@@ -2520,13 +2520,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.120098,
+    "lng": 121.215,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2540,13 +2541,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.12589,
+    "lng": 121.229558,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2560,13 +2562,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.132891,
+    "lng": 121.187514,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2580,13 +2583,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.121651,
+    "lng": 121.211548,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2600,13 +2604,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.120775,
+    "lng": 121.231538,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2620,13 +2625,14 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.128855,
+    "lng": 121.216011,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2640,13 +2646,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.101907,
+    "lng": 121.196677,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2664,14 +2671,15 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.042471,
+    "lng": 121.195223,
+    "coord_precision": "exact",
     "status": "verified",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）",
-      "臺灣原住民族事典 (aborgpedia.alcd.center)"
+      "臺灣原住民族事典 (aborgpedia.alcd.center)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "CIP gazette confirms the current name. 2024年（113年）由「振興部落 Muliyaw」更名為「白毛寮部落 Moliyaw」（原民會公告，aborgpedia 交叉確認）；前名稱保留為 chinese_name_alt／indigenous_name_alt。",
     "chiefs": [],
@@ -2685,13 +2693,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.082052,
+    "lng": 121.221428,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2705,13 +2714,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.104947,
+    "lng": 121.380296,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2725,13 +2735,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.092644,
+    "lng": 121.356648,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2745,13 +2756,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.153589,
+    "lng": 121.398555,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2765,13 +2777,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.104367,
+    "lng": 121.374989,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2785,13 +2798,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.993877,
+    "lng": 121.314598,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2805,13 +2819,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.028674,
+    "lng": 121.331374,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2825,13 +2840,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.169996,
+    "lng": 121.40346,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2845,13 +2861,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.19183,
+    "lng": 121.395979,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2885,13 +2902,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.126775,
+    "lng": 121.402,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2905,13 +2923,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.157682,
+    "lng": 121.400691,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2925,13 +2944,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.209485,
+    "lng": 121.398916,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2945,13 +2965,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.050669,
+    "lng": 121.338858,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2965,13 +2986,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.07517,
+    "lng": 121.35256,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2985,13 +3007,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.34172,
+    "lng": 121.46273,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3005,13 +3028,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.32941,
+    "lng": 121.46214,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3042,13 +3066,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.40734,
+    "lng": 121.45908,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3062,13 +3087,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.29605,
+    "lng": 121.43408,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3082,13 +3108,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.3558,
+    "lng": 121.46877,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3102,13 +3129,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.4157,
+    "lng": 121.48473,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3122,13 +3150,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.23512,
+    "lng": 121.41338,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3142,13 +3171,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.22337,
+    "lng": 121.41404,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3164,13 +3194,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.38015,
+    "lng": 121.4726,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands.",
     "chiefs": [],
@@ -3184,13 +3215,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.25319,
+    "lng": 121.41816,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3204,13 +3236,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.24725,
+    "lng": 121.41322,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3224,13 +3257,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.43332,
+    "lng": 121.49139,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3512,12 +3546,13 @@ const BULUO_REF = {
     "indigenous_name": "Tamalakaw",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.802303,
+    "lng": 121.066804,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3546,12 +3581,13 @@ const BULUO_REF = {
     "indigenous_name": "Pinaski",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.801299,
+    "lng": 121.094778,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3563,12 +3599,13 @@ const BULUO_REF = {
     "indigenous_name": "Ulivelivek",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.856911,
+    "lng": 121.090235,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3580,12 +3617,13 @@ const BULUO_REF = {
     "indigenous_name": "A'lripay",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.814953,
+    "lng": 121.087696,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3636,13 +3674,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.766092,
+    "lng": 121.138461,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "CIP gazette confirms 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30.",
     "chiefs": [],
@@ -3654,12 +3693,13 @@ const BULUO_REF = {
     "indigenous_name": "Kalaluran",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.76196,
+    "lng": 121.067109,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3693,13 +3733,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.769082,
+    "lng": 121.117833,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3730,13 +3771,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.755652,
+    "lng": 121.12004,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3750,13 +3792,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.740138,
+    "lng": 121.137275,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3770,13 +3813,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.764234,
+    "lng": 121.154625,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3805,12 +3849,13 @@ const BULUO_REF = {
     "indigenous_name": "Puyuma",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.787393,
+    "lng": 121.11358,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3824,13 +3869,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.786357,
+    "lng": 121.130345,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3844,13 +3890,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.736006,
+    "lng": 121.119305,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3864,13 +3911,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.771096,
+    "lng": 121.133651,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "CIP gazette confirms 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, matching the CIP gazette value — closed.",
     "chiefs": [],
@@ -3884,13 +3932,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.738447,
+    "lng": 121.125807,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3904,13 +3953,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.782816,
+    "lng": 121.161629,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3924,13 +3974,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.792248,
+    "lng": 121.185205,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3944,13 +3995,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.810601,
+    "lng": 121.188137,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3964,13 +4016,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.749002,
+    "lng": 121.133169,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3984,13 +4037,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.759173,
+    "lng": 121.054753,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4429,13 +4483,14 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.532072,
+    "lng": 120.95338,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4469,13 +4524,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.604038,
+    "lng": 121.000884,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4489,13 +4545,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.692789,
+    "lng": 121.044661,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4507,12 +4564,13 @@ const BULUO_REF = {
     "indigenous_name": "Padrangigrang",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.533044,
+    "lng": 120.938609,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4524,12 +4582,13 @@ const BULUO_REF = {
     "indigenous_name": "Lupakatj",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.630601,
+    "lng": 121.004729,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4592,12 +4651,13 @@ const BULUO_REF = {
     "indigenous_name": "Kiring",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.470251,
+    "lng": 120.937073,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4609,12 +4669,13 @@ const BULUO_REF = {
     "indigenous_name": "Tjatjigel",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.485337,
+    "lng": 120.944431,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4626,12 +4687,13 @@ const BULUO_REF = {
     "indigenous_name": "Tjavualji",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.614056,
+    "lng": 121.004031,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4643,12 +4705,13 @@ const BULUO_REF = {
     "indigenous_name": "Calavi",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.508716,
+    "lng": 120.956926,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4728,12 +4791,13 @@ const BULUO_REF = {
     "indigenous_name": "Seqalapit",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.42129,
+    "lng": 120.93056,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4764,13 +4828,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.937634,
+    "lng": 121.142257,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4784,15 +4849,15 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.97,
+    "lng": 121.15,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "",
+    "notes": "座標：taitung-festival.vercel.app 提供的座標（22.097479, 121.172805）明顯偏離鹿野鄉其他部落（皆約北緯22.9–23.0度），研判為來源資料誤植，改用鹿野鄉概略座標（township 等級）。見 Pokoh data.js tt-ly-03 entry 的 note 欄位，同一發現。",
     "chiefs": [],
     "contact": []
   },
@@ -4804,13 +4869,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.931221,
+    "lng": 121.138782,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4824,13 +4890,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.979323,
+    "lng": 121.155733,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4844,13 +4911,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.007585,
+    "lng": 121.173603,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4864,13 +4932,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.009322,
+    "lng": 121.153141,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4884,13 +4953,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.074798,
+    "lng": 121.177566,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4904,13 +4974,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.035166,
+    "lng": 121.163457,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4924,13 +4995,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.046057,
+    "lng": 121.172109,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
     ],
     "notes": "",
     "chiefs": [],

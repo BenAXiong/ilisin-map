@@ -93,12 +93,12 @@ function renderTownshipChips() {
 
 function fitToFilter() {
   if (!leafletMap) return;
-  const vs = filteredEvents().filter(v => v.lat && v.lng);
-  if (!vs.length) return;
-  if (vs.length === 1) {
-    leafletMap.setView([vs[0].lat, vs[0].lng], 13, { animate: true });
+  const coords = filteredEvents().map(eventCoord).filter(Boolean);
+  if (!coords.length) return;
+  if (coords.length === 1) {
+    leafletMap.setView(coords[0], 13, { animate: true });
   } else {
-    leafletMap.fitBounds(vs.map(v => [v.lat, v.lng]), { padding: [40, 40], maxZoom: 14, animate: true });
+    leafletMap.fitBounds(coords, { padding: [40, 40], maxZoom: 14, animate: true });
   }
 }
 
@@ -160,7 +160,8 @@ function activateVillage(id) {
 
 function goToMapVillage(id) {
   const v = EVENTS.find(x => x.id === id);
-  if (!v || !v.lat || !v.lng) return;
+  const coord = v && eventCoord(v);
+  if (!coord) return;
   switchTab('map');
   setTimeout(() => {
     if (!leafletMap) return;
@@ -177,7 +178,7 @@ function goToMapVillage(id) {
     if (marker && clusterGroup.hasLayer(marker)) {
       clusterGroup.zoomToShowLayer(marker, () => {});
     } else {
-      leafletMap.setView([v.lat, v.lng], 16, { animate: true });
+      leafletMap.setView(coord, 16, { animate: true });
     }
   }, leafletMap ? 0 : 400);
 }
@@ -187,8 +188,10 @@ function updateMarkers() {
   clusterGroup.clearLayers();
   markers = {};
 
-  filteredEvents().filter(v => v.lat && v.lng).forEach(v => {
-    const m = L.marker([v.lat, v.lng], { icon: makeIcon(v.status, false) });
+  filteredEvents().forEach(v => {
+    const coord = eventCoord(v);
+    if (!coord) return;
+    const m = L.marker(coord, { icon: makeIcon(v.status, false) });
     m.on('click', () => {
       if (TAP_NEXT === v.id) {
         setSheetState('full');
@@ -257,9 +260,7 @@ function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
 
-  const bounds = visibleEvents()
-    .filter(v => v.lat && v.lng)
-    .map(v => [v.lat, v.lng]);
+  const bounds = visibleEvents().map(eventCoord).filter(Boolean);
 
   // tap:false disables Leaflet's own touch-tap emulation shim (L.Map.Tap),
   // which exists only to work around old Android browsers' ~300ms ghost-click

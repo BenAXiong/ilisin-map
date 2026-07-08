@@ -253,6 +253,19 @@ body.tab-info .app-header { display: none; }
   background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.55) h);
   padding: 0 5px;
 }
+/* Small corner dot, not a label — bands can be as narrow as one day, no
+   room for welcome-day text alongside .tl-band-label. Full info lives in
+   the existing hover tooltip (data-tip) instead. */
+.tl-band-welcome::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--terra);
+}
 .tl-band-label {
   width: 100%;
   font-family: var(--mono);
@@ -551,6 +564,7 @@ body.tab-info .app-header { display: none; }
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
 .card-amis-alt { font-family: var(--mono); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); letter-spacing: .03em; margin-left: .25rem; }
+.card-top-right { display: flex; flex-direction: column; align-items: flex-end; gap: .2rem; }
 .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
 /* Inverse of the .card-amis fix above: the weekday character (五/六/日…) is
    CJK inside an otherwise-Latin/numeral mono string, so at the same
@@ -559,6 +573,18 @@ body.tab-info .app-header { display: none; }
 .card-date-weekday { font-size: 0.86em; }
 .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
 .card-tbd .card-date       { color: var(--text-3); }
+/* Same terra palette as .detail-welcome, sized down to fit inline under
+   .card-date in the tight .card-top row instead of as a standalone pill. */
+.card-welcome {
+  display: inline-block;
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  color: var(--terra);
+  border: 1px solid var(--terra-pale);
+  border-radius: 99px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
 .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
 .card-venue  {
   font-size: var(--fs-sm);

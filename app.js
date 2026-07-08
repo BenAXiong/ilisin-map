@@ -59,6 +59,26 @@ function indigenousNameInfo(v) {
   return { ref, latinName, tooltipParts };
 }
 
+// Resolves the best available coordinate for an EVENTS entry. Priority:
+// 1. `venueOverride:true` — hand-curated flag for the rare case where the
+//    festival is genuinely held somewhere other than the buluo's own
+//    community (not the default; must be set explicitly per entry).
+// 2. BULUO_REF's coordinate, if it's been geocoded to real (`'exact'`)
+//    precision — buluo identity/location now lives in the shared
+//    Datasets/buluo db, not duplicated per-project.
+// 3. This entry's own lat/lng — usually still just a township-level
+//    approximation, kept as a fallback so nothing regresses while BULUO_REF
+//    coverage is incomplete.
+// 4. BULUO_REF's coordinate at any precision, else null (no pin).
+function eventCoord(v) {
+  if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
+  const ref = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
+  if (ref?.coord_precision === 'exact' && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  if (v.lat != null && v.lng != null) return [v.lat, v.lng];
+  if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  return null;
+}
+
 // `showAmis: false` omits the indigenous name from this block — used by the
 // detail overlay, which shows it in its own sticky header instead.
 function namesHtml(v, { showAmis = true } = {}) {
@@ -83,24 +103,35 @@ function namesHtml(v, { showAmis = true } = {}) {
 function getScheduleDetail(v) {
   const d = (typeof SCHEDULE_DETAILS !== 'undefined' && SCHEDULE_DETAILS[v.id]) || null;
   const poster = d?.poster || (typeof SCHEDULE_POSTERS !== 'undefined' && SCHEDULE_POSTERS[v.src]) || null;
-  return { poster, welcome: d?.welcome || null, days: d?.days || null, history: d?.history || null };
+  return { poster, days: d?.days || null, history: d?.history || null };
 }
 
 // The name/date/venue/source block shared by the card list view and the
 // detail overlay's header — so the overlay reads as the same card, just
 // expanded in place, not a differently-laid-out summary.
-function cardBodyHtml(v, nameOpts) {
+// `showWelcome: false` (used by the detail overlay) omits the inline badge
+// since that view renders its own larger `.detail-welcome` pill instead —
+// avoids showing 迎賓日 info twice in the same header.
+function cardBodyHtml(v, { showWelcome = true, ...nameOpts } = {}) {
   const sourceHtml = `<a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${SOURCES[v.src].label} ↗</a>`;
   const hasVenue   = v.venue && v.venue !== '—';
+  const coord      = eventCoord(v);
   const mapsUrl    = hasVenue
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
-    : `https://www.google.com/maps/search/?api=1&query=${v.lat},${v.lng}`;
+    : `https://www.google.com/maps/search/?api=1&query=${coord?.[0]},${coord?.[1]}`;
   const venueHtml  = hasVenue
     ? `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span class="card-venue-text">${v.venue}</span></a>`
     : '';
+  const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
+  const welcomeHtml = (showWelcome && v.welcome_date)
+    ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
+    : '';
   return `<div class="card-top">
       ${namesHtml(v, nameOpts)}
-      <span class="card-date">${dateHtml(v.date)}</span>
+      <div class="card-top-right">
+        <span class="card-date">${dateHtml(v.date)}</span>
+        ${welcomeHtml}
+      </div>
     </div>
     <div class="card-meta">${venueHtml}${sourceHtml}</div>`;
 }
