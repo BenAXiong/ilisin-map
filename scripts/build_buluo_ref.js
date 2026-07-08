@@ -148,6 +148,8 @@ for (const id of matchedIds) {
     status: r.status,
     sources: r.sources.map(s => (sourcesReg[s] || {}).label || s),
     notes: r.notes,
+    chiefs: (r.chiefs || []).map(c => ({ ...c, sources: c.sources.map(s => sourcesReg[s]?.label || s) })),
+    contact: (r.contact || []).map(c => ({ ...c, sources: c.sources.map(s => sourcesReg[s]?.label || s) })),
   };
 }
 

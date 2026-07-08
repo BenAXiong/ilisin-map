@@ -16,7 +16,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-katanka": {
     "chinese_name": "佳林部落",
@@ -31,7 +33,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-palinkaan": {
     "chinese_name": "復興部落",
@@ -46,7 +50,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lalumaang": {
     "chinese_name": "東方羅馬部落",
@@ -61,7 +67,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pacidal": {
     "chinese_name": "華陽部落",
@@ -76,7 +84,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-hupu": {
     "chinese_name": "北埔部落",
@@ -91,7 +101,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kaliyawan": {
     "chinese_name": "嘉里部落",
@@ -106,7 +118,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-paudadan": {
     "chinese_name": "大德（巴烏拉藍）部落",
@@ -121,7 +135,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cilapuk": {
     "chinese_name": "嘉新部落",
@@ -136,7 +152,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pabuisan": {
     "chinese_name": "北星部落",
@@ -151,7 +169,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pibutingan": {
     "chinese_name": "順安部落",
@@ -166,7 +186,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-patirengan": {
     "chinese_name": "立業部落",
@@ -180,7 +202,9 @@ const BULUO_REF = {
     "sources": [
       "豐年祭 地圖/data.js (Pokoh)"
     ],
-    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived."
+    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sudadatan": {
     "chinese_name": "新城部落",
@@ -195,7 +219,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kanian": {
     "chinese_name": "嘎尼按部落",
@@ -210,7 +236,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-singsiya": {
     "chinese_name": "新夏部落",
@@ -225,7 +253,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciku": {
     "chinese_name": "磯固部落",
@@ -240,7 +270,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cipawkan": {
     "chinese_name": "德安部落",
@@ -255,7 +287,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cikep": {
     "chinese_name": "幾可普部落",
@@ -270,7 +304,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kenuy": {
     "chinese_name": "根努夷部落",
@@ -285,7 +321,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lasutan": {
     "chinese_name": "拉署旦部落",
@@ -300,7 +338,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tasutasunan": {
     "chinese_name": "達蘇達蘇湳部落",
@@ -315,7 +355,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "sakizaya-sakur": {
     "chinese_name": "撒固兒部落",
@@ -327,7 +369,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cibarbaran": {
     "chinese_name": "主農部落",
@@ -342,7 +386,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tuwapun": {
     "chinese_name": "華東部落",
@@ -357,7 +403,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciripunan": {
     "chinese_name": "慶豐部落",
@@ -372,7 +420,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-isaetipan-pahikukian": {
     "chinese_name": "仁和部落",
@@ -387,7 +437,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cikeliwan": {
     "chinese_name": "歌柳灣部落",
@@ -402,7 +454,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-taracan": {
     "chinese_name": "達拉贊部落",
@@ -417,7 +471,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kungkung": {
     "chinese_name": "大鼓部落",
@@ -432,7 +488,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-citekudan": {
     "chinese_name": "小台東部落",
@@ -447,7 +505,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pukpuk": {
     "chinese_name": "簿簿部落",
@@ -462,7 +522,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-atonan": {
     "chinese_name": "阿都南部落",
@@ -477,7 +539,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sarad": {
     "chinese_name": "撒樂部落",
@@ -492,7 +556,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciyibangcalay": {
     "chinese_name": "吉野汎扎萊部落",
@@ -507,7 +573,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-mabuwakay": {
     "chinese_name": "南華部落",
@@ -522,7 +590,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sirakesay": {
     "chinese_name": "永安部落",
@@ -537,7 +607,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cikasuwan": {
     "chinese_name": "七腳川部落",
@@ -552,7 +624,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lidaw": {
     "chinese_name": "里漏部落",
@@ -567,7 +641,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-hacining": {
     "chinese_name": "干城部落",
@@ -582,7 +658,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-natawran": {
     "chinese_name": "那荳蘭部落",
@@ -597,7 +675,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-buner": {
     "chinese_name": "宜昌部落",
@@ -612,7 +692,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-isawalian-pahikukian": {
     "chinese_name": "仁安部落",
@@ -627,7 +709,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fulufuluan": {
     "chinese_name": "勝安部落",
@@ -642,7 +726,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tdlu": {
     "chinese_name": "豐裡部落",
@@ -657,7 +743,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cealalupalantdlu": {
     "chinese_name": "豐山部落",
@@ -672,7 +760,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cihak": {
     "chinese_name": "志學部落",
@@ -687,7 +777,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cipuypuyan": {
     "chinese_name": "米棧部落",
@@ -702,7 +794,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-adetuman": {
     "chinese_name": "平和部落",
@@ -717,7 +811,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-banaw": {
     "chinese_name": "池南部落",
@@ -732,7 +828,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-telu": {
     "chinese_name": "豐坪部落",
@@ -747,7 +845,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tumay": {
     "chinese_name": "鹽寮部落",
@@ -762,7 +862,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciwidiyan": {
     "chinese_name": "水璉部落",
@@ -777,7 +879,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-rinahem": {
     "chinese_name": "光榮部落",
@@ -792,7 +896,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kiku": {
     "chinese_name": "溪口部落",
@@ -807,7 +913,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciamengan": {
     "chinese_name": "壽豐部落",
@@ -822,7 +930,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sawanengan": {
     "chinese_name": "共和部落",
@@ -837,7 +947,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-taukak": {
     "chinese_name": "樹湖部落",
@@ -852,7 +964,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sariwsiw": {
     "chinese_name": "大榮部落",
@@ -867,7 +981,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cirakayan": {
     "chinese_name": "山興部落",
@@ -882,7 +998,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cingaroan": {
     "chinese_name": "鳳信部落",
@@ -897,7 +1015,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciloohay": {
     "chinese_name": "森榮部落",
@@ -912,7 +1032,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tangahang": {
     "chinese_name": "長橋部落",
@@ -927,7 +1049,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cihafayan": {
     "chinese_name": "中興部落",
@@ -942,7 +1066,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-atomo": {
     "chinese_name": "阿陶模部落",
@@ -957,7 +1083,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-alolong": {
     "chinese_name": "阿囉隆部落",
@@ -972,7 +1100,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sado": {
     "chinese_name": "砂荖部落",
@@ -987,7 +1117,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lasoay": {
     "chinese_name": "拉索艾部落",
@@ -1002,7 +1134,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kalotong": {
     "chinese_name": "加里洞部落",
@@ -1017,7 +1151,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fata-an": {
     "chinese_name": "馬太鞍部落",
@@ -1032,7 +1168,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tafalong": {
     "chinese_name": "太巴塱部落",
@@ -1047,7 +1185,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fahol": {
     "chinese_name": "馬佛部落",
@@ -1062,7 +1202,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-o-kakay": {
     "chinese_name": "烏卡蓋部落",
@@ -1077,7 +1219,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tafugan": {
     "chinese_name": "三富橋部落",
@@ -1094,7 +1238,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tafugan'. temp_dialects separately recorded 'Tafogan' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
+    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tafugan'. temp_dialects separately recorded 'Tafogan' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tisilan": {
     "chinese_name": "靜安部落",
@@ -1109,7 +1255,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cawi": {
     "chinese_name": "靜浦部落",
@@ -1124,7 +1272,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-laeno": {
     "chinese_name": "大港口部落",
@@ -1139,7 +1289,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-makotaay-fengbin": {
     "chinese_name": "港口部落",
@@ -1154,7 +1306,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette lists 'Makotaay' for this buluo too — the earlier suspicion that this was a copy-paste duplicate of ami-makotaay-yuli (瑪谷達璦部落, 玉里鎮) is resolved: both genuinely share the name within the same single source. Settled."
+    "notes": "CIP gazette lists 'Makotaay' for this buluo too — the earlier suspicion that this was a copy-paste duplicate of ami-makotaay-yuli (瑪谷達璦部落, 玉里鎮) is resolved: both genuinely share the name within the same single source. Settled.",
+    "chiefs": [],
+    "contact": []
   },
   "kavalan-kodic": {
     "chinese_name": "立德部落",
@@ -1166,7 +1320,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-malaloong": {
     "chinese_name": "東興部落",
@@ -1181,7 +1337,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-haciliwan": {
     "chinese_name": "八里灣部落",
@@ -1196,7 +1354,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "kavalan-paterungan": {
     "chinese_name": "新社部落",
@@ -1208,7 +1368,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fakong": {
     "chinese_name": "豐濱部落",
@@ -1223,7 +1385,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tingalaw": {
     "chinese_name": "豐富部落",
@@ -1238,7 +1402,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fanaw": {
     "chinese_name": "法淖部落",
@@ -1253,7 +1419,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-olalip": {
     "chinese_name": "屋拉力部落",
@@ -1268,7 +1436,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ukang": {
     "chinese_name": "烏槓部落",
@@ -1283,7 +1453,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-narowan": {
     "chinese_name": "娜魯灣部落",
@@ -1298,7 +1470,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sapat": {
     "chinese_name": "掃叭頂部落",
@@ -1313,7 +1487,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-olaw": {
     "chinese_name": "梧繞部落",
@@ -1328,7 +1504,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lacihakan": {
     "chinese_name": "拉基禾幹部落",
@@ -1343,7 +1521,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-koyo": {
     "chinese_name": "溫泉部落",
@@ -1358,7 +1538,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "sakizaya-maifor": {
     "chinese_name": "馬立雲部落",
@@ -1370,7 +1552,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-marorok": {
     "chinese_name": "馬聚集部落",
@@ -1385,7 +1569,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-morocan": {
     "chinese_name": "牧魯棧部落",
@@ -1400,7 +1586,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-atolan": {
     "chinese_name": "阿多瀾部落",
@@ -1415,7 +1603,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-langas": {
     "chinese_name": "拉加善部落",
@@ -1430,7 +1620,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cirocan": {
     "chinese_name": "鶺櫓棧部落",
@@ -1445,7 +1637,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kalala": {
     "chinese_name": "迦納納部落",
@@ -1460,7 +1654,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kiwit": {
     "chinese_name": "奇美部落",
@@ -1475,7 +1671,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-patawlinan": {
     "chinese_name": "巴島力安部落",
@@ -1490,7 +1688,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-posko": {
     "chinese_name": "璞石閣部落",
@@ -1505,7 +1705,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cilakesay": {
     "chinese_name": "吉拉格賽部落",
@@ -1520,7 +1722,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-namisan": {
     "chinese_name": "拿彌散部落",
@@ -1535,7 +1739,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-satefo": {
     "chinese_name": "下德武部落",
@@ -1550,7 +1756,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-matadim": {
     "chinese_name": "馬太林部落",
@@ -1565,7 +1773,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cinemnemay": {
     "chinese_name": "吉能能麥部落",
@@ -1580,7 +1790,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lingacay": {
     "chinese_name": "苓雅仔部落",
@@ -1595,7 +1807,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-harawan": {
     "chinese_name": "哈拉灣部落",
@@ -1610,7 +1824,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ceroh": {
     "chinese_name": "春日部落",
@@ -1625,7 +1841,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-afih": {
     "chinese_name": "阿飛赫部落",
@@ -1640,7 +1858,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tokar": {
     "chinese_name": "都旮薾部落",
@@ -1655,7 +1875,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-angcoh": {
     "chinese_name": "安通部落",
@@ -1670,7 +1892,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-makotaay-yuli": {
     "chinese_name": "瑪谷達璦部落",
@@ -1685,7 +1909,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette lists 'Makotaay' for this buluo too — see ami-makotaay-fengbin (港口部落, 豐濱鄉), which shares the same indigenous name. Confirmed as a real coincidence within the same single source, not a transcription error."
+    "notes": "CIP gazette lists 'Makotaay' for this buluo too — see ami-makotaay-fengbin (港口部落, 豐濱鄉), which shares the same indigenous name. Confirmed as a real coincidence within the same single source, not a transcription error.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lohok": {
     "chinese_name": "洛合谷部落",
@@ -1700,7 +1926,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-mangcelan": {
     "chinese_name": "滿自然部落",
@@ -1715,7 +1943,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-takay": {
     "chinese_name": "達蓋部落",
@@ -1730,7 +1960,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-silangkong": {
     "chinese_name": "喜瑯宮部落",
@@ -1745,7 +1977,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cihakay": {
     "chinese_name": "吉哈蓋部落",
@@ -1760,7 +1994,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sedeng": {
     "chinese_name": "瑟冷部落",
@@ -1775,7 +2011,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-monating": {
     "chinese_name": "姆拉丁部落",
@@ -1790,7 +2028,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cirakesay": {
     "chinese_name": "基拉歌賽",
@@ -1805,7 +2045,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cihalaay": {
     "chinese_name": "黑暗部落",
@@ -1820,7 +2062,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-maliwang": {
     "chinese_name": "馬里旺部落",
@@ -1835,7 +2079,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-lupo": {
     "chinese_name": "露埔部落",
@@ -1850,7 +2096,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cilamitay": {
     "chinese_name": "吉拉米代部落",
@@ -1865,7 +2113,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pacuya": {
     "chinese_name": "巴族耶部落",
@@ -1880,7 +2130,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kalokapuk": {
     "chinese_name": "大埔部落",
@@ -1895,7 +2147,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cipuwa": {
     "chinese_name": "慶豐部落",
@@ -1910,7 +2164,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-dihekoay": {
     "chinese_name": "陸安部落",
@@ -1925,7 +2181,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciataw": {
     "chinese_name": "福原部落",
@@ -1940,7 +2198,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kawaliwali": {
     "chinese_name": "大坡部落",
@@ -1955,7 +2215,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cicalaay": {
     "chinese_name": "福文部落",
@@ -1970,7 +2232,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fangafangasan": {
     "chinese_name": "新興部落",
@@ -1985,7 +2249,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-muliyaw": {
     "chinese_name": "白毛寮部落",
@@ -2005,7 +2271,9 @@ const BULUO_REF = {
       "暫定族語別分類來源（待補充正式引註）",
       "臺灣原住民族事典 (aborgpedia.alcd.center)"
     ],
-    "notes": "CIP gazette confirms the current name. 2024年（113年）由「振興部落 Muliyaw」更名為「白毛寮部落 Moliyaw」（原民會公告，aborgpedia 交叉確認）；前名稱保留為 chinese_name_alt／indigenous_name_alt。"
+    "notes": "CIP gazette confirms the current name. 2024年（113年）由「振興部落 Muliyaw」更名為「白毛寮部落 Moliyaw」（原民會公告，aborgpedia 交叉確認）；前名稱保留為 chinese_name_alt／indigenous_name_alt。",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cikowaay": {
     "chinese_name": "富興部落",
@@ -2020,7 +2288,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kalahaay": {
     "chinese_name": "民豐部落",
@@ -2035,7 +2305,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciliksay": {
     "chinese_name": "麒麟部落",
@@ -2050,7 +2322,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-mararoong": {
     "chinese_name": "美山部落",
@@ -2065,7 +2339,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-madawdaw": {
     "chinese_name": "麻荖漏部落",
@@ -2080,7 +2356,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-piyoxo": {
     "chinese_name": "小馬部落",
@@ -2095,7 +2373,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-torik": {
     "chinese_name": "都歷部落",
@@ -2110,7 +2390,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-dadowacen": {
     "chinese_name": "玉水橋部落",
@@ -2125,7 +2407,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tomiyac": {
     "chinese_name": "重安部落",
@@ -2140,7 +2424,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cirarokohay": {
     "chinese_name": "芝田部落",
@@ -2155,7 +2441,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pisirian": {
     "chinese_name": "比西里岸部落",
@@ -2170,7 +2458,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-folalacay": {
     "chinese_name": "小港部落",
@@ -2185,7 +2475,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-saaniwan": {
     "chinese_name": "宜灣部落",
@@ -2200,7 +2492,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-paongaongan": {
     "chinese_name": "八嗡嗡部落",
@@ -2215,7 +2509,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kahciday": {
     "chinese_name": "和平部落",
@@ -2230,7 +2526,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-makrahay": {
     "chinese_name": "真柄部落",
@@ -2245,7 +2543,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ciwkangan": {
     "chinese_name": "長光(石坑)部落",
@@ -2260,7 +2560,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-nadan": {
     "chinese_name": "南溪布農部落",
@@ -2272,7 +2574,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cikadaan": {
     "chinese_name": "南溪阿美部落",
@@ -2287,7 +2591,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-mornos": {
     "chinese_name": "永福部落",
@@ -2302,7 +2608,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sadipongan": {
     "chinese_name": "三間屋部落",
@@ -2317,7 +2625,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-koladot": {
     "chinese_name": "樟原部落",
@@ -2332,7 +2642,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cidatayay": {
     "chinese_name": "烏石鼻部落",
@@ -2347,7 +2659,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ta-man": {
     "chinese_name": "膽曼部落",
@@ -2362,7 +2676,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-tapowaray-saranawan": {
     "chinese_name": "大俱來部落",
@@ -2379,7 +2695,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands."
+    "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tapowaray或Saranawan'. temp_dialects separately recorded only 'Tapowaray' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pasongan": {
     "chinese_name": "八桑安部落",
@@ -2394,7 +2712,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kinanoka": {
     "chinese_name": "僅那鹿角部落",
@@ -2409,7 +2729,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-asiroay-2": {
     "chinese_name": "阿奚露艾部落",
@@ -2424,7 +2746,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-paanifong": {
     "chinese_name": "巴阿尼豐部落",
@@ -2439,7 +2763,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-kalifangar": {
     "chinese_name": "佳尼發納部落",
@@ -2454,7 +2780,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fafokod": {
     "chinese_name": "發富谷部落",
@@ -2469,7 +2797,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-howak": {
     "chinese_name": "乎哇固部落",
@@ -2484,7 +2814,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-etolan": {
     "chinese_name": "阿度蘭部落",
@@ -2506,7 +2838,32 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [
+      {
+        "chinese_name": null,
+        "indigenous_name": "Akila",
+        "term_start": "2025",
+        "term_end": null,
+        "current": true,
+        "sources": [
+          "Direct correction from project maintainer/community knowledge"
+        ],
+        "notes": "Name and term start recalled by project maintainer from memory, not yet cross-checked against a written source — spelling and date unconfirmed."
+      },
+      {
+        "chinese_name": null,
+        "indigenous_name": "Akira",
+        "term_start": "2019",
+        "term_end": "2025",
+        "current": false,
+        "sources": [
+          "Direct correction from project maintainer/community knowledge"
+        ],
+        "notes": "Name and term dates recalled by project maintainer from memory, not yet cross-checked against a written source — spelling and dates unconfirmed."
+      }
+    ],
+    "contact": []
   },
   "ami-alapawan": {
     "chinese_name": "阿拉巴灣部落",
@@ -2521,7 +2878,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sena": {
     "chinese_name": "順那部落",
@@ -2536,7 +2895,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cilafinan": {
     "chinese_name": "基拉菲婻部落",
@@ -2551,7 +2912,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-maolaway": {
     "chinese_name": "瑪屋撈外部落",
@@ -2566,7 +2929,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-dikidiki": {
     "chinese_name": "利吉部落",
@@ -2581,7 +2946,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-fudafudak": {
     "chinese_name": "莿桐部落",
@@ -2596,7 +2963,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-tamalakaw": {
     "chinese_name": "大巴六九部落",
@@ -2608,7 +2977,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-likavung": {
     "chinese_name": "利嘉部落",
@@ -2620,7 +2991,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-pinaski": {
     "chinese_name": "下賓朗部落",
@@ -2632,7 +3005,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-ulivelivek": {
     "chinese_name": "初鹿部落",
@@ -2644,7 +3019,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-alripay": {
     "chinese_name": "阿里擺部落",
@@ -2656,7 +3033,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-danadanaw": {
     "chinese_name": "龍過脈部落",
@@ -2668,7 +3047,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-falangaw": {
     "chinese_name": "馬蘭部落",
@@ -2683,7 +3064,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "CIP gazette confirms 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30."
+    "notes": "CIP gazette confirms 'Falangaw'. 豐年祭 地圖/data.js (id tt-tt-01, src tt_malan_fb — a Facebook community-health-station page, not an authoritative source) previously had 'Kiluma'an', which was wrong; corrected 2026-06-30.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-kalaluran": {
     "chinese_name": "卡拉魯然部落",
@@ -2695,7 +3078,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-siafulungay": {
     "chinese_name": "建農部落",
@@ -2710,7 +3095,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-asiroay": {
     "chinese_name": "阿西路愛部落",
@@ -2725,7 +3112,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-papulu": {
     "chinese_name": "巴布麓部落",
@@ -2737,7 +3126,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-ining": {
     "chinese_name": "伊濘部落",
@@ -2752,7 +3143,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-matang": {
     "chinese_name": "馬當部落",
@@ -2767,7 +3160,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-pusong": {
     "chinese_name": "布頌部落",
@@ -2782,7 +3177,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-kasavakan": {
     "chinese_name": "射馬干部落",
@@ -2794,7 +3191,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pyu-puyuma": {
     "chinese_name": "普悠瑪部落",
@@ -2806,7 +3205,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kainisungan": {
     "chinese_name": "卡努舒岸部落",
@@ -2818,7 +3219,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kamisatu": {
     "chinese_name": "卡米莎度部落",
@@ -2830,7 +3233,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-talunas": {
     "chinese_name": "達魯那斯部落",
@@ -2842,7 +3247,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-pasikau": {
     "chinese_name": "巴喜告部落",
@@ -2854,7 +3261,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-vakangan": {
     "chinese_name": "瓦岡岸部落",
@@ -2866,7 +3275,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-minami": {
     "chinese_name": "米娜咪部落",
@@ -2878,7 +3289,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kaminu": {
     "chinese_name": "卡米努部落",
@@ -2890,7 +3303,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-su-nun-sung": {
     "chinese_name": "蘇儂頌部落",
@@ -2902,7 +3317,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-nakanu": {
     "chinese_name": "拿卡努部落",
@@ -2914,7 +3331,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kalisahan": {
     "chinese_name": "卡里沙汗部落",
@@ -2926,7 +3345,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-buklavu": {
     "chinese_name": "布谷拉夫部落",
@@ -2938,7 +3359,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-litu": {
     "chinese_name": "利稻部落",
@@ -2950,7 +3373,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-tuapuu": {
     "chinese_name": "大埔部落",
@@ -2962,7 +3387,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-takimi": {
     "chinese_name": "龍泉部落",
@@ -2974,7 +3401,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-likau-uan": {
     "chinese_name": "錦屏部落",
@@ -2986,7 +3415,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-vahu": {
     "chinese_name": "下馬部落",
@@ -2998,7 +3429,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-bulbul": {
     "chinese_name": "霧鹿部落",
@@ -3010,7 +3443,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kamcing": {
     "chinese_name": "崁頂部落",
@@ -3022,7 +3457,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kusunuki": {
     "chinese_name": "紅石部落",
@@ -3034,7 +3471,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-haitutuan": {
     "chinese_name": "山平部落",
@@ -3046,7 +3485,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kanahcian": {
     "chinese_name": "加和部落",
@@ -3058,7 +3499,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-kanaluk": {
     "chinese_name": "加樂部落",
@@ -3070,7 +3513,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-bacingul": {
     "chinese_name": "加平部落",
@@ -3082,7 +3527,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-samuluh": {
     "chinese_name": "新武部落",
@@ -3094,7 +3541,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "bnn-sulai-iaz": {
     "chinese_name": "初來部落",
@@ -3106,7 +3555,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-cilalongay": {
     "chinese_name": "吉拉龍噯部落",
@@ -3121,7 +3572,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sasaljak": {
     "chinese_name": "沙薩拉克部落",
@@ -3136,7 +3589,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-takidis": {
     "chinese_name": "德其里部落",
@@ -3151,7 +3606,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-anasolay": {
     "chinese_name": "荒野部落",
@@ -3166,7 +3623,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-padrangigrang": {
     "chinese_name": "溫泉部落",
@@ -3178,7 +3637,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-lupakatj": {
     "chinese_name": "魯巴卡茲部落",
@@ -3190,7 +3651,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-davugele": {
     "chinese_name": "大武窟部落",
@@ -3202,7 +3665,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-kanadun": {
     "chinese_name": "金崙部落",
@@ -3214,7 +3679,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-lalauran": {
     "chinese_name": "拉勞蘭部落",
@@ -3226,7 +3693,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-kiring": {
     "chinese_name": "給陵部落",
@@ -3238,7 +3707,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-tjatjigel": {
     "chinese_name": "喳其格勒部落",
@@ -3250,7 +3721,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-tjavualji": {
     "chinese_name": "大麻里部落",
@@ -3262,7 +3735,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-calavi": {
     "chinese_name": "查拉密部落",
@@ -3274,7 +3749,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-pangwi": {
     "chinese_name": "大武部落",
@@ -3286,7 +3763,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-qaljapang": {
     "chinese_name": "加羅板部落",
@@ -3298,7 +3777,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-seqeciin": {
     "chinese_name": "加津林部落",
@@ -3310,7 +3791,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-tjukuvulj": {
     "chinese_name": "愛國蒲部落",
@@ -3322,7 +3805,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-seqalapit": {
     "chinese_name": "斯卡拉比部落",
@@ -3334,7 +3819,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "pwn-ru-ja-qas": {
     "chinese_name": "魯加卡斯部落",
@@ -3346,7 +3833,9 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source."
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
   },
   "ami-sililasay": {
     "chinese_name": "月眉（上部落）",
@@ -3361,7 +3850,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   },
   "ami-siapaluway": {
     "chinese_name": "月眉（中部落）",
@@ -3376,7 +3867,9 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": ""
+    "notes": "",
+    "chiefs": [],
+    "contact": []
   }
 };
 const BULUO_UNCOVERED = [
