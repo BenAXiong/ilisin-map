@@ -73,7 +73,7 @@ const SOURCES = {
     url: 'https://www.instagram.com/p/DaNBAVuTyrK/'
   },
   tt_zhishi: {
-    label: '織・時臺東（第三方彙整網站，資料溯源 abm.ttweb.tw，未逐筆與該原始頁面核對）',
+    label: '織・時臺東',
     url: 'https://taitung-festival.vercel.app/'
   }
 };
