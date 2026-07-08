@@ -81,12 +81,12 @@ function filteredVillages() {
 function renderTownshipChips() {
   const el = document.getElementById('mapTownshipChips');
   if (!el) return;
-  if (countyFilter === 'all' || townshipFilter !== null) { el.hidden = true; return; }
+  if (countyFilter === 'all') { el.hidden = true; return; }
   const townships = [...new Set(
     visibleVillages().filter(v => v.county === countyFilter && v.township).map(v => v.township)
   )].sort();
   el.innerHTML = townships.map(t =>
-    `<button class="map-chip" data-township="${t}">${t}</button>`
+    `<button class="map-chip${townshipFilter === t ? ' active' : ''}" data-township="${t}">${t}</button>`
   ).join('');
   el.hidden = townships.length === 0;
 }
@@ -298,12 +298,22 @@ function initMap() {
 document.getElementById('mapCountyChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
-  countyFilter = chip.dataset.county;
+  const newCounty = chip.dataset.county;
+  const subEl = document.getElementById('mapTownshipChips');
+
+  if (newCounty === countyFilter && newCounty !== 'all') {
+    // Same county re-tapped: toggle sub-row, clear township selection
+    townshipFilter = null;
+    if (subEl.hidden) renderTownshipChips(); else subEl.hidden = true;
+    if (mapInitialized) { updateMarkers(); renderSheet(); }
+    return;
+  }
+
+  countyFilter = newCounty;
   townshipFilter = null;
-  document.querySelectorAll('#mapCountyChips .map-chip').forEach(c => {
-    c.classList.toggle('active', c === chip);
-    c.classList.remove('sub-active');
-  });
+  document.querySelectorAll('#mapCountyChips .map-chip').forEach(c =>
+    c.classList.toggle('active', c === chip)
+  );
   renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();
@@ -331,8 +341,7 @@ document.getElementById('mapTownshipChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   townshipFilter = chip.dataset.township;
-  document.getElementById('mapTownshipChips').hidden = true;
-  document.querySelector('#mapCountyChips .map-chip.active')?.classList.add('sub-active');
+  renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();
     renderSheet();

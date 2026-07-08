@@ -470,7 +470,6 @@ body.tab-info .app-header { display: none; }
 }
 .map-chip.active             { background: var(--accent); color: var(--bg); }
 .map-chip:hover:not(.active) { background: var(--bg-alt); }
-#mapCountyChips .map-chip.active.sub-active::after { content: ' ·'; }
 
 /* ── Bottom sheet ───────────────────────────── */
 .bs {
