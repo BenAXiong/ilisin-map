@@ -71,6 +71,10 @@ const SOURCES = {
   tt_changbin_poster: {
     label: '115年長濱鄉的Ilisin 豐年祭時間',
     url: 'https://www.instagram.com/p/DaNBAVuTyrK/'
+  },
+  tt_zhishi: {
+    label: '織・時臺東（第三方彙整網站，資料溯源 abm.ttweb.tw，未逐筆與該原始頁面核對）',
+    url: 'https://taitung-festival.vercel.app/'
   }
 };
 
@@ -300,6 +304,7 @@ const VILLAGES = [
   { id:'tt-cb-12', buluo_id:'ami-tapowaray-saranawan', group:'ami', chinese:'大俱來部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/19', venue:'大俱來聚會所/活動中心', status:'confirmed', src:'tt_changbin_poster' },
   { id:'tt-cb-13', buluo_id:'ami-pasongan', group:'ami', chinese:'八桑安部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/15–7/19', venue:'八桑安活動中心', status:'confirmed', src:'tt_changbin_poster' },
   { id:'tt-cb-14', buluo_id:'ami-kinanoka', group:'ami', chinese:'僅那鹿角部落', amis:'', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/17–7/20', venue:'光榮活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-15', buluo_id:'ami-polot', group:'ami', chinese:'大峰峰部落', amis:"Polo't", county:'臺東縣', township:'長濱鄉', lat:23.43332, lng:121.49139, date:'7/10 五–7/12 日', venue:'大峰峰尖石沙灘', status:'confirmed', src:'tt_zhishi' },
 
   // ══ 臺東縣 東河鄉 (補充) ══════════════════════════════════════════
   // 源自東河鄉公所 FB 2026 歲時祭儀日程表
@@ -323,6 +328,7 @@ const VILLAGES = [
   { id:'tt-bn-06', buluo_id:'pyu-ulivelivek', group:'pyu', chinese:'初鹿部落（成年禮）', amis:'Ulivelivek', county:'臺東縣', township:'卑南鄉', lat:22.833, lng:121.153, date:'未定', venue:'初鹿原住民聚會所', status:'tbd', src:'tt_abm' },
   { id:'tt-bn-07', buluo_id:'pyu-alripay', group:'pyu', chinese:'阿里擺部落', amis:"A'lripay", county:'臺東縣', township:'卑南鄉', lat:22.833, lng:121.153, date:'未定', venue:'阿里擺部落文化廣場', status:'tbd', src:'tt_abm' },
   { id:'tt-bn-08', buluo_id:'pyu-danadanaw', group:'pyu', chinese:'龍過脈部落', amis:'Danadanaw', county:'臺東縣', township:'卑南鄉', lat:22.833, lng:121.153, date:'未定', venue:'龍過脈社區活動中心', status:'tbd', src:'tt_abm' },
+  { id:'tt-bn-09', buluo_id:'ami-kalitood', group:'ami', chinese:'山里部落', amis:"Kalito'od", county:'臺東縣', township:'卑南鄉', lat:22.776133, lng:121.062303, date:'7/10 五–7/12 日', venue:'山里部落多功能聚會所（卑南鄉山里路40-1號）', status:'confirmed', src:'tt_zhishi' },
 
   // ══ 臺東縣 臺東市 ════════════════════════════════════════════════
   // 來源可信度混合：社群貼文可信度低於縣府 PDF，正式出行前應再確認
@@ -337,6 +343,15 @@ const VILLAGES = [
   { id:'tt-tt-10', buluo_id:'pyu-kasavakan', group:'pyu', chinese:'射馬干部落／建和部落', amis:'Kasavakan', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'建和部落多功能聚會所', status:'tbd', src:'tt_abm' },
   { id:'tt-tt-11', buluo_id:'pyu-puyuma', group:'pyu', chinese:'普悠瑪部落（南王）', amis:'Puyuma', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'普悠瑪聚會所', status:'tbd', src:'tt_abm' },
   { id:'tt-tt-12', group:'pyu', chinese:'卡大地布部落／卡地布部落', amis:'Katatipul', county:'臺東縣', township:'臺東市', lat:22.754, lng:121.149, date:'未定', venue:'卡大地布聚會所', status:'tbd', src:'tt_abm', note:'除喪祭（非豐年祭），來源 tt_abm 列於臺東市；部落識別資料庫將此部落跨列臺東市／卑南鄉，本站以臺東市為準。' },
+  { id:'tt-tt-13', buluo_id:'ami-pongodan', group:'ami', chinese:'大橋部落', amis:'Pongodan', county:'臺東縣', township:'臺東市', lat:22.786357, lng:121.130345, date:'7/5 日–7/10 五', venue:'大橋部落聚會所（臺東志航路一段412巷17弄38號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-14', buluo_id:'ami-alapanay', group:'ami', chinese:'阿拉巴奈部落', amis:'Alapanay', county:'臺東縣', township:'臺東市', lat:22.736006, lng:121.119305, date:'7/5 日–7/11 六', venue:'東豐社區（臺東市中華路3段208巷內）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-15', buluo_id:'ami-fukid', group:'ami', chinese:'新馬蘭部落', amis:'Fukid', county:'臺東縣', township:'臺東市', lat:22.771096, lng:121.133651, date:'7/5 日–7/11 六', venue:'新馬蘭聚會所（臺東市青島街1號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-16', buluo_id:'ami-apapuro', group:'ami', chinese:'高坡部落', amis:'Apapuro', county:'臺東縣', township:'臺東市', lat:22.738447, lng:121.125807, date:'7/7 二–7/9 四', venue:'臺東市中華路二段806號（旁邊空地）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-17', buluo_id:'ami-kakawasan', group:'ami', chinese:'石山部落', amis:'Kakawasan', county:'臺東縣', township:'臺東市', lat:22.782816, lng:121.161629, date:'7/8 三–7/11 六', venue:'富豐里活動中心（臺東市吉林路一段279巷58號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-18', buluo_id:'ami-pasawali', group:'ami', chinese:'巴沙哇力部落', amis:'Pasawali', county:'臺東縣', township:'臺東市', lat:22.792248, lng:121.185205, date:'7/9 四–7/12 日', venue:'巴沙哇力聚會所（臺東市吉林路二段699巷22號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-19', buluo_id:'ami-karoroan', group:'ami', chinese:'加路蘭部落', amis:'Karoroan', county:'臺東縣', township:'臺東市', lat:22.810601, lng:121.188137, date:'7/10 五–7/12 日', venue:'加路蘭活動中心（臺東市合江路220巷58號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-20', buluo_id:'ami-sihodingan', group:'ami', chinese:'常德部落', amis:'Sihodingan', county:'臺東縣', township:'臺東市', lat:22.749002, lng:121.133169, date:'7/10 五–7/11 六', venue:'臺東市常德路145巷17號（7-11冠美門市對面）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-tt-21', buluo_id:'ami-pakurung', group:'ami', chinese:'巴古崙岸部落', amis:'Pakurung', county:'臺東縣', township:'臺東市', lat:22.759173, lng:121.054753, date:'7/13 一–7/18 六', venue:'臺東市射馬干生態園區（射馬干段79-3號）', status:'confirmed', src:'tt_zhishi' },
 
   // ══ 臺東縣 延平鄉 ════════════════════════════════════════════════
   { id:'tt-yp-01', buluo_id:'bnn-kainisungan', group:'bnn', chinese:'卡努舒岸部落（下里）', amis:'Kainisungan', county:'臺東縣', township:'延平鄉', lat:23.070, lng:121.080, date:'3/7 六', venue:'蝴蝶谷祭祀廣場', status:'confirmed', src:'tt_abm' },
@@ -391,7 +406,21 @@ const VILLAGES = [
   { id:'tt-dw-03', buluo_id:'pwn-seqeciin', group:'pwn', chinese:'加津林部落', amis:'Seqeciin', county:'臺東縣', township:'大武鄉', lat:22.362, lng:120.898, date:'8/2 日', venue:'加津林集會所', status:'confirmed', src:'tt_abm' },
   { id:'tt-dw-04', buluo_id:'pwn-tjukuvulj', group:'pwn', chinese:'愛國蒲部落', amis:'Tjukuvulj', county:'臺東縣', township:'大武鄉', lat:22.362, lng:120.898, date:'8/2 日', venue:'愛國蒲集會所', status:'confirmed', src:'tt_abm' },
   { id:'tt-dw-05', buluo_id:'pwn-seqalapit', group:'pwn', chinese:'斯卡拉比部落', amis:'Seqalapit', county:'臺東縣', township:'大武鄉', lat:22.362, lng:120.898, date:'8/23 日', venue:'愛國蒲集會所', status:'confirmed', src:'tt_abm' },
-  { id:'tt-dw-06', buluo_id:'pwn-ru-ja-qas', group:'pwn', chinese:'魯加卡斯部落', amis:'Ru ja qas', county:'臺東縣', township:'大武鄉', lat:22.362, lng:120.898, date:'8/9 日', venue:'南興集會所', status:'confirmed', src:'tt_abm' }
+  { id:'tt-dw-06', buluo_id:'pwn-ru-ja-qas', group:'pwn', chinese:'魯加卡斯部落', amis:'Ru ja qas', county:'臺東縣', township:'大武鄉', lat:22.362, lng:120.898, date:'8/9 日', venue:'南興集會所', status:'confirmed', src:'tt_abm' },
+
+  // ══ 臺東縣 鹿野鄉 ════════════════════════════════════════════════
+  { id:'tt-ly-01', buluo_ids:['ami-kanaopu','ami-efong'], group:'ami', chinese:'卡拿吾部部落／瑞源部落', amis:"Kanao'pu / Efong", county:'臺東縣', township:'鹿野鄉', lat:22.956109, lng:121.15455, date:'7/9 四–7/12 日', venue:'瑞源瑞隆文化聚會所', status:'confirmed', src:'tt_zhishi', note:'來源列為兩個獨立部落但同日同場地舉行，本站合併為一筆；部落識別資料庫仍將兩者列為不同登記部落，reconciliation 待辦見 docs/ROADMAP-v2.md。' },
+  { id:'tt-ly-02', buluo_id:'ami-salinliw', group:'ami', chinese:'山領榴部落', amis:'Salinliw', county:'臺東縣', township:'鹿野鄉', lat:22.937634, lng:121.142257, date:'7/10 五–7/12 日', venue:'永隆多功能活動中心', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-ly-03', buluo_id:'ami-pailasan', group:'ami', chinese:'八伊拉善部落', amis:'Pailasan', county:'臺東縣', township:'鹿野鄉', lat:22.97, lng:121.15, date:'7/17 五–7/19 日', venue:'寶華展售中心', status:'confirmed', src:'tt_zhishi', note:'來源座標（22.097, 121.173）明顯偏離鹿野鄉其他部落聚落（皆約北緯22.9–23.0度），研判為原始資料誤植；本筆改用鹿野鄉概略座標，coord_precision 相當於 township 等級，待實地/官方來源核實。' },
+  { id:'tt-ly-04', buluo_id:'ami-rekat', group:'ami', chinese:'永昌部落', amis:'Rekat', county:'臺東縣', township:'鹿野鄉', lat:22.931221, lng:121.138782, date:'7/17 五–7/19 日', venue:'永昌活動中心', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-ly-05', buluo_id:'ami-pakalaac', group:'ami', chinese:'瑞興部落', amis:"Pakala'ac", county:'臺東縣', township:'鹿野鄉', lat:22.979323, lng:121.155733, date:'7/31 五–8/2 日', venue:'瑞興活動中心', status:'confirmed', src:'tt_zhishi' },
+
+  // ══ 臺東縣 關山鎮 ════════════════════════════════════════════════
+  { id:'tt-gs-01', buluo_id:'ami-himoti', group:'ami', chinese:'電光部落', amis:'Himoti', county:'臺東縣', township:'關山鎮', lat:23.007585, lng:121.173603, date:'8/7 五–8/9 日', venue:'電光社區活動中心（關山鎮電光里中興102號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-gs-02', buluo_id:'ami-cu-ki-ngo', group:'ami', chinese:'月眉部落', amis:'Cu ki ngo', county:'臺東縣', township:'關山鎮', lat:23.009322, lng:121.153141, date:'8/9 日', venue:'關山鎮月眉里6鄰中和1-1號（螞蟻農藥行前岔路口順著路直走至鐵路橋下空地）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-gs-03', buluo_id:'ami-takofan', group:'ami', chinese:'德高部落', amis:'Takofan', county:'臺東縣', township:'關山鎮', lat:23.074798, lng:121.177566, date:'8/14 五–8/16 日', venue:'德高社區活動中心（關山鎮德高里2鄰永豐11號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-gs-04', buluo_id:'ami-cipurungan', group:'ami', chinese:'隆興部落', amis:'Cipurungan', county:'臺東縣', township:'關山鎮', lat:23.035166, lng:121.163457, date:'8/15 六–8/17 一', venue:'隆興部落聚會所（關山鎮里壠里隆興31-1號）', status:'confirmed', src:'tt_zhishi' },
+  { id:'tt-gs-05', buluo_id:'ami-parupu', group:'ami', chinese:'新福部落', amis:'Parupu', county:'臺東縣', township:'關山鎮', lat:23.046057, lng:121.172109, date:'8/21 五–8/23 日', venue:'新福社區活動中心（關山鎮溪埔路34號）', status:'confirmed', src:'tt_zhishi' }
 
 ];
 

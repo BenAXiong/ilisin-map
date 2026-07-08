@@ -2733,6 +2733,23 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "ami-polot": {
+    "chinese_name": "大峰峰部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Polo't",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "海岸阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-asiroay-2": {
     "chinese_name": "阿奚露艾部落",
     "chinese_name_alt": [],
@@ -3051,6 +3068,23 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "ami-kalitood": {
+    "chinese_name": "山里部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kalito'od",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-falangaw": {
     "chinese_name": "馬蘭部落",
     "chinese_name_alt": [],
@@ -3206,6 +3240,159 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-pongodan": {
+    "chinese_name": "大橋部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pongodan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-alapanay": {
+    "chinese_name": "阿拉巴奈部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Alapanay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-fukid": {
+    "chinese_name": "新馬蘭部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Fukid",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "CIP gazette confirms 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, matching the CIP gazette value — closed.",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-apapuro": {
+    "chinese_name": "高坡部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Apapuro",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-kakawasan": {
+    "chinese_name": "石山部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kakawasan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-pasawali": {
+    "chinese_name": "巴沙哇力部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pasawali",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-karoroan": {
+    "chinese_name": "加路蘭部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Karoroan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-sihodingan": {
+    "chinese_name": "常德部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Sihodingan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-pakurung": {
+    "chinese_name": "巴古崙部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pakurung",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
     "chiefs": [],
     "contact": []
   },
@@ -3837,6 +4024,159 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "ami-salinliw": {
+    "chinese_name": "山領榴部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Salinliw",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-pailasan": {
+    "chinese_name": "八伊拉善部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pailasan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-rekat": {
+    "chinese_name": "永昌部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Rekat",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-pakalaac": {
+    "chinese_name": "瑞興部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pakala'ac",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-himoti": {
+    "chinese_name": "電光部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Himoti",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-cu-ki-ngo": {
+    "chinese_name": "月眉部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cu ki ngo",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-takofan": {
+    "chinese_name": "德高部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Takofan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-cipurungan": {
+    "chinese_name": "隆興部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cipurungan",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-parupu": {
+    "chinese_name": "新福部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Parupu",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-sililasay": {
     "chinese_name": "月眉（上部落）",
     "chinese_name_alt": [],
@@ -3861,6 +4201,40 @@ const BULUO_REF = {
     "indigenous_name_alt": [],
     "dialect": [
       "南勢阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-kanaopu": {
+    "chinese_name": "卡拿吾部部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanao'pu",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-efong": {
+    "chinese_name": "瑞源部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Efong",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
     ],
     "status": "single-source",
     "sources": [
@@ -3984,28 +4358,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-kalitood",
-    "chinese_name": "山里部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kalito'od",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "卑南鄉",
-    "village": "嘉豐村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
     "id": "ami-carapongay",
     "chinese_name": "?橋部落",
     "chinese_name_alt": [],
@@ -4017,28 +4369,6 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "長濱鄉",
     "village": "寧埔村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-polot",
-    "chinese_name": "大峰峰部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Polo't",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "海岸阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "長濱鄉",
-    "village": "樟原村",
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",
@@ -4072,94 +4402,6 @@ const BULUO_UNCOVERED = [
     "notes": ""
   },
   {
-    "id": "ami-pailasan",
-    "chinese_name": "八伊拉善部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pailasan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "瑞和村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-salinliw",
-    "chinese_name": "山領榴部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Salinliw",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "永安村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-kanaopu",
-    "chinese_name": "卡拿吾部部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kanao'pu",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "瑞隆村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-rekat",
-    "chinese_name": "永昌部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Rekat",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "永安村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
     "id": "ami-parayapay",
     "chinese_name": "和平部落",
     "chinese_name_alt": [],
@@ -4171,358 +4413,6 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "鹿野鄉",
     "village": "鹿野村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-efong",
-    "chinese_name": "瑞源部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Efong",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "瑞源村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-pakalaac",
-    "chinese_name": "瑞興部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pakala'ac",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "瑞和村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-pongodan",
-    "chinese_name": "大橋部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pongodan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "南榮里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-pakurung",
-    "chinese_name": "巴古崙部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pakurung",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "新園里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-pasawali",
-    "chinese_name": "巴沙哇力部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pasawali",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "富岡里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-karoroan",
-    "chinese_name": "加路蘭部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Karoroan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "富岡里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-kakawasan",
-    "chinese_name": "石山部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kakawasan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "富豐里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-alapanay",
-    "chinese_name": "阿拉巴奈部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Alapanay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "豐里里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-apapuro",
-    "chinese_name": "高坡部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Apapuro",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "豐谷里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-sihodingan",
-    "chinese_name": "常德部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Sihodingan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "豐榮里、 豐谷里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-fukid",
-    "chinese_name": "新馬蘭部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Fukid",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "臺東市",
-    "village": "南榮里",
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": "CIP gazette confirms 'Fukid'. Briefly flagged as 'Fukia' per a maintainer correction on 2026-06-30, then self-corrected back to 'Fukid' the same day, matching the CIP gazette value — closed."
-  },
-  {
-    "id": "ami-cu-ki-ngo",
-    "chinese_name": "月眉部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cu ki ngo",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "關山鎮",
-    "village": "月眉里",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-cipurungan",
-    "chinese_name": "隆興部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cipurungan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "關山鎮",
-    "village": "里?里",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-parupu",
-    "chinese_name": "新福部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Parupu",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "關山鎮",
-    "village": "新福里",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-himoti",
-    "chinese_name": "電光部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Himoti",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "關山鎮",
-    "village": "電光里",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-takofan",
-    "chinese_name": "德高部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Takofan",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "關山鎮",
-    "village": "德高里",
     "lat": null,
     "lng": null,
     "coord_precision": "unknown",

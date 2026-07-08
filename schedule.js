@@ -42,6 +42,29 @@ const SCHEDULE_DETAILS = {
   'tt-cg-05': { // 小馬部落 Piyoxo — 成功鎮 115年度各部落歲時祭儀期程表
     welcome: { date: '7/11', time: '08:00' },
   },
+  // 2026-07 taitung-festival.vercel.app scrape (src: tt_zhishi) — welcome-day
+  // info for the batch of newly-added 臺東縣 buluo (see docs/DATA-SOURCES.md).
+  'tt-tt-13': { welcome: { date: '7/10', time: '10:00' } },
+  'tt-tt-14': { welcome: { date: '7/11', time: '11:00' } },
+  'tt-tt-15': { welcome: { date: '7/11', time: '10:00' } },
+  'tt-tt-16': { welcome: { date: '7/9', time: '10:00' } },
+  'tt-tt-17': { welcome: { date: '7/11', time: '19:30' } },
+  'tt-tt-18': { welcome: { date: '7/12', time: '19:00' } },
+  'tt-tt-19': { welcome: { date: '7/12', time: '13:30' } },
+  'tt-tt-20': { welcome: { date: '7/11', time: '10:00' } },
+  'tt-tt-21': { welcome: { date: '7/18', time: '09:30' } },
+  'tt-bn-09': { welcome: { date: '7/11', time: '15:00' } },
+  'tt-cb-15': { welcome: { date: '7/12', time: '18:00' } },
+  'tt-ly-01': { welcome: { date: '7/11', time: '20:00' } },
+  'tt-ly-02': { welcome: { date: '7/11', time: '00:00' } },
+  'tt-ly-03': { welcome: { date: '7/18', time: '10:00' } },
+  'tt-ly-04': { welcome: { date: '7/18', time: '15:00' } },
+  'tt-ly-05': { welcome: { date: '8/1', time: '19:30' } },
+  'tt-gs-01': { welcome: { date: '8/8', time: '11:00' } },
+  'tt-gs-02': { welcome: { date: '8/9', time: '11:00' } },
+  'tt-gs-03': { welcome: { date: '8/16', time: '11:00' } },
+  'tt-gs-04': { welcome: { date: '8/16', time: '11:00' } },
+  'tt-gs-05': { welcome: { date: '8/22', time: '17:30' } },
 };
 
 // Poster images shared by many VILLAGES entries via the same data-source
