@@ -32,9 +32,15 @@ function makeIcon(status, isActive) {
 
 function setSheetState(state, from) {
   bsState = state;
+  if (state === 'collapsed') TAP_NEXT = null;
   const bs = document.getElementById('bottomSheet');
   if (bs) {
     bs.dataset.state = state;
+    // scrollIntoView propagates up to #panel-map (overflow:hidden but still
+    // scrollable via scrollTop in Chrome), which would visually cancel the
+    // sheet's CSS translateY. Reset on every state change as a safety net.
+    const panel = document.getElementById('panel-map');
+    if (panel && panel.scrollTop !== 0) panel.scrollTop = 0;
     if (from === 'marker' && state === 'half' && window.innerWidth < 768) {
       const mapEl = document.getElementById('map');
       if (mapEl && leafletMap) leafletMap.invalidateSize();
@@ -48,6 +54,7 @@ function deselect() {
     if (v) markers[activeId].setIcon(makeIcon(v.status, false));
   }
   activeId = null;
+  TAP_NEXT = null;
   setSheetState('collapsed');
 }
 
@@ -110,20 +117,25 @@ function activateVillage(id) {
     c.classList.toggle('active', c.dataset.vid === id)
   );
 
-  const pill = document.querySelector(`.bs-pill[data-key="${CSS.escape(activePill)}"]`);
-  if (pill) pill.scrollIntoView({ inline: 'center', block: 'nearest' });
+  // Scroll the pills row horizontally — avoid scrollIntoView because it
+  // propagates vertically up to #panel-map and cancels the sheet's translateY.
+  const pillsEl = document.getElementById('bsPills');
+  const pill = pillsEl?.querySelector(`.bs-pill[data-key="${CSS.escape(activePill)}"]`);
+  if (pill && pillsEl) {
+    pillsEl.scrollLeft = Math.max(0, pill.offsetLeft - (pillsEl.clientWidth - pill.offsetWidth) / 2);
+  }
 
-  // 'start' (not 'nearest') so the activated card lands at the top of the
-  // sheet's visible area — the closest we get to "show just this entry"
-  // without changing the sheet from a browsable list to a filtered one.
-  // Deferred past the sheet's own open/expand transition (.bs { transition:
-  // transform .35s }) — scrolling immediately races that animation, since
-  // the scrollable area's own height is still changing frame-to-frame, and
-  // can leave the card landed slightly below where it should be once the
-  // sheet finishes settling into its final height.
+  // Scroll only #bsContent to land the activated card at the top of the
+  // visible area. Same reason: avoid scrollIntoView propagating to #panel-map.
+  // Deferred past the sheet's CSS transition (.35s) so getBoundingClientRect
+  // values are stable when we compute the target scroll position.
   setTimeout(() => {
-    const card = document.querySelector(`.village-card[data-vid="${id}"]`);
-    if (card) card.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    const bsContent = document.getElementById('bsContent');
+    const card = bsContent?.querySelector(`.village-card[data-vid="${id}"]`);
+    if (card && bsContent) {
+      const top = card.getBoundingClientRect().top - bsContent.getBoundingClientRect().top + bsContent.scrollTop;
+      bsContent.scrollTo({ top, behavior: 'smooth' });
+    }
   }, 360);
 
   trackEvent('village_tap', { id, name: VILLAGES.find(v => v.id === id)?.chinese });
@@ -163,8 +175,6 @@ function updateMarkers() {
   );
   displayed.forEach(v => {
     const m = L.marker([v.lat, v.lng], { icon: makeIcon(v.status, false) });
-    const dateStr = v.date ? `<span class="popup-date">${v.date}</span>` : '';
-    m.bindPopup(`<span class="popup-cn">${v.chinese}</span><span class="popup-sub">${v.amis || ''}</span>${dateStr}`);
     m.on('click', () => {
       if (TAP_NEXT === v.id) {
         setSheetState('full');
@@ -274,6 +284,7 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   countyFilter = chip.dataset.county;
+  activePill = null;
   document.querySelectorAll('.map-chip').forEach(c => c.classList.toggle('active', c === chip));
   if (mapInitialized) {
     updateMarkers();
