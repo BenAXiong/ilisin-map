@@ -11,6 +11,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -28,6 +31,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -45,6 +51,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -62,6 +71,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -79,6 +91,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -96,6 +111,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -113,6 +131,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -130,6 +151,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -147,6 +171,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -164,6 +191,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -181,6 +211,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -198,6 +231,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "豐年祭 地圖/data.js (Pokoh)"
@@ -214,6 +250,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 24.124,
+    "lng": 121.657,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -231,6 +270,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -248,6 +290,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -265,6 +310,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -282,6 +330,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -299,6 +350,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -316,6 +370,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -333,6 +390,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -350,6 +410,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -365,6 +428,9 @@ const BULUO_REF = {
     "indigenous_name": "Sakur",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -381,6 +447,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -398,6 +467,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.975,
+    "lng": 121.604,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -415,6 +487,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -432,6 +507,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -449,6 +527,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -466,6 +547,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -483,6 +567,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -500,6 +587,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -517,6 +607,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -534,6 +627,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -551,6 +647,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -568,6 +667,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -585,6 +687,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -602,6 +707,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -619,6 +727,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -636,6 +747,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -653,6 +767,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -670,6 +787,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -687,6 +807,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -704,6 +827,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -721,6 +847,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.956,
+    "lng": 121.57,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -738,6 +867,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -755,6 +887,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -772,6 +907,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -789,6 +927,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -806,6 +947,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -823,6 +967,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -840,6 +987,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -857,6 +1007,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -874,6 +1027,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -891,6 +1047,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -908,6 +1067,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -925,6 +1087,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -942,6 +1107,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -959,6 +1127,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -976,6 +1147,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -993,6 +1167,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1010,6 +1187,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1027,6 +1207,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1044,6 +1227,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1061,6 +1247,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.733,
+    "lng": 121.467,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1078,6 +1267,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1095,6 +1287,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1112,6 +1307,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1129,6 +1327,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1146,6 +1347,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1163,6 +1367,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1180,6 +1387,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1197,6 +1407,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1214,6 +1427,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1233,6 +1449,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1250,6 +1469,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1267,6 +1489,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1284,6 +1509,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1301,6 +1529,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1316,6 +1547,9 @@ const BULUO_REF = {
     "indigenous_name": "Kodic",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -1332,6 +1566,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1349,6 +1586,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1364,6 +1604,9 @@ const BULUO_REF = {
     "indigenous_name": "Paterungan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -1380,6 +1623,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1397,6 +1643,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.634,
+    "lng": 121.49,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1414,6 +1663,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1431,6 +1683,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1448,6 +1703,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1465,6 +1723,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1482,6 +1743,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1499,6 +1763,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1516,6 +1783,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1533,6 +1803,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1548,6 +1821,9 @@ const BULUO_REF = {
     "indigenous_name": "Maifor",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -1564,6 +1840,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1581,6 +1860,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1598,6 +1880,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1615,6 +1900,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1632,6 +1920,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1649,6 +1940,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1666,6 +1960,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.493,
+    "lng": 121.427,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1683,6 +1980,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1700,6 +2000,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1717,6 +2020,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1734,6 +2040,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1751,6 +2060,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1768,6 +2080,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1785,6 +2100,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1802,6 +2120,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1819,6 +2140,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1836,6 +2160,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1853,6 +2180,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1870,6 +2200,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1887,6 +2220,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1904,6 +2240,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1921,6 +2260,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1938,6 +2280,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1955,6 +2300,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1972,6 +2320,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -1989,6 +2340,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2006,6 +2360,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.333,
+    "lng": 121.31,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2023,6 +2380,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2040,6 +2400,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2057,6 +2420,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2074,6 +2440,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2091,6 +2460,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2108,6 +2480,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2125,6 +2500,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.273,
+    "lng": 121.293,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2142,6 +2520,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2159,6 +2540,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2176,6 +2560,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2193,6 +2580,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2210,6 +2600,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2227,6 +2620,9 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2244,6 +2640,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2265,6 +2664,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "verified",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2283,6 +2685,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2300,6 +2705,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2317,6 +2725,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2334,6 +2745,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2351,6 +2765,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2368,6 +2785,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2385,6 +2805,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2402,6 +2825,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2419,6 +2845,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2436,6 +2865,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2453,6 +2885,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2470,6 +2905,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2487,6 +2925,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2504,6 +2945,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2521,6 +2965,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.097,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2538,6 +2985,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2555,6 +3005,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2570,6 +3023,9 @@ const BULUO_REF = {
     "indigenous_name": "Nadan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -2586,6 +3042,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2603,6 +3062,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2620,6 +3082,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2637,6 +3102,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2654,6 +3122,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2671,6 +3142,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2690,6 +3164,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2707,6 +3184,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2724,6 +3204,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2741,6 +3224,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2758,6 +3244,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2775,6 +3264,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2792,6 +3284,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2809,6 +3304,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2826,6 +3324,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2850,6 +3351,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2890,6 +3394,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2907,6 +3414,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2924,6 +3434,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2941,6 +3454,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": 23.213,
+    "lng": 121.373,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2958,6 +3474,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2975,6 +3494,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2990,6 +3512,9 @@ const BULUO_REF = {
     "indigenous_name": "Tamalakaw",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3004,6 +3529,9 @@ const BULUO_REF = {
     "indigenous_name": "Likavung",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3018,6 +3546,9 @@ const BULUO_REF = {
     "indigenous_name": "Pinaski",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3032,6 +3563,9 @@ const BULUO_REF = {
     "indigenous_name": "Ulivelivek",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3046,6 +3580,9 @@ const BULUO_REF = {
     "indigenous_name": "A'lripay",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3060,6 +3597,9 @@ const BULUO_REF = {
     "indigenous_name": "Danadanaw",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3076,6 +3616,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3093,6 +3636,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3108,6 +3654,9 @@ const BULUO_REF = {
     "indigenous_name": "Kalaluran",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3124,6 +3673,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3141,6 +3693,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3156,6 +3711,9 @@ const BULUO_REF = {
     "indigenous_name": "Papulu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3172,6 +3730,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3189,6 +3750,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3206,6 +3770,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3221,6 +3788,9 @@ const BULUO_REF = {
     "indigenous_name": "Kasavakan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3235,6 +3805,9 @@ const BULUO_REF = {
     "indigenous_name": "Puyuma",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3251,6 +3824,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3268,6 +3844,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3285,6 +3864,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3302,6 +3884,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3319,6 +3904,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3336,6 +3924,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3353,6 +3944,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3370,6 +3964,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3387,6 +3984,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": 22.754,
+    "lng": 121.149,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3402,6 +4002,9 @@ const BULUO_REF = {
     "indigenous_name": "Kainisungan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3416,6 +4019,9 @@ const BULUO_REF = {
     "indigenous_name": "Kamisatu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3430,6 +4036,9 @@ const BULUO_REF = {
     "indigenous_name": "Talunas",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3444,6 +4053,9 @@ const BULUO_REF = {
     "indigenous_name": "Pasikau",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3458,6 +4070,9 @@ const BULUO_REF = {
     "indigenous_name": "Vakangan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3472,6 +4087,9 @@ const BULUO_REF = {
     "indigenous_name": "Minami",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3486,6 +4104,9 @@ const BULUO_REF = {
     "indigenous_name": "Kaminu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3500,6 +4121,9 @@ const BULUO_REF = {
     "indigenous_name": "Su nun sung",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3514,6 +4138,9 @@ const BULUO_REF = {
     "indigenous_name": "Nakanu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3528,6 +4155,9 @@ const BULUO_REF = {
     "indigenous_name": "Kalisahan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3542,6 +4172,9 @@ const BULUO_REF = {
     "indigenous_name": "Buklavu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3556,6 +4189,9 @@ const BULUO_REF = {
     "indigenous_name": "Litu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3570,6 +4206,9 @@ const BULUO_REF = {
     "indigenous_name": "Tuapuu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3584,6 +4223,9 @@ const BULUO_REF = {
     "indigenous_name": "Takimi",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3598,6 +4240,9 @@ const BULUO_REF = {
     "indigenous_name": "Likau-uan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3612,6 +4257,9 @@ const BULUO_REF = {
     "indigenous_name": "Vahu",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3626,6 +4274,9 @@ const BULUO_REF = {
     "indigenous_name": "Bulbul",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3640,6 +4291,9 @@ const BULUO_REF = {
     "indigenous_name": "Kamcing",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3654,6 +4308,9 @@ const BULUO_REF = {
     "indigenous_name": "Kusunuki",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3668,6 +4325,9 @@ const BULUO_REF = {
     "indigenous_name": "Haitutuan",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3682,6 +4342,9 @@ const BULUO_REF = {
     "indigenous_name": "Kanahcian",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3696,6 +4359,9 @@ const BULUO_REF = {
     "indigenous_name": "Kanaluk",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3710,6 +4376,9 @@ const BULUO_REF = {
     "indigenous_name": "Bacingul",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3724,6 +4393,9 @@ const BULUO_REF = {
     "indigenous_name": "Samuluh",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3738,6 +4410,9 @@ const BULUO_REF = {
     "indigenous_name": "Sulai-iaz",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3754,6 +4429,9 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3771,6 +4449,9 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3788,6 +4469,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3805,6 +4489,9 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -3820,6 +4507,9 @@ const BULUO_REF = {
     "indigenous_name": "Padrangigrang",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3834,6 +4524,9 @@ const BULUO_REF = {
     "indigenous_name": "Lupakatj",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3848,6 +4541,9 @@ const BULUO_REF = {
     "indigenous_name": "Davugele",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3862,6 +4558,9 @@ const BULUO_REF = {
     "indigenous_name": "Kanadun",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3876,6 +4575,9 @@ const BULUO_REF = {
     "indigenous_name": "Lalauran",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3890,6 +4592,9 @@ const BULUO_REF = {
     "indigenous_name": "Kiring",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3904,6 +4609,9 @@ const BULUO_REF = {
     "indigenous_name": "Tjatjigel",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3918,6 +4626,9 @@ const BULUO_REF = {
     "indigenous_name": "Tjavualji",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3932,6 +4643,9 @@ const BULUO_REF = {
     "indigenous_name": "Calavi",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3946,6 +4660,9 @@ const BULUO_REF = {
     "indigenous_name": "Pangwi",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3960,6 +4677,9 @@ const BULUO_REF = {
     "indigenous_name": "Qaljapang",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3974,6 +4694,9 @@ const BULUO_REF = {
     "indigenous_name": "Seqeciin",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -3988,6 +4711,9 @@ const BULUO_REF = {
     "indigenous_name": "Tjukuvulj",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -4002,6 +4728,9 @@ const BULUO_REF = {
     "indigenous_name": "Seqalapit",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -4016,6 +4745,9 @@ const BULUO_REF = {
     "indigenous_name": "Ru ja qas",
     "indigenous_name_alt": [],
     "dialect": [],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)"
@@ -4032,6 +4764,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4049,6 +4784,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4066,6 +4804,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4083,6 +4824,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4100,6 +4844,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4117,6 +4864,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4134,6 +4884,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4151,6 +4904,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4168,6 +4924,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4185,6 +4944,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4202,6 +4964,9 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
+    "lat": 23.857,
+    "lng": 121.557,
+    "coord_precision": "township",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4219,6 +4984,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -4236,6 +5004,9 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
