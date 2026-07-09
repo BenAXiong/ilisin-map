@@ -378,6 +378,24 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "sakizaya-takubuwan": {
+    "chinese_name": "達固部灣部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Takubuwan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "lat": 24.000738,
+    "lng": 121.590927,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-kenuy": {
     "chinese_name": "根努夷部落",
     "chinese_name_alt": [],
@@ -1425,21 +1443,24 @@ const BULUO_REF = {
   },
   "ami-fata-an": {
     "chinese_name": "馬太鞍部落",
-    "chinese_name_alt": [],
+    "chinese_name_alt": [
+      "光復馬太鞍部落"
+    ],
     "indigenous_name": "Fata' an",
     "indigenous_name_alt": [],
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.672337,
+    "lng": 121.424716,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
-    "notes": "",
+    "notes": "TICD 標記為「光復馬太鞍部落」以區分萬榮鄉太魯閣族的「萬榮馬太鞍部落」(Matanki) — 兩者中文俗名皆含「馬太鞍」，但族群、鄉鎮、族語名稱皆不同。名稱差異曾導致本專案座標比對（county+township+name 精確比對）漏配對，2026-07-09 人工核對後補上。",
     "chiefs": [],
     "contact": []
   },
@@ -1730,6 +1751,24 @@ const BULUO_REF = {
       "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "sakizaya-kaluluwan": {
+    "chinese_name": "磯崎部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kaluluwan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "lat": 23.707453,
+    "lng": 121.547643,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
     "contact": []
   },

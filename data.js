@@ -112,7 +112,7 @@ const EVENTS = [
   { id:'hl-hl-03', buluo_id:'ami-ciku', group:'ami', chinese:'磯固部落', amis:'Ciku', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/1 六', venue:'花蓮市原住民文化歷史館旁扶輪公園', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-04', buluo_id:'ami-cipawkan', group:'ami', chinese:'吉寶竿部落', amis:'Cipawkan', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/1 六', venue:'吉寶竿部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-05', buluo_id:'ami-cikep', group:'ami', chinese:'幾可普部落', amis:'Cikep', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/1 六', venue:'球崙運動公園', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-hl-06', group:'ami', chinese:'達固部灣部落', amis:'Takubuwan', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/1 六', venue:'花蓮縣立體育場 A 區停車場', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-hl-06', buluo_id:'sakizaya-takubuwan', group:'szy', chinese:'達固部灣部落', amis:'Takubuwan', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/1 六', venue:'花蓮縣立體育場 A 區停車場', status:'confirmed', src:'hl_pdf', note:'來源 hl_pdf（花蓮縣原民處官方 PDF）將此部落列在阿美族豐年祭時程表中，但達固部灣（Takubuwan）為撒奇萊雅族史上重要據點（1878年達固部灣事件發生地）；本站 group 已修正為 szy（Sakizaya）。' },
   { id:'hl-hl-07', buluo_id:'ami-kenuy', group:'ami', chinese:'根努夷部落', amis:'Kenuy', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/8 六', venue:'根努夷部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-08', buluo_id:'ami-lasutan', group:'ami', chinese:'拉署旦部落', amis:'Lasutan', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/8 六', venue:'拉署旦部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-09', buluo_id:'ami-tasutasunan', group:'ami', chinese:'達蘇達蘇湳部落', amis:'Tasutasunan', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/8 六', venue:'中山公園禾埕風雨球場', status:'confirmed', src:'hl_pdf' },
@@ -201,7 +201,7 @@ const EVENTS = [
   { id:'hl-fb-09', buluo_id:'kavalan-paterungan', group:'ckv', chinese:'新社部落', amis:'PateRungan', county:'花蓮縣', township:'豐濱鄉', lat:23.634, lng:121.490, date:'8/8 六', venue:'新社國小運動場', status:'confirmed', src:'hl_pdf', note:'來源 hl_pdf（花蓮縣原民處官方 PDF）將此部落列在阿美族豐年祭時程表中，但實際為全臺最大噶瑪蘭語／文化重鎮；本站 group 已修正為 ckv（Kavalan）。' },
   { id:'hl-fb-10', buluo_id:'ami-fakong', group:'ami', chinese:'貓公部落', amis:'Fakong', county:'花蓮縣', township:'豐濱鄉', lat:23.634, lng:121.490, date:'8/8 六', venue:'豐濱河濱公園', status:'confirmed', src:'hl_pdf' },
   { id:'hl-fb-11', buluo_id:'ami-tingalaw', group:'ami', chinese:'豐富部落', amis:'Tingalaw', county:'花蓮縣', township:'豐濱鄉', lat:23.634, lng:121.490, date:'8/9 日', venue:'豐富部落廣場', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-fb-12', group:'ami', chinese:'磯崎部落', amis:'Kaluluan', county:'花蓮縣', township:'豐濱鄉', lat:23.634, lng:121.490, date:'8/16 日', venue:'龜庵天主堂對面廣場', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-fb-12', buluo_id:'sakizaya-kaluluwan', group:'szy', chinese:'磯崎部落', amis:'Kaluluan', county:'花蓮縣', township:'豐濱鄉', lat:23.634, lng:121.490, date:'8/16 日', venue:'龜庵天主堂對面廣場', status:'confirmed', src:'hl_pdf', note:'來源 hl_pdf（花蓮縣原民處官方 PDF）將此部落列在阿美族豐年祭時程表中，但磯崎部落（Kaluluwan）登記為撒奇萊雅族部落；本站 group 已修正為 szy（Sakizaya）。' },
 
   // ══ 花蓮縣 瑞穗鄉 ════════════════════════════════════════════════
   { id:'hl-rs-01', buluo_id:'ami-fanaw', group:'ami', chinese:'法淖部落', amis:'Fanaw', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'7/26 日', venue:'法淖部落聚會所', status:'confirmed', src:'hl_pdf' },
@@ -267,7 +267,7 @@ const EVENTS = [
   { id:'tt-cs-09', buluo_id:'ami-cikowaay', group:'ami', chinese:'吉瓜愛部落', amis:"Cikowa'ay", county:'臺東縣', township:'池上鄉', lat:23.113, lng:121.213, date:'8/21 五–8/23 日', venue:'富興聚會所，富興村水墜 62-5 號', status:'confirmed', src:'tt_chiShang' },
 
   // ══ 臺東縣 長濱鄉 ════════════════════════════════════════════════
-  { id:'tt-cb-01', group:'ami', chinese:'南竹湖部落', amis:'Karangasan area', county:'臺東縣', township:'長濱鄉', lat:23.327, lng:121.443, date:'7/16–7/20', venue:'南竹湖活動中心', status:'confirmed', src:'tt_changbin_poster' },
+  { id:'tt-cb-01', group:'ami', chinese:'南竹湖部落', amis:'Karangasan area', county:'臺東縣', township:'長濱鄉', lat:23.27571, lng:121.42162, date:'7/16–7/20', venue:'南竹湖活動中心', status:'confirmed', src:'tt_changbin_poster', note:'此部落未在部落識別資料庫（Datasets/buluo）中找到對應紀錄，故無 buluo_id，座標無法透過 BULUO_REF 取得；座標改為直接採用 taitung-festival.vercel.app 提供的場地座標（南竹湖活動中心，長濱鄉竹湖村33之2號），2026-07-09。' },
 
   // ══ 臺東縣 東河鄉 ════════════════════════════════════════════════
   { id:'tt-dh-01', joint:true, group:'ami', chinese:'瑪洛阿瀧聯合豐年祭', amis:'', county:'臺東縣', township:'東河鄉', lat:23.213, lng:121.373, date:'8/22 六', venue:'東河國小', status:'confirmed', src:'tt_donghe_fb' },
