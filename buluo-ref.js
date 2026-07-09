@@ -11,13 +11,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.051362,
+    "lng": 121.60948,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -31,13 +32,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.021077,
+    "lng": 121.601908,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -51,13 +53,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.030444,
+    "lng": 121.603413,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -71,13 +74,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.044375,
+    "lng": 121.595959,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -91,13 +95,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.034523,
+    "lng": 121.613104,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -111,13 +116,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.032859,
+    "lng": 121.60408,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -131,13 +137,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.019393,
+    "lng": 121.608078,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -171,13 +178,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.006982,
+    "lng": 121.612664,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -191,13 +199,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.031991,
+    "lng": 121.611427,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -211,13 +220,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.117114,
+    "lng": 121.639089,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -250,13 +260,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 24.124,
-    "lng": 121.657,
-    "coord_precision": "township",
+    "lat": 24.127296,
+    "lng": 121.650305,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -270,13 +281,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.994456,
+    "lng": 121.574784,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -290,13 +302,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 24.001883,
+    "lng": 121.601351,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -310,13 +323,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.994873,
+    "lng": 121.631885,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -330,13 +344,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.973292,
+    "lng": 121.592642,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -350,13 +365,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 24.004169,
+    "lng": 121.621125,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -370,13 +386,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.991133,
+    "lng": 121.594929,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -390,13 +407,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.996506,
+    "lng": 121.598159,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -410,13 +428,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.992699,
+    "lng": 121.605963,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -428,12 +447,13 @@ const BULUO_REF = {
     "indigenous_name": "Sakur",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 24.011229,
+    "lng": 121.581699,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -447,13 +467,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 23.968004,
+    "lng": 121.597649,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -467,13 +488,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.975,
-    "lng": 121.604,
-    "coord_precision": "township",
+    "lat": 24.002341,
+    "lng": 121.631559,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -507,13 +529,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.951707,
+    "lng": 121.587226,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -527,13 +550,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.941506,
+    "lng": 121.566855,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -547,13 +571,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.96318,
+    "lng": 121.594976,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -567,13 +592,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.968949,
+    "lng": 121.559446,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -587,13 +613,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.947806,
+    "lng": 121.567238,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -607,13 +634,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.968503,
+    "lng": 121.589712,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -627,13 +655,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.933833,
+    "lng": 121.580014,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -647,13 +676,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.98695,
+    "lng": 121.593584,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -667,13 +697,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.976671,
+    "lng": 121.560631,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -707,13 +738,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.989289,
+    "lng": 121.575093,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -727,13 +759,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.98963,
+    "lng": 121.557824,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -747,13 +780,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.964759,
+    "lng": 121.597115,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -767,13 +801,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.943122,
+    "lng": 121.544076,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -787,13 +822,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.983709,
+    "lng": 121.58106,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -807,13 +843,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.973877,
+    "lng": 121.58362,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -827,13 +864,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.951399,
+    "lng": 121.593346,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -847,13 +885,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.978351,
+    "lng": 121.587785,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -867,13 +906,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.842978,
+    "lng": 121.505158,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -887,13 +927,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.847904,
+    "lng": 121.49375,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -907,13 +948,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.907817,
+    "lng": 121.530875,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -927,13 +969,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.798954,
+    "lng": 121.523997,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -947,13 +990,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.886119,
+    "lng": 121.528375,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -967,13 +1011,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.920726,
+    "lng": 121.506226,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -987,13 +1032,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.850997,
+    "lng": 121.521708,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1007,13 +1053,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.875797,
+    "lng": 121.599648,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1027,13 +1074,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.784327,
+    "lng": 121.561487,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1047,13 +1095,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.881842,
+    "lng": 121.514583,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1067,13 +1116,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.82195,
+    "lng": 121.475455,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1087,13 +1137,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.870475,
+    "lng": 121.50862,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1107,13 +1158,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.868004,
+    "lng": 121.51226,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1127,13 +1179,14 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.857,
-    "lng": 121.557,
-    "coord_precision": "township",
+    "lat": 23.836801,
+    "lng": 121.479176,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1147,13 +1200,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.752731,
+    "lng": 121.468257,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1167,13 +1221,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.727069,
+    "lng": 121.498788,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1187,13 +1242,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.730886,
+    "lng": 121.443688,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1207,13 +1263,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.718025,
+    "lng": 121.397632,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1227,13 +1284,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.710815,
+    "lng": 121.41834,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1247,13 +1305,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.733,
-    "lng": 121.467,
-    "coord_precision": "township",
+    "lat": 23.764415,
+    "lng": 121.500177,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1267,13 +1326,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.671799,
+    "lng": 121.466995,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1287,13 +1347,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.626622,
+    "lng": 121.434502,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1307,13 +1368,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.641941,
+    "lng": 121.451824,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1327,13 +1389,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.652731,
+    "lng": 121.42002,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1347,13 +1410,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.694186,
+    "lng": 121.489948,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1387,13 +1451,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.658411,
+    "lng": 121.451261,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1407,13 +1472,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.638666,
+    "lng": 121.429788,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1427,13 +1493,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.634699,
+    "lng": 121.394474,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1449,13 +1516,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.444265,
+    "lng": 121.495578,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "CIP gazette (the only confirmed-independent identity source) has 'Tafugan'. temp_dialects separately recorded 'Tafogan' for the same buluo, kept as indigenous_name_alt, but that source isn't independent (see sources.json), so this isn't treated as a genuine cross-source conflict — CIP's value stands.",
     "chiefs": [],
@@ -1469,13 +1537,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.462385,
+    "lng": 121.495732,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1489,13 +1558,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.459475,
+    "lng": 121.498358,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1509,13 +1579,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.46885,
+    "lng": 121.49731,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1529,13 +1600,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.475231,
+    "lng": 121.503282,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "CIP gazette lists 'Makotaay' for this buluo too — the earlier suspicion that this was a copy-paste duplicate of ami-makotaay-yuli (瑪谷達璦部落, 玉里鎮) is resolved: both genuinely share the name within the same single source. Settled.",
     "chiefs": [],
@@ -1547,12 +1619,13 @@ const BULUO_REF = {
     "indigenous_name": "Kodic",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.566653,
+    "lng": 121.517747,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -1566,13 +1639,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.635499,
+    "lng": 121.53073,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1586,13 +1660,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.568441,
+    "lng": 121.487042,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1604,12 +1679,13 @@ const BULUO_REF = {
     "indigenous_name": "Paterungan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.653131,
+    "lng": 121.537556,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -1623,13 +1699,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.597552,
+    "lng": 121.520086,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1643,13 +1720,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.606726,
+    "lng": 121.508123,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1663,13 +1741,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.490634,
+    "lng": 121.393156,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1683,13 +1762,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.511035,
+    "lng": 121.391306,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1703,13 +1783,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.501131,
+    "lng": 121.378465,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1723,13 +1804,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.493441,
+    "lng": 121.383613,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1743,13 +1825,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.456514,
+    "lng": 121.352828,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1763,13 +1846,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.526842,
+    "lng": 121.389881,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1783,13 +1867,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.579522,
+    "lng": 121.386307,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1803,13 +1888,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.495493,
+    "lng": 121.354414,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1821,12 +1907,13 @@ const BULUO_REF = {
     "indigenous_name": "Maifor",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.472367,
+    "lng": 121.350461,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -1840,13 +1927,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.525465,
+    "lng": 121.376541,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1860,13 +1948,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.574709,
+    "lng": 121.369121,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1880,13 +1969,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.569844,
+    "lng": 121.37333,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1900,13 +1990,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.564546,
+    "lng": 121.375633,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1940,13 +2031,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.465662,
+    "lng": 121.36404,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1960,13 +2052,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.494105,
+    "lng": 121.446337,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -1980,13 +2073,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.380362,
+    "lng": 121.359072,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2000,13 +2094,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.334876,
+    "lng": 121.316392,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2040,13 +2135,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.322383,
+    "lng": 121.33947,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2060,13 +2156,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.480018,
+    "lng": 121.405412,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2080,13 +2177,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.448168,
+    "lng": 121.389254,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2100,13 +2198,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.326025,
+    "lng": 121.318665,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2120,13 +2219,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.466704,
+    "lng": 121.40564,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2140,13 +2240,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.318204,
+    "lng": 121.345233,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2160,13 +2261,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.45426,
+    "lng": 121.396081,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2180,13 +2282,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.346208,
+    "lng": 121.344335,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2200,13 +2303,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.399094,
+    "lng": 121.359911,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2220,13 +2324,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.293283,
+    "lng": 121.337741,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2240,13 +2345,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.418121,
+    "lng": 121.369849,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "CIP gazette lists 'Makotaay' for this buluo too — see ami-makotaay-fengbin (港口部落, 豐濱鄉), which shares the same indigenous name. Confirmed as a real coincidence within the same single source, not a transcription error.",
     "chiefs": [],
@@ -2260,13 +2366,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.435897,
+    "lng": 121.379176,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2280,13 +2387,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.427339,
+    "lng": 121.373434,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2300,13 +2408,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.430347,
+    "lng": 121.347805,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2320,13 +2429,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.327859,
+    "lng": 121.30171,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2340,13 +2450,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.275496,
+    "lng": 121.288191,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2360,13 +2471,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.37947,
+    "lng": 121.324623,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2380,13 +2492,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.253081,
+    "lng": 121.296404,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2420,13 +2533,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.218101,
+    "lng": 121.30665,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2440,13 +2554,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.156852,
+    "lng": 121.229302,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2460,13 +2575,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.161158,
+    "lng": 121.241783,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2480,13 +2596,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.142347,
+    "lng": 121.270378,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2500,13 +2617,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.297617,
+    "lng": 121.333066,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -2882,13 +3000,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.097,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.110155,
+    "lng": 121.385526,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3047,12 +3166,13 @@ const BULUO_REF = {
     "indigenous_name": "Nadan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.406192,
+    "lng": 121.458798,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3298,13 +3418,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.892953,
+    "lng": 121.248052,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3318,13 +3439,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.926126,
+    "lng": 121.267853,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3338,13 +3460,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.968749,
+    "lng": 121.303717,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3358,13 +3481,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.018269,
+    "lng": 121.284087,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3385,13 +3509,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.871919,
+    "lng": 121.226059,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [
@@ -3448,13 +3573,14 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.05078,
+    "lng": 121.293821,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3468,13 +3594,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.032088,
+    "lng": 121.284798,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3488,13 +3615,14 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.943225,
+    "lng": 121.217484,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3508,13 +3636,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.82587,
+    "lng": 121.133563,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3528,13 +3657,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.828328,
+    "lng": 121.186209,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3564,12 +3694,13 @@ const BULUO_REF = {
     "indigenous_name": "Likavung",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.775225,
+    "lng": 121.064275,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3635,12 +3766,13 @@ const BULUO_REF = {
     "indigenous_name": "Danadanaw",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.874694,
+    "lng": 121.094892,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3654,13 +3786,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.862172,
+    "lng": 121.136515,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3713,13 +3846,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.754,
-    "lng": 121.149,
-    "coord_precision": "township",
+    "lat": 22.719976,
+    "lng": 121.061209,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -3752,12 +3886,13 @@ const BULUO_REF = {
     "indigenous_name": "Papulu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.764031,
+    "lng": 121.153424,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -3832,12 +3967,13 @@ const BULUO_REF = {
     "indigenous_name": "Kasavakan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.719848,
+    "lng": 121.050679,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4090,12 +4226,13 @@ const BULUO_REF = {
     "indigenous_name": "Talunas",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.914899,
+    "lng": 121.09148,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4107,12 +4244,13 @@ const BULUO_REF = {
     "indigenous_name": "Pasikau",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.903161,
+    "lng": 121.083374,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4124,12 +4262,13 @@ const BULUO_REF = {
     "indigenous_name": "Vakangan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.899858,
+    "lng": 121.067055,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4141,12 +4280,13 @@ const BULUO_REF = {
     "indigenous_name": "Minami",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.88249,
+    "lng": 121.15956,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4158,12 +4298,13 @@ const BULUO_REF = {
     "indigenous_name": "Kaminu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.91513,
+    "lng": 121.153625,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4175,12 +4316,13 @@ const BULUO_REF = {
     "indigenous_name": "Su nun sung",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.927853,
+    "lng": 121.114935,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4192,12 +4334,13 @@ const BULUO_REF = {
     "indigenous_name": "Nakanu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.90083,
+    "lng": 121.152077,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4209,12 +4352,13 @@ const BULUO_REF = {
     "indigenous_name": "Kalisahan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.887429,
+    "lng": 121.159942,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4226,12 +4370,13 @@ const BULUO_REF = {
     "indigenous_name": "Buklavu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.967504,
+    "lng": 121.115556,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4243,12 +4388,13 @@ const BULUO_REF = {
     "indigenous_name": "Litu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.185961,
+    "lng": 121.025007,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4260,12 +4406,13 @@ const BULUO_REF = {
     "indigenous_name": "Tuapuu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.153112,
+    "lng": 121.205929,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4277,12 +4424,13 @@ const BULUO_REF = {
     "indigenous_name": "Takimi",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.155072,
+    "lng": 121.191322,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4294,12 +4442,13 @@ const BULUO_REF = {
     "indigenous_name": "Likau-uan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.130622,
+    "lng": 121.175477,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4311,12 +4460,13 @@ const BULUO_REF = {
     "indigenous_name": "Vahu",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.156084,
+    "lng": 121.063793,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4328,12 +4478,13 @@ const BULUO_REF = {
     "indigenous_name": "Bulbul",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.169017,
+    "lng": 121.041524,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4345,12 +4496,13 @@ const BULUO_REF = {
     "indigenous_name": "Kamcing",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.044951,
+    "lng": 121.144719,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4362,12 +4514,13 @@ const BULUO_REF = {
     "indigenous_name": "Kusunuki",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.066544,
+    "lng": 121.160415,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4379,12 +4532,13 @@ const BULUO_REF = {
     "indigenous_name": "Haitutuan",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.095467,
+    "lng": 121.175764,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4396,12 +4550,13 @@ const BULUO_REF = {
     "indigenous_name": "Kanahcian",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.002501,
+    "lng": 121.123171,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4413,12 +4568,13 @@ const BULUO_REF = {
     "indigenous_name": "Kanaluk",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.00906,
+    "lng": 121.131133,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4430,12 +4586,13 @@ const BULUO_REF = {
     "indigenous_name": "Bacingul",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.999537,
+    "lng": 121.128305,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4447,12 +4604,13 @@ const BULUO_REF = {
     "indigenous_name": "Samuluh",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.132604,
+    "lng": 121.125268,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4464,12 +4622,13 @@ const BULUO_REF = {
     "indigenous_name": "Sulai-iaz",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.118081,
+    "lng": 121.167983,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4504,13 +4663,14 @@ const BULUO_REF = {
     "dialect": [
       "恆春阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.587357,
+    "lng": 120.994476,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -4600,12 +4760,13 @@ const BULUO_REF = {
     "indigenous_name": "Davugele",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.545295,
+    "lng": 120.966144,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4617,12 +4778,13 @@ const BULUO_REF = {
     "indigenous_name": "Kanadun",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.532633,
+    "lng": 120.965275,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4634,12 +4796,13 @@ const BULUO_REF = {
     "indigenous_name": "Lalauran",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.575908,
+    "lng": 120.988824,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4723,12 +4886,13 @@ const BULUO_REF = {
     "indigenous_name": "Pangwi",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.340554,
+    "lng": 120.891021,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4740,12 +4904,13 @@ const BULUO_REF = {
     "indigenous_name": "Qaljapang",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.360289,
+    "lng": 120.878832,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4757,12 +4922,13 @@ const BULUO_REF = {
     "indigenous_name": "Seqeciin",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.416149,
+    "lng": 120.921671,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4774,12 +4940,13 @@ const BULUO_REF = {
     "indigenous_name": "Tjukuvulj",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.453038,
+    "lng": 120.923743,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4809,12 +4976,13 @@ const BULUO_REF = {
     "indigenous_name": "Ru ja qas",
     "indigenous_name_alt": [],
     "dialect": [],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.309442,
+    "lng": 120.888695,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -4849,13 +5017,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 22.97,
-    "lng": 121.15,
-    "coord_precision": "township",
+    "lat": 22.973832,
+    "lng": 121.173231,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "座標：taitung-festival.vercel.app 提供的座標（22.097479, 121.172805）明顯偏離鹿野鄉其他部落（皆約北緯22.9–23.0度），研判為來源資料誤植，改用鹿野鄉概略座標（township 等級）。見 Pokoh data.js tt-ly-03 entry 的 note 欄位，同一發現。",
     "chiefs": [],
@@ -5056,13 +5225,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.953947,
+    "lng": 121.158082,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -5076,13 +5246,14 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.957887,
+    "lng": 121.154112,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "",
     "chiefs": [],
@@ -5102,13 +5273,14 @@ const BULUO_UNCOVERED = [
     "county": "花蓮縣",
     "township": "富里鄉",
     "village": "吳江村",
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.29571,
+    "lng": 121.333772,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   },
@@ -5124,13 +5296,14 @@ const BULUO_UNCOVERED = [
     "county": "花蓮縣",
     "township": "富里鄉",
     "village": "新興村",
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.226231,
+    "lng": 121.289656,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   },
@@ -5146,13 +5319,14 @@ const BULUO_UNCOVERED = [
     "county": "花蓮縣",
     "township": "豐濱鄉",
     "village": "港口村",
-    "lat": 23.634,
-    "lng": 121.49,
-    "coord_precision": "township",
+    "lat": 23.48561,
+    "lng": 121.511023,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   },
@@ -5234,13 +5408,14 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "長濱鄉",
     "village": "竹湖村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.275853,
+    "lng": 121.422032,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   },
@@ -5256,13 +5431,14 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "鹿野鄉",
     "village": "鹿野村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 22.892327,
+    "lng": 121.138589,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   },
@@ -5278,13 +5454,14 @@ const BULUO_UNCOVERED = [
     "county": "臺東縣",
     "township": "關山鎮",
     "village": "豐泉里",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
+    "lat": 23.05394,
+    "lng": 121.16241,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": ""
   }
