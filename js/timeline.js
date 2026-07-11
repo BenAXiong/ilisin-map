@@ -269,7 +269,7 @@ document.getElementById('tlStripScroll').addEventListener('scroll', () => {
 }, { passive: true });
 
 
-function renderTownshipChips() {
+function renderTimelineTownshipChips() {
   const bar = document.getElementById('tlCounty');
   bar.querySelectorAll('.tl-county-sep, .tl-chip-twp').forEach(el => el.remove());
   if (tlCountyFilter === 'all') return;
@@ -311,7 +311,7 @@ document.getElementById('tlCounty').addEventListener('click', e => {
   tlCountyFilter = chip.dataset.county;
   tlTownshipFilter = null;
   document.querySelectorAll('.tl-chip').forEach(c => c.classList.toggle('active', c === chip));
-  renderTownshipChips();
+  renderTimelineTownshipChips();
   renderStrip();
   renderDayCards();
 });
