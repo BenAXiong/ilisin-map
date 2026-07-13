@@ -391,7 +391,17 @@ function renderOverviewStrip() {
     </div>`;
   });
 
-  wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">${tribesHtml}</div>`;
+  // Grid lines — week (Mon) and month boundaries, behind tribe rows in doc order
+  let gridHtml = '';
+  const fmo = (1 - origin.getDay() + 7) % 7; // days from Jan 1 to first Monday
+  for (let d = fmo; d < total; d += 7)
+    gridHtml += `<div class="tlo-grid-week" style="left:${d * cellW}px"></div>`;
+  for (let m = 1; m < 12; m++) {
+    const d = dayIdx(new Date(origin.getFullYear(), m, 1));
+    gridHtml += `<div class="tlo-grid-month" style="left:${d * cellW}px"></div>`;
+  }
+
+  wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">${gridHtml}${tribesHtml}</div>`;
 
   _ovData = { cellW, total, origin, tribeRows };
 
@@ -472,6 +482,18 @@ function _renderToCanvas() {
   ctx.scale(scale, scale);
 
   ctx.fillStyle = C_BG; ctx.fillRect(0, 0, panelW, totalH);
+
+  // Grid lines — same week/month logic as renderOverviewStrip()
+  const fmo = (1 - origin.getDay() + 7) % 7;
+  ctx.fillStyle = C_TEXT1;
+  ctx.globalAlpha = 0.07;
+  for (let d = fmo; d < total; d += 7) ctx.fillRect(dayX(d), 0, 1, totalH);
+  ctx.globalAlpha = 0.20;
+  for (let m = 1; m < 12; m++) {
+    const d = Math.round((new Date(origin.getFullYear(), m, 1) - origin) / 86400000);
+    ctx.fillRect(dayX(d), 0, 1, totalH);
+  }
+  ctx.globalAlpha = 1;
 
   // Month bar (same proportional positions as the header tabs)
   for (let m = 0; m < 12; m++) {
