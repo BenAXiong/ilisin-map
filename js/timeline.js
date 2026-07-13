@@ -292,6 +292,8 @@ function setOverviewMode(on) {
   document.getElementById('tlCounty').hidden = on;
   if (on) { renderOverviewMonthTabs(); renderOverviewStrip(); }
   else renderMonthTabs();
+  const ew = document.getElementById('tloExportWrap');
+  if (ew) ew.style.display = on ? 'flex' : 'none';
 }
 
 function renderOverviewStrip() {
@@ -372,7 +374,8 @@ function renderOverviewStrip() {
     const bandsH = tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
     let bandsHtml = '';
     tr.bands.forEach(v => {
-      bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
+      const tip = `${v.chinese}${v.amis ? ' / ' + v.amis : ''} · ${v.date} · ${shortName(v.township)}`;
+      bandsHtml += `<div class="tlo-band" title="${tip}" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
     });
 
     tribesHtml += `<div class="tlo-tribe-row">
@@ -405,6 +408,71 @@ function selectDayFromOverview(date) {
   requestAnimationFrame(() => scrollStripToDay(date));
 }
 
+/* ── Overview export (dev-only) ── */
+
+async function _exportPng() {
+  if (!window.html2canvas) {
+    await new Promise((res, rej) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = res; s.onerror = rej;
+      document.head.appendChild(s);
+    });
+  }
+  const expWrap = document.getElementById('tloExportWrap');
+  expWrap.style.display = 'none';
+  try {
+    const canvas = await html2canvas(document.getElementById('panel-timeline'), {
+      scale: Math.min(window.devicePixelRatio || 2, 3),
+      logging: false
+    });
+    const a = document.createElement('a');
+    a.download = `pokoh-overview-${new Date().toISOString().slice(0, 10)}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  } finally {
+    expWrap.style.display = 'flex';
+  }
+}
+
+function _exportHtml() {
+  const theme = document.documentElement.dataset.theme || '';
+  const monthHtml = document.getElementById('tlMonthTabs').outerHTML;
+  const ovClone = document.getElementById('tlOverviewWrap').cloneNode(true);
+  ovClone.querySelectorAll('.tlo-band-section').forEach(el => el.removeAttribute('hidden'));
+  ovClone.style.cssText = 'overflow:visible;max-height:none;height:auto;flex:none;padding:.75rem .85rem';
+  const panelW = document.getElementById('panel-timeline').offsetWidth;
+  const date = new Date().toISOString().slice(0, 10);
+  fetch('/app.css').then(r => r.text()).then(css => {
+    const themeAttr = theme ? ` data-theme="${theme}"` : '';
+    const html = `<!DOCTYPE html>
+<html${themeAttr}>
+<head>
+<meta charset="utf-8">
+<title>Pokoh 豐年祭 全覽 — ${date}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<style>${css}
+html,body{height:auto;overflow:auto}
+body{padding:1.5rem}
+.tl-header{position:relative;height:54px;display:flex;align-items:center;border-bottom:1px solid var(--border);margin-bottom:.5rem}
+</style>
+</head>
+<body${themeAttr}>
+<div style="max-width:${panelW}px">
+<div class="tl-header">${monthHtml}</div>
+${ovClone.outerHTML}
+</div>
+</body>
+</html>`;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([html], { type: 'text/html;charset=utf-8' }));
+    a.download = `pokoh-overview-${date}.html`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+}
+
 /* ── Event listeners ── */
 
 if (localStorage.getItem('pokoh_dev') === '1') {
@@ -412,6 +480,13 @@ if (localStorage.getItem('pokoh_dev') === '1') {
   Object.assign(_ovBtn.style, { display: 'inline-block', position: 'absolute',
     right: '2.75rem', top: '50%', transform: 'translateY(-50%)' });
   _ovBtn.addEventListener('click', () => setOverviewMode(!tlOverviewMode));
+
+  const _expWrap = document.createElement('div');
+  _expWrap.id = 'tloExportWrap';
+  _expWrap.innerHTML = '<button class="theme-btn" id="tloExpPng">PNG</button><button class="theme-btn" id="tloExpHtml">HTML</button>';
+  document.getElementById('panel-timeline').appendChild(_expWrap);
+  document.getElementById('tloExpPng').addEventListener('click', _exportPng);
+  document.getElementById('tloExpHtml').addEventListener('click', _exportHtml);
 }
 
 document.getElementById('tlMonthTabs').addEventListener('click', e => {

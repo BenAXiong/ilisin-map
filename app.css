@@ -226,6 +226,10 @@ body.tab-info .app-header { display: none; }
 #panel-timeline.ov-active #tlOverviewWrap { flex: 1; border-bottom: none; }
 #panel-timeline.ov-active #tlCounty       { display: none; }
 #panel-timeline.ov-active .tl-month-tab  { color: var(--text-1); pointer-events: none; cursor: default; }
+#tloExportWrap {
+  position: absolute; bottom: .75rem; right: .75rem;
+  z-index: 20; display: none; gap: 6px;
+}
 .tlo-inner  { position: relative; display: inline-block; }
 .tlo-band {
   position: absolute;
@@ -535,7 +539,10 @@ body.tab-info .app-header { display: none; }
 }
 .map-dd-caret { font-size: .65em; transition: transform .15s; }
 .map-dd.open .map-dd-caret { transform: rotate(180deg); }
-.map-dd-panel {
+/* Specificity has to beat the base .map-chips rule below (also display:flex,
+   same class-selector weight) or the panel renders open by default
+   regardless of source order — .map-dd .map-dd-panel (two classes) does. */
+.map-dd .map-dd-panel {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
@@ -557,8 +564,6 @@ body.tab-info .app-header { display: none; }
 #mapCountyChips {
   flex-direction: column;
   align-items: stretch;
-  border-radius: 999px;
-  padding: 5px;
 }
 .map-chips--sub {
   position: absolute;
@@ -573,6 +578,9 @@ body.tab-info .app-header { display: none; }
   scrollbar-width: none;
 }
 .map-chips--sub::-webkit-scrollbar { display: none; }
+/* Same specificity problem as above: .map-chips's display:flex otherwise
+   beats the UA [hidden] rule, so the county:'all' hide never took visually. */
+.map-chips--sub[hidden] { display: none; }
 .map-chip {
   font-family: var(--mono);
   font-size: var(--fs-xs);
@@ -587,7 +595,7 @@ body.tab-info .app-header { display: none; }
   transition: background .12s, color .12s;
   -webkit-tap-highlight-color: transparent;
 }
-#mapCountyChips .map-chip { padding: 4px 12px; border-radius: 99px; text-align: center; }
+#mapCountyChips .map-chip { text-align: center; }
 .map-dd-panel .map-chip { text-align: right; }
 .map-chip.active             { background: var(--accent); color: var(--bg); }
 .map-chip:hover:not(.active) { background: var(--bg-alt); }
