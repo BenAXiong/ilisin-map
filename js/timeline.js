@@ -365,7 +365,7 @@ function renderOverviewStrip() {
       const d   = new Date(tr.start.getTime() + j * 86400000);
       const cnt = tr.map[d.toDateString()] || 0;
       const level = cnt > 0 ? Math.ceil((cnt / tr.maxCount) * 10) : 0;
-      cells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
+      cells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? ((level / 10) ** 2).toFixed(2) : '0'}"></div>`;
     }
 
     const bandsH = tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
