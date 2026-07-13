@@ -9486,10 +9486,13 @@
   <div id="map"></div>
   <div id="mapFilters">
     <div id="mapTopRow">
-      <div class="map-chips" id="mapCountyChips">
-        <button class="map-chip active" data-county="all">全國</button>
-        <button class="map-chip" data-county="花蓮縣">花蓮</button>
-        <button class="map-chip" data-county="臺東縣">臺東</button>
+      <div class="map-loc">
+        <div class="map-chips" id="mapCountyChips">
+          <button class="map-chip active" data-county="all">全國</button>
+          <button class="map-chip" data-county="花蓮縣">花蓮</button>
+          <button class="map-chip" data-county="臺東縣">臺東</button>
+        </div>
+        <div class="map-chips map-chips--sub" id="mapTownshipChips" hidden></div>
       </div>
       <div class="map-dd" id="mapTimeDD">
         <button class="map-dd-trigger" id="mapTimeTrigger" type="button" aria-expanded="false">
@@ -9510,7 +9513,6 @@
         </div>
       </div>
     </div>
-    <div class="map-chips map-chips--sub" id="mapTownshipChips" hidden></div>
   </div>
   <div class="bs" id="bottomSheet" data-state="collapsed">
     <div class="bs-handle-bar" id="bsHandleBar">
