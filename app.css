@@ -112,6 +112,9 @@ html.js-ready #festival-data {
   transition: border-color .15s, color .15s, background .15s;
 }
 .theme-btn:hover { border-color: var(--amber); color: var(--amber-dark); background: var(--bg); }
+.saved-filter-btn { display: flex; align-items: center; justify-content: center; }
+.saved-filter-btn svg { display: block; }
+.saved-filter-btn.active svg path { fill: currentColor; }
 
 .install-btn {
   font-family: var(--mono);
@@ -840,6 +843,24 @@ body.tab-info .app-header { display: none; }
   padding: 1px 7px;
   white-space: nowrap;
 }
+/* Outline bookmark by default; fills solid amber once saved — same
+   currentColor-driven convention as .card-pin, just filled instead of a
+   color swap, so "saved" reads as a distinct shape state, not just a tint. */
+.card-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-3);
+  transition: color .15s;
+}
+.card-save:hover  { color: var(--amber-dark); }
+.card-save.saved  { color: var(--amber); }
+.card-save.saved svg path { fill: currentColor; }
 .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
 .card-venue  {
   font-size: var(--fs-sm);
@@ -1504,6 +1525,7 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
 .sb-brand  { display: flex; align-items: center; gap: .6rem; }
 .sb-logo   { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
 .sb-appname { font-family: var(--disp); font-size: var(--fs-lg); color: var(--text-1); letter-spacing: -.01em; }
+.sb-header-actions { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; }
 .sb-theme-btn {
   width: 34px;
   height: 34px;
