@@ -411,27 +411,36 @@ function selectDayFromOverview(date) {
 /* ── Overview export (dev-only) ── */
 
 async function _exportPng() {
-  if (!window.html2canvas) {
-    await new Promise((res, rej) => {
-      const s = document.createElement('script');
-      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-      s.onload = res; s.onerror = rej;
-      document.head.appendChild(s);
-    });
-  }
-  const expWrap = document.getElementById('tloExportWrap');
-  expWrap.style.display = 'none';
+  const btn = document.getElementById('tloExpPng');
+  const orig = btn.textContent;
+  btn.textContent = '…'; btn.disabled = true;
   try {
+    if (!window.html2canvas) {
+      await new Promise((res, rej) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+        s.onload = res; s.onerror = () => rej(new Error('CDN load failed'));
+        document.head.appendChild(s);
+      });
+    }
+    const expWrap = document.getElementById('tloExportWrap');
+    expWrap.style.display = 'none';
     const canvas = await html2canvas(document.getElementById('panel-timeline'), {
       scale: Math.min(window.devicePixelRatio || 2, 3),
       logging: false
     });
-    const a = document.createElement('a');
-    a.download = `pokoh-overview-${new Date().toISOString().slice(0, 10)}.png`;
-    a.href = canvas.toDataURL('image/png');
-    a.click();
-  } finally {
     expWrap.style.display = 'flex';
+    const a = Object.assign(document.createElement('a'), {
+      download: `pokoh-overview-${new Date().toISOString().slice(0, 10)}.png`,
+      href: canvas.toDataURL('image/png')
+    });
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  } catch (e) {
+    document.getElementById('tloExportWrap').style.display = 'flex';
+    // eslint-disable-next-line no-alert
+    alert('PNG export failed: ' + e.message);
+  } finally {
+    btn.textContent = orig; btn.disabled = false;
   }
 }
 
