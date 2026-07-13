@@ -752,7 +752,10 @@ body.tab-info .app-header { display: none; }
   transition: transform .35s cubic-bezier(.4, 0, .2, 1), height .35s cubic-bezier(.4, 0, .2, 1);
   will-change: transform;
 }
-.bs[data-state="full"]      { transform: translateY(0); }
+/* z-index above #mapFilters (500) — at full height the sheet's handle bar
+   sits within the filter row's vertical span, and without this the filter
+   row would win hit-testing and swallow the drag gesture entirely. */
+.bs[data-state="full"]      { transform: translateY(0); z-index: 600; }
 .bs[data-state="half"]      { transform: translateY(0); height: 50%; }
 .bs[data-state="collapsed"] { transform: translateY(calc(100% - 28px)); }
 
