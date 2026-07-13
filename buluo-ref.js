@@ -2058,9 +2058,9 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.580319,
-    "lng": 121.380266,
-    "coord_precision": "village",
+    "lat": 23.57862,
+    "lng": 121.3756,
+    "coord_precision": "exact",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
@@ -2068,7 +2068,7 @@ const BULUO_REF = {
       "國家文化記憶庫 2.0 (tcmb.culture.tw / 舊 catalog.digitalarchives.tw)",
       "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "據國家文化記憶庫（tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=595746）：原名 Pairasun，1945年改稱 Kang koga（剛估那），2008年改稱 Cirocan（鶺櫓棧）。位於富源村，在富源森林遊樂區內、富源車站西側，南接另一獨立部落「牧櫓棧部落」（非本部落別名，勿混淆）。座標採用富源車站（OSM/Nominatim），屬地標/聚落層級近似值，非部落聚會所實際座標，故 coord_precision 標為 village 而非 exact。",
+    "notes": "據國家文化記憶庫（tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=595746）：原名 Pairasun，1945年改稱 Kang koga（剛估那），2008年改稱 Cirocan（鶺櫓棧）。位於富源村，在富源森林遊樂區內、富源車站西側，南接另一獨立部落「牧櫓棧部落」（非本部落別名，勿混淆）。座標改採該筆國家文化記憶庫頁面本身標註的座標（23.57862, 121.3756），與先前採用的富源車站座標僅相距約190公尺，可互相佐證；因座標直接來自該部落專屬頁面而非地標代用，coord_precision 升級為 exact。",
     "chiefs": [],
     "contact": []
   },
