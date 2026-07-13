@@ -444,32 +444,61 @@ body.tab-info .app-header { display: none; }
 #panel-map.active   { display: block; }
 #map                { position: absolute; inset: 0; isolation: isolate; }
 
+/* Mobile-first: filters split to opposite corners, each a dropdown that
+   deploys downward. Desktop (>=768px, see override below) restores the
+   original single centered pill row with everything always visible. */
 #mapFilters {
   position: absolute;
-  top: 12px; left: 50%;
-  transform: translateX(-50%);
+  top: 12px; left: 12px; right: 12px;
   z-index: 500;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
 }
 #mapTopRow {
   display: flex;
-  gap: 6px;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
 }
-.map-chips {
+.map-dd { position: relative; }
+.map-dd-trigger {
   display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: .06em;
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.map-dd-caret { font-size: .65em; transition: transform .15s; }
+.map-dd.open .map-dd-caret { transform: rotate(180deg); }
+.map-dd-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  display: none;
+  flex-direction: column !important;
+  align-items: stretch;
+}
+#mapCountyDD .map-dd-panel { left: 0; }
+#mapTimeDD   .map-dd-panel { right: 0; }
+.map-dd.open .map-dd-panel { display: flex; }
+.map-chips {
   gap: 3px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 99px;
-  padding: 5px 8px;
+  border-radius: 14px;
+  padding: 5px;
   box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
   white-space: nowrap;
 }
 .map-chips--sub {
+  display: flex;
   overflow-x: auto;
   scrollbar-width: none;
   max-width: min(92vw, 420px);
@@ -479,17 +508,76 @@ body.tab-info .app-header { display: none; }
   font-family: var(--mono);
   font-size: var(--fs-xs);
   letter-spacing: .06em;
-  padding: 4px 12px;
-  border-radius: 99px;
+  padding: 6px 12px;
+  border-radius: 10px;
   border: none;
   background: transparent;
   color: var(--text-2);
   cursor: pointer;
+  text-align: left;
   transition: background .12s, color .12s;
   -webkit-tap-highlight-color: transparent;
 }
+.map-dd-panel .map-chip { text-align: right; }
+#mapCountyDD .map-dd-panel .map-chip { text-align: left; }
 .map-chip.active             { background: var(--accent); color: var(--bg); }
 .map-chip:hover:not(.active) { background: var(--bg-alt); }
+
+#mapCustomDateRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 5px 2px;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+}
+#mapCustomDateRow input[type="date"] {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 4px;
+  min-width: 0;
+}
+#mapCustomApply {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  letter-spacing: .06em;
+  padding: 4px 10px;
+  border-radius: 99px;
+  border: none;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 768px) {
+  #mapFilters {
+    left: 50%; right: auto;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  #mapTopRow { display: flex; gap: 6px; align-items: center; justify-content: center; }
+  .map-dd-trigger { display: none; }
+  .map-dd-panel {
+    position: static;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .map-chips { border-radius: 99px; padding: 5px 8px; }
+  .map-chip { padding: 4px 12px; border-radius: 99px; text-align: center; }
+  .map-dd-panel .map-chip, #mapCountyDD .map-dd-panel .map-chip { text-align: center; }
+  #mapCustomDateRow { flex-basis: 100%; justify-content: center; padding: 2px 6px; }
+}
 
 /* ── Bottom sheet ───────────────────────────── */
 .bs {

@@ -9484,15 +9484,34 @@
   <div id="map"></div>
   <div id="mapFilters">
     <div id="mapTopRow">
-      <div class="map-chips" id="mapCountyChips">
-        <button class="map-chip active" data-county="all">全國</button>
-        <button class="map-chip" data-county="花蓮縣">花蓮</button>
-        <button class="map-chip" data-county="臺東縣">臺東</button>
+      <div class="map-dd" id="mapCountyDD">
+        <button class="map-dd-trigger" id="mapCountyTrigger" type="button" aria-expanded="false">
+          <span class="map-dd-label" id="mapCountyLabel">全國</span><span class="map-dd-caret">▾</span>
+        </button>
+        <div class="map-chips map-dd-panel" id="mapCountyChips">
+          <button class="map-chip active" data-county="all">全國</button>
+          <button class="map-chip" data-county="花蓮縣">花蓮</button>
+          <button class="map-chip" data-county="臺東縣">臺東</button>
+        </div>
       </div>
-      <div class="map-chips" id="mapTimeChips">
-        <button class="map-chip active" data-time="all">全期</button>
-        <button class="map-chip" data-time="today">今天</button>
-        <button class="map-chip" data-time="7days">7天</button>
+      <div class="map-dd" id="mapTimeDD">
+        <button class="map-dd-trigger" id="mapTimeTrigger" type="button" aria-expanded="false">
+          <span class="map-dd-label" id="mapTimeLabel">全期</span><span class="map-dd-caret">▾</span>
+        </button>
+        <div class="map-chips map-dd-panel" id="mapTimeChips">
+          <button class="map-chip active" data-time="all">全期</button>
+          <button class="map-chip" data-time="today">今天</button>
+          <button class="map-chip" data-time="tomorrow">明天</button>
+          <button class="map-chip" data-time="7days">7天</button>
+          <button class="map-chip" data-time="next-weekend">下週末</button>
+          <button class="map-chip" data-time="custom">自訂</button>
+          <div id="mapCustomDateRow" hidden>
+            <input type="date" id="mapCustomStart">
+            <span>–</span>
+            <input type="date" id="mapCustomEnd">
+            <button id="mapCustomApply" type="button">套用</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="map-chips map-chips--sub" id="mapTownshipChips" hidden></div>

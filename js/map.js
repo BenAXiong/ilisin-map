@@ -12,6 +12,20 @@ let TAP_NEXT      = null;
 let countyFilter   = 'all';
 let timeFilter     = 'all';
 let townshipFilter = null;
+let customStart    = null;
+let customEnd      = null;
+
+const TIME_LABELS = {
+  all: '全期', today: '今天', tomorrow: '明天', '7days': '7天',
+  'next-weekend': '下週末', custom: '自訂',
+};
+const COUNTY_LABELS = { all: '全國', '花蓮縣': '花蓮', '臺東縣': '臺東' };
+
+// yyyy-mm-dd from local date parts — Date#toISOString() converts to UTC
+// first, which can land on the wrong calendar day near local midnight.
+function toDateInputValue(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 
 function makeIcon(status, isActive) {
   const colors = {
@@ -59,13 +73,43 @@ function deselect() {
   setSheetState('collapsed');
 }
 
+// The Saturday/Sunday of the *following* weekend, i.e. always skipping the
+// nearest upcoming Sat/Sun (already covered by the "7天" filter) — except
+// when today is itself a Sunday, whose nearest upcoming Saturday (6 days
+// out) is already past the weekend today sits in, so it's "next", not "this".
+function nextWeekendRange(today) {
+  const day = today.getDay(); // 0 Sun .. 6 Sat
+  let daysToSat = (6 - day + 7) % 7;
+  if (day !== 0) daysToSat += 7;
+  const sat = new Date(today); sat.setDate(today.getDate() + daysToSat);
+  const sun = new Date(sat);   sun.setDate(sat.getDate() + 1);
+  return [sat, sun];
+}
+
 function matchesTime(v) {
   if (timeFilter === 'all') return true;
   const start = parseStartDate(v.date);
   if (!start) return false;
   const end = parseEndDate(v.date) ?? start;
   const today = new Date(); today.setHours(0, 0, 0, 0);
+
   if (timeFilter === 'today') return start <= today && end >= today;
+
+  if (timeFilter === 'tomorrow') {
+    const tomorrow = new Date(today); tomorrow.setDate(today.getDate() + 1);
+    return start <= tomorrow && end >= tomorrow;
+  }
+
+  if (timeFilter === 'next-weekend') {
+    const [sat, sun] = nextWeekendRange(today);
+    return start <= sun && end >= sat;
+  }
+
+  if (timeFilter === 'custom') {
+    if (!customStart || !customEnd) return true;
+    return start <= customEnd && end >= customStart;
+  }
+
   const weekEnd = new Date(today); weekEnd.setDate(today.getDate() + 6);
   return start <= weekEnd && end >= today;
 }
@@ -294,6 +338,34 @@ function initMap() {
   initSheetDrag();
 }
 
+/* ── Dropdowns (mobile: chip panels collapse behind a trigger button that
+   deploys them downward; desktop CSS forces panels open and hides the
+   triggers, see app.css) ── */
+
+function closeDropdowns() {
+  document.querySelectorAll('.map-dd.open').forEach(dd => {
+    dd.classList.remove('open');
+    dd.querySelector('.map-dd-trigger')?.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function toggleDropdown(dd) {
+  const willOpen = !dd.classList.contains('open');
+  closeDropdowns();
+  dd.classList.toggle('open', willOpen);
+  dd.querySelector('.map-dd-trigger')?.setAttribute('aria-expanded', String(willOpen));
+}
+
+document.getElementById('mapCountyTrigger').addEventListener('click', () => {
+  toggleDropdown(document.getElementById('mapCountyDD'));
+});
+document.getElementById('mapTimeTrigger').addEventListener('click', () => {
+  toggleDropdown(document.getElementById('mapTimeDD'));
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.map-dd')) closeDropdowns();
+});
+
 /* ── Event listeners ── */
 
 document.getElementById('mapCountyChips').addEventListener('click', e => {
@@ -315,6 +387,8 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   document.querySelectorAll('#mapCountyChips .map-chip').forEach(c =>
     c.classList.toggle('active', c === chip)
   );
+  document.getElementById('mapCountyLabel').textContent = COUNTY_LABELS[newCounty] || newCounty;
+  closeDropdowns();
   renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();
@@ -331,10 +405,44 @@ document.getElementById('mapTimeChips').addEventListener('click', e => {
   document.querySelectorAll('#mapTimeChips .map-chip').forEach(c =>
     c.classList.toggle('active', c === chip)
   );
+  document.getElementById('mapTimeLabel').textContent = TIME_LABELS[timeFilter] || timeFilter;
+
+  const customRow = document.getElementById('mapCustomDateRow');
+  if (timeFilter === 'custom') {
+    customRow.hidden = false;
+    const startInput = document.getElementById('mapCustomStart');
+    const endInput   = document.getElementById('mapCustomEnd');
+    if (!startInput.value) startInput.value = endInput.value = toDateInputValue(new Date());
+    // Custom selection isn't final until "套用" is tapped — leave the
+    // dropdown open so the date inputs stay reachable.
+    return;
+  }
+  customRow.hidden = true;
+  closeDropdowns();
   if (mapInitialized) {
     updateMarkers();
     renderSheet();
     trackEvent('map_filter', { time: timeFilter });
+  }
+});
+
+document.getElementById('mapCustomApply').addEventListener('click', () => {
+  const startVal = document.getElementById('mapCustomStart').value;
+  const endVal   = document.getElementById('mapCustomEnd').value;
+  if (!startVal || !endVal) return;
+  // Built from the y/m/d parts rather than `new Date(str)` — the latter
+  // parses a bare yyyy-mm-dd as UTC midnight, which can land on the wrong
+  // local calendar day outside UTC+ zones.
+  const [sy, sm, sd] = startVal.split('-').map(Number);
+  const [ey, em, ed] = endVal.split('-').map(Number);
+  customStart = new Date(sy, sm - 1, sd);
+  customEnd   = new Date(ey, em - 1, ed);
+  if (customEnd < customStart) [customStart, customEnd] = [customEnd, customStart];
+  closeDropdowns();
+  if (mapInitialized) {
+    updateMarkers();
+    renderSheet();
+    trackEvent('map_filter', { time: 'custom' });
   }
 });
 
