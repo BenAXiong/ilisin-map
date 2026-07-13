@@ -562,6 +562,12 @@ body{padding:1.5rem}
 <div class="tl-header">${monthHtml}</div>
 ${ovClone.outerHTML}
 </div>
+<script>
+document.querySelectorAll('.tlo-tribe-bar').forEach(function(bar) {
+  var section = document.querySelector('.tlo-band-section[data-group="' + bar.dataset.group + '"]');
+  if (section) bar.addEventListener('click', function() { section.hidden = !section.hidden; });
+});
+</script>
 </body>
 </html>`;
     const a = document.createElement('a');
