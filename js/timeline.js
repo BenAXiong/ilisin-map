@@ -371,7 +371,7 @@ function renderOverviewStrip() {
       cells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
     }
     tribeBarsHtml += `<div class="tlo-tribe-bar" data-group="${tr.grp}"
-      style="top:${top}px;left:${tr.startIdx * cellW}px;width:${tr.span * cellW}px">
+      style="top:${top}px;left:${tr.startIdx * cellW}px;width:${tr.span * cellW}px;height:${TLO_ROW_H}px">
       <span class="tlo-tribe-lbl" title="${TRIBE_ZH[tr.grp] || tr.grp}">${TRIBE_NAMES[tr.grp] || tr.grp}</span>
       <div class="tlo-t-cells">${cells}</div>
     </div>`;
