@@ -311,75 +311,91 @@ function renderOverviewStrip() {
     }
   }
 
-  // Amis intensity bar (density) + collapsible detail bands
-  const amiEvents = EVENTS.filter(v => v.group === 'ami' && v.status !== 'tbd' && v.status !== 'cancelled');
-  let tribeBarsHtml = '';
-  let bandsHtml = '';
-  let bandsH = 0;
+  // Density bars + collapsible detail bands, one row per tribe
+  const TRIBE_ORDER = ['ami', 'szy', 'ckv', 'bnn', 'trv', 'pwn', 'pyu'];
+  const TRIBE_NAMES = { ami: "'Amis/Pangcah", szy: 'Sakizaya', ckv: 'Kavalan',
+                        bnn: 'Bunun', trv: 'Truku', pwn: 'Paiwan', pyu: 'Puyuma' };
+  const TRIBE_ZH    = { ami: '阿美族', szy: '撒奇萊雅族', ckv: '噶瑪蘭族',
+                        bnn: '布農族', trv: '太魯閣族', pwn: '排灣族', pyu: '卑南族' };
+  const TLO_ROW_H   = 22;
+  const TLO_ROW_GAP = 4;
 
-  if (amiEvents.length) {
-    // Density bar
-    const amiMap = {};
-    amiEvents.forEach(v => {
+  const tribeRows = [];
+  TRIBE_ORDER.forEach(grp => {
+    const evs = EVENTS.filter(v => v.group === grp && v.status !== 'tbd' && v.status !== 'cancelled');
+    if (!evs.length) return;
+
+    const map = {};
+    evs.forEach(v => {
       const s = parseStartDate(v.date), e = parseEndDate(v.date) || s;
       if (!s) return;
       for (let d = new Date(s); d <= e; d = new Date(d.getTime() + 86400000))
-        amiMap[d.toDateString()] = (amiMap[d.toDateString()] || 0) + 1;
+        map[d.toDateString()] = (map[d.toDateString()] || 0) + 1;
     });
-    const maxAmi = Math.max(1, ...Object.values(amiMap));
-    const amiDates = Object.keys(amiMap).map(k => new Date(k));
-    const amiStart    = new Date(Math.min(...amiDates.map(d => d.getTime())));
-    const amiEnd      = new Date(Math.max(...amiDates.map(d => d.getTime())));
-    const amiStartIdx = dayIdx(amiStart);
-    const amiSpan     = dayIdx(amiEnd) - amiStartIdx + 1;
+    if (!Object.keys(map).length) return;
 
-    let amiCells = '';
-    for (let i = 0; i < amiSpan; i++) {
-      const d   = new Date(amiStart.getTime() + i * 86400000);
-      const cnt = amiMap[d.toDateString()] || 0;
-      const level = cnt > 0 ? Math.ceil((cnt / maxAmi) * 10) : 0;
-      amiCells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
-    }
-    tribeBarsHtml = `<div class="tlo-tribe-bar" data-group="ami"
-      style="left:${amiStartIdx * cellW}px;width:${amiSpan * cellW}px">
-      <span class="tlo-tribe-lbl" title="阿美族">'Amis/Pangcah</span>
-      <div class="tlo-t-cells">${amiCells}</div>
-    </div>`;
+    const maxCount = Math.max(1, ...Object.values(map));
+    const dates    = Object.keys(map).map(k => new Date(k));
+    const start    = new Date(Math.min(...dates.map(d => d.getTime())));
+    const end      = new Date(Math.max(...dates.map(d => d.getTime())));
+    const startIdx = dayIdx(start);
+    const span     = dayIdx(end) - startIdx + 1;
 
-    // Detail bands (Amis only, lane-packed, hidden until density bar is clicked)
-    const amiBands = amiEvents
+    const bands = evs
       .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
       .filter(v => v._s && v._e)
       .sort((a, b) => a._s - b._s);
-
     const laneEnds = [];
-    amiBands.forEach(v => {
+    bands.forEach(v => {
       const sd = dayIdx(v._s), ed = dayIdx(v._e);
       let lane = laneEnds.findIndex(e => e < sd);
       if (lane === -1) lane = laneEnds.length;
       laneEnds[lane] = ed;
       v._ov_lane = lane; v._ov_sd = sd; v._ov_ed = ed;
     });
-    bandsH = laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
-    amiBands.forEach(v => {
+
+    tribeRows.push({ grp, map, maxCount, start, startIdx, span, bands, laneEnds });
+  });
+
+  const sectionH = tribeRows.length * TLO_ROW_H + Math.max(0, tribeRows.length - 1) * TLO_ROW_GAP;
+  let tribeBarsHtml = '';
+  let detailSectionsHtml = '';
+
+  tribeRows.forEach((tr, i) => {
+    const top = i * (TLO_ROW_H + TLO_ROW_GAP);
+    let cells = '';
+    for (let j = 0; j < tr.span; j++) {
+      const d   = new Date(tr.start.getTime() + j * 86400000);
+      const cnt = tr.map[d.toDateString()] || 0;
+      const level = cnt > 0 ? Math.ceil((cnt / tr.maxCount) * 10) : 0;
+      cells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
+    }
+    tribeBarsHtml += `<div class="tlo-tribe-bar" data-group="${tr.grp}"
+      style="top:${top}px;left:${tr.startIdx * cellW}px;width:${tr.span * cellW}px">
+      <span class="tlo-tribe-lbl" title="${TRIBE_ZH[tr.grp] || tr.grp}">${TRIBE_NAMES[tr.grp] || tr.grp}</span>
+      <div class="tlo-t-cells">${cells}</div>
+    </div>`;
+
+    const bandsH = tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+    let bandsHtml = '';
+    tr.bands.forEach(v => {
       bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
     });
-  }
+    detailSectionsHtml += `<div class="tlo-band-section" data-group="${tr.grp}" hidden>
+      <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
+    </div>`;
+  });
 
   wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">
     <div class="tlo-month-row">${monthsHtml}</div>
-    <div class="tlo-tribe-section">${tribeBarsHtml}</div>
-    <div class="tlo-band-section" hidden>
-      <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
-    </div>
+    <div class="tlo-tribe-section" style="height:${sectionH}px">${tribeBarsHtml}</div>
+    ${detailSectionsHtml}
   </div>`;
 
-  if (tribeBarsHtml) {
-    const bandSection = wrap.querySelector('.tlo-band-section');
-    wrap.querySelector('.tlo-tribe-bar').addEventListener('click', () => {
-      bandSection.hidden = !bandSection.hidden;
-    });
-  }
+  wrap.querySelectorAll('.tlo-tribe-bar').forEach(bar => {
+    const section = wrap.querySelector(`.tlo-band-section[data-group="${bar.dataset.group}"]`);
+    if (section) bar.addEventListener('click', () => { section.hidden = !section.hidden; });
+  });
 }
 
 function selectDayFromOverview(date) {
