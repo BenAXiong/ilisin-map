@@ -42,6 +42,7 @@ let tlSelectedDay     = null;
 let tlCountyFilter    = 'all';
 let tlTownshipFilter  = null;
 let tlOverviewMode    = false;
+let _ovData           = null; // set by renderOverviewStrip(), read by _renderToCanvas()
 let tlNameMode        = localStorage.getItem('pokoh-tl-name-mode') === 'indigenous' ? 'indigenous' : 'chinese';
 
 function applyTlNameMode() {
@@ -392,6 +393,8 @@ function renderOverviewStrip() {
 
   wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">${tribesHtml}</div>`;
 
+  _ovData = { cellW, total, origin, tribeRows };
+
   wrap.querySelectorAll('.tlo-tribe-bar').forEach(bar => {
     const section = wrap.querySelector(`.tlo-band-section[data-group="${bar.dataset.group}"]`);
     if (section) bar.addEventListener('click', () => { section.hidden = !section.hidden; });
@@ -410,37 +413,112 @@ function selectDayFromOverview(date) {
 
 /* ── Overview export (dev-only) ── */
 
-async function _exportPng() {
+function _toRgb(cssColor) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 1;
+  const cx = c.getContext('2d');
+  cx.fillStyle = cssColor;
+  cx.fillRect(0, 0, 1, 1);
+  const [r, g, b, a] = cx.getImageData(0, 0, 1, 1).data;
+  return a > 0 ? `rgb(${r},${g},${b})` : 'transparent';
+}
+
+function _readCssVar(varName) {
+  const el = document.createElement('div');
+  el.style.cssText = `position:absolute;left:-9999px;width:1px;height:1px;background:var(${varName})`;
+  document.body.appendChild(el);
+  const color = _toRgb(getComputedStyle(el).backgroundColor);
+  document.body.removeChild(el);
+  return color;
+}
+
+function _renderToCanvas() {
+  if (!_ovData) return null;
+  const { total, origin, tribeRows } = _ovData;
+  const TRIBE_NAMES = { ami: "'Amis/Pangcah", szy: 'Sakizaya', ckv: 'Kavalan',
+                        bnn: 'Bunun', trv: 'Truku', pwn: 'Paiwan', pyu: 'Puyuma' };
+  const TLO_ROW_H = 22, BAND_OW_H = 8, BAND_OW_GAP = 2, ROW_GAP = 4;
+  const LABEL_W = 92, HEADER_H = 32, PAD_V = 10, PAD_R = 8;
+
+  const C_BG     = _readCssVar('--bg');
+  const C_TEXT1  = _readCssVar('--ink');
+  const C_TEXT3  = _readCssVar('--text-3');
+  const C_ACCENT = _readCssVar('--accent');
+  const bandEl   = document.querySelector('.tlo-band');
+  const C_BAND   = bandEl ? (_toRgb(getComputedStyle(bandEl).backgroundColor) || C_ACCENT) : C_ACCENT;
+
+  const panelW = document.getElementById('panel-timeline').offsetWidth;
+  const gridW  = panelW - LABEL_W - PAD_R;
+  const dayX   = i => LABEL_W + (i / total) * gridW;
+
+  let totalH = PAD_V + HEADER_H + PAD_V;
+  tribeRows.forEach(tr => {
+    totalH += ROW_GAP + TLO_ROW_H + ROW_GAP + tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+  });
+  totalH += PAD_V;
+
+  const scale  = Math.min(window.devicePixelRatio || 2, 3);
+  const canvas = document.createElement('canvas');
+  canvas.width = panelW * scale; canvas.height = totalH * scale;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(scale, scale);
+
+  ctx.fillStyle = C_BG; ctx.fillRect(0, 0, panelW, totalH);
+
+  // Month bar
+  for (let m = 0; m < 12; m++) {
+    const x1 = dayX(Math.round((new Date(origin.getFullYear(), m, 1) - origin) / 86400000));
+    const x2 = dayX(Math.round((new Date(origin.getFullYear(), m + 1, 1) - origin) / 86400000));
+    ctx.strokeStyle = C_TEXT3; ctx.globalAlpha = 0.35; ctx.lineWidth = 0.5;
+    ctx.beginPath(); ctx.moveTo(x1, PAD_V + 4); ctx.lineTo(x1, PAD_V + HEADER_H - 4); ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.font = '11px sans-serif'; ctx.fillStyle = C_TEXT1;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(`${m + 1}月`, (x1 + x2) / 2, PAD_V + HEADER_H / 2);
+  }
+
+  // Tribe rows (all band sections expanded)
+  let y = PAD_V + HEADER_H + PAD_V;
+  tribeRows.forEach(tr => {
+    y += ROW_GAP;
+    ctx.font = 'bold 11px "Courier New", monospace'; ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle'; ctx.fillStyle = C_TEXT1; ctx.globalAlpha = 1;
+    ctx.fillText(TRIBE_NAMES[tr.grp] || tr.grp, LABEL_W - 6, y + TLO_ROW_H / 2);
+    for (let j = 0; j < tr.span; j++) {
+      const cnt = tr.map[new Date(tr.start.getTime() + j * 86400000).toDateString()] || 0;
+      if (!cnt) continue;
+      const level = Math.ceil((cnt / tr.maxCount) * 10);
+      const x = dayX(tr.startIdx + j), w = dayX(tr.startIdx + j + 1) - x;
+      ctx.fillStyle = C_ACCENT; ctx.globalAlpha = (level / 10) ** 2;
+      ctx.fillRect(x, y, w, TLO_ROW_H);
+    }
+    ctx.globalAlpha = 1; y += TLO_ROW_H + ROW_GAP;
+    tr.bands.forEach(v => {
+      const bx = dayX(v._ov_sd), bw = dayX(v._ov_ed + 1) - bx;
+      ctx.fillStyle = C_BAND;
+      ctx.fillRect(bx, y + v._ov_lane * (BAND_OW_H + BAND_OW_GAP), bw, BAND_OW_H);
+    });
+    y += tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+  });
+
+  return canvas;
+}
+
+function _exportPng() {
   const btn = document.getElementById('tloExpPng');
-  const orig = btn.textContent;
   btn.textContent = '…'; btn.disabled = true;
   try {
-    if (!window.html2canvas) {
-      await new Promise((res, rej) => {
-        const s = document.createElement('script');
-        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-        s.onload = res; s.onerror = () => rej(new Error('CDN load failed'));
-        document.head.appendChild(s);
-      });
-    }
-    const expWrap = document.getElementById('tloExportWrap');
-    expWrap.style.display = 'none';
-    const canvas = await html2canvas(document.getElementById('panel-timeline'), {
-      scale: Math.min(window.devicePixelRatio || 2, 3),
-      logging: false
-    });
-    expWrap.style.display = 'flex';
+    const canvas = _renderToCanvas();
+    if (!canvas) throw new Error('No data — open the overview first');
     const a = Object.assign(document.createElement('a'), {
       download: `pokoh-overview-${new Date().toISOString().slice(0, 10)}.png`,
       href: canvas.toDataURL('image/png')
     });
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
   } catch (e) {
-    document.getElementById('tloExportWrap').style.display = 'flex';
-    // eslint-disable-next-line no-alert
     alert('PNG export failed: ' + e.message);
   } finally {
-    btn.textContent = orig; btn.disabled = false;
+    btn.textContent = 'PNG'; btn.disabled = false;
   }
 }
 
