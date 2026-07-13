@@ -36,11 +36,11 @@ let tlActiveMonth     = null;
 let tlSelectedDay     = null;
 let tlCountyFilter    = 'all';
 let tlTownshipFilter  = null;
-let tlNameMode        = 'chinese'; // 'chinese' | 'indigenous'
+let tlNameMode        = localStorage.getItem('pokoh-tl-name-mode') === 'indigenous' ? 'indigenous' : 'chinese';
 
 function applyTlNameMode() {
   document.querySelectorAll('[data-tl-name-toggle]').forEach(b => {
-    b.textContent = tlNameMode === 'chinese' ? '中' : '名';
+    b.textContent = tlNameMode === 'chinese' ? '中' : '原';
     b.title = tlNameMode === 'chinese' ? '顯示族語名稱' : '顯示中文名稱';
   });
 }
@@ -48,6 +48,7 @@ applyTlNameMode();
 document.querySelectorAll('[data-tl-name-toggle]').forEach(b =>
   b.addEventListener('click', () => {
     tlNameMode = tlNameMode === 'chinese' ? 'indigenous' : 'chinese';
+    localStorage.setItem('pokoh-tl-name-mode', tlNameMode);
     applyTlNameMode();
     renderStrip();
   })
@@ -184,7 +185,7 @@ function renderStrip() {
     const welcomeCls = v.welcome_date ? ' tl-band-welcome' : '';
     const welcomeTip = v.welcome_date ? ` · 迎賓 ${v.welcome_date}` : '';
     const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}${welcomeTip}`;
-    const label = tlNameMode === 'indigenous' ? v.amis : v.chinese;
+    const label = tlNameMode === 'indigenous' ? (v.amis || '?') : v.chinese;
     bandsHtml += `<div class="tl-band${welcomeCls}" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="selectBandVillage('${v.id}', ${v._s.getTime()})">
       <span class="tl-band-label">${label}</span>
     </div>`;
