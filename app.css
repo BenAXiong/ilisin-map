@@ -208,6 +208,67 @@ body.tab-info .app-header { display: none; }
 }
 .tl-month-tabs::-webkit-scrollbar { display: none; }
 .tl-name-toggle-desktop { display: none; }
+.tl-overview-btn       { display: none; }
+
+.theme-btn.active { border-color: var(--accent); color: var(--accent); }
+
+/* ── Overview strip (全覽) ──────────────────────── */
+.tlo-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  border-bottom: 2px solid var(--border-2);
+  background: var(--bg);
+  flex-shrink: 0;
+  padding: .75rem .85rem;
+}
+.tlo-wrap::-webkit-scrollbar { display: none; }
+#panel-timeline.ov-active #tlOverviewWrap { flex: 1; border-bottom: none; }
+#panel-timeline.ov-active #tlCounty       { display: none; }
+.tlo-inner  { position: relative; display: inline-block; }
+.tlo-month-row { position: relative; height: 18px; margin-bottom: 4px; }
+.tlo-month-label {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: var(--fs-2xs);
+  color: var(--text-3);
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.tlo-band {
+  position: absolute;
+  border-radius: 3px;
+  background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.55) h);
+}
+.tlo-tribe-section { position: relative; height: 22px; margin-top: 6px; }
+.tlo-tribe-bar {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  overflow: visible;
+  border-radius: 5px;
+  background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.4) h / 0.18);
+}
+.tlo-tribe-lbl {
+  position: absolute;
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: .04em;
+  white-space: nowrap;
+  padding: 1px 7px;
+  border-radius: 99px;
+  border: 1px solid oklch(from var(--accent) calc(l + 0.05) calc(c * 0.6) h);
+  color: oklch(from var(--accent) calc(l - 0.22) calc(c * 0.9) h);
+  background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.4) h / 0.22);
+  z-index: 1;
+  pointer-events: none;
+}
+.tlo-t-cells { display: flex; height: 100%; width: 100%; filter: blur(8px); clip-path: inset(0 round 5px); }
+.tlo-t-day   { flex-shrink: 0; height: 100%; background: var(--accent); }
 .tl-month-tab {
   flex: 0 0 auto;
   padding: .55rem 1.25rem;

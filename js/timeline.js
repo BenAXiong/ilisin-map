@@ -6,6 +6,11 @@ const CELL_W   = 48;
 const BAND_H   = 18;
 const BAND_GAP = 3;
 
+const CELL_OW     = 10;  // px per day in overview
+const BAND_OW_H   = 8;   // band height in overview
+const BAND_OW_GAP = 2;
+const DENSITY_H   = 32;  // max density bar height
+
 function shortName(s) { return s ? s.replace(/[縣市鄉鎮區]$/, '') : ''; }
 
 let _bandTip = null;
@@ -36,6 +41,7 @@ let tlActiveMonth     = null;
 let tlSelectedDay     = null;
 let tlCountyFilter    = 'all';
 let tlTownshipFilter  = null;
+let tlOverviewMode    = false;
 let tlNameMode        = localStorage.getItem('pokoh-tl-name-mode') === 'indigenous' ? 'indigenous' : 'chinese';
 
 function applyTlNameMode() {
@@ -263,7 +269,125 @@ function renderDayCards() {
   list.innerHTML = villages.map(v => cardHtml(v, `onclick="openDetail('${v.id}')"`)).join('');
 }
 
+/* ── Overview (全覽) ── */
+
+function setOverviewMode(on) {
+  tlOverviewMode = on;
+  document.getElementById('panel-timeline').classList.toggle('ov-active', on);
+  document.getElementById('tlOverviewBtn').classList.toggle('active', on);
+  document.getElementById('tlStripScroll').hidden = on;
+  document.getElementById('tlOverviewWrap').hidden = !on;
+  document.getElementById('tlDayList').hidden = on;
+  document.getElementById('tlCounty').hidden = on;
+  if (on) renderOverviewStrip();
+}
+
+function renderOverviewStrip() {
+  if (!tlMonths.length) return;
+
+  // Full calendar year: Jan 1 → Dec 31
+  const year   = tlMonths[0].getFullYear();
+  const origin = new Date(year, 0, 1);
+  const total  = new Date(year, 11, 31) - origin > 0
+    ? Math.round((new Date(year, 11, 31) - origin) / 86400000) + 1
+    : 365;
+
+  // Compute cell width to fill wrap without scrolling
+  const wrap    = document.getElementById('tlOverviewWrap');
+  const padPx   = 2 * Math.round(0.85 * 16);
+  const cellW   = Math.max(2, (wrap.clientWidth - padPx) / total);
+
+  const dayIdx = d => Math.round((d - origin) / 86400000);
+  const dayAt  = i => new Date(origin.getTime() + i * 86400000);
+
+  // Month labels
+  let monthsHtml = '';
+  let prevM = -1;
+  for (let i = 0; i < total; i++) {
+    const d = dayAt(i);
+    if (d.getMonth() !== prevM) {
+      monthsHtml += `<span class="tlo-month-label" style="left:${i * cellW}px">${d.getMonth()+1}月</span>`;
+      prevM = d.getMonth();
+    }
+  }
+
+  // Greedy lane-packed bands (all events, all tribes)
+  const events = visibleEvents()
+    .filter(v => v.status !== 'tbd' && v.status !== 'cancelled' && parseStartDate(v.date))
+    .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
+    .filter(v => v._s && v._e)
+    .sort((a, b) => a._s - b._s);
+
+  const laneEnds = [];
+  events.forEach(v => {
+    const sd = dayIdx(v._s), ed = dayIdx(v._e);
+    let lane = laneEnds.findIndex(e => e < sd);
+    if (lane === -1) lane = laneEnds.length;
+    laneEnds[lane] = ed;
+    v._ov_lane = lane; v._ov_sd = sd; v._ov_ed = ed;
+  });
+
+  let bandsHtml = '';
+  const bandsH = laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+  events.forEach(v => {
+    bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
+  });
+
+  // Amis intensity bar (10 levels; tbd/cancelled → level 0 = transparent)
+  const amiEvents = EVENTS.filter(v => v.group === 'ami' && v.status !== 'tbd' && v.status !== 'cancelled');
+  let tribeBarsHtml = '';
+  if (amiEvents.length) {
+    const amiMap = {};
+    amiEvents.forEach(v => {
+      const s = parseStartDate(v.date), e = parseEndDate(v.date) || s;
+      if (!s) return;
+      for (let d = new Date(s); d <= e; d = new Date(d.getTime() + 86400000))
+        amiMap[d.toDateString()] = (amiMap[d.toDateString()] || 0) + 1;
+    });
+    const maxAmi = Math.max(1, ...Object.values(amiMap));
+    const amiDates = Object.keys(amiMap).map(k => new Date(k));
+    const amiStart = new Date(Math.min(...amiDates.map(d => d.getTime())));
+    const amiEnd   = new Date(Math.max(...amiDates.map(d => d.getTime())));
+    const amiStartIdx = dayIdx(amiStart);
+    const amiSpan     = dayIdx(amiEnd) - amiStartIdx + 1;
+
+    let amiCells = '';
+    for (let i = 0; i < amiSpan; i++) {
+      const d     = new Date(amiStart.getTime() + i * 86400000);
+      const cnt   = amiMap[d.toDateString()] || 0;
+      const level = cnt > 0 ? Math.ceil((cnt / maxAmi) * 10) : 0;
+      amiCells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
+    }
+    tribeBarsHtml = `<div class="tlo-tribe-bar" data-group="ami"
+      style="left:${amiStartIdx * cellW}px;width:${amiSpan * cellW}px">
+      <span class="tlo-tribe-lbl" title="阿美族">'Amis/Pangcah</span>
+      <div class="tlo-t-cells">${amiCells}</div>
+    </div>`;
+  }
+
+  wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">
+    <div class="tlo-month-row">${monthsHtml}</div>
+    <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
+    <div class="tlo-tribe-section">${tribeBarsHtml}</div>
+  </div>`;
+}
+
+function selectDayFromOverview(date) {
+  tlSelectedDay = date;
+  tlActiveMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+  setOverviewMode(false);
+  renderMonthTabs();
+  renderStrip();
+  renderDayCards();
+  requestAnimationFrame(() => scrollStripToDay(date));
+}
+
 /* ── Event listeners ── */
+
+if (localStorage.getItem('pokoh_dev') === '1') {
+  document.getElementById('tlOverviewBtn').style.display = 'inline-block';
+  document.getElementById('tlOverviewBtn').addEventListener('click', () => setOverviewMode(!tlOverviewMode));
+}
 
 document.getElementById('tlMonthTabs').addEventListener('click', e => {
   const tab = e.target.closest('.tl-month-tab');
@@ -321,6 +445,7 @@ document.getElementById('tlCounty').addEventListener('click', e => {
     document.querySelectorAll('.tl-chip-twp').forEach(c => c.classList.toggle('active', c.dataset.township === tlTownshipFilter));
     renderStrip();
     renderDayCards();
+    if (tlOverviewMode) renderOverviewStrip();
     return;
   }
 
@@ -332,4 +457,5 @@ document.getElementById('tlCounty').addEventListener('click', e => {
   renderTimelineTownshipChips();
   renderStrip();
   renderDayCards();
+  if (tlOverviewMode) renderOverviewStrip();
 });
