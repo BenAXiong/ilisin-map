@@ -249,7 +249,9 @@ body.tab-info .app-header { display: none; }
   overflow: visible;
   border-radius: 5px;
   background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.4) h / 0.18);
+  cursor: pointer;
 }
+.tlo-band-section { margin-top: 6px; }
 .tlo-tribe-lbl {
   position: absolute;
   right: calc(100% + 6px);

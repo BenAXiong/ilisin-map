@@ -311,32 +311,14 @@ function renderOverviewStrip() {
     }
   }
 
-  // Greedy lane-packed bands (all events, all tribes)
-  const events = visibleEvents()
-    .filter(v => v.status !== 'tbd' && v.status !== 'cancelled' && parseStartDate(v.date))
-    .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
-    .filter(v => v._s && v._e)
-    .sort((a, b) => a._s - b._s);
-
-  const laneEnds = [];
-  events.forEach(v => {
-    const sd = dayIdx(v._s), ed = dayIdx(v._e);
-    let lane = laneEnds.findIndex(e => e < sd);
-    if (lane === -1) lane = laneEnds.length;
-    laneEnds[lane] = ed;
-    v._ov_lane = lane; v._ov_sd = sd; v._ov_ed = ed;
-  });
-
-  let bandsHtml = '';
-  const bandsH = laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
-  events.forEach(v => {
-    bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
-  });
-
-  // Amis intensity bar (10 levels; tbd/cancelled → level 0 = transparent)
+  // Amis intensity bar (density) + collapsible detail bands
   const amiEvents = EVENTS.filter(v => v.group === 'ami' && v.status !== 'tbd' && v.status !== 'cancelled');
   let tribeBarsHtml = '';
+  let bandsHtml = '';
+  let bandsH = 0;
+
   if (amiEvents.length) {
+    // Density bar
     const amiMap = {};
     amiEvents.forEach(v => {
       const s = parseStartDate(v.date), e = parseEndDate(v.date) || s;
@@ -346,15 +328,15 @@ function renderOverviewStrip() {
     });
     const maxAmi = Math.max(1, ...Object.values(amiMap));
     const amiDates = Object.keys(amiMap).map(k => new Date(k));
-    const amiStart = new Date(Math.min(...amiDates.map(d => d.getTime())));
-    const amiEnd   = new Date(Math.max(...amiDates.map(d => d.getTime())));
+    const amiStart    = new Date(Math.min(...amiDates.map(d => d.getTime())));
+    const amiEnd      = new Date(Math.max(...amiDates.map(d => d.getTime())));
     const amiStartIdx = dayIdx(amiStart);
     const amiSpan     = dayIdx(amiEnd) - amiStartIdx + 1;
 
     let amiCells = '';
     for (let i = 0; i < amiSpan; i++) {
-      const d     = new Date(amiStart.getTime() + i * 86400000);
-      const cnt   = amiMap[d.toDateString()] || 0;
+      const d   = new Date(amiStart.getTime() + i * 86400000);
+      const cnt = amiMap[d.toDateString()] || 0;
       const level = cnt > 0 ? Math.ceil((cnt / maxAmi) * 10) : 0;
       amiCells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
     }
@@ -363,13 +345,41 @@ function renderOverviewStrip() {
       <span class="tlo-tribe-lbl" title="阿美族">'Amis/Pangcah</span>
       <div class="tlo-t-cells">${amiCells}</div>
     </div>`;
+
+    // Detail bands (Amis only, lane-packed, hidden until density bar is clicked)
+    const amiBands = amiEvents
+      .map(v => ({ ...v, _s: parseStartDate(v.date), _e: parseEndDate(v.date) || parseStartDate(v.date) }))
+      .filter(v => v._s && v._e)
+      .sort((a, b) => a._s - b._s);
+
+    const laneEnds = [];
+    amiBands.forEach(v => {
+      const sd = dayIdx(v._s), ed = dayIdx(v._e);
+      let lane = laneEnds.findIndex(e => e < sd);
+      if (lane === -1) lane = laneEnds.length;
+      laneEnds[lane] = ed;
+      v._ov_lane = lane; v._ov_sd = sd; v._ov_ed = ed;
+    });
+    bandsH = laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+    amiBands.forEach(v => {
+      bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
+    });
   }
 
   wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">
     <div class="tlo-month-row">${monthsHtml}</div>
-    <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
     <div class="tlo-tribe-section">${tribeBarsHtml}</div>
+    <div class="tlo-band-section" hidden>
+      <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
+    </div>
   </div>`;
+
+  if (tribeBarsHtml) {
+    const bandSection = wrap.querySelector('.tlo-band-section');
+    wrap.querySelector('.tlo-tribe-bar').addEventListener('click', () => {
+      bandSection.hidden = !bandSection.hidden;
+    });
+  }
 }
 
 function selectDayFromOverview(date) {
