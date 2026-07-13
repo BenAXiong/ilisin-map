@@ -4,6 +4,8 @@
 
 let leafletMap    = null;
 let clusterGroup  = null;
+let plainGroup    = null;
+let clusterModeOn = true;
 let mapInitialized = false;
 let markers       = {};
 let activeId      = null;
@@ -125,6 +127,13 @@ function renderTownshipChips() {
   const el = document.getElementById('mapTownshipChips');
   if (!el) return;
   if (countyFilter === 'all') { el.hidden = true; return; }
+  // Mobile flyout spawns beside whichever county button is active, not
+  // always at the top of the toggle — offsetTop is relative to
+  // #mapCountyChips, which itself starts flush with .map-loc's top edge, so
+  // it doubles as the flyout's offset within .map-loc (its positioned
+  // ancestor). No-op on desktop, where the sub-list sits in normal flow.
+  const activeBtn = document.querySelector('#mapCountyChips .map-chip.active');
+  el.style.top = activeBtn ? `${activeBtn.offsetTop}px` : '';
   const townships = [...new Set(
     visibleEvents().filter(v => v.county === countyFilter && v.township).map(v => v.township)
   )].sort();
@@ -201,6 +210,12 @@ function activateVillage(id) {
   trackEvent('village_tap', { id, name: EVENTS.find(v => v.id === id)?.chinese });
 }
 
+// The layer group actually attached to the map right now — clustered
+// (default) or every pin shown individually at its exact position.
+function activeMarkerGroup() {
+  return clusterModeOn ? clusterGroup : plainGroup;
+}
+
 function goToMapVillage(id) {
   const v = EVENTS.find(x => x.id === id);
   const coord = v && eventCoord(v);
@@ -218,7 +233,9 @@ function goToMapVillage(id) {
     // zoomToShowLayer (leaflet.markercluster) zooms/pans to whatever level
     // actually reveals this marker on its own — a fixed zoom level can't
     // guarantee that in denser areas, it might still be inside a cluster blob.
-    if (marker && clusterGroup.hasLayer(marker)) {
+    // Only meaningful in clustered mode; in individual mode every marker is
+    // already visible on its own, so just pan/zoom straight to it.
+    if (clusterModeOn && marker && clusterGroup.hasLayer(marker)) {
       clusterGroup.zoomToShowLayer(marker, () => {});
     } else {
       leafletMap.setView(coord, 16, { animate: true });
@@ -228,7 +245,8 @@ function goToMapVillage(id) {
 
 function updateMarkers() {
   if (!leafletMap) return;
-  clusterGroup.clearLayers();
+  const group = activeMarkerGroup();
+  group.clearLayers();
   markers = {};
 
   filteredEvents().forEach(v => {
@@ -244,9 +262,18 @@ function updateMarkers() {
       TAP_NEXT = v.id;
       activateVillage(v.id);
     });
-    clusterGroup.addLayer(m);
+    group.addLayer(m);
     markers[v.id] = m;
   });
+}
+
+function setClusterMode(on) {
+  if (on === clusterModeOn || !leafletMap) return;
+  const oldGroup = activeMarkerGroup();
+  clusterModeOn = on;
+  updateMarkers();
+  leafletMap.removeLayer(oldGroup);
+  leafletMap.addLayer(activeMarkerGroup());
 }
 
 function initSheetDrag() {
@@ -321,7 +348,8 @@ function initMap() {
   }).addTo(leafletMap);
 
   clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false });
-  leafletMap.addLayer(clusterGroup);
+  plainGroup   = L.layerGroup();
+  leafletMap.addLayer(activeMarkerGroup());
 
   updateMarkers();
   renderSheet();
@@ -361,6 +389,12 @@ document.getElementById('mapTimeTrigger').addEventListener('click', () => {
 });
 document.addEventListener('click', e => {
   if (!e.target.closest('.map-dd')) closeDropdowns();
+  // Township flyout isn't a .map-dd (county itself has no trigger to close),
+  // so it gets its own outside-click check rather than folding into closeDropdowns().
+  if (!e.target.closest('.map-loc')) {
+    const sub = document.getElementById('mapTownshipChips');
+    if (sub && !sub.hidden) sub.hidden = true;
+  }
 });
 
 /* ── Event listeners ── */
@@ -452,5 +486,17 @@ document.getElementById('mapTownshipChips').addEventListener('click', e => {
     fitToFilter();
     trackEvent('map_filter', { county: countyFilter, township: townshipFilter });
   }
+});
+
+document.getElementById('mapClusterToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.map-chip');
+  if (!btn) return;
+  setClusterMode(btn.dataset.cluster === 'on');
+  document.querySelectorAll('#mapClusterToggle .map-chip').forEach(c => {
+    const isActive = c === btn;
+    c.classList.toggle('active', isActive);
+    c.setAttribute('aria-pressed', String(isActive));
+  });
+  trackEvent('map_filter', { clusterMode: clusterModeOn ? 'grouped' : 'individual' });
 });
 

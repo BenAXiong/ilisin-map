@@ -529,7 +529,6 @@ body.tab-info .app-header { display: none; }
   display: flex;
   align-items: center;
   gap: 4px;
-  width: 92px;
   font-family: var(--mono);
   font-size: var(--fs-xs);
   letter-spacing: .06em;
@@ -552,7 +551,6 @@ body.tab-info .app-header { display: none; }
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  width: 92px;
   display: none;
   flex-direction: column !important;
   align-items: stretch;
@@ -678,7 +676,6 @@ body.tab-info .app-header { display: none; }
   .map-dd-trigger { display: none; }
   .map-dd-panel {
     position: static;
-    width: auto;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap;
