@@ -434,11 +434,19 @@ function _readCssVar(varName) {
 
 function _renderToCanvas() {
   if (!_ovData) return null;
-  const { total, origin, tribeRows } = _ovData;
+  const { cellW, total, origin, tribeRows } = _ovData;
   const TRIBE_NAMES = { ami: "'Amis/Pangcah", szy: 'Sakizaya', ckv: 'Kavalan',
                         bnn: 'Bunun', trv: 'Truku', pwn: 'Paiwan', pyu: 'Puyuma' };
   const TLO_ROW_H = 22, BAND_OW_H = 8, BAND_OW_GAP = 2, ROW_GAP = 4;
-  const LABEL_W = 92, HEADER_H = 32, PAD_V = 10, PAD_R = 8;
+  const HEADER_H = 32, PAD_V = 10;
+  const padL = Math.round(0.85 * 16); // matches .tlo-wrap padding
+  const dayX = i => padL + i * cellW; // mirrors screen layout exactly
+
+  // Which band sections are currently expanded in the DOM
+  const wrap = document.getElementById('tlOverviewWrap');
+  const expanded = new Set(
+    [...wrap.querySelectorAll('.tlo-band-section:not([hidden])')].map(el => el.dataset.group)
+  );
 
   const C_BG     = _readCssVar('--bg');
   const C_TEXT1  = _readCssVar('--ink');
@@ -448,12 +456,12 @@ function _renderToCanvas() {
   const C_BAND   = bandEl ? (_toRgb(getComputedStyle(bandEl).backgroundColor) || C_ACCENT) : C_ACCENT;
 
   const panelW = document.getElementById('panel-timeline').offsetWidth;
-  const gridW  = panelW - LABEL_W - PAD_R;
-  const dayX   = i => LABEL_W + (i / total) * gridW;
 
   let totalH = PAD_V + HEADER_H + PAD_V;
   tribeRows.forEach(tr => {
-    totalH += ROW_GAP + TLO_ROW_H + ROW_GAP + tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+    totalH += ROW_GAP + TLO_ROW_H;
+    if (expanded.has(tr.grp))
+      totalH += ROW_GAP + tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
   });
   totalH += PAD_V;
 
@@ -465,7 +473,7 @@ function _renderToCanvas() {
 
   ctx.fillStyle = C_BG; ctx.fillRect(0, 0, panelW, totalH);
 
-  // Month bar
+  // Month bar (same proportional positions as the header tabs)
   for (let m = 0; m < 12; m++) {
     const x1 = dayX(Math.round((new Date(origin.getFullYear(), m, 1) - origin) / 86400000));
     const x2 = dayX(Math.round((new Date(origin.getFullYear(), m + 1, 1) - origin) / 86400000));
@@ -477,13 +485,14 @@ function _renderToCanvas() {
     ctx.fillText(`${m + 1}月`, (x1 + x2) / 2, PAD_V + HEADER_H / 2);
   }
 
-  // Tribe rows (all band sections expanded)
+  // Tribe rows — label floats left of each bar, matching screen
   let y = PAD_V + HEADER_H + PAD_V;
   tribeRows.forEach(tr => {
     y += ROW_GAP;
+    const barX = dayX(tr.startIdx);
     ctx.font = 'bold 11px "Courier New", monospace'; ctx.textAlign = 'right';
     ctx.textBaseline = 'middle'; ctx.fillStyle = C_TEXT1; ctx.globalAlpha = 1;
-    ctx.fillText(TRIBE_NAMES[tr.grp] || tr.grp, LABEL_W - 6, y + TLO_ROW_H / 2);
+    ctx.fillText(TRIBE_NAMES[tr.grp] || tr.grp, barX - 6, y + TLO_ROW_H / 2);
     for (let j = 0; j < tr.span; j++) {
       const cnt = tr.map[new Date(tr.start.getTime() + j * 86400000).toDateString()] || 0;
       if (!cnt) continue;
@@ -492,13 +501,16 @@ function _renderToCanvas() {
       ctx.fillStyle = C_ACCENT; ctx.globalAlpha = (level / 10) ** 2;
       ctx.fillRect(x, y, w, TLO_ROW_H);
     }
-    ctx.globalAlpha = 1; y += TLO_ROW_H + ROW_GAP;
-    tr.bands.forEach(v => {
-      const bx = dayX(v._ov_sd), bw = dayX(v._ov_ed + 1) - bx;
-      ctx.fillStyle = C_BAND;
-      ctx.fillRect(bx, y + v._ov_lane * (BAND_OW_H + BAND_OW_GAP), bw, BAND_OW_H);
-    });
-    y += tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+    ctx.globalAlpha = 1; y += TLO_ROW_H;
+    if (expanded.has(tr.grp)) {
+      y += ROW_GAP;
+      tr.bands.forEach(v => {
+        const bx = dayX(v._ov_sd), bw = dayX(v._ov_ed + 1) - bx;
+        ctx.fillStyle = C_BAND;
+        ctx.fillRect(bx, y + v._ov_lane * (BAND_OW_H + BAND_OW_GAP), bw, BAND_OW_H);
+      });
+      y += tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
+    }
   });
 
   return canvas;
