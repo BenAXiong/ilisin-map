@@ -260,13 +260,10 @@ body.tab-info .app-header { display: none; }
   transform: translateY(-50%);
   font-family: var(--mono);
   font-size: var(--fs-2xs);
+  font-weight: bold;
   letter-spacing: .04em;
   white-space: nowrap;
-  padding: 1px 7px;
-  border-radius: 99px;
-  border: 1px solid oklch(from var(--accent) calc(l + 0.05) calc(c * 0.6) h);
   color: oklch(from var(--accent) calc(l - 0.22) calc(c * 0.9) h);
-  background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.4) h / 0.22);
   z-index: 1;
   pointer-events: none;
 }
