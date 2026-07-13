@@ -486,9 +486,9 @@ function _renderToCanvas() {
   // Grid lines — same week/month logic as renderOverviewStrip()
   const fmo = (1 - origin.getDay() + 7) % 7;
   ctx.fillStyle = C_TEXT1;
-  ctx.globalAlpha = 0.07;
+  ctx.globalAlpha = 0.02;
   for (let d = fmo; d < total; d += 7) ctx.fillRect(dayX(d), 0, 1, totalH);
-  ctx.globalAlpha = 0.20;
+  ctx.globalAlpha = 0.05;
   for (let m = 1; m < 12; m++) {
     const d = Math.round((new Date(origin.getFullYear(), m, 1) - origin) / 86400000);
     ctx.fillRect(dayX(d), 0, 1, totalH);
