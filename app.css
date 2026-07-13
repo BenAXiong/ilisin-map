@@ -189,18 +189,25 @@ body.tab-info .app-header { display: none; }
 #panel-timeline          { display: none; flex-direction: column; overflow: hidden; }
 #panel-timeline.active   { display: flex; }
 
+.tl-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
 .tl-month-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: safe center;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
 .tl-month-tabs::-webkit-scrollbar { display: none; }
+.tl-name-toggle-desktop { display: none; }
 .tl-month-tab {
   flex: 0 0 auto;
   padding: .55rem 1.25rem;
@@ -564,7 +571,7 @@ body.tab-info .app-header { display: none; }
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
 .card-amis-alt { font-family: var(--mono); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); letter-spacing: .03em; margin-left: .25rem; }
-.card-top-right { display: flex; flex-direction: column; align-items: flex-end; gap: .2rem; }
+.card-top-right { display: flex; align-items: center; gap: .4rem; }
 .card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
 /* Inverse of the .card-amis fix above: the weekday character (五/六/日…) is
    CJK inside an otherwise-Latin/numeral mono string, so at the same
@@ -573,8 +580,8 @@ body.tab-info .app-header { display: none; }
 .card-date-weekday { font-size: 0.86em; }
 .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
 .card-tbd .card-date       { color: var(--text-3); }
-/* Same terra palette as .detail-welcome, sized down to fit inline under
-   .card-date in the tight .card-top row instead of as a standalone pill. */
+/* Same terra palette as .detail-welcome, sized down to sit inline next to
+   .card-date (via .card-top-right) instead of as a standalone pill. */
 .card-welcome {
   display: inline-block;
   font-size: var(--fs-2xs);
@@ -1310,7 +1317,8 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
   .panel { inset: 0 0 0 240px; }
   #panel-info { inset: 0 0 0 240px; }
 
-  .tl-month-tabs { height: 54px; }
+  .tl-header { height: 54px; }
+  .tl-name-toggle-desktop { display: inline-block; margin-right: .75rem; flex-shrink: 0; }
 
   .bs {
     position: fixed;
