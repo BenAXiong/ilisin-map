@@ -277,7 +277,7 @@ function renderOverviewMonthTabs() {
   const tabs = Array.from({ length: 12 }, (_, m) => {
     const days = new Date(year, m + 1, 0).getDate();
     const label = (m + 1) + '月';
-    return `<button class="tl-month-tab" style="flex:${days};min-width:0" tabindex="-1" disabled>${label}</button>`;
+    return `<button class="tl-month-tab" style="flex:${days};min-width:0" tabindex="-1">${label}</button>`;
   }).join('');
   document.getElementById('tlMonthTabs').innerHTML = tabs;
 }

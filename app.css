@@ -225,6 +225,7 @@ body.tab-info .app-header { display: none; }
 .tlo-wrap::-webkit-scrollbar { display: none; }
 #panel-timeline.ov-active #tlOverviewWrap { flex: 1; border-bottom: none; }
 #panel-timeline.ov-active #tlCounty       { display: none; }
+#panel-timeline.ov-active .tl-month-tab  { color: var(--text-1); pointer-events: none; cursor: default; }
 .tlo-inner  { position: relative; display: inline-block; }
 .tlo-band {
   position: absolute;
