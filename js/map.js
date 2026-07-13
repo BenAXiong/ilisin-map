@@ -19,7 +19,6 @@ const TIME_LABELS = {
   all: '全期', today: '今天', tomorrow: '明天', '7days': '7天',
   'next-weekend': '下週末', custom: '自訂',
 };
-const COUNTY_LABELS = { all: '全國', '花蓮縣': '花蓮', '臺東縣': '臺東' };
 
 // yyyy-mm-dd from local date parts — Date#toISOString() converts to UTC
 // first, which can land on the wrong calendar day near local midnight.
@@ -338,9 +337,10 @@ function initMap() {
   initSheetDrag();
 }
 
-/* ── Dropdowns (mobile: chip panels collapse behind a trigger button that
-   deploys them downward; desktop CSS forces panels open and hides the
-   triggers, see app.css) ── */
+/* ── Time dropdown (mobile: chip panel collapses behind a trigger button
+   that deploys it downward; desktop CSS forces the panel open and hides
+   the trigger, see app.css). County stays a plain always-visible 3-segment
+   toggle, unchanged since before this dropdown was added. ── */
 
 function closeDropdowns() {
   document.querySelectorAll('.map-dd.open').forEach(dd => {
@@ -356,9 +356,6 @@ function toggleDropdown(dd) {
   dd.querySelector('.map-dd-trigger')?.setAttribute('aria-expanded', String(willOpen));
 }
 
-document.getElementById('mapCountyTrigger').addEventListener('click', () => {
-  toggleDropdown(document.getElementById('mapCountyDD'));
-});
 document.getElementById('mapTimeTrigger').addEventListener('click', () => {
   toggleDropdown(document.getElementById('mapTimeDD'));
 });
@@ -387,8 +384,6 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
   document.querySelectorAll('#mapCountyChips .map-chip').forEach(c =>
     c.classList.toggle('active', c === chip)
   );
-  document.getElementById('mapCountyLabel').textContent = COUNTY_LABELS[newCounty] || newCounty;
-  closeDropdowns();
   renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();

@@ -505,8 +505,10 @@ body.tab-info .app-header { display: none; }
 #panel-map.active   { display: block; }
 #map                { position: absolute; inset: 0; isolation: isolate; }
 
-/* Mobile-first: filters split to opposite corners, each a dropdown that
-   deploys downward. Desktop (>=768px, see override below) restores the
+/* Mobile-first: county stays a plain, always-visible 3-segment toggle
+   (top-left); time collapses behind a trigger that deploys its options
+   downward (top-right). The township sub-list stacks vertically below the
+   county toggle. Desktop (>=768px, see override below) restores the
    original single centered pill row with everything always visible. */
 #mapFilters {
   position: absolute;
@@ -542,14 +544,14 @@ body.tab-info .app-header { display: none; }
 .map-dd-panel {
   position: absolute;
   top: calc(100% + 6px);
+  right: 0;
   display: none;
   flex-direction: column !important;
   align-items: stretch;
 }
-#mapCountyDD .map-dd-panel { left: 0; }
-#mapTimeDD   .map-dd-panel { right: 0; }
 .map-dd.open .map-dd-panel { display: flex; }
 .map-chips {
+  display: flex;
   gap: 3px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -558,11 +560,15 @@ body.tab-info .app-header { display: none; }
   box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
   white-space: nowrap;
 }
+#mapCountyChips { border-radius: 99px; padding: 5px 8px; }
 .map-chips--sub {
-  display: flex;
-  overflow-x: auto;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  max-height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none;
-  max-width: min(92vw, 420px);
 }
 .map-chips--sub::-webkit-scrollbar { display: none; }
 .map-chip {
@@ -579,21 +585,29 @@ body.tab-info .app-header { display: none; }
   transition: background .12s, color .12s;
   -webkit-tap-highlight-color: transparent;
 }
+#mapCountyChips .map-chip { padding: 4px 12px; border-radius: 99px; text-align: center; }
 .map-dd-panel .map-chip { text-align: right; }
-#mapCountyDD .map-dd-panel .map-chip { text-align: left; }
 .map-chip.active             { background: var(--accent); color: var(--bg); }
 .map-chip:hover:not(.active) { background: var(--bg-alt); }
 
 #mapCustomDateRow {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  padding: 6px 6px 4px;
+}
+.map-custom-field {
+  display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 5px 2px;
+  gap: 6px;
   font-family: var(--mono);
   font-size: var(--fs-xs);
-  color: var(--text-2);
+  color: var(--text-3);
 }
-#mapCustomDateRow input[type="date"] {
+.map-custom-field input[type="date"] {
+  flex: 1;
+  min-width: 0;
   font-family: var(--mono);
   font-size: var(--fs-xs);
   color: var(--text-2);
@@ -601,7 +615,6 @@ body.tab-info .app-header { display: none; }
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 3px 4px;
-  min-width: 0;
 }
 #mapCustomApply {
   font-family: var(--mono);
@@ -636,8 +649,19 @@ body.tab-info .app-header { display: none; }
   }
   .map-chips { border-radius: 99px; padding: 5px 8px; }
   .map-chip { padding: 4px 12px; border-radius: 99px; text-align: center; }
-  .map-dd-panel .map-chip, #mapCountyDD .map-dd-panel .map-chip { text-align: center; }
-  #mapCustomDateRow { flex-basis: 100%; justify-content: center; padding: 2px 6px; }
+  .map-dd-panel .map-chip { text-align: center; }
+  .map-chips--sub {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: min(92vw, 420px);
+  }
+  #mapCustomDateRow { flex-direction: row; align-items: center; flex-basis: 100%; justify-content: center; padding: 2px 6px; }
+  .map-custom-field { flex: 0 0 auto; }
+  .map-custom-field input[type="date"] { flex: 0 0 auto; }
 }
 
 /* ── Bottom sheet ───────────────────────────── */
