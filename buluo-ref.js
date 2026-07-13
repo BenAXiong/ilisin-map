@@ -166,7 +166,7 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "2026-07-13：查得部落內顯著建築為「新城鄉原住民多功能活動中心」（國家文化記憶庫策展頁），惟無法查得該活動中心或部落本身之街址／座標；Nominatim 查得的新城鄉行政中心點與現有 township 座標僅相距約0.5公里，並無實質改善，故座標維持 township 層級，待未來其他來源核實。",
+    "notes": "2026-07-13：查得部落內顯著建築為「新城鄉原住民多功能活動中心」（國家文化記憶庫策展頁），惟無法查得該活動中心或部落本身之街址／座標；Nominatim 查得的新城鄉行政中心點與現有 township 座標僅相距約0.5公里，並無實質改善，故座標維持 township 層級，待未來其他來源核實。 2026-07-13追加：另嘗試 aborgpedia.alcd.center、Facebook 關鍵字搜尋、新城鄉公所官網（含原住民事務所頁面）均無結果。已嘗試本專案現有工具可觸及之所有來源，暫無法進一步查證，需實地或電話聯繫新城鄉公所核實。",
     "chiefs": [],
     "contact": []
   },
@@ -248,7 +248,7 @@ const BULUO_REF = {
     "sources": [
       "豐年祭 地圖/data.js (Pokoh)"
     ],
-    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived. 2026-07-13：嘗試以部落名稱／族語名稱（Patirengan）搜尋，僅找到發音相近但確認為不同部落的「Paterungan／新社部落」（花蓮縣豐濱鄉，噶瑪蘭族為主）之資料，未找到本部落本身的地標或地址資訊；座標維持 township 層級，待未來其他來源核實。",
+    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived. 2026-07-13：嘗試以部落名稱／族語名稱（Patirengan）搜尋，僅找到發音相近但確認為不同部落的「Paterungan／新社部落」（花蓮縣豐濱鄉，噶瑪蘭族為主）之資料，未找到本部落本身的地標或地址資訊；座標維持 township 層級，待未來其他來源核實。 2026-07-13追加：另嘗試 aborgpedia.alcd.center、Facebook 關鍵字搜尋、新城鄉公所官網（含原住民事務所頁面）均無結果。已嘗試本專案現有工具可觸及之所有來源，暫無法進一步查證，需實地或電話聯繫新城鄉公所核實。",
     "chiefs": [],
     "contact": []
   },
