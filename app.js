@@ -63,17 +63,20 @@ function indigenousNameInfo(v) {
 // 1. `venueOverride:true` — hand-curated flag for the rare case where the
 //    festival is genuinely held somewhere other than the buluo's own
 //    community (not the default; must be set explicitly per entry).
-// 2. BULUO_REF's coordinate, if it's been geocoded to real (`'exact'`)
-//    precision — buluo identity/location now lives in the shared
-//    Datasets/buluo db, not duplicated per-project.
+// 2. BULUO_REF's coordinate, if it's been geocoded to `'exact'` (real
+//    per-venue) or `'village'` (named landmark/administrative-village
+//    anchor — still better than a township-wide centroid) precision —
+//    buluo identity/location now lives in the shared Datasets/buluo db,
+//    not duplicated per-project.
 // 3. This entry's own lat/lng — usually still just a township-level
 //    approximation, kept as a fallback so nothing regresses while BULUO_REF
 //    coverage is incomplete.
 // 4. BULUO_REF's coordinate at any precision, else null (no pin).
+const GOOD_COORD_PRECISION = new Set(['exact', 'village']);
 function eventCoord(v) {
   if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
   const ref = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
-  if (ref?.coord_precision === 'exact' && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  if (GOOD_COORD_PRECISION.has(ref?.coord_precision) && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
   if (v.lat != null && v.lng != null) return [v.lat, v.lng];
   if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
   return null;

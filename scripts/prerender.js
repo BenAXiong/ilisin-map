@@ -20,11 +20,12 @@ const refSrc = fs.readFileSync(path.join(ROOT, 'buluo-ref.js'), 'utf8');
 const { BULUO_REF } = new Function(refSrc + '\nreturn { BULUO_REF };')();
 
 // Mirrors app.js's eventCoord() — see that file for the priority rationale
-// (venueOverride > BULUO_REF exact > EVENTS' own fallback > BULUO_REF any).
+// (venueOverride > BULUO_REF exact/village > EVENTS' own fallback > BULUO_REF any).
+const GOOD_COORD_PRECISION = new Set(['exact', 'village']);
 function eventCoord(v) {
   if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
   const ref = v.buluo_id ? BULUO_REF[v.buluo_id] : null;
-  if (ref?.coord_precision === 'exact' && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
+  if (GOOD_COORD_PRECISION.has(ref?.coord_precision) && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
   if (v.lat != null && v.lng != null) return [v.lat, v.lng];
   if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
   return null;

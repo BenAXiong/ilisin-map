@@ -166,7 +166,7 @@ const BULUO_REF = {
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）"
     ],
-    "notes": "",
+    "notes": "2026-07-13：查得部落內顯著建築為「新城鄉原住民多功能活動中心」（國家文化記憶庫策展頁），惟無法查得該活動中心或部落本身之街址／座標；Nominatim 查得的新城鄉行政中心點與現有 township 座標僅相距約0.5公里，並無實質改善，故座標維持 township 層級，待未來其他來源核實。",
     "chiefs": [],
     "contact": []
   },
@@ -248,7 +248,7 @@ const BULUO_REF = {
     "sources": [
       "豐年祭 地圖/data.js (Pokoh)"
     ],
-    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived.",
+    "notes": "Only attested in data.js (官方 PDF). Absent from the CIP gazette — its data.js festival entry (id hl-xc-14) is itself marked 停辦 (cancelled), consistent with it not currently being a CIP-recognized buluo. Needs an independent source if it's ever revived. 2026-07-13：嘗試以部落名稱／族語名稱（Patirengan）搜尋，僅找到發音相近但確認為不同部落的「Paterungan／新社部落」（花蓮縣豐濱鄉，噶瑪蘭族為主）之資料，未找到本部落本身的地標或地址資訊；座標維持 township 層級，待未來其他來源核實。",
     "chiefs": [],
     "contact": []
   },
@@ -527,15 +527,17 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.979444,
+    "lng": 121.5675,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "Official township office website (鄉/鎮公所全球資訊網)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "慶豐部落聚會所實際地址：花蓮縣吉安鄉吉安路二段116號（吉安鄉公所官網 ame/data/5/11），惟該街址無法透過 Nominatim 定位（花蓮縣鄉間街道門牌在 OSM 覆蓋度低），故座標改採「慶豐」聚落節點（OSM village/hamlet），屬 village 層級近似值，非聚會所實際座標。",
     "chiefs": [],
     "contact": []
   },
@@ -736,15 +738,17 @@ const BULUO_REF = {
     "dialect": [
       "南勢阿美語"
     ],
-    "lat": 23.956,
-    "lng": 121.57,
-    "coord_precision": "township",
+    "lat": 23.95657,
+    "lng": 121.540079,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "Official township office website (鄉/鎮公所全球資訊網)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "南華部落聚會所實際地址：花蓮縣吉安鄉華興七街168號（吉安鄉公所官網），2023年8月啟用。同鶺鴒棧案例，街址無法透過 Nominatim 定位，座標改採「南華村」行政界中心點，屬 village 層級近似值。",
     "chiefs": [],
     "contact": []
   },
@@ -2044,21 +2048,27 @@ const BULUO_REF = {
   },
   "ami-cirocan": {
     "chinese_name": "鶺櫓棧部落",
-    "chinese_name_alt": [],
+    "chinese_name_alt": [
+      "剛估那部落"
+    ],
     "indigenous_name": "Cirocan",
-    "indigenous_name_alt": [],
+    "indigenous_name_alt": [
+      "Kang koga"
+    ],
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.493,
-    "lng": 121.427,
-    "coord_precision": "township",
+    "lat": 23.580319,
+    "lng": 121.380266,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "國家文化記憶庫 2.0 (tcmb.culture.tw / 舊 catalog.digitalarchives.tw)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "據國家文化記憶庫（tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=595746）：原名 Pairasun，1945年改稱 Kang koga（剛估那），2008年改稱 Cirocan（鶺櫓棧）。位於富源村，在富源森林遊樂區內、富源車站西側，南接另一獨立部落「牧櫓棧部落」（非本部落別名，勿混淆）。座標採用富源車站（OSM/Nominatim），屬地標/聚落層級近似值，非部落聚會所實際座標，故 coord_precision 標為 village 而非 exact。",
     "chiefs": [],
     "contact": []
   },
@@ -2154,15 +2164,17 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.333,
-    "lng": 121.31,
-    "coord_precision": "township",
+    "lat": 23.331559,
+    "lng": 121.311556,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "Official township office website (鄉/鎮公所全球資訊網)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "據玉里鎮115年度部落歲時祭儀日程表，吉拉格賽部落實際場地為「玉里鎮泰昌里20鄰北平街12-2號旁廣場」，與本站 EVENTS venue 欄位（北平街旁廣場）相符，但該街址無法透過 Nominatim 定位，座標改採玉里車站（部落位在其北方，同屬泰昌里）作為 village 層級近似值。",
     "chiefs": [],
     "contact": []
   },
@@ -2552,15 +2564,17 @@ const BULUO_REF = {
     "dialect": [
       "秀姑巒阿美語"
     ],
-    "lat": 23.273,
-    "lng": 121.293,
-    "coord_precision": "township",
+    "lat": 23.266891,
+    "lng": 121.305898,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "花蓮縣文化局 花蓮在地文化記憶庫 (culture.hccc.gov.tw)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "據花蓮在地文化記憶庫，基拉歌賽部落重要地標為「復興教會」，與本站 EVENTS venue 欄位（復興部落多功能活動中心）的「復興」很可能同源；部落位於東里村，透過富里車站對外交通。座標採「東里」聚落節點（OSM village），屬 village 層級近似值。",
     "chiefs": [],
     "contact": []
   },
@@ -3437,15 +3451,17 @@ const BULUO_REF = {
     "dialect": [
       "馬蘭阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 23.01977,
+    "lng": 121.286564,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "國家文化記憶庫 2.0 (tcmb.culture.tw / 舊 catalog.digitalarchives.tw)",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "據國家文化記憶庫，阿奚露艾部落範圍涵蓋北源村多個聚落，其中包含「柑桔林」，與本站 EVENTS venue 欄位（北源村柑桔林39號）相符，證實該地址為真實地名而非誤植；惟街址本身無法透過 Nominatim 定位，座標改採「北源」聚落節點（OSM village），屬 village 層級近似值。",
     "chiefs": [],
     "contact": []
   },
@@ -3592,15 +3608,16 @@ const BULUO_REF = {
     "dialect": [
       "海岸阿美語"
     ],
-    "lat": 23.213,
-    "lng": 121.373,
-    "coord_precision": "township",
+    "lat": 22.998021,
+    "lng": 121.28758,
+    "coord_precision": "village",
     "status": "single-source",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）"
+      "暫定族語別分類來源（待補充正式引註）",
+      "OpenStreetMap (via Nominatim geocoding)"
     ],
-    "notes": "",
+    "notes": "阿拉巴灣部落即泰源部落（泰源盆地內），與本站 EVENTS venue 欄位（泰源村多功能活動中心）相符。座標採「泰源」聚落節點（OSM village），屬 village 層級近似值，非活動中心實際座標。",
     "chiefs": [],
     "contact": []
   },
