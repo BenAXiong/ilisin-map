@@ -271,6 +271,17 @@ function renderDayCards() {
 
 /* ── Overview (全覽) ── */
 
+function renderOverviewMonthTabs() {
+  if (!tlMonths.length) return;
+  const year = tlMonths[0].getFullYear();
+  const tabs = Array.from({ length: 12 }, (_, m) => {
+    const days = new Date(year, m + 1, 0).getDate();
+    const label = (m + 1) + '月';
+    return `<button class="tl-month-tab" style="flex:${days};min-width:0" tabindex="-1" disabled>${label}</button>`;
+  }).join('');
+  document.getElementById('tlMonthTabs').innerHTML = tabs;
+}
+
 function setOverviewMode(on) {
   tlOverviewMode = on;
   document.getElementById('panel-timeline').classList.toggle('ov-active', on);
@@ -279,7 +290,8 @@ function setOverviewMode(on) {
   document.getElementById('tlOverviewWrap').hidden = !on;
   document.getElementById('tlDayList').hidden = on;
   document.getElementById('tlCounty').hidden = on;
-  if (on) renderOverviewStrip();
+  if (on) { renderOverviewMonthTabs(); renderOverviewStrip(); }
+  else renderMonthTabs();
 }
 
 function renderOverviewStrip() {
@@ -299,17 +311,6 @@ function renderOverviewStrip() {
 
   const dayIdx = d => Math.round((d - origin) / 86400000);
   const dayAt  = i => new Date(origin.getTime() + i * 86400000);
-
-  // Month labels
-  let monthsHtml = '';
-  let prevM = -1;
-  for (let i = 0; i < total; i++) {
-    const d = dayAt(i);
-    if (d.getMonth() !== prevM) {
-      monthsHtml += `<span class="tlo-month-label" style="left:${i * cellW}px">${d.getMonth()+1}月</span>`;
-      prevM = d.getMonth();
-    }
-  }
 
   // Density bars + collapsible detail bands, one row per tribe
   const TRIBE_ORDER = ['ami', 'szy', 'ckv', 'bnn', 'trv', 'pwn', 'pyu'];
@@ -386,10 +387,7 @@ function renderOverviewStrip() {
     </div>`;
   });
 
-  wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">
-    <div class="tlo-month-row">${monthsHtml}</div>
-    ${tribesHtml}
-  </div>`;
+  wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">${tribesHtml}</div>`;
 
   wrap.querySelectorAll('.tlo-tribe-bar').forEach(bar => {
     const section = wrap.querySelector(`.tlo-band-section[data-group="${bar.dataset.group}"]`);
@@ -410,8 +408,10 @@ function selectDayFromOverview(date) {
 /* ── Event listeners ── */
 
 if (localStorage.getItem('pokoh_dev') === '1') {
-  document.getElementById('tlOverviewBtn').style.display = 'inline-block';
-  document.getElementById('tlOverviewBtn').addEventListener('click', () => setOverviewMode(!tlOverviewMode));
+  const _ovBtn = document.getElementById('tlOverviewBtn');
+  Object.assign(_ovBtn.style, { display: 'inline-block', position: 'absolute',
+    right: '2.75rem', top: '50%', transform: 'translateY(-50%)' });
+  _ovBtn.addEventListener('click', () => setOverviewMode(!tlOverviewMode));
 }
 
 document.getElementById('tlMonthTabs').addEventListener('click', e => {
