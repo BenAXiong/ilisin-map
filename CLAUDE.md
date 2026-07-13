@@ -118,18 +118,61 @@ Every place that plots a pin or emits geo data calls `eventCoord(v)` instead
 of reading `v.lat`/`v.lng` directly (`js/map.js`'s marker/bounds/fit-to-filter
 code, `app.js`'s maps-link fallback, `scripts/prerender.js`'s JSON-LD `geo`).
 Priority: (1) `venueOverride:true` → the entry's own `lat`/`lng`; (2)
-`BULUO_REF[buluo_id].coord_precision === 'exact'` → inherit that; (3) the
-entry's own `lat`/`lng` (usually still a township-level approximation,
-shared across every buluo in the same township — kept as a fallback so nothing
-regresses while `BULUO_REF` coverage is incomplete); (4) `BULUO_REF`'s
-coordinate at any precision; (5) `null` (no pin). **Never trust a
-same-looking coordinate across 2+ distinct buluo as real precision** — if a
-new source claims per-venue coordinates, check whether it secretly reuses one
-value across multiple buluo (a township-centroid artifact baked into *that*
-source) before adopting it as `'exact'`. Also check any existing `note` on
-the entry before overwriting its coordinate — a prior manual correction (e.g.
-`tt-ly-03`, which reverted an implausible scraped coordinate) can look like a
-stale/upgradeable value to a heuristic that doesn't read prose.
+`BULUO_REF[buluo_id].coord_precision` is `'exact'` or `'village'` (see
+`Datasets/buluo/schema.json` for what distinguishes them) → inherit that;
+(3) the entry's own `lat`/`lng` (usually still a township-level
+approximation, shared across every buluo in the same township — kept as a
+fallback so nothing regresses while `BULUO_REF` coverage is incomplete);
+(4) `BULUO_REF`'s coordinate at any precision; (5) `null` (no pin).
+
+**Geocoding pass methodology — lessons from the 2026-07-09/13 passes
+(`docs/DATA-SOURCES.md` §11a–11e), worth re-reading before starting another
+one:**
+- **Never trust a same-looking coordinate across 2+ distinct buluo as real
+  precision.** If a new source claims per-venue coordinates, check the
+  *entire* source for values reused across multiple distinct buluo (a
+  township/regional-centroid artifact baked into that source), not just
+  the handful of records you're currently matching — a spot-check misses
+  this. Found this exact pattern twice: taitung-festival's own 東河鄉 rows
+  (9 buluo, one shared point) and TICD's `ami-dipit`/`ami-palinkaan`
+  (two different real buluo sharing one wrong point).
+- **Check any existing `note`/`notes` on the record before overwriting its
+  coordinate** — a prior manual correction (e.g. `tt-ly-03`, which
+  reverted an implausible scraped coordinate) can look like a stale,
+  upgradeable value to a heuristic that doesn't read prose. This bit us
+  once (`ami-pailasan` almost got re-broken by the very upgrade meant to
+  help it) — caught by spot-checking against known-flagged entries after
+  the fact, not by the process itself, so build the check in up front next
+  time rather than relying on catching it after.
+- **Verify an "alternate name" lead against a second source before logging
+  it** — a similar-sounding name found via search is not automatically the
+  same buluo. `ami-cirocan`'s search briefly suggested "牧魯棧部落" as an
+  alt name; a stronger source (國家文化記憶庫) revealed it's a *different,
+  neighboring* buluo instead. Don't write an alt name from a single
+  search-summary result.
+- **Nominatim (OpenStreetMap) has effectively no building/street-level
+  coverage for rural 花蓮/臺東 indigenous venues.** Free-text Traditional
+  Chinese address queries mostly return nothing, or garbage (fuzzy-matched
+  unrelated places in Europe in more than one case). English/romanized
+  queries for well-known *named landmarks* (train stations, forest
+  recreation areas, or the OSM administrative-village node itself) work
+  reliably — that's the ceiling for free automated geocoding here, which
+  is exactly why `coord_precision: 'village'` exists as an honest
+  intermediate tier rather than forcing a choice between `'exact'` and a
+  raw township centroid.
+- **`hl_pdf` (the 花蓮縣原民處 PDF) has a recurring group-misclassification
+  pattern** — it's Amis-focused and periodically files a Sakizaya/Kavalan
+  buluo under `group:'ami'` anyway (see the `szy`/`ckv` examples already
+  in this doc). Found 2 more instances of this in entries that also lacked
+  a coordinate (`hl-hl-06`, `hl-fb-12`) — worth treating a coordinate gap
+  as a cue to double-check the `group` field too, not just assume it's
+  purely a geocoding problem.
+- **Don't fabricate a new `Datasets/buluo` record just to unblock a
+  coordinate.** If a buluo genuinely isn't in any loaded registry under
+  its name or common variants, leave it unmatched (township-level
+  fallback) rather than inventing identity fields to make a coordinate
+  possible — that just relocates the fabrication from `lat`/`lng` to the
+  record's other fields.
 
 Adding a new non-`ami` `group` value requires wiring it in 3 places, or the entry
 silently vanishes from prerendered output: (1) `GROUP_FILES` in
