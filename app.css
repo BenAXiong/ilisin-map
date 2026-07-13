@@ -240,7 +240,7 @@ body.tab-info .app-header { display: none; }
   border-radius: 3px;
   background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.55) h);
 }
-.tlo-tribe-section { position: relative; height: 22px; margin-top: 6px; }
+.tlo-tribe-row  { position: relative; height: 22px; margin-top: 4px; }
 .tlo-tribe-bar {
   position: absolute;
   height: 100%;
@@ -251,7 +251,7 @@ body.tab-info .app-header { display: none; }
   background: oklch(from var(--accent) calc(l + 0.22) calc(c * 0.4) h / 0.18);
   cursor: pointer;
 }
-.tlo-band-section { margin-top: 6px; }
+.tlo-band-section { margin-top: 4px; margin-bottom: 2px; }
 .tlo-tribe-lbl {
   position: absolute;
   right: calc(100% + 6px);

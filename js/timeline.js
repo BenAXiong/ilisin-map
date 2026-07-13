@@ -357,12 +357,9 @@ function renderOverviewStrip() {
     tribeRows.push({ grp, map, maxCount, start, startIdx, span, bands, laneEnds });
   });
 
-  const sectionH = tribeRows.length * TLO_ROW_H + Math.max(0, tribeRows.length - 1) * TLO_ROW_GAP;
-  let tribeBarsHtml = '';
-  let detailSectionsHtml = '';
-
-  tribeRows.forEach((tr, i) => {
-    const top = i * (TLO_ROW_H + TLO_ROW_GAP);
+  // Each tribe: density row + band section interleaved so expansion pushes later rows down
+  let tribesHtml = '';
+  tribeRows.forEach(tr => {
     let cells = '';
     for (let j = 0; j < tr.span; j++) {
       const d   = new Date(tr.start.getTime() + j * 86400000);
@@ -370,26 +367,28 @@ function renderOverviewStrip() {
       const level = cnt > 0 ? Math.ceil((cnt / tr.maxCount) * 10) : 0;
       cells += `<div class="tlo-t-day" style="width:${cellW}px;opacity:${level > 0 ? (level / 10).toFixed(2) : '0'}"></div>`;
     }
-    tribeBarsHtml += `<div class="tlo-tribe-bar" data-group="${tr.grp}"
-      style="top:${top}px;left:${tr.startIdx * cellW}px;width:${tr.span * cellW}px;height:${TLO_ROW_H}px">
-      <span class="tlo-tribe-lbl" title="${TRIBE_ZH[tr.grp] || tr.grp}">${TRIBE_NAMES[tr.grp] || tr.grp}</span>
-      <div class="tlo-t-cells">${cells}</div>
-    </div>`;
 
     const bandsH = tr.laneEnds.length * (BAND_OW_H + BAND_OW_GAP);
     let bandsHtml = '';
     tr.bands.forEach(v => {
       bandsHtml += `<div class="tlo-band" style="left:${v._ov_sd * cellW}px;width:${(v._ov_ed - v._ov_sd + 1) * cellW}px;top:${v._ov_lane * (BAND_OW_H + BAND_OW_GAP)}px;height:${BAND_OW_H}px"></div>`;
     });
-    detailSectionsHtml += `<div class="tlo-band-section" data-group="${tr.grp}" hidden>
+
+    tribesHtml += `<div class="tlo-tribe-row">
+      <div class="tlo-tribe-bar" data-group="${tr.grp}"
+        style="left:${tr.startIdx * cellW}px;width:${tr.span * cellW}px;height:${TLO_ROW_H}px">
+        <span class="tlo-tribe-lbl" title="${TRIBE_ZH[tr.grp] || tr.grp}">${TRIBE_NAMES[tr.grp] || tr.grp}</span>
+        <div class="tlo-t-cells">${cells}</div>
+      </div>
+    </div>
+    <div class="tlo-band-section" data-group="${tr.grp}" hidden>
       <div style="position:relative;height:${bandsH}px">${bandsHtml}</div>
     </div>`;
   });
 
   wrap.innerHTML = `<div class="tlo-inner" style="width:${total * cellW}px">
     <div class="tlo-month-row">${monthsHtml}</div>
-    <div class="tlo-tribe-section" style="height:${sectionH}px">${tribeBarsHtml}</div>
-    ${detailSectionsHtml}
+    ${tribesHtml}
   </div>`;
 
   wrap.querySelectorAll('.tlo-tribe-bar').forEach(bar => {
