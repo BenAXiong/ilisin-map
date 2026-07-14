@@ -146,6 +146,10 @@ html.js-ready #festival-data {
 }
 .install-btn:hover { background: var(--amber); color: var(--bg); }
 body.tab-info .app-header { display: none; }
+/* 全覽/名稱切換 only act on the timeline (js/timeline.js) — hide the mobile
+   .app-header copies on other tabs rather than leaving inert buttons visible. */
+body:not(.tab-timeline) #tlOverviewBtnMobile,
+body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 
 /* ── Tab bar ────────────────────────────────── */
 .tab-bar {
