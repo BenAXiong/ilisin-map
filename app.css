@@ -729,7 +729,12 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   .map-loc { display: flex; flex-direction: column; align-items: center; gap: 5px; }
   #mapCountyChips { flex-direction: row; }
   .map-dd-trigger { display: none; }
-  .map-dd-panel {
+  /* Must match .map-dd .map-dd-panel's specificity (two classes) — the
+     mobile-first rule below is that specific to beat .map-chips, so a
+     plain .map-dd-panel here (one class) loses position/flex-direction to
+     it regardless of media-query order, leaving the panel stuck absolute
+     and column-stacked on desktop. */
+  .map-dd .map-dd-panel {
     position: static;
     display: flex !important;
     flex-direction: row !important;
