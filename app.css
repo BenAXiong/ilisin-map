@@ -912,12 +912,17 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   white-space: nowrap;
 }
 /* Share+save grouped at the meta row's left edge (icons, venue, pill order) —
-   fixed-width like .card-welcome, so .card-venue is the only flexible child. */
-.card-icons { display: flex; align-items: center; gap: .2rem; flex-shrink: 0; }
+   fixed-width like .card-welcome, so .card-venue-wrap is the only flexible
+   child (see below). Gap widened to .5rem (8px) specifically so the two
+   buttons' *invisible*
+   hit-area extensions below (3px each side, via ::after) can't overlap each
+   other — 3+3=6px needed at minimum, 8px leaves a small buffer. */
+.card-icons { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
 /* Outline bookmark by default; fills solid amber once saved — same
    currentColor-driven convention as .card-pin, just filled instead of a
    color swap, so "saved" reads as a distinct shape state, not just a tint. */
 .card-save {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -934,6 +939,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 .card-save.saved svg path { fill: currentColor; }
 /* Same icon-button treatment as .card-save. */
 .card-share {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -946,12 +952,31 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   transition: color .15s;
 }
 .card-share:hover { color: var(--amber-dark); }
+/* Invisible tap-target extension: the visible button box is 18×18px (14px
+   icon + 2px padding) — under even WCAG's 24px floor. Rather than growing
+   the box itself (which would grow the fixed-height meta row, and risks
+   overlapping the card's own click-to-open-detail area if pushed further),
+   extend the *hit area* only, via a transparent pseudo-element, up to a
+   24×24px target. Deliberately NOT sized to the fuller 44/48px Apple/
+   Material recommendation — at that size the two icons' hit areas would
+   overlap each other even with the widened gap above. */
+.card-save::after, .card-share::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+}
 .card-meta   { display: flex; align-items: center; margin-top: .25rem; gap: .4rem; }
+/* .card-venue-wrap (not the link itself) takes the row's flexible space, so
+   the welcome pill after it still lands at the row's right edge. .card-venue
+   is a plain (non-flex-grow) child inside it — it shrink-wraps to just its
+   own icon+text content, so the clickable area is the link's visible
+   content, not the whole flexible gap the wrap reserves. */
+.card-venue-wrap { flex: 1; min-width: 0; display: flex; }
 .card-venue  {
   font-size: var(--fs-sm);
   color: var(--text-2);
-  flex: 1;
   min-width: 0;
+  max-width: 100%;
   display: inline-flex;
   align-items: center;
   gap: .3rem;

@@ -143,8 +143,17 @@ function onShareTap(id) {
 // Matches an optional leading space + weekday char so "7/13 一" renders as
 // "7/13(一)" — the space is consumed, not left dangling before the "(".
 const WEEKDAY_SUFFIX_RE = new RegExp(` ?([${WEEKDAYS}])`, 'g');
+// Some source data (mostly tt_chenggong* entries) never included a weekday
+// character at all, unlike most `date` strings — matches a bare "M/D" not
+// already followed by one, so it can be computed and inserted instead of
+// silently rendering as a shorter, inconsistent-looking date. Assumes 2026,
+// same convention as parseStartDate()/parseEndDate() below.
+const MD_NO_WEEKDAY_RE = new RegExp(`(\\d{1,2})/(\\d{1,2})(?!\\d)(?!\\s?[${WEEKDAYS}])`, 'g');
 function dateHtml(dateStr) {
-  return dateStr
+  const withWeekdays = dateStr.replace(MD_NO_WEEKDAY_RE, (m, mo, da) =>
+    `${m} ${WEEKDAYS[new Date(2026, Number(mo) - 1, Number(da)).getDay()]}`
+  );
+  return withWeekdays
     .replace(/[–—]/g, '~')
     .replace(WEEKDAY_SUFFIX_RE, (_, c) => `<span class="card-date-weekday">(${c})</span>`);
 }
@@ -282,7 +291,7 @@ function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameO
         const mobileLocText = `${shortAdmin(v.county)}・${shortAdmin(v.township)}${village ? `・${village}` : ''}`;
         return `<span class="card-venue-text card-loc-desktop">${desktopLocText}</span><span class="card-venue-text card-loc-mobile">${mobileLocText}</span>`;
       })();
-  const venueHtml = `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>${locHtml}</a>`;
+  const venueHtml = `<div class="card-venue-wrap"><a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>${locHtml}</a></div>`;
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
   const welcomeHtml = (showWelcome && v.welcome_date)
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
