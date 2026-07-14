@@ -1021,17 +1021,25 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 }
 
 /* ── Village detail overlay ─────────────────── */
-/* A backdrop (.detail-overlay) behind a near-fullscreen sheet (.detail-panel)
-   — deliberately not edge-to-edge, so it reads as a window popped up over the
-   dimmed app, not a full new page. Backdrop click and the close button both
-   dismiss it (wired in js/detail.js). */
+/* A backdrop (.detail-overlay) behind a floating, centered card
+   (.detail-panel) — deliberately not edge-to-edge and not bottom-anchored
+   (that's #bottomSheet's job on the map tab, a distinct component), so this
+   reads as a popup window over the dimmed app regardless of how much content
+   it holds. A sparse entry (just the header card) used to anchor to the
+   bottom edge via align-items:flex-end and look like a broken stub of a
+   bottom sheet; centering unconditionally (2026-07-14) fixes that, since a
+   short card centers naturally instead of looking stuck to an edge.
+   max-height/.detail-scroll below are unchanged, so a content-heavy entry
+   still opens to roughly the same height and stays internally scrollable.
+   Backdrop click and the close button both dismiss it (wired in
+   js/detail.js). */
 .detail-overlay {
   position: fixed;
   inset: 0;
   z-index: 1100;
   background: oklch(from black l c h / 0.5);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
@@ -1046,26 +1054,25 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
      (the flex container centers it), `min()` still caps it at 560px on
      larger screens. */
   width: min(100% - 2rem, 560px);
-  max-height: 90vh;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
   background: var(--bg);
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 -8px 32px oklch(from black l c h / 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px oklch(from black l c h / 0.3);
   /* Scrolling lives on .detail-scroll below, not here — a native scrollbar
      on the same element as border-radius isn't clipped to the curve (square
      corner even with overflow:hidden's own clip-mask; verified in Chrome).
      Splitting the scroll from the rounded shell fixes it. */
   overflow: hidden;
-  transform: translateY(16px);
+  /* Fade + slight scale reads as a centered dialog appearing in place;
+     the previous translateY slide-up was a leftover of the old
+     bottom-sheet-style anchoring and looked like it was arriving from an
+     edge that no longer exists. */
+  transform: scale(.96);
   transition: transform .2s ease;
 }
-.detail-overlay.open .detail-panel { transform: translateY(0); }
-
-@media (min-width: 768px) {
-  .detail-overlay  { align-items: center; }
-  .detail-panel    { border-radius: 16px; max-height: 85vh; }
-}
+.detail-overlay.open .detail-panel { transform: scale(1); }
 
 .detail-scroll {
   flex: 1;

@@ -68,20 +68,25 @@ const SCHEDULE_DETAILS = {
   'hl-gf-09': { contacts: [{ role: '頭目', name: '陳榮德', phone: '0970-277-153' }, { role: '聯絡人', name: '陳林阿佑', phone: '0935-902-922' }] },
   'hl-gf-10': { contacts: [{ role: '頭目', name: '張新亞', phone: '0910-559-622' }, { role: '聯絡人', name: '張榕軒', phone: '0900-772-813' }] },
   // Both joint:true tourism festivals below: found a real activity-category
-  // list (台東觀光旅遊網／花蓮縣政府官方頁面／東河鄉公所) but no hour-by-hour
-  // schedule anywhere (checked 2026-07-14, see docs/DATA-SOURCES.md §12) —
-  // one `days` row per activity, all sharing the event's single date, no
-  // `name` (no indigenous term for these program segments, unlike
-  // tt-tt-01's ritual stages). Still genuinely useful to a visitor even
-  // without exact times, so surfaced rather than withheld.
+  // list (台東觀光旅遊網／花蓮縣政府官方頁面／東河鄉公所) but no per-activity
+  // hour-by-hour schedule anywhere (checked 2026-07-14, see
+  // docs/DATA-SOURCES.md §12) — one `days` row per activity, all sharing
+  // the event's single date, no `name` (no indigenous term for these
+  // program segments, unlike tt-tt-01's ritual stages). Still genuinely
+  // useful to a visitor even without per-activity times, so surfaced
+  // rather than withheld. tt-dh-01 (but not hl-hl-14 — no time window
+  // found for that one) does have a confirmed overall start/end time
+  // (09:30–17:30); appended to every row's `date` — since they're all
+  // identical, groupDaysByDate() still collapses them into one shared
+  // header showing it once, not per row.
   'tt-dh-01': { // 瑪洛阿瀧聯合豐年節 — 8/22（六）09:30–17:30，東河國小
     days: [
-      { date: '8/22 六', zh: '千人牽手大圓舞' },
-      { date: '8/22 六', zh: '傳統舞蹈展演、原創舞蹈競賽' },
-      { date: '8/22 六', zh: '體技能競賽（傳統射箭、撒魚網、趣味競賽、頂上功夫、鋸木比賽）' },
-      { date: '8/22 六', zh: '部落文化體驗（族語、唱跳、傳統服飾、搗米樂）' },
-      { date: '8/22 六', zh: '山海原民市集' },
-      { date: '8/22 六', zh: '原民豐潮音樂盛宴' },
+      { date: '8/22 六 09:30-17:30', zh: '千人牽手大圓舞' },
+      { date: '8/22 六 09:30-17:30', zh: '傳統舞蹈展演、原創舞蹈競賽' },
+      { date: '8/22 六 09:30-17:30', zh: '體技能競賽（傳統射箭、撒魚網、趣味競賽、頂上功夫、鋸木比賽）' },
+      { date: '8/22 六 09:30-17:30', zh: '部落文化體驗（族語、唱跳、傳統服飾、搗米樂）' },
+      { date: '8/22 六 09:30-17:30', zh: '山海原民市集' },
+      { date: '8/22 六 09:30-17:30', zh: '原民豐潮音樂盛宴' },
     ],
   },
   'hl-hl-14': { // 太平洋南島聯合豐年節 — 7/16–7/19，德興大草坪
