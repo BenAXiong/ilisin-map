@@ -38,8 +38,19 @@ const GROUP_META = {
   pyu: { heading: '卑南族 Puyuma · 年祭 Mangayaw',         festival: '年祭 Mangayaw',       org: '卑南族（Puyuma）' },
   szy: { heading: '撒奇萊雅族 Sakizaya · 豐年祭 Malaliki\'', festival: '豐年祭 Malaliki\'',   org: '撒奇萊雅族（Sakizaya）' },
   ckv: { heading: '噶瑪蘭族 Kavalan · 豐年祭 Gataban',      festival: '豐年祭 Gataban',      org: '噶瑪蘭族（Kavalan）' },
+  // Not an ethnicity code like the 7 above — a county/city-run cross-tribe
+  // joint festival (always paired with joint:true; see CLAUDE.md). `chinese`
+  // for this group is already a complete standalone event title (unlike the
+  // tribe groups, where it's just a place/buluo name), so `festival` is left
+  // empty to avoid restating it — accepts a harmless double-space in the
+  // generated JSON-LD `name` string as the tradeoff. `org` is currently
+  // hardcoded to this group's one real entry's actual organizer
+  // (花蓮縣政府) — if a second `misc` entry from a different organizing
+  // government is ever added (e.g. a future 桃園市 joint festival), this
+  // needs to become a per-EVENTS-entry field instead of a per-group constant.
+  misc: { heading: '跨族群聯合活動 · 縣市聯合豐年節', festival: '', org: '花蓮縣政府' },
 };
-const GROUP_ORDER = ['ami', 'bnn', 'trv', 'pwn', 'pyu', 'szy', 'ckv'];
+const GROUP_ORDER = ['ami', 'bnn', 'trv', 'pwn', 'pyu', 'szy', 'ckv', 'misc'];
 
 function iso(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;

@@ -93,6 +93,16 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   Sakizaya/Kavalan buluo under its Amis schedule, but their `group` here is still
   `szy`/`ckv`. `ami`/`pwn`/`pyu`/`bnn`/`szy`/`ckv` all have a buluo reference db
   wired up (see below); only `trv` entries are never auto-matched to a `buluo_id`.
+  **`misc`** is the one non-ethnicity exception (added 2026-07-14): reserved for
+  county/city-run cross-tribe joint festivals (e.g. `hl-hl-14` 太平洋南島聯合
+  豐年節, 花蓮縣政府) that don't represent one ethnicity at all. Always paired
+  with `joint:true` — `build_buluo_ref.js` skips `joint:true` entries before
+  ever reaching a group-based buluo lookup, so `misc` needs no `GROUP_FILES`
+  entry, unlike every other group. Currently a single entry; `prerender.js`'s
+  `GROUP_META.misc.org` is hardcoded to that entry's real organizer (花蓮縣
+  政府) and will need to become a per-`EVENTS`-entry field instead of a
+  per-group constant if a second `misc` entry with a different organizing
+  government is ever added (e.g. a future 桃園市 joint festival, see v2-W).
 - `status` — `'confirmed'` | `'tbd'` | `'cancelled'`
 - `buluo_id` — optional, added by `scripts/build_buluo_ref.js`. Single FK into `BULUO_REF`.
 - `buluo_ids` — optional array, **hand-curated** (never auto-written). Use when one
@@ -100,11 +110,24 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   月眉部落 = `['ami-sililasay','ami-siapaluway']`). The build script validates the
   ids and folds them into `BULUO_REF` coverage; it does not try to auto-derive these.
 - `joint` — optional `true`, hand-set. Marks a multi-buluo umbrella/tourism event
-  that isn't one specific buluo (e.g. `tt-dh-01` 瑪洛阿瀧聯合豐年祭). The build
-  script skips these entirely — no `buluo_id`, not counted as unmatched. Prefer
-  this explicit flag over any name-substring heuristic (e.g. matching "聯合") —
-  it can't false-positive on a real buluo whose name happens to contain that
-  substring, and can't false-negative on a joint event that doesn't.
+  that isn't one specific buluo (e.g. `tt-dh-01` 瑪洛阿瀧聯合豐年祭, `hl-hl-14`
+  太平洋南島聯合豐年節). The build script skips these entirely — no `buluo_id`,
+  not counted as unmatched. Prefer this explicit flag over any name-substring
+  heuristic (e.g. matching "聯合") — it can't false-positive on a real buluo
+  whose name happens to contain that substring, and can't false-negative on a
+  joint event that doesn't. Drives a real UI element too:
+  `js/event.js`'s `cardHtml()` shows a "聯合／跨部落活動" badge whenever
+  `v.joint` is truthy — worth setting on every entry that's structurally an
+  umbrella, not just ones that need the `build_buluo_ref.js` skip. The 6
+  whole-township "…族群" entries (e.g. `hl-xc-01` 布農族群) are a related but
+  *separate* mechanism — `build_buluo_ref.js` has always skipped them via an
+  unconditional `v.chinese.includes('族群')` check (line 101, checked before
+  the `joint` check), so they never needed the flag for matching purposes.
+  They're also now flagged `joint:true` (added 2026-07-14, retroactively, for
+  UI-badge consistency with `hl-xl-01`/`hl-hl-14` — five of the six were
+  missing it despite being the same kind of entry) — but that flag is
+  redundant for `build_buluo_ref.js`'s own logic, which will keep skipping
+  them via the name check regardless.
 - `note` — optional free-text string, informational only (no code reads it yet).
   Used so far to record *why* a `szy`/`ckv` entry is sourced from an Amis-focused
   PDF (`hl_pdf`) despite its `group` — provenance, not a discrepancy flag (the

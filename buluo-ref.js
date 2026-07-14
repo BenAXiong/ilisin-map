@@ -876,50 +876,6 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
-  "ami-natawran": {
-    "chinese_name": "那荳蘭部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Natawran",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "南勢阿美語"
-    ],
-    "village": "南昌村",
-    "lat": 23.983709,
-    "lng": 121.58106,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "",
-    "chiefs": [],
-    "contact": []
-  },
-  "ami-buner": {
-    "chinese_name": "宜昌部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Buner",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "南勢阿美語"
-    ],
-    "village": "宜昌村",
-    "lat": 23.973877,
-    "lng": 121.58362,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "",
-    "chiefs": [],
-    "contact": []
-  },
   "ami-isawalian-pahikukian": {
     "chinese_name": "仁安部落",
     "chinese_name_alt": [],
@@ -1327,50 +1283,6 @@ const BULUO_REF = {
     "village": "鳳信里",
     "lat": 23.730886,
     "lng": 121.443688,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "",
-    "chiefs": [],
-    "contact": []
-  },
-  "ami-ciloohay": {
-    "chinese_name": "森榮部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Cilo'ohay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "秀姑巒阿美語"
-    ],
-    "village": "森榮里",
-    "lat": 23.718025,
-    "lng": 121.397632,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "",
-    "chiefs": [],
-    "contact": []
-  },
-  "ami-tangahang": {
-    "chinese_name": "長橋部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Tangahang",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "秀姑巒阿美語"
-    ],
-    "village": "長橋里",
-    "lat": 23.710815,
-    "lng": 121.41834,
     "coord_precision": "exact",
     "status": "single-source",
     "sources": [
@@ -4444,80 +4356,6 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
-  "bnn-kainisungan": {
-    "chinese_name": "卡努舒岸部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kainisungan",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "桃源村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kamisatu": {
-    "chinese_name": "卡米莎度部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kamisatu",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "桃源村",
-    "lat": null,
-    "lng": null,
-    "coord_precision": "unknown",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-talunas": {
-    "chinese_name": "達魯那斯部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Talunas",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "桃源村",
-    "lat": 22.914899,
-    "lng": 121.09148,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-pasikau": {
-    "chinese_name": "巴喜告部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pasikau",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "桃源村",
-    "lat": 22.903161,
-    "lng": 121.083374,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
   "bnn-vakangan": {
     "chinese_name": "瓦岡岸部落",
     "chinese_name_alt": [],
@@ -4537,44 +4375,6 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
-  "bnn-minami": {
-    "chinese_name": "米娜咪部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Minami",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "鸞山村",
-    "lat": 22.88249,
-    "lng": 121.15956,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kaminu": {
-    "chinese_name": "卡米努部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kaminu",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "鸞山村",
-    "lat": 22.91513,
-    "lng": 121.153625,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
   "bnn-su-nun-sung": {
     "chinese_name": "蘇儂頌部落",
     "chinese_name_alt": [],
@@ -4584,44 +4384,6 @@ const BULUO_REF = {
     "village": "永康村",
     "lat": 22.927853,
     "lng": 121.114935,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-nakanu": {
-    "chinese_name": "拿卡努部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Nakanu",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "鸞山村",
-    "lat": 22.90083,
-    "lng": 121.152077,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kalisahan": {
-    "chinese_name": "卡里沙汗部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kalisahan",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "鸞山村",
-    "lat": 22.887429,
-    "lng": 121.159942,
     "coord_precision": "exact",
     "status": "single-source",
     "sources": [
@@ -4727,82 +4489,6 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
-  "bnn-vahu": {
-    "chinese_name": "下馬部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Vahu",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "霧鹿村",
-    "lat": 23.156084,
-    "lng": 121.063793,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-bulbul": {
-    "chinese_name": "霧鹿部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Bulbul",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "霧鹿村",
-    "lat": 23.169017,
-    "lng": 121.041524,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kamcing": {
-    "chinese_name": "崁頂部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kamcing",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "崁頂村",
-    "lat": 23.044951,
-    "lng": 121.144719,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kusunuki": {
-    "chinese_name": "紅石部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kusunuki",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "崁頂村",
-    "lat": 23.066544,
-    "lng": 121.160415,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
   "bnn-haitutuan": {
     "chinese_name": "山平部落",
     "chinese_name_alt": [],
@@ -4812,63 +4498,6 @@ const BULUO_REF = {
     "village": "海端村",
     "lat": 23.095467,
     "lng": 121.175764,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kanahcian": {
-    "chinese_name": "加和部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kanahcian",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "加拿村",
-    "lat": 23.002501,
-    "lng": 121.123171,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-kanaluk": {
-    "chinese_name": "加樂部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kanaluk",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "加拿村",
-    "lat": 23.00906,
-    "lng": 121.131133,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "bnn-bacingul": {
-    "chinese_name": "加平部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Bacingul",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "加拿村",
-    "lat": 22.999537,
-    "lng": 121.128305,
     "coord_precision": "exact",
     "status": "single-source",
     "sources": [
@@ -5043,44 +4672,6 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
-  "pwn-davugele": {
-    "chinese_name": "大武窟部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Davugele",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "金崙村",
-    "lat": 22.545295,
-    "lng": 120.966144,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "pwn-kanadun": {
-    "chinese_name": "金崙部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Kanadun",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "金崙村",
-    "lat": 22.532633,
-    "lng": 120.965275,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
   "pwn-lalauran": {
     "chinese_name": "拉勞蘭部落",
     "chinese_name_alt": [],
@@ -5171,44 +4762,6 @@ const BULUO_REF = {
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
       "織・時臺東 (taitung-festival.vercel.app) 部落聚會所座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "pwn-pangwi": {
-    "chinese_name": "大武部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Pangwi",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "大武村",
-    "lat": 22.340554,
-    "lng": 120.891021,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
-    "chiefs": [],
-    "contact": []
-  },
-  "pwn-qaljapang": {
-    "chinese_name": "加羅板部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Qaljapang",
-    "indigenous_name_alt": [],
-    "dialect": [],
-    "village": "大武村",
-    "lat": 22.360289,
-    "lng": 120.878832,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
     ],
     "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
@@ -5488,6 +5041,50 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "ami-natawran": {
+    "chinese_name": "那荳蘭部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Natawran",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "南勢阿美語"
+    ],
+    "village": "南昌村",
+    "lat": 23.983709,
+    "lng": 121.58106,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-buner": {
+    "chinese_name": "宜昌部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Buner",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "南勢阿美語"
+    ],
+    "village": "宜昌村",
+    "lat": 23.973877,
+    "lng": 121.58362,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-sililasay": {
     "chinese_name": "月眉（上部落）",
     "chinese_name_alt": [],
@@ -5527,6 +5124,409 @@ const BULUO_REF = {
       "暫定族語別分類來源（待補充正式引註）"
     ],
     "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-ciloohay": {
+    "chinese_name": "森榮部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Cilo'ohay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "秀姑巒阿美語"
+    ],
+    "village": "森榮里",
+    "lat": 23.718025,
+    "lng": 121.397632,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "ami-tangahang": {
+    "chinese_name": "長橋部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Tangahang",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "秀姑巒阿美語"
+    ],
+    "village": "長橋里",
+    "lat": 23.710815,
+    "lng": 121.41834,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kainisungan": {
+    "chinese_name": "卡努舒岸部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kainisungan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "桃源村",
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kamisatu": {
+    "chinese_name": "卡米莎度部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kamisatu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "桃源村",
+    "lat": null,
+    "lng": null,
+    "coord_precision": "unknown",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-talunas": {
+    "chinese_name": "達魯那斯部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Talunas",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "桃源村",
+    "lat": 22.914899,
+    "lng": 121.09148,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-pasikau": {
+    "chinese_name": "巴喜告部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pasikau",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "桃源村",
+    "lat": 22.903161,
+    "lng": 121.083374,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-minami": {
+    "chinese_name": "米娜咪部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Minami",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "鸞山村",
+    "lat": 22.88249,
+    "lng": 121.15956,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kaminu": {
+    "chinese_name": "卡米努部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kaminu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "鸞山村",
+    "lat": 22.91513,
+    "lng": 121.153625,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-nakanu": {
+    "chinese_name": "拿卡努部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Nakanu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "鸞山村",
+    "lat": 22.90083,
+    "lng": 121.152077,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kalisahan": {
+    "chinese_name": "卡里沙汗部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kalisahan",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "鸞山村",
+    "lat": 22.887429,
+    "lng": 121.159942,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-vahu": {
+    "chinese_name": "下馬部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Vahu",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "霧鹿村",
+    "lat": 23.156084,
+    "lng": 121.063793,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-bulbul": {
+    "chinese_name": "霧鹿部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Bulbul",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "霧鹿村",
+    "lat": 23.169017,
+    "lng": 121.041524,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kamcing": {
+    "chinese_name": "崁頂部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kamcing",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "崁頂村",
+    "lat": 23.044951,
+    "lng": 121.144719,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kusunuki": {
+    "chinese_name": "紅石部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kusunuki",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "崁頂村",
+    "lat": 23.066544,
+    "lng": 121.160415,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kanahcian": {
+    "chinese_name": "加和部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanahcian",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "加拿村",
+    "lat": 23.002501,
+    "lng": 121.123171,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-kanaluk": {
+    "chinese_name": "加樂部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanaluk",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "加拿村",
+    "lat": 23.00906,
+    "lng": 121.131133,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "bnn-bacingul": {
+    "chinese_name": "加平部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Bacingul",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "加拿村",
+    "lat": 22.999537,
+    "lng": 121.128305,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "pwn-davugele": {
+    "chinese_name": "大武窟部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Davugele",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "金崙村",
+    "lat": 22.545295,
+    "lng": 120.966144,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "pwn-kanadun": {
+    "chinese_name": "金崙部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Kanadun",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "金崙村",
+    "lat": 22.532633,
+    "lng": 120.965275,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "pwn-pangwi": {
+    "chinese_name": "大武部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Pangwi",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "大武村",
+    "lat": 22.340554,
+    "lng": 120.891021,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "chiefs": [],
+    "contact": []
+  },
+  "pwn-qaljapang": {
+    "chinese_name": "加羅板部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Qaljapang",
+    "indigenous_name_alt": [],
+    "dialect": [],
+    "village": "大武村",
+    "lat": 22.360289,
+    "lng": 120.878832,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
     "chiefs": [],
     "contact": []
   },

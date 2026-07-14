@@ -12,11 +12,15 @@
 //            `credit` is the link text shown ("圖片來源：{credit}"); when
 //            `creditUrl` is set it becomes a link to where the poster was
 //            published, never displaying the raw URL text itself.
-//   days:    [{ date, zh, name, desc_zh?, desc_en? }, ...]  — day-by-day
+//   days:    [{ date, zh, name?, desc_zh?, desc_en? }, ...]  — day-by-day
 //            sub-event breakdown, only when a source actually gives one.
 //            One event per row — if a single day has multiple named
 //            sub-events, give each its own `days` entry (same `date` is
-//            fine) rather than combining names/zh into one row.
+//            fine) rather than combining names/zh into one row. `name` is
+//            optional (added 2026-07-14) — omit it for tourism-program
+//            activity lists that have no traditional/indigenous-language
+//            term (e.g. `tt-dh-01`'s "千人牽手大圓舞"), vs. `tt-tt-01`'s
+//            named ritual stages where `name` carries the Amis term.
 //   history: string                        — hand-authored cultural/history
 //            prose. Deliberately NOT sourced from BULUO_REF.notes, which is
 //            internal data-provenance text, not visitor-facing copy.
@@ -63,6 +67,31 @@ const SCHEDULE_DETAILS = {
   'hl-gf-08': { contacts: [{ role: '頭目', name: '謝連光', phone: '0910-468-928' }] }, // 頭目與聯絡人同一人
   'hl-gf-09': { contacts: [{ role: '頭目', name: '陳榮德', phone: '0970-277-153' }, { role: '聯絡人', name: '陳林阿佑', phone: '0935-902-922' }] },
   'hl-gf-10': { contacts: [{ role: '頭目', name: '張新亞', phone: '0910-559-622' }, { role: '聯絡人', name: '張榕軒', phone: '0900-772-813' }] },
+  // Both joint:true tourism festivals below: found a real activity-category
+  // list (台東觀光旅遊網／花蓮縣政府官方頁面／東河鄉公所) but no hour-by-hour
+  // schedule anywhere (checked 2026-07-14, see docs/DATA-SOURCES.md §12) —
+  // one `days` row per activity, all sharing the event's single date, no
+  // `name` (no indigenous term for these program segments, unlike
+  // tt-tt-01's ritual stages). Still genuinely useful to a visitor even
+  // without exact times, so surfaced rather than withheld.
+  'tt-dh-01': { // 瑪洛阿瀧聯合豐年節 — 8/22（六）09:30–17:30，東河國小
+    days: [
+      { date: '8/22 六', zh: '千人牽手大圓舞' },
+      { date: '8/22 六', zh: '傳統舞蹈展演、原創舞蹈競賽' },
+      { date: '8/22 六', zh: '體技能競賽（傳統射箭、撒魚網、趣味競賽、頂上功夫、鋸木比賽）' },
+      { date: '8/22 六', zh: '部落文化體驗（族語、唱跳、傳統服飾、搗米樂）' },
+      { date: '8/22 六', zh: '山海原民市集' },
+      { date: '8/22 六', zh: '原民豐潮音樂盛宴' },
+    ],
+  },
+  'hl-hl-14': { // 太平洋南島聯合豐年節 — 7/16–7/19，德興大草坪
+    days: [
+      { date: '7/16 四–7/19 日', zh: '原住民族樂舞展演' },
+      { date: '7/16 四–7/19 日', zh: '千人大會舞' },
+      { date: '7/16 四–7/19 日', zh: '特色市集（原住民美食、手工藝品、農特產品）' },
+      { date: '7/16 四–7/19 日', zh: '部落微旅行簡介' },
+    ],
+  },
 };
 
 // Poster images shared by many EVENTS entries via the same data-source

@@ -19,8 +19,14 @@ let activeGroupFilter = 'ami';
 // user who forgets they left it on shouldn't reopen the app to an
 // apparently-empty timeline.
 let savedOnlyFilter = false;
+// 'misc' (cross-tribe joint festivals, e.g. hl-hl-14 太平洋南島聯合豐年節)
+// always shows alongside whichever tribe is active — it isn't tied to one
+// ethnicity, so it shouldn't disappear just because activeGroupFilter is
+// pinned to 'ami'. Revisit this special-case once v3-7's real group
+// selector ships (docs/ROADMAP-v3.md) — 'misc' should probably always be
+// on regardless of which tribe(s) are selected there too.
 function visibleEvents() {
-  return EVENTS.filter(v => v.group === activeGroupFilter && (!savedOnlyFilter || isSaved(v.id)));
+  return EVENTS.filter(v => (v.group === activeGroupFilter || v.group === 'misc') && (!savedOnlyFilter || isSaved(v.id)));
 }
 
 /* ═══════════════════════════════════════════════════

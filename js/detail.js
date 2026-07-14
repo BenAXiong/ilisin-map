@@ -58,7 +58,7 @@ function renderDetailBody(v) {
              <div class="detail-day-events">
                ${g.events.map(d => `
                  <div class="detail-day-event">
-                   <span class="detail-day-name">${d.name}</span>
+                   ${d.name ? `<span class="detail-day-name">${d.name}</span>` : ''}
                    <span class="detail-day-zh">${d.zh}</span>
                    ${d.desc_zh ? `<span class="detail-day-desc">${d.desc_zh}</span>` : ''}
                  </div>`).join('')}
