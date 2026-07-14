@@ -61,7 +61,7 @@ function renderDetailBody(v) {
 
   return `
     <div class="village-card detail-header-card card-${v.status}">
-      ${cardBodyHtml(v, { showAmis: false, showWelcome: false })}
+      ${cardBodyHtml(v, { showAmis: false, showWelcome: false, forceDesktopLoc: true })}
       ${welcomeHtml}
     </div>
     ${posterHtml}

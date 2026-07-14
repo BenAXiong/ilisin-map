@@ -872,15 +872,24 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    at the same visual height; centering the row is what actually lines them
    up, not padding/font-size math (see also .card-chinese vs .card-amis below). */
 .card-top   { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
-.card-names { flex: 1; min-width: 0; }
+/* Single-line, ellipsis-truncated — long bilingual/joint names (e.g. two
+   merged buluo's chinese+amis names together) used to wrap and blow the
+   card past its fixed 2-row height. Full name is always one tap away in
+   the detail overlay, so truncating here loses nothing permanently. */
+.card-names {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
 .card-chinese-alt { font-family: var(--cn); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); margin-left: .2rem; }
 /* Courier Prime cap-height (~0.56em) sits well below CJK glyph height (~0.88em),
    so the amis label needs a larger font-size to read as visually equal-height. */
 .card-amis    { font-family: var(--mono); font-size: calc(var(--fs-base) * 1.16); font-weight: 700; color: var(--terra); letter-spacing: .03em; display: inline; margin-left: .4rem; }
 .card-amis-alt { font-family: var(--mono); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); letter-spacing: .03em; margin-left: .25rem; }
-.card-top-right { display: flex; align-items: center; gap: .4rem; }
-.card-date    { font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
+.card-date    { flex-shrink: 0; font-family: var(--mono); font-size: var(--fs-xs); color: var(--amber-dark); font-weight: 700; white-space: nowrap; text-align: right; }
 /* Inverse of the .card-amis fix above: the weekday character (五/六/日…) is
    CJK inside an otherwise-Latin/numeral mono string, so at the same
    font-size it reads larger than the digits. Shrink by the same ratio
@@ -888,9 +897,11 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 .card-date-weekday { font-size: 0.86em; }
 .card-cancelled .card-date { color: var(--text-3); text-decoration: line-through; }
 .card-tbd .card-date       { color: var(--text-3); }
-/* Same terra palette as .detail-welcome, sized down to sit inline next to
-   .card-date (via .card-top-right) instead of as a standalone pill. */
+/* Same terra palette as .detail-welcome, sized down to sit inline. Right-most
+   in .card-meta so it lands under .card-date above it — same column, just a
+   row down — reading as "the date row's pill", not an unrelated new element. */
 .card-welcome {
+  flex-shrink: 0;
   display: inline-block;
   font-size: var(--fs-2xs);
   font-weight: 600;
@@ -900,6 +911,9 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   padding: 1px 7px;
   white-space: nowrap;
 }
+/* Share+save grouped at the meta row's left edge (icons, venue, pill order) —
+   fixed-width like .card-welcome, so .card-venue is the only flexible child. */
+.card-icons { display: flex; align-items: center; gap: .2rem; flex-shrink: 0; }
 /* Outline bookmark by default; fills solid amber once saved — same
    currentColor-driven convention as .card-pin, just filled instead of a
    color swap, so "saved" reads as a distinct shape state, not just a tint. */
@@ -918,8 +932,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 .card-save:hover  { color: var(--amber-dark); }
 .card-save.saved  { color: var(--amber); }
 .card-save.saved svg path { fill: currentColor; }
-/* Same icon-button treatment as .card-save, sat on the opposite (left) side
-   of .card-top — no toggled state, sharing isn't a persisted choice. */
+/* Same icon-button treatment as .card-save. */
 .card-share {
   display: inline-flex;
   align-items: center;
@@ -933,7 +946,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   transition: color .15s;
 }
 .card-share:hover { color: var(--amber-dark); }
-.card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
+.card-meta   { display: flex; align-items: center; margin-top: .25rem; gap: .4rem; }
 .card-venue  {
   font-size: var(--fs-sm);
   color: var(--text-2);
@@ -956,8 +969,16 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   text-underline-offset: 2px;
 }
 .card-venue:hover .card-venue-text { color: var(--text-1); text-decoration-color: var(--amber); }
-.card-source { font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); text-decoration: none; flex-shrink: 0; }
-.card-source:hover { color: var(--amber); text-decoration: underline; }
+/* Mobile shows a short county/township(/village) string (bounded length,
+   rarely truncates); desktop shows the full venue name + county/township
+   instead, since it has the width to spare and the venue name is the more
+   useful glance-info there. See `shortAdmin()`/`cardBodyHtml()` in app.js. */
+.card-loc-desktop { display: none; }
+.card-loc-mobile  { display: inline; }
+@media (min-width: 768px) {
+  .card-loc-desktop { display: inline; }
+  .card-loc-mobile  { display: none; }
+}
 
 /* ── Village detail overlay ─────────────────── */
 /* A backdrop (.detail-overlay) behind a near-fullscreen sheet (.detail-panel)

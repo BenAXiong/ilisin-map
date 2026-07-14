@@ -140,11 +140,13 @@ function onShareTap(id) {
 // just inverted here: the digits must stay their current size, so the
 // weekday character is what gets scaled down (.card-date-weekday in
 // app.css). Also normalizes the range dash (–/—) to "~".
-const WEEKDAY_RE = new RegExp(`[${WEEKDAYS}]`, 'g');
+// Matches an optional leading space + weekday char so "7/13 一" renders as
+// "7/13(一)" — the space is consumed, not left dangling before the "(".
+const WEEKDAY_SUFFIX_RE = new RegExp(` ?([${WEEKDAYS}])`, 'g');
 function dateHtml(dateStr) {
   return dateStr
     .replace(/[–—]/g, '~')
-    .replace(WEEKDAY_RE, c => `<span class="card-date-weekday">${c}</span>`);
+    .replace(WEEKDAY_SUFFIX_RE, (_, c) => `<span class="card-date-weekday">(${c})</span>`);
 }
 
 function parseStartDate(str) {
@@ -198,6 +200,21 @@ function eventCoord(v) {
   return null;
 }
 
+// Resolves the administrative 村/里 for an EVENTS entry, same
+// buluo-identity-lives-in-BULUO_REF pattern as eventCoord() above — not a
+// hand-curated EVENTS field, sourced from Datasets/buluo/*.json's own
+// `village` and threaded through by build_buluo_ref.js. `buluo_ids`-merged
+// entries join each distinct village named, in case the merged buluo sit in
+// different administrative villages.
+function eventVillage(v) {
+  if (typeof BULUO_REF === 'undefined') return null;
+  if (v.buluo_ids) {
+    const villages = [...new Set(v.buluo_ids.map(id => BULUO_REF[id]?.village).filter(Boolean))];
+    return villages.length ? villages.join('、') : null;
+  }
+  return (v.buluo_id && BULUO_REF[v.buluo_id]?.village) || null;
+}
+
 // `showAmis: false` omits the indigenous name from this block — used by the
 // detail overlay, which shows it in its own sticky header instead.
 function namesHtml(v, { showAmis = true } = {}) {
@@ -225,22 +242,47 @@ function getScheduleDetail(v) {
   return { poster, days: d?.days || null, history: d?.history || null };
 }
 
-// The name/date/venue/source block shared by the card list view and the
-// detail overlay's header — so the overlay reads as the same card, just
-// expanded in place, not a differently-laid-out summary.
+// Strips the trailing admin-unit character (縣/市/鄉/鎮/區) so county/township
+// can sit side by side on narrow screens without the suffixes eating space
+// that carries no extra information there — full names still shown at
+// desktop width, see `.card-loc-desktop`/`.card-loc-mobile` in app.css.
+function shortAdmin(name) {
+  return name ? name.replace(/[縣市鄉鎮區]$/, '') : '';
+}
+
+// The name/date/venue block shared by the card list view and the detail
+// overlay's header — so the overlay reads as the same card, just expanded
+// in place, not a differently-laid-out summary. Source attribution is
+// deliberately omitted here — it's secondary info, kept in the detail
+// overlay only, not worth the row space on every card.
 // `showWelcome: false` (used by the detail overlay) omits the inline badge
 // since that view renders its own larger `.detail-welcome` pill instead —
 // avoids showing 迎賓日 info twice in the same header.
-function cardBodyHtml(v, { showWelcome = true, ...nameOpts } = {}) {
-  const sourceHtml = `<a class="card-source" href="${SOURCES[v.src].url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${SOURCES[v.src].label} ↗</a>`;
-  const hasVenue   = v.venue && v.venue !== '—';
-  const coord      = eventCoord(v);
-  const mapsUrl    = hasVenue
+// `forceDesktopLoc: true` (used by the detail overlay) always renders the
+// full county/township + venue name string, regardless of actual viewport
+// width — the overlay is a deliberate, independent "more info" view, not
+// meant to inherit the list card's mobile-vs-desktop space-saving swap.
+// May ellipsis-truncate on narrow screens for now; that's an accepted
+// tradeoff, not a bug to chase yet.
+function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameOpts } = {}) {
+  const hasVenue = v.venue && v.venue !== '—';
+  const coord    = eventCoord(v);
+  const mapsUrl  = hasVenue
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
     : `https://www.google.com/maps/search/?api=1&query=${coord?.[0]},${coord?.[1]}`;
-  const venueHtml  = hasVenue
-    ? `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span class="card-venue-text">${v.venue}</span></a>`
-    : '';
+  // Desktop has room for the venue name itself plus full county/township;
+  // mobile drops the venue name and shows a shortened county/township(/village)
+  // string instead — long venue names were the wrapping culprit on narrow
+  // screens, while county/township(/village) is short and bounded-length.
+  const desktopLocText = `${v.county}${v.township}` + (hasVenue ? ` · ${v.venue}` : '');
+  const locHtml = forceDesktopLoc
+    ? `<span class="card-venue-text">${desktopLocText}</span>`
+    : (() => {
+        const village = eventVillage(v);
+        const mobileLocText = `${shortAdmin(v.county)}・${shortAdmin(v.township)}${village ? `・${village}` : ''}`;
+        return `<span class="card-venue-text card-loc-desktop">${desktopLocText}</span><span class="card-venue-text card-loc-mobile">${mobileLocText}</span>`;
+      })();
+  const venueHtml = `<a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>${locHtml}</a>`;
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
   const welcomeHtml = (showWelcome && v.welcome_date)
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
@@ -248,15 +290,17 @@ function cardBodyHtml(v, { showWelcome = true, ...nameOpts } = {}) {
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
   return `<div class="card-top">
-      ${shareHtml}
       ${namesHtml(v, nameOpts)}
-      <div class="card-top-right">
-        <span class="card-date">${dateHtml(v.date)}</span>
-        ${welcomeHtml}
+      <span class="card-date">${dateHtml(v.date)}</span>
+    </div>
+    <div class="card-meta">
+      <div class="card-icons">
+        ${shareHtml}
         ${saveHtml}
       </div>
-    </div>
-    <div class="card-meta">${venueHtml}${sourceHtml}</div>`;
+      ${venueHtml}
+      ${welcomeHtml}
+    </div>`;
 }
 
 function cardHtml(v, extraAttrs) {

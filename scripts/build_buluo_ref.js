@@ -145,6 +145,7 @@ for (const id of matchedIds) {
     indigenous_name: r.indigenous_name,
     indigenous_name_alt: r.indigenous_name_alt,
     dialect: r.dialect,
+    village: r.village,
     lat: r.lat,
     lng: r.lng,
     coord_precision: r.coord_precision,

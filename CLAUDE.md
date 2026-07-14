@@ -110,6 +110,18 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   Without this flag, a matched entry's *effective* coordinate is resolved by
   `eventCoord()`, not read directly from `v.lat`/`v.lng` — see below.
 
+**Village (村/里) resolution (`eventVillage(v)` in `app.js`):** not an
+`EVENTS` field at all — `Datasets/buluo/*.json` records already carry a
+CIP-gazetted `village` field (finer-grained than `township`), threaded into
+`BULUO_REF` by `build_buluo_ref.js` the same way `lat`/`lng`/`coord_precision`
+are. `eventVillage(v)` looks it up via `v.buluo_id` (or, for `buluo_ids`-merged
+entries, joins each distinct village named across the merged buluo). Used by
+`cardBodyHtml()` for the mobile card's short location string
+(`{county}・{township}・{village}`, admin suffixes stripped by
+`shortAdmin()`) — returns `null` when no `buluo_id` match exists (unmatched
+`trv` entries, `joint:true` entries), which the mobile string handles by
+just omitting that segment.
+
 **Coordinate resolution (`eventCoord(v)` in `app.js`, mirrored in
 `scripts/prerender.js`):** buluo identity/location now lives in the shared
 `Datasets/buluo/*.json` db (`lat`/`lng`/`coord_precision`, threaded into
