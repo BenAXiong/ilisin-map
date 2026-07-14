@@ -286,7 +286,7 @@ function renderOverviewMonthTabs() {
 function setOverviewMode(on) {
   tlOverviewMode = on;
   document.getElementById('panel-timeline').classList.toggle('ov-active', on);
-  document.getElementById('tlOverviewBtn').classList.toggle('active', on);
+  document.querySelectorAll('[data-tl-overview-btn]').forEach(b => b.classList.toggle('active', on));
   document.getElementById('tlStripScroll').hidden = on;
   document.getElementById('tlOverviewWrap').hidden = !on;
   document.getElementById('tlDayList').hidden = on;
@@ -307,10 +307,18 @@ function renderOverviewStrip() {
     ? Math.round((new Date(year, 11, 31) - origin) / 86400000) + 1
     : 365;
 
-  // Compute cell width to fill wrap without scrolling
+  // Compute cell width to fill wrap without scrolling. The 2px/day floor
+  // below is inert on any real desktop width (it only ever engages under
+  // ~758px of available wrap width) — but below the app's own 768px
+  // mobile/desktop breakpoint (app.css), a 365-day strip can't honor a 2px
+  // floor without needing 730px+, wider than the phone itself. Mobile skips
+  // the floor so the strip always fits exactly instead of overflowing.
   const wrap    = document.getElementById('tlOverviewWrap');
   const padPx   = 2 * Math.round(0.85 * 16);
-  const cellW   = Math.max(2, (wrap.clientWidth - padPx) / total);
+  const isMobile = window.innerWidth < 768;
+  const cellW   = isMobile
+    ? Math.max(0.1, (wrap.clientWidth - padPx) / total)
+    : Math.max(2, (wrap.clientWidth - padPx) / total);
 
   const dayIdx = d => Math.round((d - origin) / 86400000);
   const dayAt  = i => new Date(origin.getTime() + i * 86400000);
@@ -603,10 +611,24 @@ document.querySelectorAll('.tlo-tribe-bar').forEach(function(bar) {
 /* ── Event listeners ── */
 
 if (localStorage.getItem('pokoh_dev') === '1') {
+  // Desktop instance lives inside .tl-header, absolutely positioned against
+  // it (only .tl-header gets position:relative at the ≥768px breakpoint —
+  // see app.css). A mobile-only CSS rule force-hides this specific instance
+  // (`display:none !important`) since positioning it absolutely against an
+  // unpositioned .tl-header on narrow viewports is what made it "bugged on
+  // mobile" — the button rendered relative to whatever positioned ancestor
+  // happened to exist further up the tree instead of .tl-header.
   const _ovBtn = document.getElementById('tlOverviewBtn');
   Object.assign(_ovBtn.style, { display: 'inline-block', position: 'absolute',
     right: '2.75rem', top: '50%', transform: 'translateY(-50%)' });
   _ovBtn.addEventListener('click', () => setOverviewMode(!tlOverviewMode));
+
+  // Mobile instance: a normal-flow icon button in .app-header, same
+  // convention as the theme/name-toggle/saved-filter buttons there — no
+  // absolute positioning needed since the header is already a flex row.
+  const _ovBtnMobile = document.getElementById('tlOverviewBtnMobile');
+  _ovBtnMobile.hidden = false;
+  _ovBtnMobile.addEventListener('click', () => setOverviewMode(!tlOverviewMode));
 
   const _expWrap = document.createElement('div');
   _expWrap.id = 'tloExportWrap';
