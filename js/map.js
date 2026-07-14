@@ -219,10 +219,17 @@ function makeSectionHtml(v) {
 // #mapFloatCard's content — same card markup as the sheet's list rows (see
 // makeSectionHtml), just one of them, plus a close button since there's no
 // drag-to-dismiss handle on a floating card the way there is on the sheet.
+// Poster image (schedule.js, via getScheduleDetail) is a bonus, not assumed
+// — most entries don't have one, so it's simply omitted rather than shown
+// as a placeholder/empty state.
 function renderFloatCard(v) {
   const card = document.getElementById('mapFloatCard');
   if (!card || !v) return;
-  card.innerHTML = `<button class="map-float-close" aria-label="關閉" onclick="deselect()">✕</button>${makeSectionHtml(v)}`;
+  const poster = getScheduleDetail(v).poster;
+  const posterHtml = poster
+    ? `<img class="map-float-poster" src="${poster.url}" alt="${v.chinese} 祭儀海報" loading="lazy" />`
+    : '';
+  card.innerHTML = `${posterHtml}<button class="map-float-close" aria-label="關閉" onclick="deselect()">✕</button>${makeSectionHtml(v)}`;
 }
 
 function activateVillage(id) {
