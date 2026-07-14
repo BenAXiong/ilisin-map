@@ -1078,15 +1078,15 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
-/* Two icon buttons now sit on the left (map link + share) instead of one. */
+/* Three icon buttons now sit on the left (map link + share + calendar). */
 .detail-header-left { display: flex; align-items: center; }
 /* Absolutely positioned so it centers on the header's full width regardless
    of the side buttons' widths, rather than being centered in the leftover
    flex space between them. Inset wide enough to clear both side buttons
-   (5.4rem clears the two left-side buttons, 2.6rem the single right one). */
+   (8.1rem clears the three left-side buttons, 2.6rem the single right one). */
 .detail-header-title {
   position: absolute;
-  left: 5.4rem;
+  left: 8.1rem;
   right: 2.6rem;
   text-align: center;
   font-family: var(--mono);

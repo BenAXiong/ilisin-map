@@ -77,6 +77,12 @@ function openDetail(id) {
   document.getElementById('detailHeaderTitle').textContent = indigenousNameInfo(v).latinName;
   document.getElementById('detailMapLink').onclick = () => { closeDetail(); goToMapVillage(id); };
   document.getElementById('detailShareBtn').onclick = () => shareEvent(id, v.chinese);
+  // 'tbd'/'cancelled' entries have no real date to put in an .ics — hide
+  // rather than show a dead button (same gating buildIcs() itself falls
+  // back on via parseStartDate returning null, kept explicit here too).
+  const calBtn = document.getElementById('detailCalendarBtn');
+  calBtn.style.display = v.status === 'confirmed' ? '' : 'none';
+  calBtn.onclick = () => onCalendarTap(id);
   history.replaceState(null, '', shareUrl(id));
   const overlay = document.getElementById('detailOverlay');
   overlay.hidden = false;

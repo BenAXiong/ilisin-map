@@ -132,6 +132,51 @@ function onShareTap(id) {
   if (v) shareEvent(id, v.chinese);
 }
 
+/* ═══════════════════════════════════════════════════
+   ADD TO CALENDAR (v2-L)
+   ═══════════════════════════════════════════════════ */
+
+const CALENDAR_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9h17M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+
+function pad2(n) { return String(n).padStart(2, '0'); }
+function icsDateStamp(d) { return `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}`; }
+
+// Builds a Google Calendar "quick add" link for one entry — no file
+// involved, Google reads the event straight off the query string. Only
+// meaningful for status:'confirmed' — 'tbd'/'cancelled' entries carry
+// placeholder date strings ('未定'/'停辦') that parseStartDate() can't
+// parse, so this naturally returns null for them; callers gate on status
+// anyway (see js/detail.js) rather than relying on that fallthrough.
+function googleCalendarUrl(v) {
+  const start = parseStartDate(v.date);
+  if (!start) return null;
+  // Google's all-day `dates` end, like ICS's DTEND, is exclusive — same
+  // +1-day step covers both the single-day and multi-day cases.
+  const dtEnd = parseEndDate(v.date) || start;
+  const end = new Date(dtEnd.getFullYear(), dtEnd.getMonth(), dtEnd.getDate() + 1);
+
+  const hasVenue = v.venue && v.venue !== '—';
+  const location = [hasVenue ? v.venue : null, `${v.county}${v.township}`].filter(Boolean).join(', ');
+
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: `${v.chinese} 豐年祭`,
+    dates: `${icsDateStamp(start)}/${icsDateStamp(end)}`,
+    details: `由 Pokoh 提供\n${shareUrl(v.id)}`,
+    location,
+  });
+  return `https://calendar.google.com/calendar/render?${params}`;
+}
+
+function onCalendarTap(id) {
+  const v = EVENTS.find(x => x.id === id);
+  if (!v) return;
+  const url = googleCalendarUrl(v);
+  if (!url) return;
+  trackEvent('add_to_calendar_click', { id });
+  window.open(url, '_blank', 'noopener');
+}
+
 // Date strings mix Latin digits/punctuation with a trailing CJK weekday
 // character (e.g. "7/3 五–7/11 六"). At equal font-size the CJK glyph reads
 // larger than the digits — same mismatch as .card-chinese vs .card-amis,
