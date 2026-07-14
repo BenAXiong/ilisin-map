@@ -9678,9 +9678,14 @@
   <div class="detail-panel" id="detailPanel">
     <div class="detail-scroll" id="detailScroll">
       <div class="detail-header">
-        <button class="detail-header-btn" id="detailMapLink" aria-label="在地圖上查看">
-          <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
+        <div class="detail-header-left">
+          <button class="detail-header-btn" id="detailMapLink" aria-label="在地圖上查看">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <button class="detail-header-btn" id="detailShareBtn" aria-label="分享">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+        </div>
         <span class="detail-header-title" id="detailHeaderTitle"></span>
         <button class="detail-header-btn" id="detailCloseBtn" aria-label="關閉">✕</button>
       </div>
@@ -9688,6 +9693,9 @@
     </div>
   </div>
 </div>
+
+<!-- ── Toast (share-link-copied confirmation) ── -->
+<div class="toast" id="toast"></div>
 
 <!-- ── Tab bar ── -->
 <nav class="tab-bar" aria-label="主要功能">

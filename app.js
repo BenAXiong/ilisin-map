@@ -89,6 +89,51 @@ document.querySelectorAll('[data-saved-filter-btn]').forEach(b =>
   })
 );
 
+/* ═══════════════════════════════════════════════════
+   SHARE (v2-I)
+   ═══════════════════════════════════════════════════ */
+
+const SHARE_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+
+// Query-string-on-the-single-page-app scheme — no server routes involved.
+// Read once at boot (see BOOT section) via URLSearchParams(location.search).
+function shareUrl(id) {
+  return `${location.origin}${location.pathname}?v=${id}`;
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function copyShareLink(url) {
+  navigator.clipboard.writeText(url)
+    .then(() => showToast('連結已複製'))
+    .catch(() => showToast(url));
+}
+
+// Web Share API where available (mobile mostly); clipboard-copy fallback
+// elsewhere. AbortError (user cancelled the native share sheet) is not a
+// failure — only fall back to clipboard on a real error.
+async function shareEvent(id, name) {
+  const url = shareUrl(id);
+  trackEvent('share_click', { id });
+  if (navigator.share) {
+    try { await navigator.share({ title: `${name} 豐年祭 - Pokoh`, url }); return; }
+    catch (err) { if (err.name === 'AbortError') return; }
+  }
+  copyShareLink(url);
+}
+
+function onShareTap(id) {
+  const v = EVENTS.find(x => x.id === id);
+  if (v) shareEvent(id, v.chinese);
+}
+
 // Date strings mix Latin digits/punctuation with a trailing CJK weekday
 // character (e.g. "7/3 五–7/11 六"). At equal font-size the CJK glyph reads
 // larger than the digits — same mismatch as .card-chinese vs .card-amis,
@@ -201,7 +246,9 @@ function cardBodyHtml(v, { showWelcome = true, ...nameOpts } = {}) {
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
     : '';
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
+  const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
   return `<div class="card-top">
+      ${shareHtml}
       ${namesHtml(v, nameOpts)}
       <div class="card-top-right">
         <span class="card-date">${dateHtml(v.date)}</span>
@@ -363,3 +410,11 @@ if ('serviceWorker' in navigator) {
 document.documentElement.classList.add('js-ready');
 
 initTimeline();
+
+// Shared-event deep link (v2-I) — ?v=<id>, opens straight into the v2-A
+// detail overlay. openDetail is defined in js/detail.js, which loads before
+// this file per the script-order convention (see CLAUDE.md).
+const sharedEventId = new URLSearchParams(location.search).get('v');
+if (sharedEventId && EVENTS.some(v => v.id === sharedEventId)) {
+  openDetail(sharedEventId);
+}

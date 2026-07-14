@@ -76,6 +76,8 @@ function openDetail(id) {
   document.getElementById('detailBody').innerHTML = renderDetailBody(v);
   document.getElementById('detailHeaderTitle').textContent = indigenousNameInfo(v).latinName;
   document.getElementById('detailMapLink').onclick = () => { closeDetail(); goToMapVillage(id); };
+  document.getElementById('detailShareBtn').onclick = () => shareEvent(id, v.chinese);
+  history.replaceState(null, '', shareUrl(id));
   const overlay = document.getElementById('detailOverlay');
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add('open'));
@@ -86,6 +88,7 @@ function closeDetail() {
   const overlay = document.getElementById('detailOverlay');
   overlay.classList.remove('open');
   setTimeout(() => { overlay.hidden = true; }, 200);
+  history.replaceState(null, '', location.pathname);
 }
 
 document.getElementById('detailCloseBtn').addEventListener('click', closeDetail);
