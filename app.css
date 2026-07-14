@@ -800,6 +800,27 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   #mapClusterToggle { bottom: 96px; }
 }
 
+/* Bottom-left 2-segment icon toggle between the standard theme basemap and
+   Esri satellite imagery — symmetrical to #mapClusterToggle above (same
+   offsets, mirrored to the left edge), same reasons for the base offset. */
+#mapSatelliteToggle {
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  z-index: 500;
+}
+.map-sat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  #mapSatelliteToggle { bottom: 96px; }
+}
+
 /* ── Bottom sheet ───────────────────────────── */
 .bs {
   position: absolute;

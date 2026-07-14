@@ -37,6 +37,7 @@ globalThis.addEventListener('fetch', e => {
   if (
     url.hostname.includes('carto') ||
     url.hostname.includes('openstreetmap') ||
+    url.hostname.includes('arcgisonline') ||
     url.hostname.includes('googleapis') ||
     url.hostname.includes('gstatic')
   ) {

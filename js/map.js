@@ -4,6 +4,8 @@
 
 let leafletMap    = null;
 let tileLayer     = null;
+let labelsLayer   = null;
+let satelliteOn   = false;
 let clusterGroup  = null;
 let plainGroup    = null;
 let clusterModeOn = true;
@@ -358,22 +360,56 @@ function currentTileStyle() {
   return DARK_THEMES.has(document.documentElement.dataset.theme) ? TILE_STYLES.dark : TILE_STYLES.light;
 }
 
+// Esri World Imagery — free, no API key or account required (unlike Stadia/
+// Mapbox satellite tiles), same free-tier constraint the CARTO basemaps
+// above were picked under. Imagery alone has no place labels/roads, so it's
+// always paired with the labels overlay below, on top of it in the same
+// tilePane (stacking is DOM-insertion order — see applyBaseLayer()).
+const SATELLITE_STYLE = {
+  url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+  maxZoom: 19,
+};
+const SATELLITE_LABELS_STYLE = {
+  url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+  attribution: 'Tiles © Esri',
+  maxZoom: 19,
+};
+
 function makeTileLayer() {
-  const style = currentTileStyle();
-  return L.tileLayer(style.url, { attribution: style.attribution, maxZoom: 20, detectRetina: true });
+  const style = satelliteOn ? SATELLITE_STYLE : currentTileStyle();
+  return L.tileLayer(style.url, { attribution: style.attribution, maxZoom: style.maxZoom || 20, detectRetina: true });
 }
 
 // Called from js/shell.js's applyTheme() via the 'pokoh:theme-changed' event
 // (not a direct call) so this file doesn't need to parse before or after
-// shell.js — see the load-order note at the top of shell.js.
-function refreshMapTiles() {
+// shell.js — see the load-order note at the top of shell.js. Also called
+// directly by the satellite toggle's own click handler below.
+function applyBaseLayer() {
   if (!leafletMap) return;
   const next = makeTileLayer();
   next.addTo(leafletMap);
   if (tileLayer) leafletMap.removeLayer(tileLayer);
   tileLayer = next;
+
+  if (satelliteOn) {
+    if (labelsLayer) leafletMap.removeLayer(labelsLayer);
+    labelsLayer = L.tileLayer(SATELLITE_LABELS_STYLE.url, {
+      attribution: SATELLITE_LABELS_STYLE.attribution,
+      maxZoom: SATELLITE_LABELS_STYLE.maxZoom,
+    }).addTo(leafletMap);
+  } else if (labelsLayer) {
+    leafletMap.removeLayer(labelsLayer);
+    labelsLayer = null;
+  }
 }
-document.addEventListener('pokoh:theme-changed', refreshMapTiles);
+document.addEventListener('pokoh:theme-changed', applyBaseLayer);
+
+function setSatelliteMode(on) {
+  if (on === satelliteOn || !leafletMap) return;
+  satelliteOn = on;
+  applyBaseLayer();
+}
 
 function initMap() {
   if (mapInitialized) return;
@@ -545,5 +581,17 @@ document.getElementById('mapClusterToggle').addEventListener('click', e => {
     c.setAttribute('aria-pressed', String(c === btn))
   );
   trackEvent('map_filter', { clusterMode: clusterModeOn ? 'grouped' : 'individual' });
+});
+
+document.getElementById('mapSatelliteToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.map-chip');
+  if (!btn) return;
+  setSatelliteMode(btn.dataset.basemap === 'satellite');
+  const satToggleEl = document.getElementById('mapSatelliteToggle');
+  syncActiveChips(satToggleEl, '.map-chip', c => c === btn);
+  satToggleEl.querySelectorAll('.map-chip').forEach(c =>
+    c.setAttribute('aria-pressed', String(c === btn))
+  );
+  trackEvent('map_filter', { basemap: satelliteOn ? 'satellite' : 'standard' });
 });
 
