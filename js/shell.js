@@ -27,6 +27,10 @@ function applyTheme(idx) {
      into index.html for pre-JS paint. */
   const themeColorMeta = document.querySelector('meta[name="theme-color"]');
   if (themeColorMeta) themeColorMeta.setAttribute('content', getComputedStyle(document.body).backgroundColor);
+  // js/map.js listens for this to swap its tile layer's light/dark variant —
+  // dispatched rather than called directly since shell.js loads last and
+  // can't assume map.js internals; see js/map.js's own comment on the listener.
+  document.dispatchEvent(new CustomEvent('pokoh:theme-changed'));
 }
 (function initTheme() {
   const saved = Number.parseInt(localStorage.getItem('pokoh-theme') ?? '0', 10);

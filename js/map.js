@@ -3,6 +3,7 @@
    ═══════════════════════════════════════════════════ */
 
 let leafletMap    = null;
+let tileLayer     = null;
 let clusterGroup  = null;
 let plainGroup    = null;
 let clusterModeOn = true;
@@ -28,11 +29,18 @@ function toDateInputValue(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
+// Theme custom properties (app.css), not literal hex — so pins recolor with
+// the active theme instead of staying stuck in Cidal's amber/gray. Inactive
+// confirmed uses --accent at reduced alpha rather than --amber-pale: pale is
+// an absolute lightness bump (l + 0.28) tuned for Cidal's accent (57% l) —
+// on folad/fois, whose accents already sit at 68-72% l to pop off a near-
+// black bg, that same bump clips to ~100% l and washes out to white.
+// Alpha preserves the hue at any base lightness instead.
 function makeIcon(status, isActive) {
   const colors = {
-    confirmed: isActive ? '#6b4200' : '#bf7e1a',
-    tbd:       isActive ? '#555'    : '#999',
-    cancelled: isActive ? '#555'    : '#bbb',
+    confirmed: isActive ? 'var(--accent)'  : 'oklch(from var(--accent) l c h / 0.55)',
+    tbd:       isActive ? 'var(--text-2)'  : 'var(--text-3)',
+    cancelled: isActive ? 'var(--text-2)'  : 'var(--text-3)',
   };
   const c = colors[status] || colors.confirmed;
   const bg = isActive ? c : 'transparent';
@@ -326,6 +334,47 @@ function initSheetDrag() {
   if (closeBtn) closeBtn.addEventListener('click', () => { deselect(); setSheetState('collapsed'); });
 }
 
+// CARTO's free raster basemaps (no API key, OSM data underneath) — Voyager
+// (colored: green parks, blue water) for the two light themes (cidal/riyar),
+// Dark Matter for the two dark ones (folad/fois). CARTO has no colored dark
+// counterpart to Voyager, so this pairing is intentionally asymmetric — same
+// pattern Google/Apple Maps use, dark mode basemaps are always more
+// desaturated than light. THEMES/dark-vs-light grouping mirrors js/shell.js's
+// THEMES array; kept as a literal set here rather than importing that array
+// so this file doesn't need to know shell.js's load order.
+const DARK_THEMES = new Set(['folad', 'fois']);
+const TILE_STYLES = {
+  light: {
+    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    attribution: '© OpenStreetMap contributors © CARTO',
+  },
+  dark: {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attribution: '© OpenStreetMap contributors © CARTO',
+  },
+};
+
+function currentTileStyle() {
+  return DARK_THEMES.has(document.documentElement.dataset.theme) ? TILE_STYLES.dark : TILE_STYLES.light;
+}
+
+function makeTileLayer() {
+  const style = currentTileStyle();
+  return L.tileLayer(style.url, { attribution: style.attribution, maxZoom: 20, detectRetina: true });
+}
+
+// Called from js/shell.js's applyTheme() via the 'pokoh:theme-changed' event
+// (not a direct call) so this file doesn't need to parse before or after
+// shell.js — see the load-order note at the top of shell.js.
+function refreshMapTiles() {
+  if (!leafletMap) return;
+  const next = makeTileLayer();
+  next.addTo(leafletMap);
+  if (tileLayer) leafletMap.removeLayer(tileLayer);
+  tileLayer = next;
+}
+document.addEventListener('pokoh:theme-changed', refreshMapTiles);
+
 function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
@@ -342,10 +391,7 @@ function initMap() {
   // zoom/pan like zoomToShowLayer.
   leafletMap = L.map('map', { zoomControl: false, tap: false });
   L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 18,
-  }).addTo(leafletMap);
+  tileLayer = makeTileLayer().addTo(leafletMap);
 
   clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false });
   plainGroup   = L.layerGroup();
