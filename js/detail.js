@@ -18,11 +18,25 @@ function groupDaysByDate(days) {
 function renderDetailBody(v) {
   const detail  = getScheduleDetail(v);
 
-  let welcomeHtml = '';
+  // Row 2: "show in Pokoh map" (relocated from the header's icon-only
+  // button, 2026-07-14 — a bare pin icon there didn't communicate what it
+  // did) inline with the welcome-day pill, when present — sharing a row
+  // rather than each getting its own (2026-07-14) since both are short.
+  const pokohMapLinkHtml = `<a class="detail-pokohmap-link" href="javascript:void(0)" onclick="closeDetail(); goToMapVillage('${v.id}')">
+    <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    顯示於 Pokoh 地圖
+  </a>`;
+  let welcomePillHtml = '';
   if (v.welcome_date) {
     const timeText = v.welcome_time ? ` ${v.welcome_time}` : '';
-    welcomeHtml = `<div class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${timeText}</div>`;
+    welcomePillHtml = `<span class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${timeText}</span>`;
   }
+  const row2Html = `<div class="detail-row2">${pokohMapLinkHtml}${welcomePillHtml}</div>`;
+
+  // Row 3: venue — county/township now dot-separated like the mobile card
+  // format, plus an explicit "open in Google Maps" hint (2026-07-14) so the
+  // link's destination isn't only implied by the pin icon.
+  const venueRowHtml = `<div class="detail-venue-row">${venueLinkHtml(v, { forceDesktopLoc: true, dotBetweenAdmin: true, mapsHint: true })}</div>`;
 
   let creditHtml = '';
   if (detail.poster?.credit) {
@@ -73,8 +87,12 @@ function renderDetailBody(v) {
 
   return `
     <div class="village-card detail-header-card card-${v.status}">
-      ${cardBodyHtml(v, { showAmis: false, showWelcome: false, forceDesktopLoc: true })}
-      ${welcomeHtml}
+      <div class="card-top">
+        ${namesHtml(v, { showAmis: false })}
+        <span class="card-date">${dateHtml(v.date)}</span>
+      </div>
+      ${row2Html}
+      ${venueRowHtml}
     </div>
     ${posterHtml}
     ${contactsHtml}
@@ -88,8 +106,15 @@ function openDetail(id) {
   if (!v) return;
   document.getElementById('detailBody').innerHTML = renderDetailBody(v);
   document.getElementById('detailHeaderTitle').textContent = indigenousNameInfo(v).latinName;
-  document.getElementById('detailMapLink').onclick = () => { closeDetail(); goToMapVillage(id); };
   document.getElementById('detailShareBtn').onclick = () => shareEvent(id, v.chinese);
+  // Header save button is persistent markup (unlike the body, not
+  // regenerated per open) — reset its target id + saved-state class on
+  // every open, same broadcast mechanism onSaveTap() already uses for
+  // every other save button on the page (matched via data-save-id).
+  const saveBtn = document.getElementById('detailSaveBtn');
+  saveBtn.dataset.saveId = id;
+  saveBtn.classList.toggle('saved', isSaved(id));
+  saveBtn.onclick = () => onSaveTap(id);
   // 'tbd'/'cancelled' entries have no real date to put in an .ics — hide
   // rather than show a dead button (same gating buildIcs() itself falls
   // back on via parseStartDate returning null, kept explicit here too).

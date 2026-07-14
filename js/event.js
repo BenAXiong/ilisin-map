@@ -299,7 +299,10 @@ function shortAdmin(name) {
 // meant to inherit the list card's mobile-vs-desktop space-saving swap.
 // May ellipsis-truncate on narrow screens for now; that's an accepted
 // tradeoff, not a bug to chase yet.
-function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameOpts } = {}) {
+// Builds the venue pin+link shared by list cards and the detail overlay.
+// `dotBetweenAdmin`/`mapsHint` are detail-overlay-only additions (2026-07-14)
+// — list cards keep their existing compact look via the defaults below.
+function venueLinkHtml(v, { forceDesktopLoc = false, dotBetweenAdmin = false, mapsHint = false } = {}) {
   const hasVenue = v.venue && v.venue !== '—';
   const coord    = eventCoord(v);
   const mapsUrl  = hasVenue
@@ -309,7 +312,8 @@ function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameO
   // mobile drops the venue name and shows a shortened county/township(/village)
   // string instead — long venue names were the wrapping culprit on narrow
   // screens, while county/township(/village) is short and bounded-length.
-  const desktopLocText = `${v.county}${v.township}` + (hasVenue ? ` · ${v.venue}` : '');
+  const countyTownship = dotBetweenAdmin ? `${v.county}・${v.township}` : `${v.county}${v.township}`;
+  const desktopLocText = countyTownship + (hasVenue ? ` · ${v.venue}` : '');
   const locHtml = forceDesktopLoc
     ? `<span class="card-venue-text">${desktopLocText}</span>`
     : (() => {
@@ -317,7 +321,12 @@ function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameO
         const mobileLocText = `${shortAdmin(v.county)}・${shortAdmin(v.township)}${village ? `・${village}` : ''}`;
         return `<span class="card-venue-text card-loc-desktop">${desktopLocText}</span><span class="card-venue-text card-loc-mobile">${mobileLocText}</span>`;
       })();
-  const venueHtml = `<div class="card-venue-wrap"><a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>${locHtml}</a></div>`;
+  const hintHtml = mapsHint ? `<span class="detail-venue-hint">在 Google 地圖開啟</span>` : '';
+  return `<div class="card-venue-wrap"><a class="card-venue" href="${mapsUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><svg class="card-pin" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>${locHtml}${hintHtml}</a></div>`;
+}
+
+function cardBodyHtml(v, { showWelcome = true, forceDesktopLoc = false, ...nameOpts } = {}) {
+  const venueHtml = venueLinkHtml(v, { forceDesktopLoc });
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
   const welcomeHtml = (showWelcome && v.welcome_date)
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`

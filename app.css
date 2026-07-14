@@ -1100,16 +1100,29 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
-/* Three icon buttons now sit on the left (map link + share + calendar). */
-.detail-header-left { display: flex; align-items: center; }
+/* Two icon buttons on each side (2026-07-14: share+calendar left,
+   save+close right — was 3 left / 1 right before the map-link button moved
+   into the body as a labeled link, see .detail-pokohmap-link). */
+.detail-header-left, .detail-header-right { display: flex; align-items: center; }
 /* Absolutely positioned so it centers on the header's full width regardless
    of the side buttons' widths, rather than being centered in the leftover
-   flex space between them. Inset wide enough to clear both side buttons
-   (8.1rem clears the three left-side buttons, 2.6rem the single right one). */
+   flex space between them — position:absolute within the (sticky, so
+   positioned) .detail-header, immune to sibling width changes, unlike
+   flex's justify-content:center which shifts if the two side clusters
+   differ in width. EQUAL left/right insets is what actually guarantees
+   this: with left==right, the title box is geometrically centered on the
+   header regardless of any width difference between the two button
+   clusters (only the *larger* cluster's width sets the shared inset both
+   sides use) — asymmetric insets (the old 8.1rem/2.6rem, sized to very
+   differently-sized clusters) only approximate centering, and would drift
+   off-center again the moment either cluster's width changes. Value
+   re-measured 2026-07-14 for the new 2-button-each-side layout via a real
+   rendered check (Playwright), not computed from padding/font-size — see
+   CLAUDE.md's "measure, don't guess" convention for row alignment. */
 .detail-header-title {
   position: absolute;
-  left: 8.1rem;
-  right: 2.6rem;
+  left: 5.9rem;
+  right: 5.9rem;
   text-align: center;
   font-family: var(--mono);
   font-size: calc(var(--fs-base) * 1.16);
@@ -1121,8 +1134,8 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   white-space: nowrap;
   pointer-events: none;
 }
-/* Shared by the close button (right) and the map-link icon button (left) —
-   icon-only, no text, same visual weight as the tab bar's own map icon. */
+/* Shared by all 4 header icon buttons — icon-only, no text, same visual
+   weight as the tab bar's own icons. */
 .detail-header-btn {
   display: flex;
   align-items: center;
@@ -1137,6 +1150,10 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   z-index: 1;
 }
 .detail-header-btn:hover { color: var(--amber); }
+/* Save button's "saved" state — same outline-to-filled convention as
+   .card-save.saved, just living in the header instead of a card row. */
+.detail-header-btn.saved       { color: var(--amber); }
+.detail-header-btn.saved svg path { fill: currentColor; }
 .detail-body { padding: 0 1rem 2rem; }
 
 /* Bottom-centered confirmation toast (share link copied) — sits above the
@@ -1173,15 +1190,46 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   cursor: default;
 }
 .detail-header-card:hover { border-left-color: transparent; background: none; }
+/* Rows 2–3 below the name/date row (2026-07-14 rework). Row 2: the in-app
+   map link + welcome-day pill share one row (2026-07-14 — both short, no
+   need for separate rows) — space-between puts the map link at the left
+   edge and the pill at the right edge, landing it under the date above
+   (row 1's date is the right-hand side of .card-top's
+   justify-content:space-between), same "pill sits under the date"
+   convention .card-welcome already follows in list cards. When there's no
+   welcome day, the map link just sits alone at the left. Row 3: venue. */
+.detail-row2 { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin-top: .5rem; }
+.detail-venue-row { margin-top: .5rem; }
 .detail-welcome {
   display: inline-block;
-  margin-top: .5rem;
   font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--terra);
   border: 1px solid var(--terra-pale);
   border-radius: 99px;
   padding: 2px 10px;
+}
+/* "顯示於 Pokoh 地圖" — relocated from the header's icon-only button
+   (2026-07-14); a labeled link reads clearer than a bare pin icon did. */
+.detail-pokohmap-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  text-decoration: none;
+}
+.detail-pokohmap-link svg { flex-shrink: 0; color: var(--terra); }
+.detail-pokohmap-link:hover { color: var(--text-1); }
+.detail-pokohmap-link:hover svg { color: var(--amber); }
+/* Small trailing hint on the venue link, added 2026-07-14 so the link's
+   destination (Google Maps) isn't only implied by the pin icon. */
+.detail-venue-hint {
+  margin-left: .4rem;
+  font-size: var(--fs-2xs);
+  color: var(--text-3);
+  text-decoration: none;
+  white-space: nowrap;
 }
 .detail-poster { margin: .85rem 0; }
 .detail-poster img { display: block; width: 100%; border-radius: 8px; border: 1px solid var(--border); }
