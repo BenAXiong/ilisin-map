@@ -112,8 +112,22 @@ html.js-ready #festival-data {
   transition: border-color .15s, color .15s, background .15s;
 }
 .theme-btn:hover { border-color: var(--amber); color: var(--amber-dark); background: var(--bg); }
-.saved-filter-btn { display: flex; align-items: center; justify-content: center; }
-.saved-filter-btn svg { display: block; }
+
+/* Uniform square treatment for the mobile header's toggle buttons
+   (overview/name/saved-filter/theme) — .theme-btn alone stays padding-based
+   auto-width since it's also reused where that's still wanted (desktop
+   .tl-header buttons, the overview PNG/HTML export buttons), so this is an
+   additive class rather than a change to .theme-btn itself. */
+.header-icon-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icon-btn svg { display: block; }
 .saved-filter-btn.active svg path { fill: currentColor; }
 
 .install-btn {
