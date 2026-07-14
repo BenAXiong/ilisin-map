@@ -133,6 +133,34 @@ const events = confirmed
   })
   .filter(Boolean);
 
+// v2-U: targets the "原住民族歲時祭儀 放假日期" search cluster (CIP's annual
+// holiday-selection notice for indigenous public servants/students) — a real,
+// recurring, high-intent query no competitor site addresses directly (see
+// docs/ROADMAP-v2.md v2-U). Answers stay policy-level/generic (no specific
+// year's gazetted date baked in — that changes annually and isn't this
+// site's data) and route the second question back to Pokoh's own coverage.
+const faqPage = {
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '原住民族歲時祭儀放假日期是什麼？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '行政院原住民族委員會每年公告各原住民族歲時祭儀之放假日期，具原住民身分的公教人員可依所屬族別選擇該日放假一日。實際日期依各族、各部落舉行祭儀的時間而定，Pokoh 彙整花蓮縣、臺東縣各部落豐年祭、年祭等祭儀的實際日期與地點，方便查詢對照。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '怎麼查詢自己部落的豐年祭日期？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '可透過 Pokoh 的搜尋或地圖功能，依縣市、鄉鎮或部落名稱查詢花蓮縣、臺東縣各部落豐年祭的確切日期、地點與交通資訊。',
+      },
+    },
+  ],
+};
+
 const ldData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -149,6 +177,7 @@ const ldData = {
         'query-input': 'required name=search_term_string',
       },
     },
+    faqPage,
     ...events,
   ],
 };
