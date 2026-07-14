@@ -113,6 +113,23 @@ html.js-ready #festival-data {
 }
 .theme-btn:hover { border-color: var(--amber); color: var(--amber-dark); background: var(--bg); }
 
+/* Uniform square treatment for the mobile header's toggle buttons
+   (overview/name/saved-filter/theme) — .theme-btn alone stays padding-based
+   auto-width since it's also reused where that's still wanted (desktop
+   .tl-header buttons, the overview PNG/HTML export buttons), so this is an
+   additive class rather than a change to .theme-btn itself. */
+.header-icon-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icon-btn svg { display: block; }
+.saved-filter-btn.active svg path { fill: currentColor; }
+
 .install-btn {
   font-family: var(--mono);
   font-size: var(--fs-2xs);
@@ -209,6 +226,16 @@ body.tab-info .app-header { display: none; }
 .tl-month-tabs::-webkit-scrollbar { display: none; }
 .tl-name-toggle-desktop { display: none; }
 .tl-overview-btn       { display: none; }
+/* The desktop overview button is absolutely positioned against .tl-header,
+   which only gets position:relative at the ≥768px breakpoint below — on
+   mobile it has no positioned ancestor to anchor to, so force-hide this
+   specific instance there regardless of the dev-flag JS that would
+   otherwise show it (js/timeline.js sets an inline display, which this
+   !important beats). #tlOverviewBtnMobile in .app-header is the mobile
+   equivalent, laid out normally with no absolute positioning needed. */
+@media (max-width: 767px) {
+  .tl-overview-btn { display: none !important; }
+}
 
 .theme-btn.active { border-color: var(--accent); color: var(--accent); }
 
@@ -288,6 +315,30 @@ body.tab-info .app-header { display: none; }
 }
 .tl-month-tab.active { color: var(--accent); border-color: var(--accent); }
 .tl-month-tab:disabled { opacity: .35; cursor: default; }
+
+/* Overview mode (全覽, dev-only) on mobile: renderOverviewMonthTabs() lays
+   out all 12 months proportionally via flex, but .tl-month-tab's normal
+   padding/font-size assume desktop width — at mobile widths their combined
+   min-content size exceeds the viewport, so .tl-month-tabs' own
+   overflow-x:auto (needed for the *normal*, non-overview month strip)
+   quietly turns into a horizontally-scrollable header instead of the
+   intended one-screen proportional calendar bar. Shrink text/padding and
+   allow tabs to shrink past their content size so the row always fits
+   exactly, rather than scroll. Also pulls .tlo-tribe-lbl inside its bar
+   instead of to the left of it — externally-left placement assumes room in
+   .tlo-wrap's small side padding, which a tribe whose season starts near
+   day 1 doesn't have, bleeding the label past the scrollable panel's own
+   left edge. Desktop is untouched (has enough width for both as-is). */
+@media (max-width: 767px) {
+  #panel-timeline.ov-active .tl-month-tabs { overflow-x: hidden; }
+  #panel-timeline.ov-active .tl-month-tab {
+    min-width: 0;
+    padding: .35rem .1rem;
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  .tlo-tribe-lbl { right: auto; left: 4px; }
+}
 
 
 /* Date strip */
@@ -840,6 +891,24 @@ body.tab-info .app-header { display: none; }
   padding: 1px 7px;
   white-space: nowrap;
 }
+/* Outline bookmark by default; fills solid amber once saved — same
+   currentColor-driven convention as .card-pin, just filled instead of a
+   color swap, so "saved" reads as a distinct shape state, not just a tint. */
+.card-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-3);
+  transition: color .15s;
+}
+.card-save:hover  { color: var(--amber-dark); }
+.card-save.saved  { color: var(--amber); }
+.card-save.saved svg path { fill: currentColor; }
 .card-meta   { display: flex; justify-content: space-between; align-items: baseline; margin-top: .25rem; gap: .5rem; }
 .card-venue  {
   font-size: var(--fs-sm);
@@ -1504,6 +1573,7 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
 .sb-brand  { display: flex; align-items: center; gap: .6rem; }
 .sb-logo   { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
 .sb-appname { font-family: var(--disp); font-size: var(--fs-lg); color: var(--text-1); letter-spacing: -.01em; }
+.sb-header-actions { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; }
 .sb-theme-btn {
   width: 34px;
   height: 34px;

@@ -106,7 +106,12 @@ function renderRecents(div) {
 function renderSearchResults() {
   const q      = document.getElementById('srInput').value;
   const div    = document.getElementById('srResults');
-  const hasAny = q.trim().length > 0 || srFilters.size > 0;
+  // The global "只看已收藏" toggle (app.js) counts as "hasAny" on its own —
+  // with it on, an otherwise-empty search shows the full saved list instead
+  // of recent searches, and getSearchResults() (already routed through
+  // visibleEvents(), which savedOnlyFilter restricts) naturally returns just
+  // that list; typing further filters within it via the normal query path.
+  const hasAny = q.trim().length > 0 || srFilters.size > 0 || savedOnlyFilter;
 
   if (!hasAny) {
     recentShown = RECENT_PAGE;
@@ -117,7 +122,11 @@ function renderSearchResults() {
   const list = getSearchResults(q, srFilters);
 
   if (list.length === 0) {
-    div.innerHTML = '<div class="sr-hint">找不到符合條件的部落</div>';
+    // Distinguish "you haven't saved anything yet" from "no results for
+    // this search/filter" — same empty list either way, different reason.
+    const emptyMsg = (savedOnlyFilter && !q.trim() && srFilters.size === 0)
+      ? '還沒有收藏的部落' : '找不到符合條件的部落';
+    div.innerHTML = `<div class="sr-hint">${emptyMsg}</div>`;
     return;
   }
 

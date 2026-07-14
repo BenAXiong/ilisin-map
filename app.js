@@ -14,9 +14,80 @@ const WEEKDAYS   = '日一二三四五六';
 // gates what's *displayed*; lookups by known id (EVENTS.find) and the
 // info-tab contribution form intentionally see the full dataset.
 let activeGroupFilter = 'ami';
+// "Saved only" view toggle (v2-H) — a second filter on the same choke point
+// as activeGroupFilter, so flipping it narrows timeline/map/search at once
+// instead of needing a dedicated saved-items view. Deliberately NOT persisted
+// across reloads (unlike the saved ids themselves, see SAVED_KEY below) — a
+// user who forgets they left it on shouldn't reopen the app to an
+// apparently-empty timeline.
+let savedOnlyFilter = false;
 function visibleEvents() {
-  return EVENTS.filter(v => v.group === activeGroupFilter);
+  return EVENTS.filter(v => v.group === activeGroupFilter && (!savedOnlyFilter || isSaved(v.id)));
 }
+
+/* ═══════════════════════════════════════════════════
+   SAVED / FAVORITE EVENTS
+   ═══════════════════════════════════════════════════ */
+
+const SAVED_KEY = 'pokoh-saved-events';
+
+// Re-reads localStorage each call rather than caching a module-level Set —
+// dataset is a couple hundred entries, cost is negligible, and it avoids a
+// second source of truth to keep in sync (same tradeoff getRecents() in
+// js/search.js already makes for recent searches).
+function getSavedIds() {
+  try { return new Set(JSON.parse(localStorage.getItem(SAVED_KEY) || '[]')); }
+  catch { return new Set(); }
+}
+function isSaved(id) {
+  return getSavedIds().has(id);
+}
+function toggleSaved(id) {
+  const s = getSavedIds();
+  const nowSaved = !s.has(id);
+  nowSaved ? s.add(id) : s.delete(id);
+  localStorage.setItem(SAVED_KEY, JSON.stringify([...s]));
+  trackEvent('save_event_click', { id, saved: nowSaved });
+  return nowSaved;
+}
+
+const BOOKMARK_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.2L5 21V4.5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
+
+// Handles a tap on any per-card save button (timeline/search/map-sheet cards,
+// detail overlay). Re-renders the currently visible list only when the
+// saved-only filter is active, so unsaving a card while filtered-to-saved
+// drops it immediately — otherwise the button's own class flip is enough.
+function onSaveTap(id) {
+  const nowSaved = toggleSaved(id);
+  document.querySelectorAll(`[data-save-id="${id}"]`).forEach(b => b.classList.toggle('saved', nowSaved));
+  if (savedOnlyFilter) refreshVisibleTabs();
+}
+
+// Re-renders every tab currently mounted, called when the set of visible
+// events changes for a reason no single tab's own filter-change handler
+// already covers (the global saved-only toggle, or unsaving a card while
+// that toggle is active).
+function refreshVisibleTabs() {
+  renderStrip();
+  renderDayCards();
+  if (mapInitialized) {
+    updateMarkers();
+    renderSheet();
+  }
+  renderSearchResults();
+}
+
+function applySavedOnlyFilter(active) {
+  savedOnlyFilter = active;
+  document.querySelectorAll('[data-saved-filter-btn]').forEach(b => b.classList.toggle('active', active));
+  refreshVisibleTabs();
+}
+document.querySelectorAll('[data-saved-filter-btn]').forEach(b =>
+  b.addEventListener('click', () => {
+    applySavedOnlyFilter(!savedOnlyFilter);
+    trackEvent('saved_filter_toggle', { active: savedOnlyFilter });
+  })
+);
 
 // Date strings mix Latin digits/punctuation with a trailing CJK weekday
 // character (e.g. "7/3 五–7/11 六"). At equal font-size the CJK glyph reads
@@ -129,11 +200,13 @@ function cardBodyHtml(v, { showWelcome = true, ...nameOpts } = {}) {
   const welcomeHtml = (showWelcome && v.welcome_date)
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
     : '';
+  const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   return `<div class="card-top">
       ${namesHtml(v, nameOpts)}
       <div class="card-top-right">
         <span class="card-date">${dateHtml(v.date)}</span>
         ${welcomeHtml}
+        ${saveHtml}
       </div>
     </div>
     <div class="card-meta">${venueHtml}${sourceHtml}</div>`;
