@@ -20,6 +20,15 @@
 //   history: string                        — hand-authored cultural/history
 //            prose. Deliberately NOT sourced from BULUO_REF.notes, which is
 //            internal data-provenance text, not visitor-facing copy.
+//   contacts: [{ role, name, phone }, ...]  — real personal contact info
+//            (頭目/聯絡人), only when the source publishes it. `role` is a
+//            free-text Chinese label as given by the source (e.g. '頭目',
+//            '聯絡人'), not an enum. Personal names/cellphone numbers of real
+//            individuals — per project-owner decision (2026-07-14), stored
+//            and displayed exactly as officially sourced (not restricted to
+//            office-only numbers, not excluded from prerendered/SEO output).
+//            Omit an entry entirely rather than storing a source's own
+//            placeholder text (e.g. "待補") as if it were a real name.
 const SCHEDULE_DETAILS = {
   'tt-tt-01': { // 馬蘭部落 Farangaw — 2026 Kiluma'an 豐年祭海報
     // ASSUMPTION (unconfirmed): creditUrl reuses this entry's own data
@@ -39,6 +48,21 @@ const SCHEDULE_DETAILS = {
       { date: "7/11 六",       zh: '歌舞競賽歡慶',       name: "Pipipay" },
     ],
   },
+  // 光復鄉公所 115年度期程表 (hl_gf_web) — 頭目/聯絡人 contact columns,
+  // matched to EVENTS ids by romanized name + exact date (all 10 confirmed
+  // 2026-07-14). hl-gf-03 砂荖部落's 頭目 field was literally "待補"
+  // (placeholder, not a real name) in the source — omitted per the
+  // 「omit rather than store a placeholder」rule above.
+  'hl-gf-01': { contacts: [{ role: '頭目', name: '黃建富', phone: '0928-608-212' }, { role: '聯絡人', name: '孫志文', phone: '0915-973-075' }] },
+  'hl-gf-02': { contacts: [{ role: '頭目', name: '劉金武', phone: '0921-171-213' }, { role: '聯絡人', name: '林桂銘', phone: '0927-658-702' }] },
+  'hl-gf-03': { contacts: [{ role: '聯絡人', name: '楊金福', phone: '0932-052-304' }] },
+  'hl-gf-04': { contacts: [{ role: '頭目', name: '黃福順', phone: '0917-698-073' }, { role: '聯絡人', name: '林淑珍', phone: '0939-772-885' }] },
+  'hl-gf-05': { contacts: [{ role: '頭目', name: '陳茂森', phone: '0919-251-221' }, { role: '聯絡人', name: '李玉蘭', phone: '0927-211-120' }] },
+  'hl-gf-06': { contacts: [{ role: '頭目', name: '張有征', phone: '0958-704-259' }, { role: '聯絡人', name: '張志雄', phone: '0960-514-994' }] },
+  'hl-gf-07': { contacts: [{ role: '頭目', name: '楊德成', phone: '0911-555-190' }] }, // 頭目與聯絡人同一人
+  'hl-gf-08': { contacts: [{ role: '頭目', name: '謝連光', phone: '0910-468-928' }] }, // 頭目與聯絡人同一人
+  'hl-gf-09': { contacts: [{ role: '頭目', name: '陳榮德', phone: '0970-277-153' }, { role: '聯絡人', name: '陳林阿佑', phone: '0935-902-922' }] },
+  'hl-gf-10': { contacts: [{ role: '頭目', name: '張新亞', phone: '0910-559-622' }, { role: '聯絡人', name: '張榕軒', phone: '0900-772-813' }] },
 };
 
 // Poster images shared by many EVENTS entries via the same data-source
@@ -47,4 +71,6 @@ const SCHEDULE_DETAILS = {
 // path across every buluo on a shared township-wide board.
 const SCHEDULE_POSTERS = {
   tt_chenggong_poster: { url: '/images/schedule/tt-chenggong-poster.png', credit: '成功鎮公所 115年度期程表', creditUrl: SOURCES.tt_chenggong_poster.url, kind: 'summary' },
+  tt_changbin_poster: { url: '/images/schedule/tt-changbin-poster.png', credit: '長濱鄉 115年度期程表', creditUrl: SOURCES.tt_changbin_poster.url, kind: 'summary' },
+  hl_gf_web: { url: '/images/schedule/hl-gf-poster.png', credit: '光復鄉公所 115年度期程表', creditUrl: SOURCES.hl_gf_web.url, kind: 'summary' },
 };

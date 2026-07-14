@@ -37,6 +37,18 @@ function renderDetailBody(v) {
        </div>`
     : '';
 
+  const contactsHtml = detail.contacts?.length
+    ? `<div class="detail-section-title">聯絡資訊</div>
+       <div class="detail-contacts">
+         ${detail.contacts.map(c => `
+           <div class="detail-contact-row">
+             <span class="detail-contact-role">${c.role}</span>
+             <span class="detail-contact-name">${c.name}</span>
+             <a class="detail-contact-phone" href="tel:${c.phone.replace(/-/g, '')}">${c.phone}</a>
+           </div>`).join('')}
+       </div>`
+    : '';
+
   const daysHtml = detail.days
     ? `<div class="detail-section-title">祭典流程</div>
        <div class="detail-days">
@@ -65,6 +77,7 @@ function renderDetailBody(v) {
       ${welcomeHtml}
     </div>
     ${posterHtml}
+    ${contactsHtml}
     ${daysHtml}
     ${historyHtml}
   `;

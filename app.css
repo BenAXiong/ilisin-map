@@ -1202,6 +1202,21 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
 .detail-day-zh   { font-family: var(--cn); color: var(--text-1); }
 .detail-day-desc { flex-basis: 100%; font-size: var(--fs-xs); color: var(--text-3); }
 .detail-history  { font-size: var(--fs-sm); color: var(--text-2); line-height: 1.6; }
+.detail-contacts { display: flex; flex-direction: column; gap: .4rem; }
+.detail-contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  padding: .4rem .6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+}
+.detail-contact-role  { flex-shrink: 0; font-size: var(--fs-xs); color: var(--text-3); }
+.detail-contact-name  { color: var(--text-1); }
+.detail-contact-phone { margin-left: auto; font-family: var(--mono); color: var(--terra); text-decoration: none; white-space: nowrap; }
+a.detail-contact-phone:hover { text-decoration: underline; }
 
 /* ── Search panel ──────────────────────────── */
 #panel-search          { display: none; flex-direction: column; overflow: hidden; }

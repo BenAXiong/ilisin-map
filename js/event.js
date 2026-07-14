@@ -268,7 +268,7 @@ function namesHtml(v, { showAmis = true } = {}) {
 function getScheduleDetail(v) {
   const d = (typeof SCHEDULE_DETAILS !== 'undefined' && SCHEDULE_DETAILS[v.id]) || null;
   const poster = d?.poster || (typeof SCHEDULE_POSTERS !== 'undefined' && SCHEDULE_POSTERS[v.src]) || null;
-  return { poster, days: d?.days || null, history: d?.history || null };
+  return { poster, days: d?.days || null, history: d?.history || null, contacts: d?.contacts || null };
 }
 
 // Strips the trailing admin-unit character (縣/市/鄉/鎮/區) so county/township
