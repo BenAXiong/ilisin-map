@@ -478,6 +478,11 @@ document.getElementById('mapCustomApply').addEventListener('click', () => {
 document.getElementById('mapTownshipChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
+  // renderTownshipChips() below replaces this chip via innerHTML, detaching
+  // it from the DOM — if this click then bubbles to the document listener,
+  // e.target.closest('.map-loc') sees a detached node and misreads it as an
+  // outside click, closing the flyout right after the tap. Stop it here.
+  e.stopPropagation();
   townshipFilter = chip.dataset.township;
   renderTownshipChips();
   if (mapInitialized) {
