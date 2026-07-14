@@ -85,11 +85,38 @@ function initCoverageBox() {
 }
 
 function openContrib(which) {
-  document.getElementById('formReport').classList.toggle('active', which === 'report');
-  document.getElementById('formNew').classList.toggle('active', which === 'new');
-  const formEl = document.getElementById(which === 'report' ? 'formReport' : 'formNew');
-  setTimeout(() => formEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  const isReport = which === 'report';
+  // Reset to the form view (not a leftover success card), and clear any
+  // invalid/valid marks + error banner left over from a previous failed
+  // attempt — every time the modal is opened, not just after a submission.
+  document.getElementById('reportSuccess').hidden = true;
+  document.getElementById('newSuccess').hidden = true;
+  resetFormValidity('formReport');
+  resetFormValidity('formNew');
+  document.getElementById('formReport').classList.toggle('active', isReport);
+  document.getElementById('formNew').classList.toggle('active', !isReport);
+  document.getElementById('contribTitle').textContent = isReport ? '回報錯誤' : '新增部落';
+  const overlay = document.getElementById('contribOverlay');
+  overlay.hidden = false;
+  requestAnimationFrame(() => overlay.classList.add('open'));
+  trackEvent('form_open', { form: which });
 }
+
+function closeContrib() {
+  const overlay = document.getElementById('contribOverlay');
+  overlay.classList.remove('open');
+  setTimeout(() => { overlay.hidden = true; }, 200);
+}
+
+document.getElementById('contribCloseBtn').addEventListener('click', closeContrib);
+// Tapping the dimmed backdrop (outside the panel) closes it, same convention
+// as the village detail overlay (js/detail.js).
+document.getElementById('contribOverlay').addEventListener('click', e => {
+  if (e.target.id === 'contribOverlay') closeContrib();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !document.getElementById('contribOverlay').hidden) closeContrib();
+});
 
 function initContribForm() {
   /* Populate the village dropdown in the error-report form */
@@ -124,26 +151,43 @@ function initContribForm() {
 
   /* nChineseSuggest is already populated in initCoverageBox() above */
 
-  /* Show/hide conditional update field based on issue type */
+  /* Show/hide conditional update field based on issue type — it becomes
+     genuinely required (not just visible) for 日期有誤/場地更新, since a
+     report of "the date is wrong" with no proposed correction isn't
+     actionable. required-ness itself is driven by rUpdateWrap's 'visible'
+     class (see REQUIRED_FIELDS.formReport's requiredIf below); the
+     `required` attribute here just keeps that reflected for a11y. */
   document.getElementById('rIssueGroup').addEventListener('change', e => {
     const val  = e.target.value;
     const wrap = document.getElementById('rUpdateWrap');
     const lbl  = document.getElementById('rUpdateLabel');
+    const inp  = document.getElementById('rUpdate');
     if (val === '日期有誤') {
       wrap.classList.add('visible');
-      lbl.textContent = '更新後日期';
-      document.getElementById('rUpdate').placeholder = '例：8/15 六';
+      lbl.innerHTML = '更新後日期<span class="req">*</span>';
+      inp.placeholder = '例：7/15';
+      inp.required = true;
     } else if (val === '場地更新') {
       wrap.classList.add('visible');
-      lbl.textContent = '更新後場地';
-      document.getElementById('rUpdate').placeholder = '例：文化活動中心廣場';
+      lbl.innerHTML = '更新後場地<span class="req">*</span>';
+      inp.placeholder = '例：文化活動中心廣場';
+      inp.required = true;
     } else {
       wrap.classList.remove('visible');
+      inp.required = false;
+      clearField('rUpdate');
     }
   });
 
+  wireLiveValidation('formReport');
+  wireLiveValidation('formNew');
 }
 
+// County → township cascade. When the chosen county only has one known
+// township, select it automatically instead of making the visitor pick from
+// a list of one — otherwise, a real placeholder option forces an explicit
+// choice (previously the first township was silently pre-selected with no
+// placeholder, so "required" didn't actually guarantee an intentional pick).
 function cascadeTownship() {
   const county = document.getElementById('nCounty').value;
   const sel    = document.getElementById('nTownship');
@@ -154,7 +198,100 @@ function cascadeTownship() {
   const townships = new Set(TOWNSHIP_MAP[county] ?? []);
   const uncovered = typeof BULUO_UNCOVERED !== 'undefined' ? BULUO_UNCOVERED : [];
   uncovered.filter(r => r.county === county).forEach(r => townships.add(r.township));
-  sel.innerHTML = [...townships].sort().map(t => `<option value="${t}">${t}</option>`).join('');
+  const list = [...townships].sort();
+  if (list.length === 1) {
+    // A real, auto-selected value — safe to mark valid immediately.
+    sel.innerHTML = `<option value="${list[0]}">${list[0]}</option>`;
+    markField('nTownship', true);
+  } else {
+    // Defaults to the empty placeholder — leave unmarked until the visitor
+    // actually picks one (marking it invalid here would flag the field
+    // before they've had any chance to interact with it).
+    sel.innerHTML = '<option value="">— 選擇鄉鎮 —</option>' + list.map(t => `<option value="${t}">${t}</option>`).join('');
+    clearField('nTownship');
+  }
+}
+
+/* ── Inline field validation ──────────────────────────────────────────
+   Required fields per form, validated live (on blur/change) and again on
+   submit — border color + a small icon on the field itself (app.css), not
+   just the aggregate .form-status banner. `requiredIf` lets a field be
+   conditionally required (rUpdate — see the rIssueGroup listener above). */
+const REQUIRED_FIELDS = {
+  formReport: [
+    { id: 'rVillage',    label: '部落',       kind: 'select' },
+    { id: 'rIssueGroup', label: '問題類型',   kind: 'radio', name: 'rIssue' },
+    { id: 'rUpdate',     label: '更新後資訊', kind: 'text',
+      requiredIf: () => document.getElementById('rUpdateWrap').classList.contains('visible') },
+  ],
+  formNew: [
+    { id: 'nChinese',  label: '中文名稱', kind: 'text'   },
+    { id: 'nCounty',   label: '縣市',     kind: 'select' },
+    { id: 'nTownship', label: '鄉鎮',     kind: 'select' },
+  ],
+};
+
+// Maps a form key to the status-banner/submit-button pair resetFormValidity
+// needs — kept alongside REQUIRED_FIELDS rather than hardcoded per call site.
+const FORM_META = {
+  formReport: { statusId: 'rStatus', submitId: 'rSubmit' },
+  formNew:    { statusId: 'nStatus', submitId: 'nSubmit' },
+};
+
+function isRequired(f) {
+  return !f.requiredIf || f.requiredIf();
+}
+
+function fieldValue(f) {
+  if (f.kind === 'radio') return document.querySelector(`input[name="${f.name}"]:checked`)?.value ?? '';
+  return document.getElementById(f.id).value.trim();
+}
+
+function markField(id, valid) {
+  document.getElementById(id).classList.toggle('invalid', !valid);
+  document.getElementById(id).classList.toggle('valid', valid);
+}
+
+function clearField(id) {
+  document.getElementById(id).classList.remove('invalid', 'valid');
+}
+
+function wireLiveValidation(formKey) {
+  REQUIRED_FIELDS[formKey].forEach(f => {
+    const el  = document.getElementById(f.id);
+    const evt = f.kind === 'text' ? 'blur' : 'change';
+    el.addEventListener(evt, () => {
+      if (!isRequired(f)) { clearField(f.id); return; }
+      markField(f.id, !!fieldValue(f));
+    });
+  });
+}
+
+// Validates every currently-required field in a form, marking each one's
+// visual state (a field whose requiredIf is false right now is cleared, not
+// validated). Returns the first invalid field (for focus) or null if the
+// form is valid.
+function validateForm(formKey) {
+  let firstInvalid = null;
+  REQUIRED_FIELDS[formKey].forEach(f => {
+    if (!isRequired(f)) { clearField(f.id); return; }
+    const valid = !!fieldValue(f);
+    markField(f.id, valid);
+    if (!valid) {
+      firstInvalid ??= f;
+      trackEvent('field_error', { form: formKey, field: f.id });
+    }
+  });
+  return firstInvalid;
+}
+
+// Clears every field's valid/invalid mark and the status banner for a form —
+// called on every modal open so a previous failed-and-abandoned attempt
+// never leaves stale error styling for the next visit.
+function resetFormValidity(formKey) {
+  REQUIRED_FIELDS[formKey].forEach(f => clearField(f.id));
+  const { statusId, submitId } = FORM_META[formKey];
+  setFormState(document.getElementById(statusId), document.getElementById(submitId), '', '');
 }
 
 async function atPost(table, fields) {
@@ -172,66 +309,118 @@ function setFormState(statusEl, submitEl, state, msg) {
   submitEl.disabled   = state === 'loading';
 }
 
+function escHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function successRow(label, value) {
+  return value ? `<div class="form-success-row"><span class="form-success-label">${label}</span><span class="form-success-value">${escHtml(value)}</span></div>` : '';
+}
+
+// Swaps the form out for a confirmation card summarizing what was actually
+// submitted, rather than just a one-line "sent!" status message.
+function renderSuccess(elId, title, rows) {
+  const el = document.getElementById(elId);
+  el.innerHTML = `
+    <div class="form-success-icon">✓</div>
+    <div class="form-success-title">${title}</div>
+    <div class="form-success-fields">${rows.join('')}</div>
+    <button class="form-submit" onclick="closeContrib()">完成</button>
+  `;
+  el.hidden = false;
+}
+
 async function submitReport() {
-  const village = document.getElementById('rVillage').value;
-  const issue   = document.querySelector('input[name="rIssue"]:checked')?.value;
   const statusEl = document.getElementById('rStatus');
   const submitEl = document.getElementById('rSubmit');
-
-  if (!village || !issue) { setFormState(statusEl, submitEl, 'err', '請選擇部落和問題類型'); return; }
+  const firstInvalid = validateForm('formReport');
+  if (firstInvalid) {
+    setFormState(statusEl, submitEl, 'err', '請填寫必填欄位');
+    document.getElementById(firstInvalid.id).focus();
+    return;
+  }
   setFormState(statusEl, submitEl, 'loading', '');
 
+  const village = document.getElementById('rVillage').value;
+  const issue   = document.querySelector('input[name="rIssue"]:checked')?.value;
+  const update  = document.getElementById('rUpdate').value.trim();
+  const source  = document.getElementById('rSource').value.trim();
+  const note    = document.getElementById('rNote').value.trim();
   const v = EVENTS.find(x => x.id === village);
   try {
     await atPost(AT_TBL_REPORTS, {
       '部落ID':   village,
       '部落名稱': v?.chinese ?? '',
       '問題類型': issue,
-      '更新資訊': document.getElementById('rUpdate').value.trim(),
-      '來源網址': document.getElementById('rSource').value.trim(),
-      '備註':     document.getElementById('rNote').value.trim(),
+      '更新資訊': update,
+      '來源網址': source,
+      '備註':     note,
     });
-    setFormState(statusEl, submitEl, 'ok', '已送出，謝謝你的回報！');
-    trackEvent('report_submit', { result: 'ok', village, issue });
+    trackEvent('form_submit_ok', { form: 'report', village, issue });
+    document.getElementById('formReport').classList.remove('active');
     document.getElementById('formReport').reset();
     document.getElementById('rUpdateWrap').classList.remove('visible');
+    document.getElementById('rUpdate').required = false;
+    resetFormValidity('formReport');
+    renderSuccess('reportSuccess', '已送出回報，謝謝你的協助！', [
+      successRow('部落',     v?.chinese ?? village),
+      successRow('問題類型', issue),
+      successRow('更新資訊', update),
+      successRow('來源網址', source),
+      successRow('備註',     note),
+    ]);
   } catch (e) {
     setFormState(statusEl, submitEl, 'err', `送出失敗 (${e.message})，請稍後再試`);
-    trackEvent('report_submit', { result: 'error' });
   }
 }
 
 async function submitNew() {
-  const chinese   = document.getElementById('nChinese').value.trim();
-  const county    = document.getElementById('nCounty').value;
-  const township  = document.getElementById('nTownship').value;
-  const date      = document.getElementById('nDate').value.trim();
-  const statusEl  = document.getElementById('nStatus');
-  const submitEl  = document.getElementById('nSubmit');
-
-  if (!chinese || !county || !township || !date) {
-    setFormState(statusEl, submitEl, 'err', '請填寫必填欄位（中文名稱、縣市、鄉鎮、日期）');
+  const statusEl = document.getElementById('nStatus');
+  const submitEl = document.getElementById('nSubmit');
+  const firstInvalid = validateForm('formNew');
+  if (firstInvalid) {
+    setFormState(statusEl, submitEl, 'err', '請填寫必填欄位');
+    document.getElementById(firstInvalid.id).focus();
     return;
   }
   setFormState(statusEl, submitEl, 'loading', '');
 
+  const chinese  = document.getElementById('nChinese').value.trim();
+  const amis     = document.getElementById('nAmis').value.trim();
+  const county   = document.getElementById('nCounty').value;
+  const township = document.getElementById('nTownship').value;
+  const date     = document.getElementById('nDate').value.trim();
+  const venue    = document.getElementById('nVenue').value.trim();
+  const source   = document.getElementById('nSource').value.trim();
+  const note     = document.getElementById('nNote').value.trim();
+
   try {
     await atPost(AT_TBL_NEW, {
       '中文名稱': chinese,
-      'Amis名稱': document.getElementById('nAmis').value.trim(),
+      'Amis名稱': amis,
       '縣市':     county,
       '鄉鎮':     township,
       '日期':     date,
-      '場地':     document.getElementById('nVenue').value.trim(),
-      '來源網址': document.getElementById('nSource').value.trim(),
-      '備註':     document.getElementById('nNote').value.trim(),
+      '場地':     venue,
+      '來源網址': source,
+      '備註':     note,
     });
-    setFormState(statusEl, submitEl, 'ok', '已送出，謝謝你的貢獻！');
-    trackEvent('new_submit', { result: 'ok', county, township });
+    trackEvent('form_submit_ok', { form: 'new', county, township });
+    document.getElementById('formNew').classList.remove('active');
     document.getElementById('formNew').reset();
     document.getElementById('nTownship').innerHTML = '<option value="">— 先選縣市 —</option>';
+    resetFormValidity('formNew');
+    renderSuccess('newSuccess', '已送出新增，謝謝你的貢獻！', [
+      successRow('中文名稱',   chinese),
+      successRow('Amis 名稱', amis),
+      successRow('縣市',       county),
+      successRow('鄉鎮',       township),
+      successRow('日期',       date),
+      successRow('場地',       venue),
+      successRow('來源網址',   source),
+      successRow('備註',       note),
+    ]);
   } catch (e) {
     setFormState(statusEl, submitEl, 'err', `送出失敗 (${e.message})，請稍後再試`);
-    trackEvent('new_submit', { result: 'error' });
   }
 }

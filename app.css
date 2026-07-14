@@ -1700,6 +1700,113 @@ a.detail-contact-phone:hover { text-decoration: underline; }
 .form-status.ok  { display: block; background: oklch(from var(--green) l c h / 0.12); color: var(--green); border: 1px solid oklch(from var(--green) l c h / 0.3); }
 .form-status.err { display: block; background: oklch(from var(--terra) l c h / 0.1); color: var(--terra); border: 1px solid oklch(from var(--terra) l c h / 0.25); }
 
+/* Per-field validation state — border color + a small inline icon, so an
+   invalid field is visible at a glance rather than only via the aggregate
+   .form-status banner above. Icon reuses the same background-image-on-input
+   trick as .form-select's own dropdown caret just below. */
+.form-input.invalid, .form-textarea.invalid { border-color: var(--terra); }
+.form-input.valid,   .form-textarea.valid   { border-color: var(--green); }
+.form-input.invalid, .form-textarea.invalid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23c0392b' stroke-width='2'/%3E%3Cline x1='12' y1='7' x2='12' y2='13' stroke='%23c0392b' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='16.5' r='1.1' fill='%23c0392b'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+  padding-right: 1.9rem;
+}
+.form-input.valid, .form-textarea.valid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath d='M4 12.5l5 5L20 6' fill='none' stroke='%232e7d32' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+  padding-right: 1.9rem;
+}
+/* .form-select already owns background-image (dropdown caret) — the
+   validation icon has to sit in the same property, so both selectors
+   redeclare the caret alongside the added icon rather than losing it. */
+.form-select.invalid, .form-select.valid { background-repeat: no-repeat, no-repeat; background-position: right .6rem center, right 1.9rem center; padding-right: 3.1rem; }
+.form-select.invalid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%23c0392b' stroke-width='2'/%3E%3Cline x1='12' y1='7' x2='12' y2='13' stroke='%23c0392b' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='16.5' r='1.1' fill='%23c0392b'/%3E%3C/svg%3E"); border-color: var(--terra); }
+.form-select.valid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23666'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath d='M4 12.5l5 5L20 6' fill='none' stroke='%232e7d32' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); border-color: var(--green); }
+/* Radio "問題類型" group has no single input to put a border/icon on — an
+   outline around the whole pill row is the equivalent affordance. */
+.form-radio-group.invalid { outline: 1px solid var(--terra); outline-offset: 4px; border-radius: 8px; }
+
+/* ── Contribution modal header (simpler than .detail-header: one title,
+   one close button, no left icon cluster to center against) ── */
+.contrib-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem .85rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.contrib-header-title {
+  font-family: var(--mono);
+  font-size: calc(var(--fs-base) * 1.16);
+  font-weight: 700;
+  color: var(--terra);
+  letter-spacing: .03em;
+}
+.contrib-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-md);
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: .3rem .5rem;
+}
+.contrib-header-btn:hover { color: var(--amber); }
+
+/* ── Submission success state — replaces the form in place with a summary
+   of what was submitted, rather than just a one-line status message. ── */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .3rem;
+  padding: 1rem 0 .5rem;
+}
+.form-success-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: oklch(from var(--green) l c h / 0.15);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: .3rem;
+}
+.form-success-title { font-family: var(--cn); font-weight: 700; font-size: var(--fs-md); color: var(--text-1); }
+.form-success-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  margin: .75rem 0 1rem;
+  text-align: left;
+}
+.form-success-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .6rem;
+  padding: .4rem .6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+}
+.form-success-label { flex-shrink: 0; font-family: var(--mono); font-size: var(--fs-2xs); color: var(--text-3); }
+.form-success-value { color: var(--text-1); text-align: right; overflow-wrap: anywhere; }
+
 /* ── Placeholder panels ─────────────────────── */
 .panel-placeholder {
   height: 100%;
