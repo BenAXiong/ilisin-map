@@ -38,6 +38,14 @@ function toDateInputValue(d) {
 // on folad/fois, whose accents already sit at 68-72% l to pop off a near-
 // black bg, that same bump clips to ~100% l and washes out to white.
 // Alpha preserves the hue at any base lightness instead.
+//
+// Teardrop pin (SVG, not CSS-rotated-square) so the anchor point can sit
+// exactly on the drawn tip without fighting a runtime transform. The small
+// bg-colored dot in the wide part is a placeholder "glyph slot" — v2 only
+// ever displays the `ami` group, so there's nothing to visually distinguish
+// yet; a per-group glyph goes there in v3 without needing to touch this
+// geometry again. className stays '' (like the old icon) since all visual
+// state lives in the html string's own classes, not Leaflet's wrapper.
 function makeIcon(status, isActive) {
   const colors = {
     confirmed: isActive ? 'var(--accent)'  : 'oklch(from var(--accent) l c h / 0.55)',
@@ -45,15 +53,30 @@ function makeIcon(status, isActive) {
     cancelled: isActive ? 'var(--text-2)'  : 'var(--text-3)',
   };
   const c = colors[status] || colors.confirmed;
-  const bg = isActive ? c : 'transparent';
-  const border = c;
   return L.divIcon({
     className: '',
-    html: `<div style="width:18px;height:18px;border-radius:50%;background:${bg};border:2.5px solid ${border};box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>`,
-    iconSize: [18, 18],
-    iconAnchor: [9, 9],
-    popupAnchor: [0, -12],
+    html: `<div class="marker-pin-wrap${isActive ? ' is-active' : ''}">
+      <svg width="28" height="36" viewBox="0 0 24 32">
+        <path d="M12 1C5.925 1 1 5.925 1 12c0 8.5 11 19 11 19s11-10.5 11-19C23 5.925 18.075 1 12 1z"
+              fill="${c}" stroke="var(--bg)" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="4" fill="var(--bg)"/>
+      </svg>
+    </div>`,
+    iconSize: [28, 36],
+    iconAnchor: [14, 35],
+    popupAnchor: [0, -30],
   });
+}
+
+// Pins are drawn at a fixed SVG size, then scaled per zoom level via CSS
+// (see .marker-pin-wrap rules in app.css) so this only needs to keep one
+// data attribute on #map in sync — no marker re-creation on zoom.
+function updateZoomTier() {
+  if (!leafletMap) return;
+  const mapEl = document.getElementById('map');
+  const z = leafletMap.getZoom();
+  if (!mapEl || typeof z !== 'number' || Number.isNaN(z)) return;
+  mapEl.dataset.zoomTier = z <= 9 ? 'far' : z >= 14 ? 'near' : 'mid';
 }
 
 function setSheetState(state, from) {
@@ -443,6 +466,8 @@ function initMap() {
   leafletMap.on('click', () => {
     if (bsState !== 'collapsed') deselect();
   });
+  leafletMap.on('zoomend', updateZoomTier);
+  updateZoomTier();
 
   initSheetDrag();
 }
