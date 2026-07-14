@@ -9345,9 +9345,10 @@
      5. schedule.js — SCHEDULE_DETAILS, SCHEDULE_POSTERS
      6. Tab files (+ js/timeline-overview.js, dev-only overview tooling) —
         set up listeners; call shared utils only at runtime (safe)
-     7. js/dates.js — parseStartDate/parseEndDate/eventCoord
-     8. js/event.js — event-domain utils (saved/share/card rendering)
-     9. js/shell.js — theme, tab switching, PWA, SW, boots with initTimeline() -->
+     7. js/chips.js — syncActiveChips/toggleChipInSet (filter-chip DOM sync)
+     8. js/dates.js — parseStartDate/parseEndDate/eventCoord
+     9. js/event.js — event-domain utils (saved/share/card rendering)
+     10. js/shell.js — theme, tab switching, PWA, SW, boots with initTimeline() -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="data.js"></script>
@@ -9359,6 +9360,7 @@
 <script src="js/search.js"></script>
 <script src="js/info.js"></script>
 <script src="js/detail.js"></script>
+<script src="js/chips.js"></script>
 <script src="js/dates.js"></script>
 <script src="js/event.js"></script>
 <script src="js/shell.js"></script>

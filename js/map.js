@@ -415,9 +415,7 @@ document.getElementById('mapCountyChips').addEventListener('click', e => {
 
   countyFilter = newCounty;
   townshipFilter = null;
-  document.querySelectorAll('#mapCountyChips .map-chip').forEach(c =>
-    c.classList.toggle('active', c === chip)
-  );
+  syncActiveChips(document.getElementById('mapCountyChips'), '.map-chip', c => c === chip);
   renderTownshipChips();
   if (mapInitialized) {
     updateMarkers();
@@ -431,9 +429,7 @@ document.getElementById('mapTimeChips').addEventListener('click', e => {
   const chip = e.target.closest('.map-chip');
   if (!chip) return;
   timeFilter = chip.dataset.time;
-  document.querySelectorAll('#mapTimeChips .map-chip').forEach(c =>
-    c.classList.toggle('active', c === chip)
-  );
+  syncActiveChips(document.getElementById('mapTimeChips'), '.map-chip', c => c === chip);
   document.getElementById('mapTimeLabel').textContent = TIME_LABELS[timeFilter] || timeFilter;
 
   const customRow = document.getElementById('mapCustomDateRow');
@@ -497,11 +493,11 @@ document.getElementById('mapClusterToggle').addEventListener('click', e => {
   const btn = e.target.closest('.map-chip');
   if (!btn) return;
   setClusterMode(btn.dataset.cluster === 'on');
-  document.querySelectorAll('#mapClusterToggle .map-chip').forEach(c => {
-    const isActive = c === btn;
-    c.classList.toggle('active', isActive);
-    c.setAttribute('aria-pressed', String(isActive));
-  });
+  const clusterToggleEl = document.getElementById('mapClusterToggle');
+  syncActiveChips(clusterToggleEl, '.map-chip', c => c === btn);
+  clusterToggleEl.querySelectorAll('.map-chip').forEach(c =>
+    c.setAttribute('aria-pressed', String(c === btn))
+  );
   trackEvent('map_filter', { clusterMode: clusterModeOn ? 'grouped' : 'individual' });
 });
 

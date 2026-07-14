@@ -185,20 +185,8 @@ document.getElementById('srChips').addEventListener('click', e => {
   const chip = e.target.closest('.sr-chip');
   if (!chip) return;
   const key = chip.dataset.filter;
-
-  if (srFilters.has(key)) {
-    srFilters.delete(key);
-    chip.classList.remove('active');
-  } else {
-    if (COUNTY_FILTERS.has(key)) {
-      COUNTY_FILTERS.forEach(k => {
-        srFilters.delete(k);
-        document.querySelector(`.sr-chip[data-filter="${k}"]`)?.classList.remove('active');
-      });
-    }
-    srFilters.add(key);
-    chip.classList.add('active');
-    trackEvent('search_filter', { filter: key });
-  }
+  const container = document.getElementById('srChips');
+  const selected = toggleChipInSet(srFilters, chip, key, container, '.sr-chip', [COUNTY_FILTERS]);
+  if (selected) trackEvent('search_filter', { filter: key });
   renderSearchResults();
 });

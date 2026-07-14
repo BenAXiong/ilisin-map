@@ -15,17 +15,19 @@ no ES modules. Files are served as-is by Vercel. The one build step is
 **Script load order in index.html:**
 ```
 data.js → buluo-ref.js → schedule.js → js/timeline.js → js/timeline-overview.js →
-js/map.js → js/search.js → js/info.js → js/detail.js → js/dates.js → js/event.js → js/shell.js
+js/map.js → js/search.js → js/info.js → js/detail.js → js/chips.js → js/dates.js →
+js/event.js → js/shell.js
 ```
-Tab files parse before `js/dates.js`/`js/event.js`/`js/shell.js` but only
-*call* shared utilities (`cardHtml`, `parseStartDate`, `eventCoord`,
-`trackEvent`, etc.) at runtime — never at parse time — so loading those last
-is safe. `TOWNSHIP_MAP` in `js/info.js` is the exception: it runs at parse
-time, which is safe because `data.js` loads first. `js/timeline-overview.js`
-(dev-only, gated behind `localStorage.getItem('pokoh_dev') === '1'`) loads
-immediately after `js/timeline.js` and reads that file's state (`tlMonths`,
-`tlOverviewMode`, `_ovData`, etc.) as plain top-level globals, same
-no-ES-modules pattern as everything else.
+Tab files parse before `js/chips.js`/`js/dates.js`/`js/event.js`/`js/shell.js`
+but only *call* shared utilities (`cardHtml`, `parseStartDate`, `eventCoord`,
+`trackEvent`, `syncActiveChips`, etc.) at runtime — never at parse time — so
+loading those last is safe. `TOWNSHIP_MAP` in `js/info.js` is the exception: it
+runs at parse time, which is safe because `data.js` loads first.
+`js/timeline-overview.js` (dev-only, gated behind
+`localStorage.getItem('pokoh_dev') === '1'`) loads immediately after
+`js/timeline.js` and reads that file's state (`tlMonths`, `tlOverviewMode`,
+`_ovData`, etc.) as plain top-level globals, same no-ES-modules pattern as
+everything else.
 
 `js/dates.js` (`parseStartDate`/`parseEndDate`/`eventCoord`) is the one file
 also loaded independently by Node — see the `new Function()` pattern below.
@@ -54,6 +56,7 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 | `index.html` | App shell + prerendered static content (injected by `scripts/prerender.js`) |
 | `app.css` | All styles. CSS custom property theme system (`--fs-*`, `--c-*`, `data-theme` attr) |
 | `js/dates.js` | Shared pure logic: `parseStartDate`/`parseEndDate`/`eventCoord` — also loaded by `scripts/prerender.js` via `new Function()` |
+| `js/chips.js` | Shared filter-chip DOM-sync mechanics: `syncActiveChips` (single-select `.active` sync), `toggleChipInSet` (multi-select with mutual-exclusion groups) — consumed by `js/map.js`/`js/timeline.js`/`js/search.js`, which keep their own click delegation and filter state |
 | `js/event.js` | Event-domain utilities — filters, saved/favorite state, share, card rendering (`cardHtml`/`cardBodyHtml`) |
 | `js/shell.js` | App shell — theme, tab switching, PWA install, service worker registration, boot |
 | `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `EVENTS` |

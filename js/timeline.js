@@ -327,7 +327,7 @@ document.getElementById('tlCounty').addEventListener('click', e => {
   if (twpChip) {
     const twp = twpChip.dataset.township;
     tlTownshipFilter = tlTownshipFilter === twp ? null : twp;
-    document.querySelectorAll('.tl-chip-twp').forEach(c => c.classList.toggle('active', c.dataset.township === tlTownshipFilter));
+    syncActiveChips(document.getElementById('tlCounty'), '.tl-chip-twp', c => c.dataset.township === tlTownshipFilter);
     renderStrip();
     renderDayCards();
     if (tlOverviewMode) renderOverviewStrip();
@@ -338,7 +338,7 @@ document.getElementById('tlCounty').addEventListener('click', e => {
   if (!chip) return;
   tlCountyFilter = chip.dataset.county;
   tlTownshipFilter = null;
-  document.querySelectorAll('.tl-chip').forEach(c => c.classList.toggle('active', c === chip));
+  syncActiveChips(document.getElementById('tlCounty'), '.tl-chip', c => c === chip);
   renderTimelineTownshipChips();
   renderStrip();
   renderDayCards();
