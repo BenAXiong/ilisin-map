@@ -372,6 +372,17 @@ function addDragScroll(el) {
   }, true);
 }
 
+/* Lets a plain vertical mouse-wheel scroll a horizontal strip, without
+   requiring Shift. Native horizontal input (Shift+wheel, trackpad two-finger
+   swipe) already arrives as deltaX and is left alone. */
+function addWheelHorizontalScroll(el) {
+  el.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    el.scrollLeft += e.deltaY;
+    e.preventDefault();
+  }, { passive: false });
+}
+
 function trackEvent(name, data) {
   window.umami?.track(name, data);
 }

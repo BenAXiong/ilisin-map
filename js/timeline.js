@@ -129,6 +129,8 @@ function initTimeline() {
 
   addDragScroll(document.getElementById('tlStripScroll'));
   addDragScroll(document.getElementById('tlMonthTabs'));
+  addWheelHorizontalScroll(document.getElementById('tlStripScroll'));
+  addWheelHorizontalScroll(document.getElementById('tlMonthTabs'));
 }
 
 function firstEventDayInMonth(monthDate) {
