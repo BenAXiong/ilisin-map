@@ -906,6 +906,8 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   left: 10px; right: 10px;
   bottom: 96px;
   z-index: 550;
+  display: flex;
+  align-items: stretch;
   background: var(--surface);
   border-radius: 14px;
   overflow: hidden;
@@ -915,44 +917,52 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
     0 8px 20px oklch(from var(--ink) l c h / 0.18);
   animation: map-float-in .25s cubic-bezier(.34, 1.56, .64, 1);
 }
-/* Full-bleed, fixed-ratio — object-fit:cover crops rather than distorts a
-   poster of any source aspect ratio. Only present when getScheduleDetail(v)
-   resolves one (see renderFloatCard() in js/map.js); most entries have none,
-   so the card falls back to the plain text layout below with no gap left
-   behind — no placeholder/empty-image state to design for. */
+/* Embedded left thumbnail, not a full-bleed banner — fixed width,
+   align-items:stretch above makes it match the text column's height exactly
+   (however tall 3 rows end up being), object-fit:cover crops rather than
+   distorts. Borderless: no radius/border of its own, it just fills its
+   corner of the already-clipped (overflow:hidden) card. Only present when
+   getScheduleDetail(v) resolves one (see renderFloatCard() in js/map.js);
+   most entries have none, so the card falls back to full-width text with no
+   gap left behind — no placeholder/empty-image state to design for. */
 .map-float-poster {
   display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: 100px;
+  flex-shrink: 0;
   object-fit: cover;
 }
+/* Text column: 3 stacked rows (names/date/venue) — a deliberately different
+   shape from the shared .village-card list-row layout (which pairs
+   name+date side by side, welcome badge included), not a variant of it.
+   .map-float-icons is absolutely positioned within this, so it needs to be
+   the positioning context. */
 .map-float-card .village-card,
 .map-float-card .village-card.active {
-  padding: .75rem 2.2rem .75rem .85rem;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: .7rem .85rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
   border: none;
 }
 .map-float-card .village-card:hover { background: none; border-left-color: transparent; }
-/* Frosted circular backdrop (not just a bare glyph) — needed for legibility
-   sitting directly on an arbitrary poster photo, and looks equally fine on
-   the plain card surface when there's no poster, so it's unconditional
-   rather than a has-poster modifier. */
-.map-float-close {
+/* .card-date defaults to text-align:right (it normally sits opposite the
+   name in one flex row) — on its own row here that would push it away from
+   the names/venue rows' shared left edge, so override to left. */
+.map-float-row .card-date { text-align: left; }
+/* No close button — dismiss is tap-outside-to-deselect only (existing
+   leafletMap click handler in js/map.js), so these just need to clear the
+   top-right corner, not read over a photo (the image sits to the left, not
+   behind this column) — no frosted backdrop needed, plain icon buttons. */
+.map-float-icons {
   position: absolute;
-  top: 8px; right: 8px;
-  width: 26px; height: 26px;
+  top: .55rem; right: .65rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: var(--fs-xs);
-  color: var(--text-1);
-  background: oklch(from var(--surface) l c h / 0.82);
-  box-shadow: 0 1px 4px oklch(from var(--ink) l c h / 0.2);
+  gap: .35rem;
 }
-.map-float-close:hover { background: var(--surface); }
 @keyframes map-float-in {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }

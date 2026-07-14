@@ -216,9 +216,14 @@ function makeSectionHtml(v) {
   return cardHtml(v, `data-vid="${v.id}" onclick="openDetail('${v.id}')"`);
 }
 
-// #mapFloatCard's content — same card markup as the sheet's list rows (see
-// makeSectionHtml), just one of them, plus a close button since there's no
-// drag-to-dismiss handle on a floating card the way there is on the sheet.
+// #mapFloatCard's content — a bespoke 3-row layout (names/date/venue) with
+// the poster as a left-side thumbnail, not a variant of the shared
+// .village-card list-row shape (which pairs name+date in one row and drops
+// the welcome badge in a meta row) — reuses the same building blocks
+// (namesHtml/dateHtml/venueLinkHtml, the save/share buttons) at the piece
+// level, not the whole assembled row. No close button — dismiss is
+// tap-outside-to-deselect only (leafletMap's own click handler already
+// does this), so there's no drag handle or ✕ to build here either.
 // Poster image (schedule.js, via getScheduleDetail) is a bonus, not assumed
 // — most entries don't have one, so it's simply omitted rather than shown
 // as a placeholder/empty state.
@@ -229,7 +234,14 @@ function renderFloatCard(v) {
   const posterHtml = poster
     ? `<img class="map-float-poster" src="${poster.url}" alt="${v.chinese} 祭儀海報" loading="lazy" />`
     : '';
-  card.innerHTML = `${posterHtml}<button class="map-float-close" aria-label="關閉" onclick="deselect()">✕</button>${makeSectionHtml(v)}`;
+  const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
+  const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
+  card.innerHTML = `${posterHtml}<div class="village-card card-${v.status}" data-vid="${v.id}" onclick="openDetail('${v.id}')">
+    <div class="map-float-icons">${shareHtml}${saveHtml}</div>
+    <div class="map-float-row">${namesHtml(v)}</div>
+    <div class="map-float-row"><span class="card-date">${dateHtml(v.date)}</span></div>
+    <div class="map-float-row">${venueLinkHtml(v)}</div>
+  </div>`;
 }
 
 function activateVillage(id) {
