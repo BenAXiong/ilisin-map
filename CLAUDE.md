@@ -2,7 +2,7 @@
 
 Live site: **https://pokoh.vercel.app/** (no custom domain yet — this is Vercel's auto-assigned URL for the `pokoh` project)  
 Repo: `C:\Users\Ben\Documents\LL\6_ycm\豐年祭 地圖`  
-Deeper docs (gitignored, local only): `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`
+Deeper docs (gitignored, local only): `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`, `docs/BACKLOG.md`
 
 ---
 
@@ -74,7 +74,7 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 | `viz.html` | Internal data viz / QA tool, not linked from the main app |
 | `sw.js` | Service worker — caches app shell for offline/PWA |
 | `images/schedule/` | Poster image assets referenced by `schedule.js` |
-| `docs/` | Gitignored local docs: `ROADMAP-v1.md`, `DATA-SOURCES.md`, CIP PDF, archive/, `sources/` (raw source docs/images, not deployed) |
+| `docs/` | Gitignored local docs: `ROADMAP-v1.md`, `DATA-SOURCES.md`, `BACKLOG.md` (live list of non-roadmap loose ends — check before starting a new roadmap phase), CIP PDF, archive/, `sources/` (raw source docs/images, not deployed) |
 
 ---
 
@@ -315,4 +315,11 @@ v2 expansion (tribe data, all-year timeline, donations, village detail overlay,
 map behavior, share, Chill'ey integration, contribution form polish — moved
 from D3) is tracked in `docs/ROADMAP-v2.md`, not here.
 
-Full roadmap and data source inventory: `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`
+**Before starting v3/v4 or any new roadmap phase, check `docs/BACKLOG.md`** —
+it's a short, pruned, current-state list of data gaps and unresolved threads
+that don't map to a planned roadmap item (as opposed to `ROADMAP-v2.md`'s
+per-item write-ups, which are historical logs, not a todo list). Items get
+deleted from it when resolved, so if it's non-trivially long, that's real
+open work, not stale entries.
+
+Full roadmap and data source inventory: `docs/ROADMAP-v1.md`, `docs/ROADMAP-v2.md`, `docs/DATA-SOURCES.md`, `docs/BACKLOG.md`
