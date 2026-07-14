@@ -4931,6 +4931,28 @@ const BULUO_REF = {
     "chiefs": [],
     "contact": []
   },
+  "ami-parayapay": {
+    "chinese_name": "和平部落",
+    "chinese_name_alt": [],
+    "indigenous_name": "Parayapay",
+    "indigenous_name_alt": [],
+    "dialect": [
+      "馬蘭阿美語"
+    ],
+    "village": "鹿野村",
+    "lat": 22.892327,
+    "lng": 121.138589,
+    "coord_precision": "exact",
+    "status": "single-source",
+    "sources": [
+      "原住民族委員會核定部落結果 (CIP gazette)",
+      "暫定族語別分類來源（待補充正式引註）",
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+    ],
+    "notes": "",
+    "chiefs": [],
+    "contact": []
+  },
   "ami-himoti": {
     "chinese_name": "電光部落",
     "chinese_name_alt": [],
@@ -5725,29 +5747,6 @@ const BULUO_UNCOVERED = [
     "village": "竹湖村",
     "lat": 23.275853,
     "lng": 121.422032,
-    "coord_precision": "exact",
-    "status": "single-source",
-    "sources": [
-      "原住民族委員會核定部落結果 (CIP gazette)",
-      "暫定族語別分類來源（待補充正式引註）",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
-    ],
-    "notes": ""
-  },
-  {
-    "id": "ami-parayapay",
-    "chinese_name": "和平部落",
-    "chinese_name_alt": [],
-    "indigenous_name": "Parayapay",
-    "indigenous_name_alt": [],
-    "dialect": [
-      "馬蘭阿美語"
-    ],
-    "county": "臺東縣",
-    "township": "鹿野鄉",
-    "village": "鹿野村",
-    "lat": 22.892327,
-    "lng": 121.138589,
     "coord_precision": "exact",
     "status": "single-source",
     "sources": [
