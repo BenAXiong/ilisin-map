@@ -101,7 +101,7 @@ function renderDetailBody(v) {
   `;
 }
 
-function openDetail(id) {
+function openDetail(id, source = 'card') {
   const v = EVENTS.find(x => x.id === id);
   if (!v) return;
   document.getElementById('detailBody').innerHTML = renderDetailBody(v);
@@ -125,7 +125,7 @@ function openDetail(id) {
   const overlay = document.getElementById('detailOverlay');
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add('open'));
-  trackEvent('detail_open', { id, name: v.chinese });
+  trackEvent('detail_open', { id, name: v.chinese, source });
 }
 
 function closeDetail() {

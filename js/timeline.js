@@ -246,7 +246,7 @@ function selectBandVillage(id, startTs) {
     c.classList.toggle('active', c.id === `card-${id}`)
   );
   document.getElementById(`card-${id}`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  openDetail(id);
+  openDetail(id, 'band');
 }
 
 function scrollStripToDay(date) {

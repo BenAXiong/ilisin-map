@@ -138,5 +138,5 @@ initTimeline();
 // this file per the script-order convention (see CLAUDE.md).
 const sharedEventId = new URLSearchParams(location.search).get('v');
 if (sharedEventId && EVENTS.some(v => v.id === sharedEventId)) {
-  openDetail(sharedEventId);
+  openDetail(sharedEventId, 'share_link');
 }
