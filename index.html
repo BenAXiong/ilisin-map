@@ -9723,18 +9723,24 @@
      3. data.js — EVENTS, SOURCES, DATA_NOTE
      4. buluo-ref.js — BULUO_REF, BULUO_UNCOVERED
      5. schedule.js — SCHEDULE_DETAILS, SCHEDULE_POSTERS
-     6. Tab files — set up listeners; call shared utils only at runtime (safe)
-     7. app.js — defines shared utils, theme, tab switching, boots with initTimeline() -->
+     6. Tab files (+ js/timeline-overview.js, dev-only overview tooling) —
+        set up listeners; call shared utils only at runtime (safe)
+     7. js/dates.js — parseStartDate/parseEndDate/eventCoord
+     8. js/event.js — event-domain utils (saved/share/card rendering)
+     9. js/shell.js — theme, tab switching, PWA, SW, boots with initTimeline() -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="data.js"></script>
 <script src="buluo-ref.js"></script>
 <script src="schedule.js"></script>
 <script src="js/timeline.js"></script>
+<script src="js/timeline-overview.js"></script>
 <script src="js/map.js"></script>
 <script src="js/search.js"></script>
 <script src="js/info.js"></script>
 <script src="js/detail.js"></script>
-<script src="app.js"></script>
+<script src="js/dates.js"></script>
+<script src="js/event.js"></script>
+<script src="js/shell.js"></script>
 </body>
 </html>

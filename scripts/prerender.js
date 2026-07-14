@@ -19,17 +19,15 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(
 const refSrc = fs.readFileSync(path.join(ROOT, 'buluo-ref.js'), 'utf8');
 const { BULUO_REF } = new Function(refSrc + '\nreturn { BULUO_REF };')();
 
-// Mirrors app.js's eventCoord() — see that file for the priority rationale
-// (venueOverride > BULUO_REF exact/village > EVENTS' own fallback > BULUO_REF any).
-const GOOD_COORD_PRECISION = new Set(['exact', 'village']);
-function eventCoord(v) {
-  if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
-  const ref = v.buluo_id ? BULUO_REF[v.buluo_id] : null;
-  if (GOOD_COORD_PRECISION.has(ref?.coord_precision) && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
-  if (v.lat != null && v.lng != null) return [v.lat, v.lng];
-  if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
-  return null;
-}
+// js/dates.js is the shared parseStartDate/parseEndDate/eventCoord module
+// (also loaded by the browser via <script src>) — new Function() bodies
+// don't close over this file's local scope, so BULUO_REF is passed in as an
+// explicit parameter rather than relied on as a global like in the browser.
+const datesSrc = fs.readFileSync(path.join(ROOT, 'js/dates.js'), 'utf8');
+const { parseStartDate, parseEndDate, eventCoord } = new Function(
+  'BULUO_REF',
+  datesSrc + '\nreturn { parseStartDate, parseEndDate, eventCoord };'
+)(BULUO_REF);
 
 // ── Group config ──────────────────────────────────────────────────────
 const GROUP_META = {
@@ -42,23 +40,6 @@ const GROUP_META = {
   ckv: { heading: '噶瑪蘭族 Kavalan · 豐年祭 Gataban',      festival: '豐年祭 Gataban',      org: '噶瑪蘭族（Kavalan）' },
 };
 const GROUP_ORDER = ['ami', 'bnn', 'trv', 'pwn', 'pyu', 'szy', 'ckv'];
-
-// ── Date helpers (mirrors app.js) ────────────────────────────────────
-const DECADE_MID = { '上': 5, '中': 15, '下': 25 };
-
-function parseStart(str) {
-  const s = str.match(/(\d{1,2})\/(\d{1,2})/);
-  if (s) return new Date(2026, +s[1] - 1, +s[2]);
-  const d = str.match(/(\d{1,2})月([上中下])旬/);
-  if (d) return new Date(2026, +d[1] - 1, DECADE_MID[d[2]]);
-  return null;
-}
-
-function parseEnd(str) {
-  const m = str.match(/\d{1,2}\/\d{1,2}[^–—]*[–—](\d{1,2})\/(\d{1,2})/);
-  if (m) return new Date(2026, +m[1] - 1, +m[2]);
-  return null;
-}
 
 function iso(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -94,9 +75,9 @@ for (const grp of GROUP_ORDER) {
 // ── Build JSON-LD ─────────────────────────────────────────────────────
 const events = confirmed
   .map(v => {
-    const start = parseStart(v.date);
+    const start = parseStartDate(v.date);
     if (!start) return null;
-    const end  = parseEnd(v.date) || start;
+    const end  = parseEndDate(v.date) || start;
     const meta = GROUP_META[v.group] || GROUP_META.ami;
     const hasVenue = v.venue && v.venue !== '—';
 
@@ -127,7 +108,7 @@ const events = confirmed
     }
     if (v.amis) ev.alternateName = [v.amis];
     if (v.welcome_date) {
-      const wStart = parseStart(v.welcome_date);
+      const wStart = parseStartDate(v.welcome_date);
       if (wStart) {
         ev.subEvent = {
           '@type': 'Event',

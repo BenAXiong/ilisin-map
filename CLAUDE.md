@@ -14,12 +14,24 @@ no ES modules. Files are served as-is by Vercel. The one build step is
 
 **Script load order in index.html:**
 ```
-data.js → buluo-ref.js → schedule.js → js/timeline.js → js/map.js → js/search.js → js/info.js → js/detail.js → app.js
+data.js → buluo-ref.js → schedule.js → js/timeline.js → js/timeline-overview.js →
+js/map.js → js/search.js → js/info.js → js/detail.js → js/dates.js → js/event.js → js/shell.js
 ```
-Tab files parse before `app.js` but only *call* shared utilities (`cardHtml`,
-`parseStartDate`, `trackEvent`, etc.) at runtime — never at parse time — so
-loading `app.js` last is safe. `TOWNSHIP_MAP` in `js/info.js` is the exception:
-it runs at parse time, which is safe because `data.js` loads first.
+Tab files parse before `js/dates.js`/`js/event.js`/`js/shell.js` but only
+*call* shared utilities (`cardHtml`, `parseStartDate`, `eventCoord`,
+`trackEvent`, etc.) at runtime — never at parse time — so loading those last
+is safe. `TOWNSHIP_MAP` in `js/info.js` is the exception: it runs at parse
+time, which is safe because `data.js` loads first. `js/timeline-overview.js`
+(dev-only, gated behind `localStorage.getItem('pokoh_dev') === '1'`) loads
+immediately after `js/timeline.js` and reads that file's state (`tlMonths`,
+`tlOverviewMode`, `_ovData`, etc.) as plain top-level globals, same
+no-ES-modules pattern as everything else.
+
+`js/dates.js` (`parseStartDate`/`parseEndDate`/`eventCoord`) is the one file
+also loaded independently by Node — see the `new Function()` pattern below.
+`scripts/prerender.js` passes `BULUO_REF` into it as an explicit function
+parameter, since `new Function()` bodies don't close over the caller's local
+scope the way a browser `<script>` closes over the page's global scope.
 
 **Reading `data.js` in Node scripts** — use `new Function()` (same pattern in
 both `scripts/build_buluo_ref.js` and `scripts/prerender.js`):
@@ -31,7 +43,7 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 **Prerender / crawler mechanism:**
 - `<main id="festival-data">` in `index.html` — static HTML injected at build time
 - `html.js-ready #festival-data` CSS rule hides it once JS loads
-- `document.documentElement.classList.add('js-ready')` fires in `app.js` at boot
+- `document.documentElement.classList.add('js-ready')` fires in `js/shell.js`'s BOOT section
 
 ---
 
@@ -41,11 +53,14 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 |---|---|
 | `index.html` | App shell + prerendered static content (injected by `scripts/prerender.js`) |
 | `app.css` | All styles. CSS custom property theme system (`--fs-*`, `--c-*`, `data-theme` attr) |
-| `app.js` | Shared utilities, theme, tab switching, PWA, SW registration, boot |
+| `js/dates.js` | Shared pure logic: `parseStartDate`/`parseEndDate`/`eventCoord` — also loaded by `scripts/prerender.js` via `new Function()` |
+| `js/event.js` | Event-domain utilities — filters, saved/favorite state, share, card rendering (`cardHtml`/`cardBodyHtml`) |
+| `js/shell.js` | App shell — theme, tab switching, PWA install, service worker registration, boot |
 | `data.js` | Primary data: `SOURCES`, `DATA_NOTE`, `EVENTS` |
 | `buluo-ref.js` | Generated. `BULUO_REF` (matched buluo identity facts, incl. `lat`/`lng`/`coord_precision`) + `BULUO_UNCOVERED` (unmatched) |
 | `schedule.js` | Hand-curated. `SCHEDULE_DETAILS` (per-village sub-events/poster/history) + `SCHEDULE_POSTERS` (poster images shared by `src`) |
 | `js/timeline.js` | Timeline tab — month strip, day cards, county filter |
+| `js/timeline-overview.js` | Dev-only 全覽 (overview) mode + PNG/HTML export, gated behind `pokoh_dev` flag — split out of `js/timeline.js` |
 | `js/map.js` | Map tab — Leaflet init, markers, bottom sheet, drag |
 | `js/search.js` | Search tab — filter, recents, IME support |
 | `js/info.js` | Info tab — stat tiles, sources, coverage box, contribution form |
@@ -99,7 +114,7 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
 - `welcome_date`/`welcome_time` — optional scalars, 迎賓日 (welcome day).
   `welcome_date` is a bare `'M/D'` (no weekday suffix, unlike `date`);
   `welcome_time` is `'HH:MM'`. Read by `cardBodyHtml()`/timeline band
-  rendering (`app.js`/`js/timeline.js`) and emitted into prerendered static
+  rendering (`js/event.js`/`js/timeline.js`) and emitted into prerendered static
   HTML + JSON-LD `subEvent` (`scripts/prerender.js`) — promoted here from
   `schedule.js` specifically so those consumers don't need a second lookup.
 - `venueOverride` — optional `true`, hand-set. Marks an entry whose own
@@ -110,7 +125,7 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   Without this flag, a matched entry's *effective* coordinate is resolved by
   `eventCoord()`, not read directly from `v.lat`/`v.lng` — see below.
 
-**Village (村/里) resolution (`eventVillage(v)` in `app.js`):** not an
+**Village (村/里) resolution (`eventVillage(v)` in `js/event.js`):** not an
 `EVENTS` field at all — `Datasets/buluo/*.json` records already carry a
 CIP-gazetted `village` field (finer-grained than `township`), threaded into
 `BULUO_REF` by `build_buluo_ref.js` the same way `lat`/`lng`/`coord_precision`
@@ -122,13 +137,14 @@ entries, joins each distinct village named across the merged buluo). Used by
 `trv` entries, `joint:true` entries), which the mobile string handles by
 just omitting that segment.
 
-**Coordinate resolution (`eventCoord(v)` in `app.js`, mirrored in
-`scripts/prerender.js`):** buluo identity/location now lives in the shared
-`Datasets/buluo/*.json` db (`lat`/`lng`/`coord_precision`, threaded into
-`BULUO_REF` by `build_buluo_ref.js` — see below), not duplicated per-project.
-Every place that plots a pin or emits geo data calls `eventCoord(v)` instead
-of reading `v.lat`/`v.lng` directly (`js/map.js`'s marker/bounds/fit-to-filter
-code, `app.js`'s maps-link fallback, `scripts/prerender.js`'s JSON-LD `geo`).
+**Coordinate resolution (`eventCoord(v)` in `js/dates.js`, loaded by both the
+browser and `scripts/prerender.js` — see Architecture above):** buluo
+identity/location now lives in the shared `Datasets/buluo/*.json` db
+(`lat`/`lng`/`coord_precision`, threaded into `BULUO_REF` by
+`build_buluo_ref.js` — see below), not duplicated per-project. Every place
+that plots a pin or emits geo data calls `eventCoord(v)` instead of reading
+`v.lat`/`v.lng` directly (`js/map.js`'s marker/bounds/fit-to-filter code,
+`js/event.js`'s maps-link fallback, `scripts/prerender.js`'s JSON-LD `geo`).
 Priority: (1) `venueOverride:true` → the entry's own `lat`/`lng`; (2)
 `BULUO_REF[buluo_id].coord_precision` is `'exact'` or `'village'` (see
 `Datasets/buluo/schema.json` for what distinguishes them) → inherit that;
@@ -209,7 +225,7 @@ keyed by `src` (the `SOURCES` key), so one poster image can cover every
 `EVENTS` entry sharing that source (e.g. a single township-wide board
 covering 14 buluo) without duplicating
 the file path per entry — resolved together via `getScheduleDetail(v)` in
-`app.js`.
+`js/event.js`.
 
 **`data-tab` vs `data-ctab`:**  
 Global tab buttons (`.tab-btn`, `.sb-link`) use `data-tab`.  

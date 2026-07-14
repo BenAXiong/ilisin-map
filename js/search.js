@@ -106,7 +106,7 @@ function renderRecents(div) {
 function renderSearchResults() {
   const q      = document.getElementById('srInput').value;
   const div    = document.getElementById('srResults');
-  // The global "只看已收藏" toggle (app.js) counts as "hasAny" on its own —
+  // The global "只看已收藏" toggle (js/event.js) counts as "hasAny" on its own —
   // with it on, an otherwise-empty search shows the full saved list instead
   // of recent searches, and getSearchResults() (already routed through
   // visibleEvents(), which savedOnlyFilter restricts) naturally returns just

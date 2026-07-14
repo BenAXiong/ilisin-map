@@ -1,13 +1,11 @@
 /* ═══════════════════════════════════════════════════
-   SHARED UTILITIES
-   (must be defined before tab files' callbacks fire,
-    but tab files are parsed first — that's fine because
-    these functions are only *called* at runtime, not at
-    tab file parse time)
+   EVENT DOMAIN — filters, saved/favorite state, share,
+   card rendering. What tab files actually reach for.
+   (Shared utilities — safe to load after tab files parse, since they only
+    *call* these at runtime, never at their own parse time; see CLAUDE.md.)
    ═══════════════════════════════════════════════════ */
 
-const DECADE_DAY = { '上': 5, '中': 15, '下': 25 };
-const WEEKDAYS   = '日一二三四五六';
+const WEEKDAYS = '日一二三四五六';
 
 // Group filter shared by every browsing tab (timeline/map/search). No UI to
 // change this yet — hardcoded to 'ami' until a group selector lands. Only
@@ -96,7 +94,7 @@ document.querySelectorAll('[data-saved-filter-btn]').forEach(b =>
 const SHARE_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>`;
 
 // Query-string-on-the-single-page-app scheme — no server routes involved.
-// Read once at boot (see BOOT section) via URLSearchParams(location.search).
+// Read once at boot (see js/shell.js's BOOT section) via URLSearchParams(location.search).
 function shareUrl(id) {
   return `${location.origin}${location.pathname}?v=${id}`;
 }
@@ -147,7 +145,7 @@ const WEEKDAY_SUFFIX_RE = new RegExp(` ?([${WEEKDAYS}])`, 'g');
 // character at all, unlike most `date` strings — matches a bare "M/D" not
 // already followed by one, so it can be computed and inserted instead of
 // silently rendering as a shorter, inconsistent-looking date. Assumes 2026,
-// same convention as parseStartDate()/parseEndDate() below.
+// same convention as js/dates.js's parseStartDate()/parseEndDate().
 const MD_NO_WEEKDAY_RE = new RegExp(`(\\d{1,2})/(\\d{1,2})(?!\\d)(?!\\s?[${WEEKDAYS}])`, 'g');
 function dateHtml(dateStr) {
   const withWeekdays = dateStr.replace(MD_NO_WEEKDAY_RE, (m, mo, da) =>
@@ -157,21 +155,6 @@ function dateHtml(dateStr) {
     .replace(/[–—]/g, '~')
     .replace(WEEKDAY_SUFFIX_RE, (_, c) => `<span class="card-date-weekday">(${c})</span>`);
 }
-
-function parseStartDate(str) {
-  const slash = str.match(/(\d{1,2})\/(\d{1,2})/);
-  if (slash) return new Date(2026, Number(slash[1]) - 1, Number(slash[2]));
-  const decade = str.match(/(\d{1,2})月([上中下])旬/);
-  if (decade) return new Date(2026, Number(decade[1]) - 1, DECADE_DAY[decade[2]]);
-  return null;
-}
-
-function parseEndDate(str) {
-  const m = str.match(/\d{1,2}\/\d{1,2}[^–—]*[–—](\d{1,2})\/(\d{1,2})/);
-  if (m) return new Date(2026, Number(m[1]) - 1, Number(m[2]));
-  return null;
-}
-
 
 // Indigenous/romanized name resolution shared by namesHtml() and the detail
 // overlay header (js/detail.js puts this name in the sticky header bar
@@ -186,32 +169,9 @@ function indigenousNameInfo(v) {
   return { ref, latinName, tooltipParts };
 }
 
-// Resolves the best available coordinate for an EVENTS entry. Priority:
-// 1. `venueOverride:true` — hand-curated flag for the rare case where the
-//    festival is genuinely held somewhere other than the buluo's own
-//    community (not the default; must be set explicitly per entry).
-// 2. BULUO_REF's coordinate, if it's been geocoded to `'exact'` (real
-//    per-venue) or `'village'` (named landmark/administrative-village
-//    anchor — still better than a township-wide centroid) precision —
-//    buluo identity/location now lives in the shared Datasets/buluo db,
-//    not duplicated per-project.
-// 3. This entry's own lat/lng — usually still just a township-level
-//    approximation, kept as a fallback so nothing regresses while BULUO_REF
-//    coverage is incomplete.
-// 4. BULUO_REF's coordinate at any precision, else null (no pin).
-const GOOD_COORD_PRECISION = new Set(['exact', 'village']);
-function eventCoord(v) {
-  if (v.venueOverride && v.lat != null && v.lng != null) return [v.lat, v.lng];
-  const ref = v.buluo_id && typeof BULUO_REF !== 'undefined' ? BULUO_REF[v.buluo_id] : null;
-  if (GOOD_COORD_PRECISION.has(ref?.coord_precision) && ref.lat != null && ref.lng != null) return [ref.lat, ref.lng];
-  if (v.lat != null && v.lng != null) return [v.lat, v.lng];
-  if (ref?.lat != null && ref.lng != null) return [ref.lat, ref.lng];
-  return null;
-}
-
 // Resolves the administrative 村/里 for an EVENTS entry, same
-// buluo-identity-lives-in-BULUO_REF pattern as eventCoord() above — not a
-// hand-curated EVENTS field, sourced from Datasets/buluo/*.json's own
+// buluo-identity-lives-in-BULUO_REF pattern as js/dates.js's eventCoord() —
+// not a hand-curated EVENTS field, sourced from Datasets/buluo/*.json's own
 // `village` and threaded through by build_buluo_ref.js. `buluo_ids`-merged
 // entries join each distinct village named, in case the merged buluo sit in
 // different administrative villages.
@@ -339,140 +299,4 @@ function addDragScroll(el) {
 
 function trackEvent(name, data) {
   window.umami?.track(name, data);
-}
-
-/* ═══════════════════════════════════════════════════
-   THEME
-   ═══════════════════════════════════════════════════ */
-
-const THEMES  = ['', 'folad', 'riyar', 'fois'];
-const T_LABEL = ['☀', '◑', '〰', '✦'];
-const T_TITLE = ['Cidal', 'Folad', 'Riyar', "Fo'is"];
-let themeIdx  = 0;
-
-function applyTheme(idx) {
-  themeIdx = idx % THEMES.length;
-  document.documentElement.dataset.theme = THEMES[themeIdx];
-  document.querySelectorAll('[data-theme-btn]').forEach(b => {
-    b.textContent = T_LABEL[themeIdx];
-    b.title = T_TITLE[themeIdx];
-  });
-  localStorage.setItem('pokoh-theme', String(themeIdx));
-  /* Mobile status bar (Android/Chrome) — match .app-header's actual
-     background (var(--bg)) instead of the static amber fallback baked
-     into index.html for pre-JS paint. */
-  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-  if (themeColorMeta) themeColorMeta.setAttribute('content', getComputedStyle(document.body).backgroundColor);
-}
-(function initTheme() {
-  const saved = Number.parseInt(localStorage.getItem('pokoh-theme') ?? '0', 10);
-  applyTheme(Number.isNaN(saved) ? 0 : saved);
-})();
-document.querySelectorAll('[data-theme-btn]').forEach(b =>
-  b.addEventListener('click', () => applyTheme(themeIdx + 1))
-);
-
-/* ═══════════════════════════════════════════════════
-   TAB SWITCHING
-   ═══════════════════════════════════════════════════ */
-
-let currentTab      = 'timeline';
-let infoInitialized = false;
-
-function switchTab(name) {
-  if (name === currentTab) return;
-  trackEvent('tab_switch', { tab: name });
-  document.getElementById('panel-' + currentTab).classList.remove('active');
-  document.getElementById('panel-' + name).classList.add('active');
-  document.querySelectorAll('.tab-btn, .sb-link').forEach(b =>
-    b.classList.toggle('active', b.dataset.tab === name)
-  );
-  document.body.className = 'tab-' + name;
-  currentTab = name;
-
-  if (name !== 'map' && window.innerWidth >= 768 && bsState !== 'collapsed') {
-    setSheetState('collapsed');
-  }
-  if (name === 'map') {
-    if (mapInitialized) {
-      leafletMap.invalidateSize();
-    } else {
-      initMap();
-    }
-  }
-  if (name === 'info' && !infoInitialized) {
-    initInfo();
-    infoInitialized = true;
-  }
-}
-
-document.querySelector('.tab-bar').addEventListener('click', e => {
-  const btn = e.target.closest('.tab-btn');
-  if (btn) switchTab(btn.dataset.tab);
-});
-document.getElementById('sidebar').addEventListener('click', e => {
-  const btn = e.target.closest('.sb-link');
-  if (btn) switchTab(btn.dataset.tab);
-});
-
-/* ═══════════════════════════════════════════════════
-   PWA
-   ═══════════════════════════════════════════════════ */
-
-let deferredPrompt = null;
-globalThis.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  document.getElementById('installBtn').hidden = false;
-});
-document.getElementById('installBtn').addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  trackEvent('pwa_install', { outcome });
-  deferredPrompt = null;
-  document.getElementById('installBtn').hidden = true;
-});
-
-/* ═══════════════════════════════════════════════════
-   SERVICE WORKER
-   ═══════════════════════════════════════════════════ */
-
-if ('serviceWorker' in navigator) {
-  /* sw.js skips waiting and claims clients on its own; once it takes over,
-     reload so this tab picks up the new shell rather than running stale JS
-     against a freshly-swapped cache. */
-  let swRefreshing = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (swRefreshing) return;
-    swRefreshing = true;
-    location.reload();
-  });
-
-  globalThis.addEventListener('load', async () => {
-    const reg = await navigator.serviceWorker.register('/sw.js').catch(() => {});
-    if (!reg) return;
-    /* Force a byte-diff check now and whenever the installed app regains focus. */
-    reg.update();
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') reg.update();
-    });
-  });
-}
-
-/* ═══════════════════════════════════════════════════
-   BOOT
-   ═══════════════════════════════════════════════════ */
-
-/* Mark the document as JS-ready (hides the static Phase C prerender content) */
-document.documentElement.classList.add('js-ready');
-
-initTimeline();
-
-// Shared-event deep link (v2-I) — ?v=<id>, opens straight into the v2-A
-// detail overlay. openDetail is defined in js/detail.js, which loads before
-// this file per the script-order convention (see CLAUDE.md).
-const sharedEventId = new URLSearchParams(location.search).get('v');
-if (sharedEventId && EVENTS.some(v => v.id === sharedEventId)) {
-  openDetail(sharedEventId);
 }

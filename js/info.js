@@ -15,25 +15,11 @@ Object.keys(TOWNSHIP_MAP).forEach(c => {
   TOWNSHIP_MAP[c] = [...TOWNSHIP_MAP[c]].sort();
 });
 
-function parseDateRange(dateStr) {
-  if (!dateStr || dateStr === '—' || dateStr === '停辦') return null;
-  if (dateStr.includes('–')) {
-    const [startPart, endRaw] = dateStr.split('–');
-    const s = startPart.match(/(\d+)\/(\d+)/);
-    const e = endRaw.split('；')[0].match(/(\d+)\/(\d+)/);
-    if (!s || !e) return null;
-    return { startM: +s[1], startD: +s[2], endM: +e[1], endD: +e[2] };
-  }
-  const m = dateStr.match(/(\d+)\/(\d+)/);
-  if (!m) return null;
-  return { startM: +m[1], startD: +m[2], endM: +m[1], endD: +m[2] };
-}
-
 function festivalDayCount(dateStr) {
-  const r = parseDateRange(dateStr);
-  if (!r) return 0;
-  const start = new Date(2026, r.startM - 1, r.startD);
-  const end   = new Date(2026, r.endM   - 1, r.endD);
+  if (!dateStr || dateStr === '—' || dateStr === '停辦') return 0;
+  const start = parseStartDate(dateStr);
+  if (!start) return 0;
+  const end = parseEndDate(dateStr) || start;
   return Math.round((end - start) / 86400000) + 1;
 }
 
@@ -57,19 +43,17 @@ function initInfo() {
     .filter(v => v.group === 'ami' && v.status !== 'cancelled' && v.date && v.date !== '—')
     .reduce((sum, v) => sum + festivalDayCount(v.date), 0);
 
-  let firstVal = Infinity, lastVal = -Infinity;
-  let firstM, firstD, lastM, lastD;
+  let firstDate = null, lastDate = null;
   EVENTS.forEach(v => {
     if (v.group !== 'ami' || v.status === 'cancelled') return;
-    const r = parseDateRange(v.date);
-    if (!r) return;
-    const sv = r.startM * 100 + r.startD;
-    const ev = r.endM   * 100 + r.endD;
-    if (sv < firstVal) { firstVal = sv; firstM = r.startM; firstD = r.startD; }
-    if (ev > lastVal)  { lastVal  = ev; lastM  = r.endM;   lastD  = r.endD;  }
+    const s = parseStartDate(v.date);
+    if (!s) return;
+    const e = parseEndDate(v.date) || s;
+    if (!firstDate || s < firstDate) firstDate = s;
+    if (!lastDate || e > lastDate) lastDate = e;
   });
-  const dateRange = firstVal < Infinity
-    ? `${firstM}/${firstD}~${lastM}/${lastD}`
+  const dateRange = firstDate
+    ? `${firstDate.getMonth() + 1}/${firstDate.getDate()}~${lastDate.getMonth() + 1}/${lastDate.getDate()}`
     : '—';
 
   document.getElementById('infoTiles').innerHTML = [
