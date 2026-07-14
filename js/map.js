@@ -95,6 +95,11 @@ function setSheetState(state, from) {
       if (mapEl && leafletMap) leafletMap.invalidateSize();
     }
   }
+  // #mapFloatCard is mobile's replacement for the sheet's "half" state (see
+  // its CSS) — just needs to track the same collapsed-vs-selected distinction,
+  // not the half/full split, since a single floating card has no "full" size.
+  const floatCard = document.getElementById('mapFloatCard');
+  if (floatCard) floatCard.hidden = state === 'collapsed';
 }
 
 function deselect() {
@@ -211,6 +216,15 @@ function makeSectionHtml(v) {
   return cardHtml(v, `data-vid="${v.id}" onclick="openDetail('${v.id}')"`);
 }
 
+// #mapFloatCard's content — same card markup as the sheet's list rows (see
+// makeSectionHtml), just one of them, plus a close button since there's no
+// drag-to-dismiss handle on a floating card the way there is on the sheet.
+function renderFloatCard(v) {
+  const card = document.getElementById('mapFloatCard');
+  if (!card || !v) return;
+  card.innerHTML = `<button class="map-float-close" aria-label="關閉" onclick="deselect()">✕</button>${makeSectionHtml(v)}`;
+}
+
 function activateVillage(id) {
   if (activeId && markers[activeId]) {
     const prev = EVENTS.find(x => x.id === activeId);
@@ -221,6 +235,7 @@ function activateVillage(id) {
   if (markers[id]) markers[id].setIcon(makeIcon(EVENTS.find(v => v.id === id)?.status, true));
 
   renderSheet();
+  renderFloatCard(EVENTS.find(v => v.id === id));
   setSheetState('half');
 
   document.querySelectorAll('.village-card').forEach(c =>
@@ -230,15 +245,19 @@ function activateVillage(id) {
   // Scroll only #bsContent to land the activated card at the top of the
   // visible area. Same reason: avoid scrollIntoView propagating to #panel-map.
   // Deferred past the sheet's CSS transition (.35s) so getBoundingClientRect
-  // values are stable when we compute the target scroll position.
-  setTimeout(() => {
-    const bsContent = document.getElementById('bsContent');
-    const card = bsContent?.querySelector(`.village-card[data-vid="${id}"]`);
-    if (card && bsContent) {
-      const top = card.getBoundingClientRect().top - bsContent.getBoundingClientRect().top + bsContent.scrollTop;
-      bsContent.scrollTo({ top, behavior: 'smooth' });
-    }
-  }, 360);
+  // values are stable when we compute the target scroll position. Desktop
+  // only — mobile shows #mapFloatCard instead of scrolling to a card inside
+  // the (now hidden) sheet.
+  if (window.innerWidth >= 768) {
+    setTimeout(() => {
+      const bsContent = document.getElementById('bsContent');
+      const card = bsContent?.querySelector(`.village-card[data-vid="${id}"]`);
+      if (card && bsContent) {
+        const top = card.getBoundingClientRect().top - bsContent.getBoundingClientRect().top + bsContent.scrollTop;
+        bsContent.scrollTo({ top, behavior: 'smooth' });
+      }
+    }, 360);
+  }
 
   trackEvent('village_tap', { id, name: EVENTS.find(v => v.id === id)?.chinese });
 }

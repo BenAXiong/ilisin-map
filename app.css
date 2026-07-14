@@ -879,6 +879,57 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   font-style: italic;
 }
 
+/* Retired below 768px in favor of #mapFloatCard (one floating card for the
+   selected village, not a scroll-to-card list) — kept, not deleted, so the
+   desktop side panel above is completely untouched and this is a one-line
+   revert if the floating card doesn't work out. */
+@media (max-width: 767px) {
+  .bs { display: none; }
+}
+
+/* ── Map floating card (mobile only) ───────────
+   Mobile's replacement for .bs's "half" state — a single card for whichever
+   village is currently selected, instead of scrolling a shared list to it.
+   Desktop keeps using .bs (see its own mobile-hide rule above); the two are
+   mutually exclusive per viewport, driven by the same bsState/activeId via
+   setSheetState()/activateVillage() in js/map.js, not a separate state
+   machine. */
+.map-float-card {
+  position: absolute;
+  left: 10px; right: 10px;
+  bottom: 96px;
+  z-index: 550;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px oklch(from var(--ink) l c h / 0.24);
+  animation: map-float-in .25s cubic-bezier(.34, 1.56, .64, 1);
+}
+.map-float-card .village-card,
+.map-float-card .village-card.active {
+  padding: .75rem 2.2rem .75rem .85rem;
+  border: none;
+}
+.map-float-card .village-card:hover { background: none; border-left-color: transparent; }
+.map-float-close {
+  position: absolute;
+  top: 4px; right: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  padding: .4rem .55rem;
+}
+.map-float-close:hover { color: var(--text-1); }
+@keyframes map-float-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (min-width: 768px) {
+  .map-float-card { display: none; }
+}
+
 /* ── Shared village cards ───────────────────── */
 .village-card {
   padding: .6rem .85rem;
