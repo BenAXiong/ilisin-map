@@ -952,6 +952,16 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    name in one flex row) — on its own row here that would push it away from
    the names/venue rows' shared left edge, so override to left. */
 .map-float-row .card-date { text-align: left; }
+/* .card-date's shared color is --amber-dark (accent, unshifted hue) and
+   .card-amis's is --terra (accent, hue+12°) — 12° apart reads as "two
+   distinct colors" when they're side by side in a list row, but stacked as
+   two full rows here they collapse into "the same purple" (confirmed in
+   the fois theme, where accent is already a saturated purple). Scoped to
+   the floater only — .card-date is shared by every other card usage in the
+   app and shouldn't change there. Specificity (2 classes) still loses to
+   .card-cancelled/.card-tbd .card-date (defined later, same specificity),
+   so those keep their own muted+strikethrough treatment untouched. */
+.map-float-card .card-date { color: var(--text-2); }
 /* No close button — dismiss is tap-outside-to-deselect only (existing
    leafletMap click handler in js/map.js), so these just need to clear the
    top-right corner, not read over a photo (the image sits to the left, not
