@@ -234,6 +234,7 @@ function selectDay(date) {
     c.classList.toggle('active', c.dataset.date === date.toDateString())
   );
   renderDayCards();
+  scrollStripToDay(date);
 }
 
 // Tapping a band navigates to its date (like tapping a day cell) and its
