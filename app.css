@@ -401,6 +401,10 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   text-overflow: ellipsis;
   text-align: center;
 }
+/* Same badge as .card-multi (cards/detail overlay), recolored to the band
+   label's own derived accent tone instead of --text-3 — --text-3 reads as
+   muddy against the band's pale accent-tinted background. */
+.tl-band-label .card-multi { color: currentColor; margin-right: .2rem; }
 
 /* Band tooltip */
 #tl-tip {
@@ -882,6 +886,17 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* Flags a buluo_ids-merged or joint:true entry — not one buluo's own event.
+   Sits first in .card-names, ahead of the (possibly truncated) name text, so
+   it never gets clipped by the row's ellipsis overflow. Muted --text-3, same
+   as the alt-name spans below — informational, not a primary-attention cue. */
+.card-multi {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-right: .3rem;
+  color: var(--text-3);
 }
 .card-chinese { font-family: var(--cn);   font-size: var(--fs-base); font-weight: 600; line-height: 1.25; }
 .card-chinese-alt { font-family: var(--cn); font-size: var(--fs-sm); font-weight: 400; color: var(--text-3); margin-left: .2rem; }

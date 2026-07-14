@@ -192,7 +192,7 @@ function renderStrip() {
     const tip  = `${v.chinese} · ${shortName(v.township)} · ${shortName(v.county)}${welcomeTip}`;
     const label = tlNameMode === 'indigenous' ? (indigenousNameInfo(v).latinName || '?') : v.chinese;
     bandsHtml += `<div class="tl-band${welcomeCls}" data-tip="${tip}" style="left:${left}px;width:${w}px;top:${top}px;height:${BAND_H}px" onmouseenter="showBandTip(this)" onmouseleave="hideBandTip()" onclick="selectBandVillage('${v.id}', ${v._s.getTime()})">
-      <span class="tl-band-label">${label}</span>
+      <span class="tl-band-label">${multiBadgeHtml(v)}${label}</span>
     </div>`;
   });
 

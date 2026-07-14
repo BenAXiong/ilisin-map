@@ -51,6 +51,21 @@ function toggleSaved(id) {
 
 const BOOKMARK_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h12a1 1 0 0 1 1 1V21l-7-4.2L5 21V4.5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
 
+// Two overlapping circles — flags an EVENTS entry as more than one buluo's
+// own event (`buluo_ids` merge or `joint:true` umbrella), used by
+// namesHtml() below and js/timeline.js's band rendering.
+const MULTI_SVG = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/></svg>`;
+
+// Shared by namesHtml() and js/timeline.js — title text explains *why* the
+// icon appears, distinguishing a hand-curated buluo_ids merge (same
+// venue/date, see docs/ROADMAP-v2.md v2-O) from a joint/umbrella event that
+// was never one specific buluo to begin with.
+function multiBadgeHtml(v) {
+  if (v.buluo_ids) return `<span class="card-multi" title="本活動由 ${v.buluo_ids.length} 個登記部落共同舉行">${MULTI_SVG}</span>`;
+  if (v.joint) return `<span class="card-multi" title="聯合／跨部落活動">${MULTI_SVG}</span>`;
+  return '';
+}
+
 // Handles a tap on any per-card save button (timeline/search/map-sheet cards,
 // detail overlay). Re-renders the currently visible list only when the
 // saved-only filter is active, so unsaving a card while filtered-to-saved
@@ -244,7 +259,7 @@ function namesHtml(v, { showAmis = true } = {}) {
   const altHtml    = altChinese ? ` <span class="card-chinese-alt">(${altChinese})</span>` : '';
   const amisAltHtml = (showAmis && altLatin) ? ` <span class="card-amis-alt">(${altLatin})</span>` : '';
   const amisHtml   = (showAmis && latinName) ? `<span class="card-amis">${latinName}</span>${amisAltHtml}` : '';
-  return `<div class="card-names"${namesTitle}><span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>`;
+  return `<div class="card-names"${namesTitle}>${multiBadgeHtml(v)}<span class="card-chinese">${v.chinese}</span>${altHtml}${amisHtml}</div>`;
 }
 
 // Resolves per-village schedule/poster detail (schedule.js), merging a
