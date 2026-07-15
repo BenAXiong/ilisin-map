@@ -220,13 +220,13 @@ function makeSectionHtml(v) {
 // the poster as a left-side thumbnail, not a variant of the shared
 // .village-card list-row shape (which pairs name+date in one row and drops
 // the welcome badge in a meta row) — reuses the same building blocks
-// (namesHtml/dateHtml/venueLinkHtml, the save/share buttons) at the piece
-// level, not the whole assembled row. No close button — dismiss is
-// tap-outside-to-deselect only (leafletMap's own click handler already
-// does this), so there's no drag handle or ✕ to build here either.
-// Poster image (schedule.js, via getScheduleDetail) is a bonus, not assumed
-// — most entries don't have one, so it's simply omitted rather than shown
-// as a placeholder/empty state.
+// (namesHtml/dateHtml/venueLinkHtml, the save/share buttons, and the same
+// 迎賓 badge markup cardBodyHtml() builds) at the piece level, not the whole
+// assembled row. No close button — dismiss is tap-outside-to-deselect only
+// (leafletMap's own click handler already does this), so there's no drag
+// handle or ✕ to build here either. Poster image (schedule.js, via
+// getScheduleDetail) is a bonus, not assumed — most entries don't have one,
+// so it's simply omitted rather than shown as a placeholder/empty state.
 function renderFloatCard(v) {
   const card = document.getElementById('mapFloatCard');
   if (!card || !v) return;
@@ -236,11 +236,15 @@ function renderFloatCard(v) {
     : '';
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
+  const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
+  const welcomeHtml = v.welcome_date
+    ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
+    : '';
   card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="village-card card-${v.status}" data-vid="${v.id}" onclick="openDetail('${v.id}')">
     <div class="map-float-icons">${shareHtml}${saveHtml}</div>
     <div class="map-float-row">${namesHtml(v)}</div>
-    <div class="map-float-row"><span class="card-date">${dateHtml(v.date)}</span></div>
+    <div class="map-float-row"><span class="card-date">${dateHtml(v.date)}</span>${welcomeHtml}</div>
     <div class="map-float-row">${venueLinkHtml(v)}</div>
   </div>`;
 }

@@ -958,14 +958,37 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 .map-float-card .village-card,
 .map-float-card .village-card.active {
   position: relative;
-  padding: .7rem .85rem;
+  /* Extra bottom padding reserves room for .map-float-icons (now bottom-
+     right, see below) so it sits in its own clear space below the venue
+     row rather than floating over whatever text happens to be there —
+     an absolutely positioned sibling paints above in-flow content
+     regardless of DOM order, so without this a long venue string could
+     visually run under the icons. */
+  padding: .7rem .85rem 2.1rem .85rem;
   display: flex;
   flex-direction: column;
   gap: .3rem;
   border: none;
 }
-.map-float-card.has-poster .village-card { margin-left: 100px; }
-.map-float-card .village-card:hover { background: none; border-left-color: transparent; }
+/* Ticket-stub divider — dashed rather than solid, at the exact image/text
+   boundary (same 100px the image itself is width:100px at), so it reads as
+   a perforation between the "stub" (image) and the "ticket" (info) rather
+   than a generic column rule. */
+.map-float-card.has-poster .village-card {
+  margin-left: 100px;
+  border-left: 1.5px dashed var(--border-2);
+}
+/* background only — NOT border-left-color: the has-poster dashed divider
+   above already beats the shared .village-card:hover accent color on
+   specificity alone (3 classes vs. its 1 class + pseudo), so resetting
+   border-left-color here would instead undo *this* rule's own divider on
+   hover/tap, which is the opposite of the intent. */
+.map-float-card .village-card:hover { background: none; }
+/* Every row (not just the date one) gets the same flex treatment — mainly
+   so the date + 迎賓 badge sit inline with a real gap between them, but
+   harmless for the single-child names/venue rows too (and centers the
+   venue row's pin icon against its text for free). */
+.map-float-row { display: flex; align-items: center; gap: .4rem; }
 /* .card-date defaults to text-align:right (it normally sits opposite the
    name in one flex row) — on its own row here that would push it away from
    the names/venue rows' shared left edge, so override to left. */
@@ -980,13 +1003,16 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    .card-cancelled/.card-tbd .card-date (defined later, same specificity),
    so those keep their own muted+strikethrough treatment untouched. */
 .map-float-card .card-date { color: var(--text-2); }
-/* No close button — dismiss is tap-outside-to-deselect only (existing
-   leafletMap click handler in js/map.js), so these just need to clear the
-   top-right corner, not read over a photo (the image sits to the left, not
-   behind this column) — no frosted backdrop needed, plain icon buttons. */
+/* Bottom-right (design reference), not top — the extra bottom padding on
+   .village-card above reserves this corner as dead space, so it never
+   overlaps the venue row regardless of that row's text length. No close
+   button — dismiss is tap-outside-to-deselect only (existing leafletMap
+   click handler in js/map.js). Not reading over a photo (the image sits to
+   the left, not behind this column), so no frosted backdrop needed, plain
+   icon buttons. */
 .map-float-icons {
   position: absolute;
-  top: .55rem; right: .65rem;
+  bottom: .55rem; right: .65rem;
   display: flex;
   align-items: center;
   gap: .35rem;
