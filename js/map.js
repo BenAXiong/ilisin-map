@@ -247,10 +247,14 @@ function renderFloatCard(v) {
     : '';
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
+  // Unlike the list cards' .card-welcome (cardBodyHtml(), which omits the
+  // pill entirely when there's no welcome_date), the floater always shows
+  // it — "無資料" instead of a date — per explicit request specific to
+  // this and the detail overlay, not list cards generally.
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
   const welcomeHtml = v.welcome_date
     ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
-    : '';
+    : `<span class="card-welcome" title="迎賓日 無資料">迎賓 無資料</span>`;
   card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="map-float-text">
     <div class="map-float-header" onclick="openDetail('${v.id}')">

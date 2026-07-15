@@ -20,17 +20,20 @@ function renderDetailBody(v) {
 
   // Row 2: "show in Pokoh map" (relocated from the header's icon-only
   // button, 2026-07-14 — a bare pin icon there didn't communicate what it
-  // did) inline with the welcome-day pill, when present — sharing a row
-  // rather than each getting its own (2026-07-14) since both are short.
+  // did) inline with the welcome-day pill — sharing a row rather than each
+  // getting its own (2026-07-14) since both are short. Unlike the list
+  // cards' .card-welcome (cardBodyHtml(), which omits the pill entirely
+  // when there's no welcome_date), the detail overlay always shows it —
+  // "無資料" instead of a date — per explicit request specific to this and
+  // the map floater, not list cards generally.
   const pokohMapLinkHtml = `<a class="detail-pokohmap-link" href="javascript:void(0)" onclick="closeDetail(); goToMapVillage('${v.id}')">
     <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     顯示於 Pokoh 地圖
   </a>`;
-  let welcomePillHtml = '';
-  if (v.welcome_date) {
-    const timeText = v.welcome_time ? ` ${v.welcome_time}` : '';
-    welcomePillHtml = `<span class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${timeText}</span>`;
-  }
+  const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
+  const welcomePillHtml = v.welcome_date
+    ? `<span class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${welcomeTimeText}</span>`
+    : `<span class="detail-welcome">迎賓日 無資料</span>`;
   const row2Html = `<div class="detail-row2">${pokohMapLinkHtml}${welcomePillHtml}</div>`;
 
   // Row 3: venue — county/township now dot-separated like the mobile card
