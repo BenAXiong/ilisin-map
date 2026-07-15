@@ -859,21 +859,27 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   #mapClusterToggle { bottom: 96px; }
 }
 
-/* Mobile: centered in the transparent header's free gap between the logo
-   (.header-left) and the bookmark/theme icons (.header-right) — measured
-   via real-browser check (170px gap, 128px-298px at a 390px viewport),
-   not eyeballed, so left:50% safely clears both sides regardless of the
-   gap's exact width on other viewport sizes. Was bottom-left, symmetrical
+/* Mobile: sits flush against the header's icon-button cluster (saved-
+   filter + theme, .header-right) — was centered in the free gap between
+   logo and icons, moved again per explicit request to sit right next to
+   those buttons instead. right:100px is a fixed offset, not measured at
+   one viewport width and left fragile: .header-right's 2 buttons (34px
+   each) + their 8px gap + .app-header's own 1rem right padding are all
+   fixed pixel sizes regardless of viewport width (confirmed .header-right
+   is always exactly these 2 buttons on the map tab specifically — the
+   timeline-only overview/name-toggle buttons that also live in the shared
+   header are display:none outside body.tab-timeline), so anchoring from
+   the right edge holds on any phone width. Was bottom-left, symmetrical
    with #mapClusterToggle; that toggle is hidden now (see its own rule)
-   and this one moved up into the header per explicit request, so neither
-   the symmetry nor the bottom position still apply. Desktop is reset back
-   to the original bottom-left position below — .app-header doesn't exist
-   there at all (sidebar nav instead), so there's no header to move into. */
+   and this one moved up into the header per an earlier request, so
+   neither the symmetry nor the bottom position still apply. Desktop is
+   reset back to the original bottom-left position below — .app-header
+   doesn't exist there at all (sidebar nav instead), so there's no header
+   to move into. */
 #mapSatelliteToggle {
   position: absolute;
-  left: 50%;
+  right: 100px;
   top: 6px;
-  transform: translateX(-50%);
   z-index: 500;
 }
 .map-sat-btn {
@@ -884,8 +890,37 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   height: 32px;
   padding: 0;
 }
+/* Restyled to match .header-icon-btn's individual circular-button
+   treatment (34px, opaque surface, shadow) instead of the shared-pill
+   segmented-control look every other map-tab toggle uses — still the
+   same underlying 2-option toggle (setSatelliteMode() in js/map.js),
+   just presented as 2 standalone circles sitting side by side here,
+   matching the buttons it now sits next to, rather than one shared pill.
+   Scoped to mobile only (.map-chips/.map-sat-btn's own un-scoped rules
+   are shared with every other map-tab toggle group, so overrides belong
+   here, not on those classes directly) — desktop keeps the original pill
+   look untouched, inherited from .map-chips as before. */
+@media (max-width: 767px) {
+  #mapSatelliteToggle {
+    display: flex;
+    gap: .5rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  #mapSatelliteToggle .map-sat-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
+  }
+  #mapSatelliteToggle .map-sat-btn.active { background: var(--accent); color: var(--bg); }
+}
 @media (min-width: 768px) {
-  #mapSatelliteToggle { left: 10px; top: auto; bottom: 96px; transform: none; }
+  #mapSatelliteToggle { left: 10px; right: auto; top: auto; bottom: 96px; transform: none; }
 }
 
 /* ── Bottom sheet ───────────────────────────── */
