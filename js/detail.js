@@ -26,10 +26,27 @@ function renderDetailBody(v) {
   // when there's no welcome_date), the detail overlay always shows it —
   // "無資料" instead of a date — per explicit request specific to this and
   // the map floater, not list cards generally.
-  const pokohMapLinkHtml = `<a class="detail-pokohmap-link" href="javascript:void(0)" onclick="closeDetail(); goToMapVillage('${v.id}')">
-    <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    顯示於 Pokoh 地圖
-  </a>`;
+  //
+  // On the map tab specifically, a "show on map" link is pointless — the
+  // map is already what's on screen — so it's swapped for a "show on
+  // timeline" link instead (same navigation goToTimelineVillage() does as
+  // tapping the event's own timeline band: select its day, highlight+scroll
+  // its card). currentTab is js/shell.js's global tab tracker, read here
+  // at call time (this function only ever runs inside openDetail(), well
+  // after every script has loaded), not the `source` openDetail() was
+  // called with — a detail overlay opened from the map tab's desktop side
+  // panel list also gets the swap, not just the mobile floater, since both
+  // are "already looking at the map" the same way.
+  const onMapTab = typeof currentTab !== 'undefined' && currentTab === 'map';
+  const pokohMapLinkHtml = onMapTab
+    ? `<a class="detail-pokohmap-link" href="javascript:void(0)" onclick="closeDetail(); goToTimelineVillage('${v.id}')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2.5" stroke="currentColor" stroke-width="1.5"/><line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="1.5"/></svg>
+        顯示於時間軸
+      </a>`
+    : `<a class="detail-pokohmap-link" href="javascript:void(0)" onclick="closeDetail(); goToMapVillage('${v.id}')">
+        <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        顯示於 Pokoh 地圖
+      </a>`;
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
   const welcomePillHtml = v.welcome_date
     ? `<span class="detail-welcome">迎賓日 ${dateHtml(v.welcome_date)}${welcomeTimeText}</span>`
@@ -128,6 +145,11 @@ function openDetail(id, source = 'card') {
   const overlay = document.getElementById('detailOverlay');
   overlay.hidden = false;
   requestAnimationFrame(() => overlay.classList.add('open'));
+  // The map floater sits underneath the overlay otherwise — hide it while
+  // open, restored in closeDetail() below (gated on bsState, so it only
+  // reappears if a village is actually still selected on the map).
+  const floatCard = document.getElementById('mapFloatCard');
+  if (floatCard) floatCard.hidden = true;
   trackEvent('detail_open', { id, name: v.chinese, source });
 }
 
@@ -136,6 +158,8 @@ function closeDetail() {
   overlay.classList.remove('open');
   setTimeout(() => { overlay.hidden = true; }, 200);
   history.replaceState(null, '', location.pathname);
+  const floatCard = document.getElementById('mapFloatCard');
+  if (floatCard && typeof bsState !== 'undefined' && bsState !== 'collapsed') floatCard.hidden = false;
 }
 
 document.getElementById('detailCloseBtn').addEventListener('click', closeDetail);

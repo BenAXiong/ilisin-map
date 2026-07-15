@@ -251,6 +251,26 @@ function selectBandVillage(id, startTs) {
   openDetail(id, 'band');
 }
 
+// Same day-select + highlight + scroll as selectBandVillage() above, minus
+// hideBandTip() (nothing to hide, we're not on the timeline yet) and
+// openDetail() (called from the map detail overlay's own link, which is
+// already open — this is what replaces it, not the reverse). switchTab()
+// first since this is meant to be called from any tab, unlike
+// selectBandVillage() which only ever fires from a band already on the
+// timeline tab. Timeline itself doesn't need a readiness check — initTimeline()
+// runs unconditionally at boot (js/shell.js), not lazily on first tab visit.
+function goToTimelineVillage(id) {
+  const v = EVENTS.find(x => x.id === id);
+  const start = v && parseStartDate(v.date);
+  if (!start) return;
+  switchTab('timeline');
+  selectDay(start);
+  document.querySelectorAll('#tlDayList .village-card').forEach(c =>
+    c.classList.toggle('active', c.id === `card-${id}`)
+  );
+  document.getElementById(`card-${id}`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
 function scrollStripToDay(date) {
   const scroll  = document.getElementById('tlStripScroll');
   const offset  = tlDayOffset(date);
