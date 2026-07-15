@@ -220,15 +220,23 @@ function makeSectionHtml(v) {
 // split (js/detail.js), not the shared .village-card list-row shape: a
 // header with the indigenous/Amis name (indigenousNameInfo — same as the
 // detail overlay's title, Chinese name lives in the body instead) plus
-// share/save icons, then a body of name+date / a Google-maps-link+welcome-
-// badge row / venue — same building blocks (namesHtml/dateHtml/
-// venueLinkHtml/googleMapsUrl, the save/share buttons, the 迎賓 badge
-// markup) at the piece level, not the whole assembled row. No close
-// button — dismiss is tap-outside-to-deselect only (leafletMap's own click
-// handler already does this). Poster image (schedule.js, via
-// getScheduleDetail) is a bonus, not assumed — most entries don't have
-// one, so it's simply omitted rather than shown as a placeholder/empty
-// state.
+// share/save icons, then a body of name+date / an optional welcome-badge
+// row / venue — same building blocks (namesHtml/dateHtml/venueLinkHtml,
+// the save/share buttons, the 迎賓 badge markup) at the piece level, not
+// the whole assembled row. No close button — dismiss is tap-outside-to-
+// deselect only (leafletMap's own click handler already does this).
+// Poster image (schedule.js, via getScheduleDetail) is a bonus, not
+// assumed — most entries don't have one, so it's simply omitted rather
+// than shown as a placeholder/empty state.
+//
+// The detail overlay's row2 (an in-app "show on Pokoh map" link + the
+// welcome badge) doesn't translate here — first attempt swapped that link
+// for a second Google-maps link, but the venue row below already links to
+// Google Maps, so the two were just duplicates of each other pointing at
+// the same URL. Dropped the row2 link entirely; the badge now sits alone,
+// right-aligned to land under the date above (the convention .card-welcome
+// already follows elsewhere), and mapsHint is back on the venue row so the
+// "opens in Google Maps" affordance still exists somewhere on the card.
 function renderFloatCard(v) {
   const card = document.getElementById('mapFloatCard');
   if (!card || !v) return;
@@ -239,16 +247,9 @@ function renderFloatCard(v) {
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
-  const welcomeHtml = v.welcome_date
-    ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
+  const welcomeRowHtml = v.welcome_date
+    ? `<div class="map-float-row map-float-row2"><span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span></div>`
     : '';
-  // Same icon/label as .detail-pokohmap-link, pointed at Google Maps
-  // instead of Pokoh's own map — an in-app map link is redundant here,
-  // the floater already IS the map.
-  const gmapsLinkHtml = `<a class="map-float-gmaps-link" href="${googleMapsUrl(v)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-    <svg width="15" height="15" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="5.5" r="3.5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="5.5" r="1.5" fill="currentColor"/><path d="M7 9v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    在 Google 地圖開啟
-  </a>`;
   card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="map-float-text">
     <div class="map-float-header">
@@ -258,8 +259,8 @@ function renderFloatCard(v) {
     </div>
     <div class="village-card card-${v.status}" data-vid="${v.id}" onclick="openDetail('${v.id}')">
       <div class="map-float-row map-float-namedate">${namesHtml(v, { showAmis: false })}<span class="card-date">${dateHtml(v.date)}</span></div>
-      <div class="map-float-row map-float-row2">${gmapsLinkHtml}${welcomeHtml}</div>
-      <div class="map-float-row">${venueLinkHtml(v)}</div>
+      ${welcomeRowHtml}
+      <div class="map-float-row">${venueLinkHtml(v, { mapsHint: true })}</div>
     </div>
   </div>`;
 }

@@ -299,23 +299,15 @@ function shortAdmin(name) {
 // meant to inherit the list card's mobile-vs-desktop space-saving swap.
 // May ellipsis-truncate on narrow screens for now; that's an accepted
 // tradeoff, not a bug to chase yet.
-// Shared by venueLinkHtml() and the map floater's row2 Google-maps link
-// (js/map.js's renderFloatCard) — same destination, two different link
-// treatments around it.
-function googleMapsUrl(v) {
-  const hasVenue = v.venue && v.venue !== '—';
-  const coord    = eventCoord(v);
-  return hasVenue
-    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
-    : `https://www.google.com/maps/search/?api=1&query=${coord?.[0]},${coord?.[1]}`;
-}
-
 // Builds the venue pin+link shared by list cards and the detail overlay.
 // `dotBetweenAdmin`/`mapsHint` are detail-overlay-only additions (2026-07-14)
 // — list cards keep their existing compact look via the defaults below.
 function venueLinkHtml(v, { forceDesktopLoc = false, dotBetweenAdmin = false, mapsHint = false } = {}) {
   const hasVenue = v.venue && v.venue !== '—';
-  const mapsUrl  = googleMapsUrl(v);
+  const coord    = eventCoord(v);
+  const mapsUrl  = hasVenue
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
+    : `https://www.google.com/maps/search/?api=1&query=${coord?.[0]},${coord?.[1]}`;
   // Desktop has room for the venue name itself plus full county/township;
   // mobile drops the venue name and shows a shortened county/township(/village)
   // string instead — long venue names were the wrapping culprit on narrow

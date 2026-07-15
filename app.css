@@ -1018,11 +1018,14 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    background/border-left changes that need canceling regardless. */
 .map-float-card .village-card:hover { background: none; }
 .map-float-row { display: flex; align-items: center; gap: .4rem; }
-/* Name+date and the link+badge row both space-between (name/link at the
-   left edge, date/badge at the right) — same convention .card-top and
-   .detail-row2 already use elsewhere; the venue row (unnamed, no modifier)
-   stays left-aligned since it's a single flex child. */
-.map-float-namedate, .map-float-row2 { justify-content: space-between; }
+/* Name+date: space-between (name at the left edge, date at the right) —
+   same convention .card-top uses elsewhere. */
+.map-float-namedate { justify-content: space-between; }
+/* Row2 is welcome-badge-only now (see renderFloatCard()'s comment on why
+   the link that used to share this row was dropped) — flex-end lands it
+   under the date above, same "pill sits under the date" convention
+   .card-welcome already follows in list cards elsewhere. */
+.map-float-row2 { justify-content: flex-end; }
 /* .card-date defaults to text-align:right (it normally sits opposite the
    name in one flex row) — on its own row here that would push it away from
    the names/venue rows' shared left edge, so override to left. */
@@ -1037,21 +1040,6 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    .card-cancelled/.card-tbd .card-date (defined later, same specificity),
    so those keep their own muted+strikethrough treatment untouched. */
 .map-float-card .card-date { color: var(--text-2); }
-/* Google-maps row2 link — same visual treatment as .detail-pokohmap-link
-   (icon + label, terra-colored icon), just pointed at Google Maps instead
-   of Pokoh's own map (an in-app map link is redundant here — the floater
-   already IS the map). */
-.map-float-gmaps-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  font-size: var(--fs-xs);
-  color: var(--text-2);
-  text-decoration: none;
-}
-.map-float-gmaps-link svg { flex-shrink: 0; color: var(--terra); }
-.map-float-gmaps-link:hover { color: var(--text-1); }
-.map-float-gmaps-link:hover svg { color: var(--amber); }
 @keyframes map-float-in {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
