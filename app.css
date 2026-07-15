@@ -865,29 +865,28 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   #mapClusterToggle { bottom: 96px; }
 }
 
-/* Mobile: sits near the header's icon-button cluster (saved-filter +
-   theme, .header-right) — was centered in the free gap between logo and
-   icons, moved again per explicit request to sit near those buttons
-   instead. right:108px gives a ~16px gap before .header-right (wider
-   than that cluster's own internal 8px gap, deliberately — a bit more
-   breathing room between the toggle and the icon group than within it).
-   Still a fixed offset, not measured at one viewport width and left
-   fragile: .header-right's 2 buttons (34px each) + their 8px gap +
-   .app-header's own 1rem right padding are all fixed pixel sizes
-   regardless of viewport width (confirmed .header-right is always
-   exactly these 2 buttons on the map tab specifically — the timeline-only
-   overview/name-toggle buttons that also live in the shared header are
-   display:none outside body.tab-timeline), so anchoring from the right
-   edge holds on any phone width. Was bottom-left, symmetrical with
-   #mapClusterToggle; that toggle is hidden now (see its own rule) and
-   this one moved up into the header per an earlier request, so neither
-   the symmetry nor the bottom position still apply. Desktop is reset back
-   to the original bottom-left position below — .app-header doesn't exist
-   there at all (sidebar nav instead), so there's no header to move into. */
+/* DOM home is now inside #mapTopRow, right after #mapTimeDD (moved
+   2026-07-15 so desktop can lay it out in-flow — see the desktop rule
+   below). Mobile still wants it pinned near the header's icon-button
+   cluster regardless of where it sits in the DOM, so it uses `position:
+   fixed` (viewport-relative, ignores the new #mapFilters/#mapTopRow
+   ancestors entirely) rather than `absolute` — the right:108px/top:10px
+   offsets below are unchanged from when this was a direct #panel-map
+   child positioned `absolute`, and stay correct under `fixed` for the
+   same reason: no ancestor between here and the viewport sets a
+   transform on mobile (desktop's #mapFilters does, but that breakpoint
+   uses `position: static` instead, see below, so it never reaches this
+   fixed-positioning code path). right:108px gives a ~16px gap before
+   .header-right (wider than that cluster's own internal 8px gap,
+   deliberately — a bit more breathing room between the toggle and the
+   icon group than within it) — .header-right's 2 buttons (34px each) +
+   their 8px gap + .app-header's own 1rem right padding are all fixed
+   pixel sizes regardless of viewport width (confirmed .header-right is
+   always exactly these 2 buttons on the map tab specifically — the
+   timeline-only overview/name-toggle buttons that also live in the
+   shared header are display:none outside body.tab-timeline), so
+   anchoring from the right edge holds on any phone width. */
 #mapSatelliteToggle {
-  position: absolute;
-  right: 108px;
-  top: 10px;
   z-index: 500;
 }
 .map-sat-btn {
@@ -909,6 +908,9 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    already do the right thing here, same as every other toggle. */
 @media (max-width: 767px) {
   #mapSatelliteToggle {
+    position: fixed;
+    right: 108px;
+    top: 10px;
     height: 34px;
     padding: 3px;
     gap: 2px;
@@ -921,7 +923,22 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   }
 }
 @media (min-width: 768px) {
-  #mapSatelliteToggle { left: 10px; right: auto; top: auto; bottom: 96px; transform: none; }
+  /* In-flow, right of the time filter — it's the last child of
+     #mapTopRow now, which is a flex row (see the desktop #mapTopRow rule
+     above), so plain `static` positioning is all this needs. */
+  #mapSatelliteToggle { position: static; }
+  /* Match the sibling filter chips' height exactly rather than a guessed
+     px value: a desktop .map-chip's rendered height is its line-height
+     (fs-xs's 13px × body's 1.6) plus its own 4px top/bottom padding — the
+     same formula .map-sat-btn needs since #mapSatelliteToggle wraps it in
+     the same .map-chips pill (5px top/bottom padding) that #mapTimeChips/
+     #mapCountyChips use. Keeps the 3 chip groups' pills visually identical
+     in height without hardcoding a number that'd drift if fs-xs ever
+     changes. */
+  .map-sat-btn {
+    width: calc(var(--fs-xs) * 1.6 + 8px);
+    height: calc(var(--fs-xs) * 1.6 + 8px);
+  }
 }
 
 /* ── Bottom sheet ───────────────────────────── */
