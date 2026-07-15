@@ -159,6 +159,21 @@ body.tab-info .app-header { display: none; }
 body.tab-map .app-header {
   background: none;
   border-bottom: none;
+  /* Transparent background doesn't affect hit-testing — without this the
+     header's full-width, 54px-tall box still intercepts taps in its empty
+     middle (confirmed: #mapSatelliteToggle, moved into that gap below,
+     was unclickable until this was added — same dead zone would've
+     silently swallowed a tap on any marker rendered near the top of the
+     map too). auto is restored on .header-left/.header-right below so the
+     logo and icon buttons stay clickable; #mapSatelliteToggle itself isn't
+     a descendant of .app-header (separate element, lower z-index) so it
+     needs no rule of its own — none here just lets clicks pass through to
+     whatever's actually underneath at that point, map or toggle alike. */
+  pointer-events: none;
+}
+body.tab-map .header-left,
+body.tab-map .header-right {
+  pointer-events: auto;
 }
 body.tab-map .header-left {
   background: var(--surface);
@@ -844,13 +859,21 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   #mapClusterToggle { bottom: 96px; }
 }
 
-/* Bottom-left 2-segment icon toggle between the standard theme basemap and
-   Esri satellite imagery — symmetrical to #mapClusterToggle above (same
-   offsets, mirrored to the left edge), same reasons for the base offset. */
+/* Mobile: centered in the transparent header's free gap between the logo
+   (.header-left) and the bookmark/theme icons (.header-right) — measured
+   via real-browser check (170px gap, 128px-298px at a 390px viewport),
+   not eyeballed, so left:50% safely clears both sides regardless of the
+   gap's exact width on other viewport sizes. Was bottom-left, symmetrical
+   with #mapClusterToggle; that toggle is hidden now (see its own rule)
+   and this one moved up into the header per explicit request, so neither
+   the symmetry nor the bottom position still apply. Desktop is reset back
+   to the original bottom-left position below — .app-header doesn't exist
+   there at all (sidebar nav instead), so there's no header to move into. */
 #mapSatelliteToggle {
   position: absolute;
-  left: 10px;
-  bottom: 40px;
+  left: 50%;
+  top: 6px;
+  transform: translateX(-50%);
   z-index: 500;
 }
 .map-sat-btn {
@@ -862,7 +885,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   padding: 0;
 }
 @media (min-width: 768px) {
-  #mapSatelliteToggle { bottom: 96px; }
+  #mapSatelliteToggle { left: 10px; top: auto; bottom: 96px; transform: none; }
 }
 
 /* ── Bottom sheet ───────────────────────────── */
