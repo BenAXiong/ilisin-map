@@ -879,7 +879,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 #mapSatelliteToggle {
   position: absolute;
   right: 100px;
-  top: 6px;
+  top: 10px;
   z-index: 500;
 }
 .map-sat-btn {
@@ -890,34 +890,27 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   height: 32px;
   padding: 0;
 }
-/* Restyled to match .header-icon-btn's individual circular-button
-   treatment (34px, opaque surface, shadow) instead of the shared-pill
-   segmented-control look every other map-tab toggle uses — still the
-   same underlying 2-option toggle (setSatelliteMode() in js/map.js),
-   just presented as 2 standalone circles sitting side by side here,
-   matching the buttons it now sits next to, rather than one shared pill.
-   Scoped to mobile only (.map-chips/.map-sat-btn's own un-scoped rules
-   are shared with every other map-tab toggle group, so overrides belong
-   here, not on those classes directly) — desktop keeps the original pill
-   look untouched, inherited from .map-chips as before. */
+/* Resized to match the header row's height/vertical position — NOT split
+   into 2 independent circular buttons (that was tried and corrected: the
+   toggle must stay one linked control, same as every other map-tab toggle
+   group). Still just one .map-chips pill, inheriting its own background/
+   border/box-shadow unchanged — only the size, radius, and inner button
+   size are overridden here, scoped to mobile since .map-chips/.map-sat-btn
+   are shared with county/time/cluster's own toggle groups too. Active/
+   hover coloring is untouched — .map-chip.active/:hover's shared rules
+   already do the right thing here, same as every other toggle. */
 @media (max-width: 767px) {
   #mapSatelliteToggle {
-    display: flex;
-    gap: .5rem;
-    background: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
+    height: 34px;
+    padding: 3px;
+    gap: 2px;
+    border-radius: 99px;
   }
   #mapSatelliteToggle .map-sat-btn {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
   }
-  #mapSatelliteToggle .map-sat-btn.active { background: var(--accent); color: var(--bg); }
 }
 @media (min-width: 768px) {
   #mapSatelliteToggle { left: 10px; right: auto; top: auto; bottom: 96px; transform: none; }
