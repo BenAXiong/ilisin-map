@@ -29,6 +29,23 @@ const { parseStartDate, parseEndDate, eventCoord } = new Function(
   datesSrc + '\nreturn { parseStartDate, parseEndDate, eventCoord };'
 )(BULUO_REF);
 
+// schedule.js — same plain global-scope pattern as buluo-ref.js above.
+// Used to give Event JSON-LD a real per-festival image where one exists
+// (Google's Event rich-result eligibility requires `image`); falls back to
+// og-image.png (site-generic) for the majority of entries with no poster.
+// References SOURCES at parse time (poster.creditUrl), so it's passed in as
+// an explicit parameter — same reason js/dates.js takes BULUO_REF above.
+const scheduleSrc = fs.readFileSync(path.join(ROOT, 'schedule.js'), 'utf8');
+const { SCHEDULE_DETAILS, SCHEDULE_POSTERS } = new Function(
+  'SOURCES',
+  scheduleSrc + '\nreturn { SCHEDULE_DETAILS, SCHEDULE_POSTERS };'
+)(SOURCES);
+const FALLBACK_IMAGE = 'https://pokoh.vercel.app/og-image.png';
+function eventImage(v) {
+  const poster = SCHEDULE_DETAILS[v.id]?.poster || SCHEDULE_POSTERS[v.src] || null;
+  return poster ? `https://pokoh.vercel.app${poster.url}` : FALLBACK_IMAGE;
+}
+
 // ── Group config ──────────────────────────────────────────────────────
 const GROUP_META = {
   ami: { heading: '阿美族 Amis (Pangcah) · Ilisin 豐年祭', festival: 'Ilisin 豐年祭', org: '阿美族（Pangcah）' },
@@ -109,6 +126,7 @@ const events = confirmed
         },
       },
       organizer: { '@type': 'Organization', name: `${v.chinese} ${meta.org}` },
+      image: [eventImage(v)],
       inLanguage: 'zh-TW',
       isAccessibleForFree: true,
       url: 'https://pokoh.vercel.app/',
@@ -210,3 +228,13 @@ if (html.includes('<!-- JSONLD:START -->')) {
 
 fs.writeFileSync(INDEX, html, 'utf8');
 console.log(`prerender: ${confirmed.length} static HTML entries, ${events.length} JSON-LD events → index.html updated`);
+
+// ── Stamp sitemap.xml lastmod ───────────────────────────────────────────
+// Runs on every deploy (see Architecture in CLAUDE.md), so the build date is
+// a reasonable proxy for "content changed" — deploys only happen when
+// something did. Keeps the freshness signal accurate with no manual upkeep.
+const SITEMAP = path.join(ROOT, 'sitemap.xml');
+let sitemap = fs.readFileSync(SITEMAP, 'utf8');
+sitemap = sitemap.replace(/<lastmod>[\d-]+<\/lastmod>/, `<lastmod>${iso(new Date())}</lastmod>`);
+fs.writeFileSync(SITEMAP, sitemap, 'utf8');
+console.log(`prerender: sitemap.xml lastmod → ${iso(new Date())}`);
