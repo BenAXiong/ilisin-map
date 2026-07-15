@@ -2066,14 +2066,20 @@ a.detail-contact-phone:hover { text-decoration: underline; }
 }
 #map[data-zoom-tier="far"]  .marker-pin-wrap { transform: scale(0.8); }
 #map[data-zoom-tier="near"] .marker-pin-wrap { transform: scale(1.25); }
+/* One continuous animation, not the old one-shot pop chained with a new
+   infinite pulse — both would target `transform`, and a later-listed
+   animation in a comma-separated list wins that property outright rather
+   than blending with an earlier one, so trying to run both at once
+   wouldn't actually combine them. The pulse's own resting size (1.15) already
+   reads as "larger than normal" the instant it's selected, so it doubles as
+   the old pop-in's job without a separate animation. */
 .marker-pin-wrap.is-active {
   filter: drop-shadow(0 2px 5px oklch(from var(--ink) l c h / 0.45));
-  animation: pin-pop .28s cubic-bezier(.34, 1.56, .64, 1);
+  animation: pin-pulse 1.8s ease-in-out infinite;
 }
-@keyframes pin-pop {
-  0%   { transform: scale(0.6); }
-  60%  { transform: scale(1.15); }
-  100% { transform: scale(1); }
+@keyframes pin-pulse {
+  0%, 100% { transform: scale(1.15); }
+  50%      { transform: scale(1.3); }
 }
 
 /* ── Sidebar (desktop only) ──────────────────── */
