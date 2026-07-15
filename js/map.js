@@ -453,7 +453,7 @@ function currentTileStyle() {
 // tilePane (stacking is DOM-insertion order — see applyBaseLayer()).
 const SATELLITE_STYLE = {
   url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-  attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+  attribution: 'Tiles © Esri',
   maxZoom: 19,
 };
 const SATELLITE_LABELS_STYLE = {
