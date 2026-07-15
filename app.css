@@ -2168,13 +2168,13 @@ a.detail-contact-phone:hover { text-decoration: underline; }
 .border-town {
   fill: none;
   stroke: var(--text-3);
-  stroke-width: 1;
+  stroke-width: 0.5;
   stroke-opacity: 0.6;
 }
 .border-county {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 2;
+  stroke-width: 1;
   stroke-opacity: 0.55;
 }
 
