@@ -146,6 +146,31 @@ html.js-ready #festival-data {
 }
 .install-btn:hover { background: var(--amber); color: var(--bg); }
 body.tab-info .app-header { display: none; }
+/* Map tab: header bar itself goes transparent so the map shows through
+   (requires #panel-map to actually extend under it too — see its own
+   inset override below; a transparent background alone would just reveal
+   blank space, not the map, since panels are normally inset below the
+   header). Individual elements get their own opaque floating-chip
+   backdrop instead of one shared rectangular bar — same visual language
+   as the map's own corner toggles (opaque var(--surface), not an alpha
+   frosting; that's reserved for things that sit directly on a poster
+   photo, like the floater's close button) — so logo/icons stay legible
+   over whatever's on the map beneath them, in any theme. */
+body.tab-map .app-header {
+  background: none;
+  border-bottom: none;
+}
+body.tab-map .header-left {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 12px 4px 4px;
+  box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
+}
+body.tab-map .header-icon-btn {
+  border-radius: 50%;
+  box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
+}
 /* 全覽/名稱切換 only act on the timeline (js/timeline.js) — hide the mobile
    .app-header copies on other tabs rather than leaving inert buttons visible. */
 body:not(.tab-timeline) #tlOverviewBtnMobile,
@@ -561,7 +586,12 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 }
 
 /* ── Map panel ──────────────────────────────── */
-#panel-map          { display: none; overflow: hidden; }
+/* Extends under the header (same idea as #panel-info's own override
+   below) so the transparent .app-header (body.tab-map rules above) has
+   actual map tiles behind it instead of blank space. Desktop is
+   unaffected — .app-header doesn't exist there (sidebar nav instead), so
+   this override is harmless dead space above the sidebar-relative layout. */
+#panel-map          { display: none; overflow: hidden; inset: 0 0 var(--tab-h) 0; }
 #panel-map.active   { display: block; }
 #map                { position: absolute; inset: 0; isolation: isolate; }
 
@@ -570,10 +600,13 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    flies out to its right rather than dropping below. Time collapses
    behind a trigger that deploys its options downward (top-right).
    Desktop (>=768px, see override below) restores the original single
-   centered horizontal row with everything always visible. */
+   centered horizontal row with everything always visible.
+   top offset is header-height-aware (not just 12px) since #panel-map now
+   extends under the header — without this the chips would render right
+   behind the header's floating icons instead of clearing them. */
 #mapFilters {
   position: absolute;
-  top: 12px; left: 12px; right: 12px;
+  top: calc(var(--header-h) + 12px); left: 12px; right: 12px;
   z-index: 500;
 }
 #mapTopRow {
@@ -721,7 +754,13 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 }
 
 @media (min-width: 768px) {
+  /* Reset back to a plain 12px — the base rule's header-height-aware top
+     offset exists only for the mobile map tab's transparent-header
+     treatment (.app-header doesn't exist on desktop at all, sidebar nav
+     instead), so left un-reset here it would push desktop's filter row
+     down by the full header height for no reason. */
   #mapFilters {
+    top: 12px;
     left: 50%; right: auto;
     transform: translateX(-50%);
     display: flex;
@@ -2172,6 +2211,12 @@ a.detail-contact-phone:hover { text-decoration: underline; }
 
   .panel { inset: 0 0 0 240px; }
   #panel-info { inset: 0 0 0 240px; }
+  /* Re-correct back to the desktop layout — #panel-map's own ID-level
+     mobile override (inset: 0 0 var(--tab-h) 0, added for the map tab's
+     transparent-header treatment, which doesn't exist on desktop) would
+     otherwise beat this block's .panel class rule on specificity alone,
+     same reason #panel-info needs its own re-correction right above. */
+  #panel-map { inset: 0 0 0 240px; }
 
   .tl-header { height: 54px; position: relative; }
   .tl-name-toggle-desktop {
