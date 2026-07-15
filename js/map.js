@@ -231,12 +231,13 @@ function makeSectionHtml(v) {
 //
 // The detail overlay's row2 (an in-app "show on Pokoh map" link + the
 // welcome badge) doesn't translate here — first attempt swapped that link
-// for a second Google-maps link, but the venue row below already links to
-// Google Maps, so the two were just duplicates of each other pointing at
-// the same URL. Dropped the row2 link entirely; the badge now sits alone,
-// right-aligned to land under the date above (the convention .card-welcome
-// already follows elsewhere), and mapsHint is back on the venue row so the
-// "opens in Google Maps" affordance still exists somewhere on the card.
+// for a second Google-maps link, which just duplicated the venue row's own
+// link to the same URL; second attempt dropped the link and left the badge
+// alone on its own row. Landed on pairing the venue link itself with the
+// badge on one row instead (space-between, badge doesn't grow so it lands
+// at the right edge) — one fewer row, and mapsHint's separate "opens in
+// Google Maps" text is redundant with the pin+link already being visibly
+// clickable at this point, so it's dropped rather than carried over again.
 function renderFloatCard(v) {
   const card = document.getElementById('mapFloatCard');
   if (!card || !v) return;
@@ -247,8 +248,8 @@ function renderFloatCard(v) {
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
   const welcomeTimeText = v.welcome_time ? ` ${v.welcome_time}` : '';
-  const welcomeRowHtml = v.welcome_date
-    ? `<div class="map-float-row map-float-row2"><span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span></div>`
+  const welcomeHtml = v.welcome_date
+    ? `<span class="card-welcome" title="迎賓日 ${v.welcome_date}${welcomeTimeText}">迎賓 ${dateHtml(v.welcome_date)}</span>`
     : '';
   card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="map-float-text">
@@ -259,8 +260,7 @@ function renderFloatCard(v) {
     </div>
     <div class="village-card card-${v.status}" data-vid="${v.id}" onclick="openDetail('${v.id}')">
       <div class="map-float-row map-float-namedate">${namesHtml(v, { showAmis: false })}<span class="card-date">${dateHtml(v.date)}</span></div>
-      ${welcomeRowHtml}
-      <div class="map-float-row">${venueLinkHtml(v, { mapsHint: true })}</div>
+      <div class="map-float-row map-float-row2">${venueLinkHtml(v)}${welcomeHtml}</div>
     </div>
   </div>`;
 }

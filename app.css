@@ -1021,11 +1021,13 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 /* Name+date: space-between (name at the left edge, date at the right) —
    same convention .card-top uses elsewhere. */
 .map-float-namedate { justify-content: space-between; }
-/* Row2 is welcome-badge-only now (see renderFloatCard()'s comment on why
-   the link that used to share this row was dropped) — flex-end lands it
-   under the date above, same "pill sits under the date" convention
-   .card-welcome already follows in list cards elsewhere. */
-.map-float-row2 { justify-content: flex-end; }
+/* Row2: venue link + welcome badge share one row — .card-venue-wrap is
+   already flex:1 (see its own rule below), so it grows to fill the space
+   and pushes the badge to the right edge on its own; space-between is
+   here mainly for parity with .map-float-namedate/.detail-row2's
+   convention, and as a no-op safety net if venue-wrap's flex:1 is ever
+   changed. */
+.map-float-row2 { justify-content: space-between; }
 /* .card-date defaults to text-align:right (it normally sits opposite the
    name in one flex row) — on its own row here that would push it away from
    the names/venue rows' shared left edge, so override to left. */
