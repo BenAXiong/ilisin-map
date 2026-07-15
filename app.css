@@ -859,26 +859,28 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   #mapClusterToggle { bottom: 96px; }
 }
 
-/* Mobile: sits flush against the header's icon-button cluster (saved-
-   filter + theme, .header-right) — was centered in the free gap between
-   logo and icons, moved again per explicit request to sit right next to
-   those buttons instead. right:100px is a fixed offset, not measured at
-   one viewport width and left fragile: .header-right's 2 buttons (34px
-   each) + their 8px gap + .app-header's own 1rem right padding are all
-   fixed pixel sizes regardless of viewport width (confirmed .header-right
-   is always exactly these 2 buttons on the map tab specifically — the
-   timeline-only overview/name-toggle buttons that also live in the shared
-   header are display:none outside body.tab-timeline), so anchoring from
-   the right edge holds on any phone width. Was bottom-left, symmetrical
-   with #mapClusterToggle; that toggle is hidden now (see its own rule)
-   and this one moved up into the header per an earlier request, so
-   neither the symmetry nor the bottom position still apply. Desktop is
-   reset back to the original bottom-left position below — .app-header
-   doesn't exist there at all (sidebar nav instead), so there's no header
-   to move into. */
+/* Mobile: sits near the header's icon-button cluster (saved-filter +
+   theme, .header-right) — was centered in the free gap between logo and
+   icons, moved again per explicit request to sit near those buttons
+   instead. right:108px gives a ~16px gap before .header-right (wider
+   than that cluster's own internal 8px gap, deliberately — a bit more
+   breathing room between the toggle and the icon group than within it).
+   Still a fixed offset, not measured at one viewport width and left
+   fragile: .header-right's 2 buttons (34px each) + their 8px gap +
+   .app-header's own 1rem right padding are all fixed pixel sizes
+   regardless of viewport width (confirmed .header-right is always
+   exactly these 2 buttons on the map tab specifically — the timeline-only
+   overview/name-toggle buttons that also live in the shared header are
+   display:none outside body.tab-timeline), so anchoring from the right
+   edge holds on any phone width. Was bottom-left, symmetrical with
+   #mapClusterToggle; that toggle is hidden now (see its own rule) and
+   this one moved up into the header per an earlier request, so neither
+   the symmetry nor the bottom position still apply. Desktop is reset back
+   to the original bottom-left position below — .app-header doesn't exist
+   there at all (sidebar nav instead), so there's no header to move into. */
 #mapSatelliteToggle {
   position: absolute;
-  right: 100px;
+  right: 108px;
   top: 10px;
   z-index: 500;
 }
