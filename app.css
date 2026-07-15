@@ -984,6 +984,24 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   padding: .55rem .5rem;
   border-bottom: 1px solid var(--border);
 }
+/* .card-share/.card-save's own 14×14 SVGs (shared with the much smaller
+   list-card icons elsewhere) read as noticeably smaller than
+   .detail-header-btn's 20×20 icons — scaled up here to match, via CSS
+   rather than touching SHARE_SVG/BOOKMARK_SVG themselves (those still
+   need to stay small for every other card usage). CSS width/height on the
+   svg element overrides its own width/height attributes cleanly since the
+   viewBox is unitless — no distortion. Button padding bumped to match
+   .detail-header-btn's (.3rem .5rem) too, for a consistent, more spacious
+   header tap target rather than the list-icon's tighter one. */
+.map-float-header .card-share,
+.map-float-header .card-save {
+  padding: .3rem .5rem;
+}
+.map-float-header .card-share svg,
+.map-float-header .card-save svg {
+  width: 20px;
+  height: 20px;
+}
 .map-float-header-title {
   flex: 1;
   min-width: 0;
