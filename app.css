@@ -775,14 +775,19 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   .map-custom-field input[type="date"] { flex: 0 0 auto; }
 }
 
-/* Bottom-right 2-segment icon toggle between clustered pins (default, one
-   big circle) and every event's exact position at once (small overlapping
-   circles) — no labels, both icons stroke-only/empty-filled to match the
-   marker style in makeIcon(). Leaflet's own zoom control shares that corner
-   but only on desktop (hidden under 768px, see .leaflet-control-zoom
-   above), and the collapsed bottom sheet always peeks up ~28px, hence the
-   base offset clearing both. */
+/* Bottom-right 2-segment icon toggle between every event's exact position
+   (default) and clustered pins (one big circle per group) — no labels,
+   both icons stroke-only/empty-filled to match the marker style in
+   makeIcon(). Leaflet's own zoom control shares that corner but only on
+   desktop (hidden under 768px, see .leaflet-control-zoom above), and the
+   collapsed bottom sheet always peeks up ~28px, hence the base offset
+   clearing both.
+   Hidden (not removed) — the underlying feature (clusterModeOn,
+   setClusterMode(), the "off" button already being the active default)
+   is untouched in js/map.js; only the UI to switch back to clustered mode
+   is gone. Delete this rule to bring it back. */
 #mapClusterToggle {
+  display: none;
   position: absolute;
   right: 10px;
   bottom: 40px;
