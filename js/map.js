@@ -497,6 +497,28 @@ function setSatelliteMode(on) {
   applyBaseLayer();
 }
 
+// County/township boundary overlay — decoded from TW_BORDERS_TOPOLOGY
+// (borders.js: the taiwan-atlas open dataset, MIT-licensed, built from
+// Taiwan's Ministry of Interior boundary shapefiles, copied in whole
+// rather than filtered to Hualien/Taitung since nationwide coverage is a
+// planned v3 target, see docs/ROADMAP-v3.md) via topojson-client (CDN
+// script, index.html) at runtime — kept as TopoJSON in the repo rather
+// than pre-converted to GeoJSON, since the shared-topology format is what
+// keeps the whole-Taiwan file this compact (154KB gzipped, measured) in
+// the first place. No labels — deliberately not duplicating the basemap's
+// own (baked-in, English) place names with a second, Chinese set; that's
+// tracked separately as v3-14, not solved here. interactive:false on both
+// so they never intercept taps meant for markers/the map itself. Towns
+// added before counties so county lines (bolder, see .border-county in
+// app.css) paint on top where the two coincide (a county's outer edge is
+// also its outermost township's edge).
+function addBorderLayers() {
+  const counties = topojson.feature(TW_BORDERS_TOPOLOGY, TW_BORDERS_TOPOLOGY.objects.counties);
+  const towns    = topojson.feature(TW_BORDERS_TOPOLOGY, TW_BORDERS_TOPOLOGY.objects.towns);
+  L.geoJSON(towns,    { interactive: false, className: 'border-town' }).addTo(leafletMap);
+  L.geoJSON(counties, { interactive: false, className: 'border-county' }).addTo(leafletMap);
+}
+
 function initMap() {
   if (mapInitialized) return;
   mapInitialized = true;
@@ -514,6 +536,7 @@ function initMap() {
   leafletMap = L.map('map', { zoomControl: false, tap: false });
   L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
   tileLayer = makeTileLayer().addTo(leafletMap);
+  addBorderLayers();
 
   clusterGroup = L.markerClusterGroup({ showCoverageOnHover: false });
   plainGroup   = L.layerGroup();
