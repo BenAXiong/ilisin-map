@@ -950,45 +950,76 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   height: 100%;
   object-fit: cover;
 }
-/* Text column: 3 stacked rows (names/date/venue) — a deliberately different
-   shape from the shared .village-card list-row layout (which pairs
-   name+date side by side, welcome badge included), not a variant of it.
-   .map-float-icons is absolutely positioned within this, so it needs to be
-   the positioning context. */
-.map-float-card .village-card,
-.map-float-card .village-card.active {
-  position: relative;
-  /* Extra bottom padding reserves room for .map-float-icons (now bottom-
-     right, see below) so it sits in its own clear space below the venue
-     row rather than floating over whatever text happens to be there —
-     an absolutely positioned sibling paints above in-flow content
-     regardless of DOM order, so without this a long venue string could
-     visually run under the icons. */
-  padding: .7rem .85rem 2.1rem .85rem;
+/* Text column: a header (indigenous name + share/save, divider beneath)
+   above a body that mirrors the detail overlay's own body structure
+   (name+date row, a row2 pairing a Google-maps link with the welcome
+   badge, then venue) — not the shared .village-card list-row shape. The
+   has-poster divider (below) runs the column's full height, header
+   included, which is why it's on .map-float-text rather than just the
+   body part. */
+.map-float-text {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: .3rem;
-  border: none;
 }
 /* Ticket-stub divider — dashed rather than solid, at the exact image/text
    boundary (same 100px the image itself is width:100px at), so it reads as
    a perforation between the "stub" (image) and the "ticket" (info) rather
    than a generic column rule. */
-.map-float-card.has-poster .village-card {
+.map-float-card.has-poster .map-float-text {
   margin-left: 100px;
   border-left: 1.5px dashed var(--border-2);
 }
-/* background only — NOT border-left-color: the has-poster dashed divider
-   above already beats the shared .village-card:hover accent color on
-   specificity alone (3 classes vs. its 1 class + pseudo), so resetting
-   border-left-color here would instead undo *this* rule's own divider on
-   hover/tap, which is the opposite of the intent. */
+/* Header: share (left) / indigenous name (center) / save (right) — same
+   grouping as .detail-header, but the title is flex:1 + text-align:center
+   rather than that header's fixed-rem absolute-centering trick (tuned for
+   the much wider detail overlay panel; flex:1 auto-adapts to the floater's
+   narrower, variable width instead of needing its own re-measured
+   constant). */
+.map-float-header {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .4rem .5rem;
+  border-bottom: 1px solid var(--border);
+}
+.map-float-header-title {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--terra);
+  letter-spacing: .03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Body: reuses .village-card only for its click-to-open-detail affordance
+   and status color hook (.card-confirmed/tbd/cancelled) — padding/layout
+   is fully overridden below, this isn't the list-row shape. */
+.map-float-card .village-card,
+.map-float-card .village-card.active {
+  padding: .6rem .85rem .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  border: none;
+}
+/* background only — NOT border-left-color: the has-poster divider is on
+   .map-float-text now, not this element, so there's nothing here for a
+   shared-hover-accent reset to clobber; kept simple rather than removed
+   outright since .village-card:hover's shared rule still applies its own
+   background/border-left changes that need canceling regardless. */
 .map-float-card .village-card:hover { background: none; }
-/* Every row (not just the date one) gets the same flex treatment — mainly
-   so the date + 迎賓 badge sit inline with a real gap between them, but
-   harmless for the single-child names/venue rows too (and centers the
-   venue row's pin icon against its text for free). */
 .map-float-row { display: flex; align-items: center; gap: .4rem; }
+/* Name+date and the link+badge row both space-between (name/link at the
+   left edge, date/badge at the right) — same convention .card-top and
+   .detail-row2 already use elsewhere; the venue row (unnamed, no modifier)
+   stays left-aligned since it's a single flex child. */
+.map-float-namedate, .map-float-row2 { justify-content: space-between; }
 /* .card-date defaults to text-align:right (it normally sits opposite the
    name in one flex row) — on its own row here that would push it away from
    the names/venue rows' shared left edge, so override to left. */
@@ -1003,20 +1034,21 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    .card-cancelled/.card-tbd .card-date (defined later, same specificity),
    so those keep their own muted+strikethrough treatment untouched. */
 .map-float-card .card-date { color: var(--text-2); }
-/* Bottom-right (design reference), not top — the extra bottom padding on
-   .village-card above reserves this corner as dead space, so it never
-   overlaps the venue row regardless of that row's text length. No close
-   button — dismiss is tap-outside-to-deselect only (existing leafletMap
-   click handler in js/map.js). Not reading over a photo (the image sits to
-   the left, not behind this column), so no frosted backdrop needed, plain
-   icon buttons. */
-.map-float-icons {
-  position: absolute;
-  bottom: .55rem; right: .65rem;
-  display: flex;
+/* Google-maps row2 link — same visual treatment as .detail-pokohmap-link
+   (icon + label, terra-colored icon), just pointed at Google Maps instead
+   of Pokoh's own map (an in-app map link is redundant here — the floater
+   already IS the map). */
+.map-float-gmaps-link {
+  display: inline-flex;
   align-items: center;
-  gap: .35rem;
+  gap: .3rem;
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+  text-decoration: none;
 }
+.map-float-gmaps-link svg { flex-shrink: 0; color: var(--terra); }
+.map-float-gmaps-link:hover { color: var(--text-1); }
+.map-float-gmaps-link:hover svg { color: var(--amber); }
 @keyframes map-float-in {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
