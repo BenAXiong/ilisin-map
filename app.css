@@ -113,12 +113,18 @@ html.js-ready #festival-data {
 }
 .theme-btn:hover { border-color: var(--amber); color: var(--amber-dark); background: var(--bg); }
 
-/* Uniform square treatment for the mobile header's toggle buttons
-   (overview/name/saved-filter/theme) — .theme-btn alone stays padding-based
-   auto-width since it's also reused where that's still wanted (desktop
-   .tl-header buttons, the overview PNG/HTML export buttons), so this is an
-   additive class rather than a change to .theme-btn itself. */
-.header-icon-btn {
+/* Design rule: every icon-only button anchored to a header/logo (mobile
+   .app-header's overview/name/saved-filter/theme row, the sidebar's
+   saved-filter/theme pair next to the Pokoh logo, the desktop timeline
+   header's overview/name-toggle pair) is a fixed-size circle, not a
+   padding-based rounded rectangle — .theme-btn alone stays padding-based
+   auto-width since it's also reused where a circle isn't wanted (the
+   overview PNG/HTML export buttons), so this is an additive class rather
+   than a change to .theme-btn itself. */
+.header-icon-btn,
+.sb-theme-btn,
+.tl-overview-btn,
+.tl-name-toggle-desktop {
   width: 34px;
   height: 34px;
   padding: 0;
@@ -126,6 +132,7 @@ html.js-ready #festival-data {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 }
 .header-icon-btn svg { display: block; }
 .saved-filter-btn.active svg path { fill: currentColor; }
@@ -183,7 +190,6 @@ body.tab-map .header-left {
   box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
 }
 body.tab-map .header-icon-btn {
-  border-radius: 50%;
   box-shadow: 0 2px 10px oklch(from var(--ink) l c h / 0.14);
 }
 /* 全覽/名稱切換 only act on the timeline (js/timeline.js) — hide the mobile
@@ -2231,15 +2237,6 @@ a.detail-contact-phone:hover { text-decoration: underline; }
 .sb-logo   { width: 34px; height: 34px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
 .sb-appname { font-family: var(--disp); font-size: var(--fs-lg); color: var(--text-1); letter-spacing: -.01em; }
 .sb-header-actions { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; }
-.sb-theme-btn {
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .sb-nav {
   flex: 1;
   display: flex;
