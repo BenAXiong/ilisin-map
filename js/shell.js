@@ -22,11 +22,6 @@ function applyTheme(idx) {
     b.title = T_TITLE[themeIdx];
   });
   localStorage.setItem('pokoh-theme', String(themeIdx));
-  /* Mobile status bar (Android/Chrome) — match .app-header's actual
-     background (var(--bg)) instead of the static amber fallback baked
-     into index.html for pre-JS paint. */
-  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-  if (themeColorMeta) themeColorMeta.setAttribute('content', getComputedStyle(document.body).backgroundColor);
   // js/map.js listens for this to swap its tile layer's light/dark variant —
   // dispatched rather than called directly since shell.js loads last and
   // can't assume map.js internals; see js/map.js's own comment on the listener.
