@@ -16,6 +16,10 @@ const SOURCES = {
     label: '花蓮縣政府 2026太平洋南島聯合豐年節',
     url: 'https://ab.hl.gov.tw/zh-tw/Event/NewsOrgDetail/5117/2026%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%8D%97%E5%B3%B6%E8%81%AF%E5%90%88%E8%B1%90%E5%B9%B4%E7%AF%80%E5%A4%A7%E6%9C%83%E8%88%9E%E5%BE%B5%E9%81%B8%E9%96%8B%E8%B7%91-%E7%B8%BD%E7%8D%8E%E9%87%9130%E8%90%AC%E5%85%83-'
   },
+  hl_rs_web: {
+    label: '瑞穗鄉公所 115年度各部落歲時祭儀(豐年祭)日程表',
+    url: 'https://www.juisui.gov.tw/News_Content.aspx?n=1554&sms=9857&s=210602'
+  },
   ty_gov: {
     label: '桃園觀光導覽網 115年度原住民族豐年祭',
     url: 'https://travel.tycg.gov.tw/zh-tw/event/calendardetail/6667'
@@ -228,7 +232,7 @@ const EVENTS = [
   { id:'hl-rs-11', buluo_id:'ami-morocan', group:'ami', chinese:'牧魯棧部落', amis:'Morocan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'牧魯棧聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-12', buluo_id:'ami-atolan', group:'ami', chinese:'阿多瀾部落', amis:'Atolan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'阿多瀾聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-13', buluo_id:'ami-langas', group:'ami', chinese:'拉加善部落', amis:'Langasan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'拉加善部落聚會所', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-rs-14', buluo_id:'ami-cirocan', group:'ami', chinese:'鶺魯棧部落', amis:'Cirocan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'鶺魯棧聚會所預定地', status:'confirmed', src:'hl_pdf' },
+  { id:'hl-rs-14', buluo_id:'ami-cirocan', group:'ami', chinese:'鶺櫓棧部落', amis:'Cirocan', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/15 六', venue:'臨時地（頭目住宅）', status:'confirmed', src:'hl_pdf', note:'2026-07-16：瑞穗鄉公所日程表（hl_rs_web）將聚會所預定地更新為臨時地（頭目住宅，花蓮縣瑞穗鄉舞鶴東富路82號）。中文名稱採 Datasets/buluo/ami.json 之 CIP 官方權威拼法「鶺櫓棧」；本站先前用字「鶺魯棧」與瑞穗鄉公所日程表用字「鶴櫓棧」均已列為 chinese_name_alt，未逕自視為錯字覆蓋。' },
   { id:'hl-rs-15', buluo_id:'ami-kalala', group:'ami', chinese:'迦納納部落', amis:'Kalala', county:'花蓮縣', township:'瑞穗鄉', lat:23.493, lng:121.427, date:'8/16 日', venue:'迦納納部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-16', buluo_id:'ami-kiwit', group:'ami', chinese:'奇美部落', amis:'Kiwit / Raranges', county:'花蓮縣', township:'瑞穗鄉', lat:23.510, lng:121.333, date:'8/17 一', venue:'奇美部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-rs-17', group:'bnn', chinese:'奇美布農部落', amis:'Kiwit (Bunun)', county:'花蓮縣', township:'瑞穗鄉', lat:23.510, lng:121.333, date:'停辦', venue:'—', status:'cancelled', src:'hl_pdf' },

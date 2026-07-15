@@ -1609,6 +1609,20 @@ a.detail-poster-credit:hover { color: var(--amber); text-decoration: underline; 
 .detail-contact-name  { color: var(--text-1); }
 .detail-contact-phone { margin-left: auto; font-family: var(--mono); color: var(--terra); text-decoration: none; white-space: nowrap; }
 a.detail-contact-phone:hover { text-decoration: underline; }
+.detail-address { margin-top: .3rem; font-size: var(--fs-xs); color: var(--text-3); }
+.detail-shuttle { display: flex; flex-direction: column; gap: .4rem; }
+.detail-shuttle-row {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  padding: .4rem .6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: var(--fs-sm);
+}
+.detail-shuttle-label { flex-shrink: 0; font-size: var(--fs-xs); color: var(--text-3); }
+.detail-shuttle-value { color: var(--text-1); }
 
 /* ── Search panel ──────────────────────────── */
 #panel-search          { display: none; flex-direction: column; overflow: hidden; }

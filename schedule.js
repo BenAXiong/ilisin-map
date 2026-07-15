@@ -32,7 +32,20 @@
 //            and displayed exactly as officially sourced (not restricted to
 //            office-only numbers, not excluded from prerendered/SEO output).
 //            Omit an entry entirely rather than storing a source's own
-//            placeholder text (e.g. "待補") as if it were a real name.
+//            placeholder text (e.g. "待補") as if it were a real name. Some
+//            sources (e.g. hl_rs_web, 瑞穗鄉公所) redact the 頭目 given name
+//            themselves, publishing only "{surname}頭目" — stored verbatim,
+//            not filled in.
+//   address: string — real street address for the venue, only when the
+//            source publishes one (added 2026-07-16, first used by
+//            hl_rs_web). Purely informational for now — venueLinkHtml()'s
+//            Google Maps query still uses `venue` by default; a caller can
+//            pass this through explicitly for a more precise search (see
+//            js/detail.js's renderDetailBody()).
+//   shuttle: { dates, outbound, return } — free-text shuttle-bus info for
+//            multi-day umbrella festivals (added 2026-07-16, first used by
+//            hl-hl-14). All three optional; omit the whole field rather than
+//            guessing when a source doesn't cover shuttle service.
 const SCHEDULE_DETAILS = {
   'tt-tt-01': { // 馬蘭部落 Farangaw — 2026 Kiluma'an 豐年祭海報
     // ASSUMPTION (unconfirmed): creditUrl reuses this entry's own data
@@ -89,13 +102,125 @@ const SCHEDULE_DETAILS = {
       { date: '8/22 六 09:30-17:30', zh: '原民豐潮音樂盛宴' },
     ],
   },
+  // cpok.tw 網路媒體報導（非官方一手來源，但提供先前 4 個一手來源都沒有的
+  // 逐日流程，2026-07-16 查核）：https://cpok.tw/70856 — 7/16 為單獨主題夜
+  // 「夢想之夜」，7/17–7/19 三天共用同一晚會流程（含大會舞確切時段），另有
+  // 接駁車時刻，補進 shuttle 欄位（見上方欄位說明）。
   'hl-hl-14': { // 太平洋南島聯合豐年節 — 7/16–7/19，德興大草坪
     days: [
-      { date: '7/16 四–7/19 日', zh: '原住民族樂舞展演' },
-      { date: '7/16 四–7/19 日', zh: '千人大會舞' },
+      { date: '7/16 四 12:30', zh: '圓夢館入場、暖場、南島展演、踩街報訊息、小男孩樂團＆巴大雄演出、與花蓮共舞', name: '夢想之夜' },
+      { date: '7/17 五–7/19 日 18:00', zh: '各部落樂舞演出、晚會活動' },
+      { date: '7/17 五–7/19 日 20:25-21:00', zh: '千人大會舞' },
       { date: '7/16 四–7/19 日', zh: '特色市集（原住民美食、手工藝品、農特產品）' },
       { date: '7/16 四–7/19 日', zh: '部落微旅行簡介' },
     ],
+    shuttle: {
+      dates: '7/17 五–7/19 日',
+      outbound: '17:20 起發車（各接駁點開往德興大草坪）',
+      return: '活動結束後至 22:10 止（德興大草坪開往各接駁點）',
+    },
+  },
+
+  // 瑞穗鄉公所 115年度日程表 (hl_rs_web) — 頭目/聯絡人 contact columns、逐部落
+  // 地址、辦理期間全數與 address/contacts/days 對應，2026-07-16 查核，比對
+  // 依據為部落羅馬拼音＋現有 date（宴客日）完全吻合。頭目欄位來源本身即以
+  // 「{姓}頭目」呈現（未附全名），聯絡人欄位則為「{姓}○{名末字}」的部分遮蔽
+  // 全名——均照實轉錄，非本站另行遮蔽。共用同一張日程表海報圖（poster）。
+  'hl-rs-01': { // 法淖部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉瑞良村仁愛一街45號',
+    contacts: [{ role: '頭目', name: '楊頭目', phone: '0928-875091' }, { role: '聯絡人', name: '莊○富', phone: '0919-245605' }],
+    days: [{ date: '7/24–7/27', zh: '活動期間' }, { date: '7/26 日 18:00', zh: '宴客' }],
+  },
+  'hl-rs-02': { // 屋拉力部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉鶴岡村興鶴路一段111號',
+    contacts: [{ role: '頭目', name: '陳頭目', phone: '0912-093106' }, { role: '聯絡人', name: '林○金', phone: '0955-471270' }],
+    days: [{ date: '7/30–8/3', zh: '活動期間' }, { date: '8/1 六 18:00', zh: '宴客' }],
+  },
+  'hl-rs-03': { // 烏槓部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉瑞穗村萬生路',
+    contacts: [{ role: '頭目', name: '胡頭目', phone: '0937-216716' }, { role: '聯絡人', name: '羅○門', phone: '0985-672930' }],
+    days: [{ date: '8/7–8/10', zh: '活動期間' }, { date: '8/8 六 11:00', zh: '宴客' }],
+  },
+  'hl-rs-04': { // 娜魯灣部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉瑞美村自強街59號旁',
+    contacts: [{ role: '頭目', name: '林頭目', phone: '0926-395845' }, { role: '聯絡人', name: '劉○美', phone: '0937-675521' }],
+    days: [{ date: '8/7–8/9', zh: '活動期間' }, { date: '8/8 六 12:00', zh: '宴客' }],
+  },
+  'hl-rs-05': { // 掃叭頂部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉舞鶴14鄰278號',
+    contacts: [{ role: '頭目', name: '林頭目', phone: '0988-117201' }, { role: '聯絡人', name: '曾○蘭', phone: '0912-916435' }],
+    days: [{ date: '8/7–8/10', zh: '活動期間' }, { date: '8/9 日 12:00', zh: '宴客' }],
+  },
+  'hl-rs-06': { // 梧繞部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉舞鶴村211號對面',
+    contacts: [{ role: '頭目', name: '黃頭目', phone: '0952-547556' }, { role: '聯絡人', name: '黃○明', phone: '0982-764510' }],
+    days: [{ date: '8/7–8/10', zh: '活動期間' }, { date: '8/9 日 17:00', zh: '宴客' }],
+  },
+  'hl-rs-07': { // 拉基禾幹部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉新興村150號',
+    contacts: [{ role: '頭目', name: '朱頭目', phone: '0965-424521' }, { role: '聯絡人', name: '賴○明', phone: '0932-072703' }],
+    days: [{ date: '8/14–8/16', zh: '活動期間' }, { date: '8/15 六 11:30', zh: '宴客' }],
+  },
+  'hl-rs-08': { // 溫泉部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉瑞祥村溫泉三192巷6號',
+    contacts: [{ role: '頭目', name: '陳頭目', phone: '0965-592551' }, { role: '聯絡人', name: '古○雄', phone: '0927-327101' }],
+    days: [{ date: '8/14–8/16', zh: '活動期間' }, { date: '8/15 六 11:30', zh: '宴客' }],
+  },
+  'hl-rs-09': { // 馬立雲部落 (Sakizaya)
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉舞鶴5鄰139-6號',
+    contacts: [{ role: '頭目', name: '林頭目', phone: '0911-862342' }, { role: '聯絡人', name: '陳○輝', phone: '0981-126172' }],
+    days: [{ date: '8/14–8/16', zh: '活動期間' }, { date: '8/15 六 17:00', zh: '宴客' }],
+  },
+  'hl-rs-10': { // 馬聚集部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉瑞北村虎頭山路123號（省道旁）',
+    contacts: [{ role: '頭目', name: '林頭目', phone: '0916-156232' }, { role: '聯絡人', name: '游○富', phone: '0928-096929' }],
+    days: [{ date: '8/14–8/16', zh: '活動期間' }, { date: '8/15 六 12:00', zh: '宴客' }],
+  },
+  'hl-rs-11': { // 牧魯棧部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉富民村正路一段208-1號',
+    contacts: [{ role: '頭目', name: '劉頭目', phone: '0921-032508' }, { role: '聯絡人', name: '李○榮', phone: '0931-231554' }],
+    days: [{ date: '8/14–8/17', zh: '活動期間' }, { date: '8/15 六 17:00', zh: '宴客' }],
+  },
+  'hl-rs-12': { // 阿多瀾部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉富民村民生街93號',
+    contacts: [{ role: '頭目', name: '張頭目', phone: '0968-950390' }, { role: '聯絡人', name: '劉○明', phone: '0922-725431' }],
+    days: [{ date: '8/13–8/16', zh: '活動期間' }, { date: '8/15 六 18:00', zh: '宴客' }],
+  },
+  'hl-rs-13': { // 拉加善部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉富民村正路一段21-2號（省道旁）',
+    contacts: [{ role: '頭目', name: '卓頭目', phone: '0921-788154' }, { role: '聯絡人', name: '李○生', phone: '0917-565819' }],
+    days: [{ date: '8/13–8/16', zh: '活動期間' }, { date: '8/15 六 19:00', zh: '宴客' }],
+  },
+  'hl-rs-14': { // 鶺櫓棧部落 — 見 data.js 該筆 note，臨時地址已更新
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉舞鶴東富路82號（臨時地／頭目住宅）',
+    contacts: [{ role: '頭目', name: '余頭目', phone: '0955-309023' }, { role: '聯絡人', name: '林○蘭', phone: '0908-863669' }],
+    days: [{ date: '8/14–8/17', zh: '活動期間' }, { date: '8/15 六 12:00', zh: '宴客' }],
+  },
+  'hl-rs-15': { // 迦納納部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉舞鶴迦納納四路180號',
+    contacts: [{ role: '頭目', name: '陳頭目', phone: '0928-569529' }, { role: '聯絡人', name: '陳○雄', phone: '0928-828354' }],
+    days: [{ date: '8/14–8/17', zh: '活動期間' }, { date: '8/16 日 12:00', zh: '宴客' }],
+  },
+  'hl-rs-16': { // 奇美部落
+    poster: { url: '/images/schedule/hl-rs-poster.jpg', credit: '瑞穗鄉公所 115年度日程表', creditUrl: SOURCES.hl_rs_web.url, kind: 'summary' },
+    address: '花蓮縣瑞穗鄉奇美村3鄰16號',
+    contacts: [{ role: '頭目', name: '謝頭目', phone: '0910-174076' }, { role: '聯絡人', name: '蔣○謀', phone: '0931-093716' }],
+    days: [{ date: '8/14–8/17', zh: '活動期間' }, { date: '8/17 一 18:00', zh: '宴客' }],
   },
 };
 

@@ -1953,17 +1953,20 @@ const BULUO_REF = {
     "chinese_name": "馬立雲部落",
     "chinese_name_alt": [],
     "indigenous_name": "Maifor",
-    "indigenous_name_alt": [],
+    "indigenous_name_alt": [
+      "Maibul"
+    ],
     "dialect": [],
     "village": "舞鶴村",
     "lat": 23.472367,
     "lng": 121.350461,
     "coord_precision": "exact",
     "status": "single-source",
-    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source.",
+    "notes": "Seeded from CIP 核定部落結果 gazette (data.cip.gov.tw, dataset A53000000A-112041). Not yet cross-checked against a second source. 2026-07-16：瑞穗鄉公所115年度日程表（township_office_web，https://www.juisui.gov.tw/News_Content.aspx?n=1554&sms=9857&s=210602）將此部落羅馬拼音標為「Maibul」，與 CIP 官方拼法「Maifor」不同——列為異寫而非逕自判定為錯字，主要顯示名稱仍採 CIP 權威拼法「Maifor」。",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
-      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標"
+      "TICD 台灣原住民族部落開放資料庫 (Taiwan Indigenous Communities Open Data) — 部落人口重心座標",
+      "Official township office website (鄉/鎮公所全球資訊網)"
     ],
     "chiefs": [],
     "contact": []
@@ -2059,7 +2062,9 @@ const BULUO_REF = {
   "ami-cirocan": {
     "chinese_name": "鶺櫓棧部落",
     "chinese_name_alt": [
-      "剛估那部落"
+      "剛估那部落",
+      "鶺魯棧部落",
+      "鶴櫓棧部落"
     ],
     "indigenous_name": "Cirocan",
     "indigenous_name_alt": [
@@ -2073,12 +2078,13 @@ const BULUO_REF = {
     "lng": 121.3756,
     "coord_precision": "exact",
     "status": "single-source",
-    "notes": "據國家文化記憶庫（tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=595746）：原名 Pairasun，1945年改稱 Kang koga（剛估那），2008年改稱 Cirocan（鶺櫓棧）。位於富源村，在富源森林遊樂區內、富源車站西側，南接另一獨立部落「牧櫓棧部落」（非本部落別名，勿混淆）。座標改採該筆國家文化記憶庫頁面本身標註的座標（23.57862, 121.3756），與先前採用的富源車站座標僅相距約190公尺，可互相佐證；因座標直接來自該部落專屬頁面而非地標代用，coord_precision 升級為 exact。",
+    "notes": "據國家文化記憶庫（tcmb.culture.tw/zh-tw/detail?indexCode=Culture_Place&id=595746）：原名 Pairasun，1945年改稱 Kang koga（剛估那），2008年改稱 Cirocan（鶺櫓棧）。位於富源村，在富源森林遊樂區內、富源車站西側，南接另一獨立部落「牧櫓棧部落」（非本部落別名，勿混淆）。座標改採該筆國家文化記憶庫頁面本身標註的座標（23.57862, 121.3756），與先前採用的富源車站座標僅相距約190公尺，可互相佐證；因座標直接來自該部落專屬頁面而非地標代用，coord_precision 升級為 exact。2026-07-16：瑞穗鄉公所115年度日程表（township_office_web，https://www.juisui.gov.tw/News_Content.aspx?n=1554&sms=9857&s=210602）將此部落列為「鶴櫓棧」，與 pokoh_datajs 消費端先前使用的「鶺魯棧」皆為與本記錄權威拼法「鶺櫓棧」一字之差的異寫，兩者均列入 chinese_name_alt，未逕自視為錯字覆蓋（保留本記錄之 CIP 權威拼法為主要顯示名稱）。",
     "sources": [
       "原住民族委員會核定部落結果 (CIP gazette)",
       "暫定族語別分類來源（待補充正式引註）",
       "國家文化記憶庫 2.0 (tcmb.culture.tw / 舊 catalog.digitalarchives.tw)",
-      "OpenStreetMap (via Nominatim geocoding)"
+      "OpenStreetMap (via Nominatim geocoding)",
+      "Official township office website (鄉/鎮公所全球資訊網)"
     ],
     "chiefs": [],
     "contact": []

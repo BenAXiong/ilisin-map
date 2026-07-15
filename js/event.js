@@ -274,7 +274,7 @@ function namesHtml(v, { showAmis = true } = {}) {
 function getScheduleDetail(v) {
   const d = (typeof SCHEDULE_DETAILS !== 'undefined' && SCHEDULE_DETAILS[v.id]) || null;
   const poster = d?.poster || (typeof SCHEDULE_POSTERS !== 'undefined' && SCHEDULE_POSTERS[v.src]) || null;
-  return { poster, days: d?.days || null, history: d?.history || null, contacts: d?.contacts || null };
+  return { poster, days: d?.days || null, history: d?.history || null, contacts: d?.contacts || null, address: d?.address || null, shuttle: d?.shuttle || null };
 }
 
 // Strips the trailing admin-unit character (縣/市/鄉/鎮/區) so county/township
@@ -302,10 +302,16 @@ function shortAdmin(name) {
 // Builds the venue pin+link shared by list cards and the detail overlay.
 // `dotBetweenAdmin`/`mapsHint` are detail-overlay-only additions (2026-07-14)
 // — list cards keep their existing compact look via the defaults below.
-function venueLinkHtml(v, { forceDesktopLoc = false, dotBetweenAdmin = false, mapsHint = false } = {}) {
+// `address` (2026-07-16, detail-overlay-only, see js/detail.js) is an exact
+// street address from schedule.js — when present it's a strictly better
+// Maps search query than the bare `venue` name, which is often ambiguous
+// (e.g. "OO部落聚會所" alone).
+function venueLinkHtml(v, { forceDesktopLoc = false, dotBetweenAdmin = false, mapsHint = false, address = null } = {}) {
   const hasVenue = v.venue && v.venue !== '—';
   const coord    = eventCoord(v);
-  const mapsUrl  = hasVenue
+  const mapsUrl  = address
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+    : hasVenue
     ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.venue)}`
     : `https://www.google.com/maps/search/?api=1&query=${coord?.[0]},${coord?.[1]}`;
   // Desktop has room for the venue name itself plus full county/township;

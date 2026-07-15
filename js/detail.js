@@ -55,8 +55,12 @@ function renderDetailBody(v) {
 
   // Row 3: venue — county/township now dot-separated like the mobile card
   // format, plus an explicit "open in Google Maps" hint (2026-07-14) so the
-  // link's destination isn't only implied by the pin icon.
-  const venueRowHtml = `<div class="detail-venue-row">${venueLinkHtml(v, { forceDesktopLoc: true, dotBetweenAdmin: true, mapsHint: true })}</div>`;
+  // link's destination isn't only implied by the pin icon. `address`
+  // (2026-07-16), when schedule.js has one, both sharpens the Maps query
+  // and is shown as its own subtext line so a visitor can read/copy it
+  // without leaving the page.
+  const venueRowHtml = `<div class="detail-venue-row">${venueLinkHtml(v, { forceDesktopLoc: true, dotBetweenAdmin: true, mapsHint: true, address: detail.address })}</div>`;
+  const addressHtml = detail.address ? `<div class="detail-address">${detail.address}</div>` : '';
 
   let creditHtml = '';
   if (detail.poster?.credit) {
@@ -105,6 +109,15 @@ function renderDetailBody(v) {
     ? `<div class="detail-section-title">部落介紹</div><p class="detail-history">${detail.history}</p>`
     : '';
 
+  const shuttleHtml = detail.shuttle
+    ? `<div class="detail-section-title">接駁資訊</div>
+       <div class="detail-shuttle">
+         ${detail.shuttle.dates ? `<div class="detail-shuttle-row"><span class="detail-shuttle-label">日期</span><span class="detail-shuttle-value">${dateHtml(detail.shuttle.dates)}</span></div>` : ''}
+         ${detail.shuttle.outbound ? `<div class="detail-shuttle-row"><span class="detail-shuttle-label">去程</span><span class="detail-shuttle-value">${detail.shuttle.outbound}</span></div>` : ''}
+         ${detail.shuttle.return ? `<div class="detail-shuttle-row"><span class="detail-shuttle-label">回程</span><span class="detail-shuttle-value">${detail.shuttle.return}</span></div>` : ''}
+       </div>`
+    : '';
+
   return `
     <div class="village-card detail-header-card card-${v.status}">
       <div class="card-top">
@@ -113,10 +126,12 @@ function renderDetailBody(v) {
       </div>
       ${row2Html}
       ${venueRowHtml}
+      ${addressHtml}
     </div>
     ${posterHtml}
     ${contactsHtml}
     ${daysHtml}
+    ${shuttleHtml}
     ${historyHtml}
   `;
 }

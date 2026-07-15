@@ -249,7 +249,14 @@ when a source gives one — `[{date,zh,name,desc_zh?,desc_en?}]`; **one event
 per row** — if a single day has multiple named sub-events, give each its own
 `days` entry rather than combining names into one row), `history` (hand-authored prose —
 deliberately *not* sourced from `BULUO_REF.notes`, which is internal
-provenance text, not visitor-facing copy). `SCHEDULE_POSTERS` is a fallback
+provenance text, not visitor-facing copy), `contacts` (`[{role,name,phone}]`
+— real 頭目/聯絡人 contact info, stored/displayed exactly as officially
+sourced, including sources that themselves redact part of a name),
+`address` (exact street address, added 2026-07-16 — sharpens the Google
+Maps query in `venueLinkHtml()` when passed through, in addition to being
+shown as its own line in the detail overlay), `shuttle` (`{dates,outbound,
+return}`, added 2026-07-16 — free-text shuttle-bus info for multi-day
+umbrella festivals). `SCHEDULE_POSTERS` is a fallback
 keyed by `src` (the `SOURCES` key), so one poster image can cover every
 `EVENTS` entry sharing that source (e.g. a single township-wide board
 covering 14 buluo) without duplicating
