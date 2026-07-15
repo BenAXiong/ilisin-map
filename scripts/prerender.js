@@ -60,11 +60,10 @@ const GROUP_META = {
   // for this group is already a complete standalone event title (unlike the
   // tribe groups, where it's just a place/buluo name), so `festival` is left
   // empty to avoid restating it — accepts a harmless double-space in the
-  // generated JSON-LD `name` string as the tradeoff. `org` is currently
-  // hardcoded to this group's one real entry's actual organizer
-  // (花蓮縣政府) — if a second `misc` entry from a different organizing
-  // government is ever added (e.g. a future 桃園市 joint festival), this
-  // needs to become a per-EVENTS-entry field instead of a per-group constant.
+  // generated JSON-LD `name` string as the tradeoff. `org` below is only a
+  // fallback default — different misc entries have different organizing
+  // governments (花蓮縣政府 for hl-hl-14, 桃園市政府 for ty-dy-01), so the
+  // real organizer is read per-entry via `v.org` (see below).
   misc: { heading: '跨族群聯合活動 · 縣市聯合豐年節', festival: '', org: '花蓮縣政府' },
 };
 const GROUP_ORDER = ['ami', 'bnn', 'trv', 'pwn', 'pyu', 'szy', 'ckv', 'misc'];
@@ -125,7 +124,7 @@ const events = confirmed
           addressCountry:  'TW',
         },
       },
-      organizer: { '@type': 'Organization', name: `${v.chinese} ${meta.org}` },
+      organizer: { '@type': 'Organization', name: `${v.chinese} ${v.org || meta.org}` },
       image: [eventImage(v)],
       inLanguage: 'zh-TW',
       isAccessibleForFree: true,

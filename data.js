@@ -16,6 +16,10 @@ const SOURCES = {
     label: '花蓮縣政府 2026太平洋南島聯合豐年節',
     url: 'https://ab.hl.gov.tw/zh-tw/Event/NewsOrgDetail/5117/2026%E5%A4%AA%E5%B9%B3%E6%B4%8B%E5%8D%97%E5%B3%B6%E8%81%AF%E5%90%88%E8%B1%90%E5%B9%B4%E7%AF%80%E5%A4%A7%E6%9C%83%E8%88%9E%E5%BE%B5%E9%81%B8%E9%96%8B%E8%B7%91-%E7%B8%BD%E7%8D%8E%E9%87%9130%E8%90%AC%E5%85%83-'
   },
+  ty_gov: {
+    label: '桃園觀光導覽網 115年度原住民族豐年祭',
+    url: 'https://travel.tycg.gov.tw/zh-tw/event/calendardetail/6667'
+  },
   tt_abm: {
     label: '臺東縣原住民歲時祭儀查詢頁',
     url: 'https://abm.ttweb.tw/?list1=yes'
@@ -128,7 +132,7 @@ const EVENTS = [
   { id:'hl-hl-11', buluo_id:'ami-cibarbaran', group:'ami', chinese:'幾巴爾巴爾蘭部落', amis:'Cibarbaran', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/16 日', venue:'巴爾巴爾蘭祭祀廣場', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-12', buluo_id:'ami-tuwapun', group:'ami', chinese:'大本部落／華東', amis:'Tuwapun', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/22 六', venue:'大本部落聚會所', status:'confirmed', src:'hl_pdf' },
   { id:'hl-hl-13', joint:true, group:'trv', chinese:'太魯閣族群', amis:'Truku', county:'花蓮縣', township:'花蓮市', lat:23.975, lng:121.604, date:'8/22 六', venue:'花蓮市原住民文化歷史館旁扶輪公園', status:'confirmed', src:'hl_pdf' },
-  { id:'hl-hl-14', joint:true, group:'misc', chinese:'太平洋南島聯合豐年節', amis:'', county:'花蓮縣', township:'花蓮市', lat:24.0012001, lng:121.5745554, date:'7/16 四–7/19 日', venue:'德興大草坪（德興棒球場旁）', status:'confirmed', src:'hl_pacific_festival', note:'花蓮縣政府主辦之全縣跨族群聯合豐年節，非單一部落祭儀，亦非單一族群；座標採 Nominatim「棒球場」節點比對（花蓮市國興里，近達固湖灣大路1號德興棒球場），village 層級近似值，非草坪本身座標。group 標為新增之 misc（跨族群聯合活動類別，非民族代碼）——詳見 CLAUDE.md 資料慣例章節；本站尚未公開發現逐日/逐時活動流程，僅有活動類型列表（詳見 docs/ROADMAP-v3.md v3-10）。' },
+  { id:'hl-hl-14', joint:true, group:'misc', chinese:'太平洋南島聯合豐年節', amis:'', county:'花蓮縣', township:'花蓮市', lat:24.0012001, lng:121.5745554, date:'7/16 四–7/19 日', venue:'德興大草坪（德興棒球場旁）', status:'confirmed', src:'hl_pacific_festival', org:'花蓮縣政府', note:'花蓮縣政府主辦之全縣跨族群聯合豐年節，非單一部落祭儀，亦非單一族群；座標採 Nominatim「棒球場」節點比對（花蓮市國興里，近達固湖灣大路1號德興棒球場），village 層級近似值，非草坪本身座標。group 標為新增之 misc（跨族群聯合活動類別，非民族代碼）——詳見 CLAUDE.md 資料慣例章節；本站尚未公開發現逐日/逐時活動流程，僅有活動類型列表（詳見 docs/ROADMAP-v3.md v3-10）。' },
 
   // ══ 花蓮縣 吉安鄉 ════════════════════════════════════════════════
   { id:'hl-ja-01', buluo_id:'ami-ciripunan', group:'ami', chinese:'慶豐部落', amis:'Ciripunan', county:'花蓮縣', township:'吉安鄉', lat:23.956, lng:121.570, date:'8/1 六', venue:'慶豐部落聚會所', status:'confirmed', src:'hl_pdf' },
@@ -416,7 +420,10 @@ const EVENTS = [
   { id:'tt-gs-02', buluo_id:'ami-cu-ki-ngo', group:'ami', chinese:'月眉部落', amis:'Cu ki ngo', county:'臺東縣', township:'關山鎮', lat:23.009322, lng:121.153141, date:'8/9 日', welcome_date:'8/9', welcome_time:'11:00', venue:'關山鎮月眉里6鄰中和1-1號（螞蟻農藥行前岔路口順著路直走至鐵路橋下空地）', status:'confirmed', src:'tt_zhishi', note:'來源 tt_zhishi 為第三方轉載站；其資料聲稱源自臺東縣官方 abm.ttweb.tw，惟該頁面並未涵蓋關山鎮（無此鄉鎮選項），故無法核實。關山鎮公所115年度公告僅為全國性歲時祭儀放假日期通函，未列各部落個別日期/場地，待第一手來源確認（見 docs/ROADMAP-v2.md v2-S）。' },
   { id:'tt-gs-03', buluo_id:'ami-takofan', group:'ami', chinese:'德高部落', amis:'Takofan', county:'臺東縣', township:'關山鎮', lat:23.074798, lng:121.177566, date:'8/14 五–8/16 日', welcome_date:'8/16', welcome_time:'11:00', venue:'德高社區活動中心（關山鎮德高里2鄰永豐11號）', status:'confirmed', src:'tt_zhishi', note:'來源 tt_zhishi 為第三方轉載站；其資料聲稱源自臺東縣官方 abm.ttweb.tw，惟該頁面並未涵蓋關山鎮（無此鄉鎮選項），故無法核實。關山鎮公所115年度公告僅為全國性歲時祭儀放假日期通函，未列各部落個別日期/場地，待第一手來源確認（見 docs/ROADMAP-v2.md v2-S）。' },
   { id:'tt-gs-04', buluo_id:'ami-cipurungan', group:'ami', chinese:'隆興部落', amis:'Cipurungan', county:'臺東縣', township:'關山鎮', lat:23.035166, lng:121.163457, date:'8/15 六–8/17 一', welcome_date:'8/16', welcome_time:'11:00', venue:'隆興部落聚會所（關山鎮里壠里隆興31-1號）', status:'confirmed', src:'tt_zhishi', note:'來源 tt_zhishi 為第三方轉載站；其資料聲稱源自臺東縣官方 abm.ttweb.tw，惟該頁面並未涵蓋關山鎮（無此鄉鎮選項），故無法核實。關山鎮公所115年度公告僅為全國性歲時祭儀放假日期通函，未列各部落個別日期/場地，待第一手來源確認（見 docs/ROADMAP-v2.md v2-S）。' },
-  { id:'tt-gs-05', buluo_id:'ami-parupu', group:'ami', chinese:'新福部落', amis:'Parupu', county:'臺東縣', township:'關山鎮', lat:23.046057, lng:121.172109, date:'8/21 五–8/23 日', welcome_date:'8/22', welcome_time:'17:30', venue:'新福社區活動中心（關山鎮溪埔路34號）', status:'confirmed', src:'tt_zhishi', note:'來源 tt_zhishi 為第三方轉載站；其資料聲稱源自臺東縣官方 abm.ttweb.tw，惟該頁面並未涵蓋關山鎮（無此鄉鎮選項），故無法核實。關山鎮公所115年度公告僅為全國性歲時祭儀放假日期通函，未列各部落個別日期/場地，待第一手來源確認（見 docs/ROADMAP-v2.md v2-S）。' }
+  { id:'tt-gs-05', buluo_id:'ami-parupu', group:'ami', chinese:'新福部落', amis:'Parupu', county:'臺東縣', township:'關山鎮', lat:23.046057, lng:121.172109, date:'8/21 五–8/23 日', welcome_date:'8/22', welcome_time:'17:30', venue:'新福社區活動中心（關山鎮溪埔路34號）', status:'confirmed', src:'tt_zhishi', note:'來源 tt_zhishi 為第三方轉載站；其資料聲稱源自臺東縣官方 abm.ttweb.tw，惟該頁面並未涵蓋關山鎮（無此鄉鎮選項），故無法核實。關山鎮公所115年度公告僅為全國性歲時祭儀放假日期通函，未列各部落個別日期/場地，待第一手來源確認（見 docs/ROADMAP-v2.md v2-S）。' },
+
+  // ══ 桃園市 大園區 ════════════════════════════════════════════════
+  { id:'ty-dy-01', joint:true, group:'misc', chinese:'桃園市原住民族ho hai yan聯合豐年節', amis:'', county:'桃園市', township:'大園區', lat:25.0254354, lng:121.2182164, date:'8/1 六–8/2 日', venue:'桃園陽光劇場（大園區領航北路四段216號）', status:'confirmed', src:'ty_gov', org:'桃園市政府', note:'桃園市政府（桃園市原住民族行政局，洽詢 03-3322101#6684）主辦之全市跨族群聯合豐年節，非單一部落祭儀，亦非單一族群；city/urban-diaspora expansion axis，詳見 docs/ROADMAP-v2.md v2-W。座標取自桃園陽光劇場官方網站連結之 Google Maps 地點頁面（大園區領航北路四段216號），非部落層級近似值。' }
 
 ];
 

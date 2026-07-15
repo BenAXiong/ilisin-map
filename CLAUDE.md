@@ -101,11 +101,14 @@ const { SOURCES, DATA_NOTE, EVENTS } = new Function(src + '\nreturn { SOURCES, D
   豐年節, 花蓮縣政府) that don't represent one ethnicity at all. Always paired
   with `joint:true` — `build_buluo_ref.js` skips `joint:true` entries before
   ever reaching a group-based buluo lookup, so `misc` needs no `GROUP_FILES`
-  entry, unlike every other group. Currently a single entry; `prerender.js`'s
-  `GROUP_META.misc.org` is hardcoded to that entry's real organizer (花蓮縣
-  政府) and will need to become a per-`EVENTS`-entry field instead of a
-  per-group constant if a second `misc` entry with a different organizing
-  government is ever added (e.g. a future 桃園市 joint festival, see v2-W).
+  entry, unlike every other group. Two entries as of 2026-07-16 (`hl-hl-14`
+  太平洋南島聯合豐年節, `ty-dy-01` 桃園市原住民族ho hai yan聯合豐年節), each
+  carrying its own `org` field (the entry's real organizing government —
+  花蓮縣政府 / 桃園市政府). `prerender.js`'s JSON-LD organizer reads `v.org`,
+  falling back to `GROUP_META.misc.org` only if an entry omits it — `org` was
+  promoted from a per-group constant to a per-entry field precisely because a
+  second `misc` entry with a different organizing government (桃園市, see
+  `docs/ROADMAP-v2.md` v2-W) did show up.
 - `status` — `'confirmed'` | `'tbd'` | `'cancelled'`
 - `buluo_id` — optional, added by `scripts/build_buluo_ref.js`. Single FK into `BULUO_REF`.
 - `buluo_ids` — optional array, **hand-curated** (never auto-written). Use when one
