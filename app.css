@@ -906,8 +906,6 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   left: 10px; right: 10px;
   bottom: 96px;
   z-index: 550;
-  display: flex;
-  align-items: stretch;
   background: var(--surface);
   border-radius: 14px;
   overflow: hidden;
@@ -917,18 +915,39 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
     0 8px 20px oklch(from var(--ink) l c h / 0.18);
   animation: map-float-in .25s cubic-bezier(.34, 1.56, .64, 1);
 }
-/* Embedded left thumbnail, not a full-bleed banner — fixed width,
-   align-items:stretch above makes it match the text column's height exactly
-   (however tall 3 rows end up being), object-fit:cover crops rather than
-   distorts. Borderless: no radius/border of its own, it just fills its
-   corner of the already-clipped (overflow:hidden) card. Only present when
-   getScheduleDetail(v) resolves one (see renderFloatCard() in js/map.js);
-   most entries have none, so the card falls back to full-width text with no
-   gap left behind — no placeholder/empty-image state to design for. */
+/* Embedded left thumbnail, not a full-bleed banner. Absolutely positioned
+   with top+bottom (not a flex sibling with height:100%) so it can never
+   dictate the card's own height. Two things had to change to get here,
+   both confirmed by measuring computed styles, not guessed:
+   (1) A flex/height:100% approach was tried first and failed outright —
+   .map-float-card's height is auto (sized by content), and percentage
+   heights can't resolve against an auto-height containing block; the
+   *hypothetical* size flexbox uses to compute that auto height still fell
+   back to the image's own intrinsic aspect ratio, so a portrait-shaped
+   poster silently re-dictated the row height anyway (measured: still 153px
+   card vs. ~112px of actual text — no visible change at all). Taking the
+   image out of flow (position:absolute) sidesteps that circularity: an
+   abspos element doesn't contribute to its containing block's auto-height
+   calculation, so .village-card (still in normal flow) alone determines the
+   card's height now. (2) Even after that, top:0/bottom:0 with no explicit
+   height *still* didn't stretch the image — CSS2.1's abspos-replaced-
+   element algorithm computes height from width + intrinsic ratio whenever
+   height itself is literally 'auto', regardless of top/bottom (measured
+   value matched width×naturalHeight/naturalWidth exactly). height:100% —
+   an explicit, non-auto value — is what actually forces it to fill the
+   (now genuinely definite) container height instead.
+   object-fit:cover crops rather than distorts. Borderless: no radius/border
+   of its own, it just fills its corner of the already-clipped
+   (overflow:hidden) card. Only present when getScheduleDetail(v) resolves
+   one (see renderFloatCard() in js/map.js) — .has-poster is added in JS
+   alongside it so the text column below only reserves left space when
+   there's actually an image to clear; most entries have none, so the card
+   falls back to full-width text with no gap left behind. */
 .map-float-poster {
-  display: block;
+  position: absolute;
+  top: 0; left: 0;
   width: 100px;
-  flex-shrink: 0;
+  height: 100%;
   object-fit: cover;
 }
 /* Text column: 3 stacked rows (names/date/venue) — a deliberately different
@@ -939,14 +958,13 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
 .map-float-card .village-card,
 .map-float-card .village-card.active {
   position: relative;
-  flex: 1;
-  min-width: 0;
   padding: .7rem .85rem;
   display: flex;
   flex-direction: column;
   gap: .3rem;
   border: none;
 }
+.map-float-card.has-poster .village-card { margin-left: 100px; }
 .map-float-card .village-card:hover { background: none; border-left-color: transparent; }
 /* .card-date defaults to text-align:right (it normally sits opposite the
    name in one flex row) — on its own row here that would push it away from

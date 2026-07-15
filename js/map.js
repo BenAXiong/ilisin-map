@@ -236,6 +236,7 @@ function renderFloatCard(v) {
     : '';
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
+  card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="village-card card-${v.status}" data-vid="${v.id}" onclick="openDetail('${v.id}')">
     <div class="map-float-icons">${shareHtml}${saveHtml}</div>
     <div class="map-float-row">${namesHtml(v)}</div>
