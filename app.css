@@ -981,7 +981,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   display: flex;
   align-items: center;
   gap: .3rem;
-  padding: .4rem .5rem;
+  padding: .55rem .5rem;
   border-bottom: 1px solid var(--border);
 }
 .map-float-header-title {
@@ -989,7 +989,10 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   min-width: 0;
   text-align: center;
   font-family: var(--mono);
-  font-size: var(--fs-sm);
+  /* Same size as .detail-header-title (calc(--fs-base * 1.16), not a
+     token) — matching the detail overlay exactly, per its own comment,
+     rather than reusing a nearby --fs-* step that just happens to be close. */
+  font-size: calc(var(--fs-base) * 1.16);
   font-weight: 700;
   color: var(--terra);
   letter-spacing: .03em;
