@@ -243,7 +243,7 @@ function renderFloatCard(v) {
   if (!card || !v) return;
   const poster = getScheduleDetail(v).poster;
   const posterHtml = poster
-    ? `<img class="map-float-poster" src="${poster.url}" alt="${v.chinese} 祭儀海報" loading="lazy" />`
+    ? `<img class="map-float-poster" src="${poster.url}" alt="${v.chinese} 祭儀海報" loading="lazy" onclick="openDetail('${v.id}')" />`
     : '';
   const saveHtml = `<button class="card-save${isSaved(v.id) ? ' saved' : ''}" data-save-id="${v.id}" aria-label="收藏" onclick="event.stopPropagation(); onSaveTap('${v.id}')">${BOOKMARK_SVG}</button>`;
   const shareHtml = `<button class="card-share" data-share-id="${v.id}" aria-label="分享" onclick="event.stopPropagation(); onShareTap('${v.id}')">${SHARE_SVG}</button>`;
@@ -253,7 +253,7 @@ function renderFloatCard(v) {
     : '';
   card.classList.toggle('has-poster', !!poster);
   card.innerHTML = `${posterHtml}<div class="map-float-text">
-    <div class="map-float-header">
+    <div class="map-float-header" onclick="openDetail('${v.id}')">
       ${shareHtml}
       <span class="map-float-header-title">${indigenousNameInfo(v).latinName}</span>
       ${saveHtml}

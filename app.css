@@ -949,6 +949,7 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
   width: 100px;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 /* Text column: a header (indigenous name + share/save, divider beneath)
    above a body that mirrors the detail overlay's own body structure
@@ -977,12 +978,18 @@ body:not(.tab-timeline) #tlNameToggleMobile { display: none !important; }
    the much wider detail overlay panel; flex:1 auto-adapts to the floater's
    narrower, variable width instead of needing its own re-measured
    constant). */
+/* cursor:pointer for the header background/title — clicking it opens the
+   detail overlay (see renderFloatCard()'s onclick), same as the image and
+   body below. The share/save buttons inside stay their own clickable
+   targets; they stopPropagation() in their own handlers so a tap on either
+   doesn't also fire this. */
 .map-float-header {
   display: flex;
   align-items: center;
   gap: .3rem;
   padding: .55rem .5rem;
   border-bottom: 1px solid var(--border);
+  cursor: pointer;
 }
 /* .card-share/.card-save's own 14×14 SVGs (shared with the much smaller
    list-card icons elsewhere) read as noticeably smaller than
